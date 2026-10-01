@@ -115,6 +115,32 @@ input memory, interpretation, next steps, warnings, common mistakes, revision
 date, and a post-result advertising position. No calculator owns a custom page
 or duplicates this interaction.
 
+## Decision output for calculators
+
+The calculator result is now a decision-output contract, rather than a single
+number. `src/calculators/decision.ts` is a pure domain adapter that receives a
+calculator id, validated inputs, and the numerical `CalculationResult`; it
+returns `CalculatorDecision`. The contract can contain an executive summary,
+interpretation, recommendation, alerts, next steps, indicators, financial
+breakdown, comparison chart data, tables, timelines, and checklists.
+
+Every one of the 50 calculator ids explicitly selects a reusable output
+profile (`work`, `benefit`, `finance`, `tax`, or `utility`). Profiles provide a
+consistent decision journey without 50 bespoke page implementations. When a
+domain needs more context, a small pure builder adds its relevant blocks:
+salary net pay adds the discount distribution, compound interest adds the
+capital-versus-interest evolution, termination adds its modeled composition
+and worker checklist, and unemployment insurance adds eligibility guidance.
+
+`CalculatorDecisionOutput` in `src/components/content` is the sole renderer of
+the contract. It is deliberately data-only: it renders existing PortalFina
+cards, responsive bar comparisons, tables, timelines and emphasis blocks, but
+contains no business calculations. The client calculator panel remains
+responsible only for input validation, executing pure rules, and retaining the
+submitted input memory. This keeps new calculators extensible by adding a rule
+and selecting a profile or domain builder, without changing routes, editorial
+content, or administrative functionality.
+
 News and guides continue to use the same document model. Their templates add
 kind-specific comprehension layers: a news impact brief and guide learning
 outcomes. Related calculators, guides, and news remain pipeline-derived.

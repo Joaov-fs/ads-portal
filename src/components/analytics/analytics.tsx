@@ -1,6 +1,9 @@
 import Script from 'next/script';
+import { Suspense } from 'react';
 
 import { integrationConfig } from '@/config/integrations';
+
+import { AnalyticsPageViews } from './analytics-page-views';
 
 function GoogleAnalytics({ measurementId }: { measurementId: string }) {
   return (
@@ -10,8 +13,11 @@ function GoogleAnalytics({ measurementId }: { measurementId: string }) {
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
-        {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config',${JSON.stringify(measurementId)},{anonymize_ip:true});`}
+        {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config',${JSON.stringify(measurementId)},{anonymize_ip:true,send_page_view:false});`}
       </Script>
+      <Suspense fallback={null}>
+        <AnalyticsPageViews measurementId={measurementId} />
+      </Suspense>
     </>
   );
 }
@@ -47,10 +53,14 @@ function MicrosoftClarity({ projectId }: { projectId: string }) {
 export function Analytics() {
   if (!integrationConfig.analyticsEnabled) return null;
 
+  const googleAnalyticsId = integrationConfig.googleTagManagerId
+    ? undefined
+    : integrationConfig.googleAnalyticsId;
+
   return (
     <>
-      {integrationConfig.googleAnalyticsId ? (
-        <GoogleAnalytics measurementId={integrationConfig.googleAnalyticsId} />
+      {googleAnalyticsId ? (
+        <GoogleAnalytics measurementId={googleAnalyticsId} />
       ) : null}
       {integrationConfig.googleTagManagerId ? (
         <GoogleTagManager containerId={integrationConfig.googleTagManagerId} />

@@ -2,15 +2,21 @@
 
 import { useState, type FormEvent } from 'react';
 
+import { buildCalculatorDecision } from '@/calculators/decision';
 import {
   calculateCalculator,
   formatCalculatorResult,
 } from '@/calculators/rules';
-import type { CalculationResult } from '@/calculators/types';
+import type {
+  CalculatorDecision,
+  CalculationResult,
+} from '@/calculators/types';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/field';
 import type { CalculatorDocument } from '@/content';
+
+import { CalculatorDecisionOutput } from './calculator-decision-output';
 
 const resultDateFormatter = new Intl.DateTimeFormat('pt-BR', {
   dateStyle: 'long',
@@ -58,21 +64,6 @@ function fieldHint(field: CalculatorDocument['fields'][number]): string {
   return `Informe a quantidade de ${field.label.toLocaleLowerCase('pt-BR')} usada no seu caso.`;
 }
 
-const interpretationByCategory: Readonly<
-  Record<CalculatorDocument['category'], string>
-> = {
-  beneficios:
-    'Use este valor como uma referência para conferir sua situação. A concessão e o valor oficial dependem da análise do órgão responsável.',
-  economia:
-    'O resultado ajuda a medir o impacto econômico do cenário informado. Compare períodos e fontes antes de concluir.',
-  financas:
-    'O número mostra uma projeção para apoiar sua comparação. Custos, impostos, inflação e condições contratuais podem mudar o valor efetivo.',
-  trabalho:
-    'A estimativa ajuda a conferir verbas e descontos. O documento do empregador e as regras aplicáveis ao contrato definem o valor oficial.',
-  utilidades:
-    'Use o resultado como referência prática e confira se todas as entradas estão na mesma unidade antes de aplicar o número.',
-};
-
 type CalculatorPanelProps = Readonly<{
   document: CalculatorDocument;
 }>;
@@ -83,6 +74,7 @@ export function CalculatorPanel({ document }: CalculatorPanelProps) {
   const [calculation, setCalculation] = useState<CalculationResult | null>(
     null,
   );
+  const [decision, setDecision] = useState<CalculatorDecision | null>(null);
   const [submittedValues, setSubmittedValues] = useState<
     Record<string, number>
   >({});
@@ -120,12 +112,24 @@ export function CalculatorPanel({ document }: CalculatorPanelProps) {
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) {
       setCalculation(null);
+      setDecision(null);
       setSubmittedValues({});
       return;
     }
 
+    const nextCalculation = calculateCalculator(
+      document.calculatorId,
+      numericValues,
+    );
     setSubmittedValues(numericValues);
-    setCalculation(calculateCalculator(document.calculatorId, numericValues));
+    setCalculation(nextCalculation);
+    setDecision(
+      buildCalculatorDecision(
+        document.calculatorId,
+        numericValues,
+        nextCalculation,
+      ),
+    );
   }
 
   return (
@@ -207,7 +211,7 @@ export function CalculatorPanel({ document }: CalculatorPanelProps) {
               {formatCalculatorResult(document.calculatorId, calculation.value)}
             </output>
             <p className="mt-4 max-w-2xl text-sm leading-6 text-ads-muted">
-              {interpretationByCategory[document.category]}
+              {decision?.summary}
             </p>
           </>
         ) : (
@@ -298,148 +302,7 @@ export function CalculatorPanel({ document }: CalculatorPanelProps) {
             </ol>
           </section>
 
-          <section
-            className="grid gap-4 border-l-4 border-ads-primary bg-ads-primary-soft p-5 sm:p-6"
-            aria-labelledby="interpretation-title"
-          >
-            <h3
-              className="text-xl font-bold text-ads-secondary"
-              id="interpretation-title"
-            >
-              Como interpretar o resultado
-            </h3>
-            <p className="text-sm leading-6 text-ads-text">
-              {interpretationByCategory[document.category]} Observe se o valor
-              faz sentido quando comparado ao documento, contrato ou cenário que
-              motivou a sua consulta.
-            </p>
-          </section>
-
-          <div className="grid gap-px overflow-hidden rounded-ads-xlarge bg-ads-border md:grid-cols-2">
-            <section
-              className="bg-ads-surface p-5 sm:p-6"
-              aria-labelledby="practical-example-title"
-            >
-              <span
-                aria-hidden="true"
-                className="mb-3 block text-xl text-ads-primary"
-              >
-                ◎
-              </span>
-              <h3
-                className="text-lg font-bold text-ads-secondary"
-                id="practical-example-title"
-              >
-                Exemplo prático
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-ads-muted">
-                No seu exemplo, os valores informados resultaram em{' '}
-                <strong className="text-ads-text">
-                  {formatCalculatorResult(
-                    document.calculatorId,
-                    calculation.value,
-                  )}
-                </strong>
-                . Altere uma entrada por vez para entender o impacto de cada
-                dado no resultado.
-              </p>
-            </section>
-            <section
-              className="bg-ads-surface p-5 sm:p-6"
-              aria-labelledby="common-errors-title"
-            >
-              <span
-                aria-hidden="true"
-                className="mb-3 block text-xl text-ads-primary"
-              >
-                !
-              </span>
-              <h3
-                className="text-lg font-bold text-ads-secondary"
-                id="common-errors-title"
-              >
-                Erros mais comuns
-              </h3>
-              <ul className="mt-2 grid gap-1.5 pl-5 text-sm leading-6 text-ads-muted">
-                <li>Misturar valores mensais e anuais.</li>
-                <li>Confundir valor bruto com valor líquido.</li>
-                <li>Usar uma taxa diferente da indicada no campo.</li>
-              </ul>
-            </section>
-            <section
-              className="bg-ads-surface p-5 sm:p-6"
-              aria-labelledby="important-notes-title"
-            >
-              <span
-                aria-hidden="true"
-                className="mb-3 block text-xl text-ads-primary"
-              >
-                i
-              </span>
-              <h3
-                className="text-lg font-bold text-ads-secondary"
-                id="important-notes-title"
-              >
-                Observações importantes
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-ads-muted">
-                Esta é uma estimativa educativa. Arredondamentos, regras
-                vigentes, datas, contratos e condições individuais podem mudar o
-                valor final.
-              </p>
-            </section>
-            <section
-              className="bg-ads-surface p-5 sm:p-6"
-              aria-labelledby="calculation-tips-title"
-            >
-              <span
-                aria-hidden="true"
-                className="mb-3 block text-xl text-ads-primary"
-              >
-                ✓
-              </span>
-              <h3
-                className="text-lg font-bold text-ads-secondary"
-                id="calculation-tips-title"
-              >
-                Dicas para conferir
-              </h3>
-              <ul className="mt-2 grid gap-1.5 pl-5 text-sm leading-6 text-ads-muted">
-                <li>Revise os dados antes de comparar resultados.</li>
-                <li>Guarde a mesma unidade de tempo em toda a conta.</li>
-                <li>Consulte a fonte oficial indicada nesta página.</li>
-              </ul>
-            </section>
-          </div>
-
-          <section
-            className="grid gap-4 rounded-ads-xlarge bg-ads-secondary p-5 text-white sm:p-7"
-            aria-labelledby="next-steps-title"
-          >
-            <span className="text-xs font-bold uppercase tracking-[0.14em] text-emerald-200">
-              Depois da simulação
-            </span>
-            <h3
-              className="font-ads-display text-2xl font-bold"
-              id="next-steps-title"
-            >
-              Próximos passos
-            </h3>
-            <ol className="grid gap-3 text-sm leading-6 text-white/75 sm:grid-cols-3">
-              <li>
-                <strong className="block text-white">1. Confira</strong>Compare
-                as entradas com seus documentos.
-              </li>
-              <li>
-                <strong className="block text-white">2. Valide</strong>Leia as
-                regras e fontes oficiais desta página.
-              </li>
-              <li>
-                <strong className="block text-white">3. Decida</strong>Use a
-                estimativa como apoio, não como documento oficial.
-              </li>
-            </ol>
-          </section>
+          {decision ? <CalculatorDecisionOutput decision={decision} /> : null}
 
           <section className="grid gap-3" aria-labelledby="rules-sources-title">
             <h3

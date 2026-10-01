@@ -3,6 +3,8 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { integrationConfig } from '@/config/integrations';
 import { mergeClassNames } from '@/lib/merge-class-names';
 
+import { AdSenseUnit } from '../adsense-unit';
+
 type AdSlotSize = 'banner' | 'rectangle' | 'fluid';
 
 type AdSlotProps = ComponentPropsWithoutRef<'aside'> &
@@ -13,6 +15,7 @@ type AdSlotProps = ComponentPropsWithoutRef<'aside'> &
     publisherId?: string;
     responsive?: boolean;
     size?: AdSlotSize;
+    slotId?: string;
   }>;
 
 const sizeClassNames: Record<AdSlotSize, string> = {
@@ -29,13 +32,15 @@ export function AdSlot({
   publisherId = integrationConfig.adsense.publisherId,
   responsive = true,
   size = 'fluid',
+  slotId,
   ...props
 }: AdSlotProps) {
   const isConfigured = Boolean(
-    integrationConfig.adsense.enabled && publisherId && placementId,
+    integrationConfig.adsense.enabled && publisherId && slotId,
   );
+  const isPreview = !isConfigured && integrationConfig.adsense.preview;
 
-  if (!isConfigured) return null;
+  if (!isConfigured && !isPreview) return null;
 
   return (
     <aside
@@ -45,14 +50,23 @@ export function AdSlot({
         sizeClassNames[size],
         className,
       )}
-      data-ad-format={format}
+      data-ad-format={isConfigured ? format : undefined}
       data-ad-placement={placementId}
-      data-ad-publisher={publisherId}
+      data-ad-publisher={isConfigured ? publisherId : undefined}
       data-ad-responsive={responsive}
-      data-ad-state="configured"
+      data-ad-state={isConfigured ? 'configured' : 'preview'}
       {...props}
     >
-      Publicidade
+      {isConfigured && publisherId && slotId ? (
+        <AdSenseUnit
+          format={format}
+          publisherId={publisherId}
+          responsive={responsive}
+          slotId={slotId}
+        />
+      ) : (
+        'Espaço publicitário'
+      )}
     </aside>
   );
 }

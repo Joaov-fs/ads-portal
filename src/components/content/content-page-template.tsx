@@ -67,6 +67,8 @@ type ContentPageTemplateProps = Readonly<{
 export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
   const { author, document } = model;
   const kindConfig = contentKindConfig[document.kind];
+  const hasMultipleSections = document.sections.length >= 2;
+  const hasLongFormContent = document.sections.length >= 4;
 
   return (
     <main>
@@ -214,28 +216,59 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
                       </div>
                     </dl>
                   </section>
+                  <AdSlot
+                    format="horizontal"
+                    label="Publicidade antes da calculadora"
+                    placementId={`calculator-${document.slug}-before-tool`}
+                    size="banner"
+                  />
                   <CalculatorPanel document={document} />
+                  <AdSlot
+                    format="horizontal"
+                    label="Publicidade após a explicação da calculadora"
+                    placementId={`calculator-${document.slug}-after-tool`}
+                    size="banner"
+                  />
                 </>
               ) : null}
 
-              {document.sections.map((section) => (
-                <section
-                  className="scroll-mt-8 grid gap-4"
-                  id={sectionId(section.heading)}
-                  key={section.heading}
-                >
-                  <h2 className="font-ads-display text-2xl font-bold tracking-tight text-ads-secondary sm:text-3xl">
-                    {section.heading}
-                  </h2>
-                  {section.paragraphs.map((paragraph) => (
-                    <p
-                      className="text-base leading-8 text-ads-text"
-                      key={paragraph}
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
-                </section>
+              {document.sections.map((section, index) => (
+                <div className="grid gap-10" key={section.heading}>
+                  <section
+                    className="scroll-mt-8 grid gap-4"
+                    id={sectionId(section.heading)}
+                  >
+                    <h2 className="font-ads-display text-2xl font-bold tracking-tight text-ads-secondary sm:text-3xl">
+                      {section.heading}
+                    </h2>
+                    {section.paragraphs.map((paragraph) => (
+                      <p
+                        className="text-base leading-8 text-ads-text"
+                        key={paragraph}
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </section>
+                  {document.kind !== 'calculator' &&
+                  index === 0 &&
+                  hasMultipleSections ? (
+                    <AdSlot
+                      format="horizontal"
+                      label="Publicidade após a introdução"
+                      placementId={`${document.kind}-${document.slug}-after-intro`}
+                      size="banner"
+                    />
+                  ) : null}
+                  {index === 2 && hasLongFormContent ? (
+                    <AdSlot
+                      format="horizontal"
+                      label="Publicidade entre seções do conteúdo"
+                      placementId={`${document.kind}-${document.slug}-mid-content`}
+                      size="banner"
+                    />
+                  ) : null}
+                </div>
               ))}
             </div>
 
@@ -316,34 +349,46 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
         </Section>
 
         {document.faq.length > 0 ? (
-          <Section
-            aria-labelledby="faq-title"
-            className="border-y border-ads-border bg-ads-surface"
-          >
-            <Container size="copy">
-              <h2
-                className="mb-8 font-ads-display text-ads-title font-bold text-ads-secondary"
-                id="faq-title"
-              >
-                Perguntas frequentes
-              </h2>
-              <div className="grid gap-4">
-                {document.faq.map((item) => (
-                  <details
-                    className="rounded-ads-large border border-ads-border bg-ads-background p-5"
-                    key={item.question}
-                  >
-                    <summary className="font-semibold text-ads-secondary">
-                      {item.question}
-                    </summary>
-                    <p className="mt-3 leading-7 text-ads-muted">
-                      {item.answer}
-                    </p>
-                  </details>
-                ))}
-              </div>
-            </Container>
-          </Section>
+          <>
+            {hasLongFormContent ? (
+              <Container size="copy">
+                <AdSlot
+                  format="horizontal"
+                  label="Publicidade antes das perguntas frequentes"
+                  placementId={`${document.kind}-${document.slug}-before-faq`}
+                  size="banner"
+                />
+              </Container>
+            ) : null}
+            <Section
+              aria-labelledby="faq-title"
+              className="border-y border-ads-border bg-ads-surface"
+            >
+              <Container size="copy">
+                <h2
+                  className="mb-8 font-ads-display text-ads-title font-bold text-ads-secondary"
+                  id="faq-title"
+                >
+                  Perguntas frequentes
+                </h2>
+                <div className="grid gap-4">
+                  {document.faq.map((item) => (
+                    <details
+                      className="rounded-ads-large border border-ads-border bg-ads-background p-5"
+                      key={item.question}
+                    >
+                      <summary className="font-semibold text-ads-secondary">
+                        {item.question}
+                      </summary>
+                      <p className="mt-3 leading-7 text-ads-muted">
+                        {item.answer}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </Container>
+            </Section>
+          </>
         ) : null}
 
         <Section aria-labelledby="sources-title">

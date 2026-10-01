@@ -50,6 +50,7 @@ use **Project Settings > Environment Variables**. Nunca comite `.env.local`.
 | `GOOGLE_SITE_VERIFICATION`          | não         | Token de verificação do Search Console, sem a tag HTML.                 |
 | `NEXT_PUBLIC_ADSENSE_ENABLED`       | não         | Reserva a ativação futura; mantenha `false` nesta versão.               |
 | `NEXT_PUBLIC_ADSENSE_PUBLISHER_ID`  | não         | Publisher ID futuro; mantenha vazio até a aprovação.                    |
+| `NEXT_PUBLIC_ADSENSE_PREVIEW`       | não         | Em desenvolvimento, `true` exibe discretamente as posições de anúncio.  |
 
 Variáveis `NEXT_PUBLIC_*` são incorporadas ao bundle no build. Qualquer mudança
 nelas exige um novo deploy. Use valores de Preview separados dos de Production.
@@ -80,10 +81,13 @@ canônica.
 ## 5. Google Analytics 4
 
 1. Crie uma propriedade e um fluxo Web no Google Analytics.
-2. Cadastre o Measurement ID em `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID`.
-3. Defina `NEXT_PUBLIC_ANALYTICS_ENABLED=true` somente depois de revisar a
-   política de cookies e o mecanismo de consentimento aplicável.
-4. Faça novo deploy e valide o Realtime e o DebugView.
+2. Cadastre o Measurement ID em `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID` e defina
+   `NEXT_PUBLIC_ANALYTICS_ENABLED=true`.
+3. Faça novo deploy e valide o Realtime e o DebugView. A integração usa o
+   App Router para enviar um único pageview por mudança de rota.
+4. Antes de publicar, confirme que a política de cookies e qualquer mecanismo
+   de consentimento aplicável permitem o carregamento. O projeto não possui
+   bloqueio de consentimento próprio.
 
 Se o GA4 for configurado dentro do GTM, deixe
 `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID` vazio para evitar pageviews duplicados.
@@ -113,17 +117,21 @@ Se o GA4 for configurado dentro do GTM, deixe
 
 ## 9. Google AdSense
 
-Esta Sprint entrega somente a arquitetura. Nenhum script oficial, Publisher ID
-ou bloco real foi incluído.
+O script oficial só é carregado quando `NEXT_PUBLIC_ADSENSE_ENABLED=true` e um
+Publisher ID válido estiverem configurados. As posições sem um ID de bloco real
+continuam ocultas em produção; em desenvolvimento,
+`NEXT_PUBLIC_ADSENSE_PREVIEW=true` revela apenas o rótulo de revisão.
 
 1. Publique o domínio com as páginas institucionais completas.
 2. Solicite aprovação no AdSense.
-3. Depois da aprovação, cadastre o Publisher ID e os IDs de bloco somente na
-   Vercel.
-4. Implemente o adaptador oficial sobre `AdSlot`, preservando `placementId`,
-   `format`, `responsive` e a dimensão reservada para evitar layout shift.
-5. Somente então habilite `NEXT_PUBLIC_ADSENSE_ENABLED` e valide políticas,
+3. Depois da aprovação, cadastre o Publisher ID na Vercel, informe os IDs
+   individuais de bloco na propriedade `slotId` de cada `AdSlot` e mantenha
+   `placementId` como a identificação editorial da posição.
+4. Habilite `NEXT_PUBLIC_ADSENSE_ENABLED=true` e valide políticas,
    consentimento, densidade de anúncios e Core Web Vitals.
+5. Com um Publisher ID iniciado por `ca-pub-`, `/ads.txt` passa a responder a
+   linha oficial do Google automaticamente. Sem esse valor, a rota responde
+   404 e não publica conteúdo de exemplo.
 
 ## 10. Checklist de publicação
 

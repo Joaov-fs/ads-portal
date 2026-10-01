@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 
 import { Analytics } from '@/components/analytics';
+import { AdSenseScript } from '@/components/advertising';
 import { JsonLdScript } from '@/components/content';
 import { AppChrome } from '@/components/layout/app-chrome';
 import { designTokens } from '@/config/design-tokens';
@@ -53,7 +54,12 @@ export const metadata: Metadata = {
     ? { google: integrationConfig.googleSiteVerification }
     : undefined,
   manifest: '/manifest.webmanifest',
-  other: { 'msapplication-config': '/browserconfig.xml' },
+  other: {
+    ...(integrationConfig.adsense.publisherId
+      ? { 'google-adsense-account': integrationConfig.adsense.publisherId }
+      : {}),
+    'msapplication-config': '/browserconfig.xml',
+  },
 };
 
 export const viewport: Viewport = {
@@ -82,6 +88,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <AppChrome>{children}</AppChrome>
         </ThemeProvider>
         <Analytics />
+        <AdSenseScript />
       </body>
     </html>
   );

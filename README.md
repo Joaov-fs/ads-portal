@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+
 # ADS Platform
 
 Public product experience for the platform described in [`PROJECT.md`](PROJECT.md),
@@ -153,7 +154,10 @@ until the future AdSense adapter is deliberately enabled.
 - [`docs/adr/0005-file-content-engine.md`](docs/adr/0005-file-content-engine.md): file-backed content repository and shared generation pipeline.
 - [`docs/adr/0006-production-infrastructure.md`](docs/adr/0006-production-infrastructure.md): environment-driven production integrations and SEO infrastructure.
 - [`docs/adr/0007-local-publishing-operation.md`](docs/adr/0007-local-publishing-operation.md): local operational repository, mocked session, and workflow boundary.
-=======
+  \=======
+
 # ads-portal
-Projeto ADS 
->>>>>>> 6e9dec6687527c412f9b3e5b71cfbdbe8fbfc4fb
+
+Projeto ADS
+
+> > > > > > > 6e9dec6687527c412f9b3e5b71cfbdbe8fbfc4fb

@@ -57,3 +57,51 @@ export type CalculationResult = Readonly<{
   label: string;
   value: number;
 }>;
+
+export type DecisionTone = 'attention' | 'neutral' | 'positive';
+
+export type DecisionIndicator = Readonly<{
+  label: string;
+  value: string;
+}>;
+
+export type DecisionBreakdownItem = Readonly<{
+  label: string;
+  value: number;
+}>;
+
+export type DecisionChart = Readonly<{
+  items: readonly DecisionBreakdownItem[];
+  title: string;
+}>;
+
+export type DecisionTable = Readonly<{
+  columns: readonly string[];
+  rows: readonly (readonly string[])[];
+  title: string;
+}>;
+
+/**
+ * A domain-aware, framework-independent presentation contract. Calculator
+ * rules produce this after the numerical result so React only renders it.
+ */
+export type CalculatorDecision = Readonly<{
+  alerts: readonly string[];
+  breakdown?: Readonly<{
+    items: readonly DecisionBreakdownItem[];
+    title: string;
+  }>;
+  chart?: DecisionChart;
+  checklist: readonly string[];
+  indicators: readonly DecisionIndicator[];
+  interpretation: string;
+  nextSteps: readonly string[];
+  recommendation: Readonly<{
+    detail: string;
+    title: string;
+    tone: DecisionTone;
+  }>;
+  summary: string;
+  table?: DecisionTable;
+  timeline?: readonly string[];
+}>;

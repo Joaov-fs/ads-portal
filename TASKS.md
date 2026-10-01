@@ -156,6 +156,16 @@
 - [x] Atualizar README, arquitetura, desenvolvimento e publicação
 - [x] Executar format, lint, testes e build
 
+# Sprint 9 — Parecer decisório das calculadoras
+
+- [x] Criar contrato tipado e puro de saída decisória para calculadoras
+- [x] Declarar perfil reutilizável de saída para as 50 calculadoras
+- [x] Criar renderizador único para cards, indicadores, gráficos, tabelas, timelines e checklists
+- [x] Adicionar pareceres especializados para salário líquido, juros compostos, rescisão e seguro-desemprego
+- [x] Preservar regras matemáticas, conteúdo editorial e área administrativa fora da mudança
+- [x] Adicionar testes de cobertura do contrato para todo o catálogo
+- [x] Executar lint, testes e build
+
 # Pendências externas para publicação
 
 - [ ] Comprar o domínio e configurar DNS/HTTPS na Vercel

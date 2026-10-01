@@ -16,5 +16,8 @@ export const integrationConfig = {
   adsense: {
     enabled: process.env.NEXT_PUBLIC_ADSENSE_ENABLED === 'true',
     publisherId: optionalValue(process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID),
+    preview:
+      process.env.NODE_ENV === 'development' &&
+      process.env.NEXT_PUBLIC_ADSENSE_PREVIEW === 'true',
   },
 } as const;
