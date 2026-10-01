@@ -11,7 +11,7 @@ import { contentRepository } from './repository';
 
 describe('content pipeline', () => {
   it('loads typed file content through the repository', () => {
-    expect(contentRepository.list('news')).toHaveLength(2);
+    expect(contentRepository.list('news')).toHaveLength(4);
     expect(contentRepository.list('guide')).toHaveLength(2);
     expect(contentRepository.list('calculator')).toHaveLength(50);
     expect(getContentStaticParams('guide')).toEqual([

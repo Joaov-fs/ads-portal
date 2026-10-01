@@ -11,10 +11,10 @@ import {
 describe('publishing operations', () => {
   it('calculates the operational dashboard from one record collection', () => {
     expect(calculatePublishingStats(initialPublishingRecords)).toMatchObject({
-      news: 2,
+      news: 4,
       guide: 2,
       calculator: 50,
-      published: 54,
+      published: 56,
       draft: 0,
     });
   });

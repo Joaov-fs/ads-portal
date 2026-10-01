@@ -25,6 +25,11 @@ export type ContentSource = Readonly<{
   url: string;
 }>;
 
+export type ContentCoverImage = Readonly<{
+  alt: string;
+  src: string;
+}>;
+
 export type CalculatorField = Readonly<{
   hint?: string;
   label: string;
@@ -36,6 +41,7 @@ export type CalculatorField = Readonly<{
 type BaseContentDocument = Readonly<{
   authorId: string;
   category: ContentCategory;
+  coverImage?: ContentCoverImage;
   description: string;
   faq: readonly ContentFaq[];
   publishedAt: string;

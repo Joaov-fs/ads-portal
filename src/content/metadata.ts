@@ -28,11 +28,15 @@ export function buildContentMetadata(model: ContentPageModel): Metadata {
       siteName: siteConfig.name,
       locale: 'pt_BR',
       url: pathname,
+      images: document.coverImage
+        ? [{ alt: document.coverImage.alt, url: document.coverImage.src }]
+        : undefined,
     },
     twitter: {
       card: 'summary_large_image',
       title: document.title,
       description: document.description,
+      images: document.coverImage ? [document.coverImage.src] : undefined,
     },
   };
 }

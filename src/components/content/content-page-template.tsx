@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { AdSlot } from '@/components/advertising/ad-slot';
 import { FeatureCard } from '@/components/cards';
@@ -108,6 +109,21 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
             </div>
           </Container>
         </header>
+
+        {document.coverImage ? (
+          <section className="border-b border-ads-border bg-ads-background py-8">
+            <Container>
+              <Image
+                alt={document.coverImage.alt}
+                className="aspect-video w-full rounded-ads-xlarge object-cover"
+                height={675}
+                priority
+                src={document.coverImage.src}
+                width={1200}
+              />
+            </Container>
+          </section>
+        ) : null}
 
         {document.kind === 'news' ? (
           <section
