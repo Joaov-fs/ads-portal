@@ -1,3 +1,4 @@
+import { calculateTermination } from './termination';
 import type {
   CalculatorId,
   CalculatorValues,
@@ -5,8 +6,16 @@ import type {
 } from './types';
 
 const monthDays = 30;
-const annualCdiReference = 10.4;
 const minimumWage2026 = 1621;
+const irrfDependentDeduction = 189.59;
+
+/** Bolsa Família a partir da folha de outubro de 2026 (MDS). */
+export const bolsaFamilia2026 = {
+  citizenshipIncomePerPerson: 164,
+  earlyChildhoodPerChild: 173,
+  familyMinimum: 691,
+  variablePerMember: 58,
+} as const;
 
 function value(values: CalculatorValues, key: string) {
   return values[key] ?? 0;
@@ -53,7 +62,7 @@ export function formatCalculatorResult(id: CalculatorId, amount: number) {
   }).format(amount);
 }
 
-function progressiveInss(base: number) {
+export function progressiveInss(base: number) {
   const brackets = [
     [1621, 7.5],
     [2902.84, 9],
@@ -72,7 +81,7 @@ function progressiveInss(base: number) {
   return total;
 }
 
-function progressiveIrrf(base: number, taxableIncome = base) {
+export function progressiveIrrf(base: number, taxableIncome = base) {
   const brackets = [
     [2428.8, 0],
     [2826.65, 7.5],
@@ -96,6 +105,73 @@ function progressiveIrrf(base: number, taxableIncome = base) {
         ? Math.max(0, 978.62 - 0.133145 * taxableIncome)
         : 0;
   return Math.max(0, total - reduction);
+}
+
+export type BolsaFamiliaParts = Readonly<{
+  citizenshipIncome: number;
+  complement: number;
+  earlyChildhood: number;
+  total: number;
+  variable: number;
+}>;
+
+export function bolsaFamiliaParts(values: CalculatorValues): BolsaFamiliaParts {
+  const people = Math.max(0, Math.floor(value(values, 'people')));
+  const children = Math.max(0, Math.floor(value(values, 'childrenUnder7')));
+  const others = Math.max(0, Math.floor(value(values, 'childrenOver7')));
+  const citizenshipIncome =
+    people * bolsaFamilia2026.citizenshipIncomePerPerson;
+  const earlyChildhood = children * bolsaFamilia2026.earlyChildhoodPerChild;
+  const variable = others * bolsaFamilia2026.variablePerMember;
+  const subtotal = citizenshipIncome + earlyChildhood + variable;
+  const complement =
+    people > 0 ? Math.max(0, bolsaFamilia2026.familyMinimum - subtotal) : 0;
+
+  return {
+    citizenshipIncome,
+    complement,
+    earlyChildhood,
+    total: subtotal + complement,
+    variable,
+  };
+}
+
+export type NetSalaryBreakdown = Readonly<{
+  alimony: number;
+  dependents: number;
+  gross: number;
+  inss: number;
+  irrf: number;
+  irrfBase: number;
+  net: number;
+  otherDiscounts: number;
+}>;
+
+/** Salário líquido mensal com INSS, IRRF (dependentes e pensão deduzidos) e outros descontos. */
+export function calculateNetSalary(
+  values: CalculatorValues,
+): NetSalaryBreakdown {
+  const gross = Math.max(0, value(values, 'salary'));
+  const dependents = Math.max(0, Math.floor(value(values, 'dependents')));
+  const alimony = Math.max(0, value(values, 'alimony'));
+  const otherDiscounts = Math.max(0, value(values, 'otherDiscounts'));
+  const inss = progressiveInss(gross);
+  const irrfBase = Math.max(
+    0,
+    gross - inss - dependents * irrfDependentDeduction - alimony,
+  );
+  const irrf = progressiveIrrf(irrfBase, gross);
+
+  return {
+    alimony,
+    dependents,
+    gross,
+    inss,
+    irrf,
+    irrfBase,
+    net: gross - inss - irrf - alimony - otherDiscounts,
+    otherDiscounts,
+  };
 }
 
 function plrTax(base: number) {
@@ -125,33 +201,26 @@ export function calculateCalculator(
   const months = value(values, 'months');
 
   switch (id) {
-    case 'rescisao-clt': {
-      const monthsWorked = value(values, 'monthsWorked');
-      const noticeDays = value(values, 'noticeDays');
+    case 'rescisao-clt':
       return result(
-        'Estimativa da rescisão bruta',
-        salary * (monthsWorked / 12 + noticeDays / monthDays),
-        'Soma férias proporcionais simplificadas e aviso prévio informado; não inclui todas as verbas e descontos possíveis.',
+        'Total bruto estimado da rescisão',
+        calculateTermination(values).total,
+        'Considera dispensa sem justa causa com aviso prévio indenizado: soma saldo de salário, aviso, 13º e férias proporcionais com o terço constitucional, férias vencidas e multa de 40% do FGTS. Os valores são brutos, antes de INSS e IRRF.',
       );
-    }
-    case 'salario-liquido': {
-      const otherDiscounts = value(values, 'otherDiscounts');
-      const inss = progressiveInss(salary);
+    case 'salario-liquido':
       return result(
         'Salário líquido estimado',
-        salary -
-          inss -
-          progressiveIrrf(Math.max(0, salary - inss), salary) -
-          otherDiscounts,
-        'Estimativa com tabela progressiva de referência e os descontos adicionais informados.',
+        calculateNetSalary(values).net,
+        'Desconta do salário bruto o INSS pelas faixas progressivas de 2026, o IRRF sobre a base já reduzida por INSS, dependentes e pensão, e os demais descontos informados.',
       );
-    }
-    case 'ferias':
+    case 'ferias': {
+      const vacationDays = Math.min(monthDays, value(values, 'days'));
       return result(
         'Férias brutas estimadas',
-        salary * (1 + value(values, 'days') / (monthDays * 3)),
-        'Considera remuneração proporcional aos dias e o adicional constitucional de um terço.',
+        (salary / monthDays) * vacationDays * (4 / 3),
+        'Paga o salário proporcional aos dias de férias e soma o adicional constitucional de um terço. Antes dos descontos de INSS e IRRF.',
       );
+    }
     case 'seguro-desemprego':
       return result(
         'Parcela estimada',
@@ -203,9 +272,9 @@ export function calculateCalculator(
       );
     case 'contador-dias':
       return result(
-        'Quantidade de dias',
-        Math.abs(value(values, 'endDay') - value(values, 'startDay')),
-        'Conta a diferença entre os números de dia informados; para datas completas, informe dias consecutivos no período.',
+        'Dias corridos entre as datas',
+        Math.abs(value(values, 'endDate') - value(values, 'startDate')),
+        'Conta os dias corridos entre as duas datas, sem incluir o dia inicial. Para prazos legais, confirme se a regra aplicável inclui o dia inicial ou o final.',
       );
     case 'juros-compostos':
       return result(
@@ -223,8 +292,9 @@ export function calculateCalculator(
       return result(
         'Rendimento bruto estimado',
         amount *
-          ((1 + (annualCdiReference * rate) / 10000) ** (months / 12) - 1),
-        'Usa uma taxa CDI anual de referência e o percentual do CDI informado.',
+          ((1 + (value(values, 'cdiRate') * rate) / 10000) ** (months / 12) -
+            1),
+        'Aplica ao valor investido a taxa anual do CDI que você informou, multiplicada pelo percentual contratado, pelo prazo em meses. Rendimento bruto, antes do Imposto de Renda.',
       );
     case 'financiamento-sac-price': {
       const principal = amount;
@@ -247,14 +317,14 @@ export function calculateCalculator(
         amount * (1 + rate / 100),
         'Aplica o índice percentual informado ao aluguel atual.',
       );
-    case 'bolsa-familia':
+    case 'bolsa-familia': {
+      const parts = bolsaFamiliaParts(values);
       return result(
-        'Referência mensal estimada',
-        600 +
-          Math.max(0, value(values, 'childrenUnder7')) * 150 +
-          Math.max(0, value(values, 'childrenOver7')) * 50,
-        'Modelo educacional baseado na composição familiar informada; a elegibilidade depende do CadÚnico e das regras vigentes.',
+        'Valor mensal estimado do Bolsa Família',
+        parts.total,
+        'Soma a Renda de Cidadania por pessoa, o Benefício Primeira Infância e o Variável Familiar; quando a soma fica abaixo do piso, o Benefício Complementar garante o mínimo de R$ 691 por família. Valores da folha de outubro de 2026.',
       );
+    }
     case 'pis':
       return result(
         'Abono salarial estimado',

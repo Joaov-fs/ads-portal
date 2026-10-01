@@ -1,6 +1,7 @@
 import type {
   CalculatorDecision,
   DecisionBreakdownItem,
+  DecisionStatement,
 } from '@/calculators/types';
 
 const money = new Intl.NumberFormat('pt-BR', {
@@ -44,99 +45,127 @@ function DecisionBars({
   );
 }
 
-const toneClassNames = {
-  attention: 'border-ads-danger/25 bg-ads-danger-soft',
-  neutral: 'border-ads-primary/25 bg-ads-primary-soft',
-  positive: 'border-ads-success/25 bg-ads-success-soft',
-} as const;
+function StatementTable({
+  statement,
+}: Readonly<{ statement: DecisionStatement }>) {
+  const hasReference = statement.rows.some((row) => row.reference);
+  const hasDiscounts = statement.rows.some((row) => row.discount !== undefined);
+  const totalEarnings = statement.rows.reduce(
+    (sum, row) => sum + (row.earning ?? 0),
+    0,
+  );
+  const totalDiscounts = statement.rows.reduce(
+    (sum, row) => sum + (row.discount ?? 0),
+    0,
+  );
+  const columnCount = 2 + (hasReference ? 1 : 0) + (hasDiscounts ? 1 : 0);
+
+  return (
+    <section
+      className="grid gap-3 overflow-hidden rounded-ads-xlarge border border-ads-border bg-ads-surface"
+      aria-labelledby="statement-title"
+    >
+      <h3
+        className="px-5 pt-5 text-xl font-bold text-ads-secondary"
+        id="statement-title"
+      >
+        {statement.title}
+      </h3>
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-120 text-left text-sm">
+          <thead className="bg-ads-secondary-soft text-ads-secondary">
+            <tr>
+              <th className="px-5 py-3 font-bold" scope="col">
+                Descrição
+              </th>
+              {hasReference ? (
+                <th className="px-5 py-3 font-bold" scope="col">
+                  Referência
+                </th>
+              ) : null}
+              <th className="px-5 py-3 text-right font-bold" scope="col">
+                Proventos
+              </th>
+              {hasDiscounts ? (
+                <th className="px-5 py-3 text-right font-bold" scope="col">
+                  Descontos
+                </th>
+              ) : null}
+            </tr>
+          </thead>
+          <tbody>
+            {statement.rows.map((row) => (
+              <tr className="border-t border-ads-border" key={row.label}>
+                <th className="px-5 py-3 font-medium text-ads-text" scope="row">
+                  {row.label}
+                </th>
+                {hasReference ? (
+                  <td className="px-5 py-3 text-ads-muted">
+                    {row.reference ?? ''}
+                  </td>
+                ) : null}
+                <td className="px-5 py-3 text-right tabular-nums text-ads-text">
+                  {row.earning !== undefined ? formatMoney(row.earning) : ''}
+                </td>
+                {hasDiscounts ? (
+                  <td className="px-5 py-3 text-right tabular-nums text-ads-danger">
+                    {row.discount !== undefined
+                      ? formatMoney(row.discount)
+                      : ''}
+                  </td>
+                ) : null}
+              </tr>
+            ))}
+          </tbody>
+          <tfoot>
+            {hasDiscounts ? (
+              <tr className="border-t border-ads-border-strong bg-ads-background">
+                <th
+                  className="px-5 py-3 font-bold text-ads-secondary"
+                  colSpan={hasReference ? 2 : 1}
+                  scope="row"
+                >
+                  Totais
+                </th>
+                <td className="px-5 py-3 text-right font-bold tabular-nums text-ads-secondary">
+                  {formatMoney(totalEarnings)}
+                </td>
+                <td className="px-5 py-3 text-right font-bold tabular-nums text-ads-danger">
+                  {formatMoney(totalDiscounts)}
+                </td>
+              </tr>
+            ) : null}
+            <tr className="bg-ads-primary-soft">
+              <th
+                className="px-5 py-4 text-base font-bold text-ads-secondary"
+                colSpan={columnCount - 1}
+                scope="row"
+              >
+                {statement.netLabel}
+              </th>
+              <td className="px-5 py-4 text-right text-base font-bold tabular-nums text-ads-secondary">
+                {formatMoney(totalEarnings - totalDiscounts)}
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      {statement.note ? (
+        <p className="px-5 pb-5 text-xs leading-5 text-ads-muted">
+          {statement.note}
+        </p>
+      ) : null}
+    </section>
+  );
+}
 
 export function CalculatorDecisionOutput({
   decision,
 }: Readonly<{ decision: CalculatorDecision }>) {
   return (
-    <section
-      className="grid gap-8 border-t border-ads-border pt-8"
-      aria-labelledby="decision-output-title"
-    >
-      <div className="grid gap-3">
-        <span className="text-ads-eyebrow font-bold uppercase tracking-[0.14em] text-ads-primary-strong">
-          Parecer da simulação
-        </span>
-        <h3
-          className="text-2xl font-bold text-ads-secondary"
-          id="decision-output-title"
-        >
-          O que este resultado indica para você
-        </h3>
-        <p className="leading-7 text-ads-text">{decision.summary}</p>
-      </div>
-
-      <section
-        className={`grid gap-2 rounded-ads-xlarge border p-5 sm:p-6 ${toneClassNames[decision.recommendation.tone]}`}
-        aria-labelledby="recommendation-title"
-      >
-        <span className="text-xs font-bold uppercase tracking-[0.14em] text-ads-primary-strong">
-          Decisão em destaque
-        </span>
-        <h4
-          className="text-xl font-bold text-ads-secondary"
-          id="recommendation-title"
-        >
-          {decision.recommendation.title}
-        </h4>
-        <p className="leading-6 text-ads-text">
-          {decision.recommendation.detail}
-        </p>
-      </section>
-
-      <div className="grid gap-px overflow-hidden rounded-ads-xlarge border border-ads-border bg-ads-border sm:grid-cols-3">
-        {decision.indicators.map((indicator) => (
-          <div className="grid gap-1 bg-ads-surface p-5" key={indicator.label}>
-            <span className="text-sm text-ads-muted">{indicator.label}</span>
-            <strong className="text-xl text-ads-secondary">
-              {indicator.value}
-            </strong>
-          </div>
-        ))}
-      </div>
-
-      <section
-        className="grid gap-3 border-l-4 border-ads-primary bg-ads-primary-soft p-5"
-        aria-labelledby="decision-interpretation-title"
-      >
-        <h4
-          className="text-lg font-bold text-ads-secondary"
-          id="decision-interpretation-title"
-        >
-          Como interpretar
-        </h4>
-        <p className="text-sm leading-6 text-ads-text">
-          {decision.interpretation}
-        </p>
-      </section>
-
-      {decision.breakdown ? (
-        <section className="grid gap-4" aria-labelledby="breakdown-title">
-          <h4
-            className="text-xl font-bold text-ads-secondary"
-            id="breakdown-title"
-          >
-            {decision.breakdown.title}
-          </h4>
-          <div className="grid gap-px overflow-hidden rounded-ads-large border border-ads-border bg-ads-border">
-            {decision.breakdown.items.map((item) => (
-              <div
-                className="flex items-center justify-between gap-4 bg-ads-surface p-4 text-sm"
-                key={item.label}
-              >
-                <span className="text-ads-muted">{item.label}</span>
-                <strong className="text-ads-secondary">
-                  {formatMoney(item.value)}
-                </strong>
-              </div>
-            ))}
-          </div>
-        </section>
+    <div className="grid gap-8">
+      {decision.statement ? (
+        <StatementTable statement={decision.statement} />
       ) : null}
 
       {decision.chart ? (
@@ -144,9 +173,9 @@ export function CalculatorDecisionOutput({
           className="grid gap-4 rounded-ads-xlarge border border-ads-border bg-ads-surface p-5 sm:p-6"
           aria-labelledby="chart-title"
         >
-          <h4 className="text-xl font-bold text-ads-secondary" id="chart-title">
+          <h3 className="text-xl font-bold text-ads-secondary" id="chart-title">
             {decision.chart.title}
-          </h4>
+          </h3>
           <DecisionBars items={decision.chart.items} />
         </section>
       ) : null}
@@ -156,18 +185,22 @@ export function CalculatorDecisionOutput({
           className="grid gap-4 overflow-hidden rounded-ads-xlarge border border-ads-border"
           aria-labelledby="table-title"
         >
-          <h4
+          <h3
             className="px-5 pt-5 text-xl font-bold text-ads-secondary"
             id="table-title"
           >
             {decision.table.title}
-          </h4>
+          </h3>
           <div className="overflow-x-auto">
             <table className="w-full min-w-120 text-left text-sm">
               <thead className="bg-ads-secondary-soft text-ads-secondary">
                 <tr>
                   {decision.table.columns.map((column) => (
-                    <th className="px-5 py-3 font-bold" key={column}>
+                    <th
+                      className="px-5 py-3 font-bold"
+                      key={column}
+                      scope="col"
+                    >
                       {column}
                     </th>
                   ))}
@@ -179,10 +212,10 @@ export function CalculatorDecisionOutput({
                     className="border-t border-ads-border"
                     key={row.join('|')}
                   >
-                    {row.map((cell) => (
+                    {row.map((cell, index) => (
                       <td
                         className="px-5 py-3 leading-6 text-ads-muted"
-                        key={cell}
+                        key={`${index}-${cell}`}
                       >
                         {cell}
                       </td>
@@ -195,78 +228,32 @@ export function CalculatorDecisionOutput({
         </section>
       ) : null}
 
-      {decision.timeline ? (
-        <section className="grid gap-4" aria-labelledby="timeline-title">
-          <h4
-            className="text-xl font-bold text-ads-secondary"
-            id="timeline-title"
-          >
-            Evolução projetada
-          </h4>
-          <ol className="grid gap-3 border-l-2 border-ads-primary pl-5">
-            {decision.timeline.map((item) => (
-              <li
-                className="relative text-sm leading-6 text-ads-muted before:absolute before:-left-[1.78rem] before:top-2 before:size-3 before:rounded-ads-full before:bg-ads-primary"
-                key={item}
-              >
-                {item}
-              </li>
-            ))}
-          </ol>
-        </section>
+      {decision.interpretation ? (
+        <p className="border-l-4 border-ads-primary bg-ads-primary-soft p-5 text-sm leading-6 text-ads-text">
+          {decision.interpretation}
+        </p>
       ) : null}
 
-      <div className="grid gap-5 lg:grid-cols-2">
-        <section
-          className="grid gap-3 rounded-ads-large bg-ads-danger-soft p-5"
-          aria-labelledby="alerts-title"
-        >
-          <h4 className="font-bold text-ads-secondary" id="alerts-title">
-            Cuidados importantes
-          </h4>
-          <ul className="grid gap-2 text-sm leading-6 text-ads-text">
-            {decision.alerts.map((alert) => (
-              <li key={alert}>! {alert}</li>
-            ))}
-          </ul>
-        </section>
-        <section
-          className="grid gap-3 rounded-ads-large bg-ads-secondary-soft p-5"
-          aria-labelledby="checklist-title"
-        >
-          <h4 className="font-bold text-ads-secondary" id="checklist-title">
-            Checklist antes de decidir
-          </h4>
-          <ul className="grid gap-2 text-sm leading-6 text-ads-text">
-            {decision.checklist.map((item) => (
-              <li key={item}>✓ {item}</li>
-            ))}
-          </ul>
-        </section>
-      </div>
-
-      <section
-        className="grid gap-4 rounded-ads-xlarge bg-ads-secondary p-5 text-white sm:p-7"
-        aria-labelledby="decision-next-steps-title"
-      >
-        <span className="text-xs font-bold uppercase tracking-[0.14em] text-emerald-200">
-          Próximo passo
-        </span>
-        <h4
-          className="font-ads-display text-2xl font-bold"
-          id="decision-next-steps-title"
-        >
-          Transforme a simulação em ação
-        </h4>
-        <ol className="grid gap-3 text-sm leading-6 text-white/75 sm:grid-cols-3">
-          {decision.nextSteps.map((step, index) => (
-            <li key={step}>
-              <strong className="block text-white">{index + 1}.</strong>
-              {step}
-            </li>
+      {decision.alerts.length > 0 ? (
+        <ul className="grid gap-2 rounded-ads-large bg-ads-danger-soft p-5 text-sm leading-6 text-ads-text">
+          {decision.alerts.map((alert) => (
+            <li key={alert}>! {alert}</li>
           ))}
-        </ol>
-      </section>
-    </section>
+        </ul>
+      ) : null}
+
+      {decision.references && decision.references.length > 0 ? (
+        <div className="grid gap-2 text-sm leading-6 text-ads-muted">
+          <strong className="text-ads-secondary">
+            Onde conferir os parâmetros usados
+          </strong>
+          <ul className="grid gap-1">
+            {decision.references.map((reference) => (
+              <li key={reference}>• {reference}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+    </div>
   );
 }

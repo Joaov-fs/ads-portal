@@ -58,13 +58,6 @@ export type CalculationResult = Readonly<{
   value: number;
 }>;
 
-export type DecisionTone = 'attention' | 'neutral' | 'positive';
-
-export type DecisionIndicator = Readonly<{
-  label: string;
-  value: string;
-}>;
-
 export type DecisionBreakdownItem = Readonly<{
   label: string;
   value: number;
@@ -81,27 +74,36 @@ export type DecisionTable = Readonly<{
   title: string;
 }>;
 
+/** One line of a payslip-style statement. */
+export type DecisionStatementRow = Readonly<{
+  discount?: number;
+  earning?: number;
+  label: string;
+  reference?: string;
+}>;
+
+/**
+ * Payslip-style statement (earnings, discounts, net amount). The discount
+ * column is hidden when no row carries a discount.
+ */
+export type DecisionStatement = Readonly<{
+  netLabel: string;
+  note?: string;
+  rows: readonly DecisionStatementRow[];
+  title: string;
+}>;
+
 /**
  * A domain-aware, framework-independent presentation contract. Calculator
  * rules produce this after the numerical result so React only renders it.
  */
 export type CalculatorDecision = Readonly<{
   alerts: readonly string[];
-  breakdown?: Readonly<{
-    items: readonly DecisionBreakdownItem[];
-    title: string;
-  }>;
   chart?: DecisionChart;
-  checklist: readonly string[];
-  indicators: readonly DecisionIndicator[];
-  interpretation: string;
-  nextSteps: readonly string[];
-  recommendation: Readonly<{
-    detail: string;
-    title: string;
-    tone: DecisionTone;
-  }>;
+  interpretation?: string;
+  /** Names (not links) of the official sources behind the parameters used. */
+  references?: readonly string[];
+  statement?: DecisionStatement;
   summary: string;
   table?: DecisionTable;
-  timeline?: readonly string[];
 }>;

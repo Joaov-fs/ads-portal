@@ -19,23 +19,45 @@ type CalculatorSpec = Readonly<{
   title: string;
 }>;
 
-const money = (name: string, label: string): CalculatorField => ({
+const money = (
+  name: string,
+  label: string,
+  hint?: string,
+): CalculatorField => ({
   name,
   label,
   placeholder: '1.000,00',
   type: 'money',
+  ...(hint ? { hint } : {}),
 });
-const number = (name: string, label: string): CalculatorField => ({
+const number = (
+  name: string,
+  label: string,
+  hint?: string,
+): CalculatorField => ({
   name,
   label,
   placeholder: '12',
   type: 'number',
+  ...(hint ? { hint } : {}),
 });
-const percentage = (name: string, label: string): CalculatorField => ({
+const percentage = (
+  name: string,
+  label: string,
+  hint?: string,
+): CalculatorField => ({
   name,
   label,
   placeholder: '10',
   type: 'percentage',
+  ...(hint ? { hint } : {}),
+});
+const date = (name: string, label: string, hint?: string): CalculatorField => ({
+  name,
+  label,
+  placeholder: 'dd/mm/aaaa',
+  type: 'date',
+  ...(hint ? { hint } : {}),
 });
 
 const sourcesByCategory = {
@@ -65,14 +87,37 @@ const specs = [
     title: 'Calculadora de Rescisão CLT',
     category: 'trabalho',
     description:
-      'Estime as principais verbas de desligamento a partir do salário, tempo de trabalho e aviso prévio.',
+      'Simule a rescisão por dispensa sem justa causa: saldo de salário, aviso prévio, 13º, férias com 1/3 e multa de 40% do FGTS.',
     howItWorks:
-      'A estimativa reúne férias proporcionais simplificadas e o aviso prévio informado. Faltas, adicionais, saldo de salário e modalidades de rescisão podem mudar o valor final.',
+      'A simulação considera dispensa sem justa causa com aviso prévio indenizado, que cresce 3 dias por ano de contrato até 90 dias. O saldo do FGTS é estimado em 8% do salário por mês trabalhado. Os valores são brutos, antes de INSS e IRRF, e adicionais, médias de horas extras e faltas podem alterar o total.',
     tags: ['trabalho', 'rescisao', 'salario'],
     fields: [
-      money('salary', 'Salário mensal'),
-      number('monthsWorked', 'Meses trabalhados'),
-      number('noticeDays', 'Dias de aviso prévio'),
+      money('salary', 'Último salário mensal'),
+      number(
+        'monthsWorked',
+        'Meses totais de contrato',
+        'Do primeiro dia de trabalho até a saída. Define o aviso prévio e o saldo estimado do FGTS.',
+      ),
+      number(
+        'daysLastMonth',
+        'Dias trabalhados no mês da saída',
+        'Entre 0 e 30. Gera o saldo de salário.',
+      ),
+      number(
+        'monthsInYear',
+        'Meses trabalhados no ano da saída',
+        'De janeiro até a saída, de 0 a 12. Fração de 15 dias ou mais conta como mês.',
+      ),
+      number(
+        'monthsSinceVacation',
+        'Meses desde o último período de férias',
+        'Meses completos desde o aniversário do contrato, de 0 a 11.',
+      ),
+      number(
+        'expiredVacations',
+        'Períodos de férias vencidas',
+        'Férias já adquiridas e ainda não tiradas. Se não houver, informe 0.',
+      ),
     ],
   },
   {
@@ -182,11 +227,11 @@ const specs = [
     slug: 'contador-de-dias',
     title: 'Contador de Dias',
     category: 'utilidades',
-    description: 'Encontre rapidamente a diferença entre dois marcos em dias.',
+    description: 'Descubra quantos dias existem entre duas datas.',
     howItWorks:
-      'Informe números sequenciais de dia para descobrir o intervalo. Para prazos legais, confirme se a contagem inclui o dia inicial ou final.',
+      'Escolha as duas datas no calendário para ver os dias corridos entre elas, sem contar o dia inicial. Para prazos legais, confirme se a regra aplicável inclui o dia inicial ou o final.',
     tags: ['utilidades', 'dias', 'prazo'],
-    fields: [number('startDay', 'Dia inicial'), number('endDay', 'Dia final')],
+    fields: [date('startDate', 'Data inicial'), date('endDate', 'Data final')],
   },
   {
     calculatorId: 'porcentagem',
@@ -208,11 +253,20 @@ const specs = [
     description:
       'Projete o rendimento bruto de um investimento remunerado como percentual do CDI.',
     howItWorks:
-      'A projeção usa uma taxa CDI de referência e o percentual contratado. Rentabilidade real varia diariamente e pode haver impostos.',
+      'A projeção aplica a taxa anual do CDI que você informar ao percentual contratado e ao prazo. O CDI muda com a Selic, então consulte o valor atual no site do Banco Central. O resultado é bruto, antes do Imposto de Renda.',
     tags: ['financas', 'cdi', 'investimentos'],
     fields: [
       money('amount', 'Valor investido'),
-      percentage('rate', 'Percentual do CDI'),
+      percentage(
+        'cdiRate',
+        'Taxa anual do CDI',
+        'Consulte a taxa atual no site do Banco Central ou da B3.',
+      ),
+      percentage(
+        'rate',
+        'Percentual do CDI',
+        'Quanto o investimento paga do CDI. Em um CDB de 110% do CDI, informe 110.',
+      ),
       number('months', 'Prazo em meses'),
     ],
   },
@@ -253,13 +307,29 @@ const specs = [
     title: 'Calculadora de Bolsa Família',
     category: 'beneficios',
     description:
-      'Organize uma referência de composição familiar antes de consultar o CadÚnico.',
+      'Estime o valor mensal do Bolsa Família com os novos valores de outubro de 2026, a partir da composição da família.',
     howItWorks:
-      'O valor é apenas educacional e soma componentes de referência por faixa etária. Cadastro, renda e regras de proteção definem o pagamento oficial.',
+      'A estimativa soma a Renda de Cidadania de R$ 164 por pessoa, o Primeira Infância de R$ 173 por criança de 0 a 6 anos e o Variável Familiar de R$ 58 por integrante elegível. Se a soma não chega a R$ 691, o Benefício Complementar garante o piso. Quem tem direito e o valor pago são definidos pelo CadÚnico e pelo Ministério.',
     tags: ['beneficios', 'bolsa-familia', 'familia'],
     fields: [
+      number(
+        'people',
+        'Pessoas na família',
+        'Conte todos os integrantes que moram na casa e constam no CadÚnico.',
+      ),
       number('childrenUnder7', 'Crianças de 0 a 6 anos'),
-      number('childrenOver7', 'Pessoas de 7 a 18 anos'),
+      number(
+        'childrenOver7',
+        'Adolescentes de 7 a 18 anos, gestantes e nutrizes',
+        'Conte cada pessoa que se enquadra nessas situações.',
+      ),
+    ],
+    sources: [
+      {
+        label:
+          'MDS — Bolsa Família terá valor mínimo de R$ 691 a partir de outubro',
+        url: 'https://www.gov.br/mds/pt-br/noticias/bolsa-familia-tera-valor-minimo-de-r-691-a-partir-de-outubro',
+      },
     ],
   },
   {
@@ -772,42 +842,44 @@ const specs = [
   },
 ] as const satisfies readonly CalculatorSpec[];
 
-export const mvpCalculatorCatalog = specs.map((spec): CalculatorDocument => ({
-  ...spec,
-  kind: 'calculator',
-  authorId: 'equipe-editorial',
-  publishedAt: '2026-09-25',
-  updatedAt: '2026-09-29',
-  resultLabel: 'Resultado estimado',
-  resultPlaceholder: 'Preencha os campos para calcular.',
-  sections: [
-    {
-      heading: 'Como esta calculadora funciona',
-      paragraphs: [
-        spec.howItWorks,
-        `A conta considera ${spec.fields.map((field) => field.label.toLocaleLowerCase('pt-BR')).join(', ')}. Depois de calcular, você verá a memória com cada dado usado e a regra aplicada.`,
-      ],
-    },
-    {
-      heading: 'Antes de começar',
-      paragraphs: [
-        'Separe documentos, valores e taxas do mesmo período. Informações aproximadas produzem apenas uma ordem de grandeza, não um valor para conferência oficial.',
-        'Use a estimativa para organizar o próximo passo e confirme os valores na fonte oficial antes de assinar, pagar ou assumir uma obrigação.',
-      ],
-    },
-  ],
-  faq: [
-    {
-      question: `O resultado de ${spec.title} é oficial?`,
-      answer:
-        'Não. A ferramenta oferece uma estimativa educativa baseada nos dados informados. Regras vigentes, contratos e condições individuais podem alterar o resultado.',
-    },
-    {
-      question: 'Qual é o próximo passo?',
-      answer:
-        'Revise os dados de entrada, compare com seus documentos e use a fonte oficial indicada antes de tomar uma decisão.',
-    },
-  ],
-  sources:
-    'sources' in spec ? spec.sources : [sourcesByCategory[spec.category]],
-}));
+export const mvpCalculatorCatalog = specs.map(
+  (spec): CalculatorDocument => ({
+    ...spec,
+    kind: 'calculator',
+    authorId: 'equipe-editorial',
+    publishedAt: '2026-09-25',
+    updatedAt: '2026-09-29',
+    resultLabel: 'Resultado estimado',
+    resultPlaceholder: 'Preencha os campos para calcular.',
+    sections: [
+      {
+        heading: 'Como esta calculadora funciona',
+        paragraphs: [
+          spec.howItWorks,
+          `A conta considera ${spec.fields.map((field) => field.label.toLocaleLowerCase('pt-BR')).join(', ')}. Depois de calcular, você verá a memória com cada dado usado e a regra aplicada.`,
+        ],
+      },
+      {
+        heading: 'Antes de começar',
+        paragraphs: [
+          'Separe documentos, valores e taxas do mesmo período. Informações aproximadas produzem apenas uma ordem de grandeza, não um valor para conferência oficial.',
+          'Use a estimativa para organizar o próximo passo e confirme os valores na fonte oficial antes de assinar, pagar ou assumir uma obrigação.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: `O resultado de ${spec.title} é oficial?`,
+        answer:
+          'Não. A ferramenta oferece uma estimativa educativa baseada nos dados informados. Regras vigentes, contratos e condições individuais podem alterar o resultado.',
+      },
+      {
+        question: 'Qual é o próximo passo?',
+        answer:
+          'Revise os dados de entrada, compare com seus documentos e use a fonte oficial indicada antes de tomar uma decisão.',
+      },
+    ],
+    sources:
+      'sources' in spec ? spec.sources : [sourcesByCategory[spec.category]],
+  }),
+);

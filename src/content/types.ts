@@ -1,7 +1,11 @@
 export type ContentKind = 'calculator' | 'guide' | 'news';
 
 export type ContentCategory =
-  'beneficios' | 'economia' | 'financas' | 'trabalho' | 'utilidades';
+  | 'beneficios'
+  | 'economia'
+  | 'financas'
+  | 'trabalho'
+  | 'utilidades';
 
 export type Author = Readonly<{
   bio: string;
@@ -35,7 +39,7 @@ export type CalculatorField = Readonly<{
   label: string;
   name: string;
   placeholder: string;
-  type: 'money' | 'number' | 'percentage';
+  type: 'date' | 'money' | 'number' | 'percentage';
 }>;
 
 type BaseContentDocument = Readonly<{

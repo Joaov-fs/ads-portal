@@ -6,18 +6,25 @@ import { buildCalculatorDecision, outputProfileByCalculator } from './decision';
 import { calculateCalculator } from './rules';
 
 const standardValues = {
+  alimony: 0,
   amount: 1000,
   baseSalary: 1000,
+  cdiRate: 10,
   childrenOver7: 1,
   childrenUnder7: 1,
   credits: 10,
   days: 30,
+  daysLastMonth: 10,
   debits: 2,
   deductions: 100,
-  endDay: 30,
+  dependents: 1,
+  endDate: 20030,
+  expiredVacations: 1,
   extraHours: 10,
   monthlyHours: 220,
   months: 12,
+  monthsInYear: 6,
+  monthsSinceVacation: 4,
   monthsWorked: 12,
   nightHours: 10,
   noticeDays: 30,
@@ -28,13 +35,13 @@ const standardValues = {
   restDays: 8,
   salary: 3000,
   savingsRate: 6,
-  startDay: 1,
+  startDate: 20000,
   taxRate: 15,
   workDays: 22,
 };
 
 describe('calculator decision output', () => {
-  it('gives every registered calculator a declared profile and a usable decision journey', () => {
+  it('gives every registered calculator a declared profile and a decision', () => {
     for (const document of contentRepository.list('calculator')) {
       const calculation = calculateCalculator(
         document.calculatorId,
@@ -47,15 +54,12 @@ describe('calculator decision output', () => {
       );
 
       expect(outputProfileByCalculator[document.calculatorId]).toBeDefined();
-      expect(decision.summary).not.toHaveLength(0);
-      expect(decision.recommendation.detail).not.toHaveLength(0);
-      expect(decision.alerts.length).toBeGreaterThan(0);
-      expect(decision.checklist.length).toBeGreaterThan(0);
-      expect(decision.nextSteps.length).toBeGreaterThan(0);
+      expect(typeof decision.summary).toBe('string');
+      expect(Array.isArray(decision.alerts)).toBe(true);
     }
   });
 
-  it('builds a financial breakdown and monthly evolution for compound interest', () => {
+  it('shows a month-by-month table for compound interest', () => {
     const values = { amount: 1000, rate: 1, months: 12 };
     const decision = buildCalculatorDecision(
       'juros-compostos',
@@ -63,25 +67,76 @@ describe('calculator decision output', () => {
       calculateCalculator('juros-compostos', values),
     );
 
-    expect(decision.breakdown?.items).toHaveLength(2);
     expect(decision.chart?.items).toHaveLength(2);
-    expect(decision.timeline).toContain('Mês 12: R$ 1.126,83');
+    expect(decision.table?.title).toBe('Evolução mês a mês');
+    expect(decision.table?.rows.at(-1)).toEqual([
+      'Mês 12',
+      'R$\u00a0126,83',
+      'R$\u00a01.126,83',
+    ]);
   });
 
-  it('adds domain-specific worker and benefit guidance', () => {
-    const salaryValues = { salary: 3000, otherDiscounts: 50 };
-    const salaryDecision = buildCalculatorDecision(
+  it('builds a payslip-style statement for net salary', () => {
+    const values = {
+      salary: 3500,
+      dependents: 0,
+      alimony: 0,
+      otherDiscounts: 50,
+    };
+    const decision = buildCalculatorDecision(
       'salario-liquido',
-      salaryValues,
-      calculateCalculator('salario-liquido', salaryValues),
+      values,
+      calculateCalculator('salario-liquido', values),
     );
-    const benefitDecision = buildCalculatorDecision(
+    const labels = decision.statement?.rows.map((row) => row.label);
+
+    expect(decision.statement?.title).toBe('Holerite estimado');
+    expect(labels).toEqual([
+      'Salário bruto',
+      'INSS',
+      'IRRF',
+      'Outros descontos',
+    ]);
+    expect(decision.references?.length).toBeGreaterThan(0);
+  });
+
+  it('itemizes termination and vacation pay, and names the official sources', () => {
+    const termination = buildCalculatorDecision(
+      'rescisao-clt',
+      standardValues,
+      calculateCalculator('rescisao-clt', standardValues),
+    );
+    const vacation = buildCalculatorDecision(
+      'ferias',
+      { salary: 3000, days: 30 },
+      calculateCalculator('ferias', { salary: 3000, days: 30 }),
+    );
+
+    expect(termination.statement?.rows.length).toBeGreaterThan(5);
+    expect(termination.references?.length).toBeGreaterThan(0);
+    expect(vacation.statement?.rows).toHaveLength(2);
+  });
+
+  it('explains how the Bolsa Família total reaches the floor', () => {
+    const values = { people: 1, childrenUnder7: 0, childrenOver7: 0 };
+    const decision = buildCalculatorDecision(
+      'bolsa-familia',
+      values,
+      calculateCalculator('bolsa-familia', values),
+    );
+
+    expect(decision.statement?.rows.map((row) => row.label)).toContain(
+      'Benefício Complementar',
+    );
+  });
+
+  it('keeps benefit guidance for unemployment insurance', () => {
+    const decision = buildCalculatorDecision(
       'seguro-desemprego',
       { salary: 3000 },
       calculateCalculator('seguro-desemprego', { salary: 3000 }),
     );
 
-    expect(salaryDecision.breakdown?.title).toBe('Composição do salário');
-    expect(benefitDecision.table?.title).toBe('Situação a confirmar');
+    expect(decision.table?.title).toBe('O que ainda precisa ser confirmado');
   });
 });

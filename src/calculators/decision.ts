@@ -1,9 +1,16 @@
+import {
+  bolsaFamilia2026,
+  bolsaFamiliaParts,
+  calculateNetSalary,
+} from './rules';
+import { calculateTermination } from './termination';
 import type {
   CalculatorDecision,
   CalculatorId,
   CalculatorValues,
   CalculationResult,
   DecisionBreakdownItem,
+  DecisionStatementRow,
 } from './types';
 
 const currency = new Intl.NumberFormat('pt-BR', {
@@ -87,140 +94,118 @@ export const outputProfileByCalculator: Readonly<
   'vale-transporte': 'work',
 };
 
-function genericDecision(
-  id: CalculatorId,
-  values: CalculatorValues,
-  calculation: CalculationResult,
-): CalculatorDecision {
-  const profile = outputProfileByCalculator[id];
-  const contextual = {
-    benefit: {
-      interpretation:
-        'A simulação organiza uma referência do seu possível direito; a concessão depende da análise do órgão responsável.',
-      recommendation:
-        'Organize os comprovantes antes de iniciar a solicitação.',
-      nextSteps: [
-        'Confira os requisitos oficiais.',
-        'Separe documentos e comprovantes.',
-        'Consulte o canal oficial para solicitar ou acompanhar.',
-      ],
-    },
-    finance: {
-      interpretation:
-        'O resultado é uma projeção para comparar escolhas. Custos, impostos, inflação e condições contratadas podem alterar o efeito no seu bolso.',
-      recommendation:
-        'Compare este cenário com pelo menos uma alternativa antes de decidir.',
-      nextSteps: [
-        'Revise taxa, prazo e tarifas.',
-        'Simule uma alternativa com os mesmos dados.',
-        'Só contrate ou invista após conferir o documento da instituição.',
-      ],
-    },
-    tax: {
-      interpretation:
-        'O número ajuda no planejamento, mas a regra aplicável e a declaração ou guia oficial definem a obrigação final.',
-      recommendation:
-        'Use a estimativa para se preparar, não como documento fiscal.',
-      nextSteps: [
-        'Confirme a regra e a competência.',
-        'Guarde os dados usados na simulação.',
-        'Valide a guia ou declaração no serviço oficial.',
-      ],
-    },
-    utility: {
-      interpretation:
-        'O resultado transforma os dados informados em uma referência objetiva para a sua decisão.',
-      recommendation:
-        'Confira as unidades e compare o resultado com o seu objetivo.',
-      nextSteps: [
-        'Revise os dados informados.',
-        'Teste um cenário alternativo.',
-        'Use a referência na próxima decisão prática.',
-      ],
-    },
-    work: {
-      interpretation:
-        'A estimativa ajuda a conferir a composição do valor; o holerite, contrato ou termo aplicável é a referência oficial.',
-      recommendation:
-        'Compare a estimativa com seu documento de trabalho antes de agir.',
-      nextSteps: [
-        'Confira o documento da competência.',
-        'Verifique verbas e descontos separadamente.',
-        'Peça esclarecimento ao empregador ou órgão responsável se houver diferença.',
-      ],
-    },
-  }[profile];
+const profileCaveat: Readonly<Record<DecisionProfile, readonly string[]>> = {
+  benefit: [
+    'Estimativa com os dados informados. A concessão e o valor final dependem da análise do órgão responsável.',
+  ],
+  finance: [
+    'Projeção para comparar cenários. Impostos, tarifas e as condições do contrato podem mudar o resultado.',
+  ],
+  tax: [
+    'Estimativa para planejamento. A guia ou declaração oficial define o valor devido.',
+  ],
+  utility: [],
+  work: [
+    'Estimativa. O holerite ou o termo do empregador é a referência oficial.',
+  ],
+};
 
+/** Calculators without a specialised statement show only the result and one caveat. */
+function genericDecision(id: CalculatorId): CalculatorDecision {
   return {
-    summary: `O resultado principal para este cenário é ${displayValue(id, calculation.value)}.`,
-    interpretation: contextual.interpretation,
-    recommendation: {
-      title: 'Recomendação',
-      detail: contextual.recommendation,
-      tone: 'neutral',
-    },
-    indicators: [
-      { label: calculation.label, value: displayValue(id, calculation.value) },
-      {
-        label: 'Dados analisados',
-        value: `${Object.keys(values).length} campos`,
-      },
-    ],
-    alerts: [
-      'Esta é uma estimativa educativa; regras, datas e condições individuais podem alterar o valor final.',
-    ],
-    checklist: [
-      'Dados de entrada conferidos',
-      'Documento ou regra oficial consultado',
-      'Decisão comparada com ao menos um cenário',
-    ],
-    nextSteps: contextual.nextSteps,
+    summary: '',
+    alerts: profileCaveat[outputProfileByCalculator[id]],
   };
+}
+
+function discountShare(gross: number, discounts: number) {
+  return gross > 0 ? (discounts / gross) * 100 : 0;
 }
 
 function salarioLiquido(
   values: CalculatorValues,
   calculation: CalculationResult,
 ): CalculatorDecision {
-  const gross = input(values, 'salary');
-  const other = input(values, 'otherDiscounts');
-  const totalDiscounts = Math.max(0, gross - calculation.value);
-  const inssAndIrrf = Math.max(0, totalDiscounts - other);
-  const items: readonly DecisionBreakdownItem[] = [
-    { label: 'Salário líquido', value: calculation.value },
-    { label: 'INSS e IRRF estimados', value: inssAndIrrf },
-    { label: 'Outros descontos', value: other },
-  ];
-  return {
-    summary: `De ${money(gross)} brutos, a projeção indica ${money(calculation.value)} disponíveis após os descontos informados.`,
-    interpretation: `Os descontos representam ${percent(gross ? (totalDiscounts / gross) * 100 : 0)} do salário bruto. A maior parte do seu orçamento mensal deve considerar o valor líquido, não o bruto.`,
-    recommendation: {
-      title: 'Planeje com o líquido',
-      detail:
-        'Use o salário líquido estimado como base do orçamento e confira a composição no holerite.',
-      tone: 'positive',
+  const pay = calculateNetSalary(values);
+  const totalDiscounts = Math.max(0, pay.gross - calculation.value);
+  const rows: DecisionStatementRow[] = [
+    { label: 'Salário bruto', earning: pay.gross },
+    {
+      label: 'INSS',
+      reference: `${percent(pay.gross > 0 ? (pay.inss / pay.gross) * 100 : 0)} efetivo`,
+      discount: pay.inss,
     },
-    indicators: [
-      { label: 'Salário bruto', value: money(gross) },
-      { label: 'Descontos estimados', value: money(totalDiscounts) },
-      { label: 'Salário líquido', value: money(calculation.value) },
+    {
+      label: 'IRRF',
+      reference: pay.irrf > 0 ? `Base ${money(pay.irrfBase)}` : 'Isento',
+      discount: pay.irrf,
+    },
+  ];
+
+  if (pay.alimony > 0) {
+    rows.push({ label: 'Pensão alimentícia', discount: pay.alimony });
+  }
+
+  if (pay.otherDiscounts > 0) {
+    rows.push({ label: 'Outros descontos', discount: pay.otherDiscounts });
+  }
+
+  const chartItems: DecisionBreakdownItem[] = [
+    { label: 'Salário líquido', value: Math.max(0, calculation.value) },
+    { label: 'INSS', value: pay.inss },
+    { label: 'IRRF', value: pay.irrf },
+    { label: 'Pensão alimentícia', value: pay.alimony },
+    { label: 'Outros descontos', value: pay.otherDiscounts },
+  ].filter((item, index) => index === 0 || item.value > 0);
+
+  const alerts = [
+    'Tabelas de INSS e IRRF de 2026. Valores informados em outros descontos não são recalculados.',
+  ];
+
+  if (calculation.value < 0) {
+    alerts.unshift(
+      'Os descontos informados superam o salário bruto. Revise os valores digitados.',
+    );
+  }
+
+  return {
+    summary: `De ${money(pay.gross)} brutos, ${money(Math.max(0, calculation.value))} chegam à sua conta. Os descontos levam ${percent(discountShare(pay.gross, totalDiscounts))} do salário.`,
+    statement: {
+      title: 'Holerite estimado',
+      netLabel: 'Salário líquido',
+      rows,
+      note: 'Estimativa mensal. O holerite emitido pelo empregador é a referência oficial.',
+    },
+    chart: { title: 'Para onde vai o salário bruto', items: chartItems },
+    references: [
+      'INSS — tabela de contribuição mensal de 2026',
+      'Receita Federal — tabela do IRRF de 2026',
+      'Lei 15.270/2025 (isenção do IR até R$ 5 mil)',
     ],
-    breakdown: { title: 'Composição do salário', items },
-    chart: { title: 'Participação no salário bruto', items },
-    alerts: [
-      'Outros descontos podem incluir benefícios, faltas, pensão ou descontos previstos em contrato e não são recalculados pela ferramenta.',
-    ],
-    checklist: [
-      'Confira a competência do holerite',
-      'Compare INSS e IRRF com os valores apresentados',
-      'Valide outros descontos antes de planejar o mês',
-    ],
-    nextSteps: [
-      'Atualize seu orçamento com o líquido estimado.',
-      'Compare com o holerite quando ele estiver disponível.',
-      'Questione diferenças relevantes ao RH.',
-    ],
+    alerts,
   };
+}
+
+function monthlyGrowthTable(
+  initial: number,
+  rate: number,
+  months: number,
+): readonly (readonly string[])[] {
+  const total = Math.min(1200, Math.max(0, Math.round(months)));
+  const step = Math.max(1, Math.ceil(total / 24));
+  const rows: string[][] = [];
+
+  for (let month = step; month < total; month += step) {
+    const balance = initial * (1 + rate / 100) ** month;
+    rows.push([`Mês ${month}`, money(balance - initial), money(balance)]);
+  }
+
+  if (total > 0) {
+    const balance = initial * (1 + rate / 100) ** total;
+    rows.push([`Mês ${total}`, money(balance - initial), money(balance)]);
+  }
+
+  return rows;
 }
 
 function jurosCompostos(
@@ -231,109 +216,166 @@ function jurosCompostos(
   const rate = input(values, 'rate');
   const months = Math.max(0, Math.round(input(values, 'months')));
   const interest = Math.max(0, calculation.value - initial);
-  const milestones = [
-    0,
-    Math.ceil(months / 3),
-    Math.ceil((months * 2) / 3),
-    months,
-  ]
-    .filter((month, index, list) => list.indexOf(month) === index)
-    .map(
-      (month) => `Mês ${month}: ${money(initial * (1 + rate / 100) ** month)}`,
-    );
   const crossover =
     rate > 0 ? Math.ceil(Math.log(2) / Math.log(1 + rate / 100)) : null;
   const items = [
     { label: 'Capital inicial', value: initial },
     { label: 'Juros projetados', value: interest },
   ];
+
   return {
-    summary: `Seu patrimônio projetado chega a ${money(calculation.value)}; ${money(interest)} vêm do efeito dos juros compostos.`,
+    summary: `Dos ${money(calculation.value)} projetados, ${money(interest)} vêm dos juros: ${percent(initial ? (interest / initial) * 100 : 0)} sobre o capital em ${months} meses.`,
     interpretation:
       crossover && crossover <= months
         ? `Por volta do mês ${crossover}, os juros acumulados passam a superar o capital inicial. Não há aportes mensais nesta simulação.`
         : 'No prazo informado, os juros ainda não superam o capital inicial. Não há aportes mensais nesta simulação.',
-    recommendation: {
-      title: 'Mantenha o prazo a seu favor',
-      detail:
-        'Em projeções compostas, consistência e prazo aumentam o peso dos juros sobre o patrimônio.',
-      tone: 'positive',
-    },
-    indicators: [
-      { label: 'Patrimônio projetado', value: money(calculation.value) },
-      { label: 'Juros projetados', value: money(interest) },
-      {
-        label: 'Rentabilidade no período',
-        value: percent(initial ? (interest / initial) * 100 : 0),
-      },
-    ],
-    breakdown: { title: 'De onde vem o patrimônio', items },
     chart: { title: 'Capital inicial x juros', items },
-    timeline: milestones,
+    table: {
+      title: 'Evolução mês a mês',
+      columns: ['Período', 'Juros acumulados', 'Saldo'],
+      rows: monthlyGrowthTable(initial, rate, months),
+    },
     alerts: [
-      'A projeção é bruta: impostos, inflação, taxas e oscilações podem reduzir o rendimento real.',
-    ],
-    checklist: [
-      'Taxa e prazo estão na mesma unidade',
-      'Impostos e custos foram considerados fora da projeção',
-      'A taxa informada é compatível com o produto avaliado',
-    ],
-    nextSteps: [
-      'Compare a projeção com uma taxa mais conservadora.',
-      'Inclua impostos e inflação para avaliar o ganho real.',
-      'Defina aportes periódicos no seu planejamento.',
+      'Projeção bruta: impostos, inflação e taxas podem reduzir o rendimento real. Taxa e prazo precisam estar na mesma unidade.',
     ],
   };
 }
 
-function rescisao(
-  values: CalculatorValues,
-  calculation: CalculationResult,
-): CalculatorDecision {
-  const salary = input(values, 'salary');
-  const vacation = salary * (input(values, 'monthsWorked') / 12);
-  const notice = salary * (input(values, 'noticeDays') / 30);
-  const items = [
-    { label: 'Férias proporcionais simplificadas', value: vacation },
-    { label: 'Aviso prévio informado', value: notice },
-  ];
+function rescisao(values: CalculatorValues): CalculatorDecision {
+  const termination = calculateTermination(values);
+
   return {
-    summary: `A estimativa bruta de rescisão é ${money(calculation.value)}, antes de descontos e verbas não informadas.`,
-    interpretation:
-      'O resultado mostra somente as parcelas modeladas. Saldo de salário, 13º proporcional, FGTS, multa, faltas e o tipo de desligamento podem mudar a composição.',
-    recommendation: {
-      title: 'Confira o termo de rescisão',
-      detail:
-        'Use a composição como roteiro para conferir cada verba no TRCT, não como valor definitivo.',
-      tone: 'attention',
+    summary: `Em uma dispensa sem justa causa, você receberia cerca de ${money(termination.total)} brutos, com aviso prévio de ${termination.noticeDays} dias.`,
+    statement: {
+      title: 'Verbas rescisórias estimadas',
+      netLabel: 'Total bruto estimado',
+      rows: termination.items.map((item) => ({
+        label: item.label,
+        reference: item.reference,
+        earning: item.amount,
+      })),
+      note: `Valores antes de INSS e IRRF, que incidem sobre o saldo de salário e o 13º. O saldo do FGTS, estimado em ${money(termination.fgtsBalance)}, é sacado à parte e não entra no total.`,
     },
-    indicators: [
-      { label: 'Total bruto estimado', value: money(calculation.value) },
-      {
-        label: 'Tempo informado',
-        value: `${number.format(input(values, 'monthsWorked'))} meses`,
-      },
-      {
-        label: 'Aviso informado',
-        value: `${number.format(input(values, 'noticeDays'))} dias`,
-      },
+    chart: {
+      title: 'Peso de cada verba',
+      items: termination.items.map((item) => ({
+        label: item.label,
+        value: item.amount,
+      })),
+    },
+    references: [
+      'CLT, arts. 477 e 487 (rescisão e aviso prévio)',
+      'Lei 12.506/2011 (aviso prévio proporcional)',
+      'Lei 8.036/1990, art. 18 (multa de 40% do FGTS)',
     ],
-    breakdown: { title: 'Composição considerada', items },
-    chart: { title: 'Parcelas consideradas', items },
     alerts: [
-      'A modalidade da rescisão e os descontos legais não foram apurados nesta estimativa.',
+      'Considera dispensa sem justa causa com aviso prévio indenizado. Pedido de demissão, justa causa e acordo entre as partes alteram as verbas.',
+      'Médias de horas extras e adicionais, faltas e descontos não entram no cálculo. Confira tudo no termo de rescisão (TRCT).',
     ],
-    checklist: [
-      'TRCT e aviso prévio recebidos',
-      'Extrato do FGTS conferido',
-      'Prazo de pagamento confirmado',
-      'Documentos para saque ou benefício separados',
+  };
+}
+
+function ferias(values: CalculatorValues): CalculatorDecision {
+  const salary = input(values, 'salary');
+  const requestedDays = input(values, 'days');
+  const days = Math.min(30, requestedDays);
+  const base = (salary / 30) * days;
+  const alerts = [
+    'Valor bruto, antes de INSS e IRRF. Abono pecuniário (venda de dias) e médias de horas extras e adicionais não entram no cálculo.',
+  ];
+
+  if (requestedDays > 30) {
+    alerts.unshift('As férias têm no máximo 30 dias; o cálculo usou 30.');
+  }
+
+  return {
+    summary: `${days} dias de férias pagam ${money(base)} de salário mais ${money(base / 3)} de adicional de um terço.`,
+    statement: {
+      title: 'Demonstrativo das férias',
+      netLabel: 'Total bruto das férias',
+      rows: [
+        {
+          label: 'Salário dos dias de férias',
+          reference: `${number.format(days)} dias`,
+          earning: base,
+        },
+        {
+          label: 'Adicional de 1/3 constitucional',
+          reference: '1/3',
+          earning: base / 3,
+        },
+      ],
+    },
+    references: [
+      'Constituição Federal, art. 7º, XVII (terço de férias)',
+      'CLT, arts. 129 a 153 (férias)',
     ],
-    nextSteps: [
-      'Compare as verbas com o TRCT.',
-      'Confira o extrato do FGTS.',
-      'Busque orientação trabalhista se houver divergência.',
+    alerts,
+  };
+}
+
+function bolsaFamilia(values: CalculatorValues): CalculatorDecision {
+  const parts = bolsaFamiliaParts(values);
+  const people = Math.floor(input(values, 'people'));
+  const children = Math.floor(input(values, 'childrenUnder7'));
+  const others = Math.floor(input(values, 'childrenOver7'));
+  const rows: DecisionStatementRow[] = [
+    {
+      label: 'Renda de Cidadania',
+      reference: `${people} × ${money(bolsaFamilia2026.citizenshipIncomePerPerson)}`,
+      earning: parts.citizenshipIncome,
+    },
+  ];
+
+  if (children > 0) {
+    rows.push({
+      label: 'Benefício Primeira Infância',
+      reference: `${children} × ${money(bolsaFamilia2026.earlyChildhoodPerChild)}`,
+      earning: parts.earlyChildhood,
+    });
+  }
+
+  if (others > 0) {
+    rows.push({
+      label: 'Benefício Variável Familiar',
+      reference: `${others} × ${money(bolsaFamilia2026.variablePerMember)}`,
+      earning: parts.variable,
+    });
+  }
+
+  if (parts.complement > 0) {
+    rows.push({
+      label: 'Benefício Complementar',
+      reference: `Completa o piso de ${money(bolsaFamilia2026.familyMinimum)}`,
+      earning: parts.complement,
+    });
+  }
+
+  const alerts = [
+    'Valores da folha de outubro de 2026. Quem recebe, e quanto, é definido pelo CadÚnico e pelo Ministério. Confira no aplicativo Bolsa Família.',
+  ];
+
+  if (children + others > people) {
+    alerts.unshift(
+      'Você informou mais crianças e adolescentes do que pessoas na família. Revise os números.',
+    );
+  }
+
+  return {
+    summary:
+      parts.complement > 0
+        ? `A soma dos benefícios fica abaixo do piso, então o Complementar leva o valor ao mínimo de ${money(bolsaFamilia2026.familyMinimum)}.`
+        : `A soma dos benefícios já supera o piso de ${money(bolsaFamilia2026.familyMinimum)}.`,
+    statement: {
+      title: 'Composição do benefício',
+      netLabel: 'Valor mensal estimado',
+      rows,
+    },
+    references: [
+      'MDS — Bolsa Família: valores a partir de outubro de 2026',
+      'Lei 14.601/2023 (Programa Bolsa Família)',
     ],
+    alerts,
   };
 }
 
@@ -342,43 +384,23 @@ function seguroDesemprego(
   calculation: CalculationResult,
 ): CalculatorDecision {
   const salary = input(values, 'salary');
+
   return {
-    summary: `A parcela estimada é ${money(calculation.value)}, calculada a partir da média salarial informada de ${money(salary)}.`,
-    interpretation:
-      'A quantidade de parcelas, a data para solicitar e a habilitação dependem do histórico de vínculos, do motivo da dispensa e da análise oficial; esses dados não são inferidos pela renda.',
-    recommendation: {
-      title: 'Valide a habilitação oficial',
-      detail:
-        'Use o valor como referência e consulte seus vínculos e a data de requerimento antes de contar com o benefício.',
-      tone: 'attention',
-    },
-    indicators: [
-      { label: 'Parcela estimada', value: money(calculation.value) },
-      { label: 'Média salarial informada', value: money(salary) },
-      { label: 'Quantidade de parcelas', value: 'Confirmar no requerimento' },
-    ],
+    summary: `Com média salarial de ${money(salary)}, cada parcela estimada é de ${money(calculation.value)}.`,
     table: {
-      title: 'Situação a confirmar',
+      title: 'O que ainda precisa ser confirmado',
       columns: ['Item', 'Como confirmar'],
       rows: [
-        ['Parcelas e período', 'Requerimento e histórico de vínculos'],
-        ['Quando solicitar', 'Data de dispensa no requerimento'],
+        ['Quantidade de parcelas', 'Histórico de vínculos no requerimento'],
+        ['Prazo para solicitar', 'Data da dispensa no requerimento'],
         ['Requisitos', 'Canal oficial do seguro-desemprego'],
       ],
     },
+    references: [
+      'Ministério do Trabalho e Emprego e FAT — valores do seguro-desemprego em 2026',
+    ],
     alerts: [
-      'O cálculo da parcela não confirma direito ao benefício nem o número de parcelas.',
-    ],
-    checklist: [
-      'Dispensa sem justa causa confirmada',
-      'Requerimento fornecido pelo empregador',
-      'Histórico de vínculos conferido',
-      'Dados bancários ou de recebimento atualizados',
-    ],
-    nextSteps: [
-      'Localize o número do requerimento.',
-      'Consulte a habilitação no canal oficial.',
-      'Solicite dentro do prazo informado no requerimento.',
+      'O cálculo da parcela não confirma o direito ao benefício nem o número de parcelas.',
     ],
   };
 }
@@ -394,10 +416,14 @@ export function buildCalculatorDecision(
     case 'juros-compostos':
       return jurosCompostos(values, calculation);
     case 'rescisao-clt':
-      return rescisao(values, calculation);
+      return rescisao(values);
+    case 'ferias':
+      return ferias(values);
+    case 'bolsa-familia':
+      return bolsaFamilia(values);
     case 'seguro-desemprego':
       return seguroDesemprego(values, calculation);
     default:
-      return genericDecision(id, values, calculation);
+      return genericDecision(id);
   }
 }

@@ -24,6 +24,7 @@ export const feriasCalculator = {
       label: 'Dias de férias',
       placeholder: '30',
       type: 'number',
+      hint: 'Dias que serão gozados, de 1 a 30. Em férias fracionadas, informe cada período separadamente.',
     },
   ],
   resultLabel: 'Valor estimado das férias',
@@ -32,8 +33,8 @@ export const feriasCalculator = {
     {
       heading: 'Como as férias são estimadas',
       paragraphs: [
-        'Uma futura simulação deverá separar remuneração, adicional constitucional e descontos aplicáveis.',
-        'A estimativa é bruta e não considera descontos, abono pecuniário ou médias de variáveis.',
+        'As férias pagam o salário proporcional aos dias gozados e mais um terço constitucional sobre esse valor. Com 30 dias, o total é o salário multiplicado por 4/3.',
+        'A estimativa é bruta: não considera INSS, IRRF, abono pecuniário (venda de até 10 dias) nem médias de horas extras e adicionais.',
       ],
     },
     {

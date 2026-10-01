@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from 'react';
 
 import { buildCalculatorDecision } from '@/calculators/decision';
+import { daysToDate, parseFieldValue } from '@/calculators/parse';
 import {
   calculateCalculator,
   formatCalculatorResult,
@@ -27,6 +28,7 @@ const positiveDivisorFields: Readonly<
   Partial<Record<CalculatorDocument['calculatorId'], readonly string[]>>
 > = {
   'adicional-noturno': ['monthlyHours'],
+  'bolsa-familia': ['people'],
   bpc: ['people'],
   dsr: ['workDays'],
   emprestimo: ['months'],
@@ -40,6 +42,10 @@ function formatInputValue(
   value: number,
   type: CalculatorDocument['fields'][number]['type'],
 ) {
+  if (type === 'date') {
+    return resultDateFormatter.format(daysToDate(value));
+  }
+
   if (type === 'money') {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
@@ -59,6 +65,10 @@ function fieldHint(field: CalculatorDocument['fields'][number]): string {
 
   if (field.type === 'percentage') {
     return 'Informe apenas o percentual, sem fazer a conta antes.';
+  }
+
+  if (field.type === 'date') {
+    return 'Escolha a data no calendário.';
   }
 
   return `Informe a quantidade de ${field.label.toLocaleLowerCase('pt-BR')} usada no seu caso.`;
@@ -86,10 +96,7 @@ export function CalculatorPanel({ document }: CalculatorPanelProps) {
 
     for (const field of document.fields) {
       const rawValue = values[field.name]?.trim() ?? '';
-      const normalizedValue = rawValue.includes(',')
-        ? rawValue.replace(/\./g, '').replace(',', '.')
-        : rawValue;
-      const parsedValue = Number(normalizedValue);
+      const parsedValue = parseFieldValue(rawValue, field.type);
       const requiresPositiveValue = positiveDivisorFields[
         document.calculatorId
       ]?.includes(field.name);
@@ -97,13 +104,18 @@ export function CalculatorPanel({ document }: CalculatorPanelProps) {
       if (
         !rawValue ||
         !Number.isFinite(parsedValue) ||
-        parsedValue < 0 ||
+        (field.type !== 'date' && parsedValue < 0) ||
         (requiresPositiveValue && parsedValue === 0)
       ) {
-        nextErrors[field.name] =
-          requiresPositiveValue && parsedValue === 0
+        nextErrors[field.name] = !rawValue
+          ? field.type === 'date'
+            ? 'Escolha uma data.'
+            : 'Preencha este campo. Se não se aplica ao seu caso, informe 0.'
+          : requiresPositiveValue && parsedValue === 0
             ? 'Informe um valor maior que zero.'
-            : 'Informe um valor válido igual ou maior que zero.';
+            : field.type === 'date'
+              ? 'Informe uma data válida.'
+              : 'Informe um número válido, igual ou maior que zero.';
       } else {
         numericValues[field.name] = parsedValue;
       }
@@ -139,14 +151,14 @@ export function CalculatorPanel({ document }: CalculatorPanelProps) {
     >
       <div className="grid gap-3 border-b border-ads-border pb-6">
         <span className="text-ads-eyebrow font-bold uppercase tracking-[0.14em] text-ads-primary-strong">
-          Calculadora passo a passo
+          Calculadora
         </span>
         <h2 className="font-ads-display text-3xl font-bold text-ads-secondary sm:text-4xl">
           Faça sua simulação
         </h2>
         <p className="leading-7 text-ads-muted">
-          Preencha os campos com os valores do seu caso. Todos são obrigatórios
-          e você poderá refazer a conta quantas vezes precisar.
+          Preencha todos os campos com os valores do seu caso. Quando algo não
+          se aplicar, informe 0.
         </p>
       </div>
 
@@ -162,11 +174,13 @@ export function CalculatorPanel({ document }: CalculatorPanelProps) {
                 kind={field.type}
                 label={field.label}
                 min={
-                  positiveDivisorFields[document.calculatorId]?.includes(
-                    field.name,
-                  )
-                    ? 0.01
-                    : 0
+                  field.type === 'date'
+                    ? undefined
+                    : positiveDivisorFields[document.calculatorId]?.includes(
+                          field.name,
+                        )
+                      ? 0.01
+                      : 0
                 }
                 name={field.name}
                 onChange={(event) => {
@@ -197,22 +211,17 @@ export function CalculatorPanel({ document }: CalculatorPanelProps) {
       >
         {calculation ? (
           <>
-            <span className="text-xs font-bold uppercase tracking-[0.14em] text-ads-primary-strong">
-              Resumo executivo
-            </span>
-            <p className="mt-3 max-w-2xl leading-7 text-ads-text">
-              Com base nos dados informados, este é o principal valor estimado
-              para o seu cenário:
-            </p>
-            <strong className="mt-5 block text-sm text-ads-secondary">
+            <strong className="block text-sm text-ads-secondary">
               {calculation.label}
             </strong>
             <output className="mt-1 block font-ads-display text-4xl font-bold tracking-tight text-ads-secondary sm:text-5xl">
               {formatCalculatorResult(document.calculatorId, calculation.value)}
             </output>
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-ads-muted">
-              {decision?.summary}
-            </p>
+            {decision?.summary ? (
+              <p className="mt-4 max-w-2xl text-sm leading-6 text-ads-muted">
+                {decision.summary}
+              </p>
+            ) : null}
           </>
         ) : (
           <div className="flex items-start gap-3">
@@ -227,8 +236,7 @@ export function CalculatorPanel({ document }: CalculatorPanelProps) {
                 Seu resultado aparecerá aqui
               </strong>
               <p className="mt-1 text-sm leading-6 text-ads-muted">
-                {document.resultPlaceholder} A explicação completa será exibida
-                logo abaixo.
+                {document.resultPlaceholder}
               </p>
             </div>
           </div>
@@ -236,94 +244,46 @@ export function CalculatorPanel({ document }: CalculatorPanelProps) {
       </div>
 
       {calculation ? (
-        <div className="grid gap-10 border-t border-ads-border pt-8">
+        <div className="grid gap-8">
+          {decision ? <CalculatorDecisionOutput decision={decision} /> : null}
+
           <section
-            className="grid gap-4"
+            className="grid gap-4 border-t border-ads-border pt-8"
             aria-labelledby="calculation-explanation-title"
           >
-            <span className="text-ads-eyebrow font-bold uppercase tracking-[0.14em] text-ads-primary-strong">
-              Como chegamos ao resultado
-            </span>
             <h3
               className="text-xl font-bold text-ads-secondary"
               id="calculation-explanation-title"
             >
-              Explicação passo a passo
+              Como calculamos
             </h3>
             <p className="leading-7 text-ads-muted">
-              Primeiro, usamos exatamente os valores que você informou. Depois,
-              aplicamos a regra desta calculadora: {calculation.explanation} Por
-              fim, apresentamos o total com arredondamento de duas casas
-              decimais quando necessário.
+              {calculation.explanation}
             </p>
-          </section>
-
-          <section
-            className="grid gap-4"
-            aria-labelledby="calculation-memory-title"
-          >
-            <h3
-              className="text-xl font-bold text-ads-secondary"
-              id="calculation-memory-title"
-            >
-              Memória de cálculo
-            </h3>
-            <ol className="grid gap-3">
-              {document.fields.map((field, index) => (
-                <li
-                  className="flex gap-3 rounded-ads-large border border-ads-border bg-ads-surface p-4"
+            <dl className="grid gap-px overflow-hidden rounded-ads-large border border-ads-border bg-ads-border text-sm sm:grid-cols-2">
+              {document.fields.map((field) => (
+                <div
+                  className="flex items-baseline justify-between gap-4 bg-ads-surface px-4 py-3"
                   key={field.name}
                 >
-                  <span className="grid size-7 shrink-0 place-items-center rounded-ads-full bg-ads-primary-soft text-xs font-bold text-ads-primary-strong">
-                    {index + 1}
-                  </span>
-                  <span className="text-sm leading-6 text-ads-muted">
-                    <strong className="block text-ads-text">
-                      {field.label}
-                    </strong>
+                  <dt className="text-ads-muted">{field.label}</dt>
+                  <dd className="text-right font-semibold text-ads-text">
                     {formatInputValue(
                       submittedValues[field.name] ?? 0,
                       field.type,
                     )}
-                  </span>
-                </li>
+                  </dd>
+                </div>
               ))}
-              <li className="flex gap-3 rounded-ads-large border border-ads-primary/25 bg-ads-primary-soft p-4">
-                <span className="grid size-7 shrink-0 place-items-center rounded-ads-full bg-ads-primary text-xs font-bold text-white">
-                  {document.fields.length + 1}
-                </span>
-                <span className="text-sm leading-6 text-ads-muted">
-                  <strong className="block text-ads-secondary">
-                    Aplicação da regra
-                  </strong>
-                  {calculation.explanation}
-                </span>
-              </li>
-            </ol>
-          </section>
-
-          {decision ? <CalculatorDecisionOutput decision={decision} /> : null}
-
-          <section className="grid gap-3" aria-labelledby="rules-sources-title">
-            <h3
-              className="text-xl font-bold text-ads-secondary"
-              id="rules-sources-title"
-            >
-              Legislação e referências aplicáveis
-            </h3>
-            <p className="text-sm leading-6 text-ads-muted">
-              A metodologia considera as referências listadas nesta página. No
-              seu caso, confirme datas, limites e regras diretamente em{' '}
-              {document.sources.map((source) => source.label).join('; ')}.
-            </p>
+            </dl>
           </section>
 
           <p className="text-xs text-ads-muted">
-            Metodologia revisada editorialmente em{' '}
+            Metodologia revisada em{' '}
             {resultDateFormatter.format(
               new Date(`${document.updatedAt}T00:00:00Z`),
             )}
-            .
+            . Fontes oficiais completas ao final da página.
           </p>
         </div>
       ) : null}
