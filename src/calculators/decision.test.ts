@@ -15,12 +15,14 @@ const standardValues = {
   credits: 10,
   days: 30,
   daysLastMonth: 10,
+  daysLate: 10,
   debits: 2,
   deductions: 100,
   dependents: 1,
   endDate: 20030,
   expiredVacations: 1,
   extraHours: 10,
+  interest: 2,
   monthlyHours: 220,
   months: 12,
   monthsInYear: 6,
@@ -31,7 +33,9 @@ const standardValues = {
   otherDiscounts: 50,
   payroll: 280000,
   people: 4,
+  prepayment: 200,
   rate: 10,
+  requestNumber: 1,
   restDays: 8,
   salary: 3000,
   savingsRate: 6,
@@ -133,10 +137,14 @@ describe('calculator decision output', () => {
   it('keeps benefit guidance for unemployment insurance', () => {
     const decision = buildCalculatorDecision(
       'seguro-desemprego',
-      { salary: 3000 },
-      calculateCalculator('seguro-desemprego', { salary: 3000 }),
+      { salary: 3000, monthsWorked: 24, requestNumber: 1 },
+      calculateCalculator('seguro-desemprego', {
+        salary: 3000,
+        monthsWorked: 24,
+        requestNumber: 1,
+      }),
     );
 
-    expect(decision.table?.title).toBe('O que ainda precisa ser confirmado');
+    expect(decision.table?.title).toBe('Resumo do benefício');
   });
 });

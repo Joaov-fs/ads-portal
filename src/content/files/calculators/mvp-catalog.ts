@@ -128,9 +128,25 @@ const specs = [
     description:
       'Tenha uma referência da parcela antes de consultar a habilitação oficial.',
     howItWorks:
-      'O modelo aplica as faixas, o piso de R$ 1.621,00 e o teto de R$ 2.518,65 vigentes desde 11 de janeiro de 2026. Direito e quantidade de parcelas dependem do histórico do trabalhador.',
+      'O modelo aplica as faixas, o piso de R$ 1.621,00 e o teto de R$ 2.518,65 vigentes desde 11 de janeiro de 2026 à média dos três últimos salários. O número de parcelas segue a tabela do CODEFAT, pelos meses trabalhados nos últimos 36 meses e pela quantidade de solicitações anteriores. O direito depende da habilitação oficial.',
     tags: ['trabalho', 'beneficio', 'salario'],
-    fields: [money('salary', 'Média salarial dos últimos meses')],
+    fields: [
+      money(
+        'salary',
+        'Média dos 3 últimos salários',
+        'Média dos salários dos três meses antes da dispensa, com horas extras e comissões.',
+      ),
+      number(
+        'monthsWorked',
+        'Meses trabalhados nos últimos 36 meses',
+        'Soma dos meses com carteira assinada nesse período.',
+      ),
+      number(
+        'requestNumber',
+        'Número da solicitação',
+        '1 para a primeira vez, 2 para a segunda, 3 ou mais para as demais.',
+      ),
+    ],
     sources: [
       {
         label: 'Fundo de Amparo ao Trabalhador — tabela 2026',
@@ -146,9 +162,16 @@ const specs = [
     description:
       'Veja uma referência do décimo terceiro bruto com base na remuneração mensal.',
     howItWorks:
-      'O resultado considera uma remuneração mensal integral. Encargos, médias de variáveis e parcelas já pagas são tratados no holerite.',
+      'O resultado considera o 13º integral. O INSS e o IRRF incidem só sobre o 13º, separados do salário do mês, e são descontados na segunda parcela. A primeira parcela, paga até 30 de novembro, é metade do bruto sem descontos.',
     tags: ['trabalho', 'salario', 'decimo'],
-    fields: [money('salary', 'Salário mensal')],
+    fields: [
+      money('salary', 'Salário mensal'),
+      number(
+        'dependents',
+        'Dependentes para o IRRF',
+        'Cada dependente reduz a base do imposto em R$ 189,59. Se não houver, informe 0.',
+      ),
+    ],
   },
   {
     calculatorId: 'irrf',
@@ -341,7 +364,13 @@ const specs = [
     howItWorks:
       'A referência é proporcional aos meses considerados e depende de todos os requisitos legais para pagamento.',
     tags: ['beneficios', 'pis', 'trabalho'],
-    fields: [number('months', 'Meses trabalhados no ano')],
+    fields: [
+      number(
+        'months',
+        'Meses trabalhados no ano-base',
+        'De 1 a 12. Mês com 15 dias ou mais de trabalho conta como inteiro.',
+      ),
+    ],
   },
   {
     calculatorId: 'das-limite-mei',
@@ -485,11 +514,15 @@ const specs = [
     description:
       'Converta dias de aviso prévio em valor proporcional à remuneração.',
     howItWorks:
-      'O cálculo divide o salário por 30 e multiplica pelos dias de aviso considerados.',
+      'O aviso prévio é de 30 dias mais 3 dias por ano completo de contrato, até 90 dias (Lei 12.506/2011). O valor é o salário dividido por 30 e multiplicado pelos dias.',
     tags: ['trabalho', 'rescisao', 'aviso'],
     fields: [
       money('salary', 'Salário mensal'),
-      number('noticeDays', 'Dias de aviso'),
+      number(
+        'monthsWorked',
+        'Meses de contrato',
+        'Do primeiro dia de trabalho até a comunicação. Cada 12 meses completos somam 3 dias.',
+      ),
     ],
   },
   {
@@ -536,8 +569,16 @@ const specs = [
       'Informe a base definida no caso concreto e o percentual correspondente ao grau reconhecido.',
     tags: ['trabalho', 'adicional', 'insalubridade'],
     fields: [
-      money('baseSalary', 'Base de cálculo'),
-      percentage('rate', 'Grau percentual'),
+      money(
+        'baseSalary',
+        'Base de cálculo',
+        'Em geral o salário mínimo (R$ 1.621,00), salvo norma coletiva ou contrato que defina outra base.',
+      ),
+      percentage(
+        'rate',
+        'Grau de insalubridade (%)',
+        '10% grau mínimo, 20% médio, 40% máximo, conforme o laudo.',
+      ),
     ],
   },
   {
@@ -574,12 +615,35 @@ const specs = [
     description:
       'Projete uma provisão inicial de desligamento para planejamento empresarial.',
     howItWorks:
-      'O cálculo combina avos trabalhados e a multa percentual informada. Verbas reais dependem do contrato e da modalidade.',
+      'Soma as verbas de uma dispensa sem justa causa com aviso indenizado, a multa de 40% do FGTS e o FGTS de 8% sobre saldo de salário, aviso e 13º. Não inclui encargos patronais de INSS.',
     tags: ['empresa', 'rescisao', 'trabalho'],
     fields: [
       money('salary', 'Salário mensal'),
-      number('monthsWorked', 'Meses trabalhados'),
-      percentage('rate', 'Multa estimada'),
+      number(
+        'monthsWorked',
+        'Meses totais de contrato',
+        'Define o aviso prévio e o saldo estimado do FGTS.',
+      ),
+      number(
+        'daysLastMonth',
+        'Dias trabalhados no mês da saída',
+        'Entre 0 e 30.',
+      ),
+      number(
+        'monthsInYear',
+        'Meses trabalhados no ano da saída',
+        'De 0 a 12. Fração de 15 dias ou mais conta como mês.',
+      ),
+      number(
+        'monthsSinceVacation',
+        'Meses desde o último período de férias',
+        'De 0 a 11.',
+      ),
+      number(
+        'expiredVacations',
+        'Períodos de férias vencidas',
+        'Se não houver, informe 0.',
+      ),
     ],
   },
   {
@@ -590,11 +654,15 @@ const specs = [
     description:
       'Estime o valor líquido do pró-labore após contribuição informada.',
     howItWorks:
-      'A ferramenta desconta a alíquota escolhida do valor bruto. Tributação e distribuição de lucros exigem análise contábil.',
+      'Desconta o INSS de 11% do sócio, sobre uma base entre o salário mínimo e o teto do INSS, e o IRRF pela tabela de 2026. A distribuição de lucros é tratada à parte pela contabilidade.',
     tags: ['negocios', 'pro-labore', 'inss'],
     fields: [
       money('amount', 'Pró-labore bruto'),
-      percentage('rate', 'Contribuição'),
+      number(
+        'dependents',
+        'Dependentes para o IRRF',
+        'Se não houver, informe 0.',
+      ),
     ],
   },
   {
@@ -605,11 +673,19 @@ const specs = [
     description:
       'Projete a contribuição previdenciária sobre uma base de contribuição.',
     howItWorks:
-      'A alíquota é aplicada à base informada. Planos, limites e categorias de contribuinte alteram a regra oficial.',
+      'A alíquota é aplicada à base, que fica entre o salário mínimo e o teto do INSS. Os planos de 5% e 11% incidem sempre sobre o salário mínimo.',
     tags: ['trabalho', 'inss', 'autonomo'],
     fields: [
-      money('amount', 'Base de contribuição'),
-      percentage('rate', 'Alíquota'),
+      money(
+        'amount',
+        'Base de contribuição',
+        'Sua renda mensal como autônomo, entre R$ 1.621,00 e R$ 8.475,55.',
+      ),
+      percentage(
+        'rate',
+        'Alíquota',
+        '20% plano normal, 11% plano simplificado, 5% MEI e facultativo de baixa renda.',
+      ),
     ],
   },
   {
@@ -643,14 +719,18 @@ const specs = [
     slug: 'das-mei-atraso',
     title: 'Calculadora de DAS MEI em Atraso',
     category: 'financas',
-    description:
-      'Atualize uma guia DAS usando o percentual total de encargos informado.',
+    description: 'Atualize uma guia DAS em atraso com multa de mora e juros.',
     howItWorks:
-      'O valor original recebe a soma de multa e juros que você informar. Gere a guia oficial para confirmação.',
+      'A multa é de 0,33% por dia de atraso, limitada a 20%. Os juros (Selic acumulada mais 1% no mês do pagamento) mudam todo mês, por isso você os informa. Gere a guia atualizada no Portal do Simples Nacional para confirmar.',
     tags: ['mei', 'das', 'imposto'],
     fields: [
       money('amount', 'Valor original do DAS'),
-      percentage('rate', 'Multa e juros totais'),
+      number('daysLate', 'Dias de atraso', 'Contados a partir do vencimento.'),
+      percentage(
+        'interest',
+        'Juros totais (%)',
+        'Percentual de juros do período, informado na guia atualizada do Portal do Simples Nacional.',
+      ),
     ],
   },
   {
@@ -680,7 +760,11 @@ const specs = [
     tags: ['beneficios', 'maternidade', 'inss'],
     fields: [
       money('salary', 'Remuneração mensal'),
-      number('months', 'Meses de afastamento'),
+      number(
+        'months',
+        'Meses de afastamento',
+        '4 meses (120 dias) em regra; 6 meses se a empresa participa do Empresa Cidadã.',
+      ),
     ],
   },
   {
@@ -721,13 +805,16 @@ const specs = [
     description:
       'Projete o rendimento líquido de um CDB com taxa, prazo e imposto.',
     howItWorks:
-      'A projeção capitaliza a taxa anual e desconta o IR informado somente sobre o lucro.',
+      'A projeção capitaliza a taxa anual e desconta o IR pela tabela regressiva (22,5% até 180 dias, 20% até 360, 17,5% até 720 e 15% acima), somente sobre o rendimento.',
     tags: ['financas', 'cdb', 'investimentos'],
     fields: [
       money('amount', 'Valor investido'),
-      percentage('rate', 'Taxa anual'),
+      percentage(
+        'rate',
+        'Taxa anual (% ao ano)',
+        'Taxa efetiva anual. Para CDB a % do CDI, converta antes pelo CDI vigente.',
+      ),
       number('months', 'Prazo em meses'),
-      percentage('taxRate', 'IR sobre o rendimento'),
     ],
   },
   {
@@ -738,7 +825,7 @@ const specs = [
     description:
       'Compare a diferença de rendimento entre duas taxas no mesmo período.',
     howItWorks:
-      'O cálculo aplica as duas taxas anuais ao mesmo capital e mostra a diferença de ganho estimada.',
+      'O CDB é tributado pela tabela regressiva do IR; a poupança é isenta. O cálculo aplica as duas taxas anuais ao mesmo capital e mostra a diferença líquida.',
     tags: ['financas', 'cdb', 'poupanca'],
     fields: [
       money('amount', 'Valor investido'),
@@ -755,13 +842,16 @@ const specs = [
     description:
       'Projete o rendimento líquido de um investimento pós-fixado com imposto estimado.',
     howItWorks:
-      'A taxa anual é capitalizada pelo prazo e o IR informado incide sobre o rendimento estimado.',
+      'A taxa anual é capitalizada pelo prazo e o IR pela tabela regressiva incide sobre o rendimento. Não inclui a taxa de custódia da B3 nem a da corretora.',
     tags: ['financas', 'tesouro', 'selic'],
     fields: [
       money('amount', 'Valor investido'),
-      percentage('rate', 'Taxa anual'),
+      percentage(
+        'rate',
+        'Taxa anual (% ao ano)',
+        'Use a Selic projetada ou a taxa do título no Tesouro Direto.',
+      ),
       number('months', 'Prazo em meses'),
-      percentage('taxRate', 'IR sobre o rendimento'),
     ],
   },
   {
@@ -832,12 +922,13 @@ const specs = [
     description:
       'Projete a economia aproximada de juros ao antecipar parte de uma dívida.',
     howItWorks:
-      'A estimativa usa o saldo, a taxa mensal e os meses restantes. Peça ao credor o demonstrativo oficial de liquidação.',
+      'Considera financiamento no sistema Price. Compara manter a parcela e encurtar o prazo com reduzir a parcela mantendo o prazo. Peça ao credor o demonstrativo oficial de liquidação.',
     tags: ['financas', 'amortizacao', 'emprestimo'],
     fields: [
-      money('amount', 'Saldo a amortizar'),
-      percentage('rate', 'Taxa mensal'),
-      number('months', 'Meses restantes'),
+      money('amount', 'Saldo devedor atual'),
+      percentage('rate', 'Taxa de juros mensal'),
+      number('months', 'Parcelas restantes'),
+      money('prepayment', 'Valor a antecipar'),
     ],
   },
 ] as const satisfies readonly CalculatorSpec[];

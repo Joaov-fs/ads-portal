@@ -1,4 +1,23 @@
-import { calculateTermination } from './termination';
+import { unemploymentBenefit } from './benefits';
+import {
+  bolsaFamilia2026,
+  inssCeiling2026,
+  irrfDependentDeduction,
+  minimumWage2026,
+} from './constants';
+import {
+  fixedIncome,
+  prepayment,
+  pricePayment,
+  priceSchedule,
+  sacSchedule,
+  scheduleTotals,
+} from './finance';
+import {
+  calculateDismissalCost,
+  calculateTermination,
+  noticeDaysFor,
+} from './termination';
 import type {
   CalculatorId,
   CalculatorValues,
@@ -6,16 +25,6 @@ import type {
 } from './types';
 
 const monthDays = 30;
-const minimumWage2026 = 1621;
-const irrfDependentDeduction = 189.59;
-
-/** Bolsa Família a partir da folha de outubro de 2026 (MDS). */
-export const bolsaFamilia2026 = {
-  citizenshipIncomePerPerson: 164,
-  earlyChildhoodPerChild: 173,
-  familyMinimum: 691,
-  variablePerMember: 58,
-} as const;
 
 function value(values: CalculatorValues, key: string) {
   return values[key] ?? 0;
@@ -174,7 +183,7 @@ export function calculateNetSalary(
   };
 }
 
-function plrTax(base: number) {
+export function plrTax(base: number) {
   if (base <= 8214.4) return 0;
   if (base <= 9922.28) return base * 0.075 - 616.08;
   if (base <= 13167) return base * 0.15 - 1360.25;
@@ -182,13 +191,90 @@ function plrTax(base: number) {
   return base * 0.275 - 3166.8;
 }
 
-function pricePayment(principal: number, monthlyRate: number, months: number) {
-  if (months <= 0) return 0;
-  if (monthlyRate === 0) return principal / months;
-  return (
-    (principal * (monthlyRate * (1 + monthlyRate) ** months)) /
-    ((1 + monthlyRate) ** months - 1)
+export type ThirteenthBreakdown = Readonly<{
+  firstInstallment: number;
+  gross: number;
+  inss: number;
+  irrf: number;
+  net: number;
+  secondInstallment: number;
+}>;
+
+/** 13º salário integral: o INSS e o IRRF são apurados só sobre o 13º e descontados na 2ª parcela. */
+export function calculateThirteenth(
+  values: CalculatorValues,
+): ThirteenthBreakdown {
+  const gross = Math.max(0, value(values, 'salary'));
+  const dependents = Math.max(0, Math.floor(value(values, 'dependents')));
+  const inss = progressiveInss(gross);
+  const irrf = progressiveIrrf(
+    Math.max(0, gross - inss - dependents * irrfDependentDeduction),
+    gross,
   );
+  const net = gross - inss - irrf;
+
+  return {
+    firstInstallment: gross / 2,
+    gross,
+    inss,
+    irrf,
+    net,
+    secondInstallment: net - gross / 2,
+  };
+}
+
+export type ProLaboreBreakdown = Readonly<{
+  gross: number;
+  inss: number;
+  inssBase: number;
+  irrf: number;
+  net: number;
+}>;
+
+/** Pró-labore: INSS de 11% sobre a base limitada ao piso e ao teto, e IRRF pela tabela mensal. */
+export function calculateProLabore(
+  values: CalculatorValues,
+): ProLaboreBreakdown {
+  const gross = Math.max(0, value(values, 'amount'));
+  const dependents = Math.max(0, Math.floor(value(values, 'dependents')));
+  const inssBase = Math.min(Math.max(gross, minimumWage2026), inssCeiling2026);
+  const inss = inssBase * 0.11;
+  const irrf = progressiveIrrf(
+    Math.max(0, gross - inss - dependents * irrfDependentDeduction),
+    gross,
+  );
+
+  return { gross, inss, inssBase, irrf, net: gross - inss - irrf };
+}
+
+/** Contribuinte individual: 5% e 11% incidem sobre o salário mínimo; 20% sobre a base entre o piso e o teto. */
+export function selfEmployedInss(amount: number, rate: number) {
+  const fixedBase = rate === 5 || rate === 11;
+  const base = fixedBase
+    ? minimumWage2026
+    : Math.min(Math.max(amount, minimumWage2026), inssCeiling2026);
+
+  return { base, contribution: base * (rate / 100) };
+}
+
+export type LateDasBreakdown = Readonly<{
+  fine: number;
+  finePercent: number;
+  interest: number;
+  total: number;
+}>;
+
+/** DAS em atraso: multa de 0,33% por dia limitada a 20%, mais os juros informados. */
+export function lateDas(values: CalculatorValues): LateDasBreakdown {
+  const original = Math.max(0, value(values, 'amount'));
+  const finePercent = Math.min(
+    20,
+    Math.max(0, value(values, 'daysLate')) * 0.33,
+  );
+  const fine = original * (finePercent / 100);
+  const interest = original * (Math.max(0, value(values, 'interest')) / 100);
+
+  return { fine, finePercent, interest, total: original + fine + interest };
 }
 
 export function calculateCalculator(
@@ -223,23 +309,15 @@ export function calculateCalculator(
     }
     case 'seguro-desemprego':
       return result(
-        'Parcela estimada',
-        Math.min(
-          Math.max(
-            salary <= 2222.17
-              ? salary * 0.8
-              : 1777.74 + (salary - 2222.17) * 0.5,
-            minimumWage2026,
-          ),
-          2518.65,
-        ),
-        'Aplica as faixas oficiais de 2026, respeitando o salário mínimo e o teto do benefício.',
+        'Valor de cada parcela',
+        unemploymentBenefit(salary, minimumWage2026),
+        'Aplica as faixas oficiais de 2026 à média dos três últimos salários, respeitando o piso do salário mínimo e o teto do benefício. O número de parcelas depende dos meses trabalhados e de quantas vezes você já solicitou.',
       );
     case 'decimo-salario':
       return result(
-        '13º salário bruto',
-        salary,
-        'Corresponde a uma remuneração mensal antes dos descontos aplicáveis.',
+        '13º salário líquido estimado',
+        calculateThirteenth(values).net,
+        'O 13º integral equivale a um salário. O INSS e o IRRF são calculados só sobre o 13º, separados do salário do mês, e descontados na segunda parcela. A primeira parcela é metade do valor bruto, sem descontos.',
       );
     case 'irrf':
       return result(
@@ -291,24 +369,22 @@ export function calculateCalculator(
     case 'cdi':
       return result(
         'Rendimento bruto estimado',
-        amount *
-          ((1 + (value(values, 'cdiRate') * rate) / 10000) ** (months / 12) -
-            1),
+        fixedIncome(
+          amount,
+          (value(values, 'cdiRate') * rate) / 100,
+          months,
+          false,
+        ).gross,
         'Aplica ao valor investido a taxa anual do CDI que você informou, multiplicada pelo percentual contratado, pelo prazo em meses. Rendimento bruto, antes do Imposto de Renda.',
       );
     case 'financiamento-sac-price': {
-      const principal = amount;
       const monthlyRate = rate / 100;
-      const estimatedPricePayment = pricePayment(
-        principal,
-        monthlyRate,
-        months,
-      );
-      const sacFirst = principal / months + principal * monthlyRate;
+      const price = scheduleTotals(priceSchedule(amount, monthlyRate, months));
+      const sac = scheduleTotals(sacSchedule(amount, monthlyRate, months));
       return result(
-        'Diferença na primeira parcela',
-        months > 0 ? sacFirst - estimatedPricePayment : 0,
-        'Valor positivo indica que a primeira parcela SAC é maior que a parcela Price estimada.',
+        'Economia de juros do SAC sobre a Price',
+        price.interest - sac.interest,
+        'Compara o total de juros pago nos dois sistemas, com o mesmo valor, taxa e prazo. O SAC começa com parcelas maiores, mas amortiza mais rápido e paga menos juros no total.',
       );
     }
     case 'reajuste-aluguel':
@@ -329,7 +405,7 @@ export function calculateCalculator(
       return result(
         'Abono salarial estimado',
         (minimumWage2026 * Math.min(12, months)) / 12,
-        'Proporcional aos meses trabalhados, sujeito aos requisitos oficiais.',
+        'Um salário mínimo dividido por 12, multiplicado pelos meses trabalhados no ano-base. Cada mês com pelo menos 15 dias de trabalho conta como mês inteiro. Só tem direito quem cumpre os requisitos de renda e cadastro.',
       );
     case 'das-limite-mei':
       return result(
@@ -390,9 +466,9 @@ export function calculateCalculator(
       );
     case 'aviso-previo':
       return result(
-        'Aviso prévio estimado',
-        (salary * value(values, 'noticeDays')) / monthDays,
-        'Converte os dias de aviso informados em valor proporcional ao salário.',
+        'Aviso prévio indenizado estimado',
+        (salary / monthDays) * noticeDaysFor(value(values, 'monthsWorked')),
+        'O aviso prévio é de 30 dias mais 3 dias por ano completo de contrato, até o limite de 90 dias (Lei 12.506/2011). O valor é o salário proporcional a esses dias.',
       );
     case 'plr-ppr-liquido':
       return result(
@@ -426,21 +502,21 @@ export function calculateCalculator(
       );
     case 'custo-demissao':
       return result(
-        'Custo estimado da demissão',
-        salary * (value(values, 'monthsWorked') / 12 + rate / 100),
-        'Soma uma provisão proporcional de verbas e multa percentual informada.',
+        'Custo estimado da demissão para a empresa',
+        calculateDismissalCost(values).total,
+        'Soma as verbas rescisórias de uma dispensa sem justa causa, a multa de 40% do FGTS e o FGTS de 8% sobre saldo de salário, aviso prévio e 13º. Não inclui encargos patronais de INSS, que variam conforme o regime tributário.',
       );
     case 'pro-labore':
       return result(
         'Pró-labore líquido estimado',
-        amount - percentage(amount, rate),
-        'Desconta a alíquota de contribuição informada do pró-labore bruto.',
+        calculateProLabore(values).net,
+        'Desconta o INSS de 11% do sócio, sobre uma base entre o salário mínimo e o teto do INSS, e o IRRF pela tabela mensal de 2026, com a dedução de dependentes.',
       );
     case 'inss-autonomo':
       return result(
-        'INSS do autônomo estimado',
-        percentage(amount, rate),
-        'Aplica a alíquota escolhida sobre a base de contribuição informada.',
+        'Contribuição mensal ao INSS',
+        selfEmployedInss(amount, rate).contribution,
+        'Aplica a alíquota escolhida à base de contribuição. A base nunca fica abaixo do salário mínimo nem acima do teto do INSS, e as alíquotas de 5% e 11% incidem sempre sobre o salário mínimo.',
       );
     case 'simples-nacional':
       return result(
@@ -457,8 +533,8 @@ export function calculateCalculator(
     case 'das-mei-atraso':
       return result(
         'DAS atualizado estimado',
-        amount * (1 + rate / 100),
-        'Acrescenta o percentual total de multa e juros informado à guia original.',
+        lateDas(values).total,
+        'Soma à guia original a multa de mora, de 0,33% por dia de atraso e limitada a 20%, e os juros que você informar.',
       );
     case 'bpc':
       return result(
@@ -486,33 +562,29 @@ export function calculateCalculator(
       );
     case 'cdb-liquido':
       return result(
-        'CDB líquido estimado',
-        amount *
-          ((1 + rate / 100) ** (months / 12) - 1) *
-          (1 - value(values, 'taxRate') / 100),
-        'Calcula o rendimento bruto anualizado e desconta a alíquota de IR informada sobre o lucro.',
+        'Rendimento líquido do CDB',
+        fixedIncome(amount, rate, months).net,
+        'Calcula o rendimento bruto pela taxa anual e pelo prazo e desconta o Imposto de Renda pela tabela regressiva: 22,5% até 180 dias, 20% até 360, 17,5% até 720 e 15% acima disso.',
       );
     case 'cdb-poupanca':
       return result(
-        'Diferença de rendimento',
-        amount *
-          ((1 + rate / 100) ** (months / 12) -
-            (1 + value(values, 'savingsRate') / 100) ** (months / 12)),
-        'Compara duas taxas anuais sobre o mesmo valor e prazo.',
+        'Vantagem líquida do CDB sobre a poupança',
+        fixedIncome(amount, rate, months).net -
+          fixedIncome(amount, value(values, 'savingsRate'), months, false)
+            .gross,
+        'Compara o rendimento do CDB depois do Imposto de Renda com o da poupança, que é isenta. Valor negativo significa que a poupança rende mais no seu cenário.',
       );
     case 'tesouro-selic':
       return result(
-        'Tesouro Selic líquido estimado',
-        amount *
-          ((1 + rate / 100) ** (months / 12) - 1) *
-          (1 - value(values, 'taxRate') / 100),
-        'Aplica a taxa anual informada e desconta o imposto estimado sobre o rendimento.',
+        'Rendimento líquido do Tesouro Selic',
+        fixedIncome(amount, rate, months).net,
+        'Aplica a taxa anual informada pelo prazo e desconta o Imposto de Renda pela tabela regressiva. Não inclui a taxa de custódia da B3 nem a taxa da corretora.',
       );
     case 'lci-lca':
       return result(
         'Rendimento líquido estimado',
-        amount * ((1 + rate / 100) ** (months / 12) - 1),
-        'Projeção com isenção de IR para pessoa física, sujeita às condições do emissor.',
+        fixedIncome(amount, rate, months, false).net,
+        'LCI e LCA são isentas de Imposto de Renda para pessoa física, então o rendimento líquido é igual ao bruto.',
       );
     case 'conversao-taxa':
       return result(
@@ -536,9 +608,10 @@ export function calculateCalculator(
     }
     case 'amortizacao-antecipada':
       return result(
-        'Economia estimada de juros',
-        (amount * (rate / 100) * months) / 2,
-        'Estimativa simplificada de juros evitados ao antecipar parcelas.',
+        'Economia de juros ao antecipar',
+        prepayment(amount, rate / 100, months, value(values, 'prepayment'))
+          .interestSavedKeepingPayment,
+        'Considera um financiamento no sistema Price. Ao amortizar parte do saldo e manter a parcela, o prazo encurta e você deixa de pagar os juros dos meses eliminados.',
       );
   }
 }

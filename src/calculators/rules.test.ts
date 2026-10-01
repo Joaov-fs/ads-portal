@@ -2,13 +2,19 @@ import { describe, expect, it } from 'vitest';
 
 import { contentRepository } from '@/content';
 
+import { unemploymentInstallments } from './benefits';
+import { fixedIncome, prepayment } from './finance';
 import {
   bolsaFamiliaParts,
   calculateCalculator,
   calculateNetSalary,
+  calculateProLabore,
+  calculateThirteenth,
   formatCalculatorResult,
+  lateDas,
+  selfEmployedInss,
 } from './rules';
-import { calculateTermination } from './termination';
+import { calculateTermination, noticeDaysFor } from './termination';
 
 describe('calculator rules', () => {
   const standardValues = {
@@ -21,6 +27,7 @@ describe('calculator rules', () => {
     credits: 10,
     days: 30,
     daysLastMonth: 10,
+    daysLate: 10,
     debits: 2,
     deductions: 100,
     dependents: 1,
@@ -28,6 +35,7 @@ describe('calculator rules', () => {
     expiredVacations: 1,
     extraHours: 10,
     grossSalary: 1000,
+    interest: 2,
     monthlyHours: 220,
     months: 12,
     monthsInYear: 6,
@@ -38,7 +46,9 @@ describe('calculator rules', () => {
     otherDiscounts: 50,
     payroll: 280000,
     people: 4,
+    prepayment: 200,
     rate: 10,
+    requestNumber: 1,
     restDays: 8,
     salary: 3000,
     savingsRate: 6,
@@ -79,7 +89,11 @@ describe('calculator rules', () => {
       3,
     );
     expect(
-      calculateCalculator('seguro-desemprego', { salary: 4000 }).value,
+      calculateCalculator('seguro-desemprego', {
+        salary: 4000,
+        monthsWorked: 24,
+        requestNumber: 1,
+      }).value,
     ).toBe(2518.65);
     expect(
       calculateCalculator('irrf', { salary: 5000, deductions: 0 }).value,
@@ -193,5 +207,43 @@ describe('calculator rules', () => {
         endDate: 20030,
       }).value,
     ).toBe(30);
+  });
+  it('computes the 13th, pro-labore, autonomous INSS and late DAS', () => {
+    expect(
+      calculateThirteenth({ salary: 3500, dependents: 0 }).net,
+    ).toBeCloseTo(3500 - 308.6, 1);
+    expect(calculateProLabore({ amount: 1621, dependents: 0 }).net).toBeCloseTo(
+      1621 - 1621 * 0.11,
+      2,
+    );
+    expect(selfEmployedInss(1621, 11).contribution).toBeCloseTo(178.31, 2);
+    expect(selfEmployedInss(5000, 20).contribution).toBeCloseTo(1000, 2);
+    expect(
+      lateDas({ amount: 100, daysLate: 100, interest: 5 }).total,
+    ).toBeCloseTo(125, 2);
+  });
+
+  it('follows the unemployment installment table and notice days', () => {
+    expect(unemploymentInstallments(1, 12)).toBe(4);
+    expect(unemploymentInstallments(1, 24)).toBe(5);
+    expect(unemploymentInstallments(2, 9)).toBe(3);
+    expect(unemploymentInstallments(3, 6)).toBe(3);
+    expect(noticeDaysFor(12)).toBe(33);
+    expect(noticeDaysFor(36)).toBe(39);
+    expect(noticeDaysFor(600)).toBe(90);
+  });
+
+  it('applies the regressive tax and compares prepayment strategies', () => {
+    const cdb = fixedIncome(1000, 10, 12);
+
+    expect(cdb.taxRate).toBe(20);
+    expect(cdb.net).toBeCloseTo(cdb.gross * 0.8, 6);
+    expect(fixedIncome(1000, 10, 12, false).tax).toBe(0);
+
+    const result = prepayment(10000, 0.01, 24, 2000);
+
+    expect(result.newMonths).toBeLessThan(24);
+    expect(result.interestSavedKeepingPayment).toBeGreaterThan(0);
+    expect(result.newPayment).toBeLessThan(result.payment);
   });
 });

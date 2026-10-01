@@ -4,6 +4,8 @@ const monthDays = 30;
 
 export type TerminationItem = Readonly<{
   amount: number;
+  /** Incide FGTS de 8% a cargo da empresa sobre a verba. */
+  fgtsBase?: boolean;
   label: string;
   reference: string;
 }>;
@@ -61,16 +63,19 @@ export function calculateTermination(
   const items: TerminationItem[] = [
     {
       label: 'Saldo de salário',
+      fgtsBase: true,
       reference: `${daysLastMonth} dias`,
       amount: (salary / monthDays) * daysLastMonth,
     },
     {
       label: 'Aviso prévio indenizado',
+      fgtsBase: true,
       reference: `${noticeDays} dias`,
       amount: (salary / monthDays) * noticeDays,
     },
     {
       label: '13º salário proporcional',
+      fgtsBase: true,
       reference: `${thirteenthMonths}/12 avos`,
       amount: (salary * thirteenthMonths) / 12,
     },
@@ -112,5 +117,28 @@ export function calculateTermination(
     items,
     noticeDays,
     total: items.reduce((sum, item) => sum + item.amount, 0),
+  };
+}
+
+export type DismissalCost = Readonly<{
+  fgtsOnVerbas: number;
+  termination: TerminationBreakdown;
+  total: number;
+}>;
+
+/** Custo da demissão sem justa causa para a empresa: verbas, multa e FGTS de 8% sobre as verbas. */
+export function calculateDismissalCost(
+  values: CalculatorValues,
+): DismissalCost {
+  const termination = calculateTermination(values);
+  const fgtsBase = termination.items
+    .filter((item) => item.fgtsBase)
+    .reduce((sum, item) => sum + item.amount, 0);
+  const fgtsOnVerbas = fgtsBase * 0.08;
+
+  return {
+    fgtsOnVerbas,
+    termination,
+    total: termination.total + fgtsOnVerbas,
   };
 }

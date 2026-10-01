@@ -1,9 +1,32 @@
+import { unemploymentInstallments } from './benefits';
 import {
   bolsaFamilia2026,
+  bpcPerCapitaLimit,
+  meiAnnualLimit,
+  minimumWage2026,
+} from './constants';
+import {
+  fixedIncome,
+  prepayment,
+  priceSchedule,
+  sacSchedule,
+  sampleMonths,
+  scheduleTotals,
+} from './finance';
+import {
   bolsaFamiliaParts,
   calculateNetSalary,
+  calculateProLabore,
+  calculateThirteenth,
+  lateDas,
+  plrTax,
+  selfEmployedInss,
 } from './rules';
-import { calculateTermination } from './termination';
+import {
+  calculateDismissalCost,
+  calculateTermination,
+  noticeDaysFor,
+} from './termination';
 import type {
   CalculatorDecision,
   CalculatorId,
@@ -379,28 +402,779 @@ function bolsaFamilia(values: CalculatorValues): CalculatorDecision {
   };
 }
 
+const irrfReferences = [
+  'INSS — tabela de contribuição mensal de 2026',
+  'Receita Federal — tabela do IRRF de 2026',
+  'Lei 15.270/2025 (isenção do IR até R$ 5 mil)',
+] as const;
+const fixedIncomeTaxReference =
+  'Lei 11.033/2004, art. 1º (tabela regressiva do IR)';
+
+function decimoSalario(values: CalculatorValues): CalculatorDecision {
+  const th = calculateThirteenth(values);
+
+  return {
+    summary: `Você recebe ${money(th.net)} líquidos: ${money(th.firstInstallment)} em novembro e ${money(th.secondInstallment)} em dezembro.`,
+    statement: {
+      title: 'Demonstrativo do 13º salário',
+      netLabel: '13º líquido',
+      rows: [
+        { label: '13º salário bruto', earning: th.gross },
+        { label: 'INSS', discount: th.inss },
+        {
+          label: 'IRRF',
+          reference: th.irrf > 0 ? 'Tabela mensal de 2026' : 'Isento',
+          discount: th.irrf,
+        },
+      ],
+    },
+    table: {
+      title: 'Como o 13º é pago',
+      columns: ['Parcela', 'Prazo', 'Valor'],
+      rows: [
+        [
+          '1ª parcela (50% do bruto)',
+          'Até 30 de novembro, sem descontos',
+          money(th.firstInstallment),
+        ],
+        [
+          '2ª parcela (restante)',
+          'Até 20 de dezembro, com INSS e IRRF',
+          money(th.secondInstallment),
+        ],
+      ],
+    },
+    references: [
+      'Leis 4.090/1962 e 4.749/1965 (13º salário e prazos de pagamento)',
+      ...irrfReferences,
+    ],
+    alerts: [
+      'Vale para quem trabalhou o ano inteiro. Quem trabalhou menos meses deve usar o 13º proporcional. Médias de horas extras e adicionais não entram.',
+    ],
+  };
+}
+
 function seguroDesemprego(
   values: CalculatorValues,
   calculation: CalculationResult,
 ): CalculatorDecision {
-  const salary = input(values, 'salary');
+  const request = Math.min(
+    3,
+    Math.max(1, Math.floor(input(values, 'requestNumber'))),
+  );
+  const months = input(values, 'monthsWorked');
+  const installments = unemploymentInstallments(request, months);
+  const total = calculation.value * installments;
 
   return {
-    summary: `Com média salarial de ${money(salary)}, cada parcela estimada é de ${money(calculation.value)}.`,
+    summary:
+      installments > 0
+        ? `Você teria ${installments} parcelas de ${money(calculation.value)}, um total de ${money(total)}.`
+        : `Com ${number.format(months)} meses trabalhados, você ainda não atinge o mínimo exigido para a ${request}ª solicitação.`,
     table: {
-      title: 'O que ainda precisa ser confirmado',
-      columns: ['Item', 'Como confirmar'],
+      title: 'Resumo do benefício',
+      columns: ['Item', 'Resultado'],
       rows: [
-        ['Quantidade de parcelas', 'Histórico de vínculos no requerimento'],
-        ['Prazo para solicitar', 'Data da dispensa no requerimento'],
-        ['Requisitos', 'Canal oficial do seguro-desemprego'],
+        ['Valor de cada parcela', money(calculation.value)],
+        [
+          'Número de parcelas',
+          installments > 0
+            ? String(installments)
+            : 'Sem direito pelo tempo informado',
+        ],
+        ['Total a receber', installments > 0 ? money(total) : '—'],
       ],
     },
     references: [
       'Ministério do Trabalho e Emprego e FAT — valores do seguro-desemprego em 2026',
+      'Lei 7.998/1990 (Programa do Seguro-Desemprego)',
+      'Resoluções do CODEFAT (número de parcelas)',
     ],
     alerts: [
-      'O cálculo da parcela não confirma o direito ao benefício nem o número de parcelas.',
+      'O pedido deve ser feito entre 7 e 120 dias corridos depois da dispensa sem justa causa. A habilitação final é do Ministério do Trabalho.',
+    ],
+  };
+}
+
+function fgtsMulta(values: CalculatorValues): CalculatorDecision {
+  const salary = input(values, 'salary');
+  const months = input(values, 'months');
+  const rate = input(values, 'rate');
+  const balance = salary * months * 0.08;
+
+  return {
+    summary: `Com ${number.format(months)} meses de depósito, o saldo estimado é ${money(balance)} e a multa de ${percent(rate)} soma ${money(balance * (rate / 100))}.`,
+    statement: {
+      title: 'FGTS e multa estimados',
+      netLabel: 'Total estimado',
+      rows: [
+        {
+          label: 'Saldo do FGTS',
+          reference: `8% × ${number.format(months)} meses`,
+          earning: balance,
+        },
+        {
+          label: 'Multa rescisória',
+          reference: `${percent(rate)} do saldo`,
+          earning: balance * (rate / 100),
+        },
+      ],
+    },
+    references: ['Lei 8.036/1990 (FGTS), art. 18', 'Caixa — aplicativo FGTS'],
+    alerts: [
+      'Estimativa sem a correção do saldo (TR mais 3% ao ano) e sem depósitos sobre o 13º. O extrato do aplicativo FGTS mostra o valor real.',
+    ],
+  };
+}
+
+function avisoPrevio(values: CalculatorValues, calculation: CalculationResult) {
+  const days = noticeDaysFor(input(values, 'monthsWorked'));
+
+  return {
+    summary: `Seu aviso prévio é de ${days} dias: 30 dias mais 3 por ano completo de empresa, até 90.`,
+    statement: {
+      title: 'Aviso prévio indenizado',
+      netLabel: 'Total bruto',
+      rows: [
+        {
+          label: 'Aviso prévio indenizado',
+          reference: `${days} dias`,
+          earning: calculation.value,
+        },
+      ],
+    },
+    references: [
+      'Lei 12.506/2011 (aviso prévio proporcional)',
+      'CLT, art. 487 (aviso prévio)',
+    ],
+    alerts: [
+      'Se você cumprir o aviso trabalhando, recebe o salário normal. O valor acima vale quando a empresa indeniza. O aviso indenizado também soma avos de 13º e férias na rescisão.',
+    ],
+  } satisfies CalculatorDecision;
+}
+
+function custoDemissao(values: CalculatorValues): CalculatorDecision {
+  const cost = calculateDismissalCost(values);
+  const rows: DecisionStatementRow[] = cost.termination.items.map((item) => ({
+    label: item.label,
+    reference: item.reference,
+    earning: item.amount,
+  }));
+
+  rows.push({
+    label: 'FGTS de 8% sobre saldo, aviso e 13º',
+    reference: '8%',
+    earning: cost.fgtsOnVerbas,
+  });
+
+  return {
+    summary: `Demitir sem justa causa custa cerca de ${money(cost.total)} à empresa, sem contar encargos patronais de INSS.`,
+    statement: {
+      title: 'Custo da demissão para a empresa',
+      netLabel: 'Custo total estimado',
+      rows,
+    },
+    references: [
+      'CLT, arts. 477 e 487 (rescisão e aviso prévio)',
+      'Lei 12.506/2011 (aviso prévio proporcional)',
+      'Lei 8.036/1990 (FGTS e multa de 40%)',
+    ],
+    alerts: [
+      'Considera dispensa sem justa causa com aviso indenizado. Convenção coletiva, horas extras e outros adicionais podem aumentar o custo.',
+    ],
+  };
+}
+
+function proLabore(values: CalculatorValues): CalculatorDecision {
+  const pay = calculateProLabore(values);
+
+  return {
+    summary: `De ${money(pay.gross)} de pró-labore, ${money(pay.net)} chegam ao sócio depois de INSS e IRRF.`,
+    statement: {
+      title: 'Pró-labore estimado',
+      netLabel: 'Pró-labore líquido',
+      rows: [
+        { label: 'Pró-labore bruto', earning: pay.gross },
+        {
+          label: 'INSS do sócio',
+          reference: `11% sobre ${money(pay.inssBase)}`,
+          discount: pay.inss,
+        },
+        {
+          label: 'IRRF',
+          reference: pay.irrf > 0 ? 'Tabela mensal de 2026' : 'Isento',
+          discount: pay.irrf,
+        },
+      ],
+    },
+    references: [
+      'Lei 10.666/2003, art. 4º (desconto do INSS do contribuinte individual)',
+      ...irrfReferences,
+    ],
+    alerts: [
+      'Dependendo do regime tributário, a empresa também recolhe contribuição patronal sobre o pró-labore. Esse valor não sai do bolso do sócio e não entra aqui.',
+    ],
+  };
+}
+
+function inssAutonomo(values: CalculatorValues): CalculatorDecision {
+  const amount = input(values, 'amount');
+  const rate = input(values, 'rate');
+  const { base, contribution } = selfEmployedInss(amount, rate);
+  const alerts: string[] = [];
+
+  if (rate === 5 || rate === 11) {
+    alerts.push(
+      'As alíquotas de 5% e 11% incidem sempre sobre o salário mínimo e, em regra, não contam tempo para a aposentadoria por tempo de contribuição, só por idade, a menos que você complemente a diferença.',
+    );
+  } else if (amount < minimumWage2026) {
+    alerts.push(
+      'Sua base ficou abaixo do salário mínimo, então a contribuição foi calculada sobre o salário mínimo.',
+    );
+  }
+
+  return {
+    summary: `A contribuição mensal é de ${money(contribution)}, calculada sobre uma base de ${money(base)}.`,
+    table: {
+      title: 'Cálculo da contribuição',
+      columns: ['Item', 'Valor'],
+      rows: [
+        ['Base de contribuição', money(base)],
+        ['Alíquota', percent(rate)],
+        ['Contribuição mensal', money(contribution)],
+      ],
+    },
+    references: [
+      'INSS — tabela de contribuição do contribuinte individual (2026)',
+      'Lei 8.212/1991, art. 21 (alíquotas do contribuinte individual)',
+    ],
+    alerts,
+  };
+}
+
+function dasMeiAtraso(values: CalculatorValues): CalculatorDecision {
+  const late = lateDas(values);
+  const original = input(values, 'amount');
+
+  return {
+    summary: `A guia de ${money(original)} passa a custar ${money(late.total)} com multa e juros.`,
+    table: {
+      title: 'Atualização da guia',
+      columns: ['Item', 'Valor'],
+      rows: [
+        ['Valor original do DAS', money(original)],
+        [`Multa de mora (${percent(late.finePercent)})`, money(late.fine)],
+        ['Juros informados', money(late.interest)],
+        ['Total a pagar', money(late.total)],
+      ],
+    },
+    references: [
+      'Resolução CGSN 140/2018 (multa e juros do Simples Nacional e do MEI)',
+      'Portal do Simples Nacional — Receita Federal',
+    ],
+    alerts: [
+      'Para pagar, gere a guia atualizada no Portal do Simples Nacional ou no aplicativo MEI. O valor exato depende da data do pagamento.',
+    ],
+  };
+}
+
+function bpc(
+  values: CalculatorValues,
+  calculation: CalculationResult,
+): CalculatorDecision {
+  const income = input(values, 'amount');
+  const within = calculation.value <= bpcPerCapitaLimit;
+
+  return {
+    summary: `A renda por pessoa é ${money(calculation.value)}. O limite padrão é ${money(bpcPerCapitaLimit)}, um quarto do salário mínimo.`,
+    table: {
+      title: 'Critério de renda do BPC',
+      columns: ['Item', 'Valor'],
+      rows: [
+        ['Renda familiar mensal', money(income)],
+        ['Pessoas na família', number.format(input(values, 'people'))],
+        ['Renda por pessoa', money(calculation.value)],
+        ['Limite (1/4 do salário mínimo)', money(bpcPerCapitaLimit)],
+        ['Situação', within ? 'Dentro do limite' : 'Acima do limite padrão'],
+      ],
+    },
+    interpretation: within
+      ? `Pelo critério de renda, a família está dentro do limite. Falta comprovar 65 anos ou mais, ou deficiência de longo prazo, e a inscrição no CadÚnico. Se concedido, o benefício é de um salário mínimo: ${money(minimumWage2026)}.`
+      : 'A renda por pessoa passa do limite padrão. Em alguns casos, o INSS avalia a situação da família com outros critérios, e o limite pode chegar a meio salário mínimo. Procure orientação do INSS ou da Defensoria.',
+    references: [
+      'Lei 8.742/1993 (LOAS), art. 20',
+      'Lei 14.176/2021 (critério de renda do BPC)',
+      'INSS — Benefício de Prestação Continuada',
+    ],
+    alerts: [
+      'Nem toda renda entra na conta, e quem mora junto conta como família. A análise oficial é do INSS.',
+    ],
+  };
+}
+
+function pis(
+  values: CalculatorValues,
+  calculation: CalculationResult,
+): CalculatorDecision {
+  const months = Math.min(12, input(values, 'months'));
+
+  return {
+    summary: `Com ${number.format(months)} meses trabalhados, o abono seria de ${months}/12 do salário mínimo.`,
+    statement: {
+      title: 'Abono salarial estimado',
+      netLabel: 'Abono estimado',
+      rows: [
+        {
+          label: 'Abono salarial',
+          reference: `${number.format(months)}/12 de ${money(minimumWage2026)}`,
+          earning: calculation.value,
+        },
+      ],
+    },
+    references: [
+      'Ministério do Trabalho e Emprego — Abono Salarial',
+      'Lei 7.998/1990, art. 9º (abono salarial)',
+    ],
+    alerts: [
+      'Só recebe quem trabalhou ao menos 30 dias com carteira no ano-base, ganhou em média até 2 salários mínimos por mês e está inscrito no PIS/Pasep há 5 anos ou mais. Consulte sua situação na Carteira de Trabalho Digital.',
+    ],
+  };
+}
+
+function plrLiquida(values: CalculatorValues): CalculatorDecision {
+  const gross = input(values, 'amount');
+  const tax = Math.max(0, plrTax(gross));
+
+  return {
+    summary: `Da PLR de ${money(gross)}, o Imposto de Renda retido é de ${money(tax)} e o líquido é de ${money(gross - tax)}.`,
+    statement: {
+      title: 'PLR/PPR estimada',
+      netLabel: 'PLR líquida',
+      rows: [
+        { label: 'PLR/PPR bruta', earning: gross },
+        {
+          label: 'Imposto de Renda (tabela exclusiva da PLR)',
+          reference: tax > 0 ? 'Tabela progressiva' : 'Isento',
+          discount: tax,
+        },
+      ],
+    },
+    references: [
+      'Receita Federal — tabela de tributação da PLR em 2026',
+      'Lei 10.101/2000 (participação nos lucros ou resultados)',
+    ],
+    alerts: [
+      'A PLR tem tabela própria, separada do salário mensal. Se a empresa pagar em mais de uma parcela no ano, o cálculo considera o total recebido.',
+    ],
+  };
+}
+
+function fatorR(
+  values: CalculatorValues,
+  calculation: CalculationResult,
+): CalculatorDecision {
+  const above = calculation.value >= 28;
+
+  return {
+    summary: `O Fator R é ${percent(calculation.value)}: a folha de salários representa essa parte da receita dos últimos 12 meses.`,
+    interpretation: above
+      ? 'Com Fator R de 28% ou mais, as atividades sujeitas a essa regra são tributadas pelo Anexo III do Simples Nacional, com alíquotas menores.'
+      : 'Abaixo de 28%, as atividades sujeitas a essa regra são tributadas pelo Anexo V do Simples Nacional, com alíquotas maiores. Aumentar a folha ou o pró-labore pode compensar.',
+    references: [
+      'Lei Complementar 123/2006 (Simples Nacional)',
+      'Resolução CGSN 140/2018',
+    ],
+    alerts: [
+      'A folha inclui salários, pró-labore, encargos e FGTS dos últimos 12 meses. Só vale para as atividades que a lei sujeita ao Fator R.',
+    ],
+  };
+}
+
+function excessoMei(
+  values: CalculatorValues,
+  calculation: CalculationResult,
+): CalculatorDecision {
+  const revenue = input(values, 'amount');
+  const excess = calculation.value;
+  const over = excess / meiAnnualLimit;
+
+  return {
+    summary:
+      excess === 0
+        ? `O faturamento de ${money(revenue)} está dentro do limite de ${money(meiAnnualLimit)} do MEI.`
+        : `O faturamento passa ${money(excess)} do limite de ${money(meiAnnualLimit)}, ${percent(over * 100)} acima.`,
+    table: {
+      title: 'Faturamento x limite do MEI',
+      columns: ['Item', 'Valor'],
+      rows: [
+        ['Faturamento no ano', money(revenue)],
+        ['Limite anual do MEI', money(meiAnnualLimit)],
+        ['Excesso', money(excess)],
+      ],
+    },
+    interpretation:
+      excess === 0
+        ? 'Você segue dentro do limite. No ano em que abriu a empresa, o limite é proporcional: R$ 6.750 por mês de atividade.'
+        : over <= 0.2
+          ? 'Excesso de até 20%: você continua como MEI neste ano e paga a DAS complementar sobre o excedente. O desenquadramento vale a partir de 1º de janeiro do ano seguinte.'
+          : 'Excesso acima de 20%: o desenquadramento vale desde 1º de janeiro do ano, com tributos recalculados desde então. Procure um contador.',
+    references: ['Lei Complementar 123/2006, art. 18-A (MEI)'],
+    alerts: [],
+  };
+}
+
+function dasLimiteMei(
+  values: CalculatorValues,
+  calculation: CalculationResult,
+): CalculatorDecision {
+  const revenue = input(values, 'amount');
+  const remaining = Math.max(0, meiAnnualLimit - revenue);
+
+  return {
+    summary: `Você usou ${percent(calculation.value)} do limite anual e ainda pode faturar ${money(remaining)}.`,
+    table: {
+      title: 'Uso do limite do MEI',
+      columns: ['Item', 'Valor'],
+      rows: [
+        ['Limite anual', money(meiAnnualLimit)],
+        ['Faturamento até agora', money(revenue)],
+        ['Ainda disponível', money(remaining)],
+      ],
+    },
+    references: ['Lei Complementar 123/2006, art. 18-A (MEI)'],
+    alerts:
+      revenue > meiAnnualLimit
+        ? [
+            'Você passou do limite anual. Veja a calculadora de excesso do limite do MEI.',
+          ]
+        : [],
+  };
+}
+
+function valeTransporte(
+  values: CalculatorValues,
+  calculation: CalculationResult,
+): CalculatorDecision {
+  const salary = input(values, 'salary');
+  const cost = input(values, 'amount');
+
+  return {
+    summary: `O desconto é de ${money(calculation.value)} e a empresa paga os outros ${money(Math.max(0, cost - calculation.value))}.`,
+    table: {
+      title: 'Divisão do vale-transporte',
+      columns: ['Item', 'Valor'],
+      rows: [
+        ['Custo mensal do transporte', money(cost)],
+        ['Limite de desconto (6% do salário)', money(salary * 0.06)],
+        ['Desconto do trabalhador', money(calculation.value)],
+        ['Pago pela empresa', money(Math.max(0, cost - calculation.value))],
+      ],
+    },
+    references: ['Lei 7.418/1985 (vale-transporte)'],
+    alerts: [],
+  };
+}
+
+function netIncomeStatement(
+  title: string,
+  netLabel: string,
+  result: ReturnType<typeof fixedIncome>,
+) {
+  return {
+    title,
+    netLabel,
+    rows: [
+      { label: 'Rendimento bruto', earning: result.gross },
+      {
+        label: 'Imposto de Renda',
+        reference: `${percent(result.taxRate)} (tabela regressiva)`,
+        discount: result.tax,
+      },
+    ],
+  };
+}
+
+/** Taxa anual de uma aplicação isenta que rende o mesmo líquido que um título tributado. */
+function exemptEquivalent(annualRate: number, months: number, taxRate: number) {
+  if (months <= 0) return annualRate;
+  const grossGrowth = (1 + annualRate / 100) ** (months / 12) - 1;
+
+  return (1 + grossGrowth * (1 - taxRate / 100)) ** (12 / months) * 100 - 100;
+}
+
+/** Taxa anual de um título tributado que rende o mesmo líquido que uma aplicação isenta. */
+function taxedEquivalent(annualRate: number, months: number, taxRate: number) {
+  if (months <= 0) return annualRate;
+  const growth = (1 + annualRate / 100) ** (months / 12) - 1;
+
+  return (1 + growth / (1 - taxRate / 100)) ** (12 / months) * 100 - 100;
+}
+
+function cdi(values: CalculatorValues): CalculatorDecision {
+  const amount = input(values, 'amount');
+  const months = input(values, 'months');
+  const annual = (input(values, 'cdiRate') * input(values, 'rate')) / 100;
+  const result = fixedIncome(amount, annual, months);
+
+  return {
+    summary: `Com o CDI informado, ${money(amount)} rendem ${money(result.gross)} brutos em ${number.format(months)} meses, ou ${money(result.net)} depois do Imposto de Renda.`,
+    statement: netIncomeStatement(
+      'Rendimento estimado',
+      'Rendimento líquido',
+      result,
+    ),
+    references: ['B3 — taxa DI/CDI', fixedIncomeTaxReference],
+    alerts: [
+      'O CDI muda todos os dias. A projeção supõe a taxa informada constante pelo prazo todo.',
+    ],
+  };
+}
+
+function fixedIncomeDecision(
+  kind: 'cdb' | 'tesouro',
+  values: CalculatorValues,
+): CalculatorDecision {
+  const amount = input(values, 'amount');
+  const rate = input(values, 'rate');
+  const months = input(values, 'months');
+  const result = fixedIncome(amount, rate, months);
+  const equivalent = exemptEquivalent(rate, months, result.taxRate);
+
+  return {
+    summary: `Em ${number.format(months)} meses, ${money(amount)} viram ${money(amount + result.net)} depois do Imposto de Renda de ${percent(result.taxRate)}.`,
+    statement: netIncomeStatement(
+      kind === 'cdb' ? 'Rendimento do CDB' : 'Rendimento do Tesouro Selic',
+      'Rendimento líquido',
+      result,
+    ),
+    chart: {
+      title: 'Para onde vai o rendimento bruto',
+      items: [
+        { label: 'Rendimento líquido', value: result.net },
+        { label: 'Imposto de Renda', value: result.tax },
+      ],
+    },
+    interpretation: `Uma LCI ou LCA, que é isenta de Imposto de Renda, precisa pagar pelo menos ${percent(equivalent)} ao ano para render o mesmo líquido que esta aplicação.`,
+    references:
+      kind === 'cdb'
+        ? [
+            fixedIncomeTaxReference,
+            'Receita Federal — tributação de aplicações financeiras',
+          ]
+        : [fixedIncomeTaxReference, 'Tesouro Nacional — Tesouro Direto'],
+    alerts:
+      kind === 'cdb'
+        ? [
+            'Informe a taxa anual efetiva. Para um CDB de 110% do CDI, converta antes pelo CDI atual.',
+          ]
+        : ['Não inclui a taxa de custódia da B3 nem a taxa da corretora.'],
+  };
+}
+
+function lciLca(values: CalculatorValues): CalculatorDecision {
+  const amount = input(values, 'amount');
+  const rate = input(values, 'rate');
+  const months = input(values, 'months');
+  const result = fixedIncome(amount, rate, months, false);
+  const taxRate = fixedIncome(amount, rate, months).taxRate;
+  const cdbEquivalent = taxedEquivalent(rate, months, taxRate);
+
+  return {
+    summary: `Em ${number.format(months)} meses, ${money(amount)} rendem ${money(result.net)} sem Imposto de Renda.`,
+    interpretation: `Para render o mesmo líquido, um CDB precisaria pagar ${percent(cdbEquivalent)} ao ano brutos, já descontado o Imposto de Renda de ${percent(taxRate)} desse prazo.`,
+    references: [
+      'Lei 11.033/2004, art. 3º (isenção de IR para LCI e LCA)',
+      'Banco Central do Brasil — Cidadania Financeira',
+    ],
+    alerts: [
+      'Confira a carência e a liquidez: LCI e LCA costumam ter prazo mínimo para resgate.',
+    ],
+  };
+}
+
+function cdbPoupanca(
+  values: CalculatorValues,
+  calculation: CalculationResult,
+): CalculatorDecision {
+  const amount = input(values, 'amount');
+  const months = input(values, 'months');
+  const cdb = fixedIncome(amount, input(values, 'rate'), months);
+  const savings = fixedIncome(
+    amount,
+    input(values, 'savingsRate'),
+    months,
+    false,
+  );
+
+  return {
+    summary:
+      calculation.value >= 0
+        ? `Depois do Imposto de Renda, o CDB rende ${money(calculation.value)} a mais que a poupança em ${number.format(months)} meses.`
+        : `Mesmo sem Imposto de Renda, a poupança fica ${money(-calculation.value)} abaixo do CDB, ou seja, a poupança rende mais neste cenário.`,
+    table: {
+      title: 'CDB x poupança',
+      columns: ['Aplicação', 'Rendimento líquido'],
+      rows: [
+        [`CDB (após IR de ${percent(cdb.taxRate)})`, money(cdb.net)],
+        ['Poupança (isenta de IR)', money(savings.net)],
+        ['Diferença a favor do CDB', money(calculation.value)],
+      ],
+    },
+    references: [
+      'Lei 12.703/2012 (regra de remuneração da poupança)',
+      'Banco Central do Brasil — rendimento da poupança',
+      fixedIncomeTaxReference,
+    ],
+    alerts: [
+      'A poupança rende 0,5% ao mês mais a TR quando a Selic está acima de 8,5% ao ano; abaixo disso, 70% da Selic mais a TR. Informe a taxa anual atual.',
+    ],
+  };
+}
+
+function financiamentoSacPrice(
+  values: CalculatorValues,
+  calculation: CalculationResult,
+): CalculatorDecision {
+  const monthlyRate = input(values, 'rate') / 100;
+  const price = priceSchedule(
+    input(values, 'amount'),
+    monthlyRate,
+    input(values, 'months'),
+  );
+  const sac = sacSchedule(
+    input(values, 'amount'),
+    monthlyRate,
+    input(values, 'months'),
+  );
+  const priceTotals = scheduleTotals(price);
+  const sacTotals = scheduleTotals(sac);
+  const priceFirst = price[0]?.payment ?? 0;
+  const sacFirst = sac[0]?.payment ?? 0;
+
+  return {
+    summary: `No SAC você paga ${money(calculation.value)} a menos de juros, mas a primeira parcela é ${money(sacFirst - priceFirst)} maior que na Price.`,
+    table: {
+      title: 'Price x SAC',
+      columns: ['Comparativo', 'Price', 'SAC'],
+      rows: [
+        ['Primeira parcela', money(priceFirst), money(sacFirst)],
+        [
+          'Última parcela',
+          money(price.at(-1)?.payment ?? 0),
+          money(sac.at(-1)?.payment ?? 0),
+        ],
+        [
+          'Total de juros',
+          money(priceTotals.interest),
+          money(sacTotals.interest),
+        ],
+        ['Total pago', money(priceTotals.paid), money(sacTotals.paid)],
+      ],
+    },
+    chart: {
+      title: 'Total de juros pago',
+      items: [
+        { label: 'Price', value: priceTotals.interest },
+        { label: 'SAC', value: sacTotals.interest },
+      ],
+    },
+    references: ['Resolução CMN 3.517/2007 (Custo Efetivo Total)'],
+    alerts: [
+      'Não inclui seguros, tarifas nem correção pela TR. O custo efetivo total (CET) do contrato é maior que a taxa informada.',
+    ],
+  };
+}
+
+function emprestimo(
+  values: CalculatorValues,
+  calculation: CalculationResult,
+): CalculatorDecision {
+  const principal = input(values, 'amount');
+  const months = input(values, 'months');
+  const schedule = priceSchedule(
+    principal,
+    input(values, 'rate') / 100,
+    months,
+  );
+  const totals = scheduleTotals(schedule);
+  const rows = sampleMonths(schedule.length, 24).flatMap((month) => {
+    const row = schedule[month - 1];
+
+    return row
+      ? [
+          [
+            `Parcela ${row.month}`,
+            money(row.payment),
+            money(row.interest),
+            money(row.amortization),
+            money(row.balance),
+          ],
+        ]
+      : [];
+  });
+
+  return {
+    summary: `Você paga ${number.format(months)} parcelas de ${money(calculation.value)}, um total de ${money(totals.paid)}, dos quais ${money(totals.interest)} são juros.`,
+    chart: {
+      title: 'O que você devolve ao banco',
+      items: [
+        { label: 'Valor emprestado', value: principal },
+        { label: 'Juros', value: totals.interest },
+      ],
+    },
+    table: {
+      title: 'Evolução das parcelas',
+      columns: ['Parcela', 'Valor', 'Juros', 'Amortização', 'Saldo devedor'],
+      rows,
+    },
+    references: ['Resolução CMN 3.517/2007 (Custo Efetivo Total)'],
+    alerts: [
+      'Não inclui tarifas, seguros nem IOF. O custo efetivo total (CET) do contrato é maior que a taxa mensal informada.',
+    ],
+  };
+}
+
+function amortizacaoAntecipada(values: CalculatorValues): CalculatorDecision {
+  const result = prepayment(
+    input(values, 'amount'),
+    input(values, 'rate') / 100,
+    input(values, 'months'),
+    input(values, 'prepayment'),
+  );
+  const months = input(values, 'months');
+  const monthsSaved = Math.max(0, months - result.newMonths);
+
+  return {
+    summary: `Antecipando ${money(result.prepaid)}, você economiza ${money(result.interestSavedKeepingPayment)} em juros se mantiver a parcela, e o financiamento termina cerca de ${number.format(Math.round(monthsSaved * 10) / 10)} meses antes.`,
+    table: {
+      title: 'Duas formas de usar a antecipação',
+      columns: ['Opção', 'Parcela', 'Prazo restante', 'Juros economizados'],
+      rows: [
+        [
+          'Sem antecipar',
+          money(result.payment),
+          `${number.format(months)} meses`,
+          '—',
+        ],
+        [
+          'Manter a parcela e encurtar o prazo',
+          money(result.payment),
+          `${number.format(Math.round(result.newMonths * 10) / 10)} meses`,
+          money(result.interestSavedKeepingPayment),
+        ],
+        [
+          'Reduzir a parcela e manter o prazo',
+          money(result.newPayment),
+          `${number.format(months)} meses`,
+          money(result.interestSavedLoweringPayment),
+        ],
+      ],
+    },
+    references: [
+      'Código de Defesa do Consumidor, art. 52, § 2º (liquidação antecipada)',
+    ],
+    alerts: [
+      'Considera financiamento na tabela Price com taxa constante. O CDC garante a redução proporcional dos juros ao antecipar, mas o banco pode ter regras próprias de cálculo. Confirme o valor exato com ele.',
     ],
   };
 }
@@ -423,6 +1197,50 @@ export function buildCalculatorDecision(
       return bolsaFamilia(values);
     case 'seguro-desemprego':
       return seguroDesemprego(values, calculation);
+    case 'decimo-salario':
+      return decimoSalario(values);
+    case 'fgts-multa':
+      return fgtsMulta(values);
+    case 'aviso-previo':
+      return avisoPrevio(values, calculation);
+    case 'custo-demissao':
+      return custoDemissao(values);
+    case 'pro-labore':
+      return proLabore(values);
+    case 'inss-autonomo':
+      return inssAutonomo(values);
+    case 'das-mei-atraso':
+      return dasMeiAtraso(values);
+    case 'bpc':
+      return bpc(values, calculation);
+    case 'pis':
+      return pis(values, calculation);
+    case 'plr-ppr-liquido':
+      return plrLiquida(values);
+    case 'fator-r':
+      return fatorR(values, calculation);
+    case 'excesso-limite-mei':
+      return excessoMei(values, calculation);
+    case 'das-limite-mei':
+      return dasLimiteMei(values, calculation);
+    case 'vale-transporte':
+      return valeTransporte(values, calculation);
+    case 'cdi':
+      return cdi(values);
+    case 'cdb-liquido':
+      return fixedIncomeDecision('cdb', values);
+    case 'tesouro-selic':
+      return fixedIncomeDecision('tesouro', values);
+    case 'lci-lca':
+      return lciLca(values);
+    case 'cdb-poupanca':
+      return cdbPoupanca(values, calculation);
+    case 'financiamento-sac-price':
+      return financiamentoSacPrice(values, calculation);
+    case 'emprestimo':
+      return emprestimo(values, calculation);
+    case 'amortizacao-antecipada':
+      return amortizacaoAntecipada(values);
     default:
       return genericDecision(id);
   }
