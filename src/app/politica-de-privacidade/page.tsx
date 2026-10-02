@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { InstitutionalPageTemplate } from '@/components/content';
+import { siteConfig } from '@/config/site';
 import { buildInstitutionalMetadata } from '@/content';
 
 const description =
@@ -19,24 +20,52 @@ export default function PrivacyPolicyPage() {
       eyebrow="Transparência"
       sections={[
         {
-          heading: 'Dados tratados',
+          heading: 'Quem somos e quais dados tratamos',
           content: [
             <p key="data">
-              A plataforma pode tratar dados fornecidos voluntariamente em
-              canais de contato e dados técnicos de acesso, como tipo de
-              dispositivo, páginas visitadas e eventos de navegação, quando as
-              integrações correspondentes estiverem habilitadas.
+              O PortalFina é um portal de calculadoras, guias e notícias
+              financeiras. As calculadoras funcionam no seu navegador: os
+              valores que você digita para simular um cálculo não são enviados
+              nem armazenados por nós. Tratamos apenas as informações que você
+              nos envia por e-mail e dados técnicos de acesso, como páginas
+              visitadas, tipo de dispositivo, navegador e endereço IP
+              aproximado.
             </p>,
           ],
         },
         {
-          heading: 'Finalidades e bases',
+          heading: 'Para que usamos',
           content: [
             <p key="purpose">
-              Os dados podem ser usados para operar e proteger o serviço,
-              responder solicitações, medir desempenho e melhorar a experiência.
-              Integrações opcionais permanecem desativadas até serem
-              configuradas para o ambiente publicado.
+              Usamos esses dados para manter o site seguro e funcionando,
+              responder mensagens, entender quais conteúdos são mais úteis e
+              exibir anúncios que ajudam a manter o portal gratuito. As bases
+              legais são o legítimo interesse, na operação e na segurança do
+              site, e o consentimento, quando exigido para cookies não
+              essenciais, conforme a Lei Geral de Proteção de Dados (Lei
+              13.709/2018).
+            </p>,
+          ],
+        },
+        {
+          heading: 'Publicidade e métricas de terceiros',
+          content: [
+            <p key="ads">
+              Exibimos anúncios do Google AdSense. O Google e seus parceiros
+              podem usar cookies e identificadores para mostrar anúncios,
+              limitar a repetição e medir resultados, inclusive com base em
+              visitas anteriores a este e a outros sites. Você pode gerenciar a
+              personalização de anúncios nas configurações de anúncios da sua
+              conta Google e conhecer as regras do Google em Como o Google usa
+              dados de sites parceiros. Também usamos o Google Analytics 4 para
+              medir audiência de forma agregada. Detalhes na{' '}
+              <Link
+                className="font-semibold text-ads-primary-strong underline underline-offset-4"
+                href="/politica-de-cookies"
+              >
+                Política de Cookies
+              </Link>
+              .
             </p>,
           ],
         },
@@ -44,10 +73,12 @@ export default function PrivacyPolicyPage() {
           heading: 'Compartilhamento e retenção',
           content: [
             <p key="sharing">
-              Dados podem ser processados por fornecedores de hospedagem,
-              métricas e publicidade estritamente conforme a configuração do
-              serviço. A retenção deve se limitar ao período necessário para
-              cada finalidade e obrigação legal.
+              Não vendemos dados pessoais. Eles podem ser processados por
+              fornecedores que operam o site, como hospedagem (Vercel), métricas
+              (Google) e publicidade (Google), apenas para essas finalidades.
+              Mensagens enviadas por e-mail são mantidas pelo tempo necessário
+              para atender ao seu pedido. Dados de métricas seguem os prazos
+              configurados nas ferramentas.
             </p>,
           ],
         },
@@ -55,15 +86,33 @@ export default function PrivacyPolicyPage() {
           heading: 'Seus direitos',
           content: [
             <p key="rights">
-              Titulares podem solicitar confirmação, acesso, correção, revisão
-              ou eliminação de dados, conforme aplicável. Consulte a página de{' '}
+              Você pode pedir confirmação de tratamento, acesso, correção,
+              anonimização, eliminação, informação sobre compartilhamento e
+              revogação de consentimento. Escreva para{' '}
+              <a
+                className="font-semibold text-ads-primary-strong underline underline-offset-4"
+                href={`mailto:${siteConfig.contactEmail}`}
+              >
+                {siteConfig.contactEmail}
+              </a>{' '}
+              ou use a página de{' '}
               <Link
                 className="font-semibold text-ads-primary-strong underline underline-offset-4"
                 href="/contato"
               >
                 contato
-              </Link>{' '}
-              para falar com a equipe.
+              </Link>
+              .
+            </p>,
+          ],
+        },
+        {
+          heading: 'Conteúdo informativo',
+          content: [
+            <p key="disclaimer">
+              Os cálculos e textos do PortalFina têm caráter informativo e não
+              substituem orientação de contador, advogado ou consultor
+              financeiro.
             </p>,
           ],
         },
@@ -71,9 +120,9 @@ export default function PrivacyPolicyPage() {
           heading: 'Atualizações',
           content: [
             <p key="updates">
-              Esta política deve ser revisada antes da publicação e sempre que
-              houver mudança relevante nas integrações ou finalidades de
-              tratamento. Última atualização: 25 de setembro de 2026.
+              Atualizamos esta política quando mudam as ferramentas ou as
+              finalidades de tratamento. Última atualização: 1º de outubro de
+              2026.
             </p>,
           ],
         },

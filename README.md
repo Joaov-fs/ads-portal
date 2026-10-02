@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # ADS Platform
 
 Public product experience for the platform described in [`PROJECT.md`](PROJECT.md),

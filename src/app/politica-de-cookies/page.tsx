@@ -1,4 +1,5 @@
 import { InstitutionalPageTemplate } from '@/components/content';
+import { siteConfig } from '@/config/site';
 import { buildInstitutionalMetadata } from '@/content';
 
 const description =
@@ -20,44 +21,52 @@ export default function CookiePolicyPage() {
           heading: 'O que são cookies',
           content: [
             <p key="definition">
-              Cookies e tecnologias semelhantes armazenam pequenas informações
-              no navegador para manter preferências, compreender o uso do site e
-              viabilizar serviços de terceiros.
+              Cookies e tecnologias semelhantes guardam pequenas informações no
+              navegador para manter preferências, entender o uso do site e
+              permitir serviços de terceiros, como anúncios.
             </p>,
           ],
         },
         {
-          heading: 'Categorias previstas',
+          heading: 'O que usamos',
           content: [
             <ul className="list-disc space-y-2 pl-5" key="categories">
-              <li>Necessários: suportam segurança e funcionamento básico.</li>
-              <li>Analíticos: medem audiência, desempenho e navegação.</li>
               <li>
-                Publicidade: poderão apoiar anúncios e mensuração quando o
-                AdSense for aprovado e ativado.
+                Necessários: segurança e funcionamento básico do site, sem
+                finalidade de publicidade.
+              </li>
+              <li>
+                Análise: o Google Analytics 4 mede audiência, páginas mais lidas
+                e desempenho, de forma agregada.
+              </li>
+              <li>
+                Publicidade: o Google AdSense e seus parceiros usam cookies e
+                identificadores para exibir e medir anúncios, inclusive com base
+                em visitas anteriores a este e a outros sites.
               </li>
             </ul>,
-          ],
-        },
-        {
-          heading: 'Serviços opcionais',
-          content: [
-            <p key="services">
-              Google Analytics 4, Google Tag Manager e Microsoft Clarity são
-              carregados apenas quando a integração de analytics está habilitada
-              no ambiente. A arquitetura do AdSense não carrega scripts nem
-              anúncios por padrão.
-            </p>,
           ],
         },
         {
           heading: 'Como gerenciar',
           content: [
             <p key="management">
-              Você pode bloquear ou remover cookies nas configurações do
-              navegador. Antes de ativar tecnologias não essenciais em produção,
-              a equipe deve validar a necessidade de um mecanismo de
-              consentimento compatível com a legislação aplicável.
+              Você pode bloquear ou apagar cookies nas configurações do
+              navegador; alguns recursos podem deixar de funcionar. Para
+              controlar a personalização de anúncios, use as configurações de
+              anúncios da sua conta Google ou o site aboutads.info. Bloquear
+              cookies de publicidade não remove os anúncios, só os torna menos
+              personalizados.
+            </p>,
+          ],
+        },
+        {
+          heading: 'Mais informações',
+          content: [
+            <p key="more">
+              Veja como tratamos dados pessoais na Política de Privacidade ou
+              fale conosco pelo e-mail {siteConfig.contactEmail}. Última
+              atualização: 1º de outubro de 2026.
             </p>,
           ],
         },
