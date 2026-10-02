@@ -1,4 +1,5 @@
 import { InstitutionalPageTemplate } from '@/components/content';
+import { ConsentPreferencesButton } from '@/components/consent';
 import { siteConfig } from '@/config/site';
 import { buildInstitutionalMetadata } from '@/content';
 
@@ -57,6 +58,18 @@ export default function CookiePolicyPage() {
               anúncios da sua conta Google ou o site aboutads.info. Bloquear
               cookies de publicidade não remove os anúncios, só os torna menos
               personalizados.
+            </p>,
+          ],
+        },
+        {
+          heading: 'Sua escolha',
+          content: [
+            <p key="choice">
+              Ao abrir o site, você escolhe entre aceitar ou recusar os cookies
+              de análise e de publicidade. Recusar não bloqueia o site nem os
+              anúncios, apenas impede a personalização e a medição por cookies.
+              Você pode mudar de ideia quando quiser:{' '}
+              <ConsentPreferencesButton />.
             </p>,
           ],
         },

@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 
 import { Analytics } from '@/components/analytics';
 import { AdSenseScript } from '@/components/advertising';
+import { ConsentBanner, ConsentDefaults } from '@/components/consent';
 import { JsonLdScript } from '@/components/content';
 import { AppChrome } from '@/components/layout/app-chrome';
 import { designTokens } from '@/config/design-tokens';
@@ -82,11 +83,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           Pular para o conteúdo
         </a>
+        <ConsentDefaults />
         <JsonLdScript data={organizationSchema} />
         <JsonLdScript data={websiteSchema} />
         <ThemeProvider>
           <AppChrome>{children}</AppChrome>
         </ThemeProvider>
+        <ConsentBanner />
         <Analytics />
         <AdSenseScript />
       </body>
