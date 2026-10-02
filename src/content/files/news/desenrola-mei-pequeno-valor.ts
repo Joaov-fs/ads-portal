@@ -13,6 +13,24 @@ export const desenrolaMeiPequenoValorNews = {
     src: '/images/news/desenrola-mei-pequeno-valor.png',
     alt: 'Microempreendedor analisa documentos e condições para renegociação de dívida do MEI.',
   },
+  featuredCalculators: ['das-mei-atraso', 'das-limite-mei'],
+  highlights: [
+    {
+      value: '50%',
+      label: 'Desconto após a entrada',
+      note: 'Em parte do saldo, segundo as regras do programa.',
+    },
+    {
+      value: 'R$ 8.105',
+      label: 'Limite de dívida da modalidade',
+      note: 'Cinco salários mínimos.',
+    },
+    {
+      value: '3 milhões',
+      label: 'MEIs com dívida',
+      note: 'Segundo o Ministério do Empreendedorismo.',
+    },
+  ],
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
   tags: ['mei', 'negocios', 'divida', 'renegociacao', 'impostos'],

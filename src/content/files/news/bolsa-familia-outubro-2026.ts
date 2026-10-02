@@ -13,6 +13,27 @@ export const bolsaFamiliaOutubro2026News = {
     src: '/images/news/bolsa-familia-outubro-2026.png',
     alt: 'Responsável familiar consulta pelo celular informações sobre o pagamento do Bolsa Família.',
   },
+  featuredCalculators: ['bolsa-familia', 'bpc'],
+  highlights: [
+    {
+      value: 'R$ 691',
+      label: 'Mínimo garantido por família',
+      note: 'Antes era R$ 600, alta de 15,04%.',
+    },
+    {
+      value: 'R$ 164',
+      label: 'Renda de Cidadania por pessoa',
+    },
+    {
+      value: 'R$ 173',
+      label: 'Primeira Infância, por criança até 6 anos',
+    },
+    {
+      value: '19 a 30/10',
+      label: 'Pagamentos de outubro',
+      note: 'Conforme o final do NIS.',
+    },
+  ],
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
   tags: ['beneficios', 'bolsa-familia', 'familia', 'cadastro-unico'],

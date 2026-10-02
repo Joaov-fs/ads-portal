@@ -43,6 +43,8 @@ export function toContentSummary(document: ContentDocument): ContentSummary {
   return {
     category: document.category,
     description: document.description,
+    featuredCalculators: document.featuredCalculators,
+    highlight: document.highlights?.[0],
     href: contentPath(document),
     kind: document.kind,
     readingTime: `${readingMinutes} min de leitura`,

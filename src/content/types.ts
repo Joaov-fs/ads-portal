@@ -105,6 +105,8 @@ export type ContentDocumentByKind<K extends ContentKind> = Extract<
 export type ContentSummary = Readonly<{
   category: ContentCategory;
   description: string;
+  featuredCalculators?: readonly string[];
+  highlight?: ContentHighlight;
   href: string;
   kind: ContentKind;
   readingTime: string;

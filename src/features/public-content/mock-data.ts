@@ -53,14 +53,27 @@ export const popularTools = listContentSummaries('calculator').map((item) => ({
   href: item.href,
 })) satisfies readonly Tool[];
 
-export const latestNews = listContentSummaries('news').map((item) => ({
-  category: item.category,
-  title: item.title,
-  description: item.description,
-  date: item.updatedAt,
-  readingTime: item.readingTime,
-  href: item.href,
-})) satisfies readonly NewsItem[];
+export const latestNews = listContentSummaries('news').map((item) => {
+  const calculatorSlug = item.featuredCalculators?.[0];
+  const calculator = popularTools.find(
+    (tool) => tool.href === `/calculadoras/${calculatorSlug}`,
+  );
+
+  return {
+    calculator: calculator
+      ? { href: calculator.href, title: calculator.title }
+      : undefined,
+    category: item.category,
+    title: item.title,
+    description: item.description,
+    date: item.updatedAt,
+    highlight: item.highlight
+      ? { label: item.highlight.label, value: item.highlight.value }
+      : undefined,
+    readingTime: item.readingTime,
+    href: item.href,
+  };
+}) satisfies readonly NewsItem[];
 
 export const featuredGuides = listContentSummaries('guide').map((item) => ({
   category: item.category,
@@ -70,48 +83,57 @@ export const featuredGuides = listContentSummaries('guide').map((item) => ({
   href: item.href,
 })) satisfies readonly Guide[];
 
+/**
+ * Indicadores oficiais, com a data de referência em `note`.
+ * Atualize junto com as notícias: Banco Central (Selic, CDI, dólar), IBGE (IPCA) e FGV (IGP-M).
+ */
 export const indicators = [
   {
-    label: 'Selic',
-    value: '10,50% a.a.',
-    change: 'estável',
-    trend: 'neutral',
-    note: 'Valor demonstrativo',
+    label: 'Selic (meta)',
+    value: '13,75% a.a.',
+    change: '−0,25 p.p.',
+    trend: 'down',
+    note: 'Vigente desde 17/09/2026 · Banco Central',
+    href: '/noticias/selic-13-75-o-que-muda-para-quem-investe-e-para-quem-deve',
   },
   {
     label: 'CDI',
-    value: '10,40% a.a.',
-    change: '0,02%',
-    trend: 'up',
-    note: 'Valor demonstrativo',
-  },
-  {
-    label: 'IPCA',
-    value: '0,24%',
-    change: '0,08%',
-    trend: 'down',
-    note: 'Variação mensal fictícia',
-  },
-  {
-    label: 'Dólar',
-    value: 'R$ 5,42',
-    change: '0,18%',
-    trend: 'up',
-    note: 'Cotação demonstrativa',
-  },
-  {
-    label: 'Euro',
-    value: 'R$ 6,12',
-    change: '0,11%',
-    trend: 'down',
-    note: 'Cotação demonstrativa',
-  },
-  {
-    label: 'Salário Mínimo',
-    value: 'R$ 1.620',
-    change: 'referência',
+    value: '13,65% a.a.',
+    change: 'estável',
     trend: 'neutral',
-    note: 'Valor fictício para demonstração',
+    note: 'Em 30/09/2026 · Banco Central',
+    href: '/noticias/poupanca-rende-8-3-ao-ano-veja-quanto-cdb-e-lci-rendem-a-mais',
+  },
+  {
+    label: 'IPCA em 12 meses',
+    value: '4,22%',
+    change: 'era 4,44%',
+    trend: 'down',
+    note: 'Agosto de 2026 · IBGE',
+    href: '/noticias/reajuste-do-aluguel-igp-m-3-35-ou-ipca-4-22-veja-quanto-fica',
+  },
+  {
+    label: 'IGP-M em 12 meses',
+    value: '3,35%',
+    change: '+1,57% no mês',
+    trend: 'up',
+    note: 'Setembro de 2026 · FGV',
+    href: '/noticias/reajuste-do-aluguel-igp-m-3-35-ou-ipca-4-22-veja-quanto-fica',
+  },
+  {
+    label: 'Dólar comercial',
+    value: 'R$ 5,18',
+    change: '−0,76%',
+    trend: 'down',
+    note: 'PTAX de venda em 30/09/2026 · Banco Central',
+  },
+  {
+    label: 'Salário mínimo',
+    value: 'R$ 1.621',
+    change: '+6,8% em 2026',
+    trend: 'up',
+    note: 'Vigente desde 1º/01/2026',
+    href: '/noticias/salario-minimo-2026-r-1-621-o-que-ele-muda-no-seu-bolso',
   },
 ] as const satisfies readonly Indicator[];
 

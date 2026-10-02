@@ -18,6 +18,7 @@ import { desenrolaMeiPequenoValorNews } from './desenrola-mei-pequeno-valor';
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
 export const newsFiles = [
+  bolsaFamiliaOutubro2026News,
   newsSelic1375OQueMudaParaQuemInvesteEParaQuemDeve,
   newsImpostoDeRendaZeroAteR5MilQuantoVocePagaNoContracheque,
   news13oSalario2026DatasEQuantoVoceRecebe,
@@ -33,6 +34,5 @@ export const newsFiles = [
   newsInssDeAutonomoESocio2011Ou5QualPlanoValeAPena,
   newsFinanciamentoSacOuPriceDiferencaDeR135MilEmJurosNoExemplo,
   newsAbonoSalarial2026PrazoParaSacarVaiAte30DeDezembro,
-  bolsaFamiliaOutubro2026News,
   desenrolaMeiPequenoValorNews,
 ] as const;

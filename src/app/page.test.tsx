@@ -12,24 +12,34 @@ describe('Home', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: 'Entenda. Calcule. Decida melhor.',
+        name: 'Faça a conta. Confira a fonte. Decida melhor.',
       }),
     ).toBeInTheDocument();
     expect(screen.getByRole('search')).toHaveAttribute('action', '/pesquisa');
-    expect(
-      screen.getByRole('list', { name: 'Como usar a plataforma' }),
-    ).toBeInTheDocument();
 
     for (const section of [
-      'Comece pelo que importa para você',
-      'Ferramentas populares',
-      'Notícias e análises',
-      'Guias em destaque',
+      'O que mudou e quanto isso pesa no seu bolso',
+      'Uma conta que você consegue conferir',
+      'Uma calculadora para cada momento da vida',
+      'Guias para consultar quando precisar',
     ]) {
       expect(
         screen.getByRole('heading', { name: section }),
       ).toBeInTheDocument();
     }
+  });
+
+  it('lets the visitor try the salary calculator without leaving the home', () => {
+    render(<Home />);
+
+    expect(
+      screen.getByLabelText('Quanto você ganha por mês (bruto)?'),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', {
+        name: /Ver o holerite completo, com dependentes e pensão/,
+      }),
+    ).toHaveAttribute('href', '/calculadoras/salario-liquido');
   });
 
   it('renders only categories with a useful public path', () => {
@@ -39,21 +49,35 @@ describe('Home', () => {
       (item) => item.slug !== 'politica',
     )) {
       expect(
-        screen.getByRole('link', { name: new RegExp(category.label) }),
-      ).toBeInTheDocument();
+        screen
+          .getAllByRole('link', { name: new RegExp(category.label) })
+          .some(
+            (link) =>
+              link.getAttribute('href') === `/categorias/${category.slug}`,
+          ),
+      ).toBe(true);
     }
 
     expect(screen.queryByText('Política')).not.toBeInTheDocument();
     expect(screen.queryByText('Publicidade')).not.toBeInTheDocument();
   });
 
-  it('curates the home instead of rendering the complete calculator catalog', () => {
+  it('curates the home and links news to the calculator of the subject', () => {
     render(<Home />);
 
-    expect(screen.getAllByText('Usar calculadora')).toHaveLength(3);
     expect(
       screen.getByRole('link', { name: 'Ver todas as calculadoras →' }),
     ).toHaveAttribute('href', '/calculadoras');
+    expect(
+      screen.getByRole('link', { name: 'Ver todas as notícias →' }),
+    ).toHaveAttribute('href', '/noticias');
+    expect(
+      screen
+        .getAllByRole('link')
+        .some((link) =>
+          link.getAttribute('href')?.startsWith('/calculadoras/'),
+        ),
+    ).toBe(true);
   });
 
   it('does not render unavailable newsletter controls', () => {

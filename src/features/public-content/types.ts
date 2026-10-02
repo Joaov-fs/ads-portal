@@ -22,9 +22,11 @@ export type Tool = Readonly<{
 }>;
 
 export type NewsItem = Readonly<{
+  calculator?: Readonly<{ href: string; title: string }>;
   category: CategorySlug;
   date: string;
   description: string;
+  highlight?: Readonly<{ label: string; value: string }>;
   href: string;
   readingTime: string;
   title: string;
@@ -40,6 +42,7 @@ export type Guide = Readonly<{
 
 export type Indicator = Readonly<{
   change: string;
+  href?: string;
   label: string;
   note: string;
   trend: 'up' | 'down' | 'neutral';
