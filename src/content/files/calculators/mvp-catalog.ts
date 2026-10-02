@@ -181,11 +181,20 @@ const specs = [
     description:
       'Estime o imposto de renda retido na fonte após as deduções informadas.',
     howItWorks:
-      'A regra percorre faixas progressivas de referência sobre a base tributável. Deduções legais e a tabela vigente precisam ser conferidas antes de usar o resultado para planejamento.',
+      'O INSS é descontado do rendimento, junto com dependentes e pensão. Sobre a base resultante aplica-se a tabela progressiva de 2026 e a redução da Lei 15.270/2025, que zera o imposto até R$ 5.000 por mês.',
     tags: ['trabalho', 'imposto', 'salario'],
     fields: [
-      money('salary', 'Base de rendimento'),
-      money('deductions', 'Deduções mensais'),
+      money('salary', 'Rendimento bruto mensal'),
+      number(
+        'dependents',
+        'Dependentes',
+        'Cada dependente reduz a base em R$ 189,59. Se não houver, informe 0.',
+      ),
+      money(
+        'alimony',
+        'Pensão alimentícia paga',
+        'Valor mensal fixado em decisão judicial. Se não houver, informe 0.',
+      ),
     ],
     sources: [
       {
@@ -202,13 +211,31 @@ const specs = [
     description:
       'Converta horas extras e adicional em uma estimativa de remuneração.',
     howItWorks:
-      'O valor-hora é obtido pela carga mensal. Depois, o adicional informado é aplicado às horas extras registradas.',
+      'O valor da hora é o salário dividido pela jornada mensal. As horas extras comuns pagam 50% a mais e as de domingos e feriados, 100%. O descanso semanal remunerado também reflete sobre as horas extras.',
     tags: ['trabalho', 'horas', 'salario'],
     fields: [
       money('salary', 'Salário mensal'),
-      number('monthlyHours', 'Horas mensais'),
-      number('extraHours', 'Horas extras'),
-      percentage('rate', 'Adicional de hora extra'),
+      number(
+        'monthlyHours',
+        'Jornada mensal em horas',
+        '220 para 44 horas semanais, 200 para 40 horas, 180 para 36 horas.',
+      ),
+      number('extraHours50', 'Horas extras a 50%', 'Dias úteis e sábados.'),
+      number(
+        'extraHours100',
+        'Horas extras a 100%',
+        'Domingos e feriados trabalhados sem folga compensatória.',
+      ),
+      number(
+        'workDays',
+        'Dias úteis do mês',
+        'Opcional, para o reflexo no DSR. Conte segunda a sábado, sem feriados. Deixe 0 para ignorar.',
+      ),
+      number(
+        'restDays',
+        'Domingos e feriados do mês',
+        'Opcional, para o reflexo no DSR.',
+      ),
     ],
   },
   {
@@ -237,7 +264,13 @@ const specs = [
     howItWorks:
       'A contribuição é calculada por faixas de referência, e não por uma alíquota única sobre todo o salário.',
     tags: ['trabalho', 'inss', 'salario'],
-    fields: [money('salary', 'Salário bruto')],
+    fields: [
+      money(
+        'salary',
+        'Salário bruto',
+        'Acima de R$ 8.475,55 o desconto não aumenta, porque esse é o teto de contribuição.',
+      ),
+    ],
     sources: [
       {
         label: 'INSS — tabela de contribuição mensal de 2026',
@@ -321,7 +354,11 @@ const specs = [
     tags: ['financas', 'aluguel', 'reajuste'],
     fields: [
       money('amount', 'Aluguel atual'),
-      percentage('rate', 'Índice de reajuste'),
+      percentage(
+        'rate',
+        'Índice de reajuste (%)',
+        'Variação acumulada em 12 meses do índice do contrato (IGP-M da FGV ou IPCA do IBGE).',
+      ),
     ],
   },
   {
@@ -392,11 +429,20 @@ const specs = [
     description:
       'Projete o custo mensal total ao adicionar encargos e benefícios ao salário.',
     howItWorks:
-      'Informe o percentual que representa encargos e benefícios da empresa para chegar a uma referência de custo.',
+      'Soma ao salário as provisões mensais de 13º e férias com 1/3, o FGTS de 8% e os encargos patronais sobre essa base, além dos benefícios pagos.',
     tags: ['trabalho', 'empresa', 'encargos'],
     fields: [
       money('salary', 'Salário bruto'),
-      percentage('rate', 'Encargos e benefícios'),
+      percentage(
+        'rate',
+        'Encargos patronais sobre a folha (%)',
+        '0% no Simples Nacional (anexos I a III). Cerca de 28,8% no lucro presumido ou real (20% INSS, RAT e terceiros).',
+      ),
+      money(
+        'benefits',
+        'Benefícios mensais',
+        'Vale-transporte pago pela empresa, vale-refeição, plano de saúde. Se não houver, informe 0.',
+      ),
     ],
   },
   {
@@ -426,7 +472,11 @@ const specs = [
     tags: ['trabalho', 'salario', 'horas'],
     fields: [
       money('salary', 'Salário mensal'),
-      number('monthlyHours', 'Horas mensais'),
+      number(
+        'monthlyHours',
+        'Jornada mensal em horas',
+        '220 para 44 horas semanais, 200 para 40 horas, 180 para 36 horas.',
+      ),
     ],
   },
   {
@@ -437,13 +487,21 @@ const specs = [
     description:
       'Estime o adicional devido pelas horas trabalhadas no período noturno.',
     howItWorks:
-      'A ferramenta encontra o valor-hora e aplica a quantidade de horas e o adicional informado. Regras de hora noturna reduzida podem alterar o resultado.',
+      'Encontra o valor da hora e aplica o adicional noturno sobre as horas trabalhadas das 22h às 5h. O efeito da hora noturna reduzida de 52min30s aparece separado.',
     tags: ['trabalho', 'adicional', 'horas'],
     fields: [
       money('salary', 'Salário mensal'),
-      number('monthlyHours', 'Horas mensais'),
-      number('nightHours', 'Horas noturnas'),
-      percentage('rate', 'Adicional noturno'),
+      number(
+        'monthlyHours',
+        'Jornada mensal em horas',
+        '220 para 44 horas semanais, 200 para 40 horas, 180 para 36 horas.',
+      ),
+      number('nightHours', 'Horas noturnas no mês', 'Das 22h às 5h.'),
+      percentage(
+        'rate',
+        'Adicional noturno (%)',
+        'Mínimo legal de 20% no meio urbano. Convenção coletiva pode prever mais.',
+      ),
     ],
   },
   {
@@ -458,8 +516,16 @@ const specs = [
     tags: ['trabalho', 'dsr', 'salario'],
     fields: [
       money('amount', 'Valor variável do mês'),
-      number('workDays', 'Dias úteis'),
-      number('restDays', 'Dias de repouso'),
+      number(
+        'workDays',
+        'Dias úteis do mês',
+        'Segunda a sábado, sem contar feriados.',
+      ),
+      number(
+        'restDays',
+        'Domingos e feriados do mês',
+        'Dias de repouso semanal remunerado.',
+      ),
     ],
   },
   {
@@ -472,8 +538,8 @@ const specs = [
       'Créditos são somados e débitos subtraídos. A compensação segue acordo individual ou coletivo aplicável.',
     tags: ['trabalho', 'horas', 'banco'],
     fields: [
-      number('credits', 'Horas de crédito'),
-      number('debits', 'Horas de débito'),
+      number('credits', 'Horas de crédito', 'Use horas decimais: 1h30 = 1,5.'),
+      number('debits', 'Horas de débito', 'Use horas decimais: 1h30 = 1,5.'),
     ],
   },
   {
@@ -488,7 +554,11 @@ const specs = [
     tags: ['trabalho', 'ferias', 'rescisao'],
     fields: [
       money('salary', 'Salário mensal'),
-      number('months', 'Meses trabalhados'),
+      number(
+        'months',
+        'Meses do período aquisitivo',
+        'De 0 a 12. Fração de 15 dias ou mais conta como mês.',
+      ),
     ],
   },
   {
@@ -503,7 +573,11 @@ const specs = [
     tags: ['trabalho', 'decimo', 'salario'],
     fields: [
       money('salary', 'Salário mensal'),
-      number('months', 'Meses trabalhados'),
+      number(
+        'months',
+        'Meses trabalhados no ano',
+        'De janeiro até a saída, de 0 a 12. Fração de 15 dias ou mais conta como mês.',
+      ),
     ],
   },
   {
@@ -695,11 +769,20 @@ const specs = [
     category: 'financas',
     description: 'Estime o DAS mensal a partir da receita e alíquota efetiva.',
     howItWorks:
-      'A receita mensal é multiplicada pela alíquota efetiva informada. Anexo, faixa e deduções são definidos no cálculo contábil.',
+      'A faixa vem da receita dos últimos 12 meses. A alíquota efetiva é (receita × alíquota nominal − parcela a deduzir) ÷ receita, aplicada sobre a receita do mês.',
     tags: ['negocios', 'simples', 'imposto'],
     fields: [
-      money('amount', 'Receita mensal'),
-      percentage('rate', 'Alíquota efetiva'),
+      money('amount', 'Receita bruta do mês'),
+      money(
+        'rbt12',
+        'Receita bruta dos últimos 12 meses',
+        'Soma dos 12 meses anteriores ao da apuração, sem incluir o mês atual.',
+      ),
+      number(
+        'annex',
+        'Anexo do Simples Nacional',
+        '1 comércio, 2 indústria, 3 serviços, 4 construção, vigilância, limpeza e advocacia, 5 serviços intelectuais.',
+      ),
     ],
   },
   {
@@ -778,8 +861,16 @@ const specs = [
       'A ferramenta aplica o percentual informado sobre a média. A perícia e o histórico de contribuições definem o benefício oficial.',
     tags: ['beneficios', 'inss', 'incapacidade'],
     fields: [
-      money('amount', 'Média de contribuições'),
-      percentage('rate', 'Percentual aplicável'),
+      money(
+        'amount',
+        'Média de todos os salários de contribuição',
+        'Média de 100% das contribuições desde julho de 1994, ou desde o início, se posterior.',
+      ),
+      percentage(
+        'rate',
+        'Percentual do benefício (%)',
+        '60% mais 2% por ano de contribuição acima de 20 anos (homens) ou 15 (mulheres). 100% em acidente de trabalho.',
+      ),
     ],
   },
   {
@@ -794,7 +885,11 @@ const specs = [
     tags: ['financas', 'ipva', 'veiculo'],
     fields: [
       money('amount', 'Valor venal do veículo'),
-      percentage('rate', 'Alíquota estadual'),
+      percentage(
+        'rate',
+        'Alíquota estadual (%)',
+        'Varia por estado e tipo de veículo (em geral 1% a 4%). Consulte a Secretaria da Fazenda do seu estado.',
+      ),
     ],
   },
   {

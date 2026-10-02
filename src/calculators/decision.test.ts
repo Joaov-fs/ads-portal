@@ -7,8 +7,10 @@ import { calculateCalculator } from './rules';
 
 const standardValues = {
   alimony: 0,
+  annex: 3,
   amount: 1000,
   baseSalary: 1000,
+  benefits: 300,
   cdiRate: 10,
   childrenOver7: 1,
   childrenUnder7: 1,
@@ -22,6 +24,8 @@ const standardValues = {
   endDate: 20030,
   expiredVacations: 1,
   extraHours: 10,
+  extraHours100: 4,
+  extraHours50: 10,
   interest: 2,
   monthlyHours: 220,
   months: 12,
@@ -36,6 +40,7 @@ const standardValues = {
   prepayment: 200,
   rate: 10,
   requestNumber: 1,
+  rbt12: 240000,
   restDays: 8,
   salary: 3000,
   savingsRate: 6,

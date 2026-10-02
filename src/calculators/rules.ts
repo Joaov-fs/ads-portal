@@ -13,6 +13,7 @@ import {
   sacSchedule,
   scheduleTotals,
 } from './finance';
+import { simplesNacional } from './simples';
 import {
   calculateDismissalCost,
   calculateTermination,
@@ -90,7 +91,7 @@ export function progressiveInss(base: number) {
   return total;
 }
 
-export function progressiveIrrf(base: number, taxableIncome = base) {
+export function irrfBracketTax(base: number) {
   const brackets = [
     [2428.8, 0],
     [2826.65, 7.5],
@@ -107,12 +108,20 @@ export function progressiveIrrf(base: number, taxableIncome = base) {
     );
     previousLimit = limit;
   }
-  const reduction =
-    taxableIncome <= 5000
-      ? total
-      : taxableIncome <= 7350
-        ? Math.max(0, 978.62 - 0.133145 * taxableIncome)
-        : 0;
+  return total;
+}
+
+export function irrfReduction(taxableIncome: number, tableTax: number) {
+  return taxableIncome <= 5000
+    ? tableTax
+    : taxableIncome <= 7350
+      ? Math.max(0, 978.62 - 0.133145 * taxableIncome)
+      : 0;
+}
+
+export function progressiveIrrf(base: number, taxableIncome = base) {
+  const total = irrfBracketTax(base);
+  const reduction = irrfReduction(taxableIncome, total);
   return Math.max(0, total - reduction);
 }
 
@@ -277,6 +286,101 @@ export function lateDas(values: CalculatorValues): LateDasBreakdown {
   return { fine, finePercent, interest, total: original + fine + interest };
 }
 
+export type OvertimeBreakdown = Readonly<{
+  dsr: number;
+  hourly: number;
+  hours100: number;
+  hours50: number;
+  pay100: number;
+  pay50: number;
+  total: number;
+}>;
+
+/** Horas extras a 50% e 100%, com o reflexo no descanso semanal remunerado (Súmula 172 do TST). */
+export function calculateOvertime(values: CalculatorValues): OvertimeBreakdown {
+  const monthlyHours = Math.max(1, value(values, 'monthlyHours'));
+  const hourly = Math.max(0, value(values, 'salary')) / monthlyHours;
+  const hours50 = Math.max(0, value(values, 'extraHours50'));
+  const hours100 = Math.max(0, value(values, 'extraHours100'));
+  const pay50 = hourly * hours50 * 1.5;
+  const pay100 = hourly * hours100 * 2;
+  const workDays = Math.max(0, value(values, 'workDays'));
+  const dsr =
+    workDays > 0
+      ? ((pay50 + pay100) / workDays) * Math.max(0, value(values, 'restDays'))
+      : 0;
+
+  return {
+    dsr,
+    hourly,
+    hours100,
+    hours50,
+    pay100,
+    pay50,
+    total: pay50 + pay100 + dsr,
+  };
+}
+
+export type NightShiftBreakdown = Readonly<{
+  additional: number;
+  hourly: number;
+  reducedHourExtra: number;
+}>;
+
+/** Adicional noturno sobre o valor-hora. A hora reduzida (52min30s) é calculada à parte. */
+export function calculateNightShift(
+  values: CalculatorValues,
+): NightShiftBreakdown {
+  const hourly =
+    Math.max(0, value(values, 'salary')) /
+    Math.max(1, value(values, 'monthlyHours'));
+  const hours = Math.max(0, value(values, 'nightHours'));
+  const rate = Math.max(0, value(values, 'rate'));
+
+  return {
+    additional: hourly * hours * (rate / 100),
+    hourly,
+    reducedHourExtra: hourly * hours * (60 / 52.5 - 1) * (1 + rate / 100),
+  };
+}
+
+export type EmployerCostBreakdown = Readonly<{
+  benefits: number;
+  charges: number;
+  fgts: number;
+  provisions: number;
+  salary: number;
+  total: number;
+}>;
+
+/** Custo mensal do empregado CLT: salário, provisões de 13º e férias, FGTS, encargos patronais e benefícios. */
+export function calculateEmployerCost(
+  values: CalculatorValues,
+): EmployerCostBreakdown {
+  const salary = Math.max(0, value(values, 'salary'));
+  const provisions = salary * (1 / 12 + (1 / 12) * (4 / 3));
+  const base = salary + provisions;
+  const fgts = base * 0.08;
+  const charges = base * (Math.max(0, value(values, 'rate')) / 100);
+  const benefits = Math.max(0, value(values, 'benefits'));
+
+  return {
+    benefits,
+    charges,
+    fgts,
+    provisions,
+    salary,
+    total: base + fgts + charges + benefits,
+  };
+}
+
+/** Auxílio por incapacidade: percentual sobre a média, entre o salário mínimo e o teto do INSS. */
+export function disabilityBenefit(average: number, ratePercent: number) {
+  const raw = Math.max(0, average) * (Math.max(0, ratePercent) / 100);
+
+  return Math.min(inssCeiling2026, Math.max(minimumWage2026, raw));
+}
+
 export function calculateCalculator(
   id: CalculatorId,
   values: CalculatorValues,
@@ -322,19 +426,14 @@ export function calculateCalculator(
     case 'irrf':
       return result(
         'IRRF estimado',
-        progressiveIrrf(
-          Math.max(0, salary - value(values, 'deductions')),
-          salary,
-        ),
-        'Calculado com a tabela progressiva e a redução mensal vigentes em 2026.',
+        calculateNetSalary(values).irrf,
+        'Desconta do rendimento o INSS, os dependentes e a pensão alimentícia, aplica a tabela progressiva de 2026 e subtrai a redução da Lei 15.270/2025, que zera o imposto até R$ 5.000.',
       );
     case 'horas-extras':
       return result(
-        'Valor das horas extras',
-        (salary / value(values, 'monthlyHours')) *
-          value(values, 'extraHours') *
-          (1 + rate / 100),
-        'Usa o valor-hora, a quantidade de horas e o adicional informado.',
+        'Total das horas extras',
+        calculateOvertime(values).total,
+        'Calcula o valor da hora dividindo o salário pela jornada mensal, paga 50% a mais nas horas extras comuns e 100% a mais nas de domingos e feriados, e soma o reflexo no descanso semanal remunerado.',
       );
     case 'fgts-multa':
       return result(
@@ -415,9 +514,9 @@ export function calculateCalculator(
       );
     case 'custo-funcionario-clt':
       return result(
-        'Custo mensal estimado',
-        salary * (1 + rate / 100),
-        'Acrescenta ao salário o percentual de encargos informado.',
+        'Custo mensal total estimado',
+        calculateEmployerCost(values).total,
+        'Soma ao salário as provisões mensais de 13º e férias com 1/3, o FGTS de 8% e os encargos patronais informados sobre essa base, e os benefícios pagos.',
       );
     case 'fator-r':
       return result(
@@ -434,10 +533,8 @@ export function calculateCalculator(
     case 'adicional-noturno':
       return result(
         'Adicional noturno estimado',
-        (salary / value(values, 'monthlyHours')) *
-          value(values, 'nightHours') *
-          (rate / 100),
-        'Aplica o adicional percentual informado sobre as horas noturnas.',
+        calculateNightShift(values).additional,
+        'Aplica o adicional noturno (mínimo de 20%) sobre o valor da hora trabalhada entre 22h e 5h. A hora noturna reduzida de 52min30s é mostrada à parte, porque depende de como a jornada foi contratada.',
       );
     case 'dsr':
       return result(
@@ -455,14 +552,14 @@ export function calculateCalculator(
     case 'ferias-proporcionais':
       return result(
         'Férias proporcionais brutas',
-        (((salary * months) / 12) * 4) / 3,
-        'Calcula avos de férias e adiciona um terço constitucional.',
+        (((salary * Math.min(12, months)) / 12) * 4) / 3,
+        'Divide o salário em 12 avos, multiplica pelos meses do período aquisitivo (fração de 15 dias ou mais conta como mês) e soma o terço constitucional. Antes de INSS e IRRF.',
       );
     case 'decimo-proporcional':
       return result(
         '13º proporcional bruto',
-        (salary * months) / 12,
-        'Calcula os avos trabalhados no ano informado.',
+        (salary * Math.min(12, months)) / 12,
+        'Divide o salário em 12 avos e multiplica pelos meses trabalhados no ano (fração de 15 dias ou mais conta como mês). Valor bruto, antes de INSS e IRRF.',
       );
     case 'aviso-previo':
       return result(
@@ -521,8 +618,9 @@ export function calculateCalculator(
     case 'simples-nacional':
       return result(
         'DAS estimado',
-        percentage(amount, rate),
-        'Aplica a alíquota efetiva informada à receita mensal.',
+        simplesNacional(amount, value(values, 'rbt12'), value(values, 'annex'))
+          .das,
+        'Encontra a faixa pela receita bruta dos últimos 12 meses, calcula a alíquota efetiva (receita × alíquota nominal − parcela a deduzir, dividido pela receita) e aplica sobre a receita do mês.',
       );
     case 'excesso-limite-mei':
       return result(
@@ -545,14 +643,14 @@ export function calculateCalculator(
     case 'salario-maternidade':
       return result(
         'Salário-maternidade estimado',
-        salary * months,
-        'Multiplica a remuneração mensal pelos meses de afastamento informados.',
+        salary * Math.min(6, Math.max(0, months)),
+        'Multiplica a remuneração mensal pelos meses de afastamento: 4 meses (120 dias) em regra, ou 6 meses quando a empresa participa do Empresa Cidadã.',
       );
     case 'auxilio-incapacidade':
       return result(
         'Benefício estimado',
-        percentage(amount, rate),
-        'Aplica o percentual informado sobre a média de contribuição; a concessão depende de perícia do INSS.',
+        disabilityBenefit(amount, rate),
+        'Aplica o percentual sobre a média das contribuições e respeita o piso (salário mínimo) e o teto do INSS. A concessão depende de perícia do INSS.',
       );
     case 'ipva':
       return result(

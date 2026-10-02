@@ -7,20 +7,27 @@ import { fixedIncome, prepayment } from './finance';
 import {
   bolsaFamiliaParts,
   calculateCalculator,
+  calculateEmployerCost,
   calculateNetSalary,
+  calculateNightShift,
+  calculateOvertime,
   calculateProLabore,
   calculateThirteenth,
+  disabilityBenefit,
   formatCalculatorResult,
   lateDas,
   selfEmployedInss,
 } from './rules';
+import { simplesNacional } from './simples';
 import { calculateTermination, noticeDaysFor } from './termination';
 
 describe('calculator rules', () => {
   const standardValues = {
     alimony: 0,
+    annex: 3,
     amount: 1000,
     baseSalary: 1000,
+    benefits: 300,
     cdiRate: 10,
     childrenOver7: 1,
     childrenUnder7: 1,
@@ -34,6 +41,8 @@ describe('calculator rules', () => {
     endDate: 20030,
     expiredVacations: 1,
     extraHours: 10,
+    extraHours100: 4,
+    extraHours50: 10,
     grossSalary: 1000,
     interest: 2,
     monthlyHours: 220,
@@ -49,6 +58,7 @@ describe('calculator rules', () => {
     prepayment: 200,
     rate: 10,
     requestNumber: 1,
+    rbt12: 240000,
     restDays: 8,
     salary: 3000,
     savingsRate: 6,
@@ -245,5 +255,54 @@ describe('calculator rules', () => {
     expect(result.newMonths).toBeLessThan(24);
     expect(result.interestSavedKeepingPayment).toBeGreaterThan(0);
     expect(result.newPayment).toBeLessThan(result.payment);
+  });
+  it('pays overtime at 50% and 100% with the DSR reflex', () => {
+    const ot = calculateOvertime({
+      salary: 2200,
+      monthlyHours: 220,
+      extraHours50: 10,
+      extraHours100: 5,
+      workDays: 25,
+      restDays: 5,
+    });
+
+    expect(ot.hourly).toBe(10);
+    expect(ot.pay50).toBe(150);
+    expect(ot.pay100).toBe(100);
+    expect(ot.dsr).toBeCloseTo(50, 6);
+    expect(ot.total).toBeCloseTo(300, 6);
+  });
+
+  it('computes IRRF through INSS, dependents and the 2026 reduction', () => {
+    expect(calculateCalculator('irrf', { salary: 5000 }).value).toBe(0);
+    expect(calculateCalculator('irrf', { salary: 9000 }).value).toBeCloseTo(
+      1294.55,
+      2,
+    );
+  });
+
+  it('computes night shift, employer cost and disability benefit', () => {
+    expect(
+      calculateNightShift({
+        salary: 2200,
+        monthlyHours: 220,
+        nightHours: 100,
+        rate: 20,
+      }).additional,
+    ).toBeCloseTo(200, 6);
+    expect(
+      calculateEmployerCost({ salary: 1200, rate: 0, benefits: 0 }).total,
+    ).toBeCloseTo(1200 * (1 + 1 / 12 + 1 / 9) * 1.08, 6);
+    expect(disabilityBenefit(1000, 60)).toBe(1621);
+    expect(disabilityBenefit(20000, 100)).toBe(8475.55);
+  });
+
+  it('derives the Simples Nacional effective rate from the annex table', () => {
+    const result = simplesNacional(20000, 240000, 3);
+
+    expect(result.bracket).toBe(2);
+    expect(result.effectiveRate).toBeCloseTo(7.3, 6);
+    expect(result.das).toBeCloseTo(1460, 4);
+    expect(simplesNacional(1000, 5000000, 1).outOfLimit).toBe(true);
   });
 });

@@ -15,13 +15,20 @@ import {
 } from './finance';
 import {
   bolsaFamiliaParts,
+  calculateEmployerCost,
   calculateNetSalary,
+  calculateNightShift,
+  calculateOvertime,
   calculateProLabore,
   calculateThirteenth,
+  disabilityBenefit,
+  irrfBracketTax,
+  irrfReduction,
   lateDas,
   plrTax,
   selfEmployedInss,
 } from './rules';
+import { simplesNacional } from './simples';
 import {
   calculateDismissalCost,
   calculateTermination,
@@ -1179,6 +1186,331 @@ function amortizacaoAntecipada(values: CalculatorValues): CalculatorDecision {
   };
 }
 
+const inssBrackets = [
+  [1621, 7.5],
+  [2902.84, 9],
+  [4354.27, 12],
+  [8475.55, 14],
+] as const;
+
+function inssDecision(values: CalculatorValues): CalculatorDecision {
+  const salary = Math.max(0, input(values, 'salary'));
+  let previous = 0;
+  let total = 0;
+  const rows = inssBrackets.map(([limit, rate]) => {
+    const base = Math.max(0, Math.min(salary, limit) - previous);
+    const contribution = base * (rate / 100);
+    const label = `${money(previous + (previous > 0 ? 0.01 : 0))} a ${money(limit)}`;
+    previous = limit;
+    total += contribution;
+
+    return [label, percent(rate), money(base), money(contribution)];
+  });
+
+  return {
+    summary: `Você contribui com ${money(total)}, o equivalente a ${percent(salary > 0 ? (total / salary) * 100 : 0)} do salário.`,
+    table: {
+      title: 'Contribuição por faixa',
+      columns: ['Faixa do salário', 'Alíquota', 'Parte do salário', 'INSS'],
+      rows: [
+        ...rows,
+        ['Total', '', money(Math.min(salary, 8475.55)), money(total)],
+      ],
+    },
+    references: [
+      'INSS — tabela de contribuição mensal de 2026',
+      'Portaria Interministerial MPS/MF de 2026 (reajuste do teto e das faixas)',
+    ],
+    alerts: [
+      salary > 8475.55
+        ? `O salário passa do teto de contribuição (R$ 8.475,55). O INSS máximo é ${money(total)}.`
+        : 'Cada alíquota incide só sobre a parte do salário dentro da faixa, não sobre o salário inteiro.',
+    ],
+  };
+}
+
+function irrfDecision(values: CalculatorValues): CalculatorDecision {
+  const net = calculateNetSalary(values);
+  const tableTax = irrfBracketTax(net.irrfBase);
+  const reduction = Math.min(tableTax, irrfReduction(net.gross, tableTax));
+  const rows: string[][] = [
+    ['Rendimento tributável bruto', money(net.gross)],
+    ['(−) INSS', money(net.inss)],
+  ];
+
+  if (net.dependents > 0) {
+    rows.push([
+      `(−) ${net.dependents} dependente(s) × ${money(189.59)}`,
+      money(net.dependents * 189.59),
+    ]);
+  }
+  if (net.alimony > 0)
+    rows.push(['(−) Pensão alimentícia', money(net.alimony)]);
+  rows.push(
+    ['= Base de cálculo', money(net.irrfBase)],
+    ['Imposto pela tabela progressiva', money(tableTax)],
+    ['(−) Redução da Lei 15.270/2025', money(reduction)],
+    ['= IRRF a pagar', money(net.irrf)],
+  );
+
+  return {
+    summary:
+      net.irrf === 0
+        ? 'Neste cenário o imposto retido é zero.'
+        : `O IRRF retido é de ${money(net.irrf)}, ${percent(net.gross > 0 ? (net.irrf / net.gross) * 100 : 0)} do rendimento.`,
+    table: {
+      title: 'Passo a passo do IRRF',
+      columns: ['Etapa', 'Valor'],
+      rows,
+    },
+    references: irrfReferences,
+    alerts: [
+      'Considera o desconto legal de INSS, dependentes e pensão. Previdência privada (PGBL) e outras deduções podem reduzir ainda mais a base.',
+    ],
+  };
+}
+
+function horasExtras(values: CalculatorValues): CalculatorDecision {
+  const ot = calculateOvertime(values);
+  const rows: DecisionStatementRow[] = [
+    {
+      label: 'Horas extras a 50%',
+      reference: `${number.format(ot.hours50)} h × ${money(ot.hourly * 1.5)}`,
+      earning: ot.pay50,
+    },
+    {
+      label: 'Horas extras a 100% (domingos e feriados)',
+      reference: `${number.format(ot.hours100)} h × ${money(ot.hourly * 2)}`,
+      earning: ot.pay100,
+    },
+  ];
+
+  if (ot.dsr > 0) {
+    rows.push({
+      label: 'Reflexo no DSR',
+      reference: `${number.format(input(values, 'restDays'))} repousos ÷ ${number.format(input(values, 'workDays'))} dias úteis`,
+      earning: ot.dsr,
+    });
+  }
+
+  return {
+    summary: `Sua hora normal vale ${money(ot.hourly)}. As horas extras somam ${money(ot.total)} brutos no mês.`,
+    statement: {
+      title: 'Demonstrativo das horas extras',
+      netLabel: 'Total bruto das horas extras',
+      rows,
+      note: 'Valores brutos, antes de INSS e IRRF.',
+    },
+    references: [
+      'CLT, art. 59 (adicional mínimo de 50%)',
+      'Constituição Federal, art. 7º, XVI',
+      'Súmula 172 do TST (reflexo no repouso semanal)',
+    ],
+    alerts: [
+      'Convenção coletiva pode fixar adicional maior que 50%. Informe o salário com adicionais fixos que integram a base, como insalubridade.',
+    ],
+  };
+}
+
+function adicionalNoturno(values: CalculatorValues): CalculatorDecision {
+  const night = calculateNightShift(values);
+
+  return {
+    summary: `O adicional é de ${money(night.additional)} no mês, sobre uma hora de ${money(night.hourly)}.`,
+    table: {
+      title: 'Adicional noturno',
+      columns: ['Item', 'Valor'],
+      rows: [
+        ['Valor da hora normal', money(night.hourly)],
+        [
+          `Adicional de ${percent(input(values, 'rate'))} sobre ${number.format(input(values, 'nightHours'))} h`,
+          money(night.additional),
+        ],
+        [
+          'Hora noturna reduzida de 52min30s (se aplicável)',
+          money(night.reducedHourExtra),
+        ],
+      ],
+    },
+    references: [
+      'CLT, art. 73 (trabalho noturno)',
+      'Súmula 60 do TST (adicional noturno)',
+    ],
+    alerts: [
+      'No meio urbano, a hora noturna vai das 22h às 5h e conta como 52min30s. Se o salário já paga a jornada com horas reduzidas, não some esse valor de novo. No meio rural o adicional é de 25%.',
+    ],
+  };
+}
+
+function custoFuncionario(values: CalculatorValues): CalculatorDecision {
+  const cost = calculateEmployerCost(values);
+  const extra = cost.total - cost.salary;
+
+  return {
+    summary: `Um salário de ${money(cost.salary)} custa ${money(cost.total)} por mês para a empresa, ${percent(cost.salary > 0 ? (extra / cost.salary) * 100 : 0)} a mais.`,
+    statement: {
+      title: 'Custo mensal do funcionário',
+      netLabel: 'Custo total para a empresa',
+      rows: [
+        { label: 'Salário', earning: cost.salary },
+        {
+          label: 'Provisão de 13º e férias com 1/3',
+          reference: '8,33% + 11,11%',
+          earning: cost.provisions,
+        },
+        { label: 'FGTS', reference: '8%', earning: cost.fgts },
+        {
+          label: 'Encargos patronais',
+          reference: percent(input(values, 'rate')),
+          earning: cost.charges,
+        },
+        { label: 'Benefícios', earning: cost.benefits },
+      ],
+    },
+    references: [
+      'Lei 8.212/1991 (contribuição patronal ao INSS)',
+      'Lei 8.036/1990 (FGTS)',
+      'Receita Federal — Simples Nacional',
+    ],
+    alerts: [
+      'Empresas do Simples Nacional nos anexos I a III não pagam a contribuição patronal de 20%; informe 0% nos encargos. Lucro presumido ou real costuma ficar perto de 28,8% (20% INSS, 1% a 3% RAT, 5,8% terceiros).',
+    ],
+  };
+}
+
+function simplesDecision(values: CalculatorValues): CalculatorDecision {
+  const result = simplesNacional(
+    input(values, 'amount'),
+    input(values, 'rbt12'),
+    input(values, 'annex'),
+  );
+  const alerts = [
+    'Estimativa pela tabela geral. Anexos III e V dependem do Fator R, e ISS e ICMS têm sublimites estaduais.',
+  ];
+
+  if (result.outOfLimit) {
+    alerts.unshift(
+      'A receita dos últimos 12 meses passa de R$ 4,8 milhões. Acima desse limite a empresa não pode permanecer no Simples Nacional; o cálculo usa a última faixa.',
+    );
+  }
+
+  return {
+    summary: `Alíquota efetiva de ${percent(result.effectiveRate)}: o DAS do mês é ${money(result.das)}.`,
+    table: {
+      title: 'Como a alíquota efetiva foi calculada',
+      columns: ['Etapa', 'Valor'],
+      rows: [
+        ['Anexo', result.annexName],
+        ['Receita dos últimos 12 meses', money(result.rbt12)],
+        ['Faixa', `${result.bracket}ª faixa`],
+        ['Alíquota nominal', percent(result.nominalRate)],
+        ['Parcela a deduzir', money(result.deduction)],
+        ['Alíquota efetiva', percent(result.effectiveRate)],
+        ['DAS do mês', money(result.das)],
+      ],
+    },
+    references: [
+      'Lei Complementar 123/2006 (anexos I a V)',
+      'Resolução CGSN 140/2018',
+      'Portal do Simples Nacional',
+    ],
+    alerts,
+  };
+}
+
+function auxilioIncapacidade(values: CalculatorValues): CalculatorDecision {
+  const benefit = disabilityBenefit(
+    input(values, 'amount'),
+    input(values, 'rate'),
+  );
+  const raw = (input(values, 'amount') * input(values, 'rate')) / 100;
+  const alerts = [
+    'Estimativa. O INSS apura a média de todas as contribuições desde julho de 1994 e define o direito por perícia médica.',
+  ];
+
+  if (raw < benefit)
+    alerts.unshift(
+      'O benefício não pode ser menor que o salário mínimo; o piso foi aplicado.',
+    );
+  if (raw > benefit)
+    alerts.unshift(
+      'O benefício não pode passar do teto do INSS; o teto foi aplicado.',
+    );
+
+  return {
+    summary: `O benefício estimado é de ${money(benefit)} por mês.`,
+    table: {
+      title: 'Cálculo do benefício',
+      columns: ['Item', 'Valor'],
+      rows: [
+        ['Média das contribuições', money(input(values, 'amount'))],
+        ['Percentual aplicado', percent(input(values, 'rate'))],
+        ['Resultado antes de piso e teto', money(raw)],
+        ['Benefício estimado', money(benefit)],
+      ],
+    },
+    references: [
+      'Emenda Constitucional 103/2019 (regra de cálculo)',
+      'Lei 8.213/1991, arts. 59 a 63 (auxílio por incapacidade temporária)',
+      'INSS — Meu INSS',
+    ],
+    alerts,
+  };
+}
+
+function proportionalAvos(
+  values: CalculatorValues,
+  kind: 'ferias' | 'decimo',
+): CalculatorDecision {
+  const salary = input(values, 'salary');
+  const months = Math.min(12, Math.max(0, input(values, 'months')));
+  const base = (salary * months) / 12;
+  const rows: DecisionStatementRow[] = [
+    {
+      label: kind === 'ferias' ? 'Férias proporcionais' : '13º proporcional',
+      reference: `${number.format(months)}/12 avos`,
+      earning: base,
+    },
+  ];
+
+  if (kind === 'ferias') {
+    rows.push({
+      label: 'Adicional de 1/3',
+      reference: 'Constituição Federal, art. 7º, XVII',
+      earning: base / 3,
+    });
+  }
+
+  return {
+    summary:
+      kind === 'ferias'
+        ? `Você tem direito a ${money(base * (4 / 3))} brutos de férias proporcionais.`
+        : `Seu 13º proporcional bruto é de ${money(base)}.`,
+    statement: {
+      title:
+        kind === 'ferias'
+          ? 'Demonstrativo das férias proporcionais'
+          : 'Demonstrativo do 13º proporcional',
+      netLabel: 'Total bruto',
+      rows,
+      note: 'Valores brutos, antes de INSS e IRRF.',
+    },
+    references:
+      kind === 'ferias'
+        ? [
+            'CLT, arts. 130 e 146 (férias proporcionais)',
+            'Constituição Federal, art. 7º, XVII',
+          ]
+        : [
+            'Lei 4.090/1962 (13º salário)',
+            'Lei 4.749/1965 (prazos de pagamento)',
+          ],
+    alerts: [
+      'Cada mês com 15 dias ou mais trabalhados conta como um avo inteiro. Médias de horas extras e adicionais variáveis aumentam o valor.',
+    ],
+  };
+}
+
 export function buildCalculatorDecision(
   id: CalculatorId,
   values: CalculatorValues,
@@ -1241,6 +1573,24 @@ export function buildCalculatorDecision(
       return emprestimo(values, calculation);
     case 'amortizacao-antecipada':
       return amortizacaoAntecipada(values);
+    case 'inss':
+      return inssDecision(values);
+    case 'irrf':
+      return irrfDecision(values);
+    case 'horas-extras':
+      return horasExtras(values);
+    case 'adicional-noturno':
+      return adicionalNoturno(values);
+    case 'custo-funcionario-clt':
+      return custoFuncionario(values);
+    case 'simples-nacional':
+      return simplesDecision(values);
+    case 'auxilio-incapacidade':
+      return auxilioIncapacidade(values);
+    case 'ferias-proporcionais':
+      return proportionalAvos(values, 'ferias');
+    case 'decimo-proporcional':
+      return proportionalAvos(values, 'decimo');
     default:
       return genericDecision(id);
   }
