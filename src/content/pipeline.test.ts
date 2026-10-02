@@ -12,12 +12,13 @@ import { contentRepository } from './repository';
 describe('content pipeline', () => {
   it('loads typed file content through the repository', () => {
     expect(contentRepository.list('news')).toHaveLength(17);
-    expect(contentRepository.list('guide')).toHaveLength(2);
+    expect(contentRepository.list('guide')).toHaveLength(23);
     expect(contentRepository.list('calculator')).toHaveLength(50);
-    expect(getContentStaticParams('guide')).toEqual([
-      { slug: 'como-montar-reserva-de-emergencia' },
-      { slug: 'como-entender-o-holerite' },
-    ]);
+    const guideSlugs = getContentStaticParams('guide').map((item) => item.slug);
+
+    expect(guideSlugs).toContain('como-montar-reserva-de-emergencia');
+    expect(guideSlugs).toContain('como-entender-o-holerite');
+    expect(new Set(guideSlugs).size).toBe(guideSlugs.length);
   });
 
   it('derives page data, schemas and related content from one document', () => {
@@ -33,7 +34,7 @@ describe('content pipeline', () => {
     expect(model?.faqSchema?.['@type']).toBe('FAQPage');
     expect(model?.breadcrumbSchema['@type']).toBe('BreadcrumbList');
     expect(model?.related.map((item) => item.slug)).toContain(
-      'como-entender-o-holerite',
+      'como-funciona-o-desconto-do-inss',
     );
     expect(model?.relatedByKind.calculator.length).toBeGreaterThan(0);
     expect(model?.relatedByKind.guide.length).toBeGreaterThan(0);
@@ -66,7 +67,12 @@ describe('content pipeline', () => {
 
     expect(new Set(slugs).size).toBe(slugs.length);
 
-    for (const news of contentRepository.list('news')) {
+    const withCalculators = [
+      ...contentRepository.list('news'),
+      ...contentRepository.list('guide'),
+    ];
+
+    for (const news of withCalculators) {
       for (const slug of news.featuredCalculators ?? []) {
         expect(contentRepository.findBySlug('calculator', slug)).toBeDefined();
       }

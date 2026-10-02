@@ -226,28 +226,6 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
           </section>
         ) : null}
 
-        {document.kind === 'guide' ? (
-          <section
-            className="border-b border-ads-border bg-ads-primary-soft py-7"
-            aria-labelledby="guide-outcomes-title"
-          >
-            <Container size="copy">
-              <h2
-                className="text-lg font-bold text-ads-secondary"
-                id="guide-outcomes-title"
-              >
-                Ao final deste guia, você vai saber
-              </h2>
-              <ul className="mt-3 grid gap-2 text-sm leading-6 text-ads-muted sm:grid-cols-2">
-                <li>✓ Entender o conceito sem termos complicados.</li>
-                <li>✓ Aplicar os passos a uma situação real.</li>
-                <li>✓ Evitar os erros mais frequentes.</li>
-                <li>✓ Encontrar a ferramenta certa para continuar.</li>
-              </ul>
-            </Container>
-          </section>
-        ) : null}
-
         <Section>
           <Container className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_18rem]">
             <div className="grid max-w-ads-copy gap-10">
