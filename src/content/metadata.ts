@@ -41,16 +41,22 @@ export function buildContentMetadata(model: ContentPageModel): Metadata {
   };
 }
 
+const indexTitles: Readonly<Record<ContentKind, string>> = {
+  calculator: 'Calculadoras financeiras e trabalhistas',
+  guide: 'Guias práticos de finanças, trabalho e benefícios',
+  news: 'Notícias de economia, trabalho e benefícios',
+};
+
 export function buildContentIndexMetadata(kind: ContentKind): Metadata {
   const config = contentKindConfig[kind];
 
   return {
-    title: config.label,
+    title: indexTitles[kind],
     description: config.description,
     alternates: { canonical: config.path },
     openGraph: {
       type: 'website',
-      title: `${config.label} | ${siteConfig.name}`,
+      title: `${indexTitles[kind]} | ${siteConfig.name}`,
       description: config.description,
       siteName: siteConfig.name,
       locale: 'pt_BR',
@@ -58,7 +64,7 @@ export function buildContentIndexMetadata(kind: ContentKind): Metadata {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${config.label} | ${siteConfig.name}`,
+      title: `${indexTitles[kind]} | ${siteConfig.name}`,
       description: config.description,
     },
   };

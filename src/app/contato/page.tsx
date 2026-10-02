@@ -6,7 +6,7 @@ const description =
   'Entre em contato com a equipe do PortalFina para dúvidas, correções ou parcerias.';
 
 export const metadata = buildInstitutionalMetadata(
-  'Contato',
+  'Fale conosco',
   description,
   '/contato',
 );

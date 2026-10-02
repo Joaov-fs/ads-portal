@@ -9,12 +9,12 @@ import { Search } from '@/components/ui/search';
 import { searchPublicContent } from '@/features/public-content';
 
 export const metadata: Metadata = {
-  title: 'Pesquisa',
+  title: 'Resultados da busca',
   description: 'Encontre calculadoras, notícias, guias e categorias.',
   alternates: { canonical: '/pesquisa' },
   robots: { index: false, follow: true },
   openGraph: {
-    title: 'Pesquisa | PortalFina',
+    title: 'Resultados da busca | PortalFina',
     description: 'Encontre ferramentas e informação clara em poucos segundos.',
     url: '/pesquisa',
   },

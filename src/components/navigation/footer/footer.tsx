@@ -12,8 +12,8 @@ export function Footer() {
         <div className="grid content-start gap-5">
           <Logo />
           <p className="max-w-sm text-sm leading-6 text-ads-muted">
-            Calculadoras com premissas visíveis e conteúdo educativo para
-            decisões financeiras e trabalhistas mais bem informadas.
+            Calculadoras, guias e notícias para entender salário, impostos,
+            benefícios e investimentos, com a conta feita e a fonte citada.
           </p>
         </div>
 

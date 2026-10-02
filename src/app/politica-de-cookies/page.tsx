@@ -7,7 +7,7 @@ const description =
   'Saiba quais tecnologias de armazenamento podem ser usadas e como gerenciar suas preferências.';
 
 export const metadata = buildInstitutionalMetadata(
-  'Política de Cookies',
+  'Política de cookies',
   description,
   '/politica-de-cookies',
 );

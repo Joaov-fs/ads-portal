@@ -9,12 +9,14 @@ export type NavigationItem = Readonly<{
 
 type NavigationProps = Readonly<{
   className?: string;
+  itemClassName?: string;
   items: readonly NavigationItem[];
   orientation?: 'horizontal' | 'vertical';
 }>;
 
 export function Navigation({
   className,
+  itemClassName,
   items,
   orientation = 'horizontal',
 }: NavigationProps) {
@@ -32,9 +34,10 @@ export function Navigation({
           <li key={item.href}>
             <Link
               className={mergeClassNames(
-                'block text-sm font-medium text-ads-muted transition hover:text-ads-primary-strong',
+                itemClassName ??
+                  'block text-sm font-medium text-ads-muted transition hover:text-ads-primary-strong',
                 orientation === 'vertical' &&
-                  'rounded-ads-medium px-3 py-2.5 hover:bg-ads-primary-soft',
+                  'block rounded-ads-medium px-3 py-2.5 text-sm font-medium text-ads-muted hover:bg-ads-primary-soft',
               )}
               href={item.href}
             >

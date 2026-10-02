@@ -5,7 +5,7 @@ const description =
   'Conheça a proposta do PortalFina e os princípios que orientam nossos conteúdos e ferramentas.';
 
 export const metadata = buildInstitutionalMetadata(
-  'Sobre',
+  'Sobre nós',
   description,
   '/sobre',
 );

@@ -8,7 +8,7 @@ const description =
   'Entenda como o PortalFina trata dados pessoais, registros técnicos e preferências de navegação.';
 
 export const metadata = buildInstitutionalMetadata(
-  'Política de Privacidade',
+  'Política de privacidade',
   description,
   '/politica-de-privacidade',
 );

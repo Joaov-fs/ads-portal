@@ -5,7 +5,7 @@ const description =
   'Conheça as condições de uso dos conteúdos, calculadoras e demais recursos do PortalFina.';
 
 export const metadata = buildInstitutionalMetadata(
-  'Termos de Uso',
+  'Termos de uso',
   description,
   '/termos-de-uso',
 );

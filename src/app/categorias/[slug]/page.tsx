@@ -41,11 +41,11 @@ export async function generateMetadata({
       : featuredGuides.some((item) => item.category === category.slug));
 
   return {
-    title: category.label,
+    title: `${category.label}: calculadoras, guias e notícias`,
     description: category.description,
     alternates: { canonical: `/categorias/${category.slug}` },
     openGraph: {
-      title: `${category.label} | PortalFina`,
+      title: `${category.label}: calculadoras, guias e notícias | PortalFina`,
       description: category.description,
       url: `/categorias/${category.slug}`,
     },

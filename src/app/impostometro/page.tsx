@@ -12,7 +12,7 @@ const description =
   'Quanto a União já arrecadou em 2026? Estimativa em tempo real a partir dos dados oficiais da Receita Federal, com método e fontes explicados.';
 
 export const metadata = buildInstitutionalMetadata(
-  'Impostômetro: quanto já foi arrecadado em 2026',
+  'Impostômetro: arrecadação federal em 2026',
   description,
   '/impostometro',
 );

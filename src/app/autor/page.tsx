@@ -7,7 +7,7 @@ const description =
   'Conheça a equipe responsável pelo conteúdo editorial do PortalFina.';
 
 export const metadata = buildInstitutionalMetadata(
-  'Autor',
+  'Equipe editorial',
   description,
   '/autor',
 );

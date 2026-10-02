@@ -6,11 +6,13 @@ import { getMarketIndicators } from '@/features/public-content';
 import { HomeView } from './home-view';
 
 export const metadata: Metadata = {
-  title: 'Calculadoras financeiras e notícias com a conta feita',
+  title: {
+    absolute: 'PortalFina | Calculadoras, notícias e guias financeiros',
+  },
   description: siteConfig.description,
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'PortalFina — Calculadoras, notícias e guias para o seu dinheiro',
+    title: 'PortalFina | Calculadoras, notícias e guias financeiros',
     description: siteConfig.description,
     url: '/',
     type: 'website',
