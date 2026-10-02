@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'PortalFina — Faça a conta. Confira a fonte. Decida melhor.',
+    title: 'PortalFina — Calculadoras, notícias e guias para o seu dinheiro',
     description: siteConfig.description,
     url: '/',
     type: 'website',

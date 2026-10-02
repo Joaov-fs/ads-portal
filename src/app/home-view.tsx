@@ -2,7 +2,6 @@ import Link from 'next/link';
 
 import { AdSlot } from '@/components/advertising/ad-slot';
 import {
-  CountUp,
   HeroCalculator,
   Reveal,
   ScrollStory,
@@ -40,7 +39,7 @@ const toolGroups = [
   },
   {
     title: 'Benefícios e programas',
-    description: 'Valores de outubro e regras de quem tem direito.',
+    description: 'Valores atuais e regras de quem tem direito.',
     icon: '＋',
     slugs: ['bolsa-familia', 'bpc', 'pis', 'salario-maternidade'],
   },
@@ -200,15 +199,15 @@ export function HomeView({
             <div className="grid gap-6">
               <span className="inline-flex w-fit items-center gap-2.5 rounded-ads-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold text-emerald-100">
                 <span className="home-live-dot size-2 rounded-full bg-emerald-300" />
-                Atualizado em 1º de outubro de 2026
+                Calculadoras, notícias e guias para o seu dinheiro
               </span>
               <h1 className="max-w-[14ch] font-ads-display text-ads-hero font-extrabold tracking-[-0.045em] text-white">
-                Faça a conta. Confira a fonte. Decida melhor.
+                Entenda o que muda no seu bolso.
               </h1>
               <p className="max-w-xl text-ads-lead leading-8 text-white/75">
-                {popularTools.length} calculadoras com as regras de 2026 e
-                notícias que mostram, em reais, o que muda no seu bolso. Sem
-                cadastro e com a fonte oficial citada.
+                Calcule salário, férias, rescisão, impostos e benefícios, e
+                acompanhe as notícias que mexem com a sua renda, sempre com a
+                conta feita e a fonte oficial.
               </p>
             </div>
 
@@ -611,34 +610,28 @@ export function HomeView({
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                value: popularTools.length,
-                label: 'calculadoras com regras de 2026',
-                text: 'INSS, IRRF, FGTS, benefícios e tabelas atualizadas.',
+                title: 'Fontes oficiais',
+                text: 'Receita Federal, INSS, Banco Central e ministérios, citados ao final de cada página.',
               },
               {
-                value: latestNews.length,
-                label: 'notícias com exemplo em reais',
-                text: 'Cada uma leva à calculadora do assunto.',
+                title: 'Conta à vista',
+                text: 'Cada resultado mostra as faixas, os descontos e o passo a passo, como num holerite.',
               },
               {
-                value: 100,
-                suffix: '%',
-                label: 'com fonte oficial citada',
-                text: 'Receita Federal, INSS, Banco Central, ministérios.',
+                title: 'Sem cadastro',
+                text: 'Os valores que você digita ficam no seu navegador e não são enviados a ninguém.',
               },
               {
-                value: 0,
-                label: 'cadastros para calcular',
-                text: 'Os valores que você digita não saem do seu navegador.',
+                title: 'Correção com data',
+                text: 'Achou um erro? Avise pelo contato e a correção é publicada com a data.',
               },
             ].map((item, index) => (
-              <Reveal className="h-full" delay={index * 90} key={item.label}>
-                <div className="grid h-full content-start gap-2 rounded-ads-xlarge border border-white/10 bg-white/5 p-6 backdrop-blur">
-                  <strong className="font-ads-display text-5xl font-extrabold tracking-tight text-emerald-300">
-                    <CountUp suffix={item.suffix} value={item.value} />
+              <Reveal className="h-full" delay={index * 90} key={item.title}>
+                <div className="grid h-full content-start gap-3 rounded-ads-xlarge border border-white/10 bg-white/5 p-6 backdrop-blur">
+                  <strong className="font-ads-display text-2xl font-extrabold tracking-tight text-emerald-300">
+                    {item.title}
                   </strong>
-                  <span className="font-semibold">{item.label}</span>
-                  <p className="text-sm leading-6 text-white/65">{item.text}</p>
+                  <p className="text-sm leading-6 text-white/70">{item.text}</p>
                 </div>
               </Reveal>
             ))}

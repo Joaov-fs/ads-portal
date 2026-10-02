@@ -100,7 +100,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             </p>
             <Search
               className="mt-2 max-w-2xl shadow-ads-soft"
-              placeholder="Pesquisar na plataforma"
+              placeholder="O que você quer calcular ou saber?"
             />
           </div>
         </Container>

@@ -12,7 +12,7 @@ describe('Home', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: 'Faça a conta. Confira a fonte. Decida melhor.',
+        name: 'Entenda o que muda no seu bolso.',
       }),
     ).toBeInTheDocument();
     expect(screen.getByRole('search')).toHaveAttribute('action', '/pesquisa');

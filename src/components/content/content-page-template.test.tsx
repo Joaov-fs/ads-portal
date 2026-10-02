@@ -19,9 +19,7 @@ describe('content templates', () => {
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
       model.document.title,
     );
-    expect(screen.getAllByText('Redação PortalFina')).not.toHaveLength(
-      0,
-    );
+    expect(screen.getAllByText('Redação PortalFina')).not.toHaveLength(0);
     expect(
       screen.getByRole('heading', { name: 'Perguntas frequentes' }),
     ).toBeInTheDocument();

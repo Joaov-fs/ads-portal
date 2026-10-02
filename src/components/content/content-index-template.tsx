@@ -15,6 +15,12 @@ import {
   type ContentSummary,
 } from '@/content';
 
+const searchPlaceholder: Readonly<Record<ContentKind, string>> = {
+  calculator: 'Qual conta você quer fazer?',
+  guide: 'Sobre o que você quer aprender?',
+  news: 'Qual notícia você procura?',
+};
+
 function ContentSummaryCard({ item }: Readonly<{ item: ContentSummary }>) {
   const common = {
     category: contentCategoryLabels[item.category],
@@ -74,18 +80,27 @@ export function ContentIndexTemplate({
             <p className="max-w-2xl text-ads-lead leading-8 text-ads-muted">
               {config.description}
             </p>
-            <div className="mt-1 flex flex-wrap items-center gap-3 text-sm text-ads-muted">
-              <strong className="text-ads-secondary">
-                {items.length}{' '}
-                {items.length === 1 ? 'opção disponível' : 'opções disponíveis'}
-              </strong>
-              <span aria-hidden="true">•</span>
-              <span>Premissas, alertas e fontes visíveis</span>
-            </div>
             <Search
               className="mt-3 max-w-2xl shadow-ads-soft"
-              placeholder="Buscar na plataforma"
+              placeholder={searchPlaceholder[kind]}
             />
+            <nav
+              aria-label="Outras seções"
+              className="flex flex-wrap items-center gap-2 text-sm"
+            >
+              <span className="text-ads-muted">Veja também:</span>
+              {(Object.keys(contentKindConfig) as ContentKind[])
+                .filter((other) => other !== kind)
+                .map((other) => (
+                  <Link
+                    className="rounded-ads-full border border-ads-border bg-white px-4 py-1.5 font-semibold text-ads-primary-strong transition hover:border-ads-primary"
+                    href={contentKindConfig[other].path}
+                    key={other}
+                  >
+                    {contentKindConfig[other].label}
+                  </Link>
+                ))}
+            </nav>
           </div>
         </Container>
       </section>
@@ -118,12 +133,6 @@ export function ContentIndexTemplate({
                     >
                       {group.label}
                     </h2>
-                    <span className="text-xs text-ads-muted">
-                      {group.items.length}{' '}
-                      {group.items.length === 1
-                        ? 'calculadora'
-                        : 'calculadoras'}
-                    </span>
                   </div>
                   <ul className="grid overflow-hidden rounded-ads-xlarge border border-ads-border bg-ads-surface sm:grid-cols-2 lg:grid-cols-3">
                     {group.items.map((item) => (
