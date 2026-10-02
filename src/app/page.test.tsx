@@ -3,11 +3,11 @@ import { describe, expect, it } from 'vitest';
 
 import { categories } from '@/features/public-content';
 
-import Home from './page';
+import { HomeView } from './home-view';
 
 describe('Home', () => {
   it('presents the complete public discovery journey', () => {
-    render(<Home />);
+    render(<HomeView />);
 
     expect(
       screen.getByRole('heading', {
@@ -30,7 +30,7 @@ describe('Home', () => {
   });
 
   it('lets the visitor try the salary calculator without leaving the home', () => {
-    render(<Home />);
+    render(<HomeView />);
 
     expect(
       screen.getByLabelText('Quanto você ganha por mês (bruto)?'),
@@ -43,7 +43,7 @@ describe('Home', () => {
   });
 
   it('renders only categories with a useful public path', () => {
-    render(<Home />);
+    render(<HomeView />);
 
     for (const category of categories.filter(
       (item) => item.slug !== 'politica',
@@ -63,7 +63,7 @@ describe('Home', () => {
   });
 
   it('curates the home and links news to the calculator of the subject', () => {
-    render(<Home />);
+    render(<HomeView />);
 
     expect(
       screen.getByRole('link', { name: 'Ver todas as calculadoras →' }),
@@ -81,7 +81,7 @@ describe('Home', () => {
   });
 
   it('does not render unavailable newsletter controls', () => {
-    render(<Home />);
+    render(<HomeView />);
 
     expect(
       screen.queryByLabelText('Seu melhor e-mail'),

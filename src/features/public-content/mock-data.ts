@@ -87,7 +87,7 @@ export const featuredGuides = listContentSummaries('guide').map((item) => ({
  * Indicadores oficiais, com a data de referência em `note`.
  * Atualize junto com as notícias: Banco Central (Selic, CDI, dólar), IBGE (IPCA) e FGV (IGP-M).
  */
-export const indicators = [
+export const indicators: readonly Indicator[] = [
   {
     label: 'Selic (meta)',
     value: '13,75% a.a.',
@@ -128,6 +128,13 @@ export const indicators = [
     note: 'PTAX de venda em 30/09/2026 · Banco Central',
   },
   {
+    label: 'Euro',
+    value: 'R$ 5,85',
+    change: '−0,48%',
+    trend: 'down',
+    note: 'PTAX de venda em 01/10/2026 · Banco Central',
+  },
+  {
     label: 'Salário mínimo',
     value: 'R$ 1.621',
     change: '+6,8% em 2026',
@@ -135,7 +142,7 @@ export const indicators = [
     note: 'Vigente desde 1º/01/2026',
     href: '/noticias/salario-minimo-2026-r-1-621-o-que-ele-muda-no-seu-bolso',
   },
-] as const satisfies readonly Indicator[];
+];
 
 export function getCategory(slug: string) {
   return categories.find((category) => category.slug === slug);

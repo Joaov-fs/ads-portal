@@ -6,6 +6,7 @@ export {
   latestNews,
   popularTools,
 } from './mock-data';
+export { getMarketIndicators } from './market';
 export { searchPublicContent } from './search';
 export type {
   Category,
