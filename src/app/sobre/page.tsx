@@ -53,6 +53,12 @@ export default function AboutPage() {
               redação pela página de contato. Corrigimos e registramos a data da
               atualização.
             </p>,
+            <p key="updates">
+              Os parâmetros das calculadoras, como salário mínimo, tabelas de
+              INSS e Imposto de Renda e valores de benefícios, são revisados a
+              cada virada de ano e sempre que uma norma oficial os altera. A
+              data de revisão aparece em cada página.
+            </p>,
           ],
         },
         {
