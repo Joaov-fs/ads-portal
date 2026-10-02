@@ -22,6 +22,7 @@ export const footerNavigationGroups = [
     label: 'Ferramentas',
     items: [
       { href: '/calculadoras', label: 'Calculadoras' },
+      { href: '/impostometro', label: 'Impostômetro' },
       { href: '/categorias/trabalho', label: 'Trabalho' },
       { href: '/categorias/financas', label: 'Finanças' },
     ],

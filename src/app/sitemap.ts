@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const allContent = listContentSummaries();
   const institutionalPages = [
     '/sobre',
+    '/impostometro',
     '/contato',
     '/politica-de-privacidade',
     '/politica-de-cookies',

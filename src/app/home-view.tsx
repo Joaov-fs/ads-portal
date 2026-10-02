@@ -6,6 +6,7 @@ import {
   HeroCalculator,
   Reveal,
   ScrollStory,
+  TaxCounter,
 } from '@/components/home';
 import { Container } from '@/components/layout/container';
 import { Search } from '@/components/ui/search';
@@ -548,6 +549,43 @@ export function HomeView({
               </Reveal>
             ))}
           </div>
+        </Container>
+      </section>
+
+      <section
+        aria-labelledby="impostometro-title"
+        className="bg-ads-surface py-14 sm:py-20"
+      >
+        <Container>
+          <Reveal>
+            <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_1fr]">
+              <div className="grid gap-3">
+                <span className="text-ads-eyebrow font-bold uppercase tracking-[0.16em] text-ads-primary-strong">
+                  Impostômetro
+                </span>
+                <h2
+                  className="font-ads-display text-ads-title font-extrabold tracking-tight text-ads-secondary"
+                  id="impostometro-title"
+                >
+                  Quanto a União já arrecadou em 2026
+                </h2>
+                <p className="leading-7 text-ads-muted">
+                  Estimativa em tempo real a partir dos dados oficiais da
+                  Receita Federal. Veja o método e descubra quanto disso passa
+                  pelo seu salário.
+                </p>
+                <Link
+                  className="text-sm font-semibold text-ads-primary-strong hover:underline"
+                  href="/impostometro"
+                >
+                  Entender a conta →
+                </Link>
+              </div>
+              <p className="rounded-2xl border border-ads-border bg-white p-6 text-3xl font-extrabold tabular-nums text-ads-secondary shadow-sm sm:text-4xl">
+                <TaxCounter />
+              </p>
+            </div>
+          </Reveal>
         </Container>
       </section>
 
