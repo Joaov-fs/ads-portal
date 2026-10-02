@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { CSSProperties } from 'react';
 
 import { AdSlot } from '@/components/advertising/ad-slot';
 import {
@@ -194,20 +195,21 @@ export function HomeView({
           className="home-orb pointer-events-none absolute -bottom-40 left-[-8rem] size-[30rem] rounded-full bg-teal-400/25"
           style={{ animationDelay: '-6s' }}
         />
-        <Container className="relative grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:py-28">
-          <div className="grid gap-8">
+        <Container className="relative grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 lg:py-28">
+          <div className="grid gap-9">
             <div className="grid gap-6">
-              <span className="inline-flex w-fit items-center gap-2.5 rounded-ads-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold text-emerald-100">
+              <span className="inline-flex w-fit items-center gap-2.5 rounded-ads-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-1.5 text-xs font-semibold text-emerald-100">
                 <span className="home-live-dot size-2 rounded-full bg-emerald-300" />
                 Calculadoras, notícias e guias para o seu dinheiro
               </span>
-              <h1 className="max-w-[14ch] font-ads-display text-ads-hero font-extrabold tracking-[-0.045em] text-white">
-                Entenda o que muda no seu bolso.
+              <h1 className="font-ads-display text-[clamp(2.7rem,6.6vw,5.6rem)] font-extrabold leading-[1.02] tracking-[-0.045em] text-white">
+                Entenda o que muda no{' '}
+                <span className="home-gradient-text">seu bolso.</span>
               </h1>
-              <p className="max-w-xl text-ads-lead leading-8 text-white/75">
-                Calcule salário, férias, rescisão, impostos e benefícios, e
-                acompanhe as notícias que mexem com a sua renda, sempre com a
-                conta feita e a fonte oficial.
+              <p className="max-w-xl text-ads-lead leading-8 text-white/80">
+                Descubra quanto sobra do seu salário, quanto você recebe de
+                férias ou na rescisão e como cada notícia da economia pesa no
+                seu dinheiro.
               </p>
             </div>
 
@@ -216,26 +218,70 @@ export function HomeView({
               placeholder="O que você precisa resolver hoje?"
             />
 
-            <div className="flex flex-wrap gap-2.5 text-sm">
+            <div className="grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-3">
               {[
-                ['Salário líquido', '/calculadoras/salario-liquido'],
-                ['13º salário', '/calculadoras/decimo-salario'],
-                ['Rescisão', '/calculadoras/rescisao-clt'],
-                ['Bolsa Família', '/calculadoras/bolsa-familia'],
-                ['MEI', '/calculadoras/das-limite-mei'],
-              ].map(([label, href]) => (
+                [
+                  'Salário líquido',
+                  'Quanto cai na conta',
+                  '/calculadoras/salario-liquido',
+                ],
+                ['Férias', 'Com o terço e o abono', '/calculadoras/ferias'],
+                [
+                  '13º salário',
+                  'As duas parcelas',
+                  '/calculadoras/decimo-salario',
+                ],
+                [
+                  'Rescisão',
+                  'Tudo que você recebe',
+                  '/calculadoras/rescisao-clt',
+                ],
+                [
+                  'Bolsa Família',
+                  'Valor da sua família',
+                  '/calculadoras/bolsa-familia',
+                ],
+                ['MEI', 'DAS, limite e multa', '/calculadoras/das-limite-mei'],
+              ].map(([label, hint, href]) => (
                 <Link
-                  className="rounded-ads-full border border-white/15 bg-white/5 px-4 py-2 font-medium text-white/85 transition hover:border-emerald-300/60 hover:bg-white/10 hover:text-white"
+                  className="group grid gap-0.5 rounded-ads-large border border-white/15 bg-white/[0.07] px-4 py-3 backdrop-blur transition hover:-translate-y-0.5 hover:border-emerald-300/60 hover:bg-white/15"
                   href={href as string}
                   key={href}
                 >
-                  {label}
+                  <span className="flex items-center justify-between font-bold text-white">
+                    {label}
+                    <span
+                      aria-hidden="true"
+                      className="text-emerald-300 transition group-hover:translate-x-1"
+                    >
+                      →
+                    </span>
+                  </span>
+                  <span className="text-xs text-white/60">{hint}</span>
                 </Link>
               ))}
             </div>
           </div>
 
-          <HeroCalculator />
+          <div className="relative">
+            <span
+              aria-hidden="true"
+              className="home-chip absolute -left-6 top-10 z-10 hidden rounded-ads-large bg-emerald-300 px-4 py-2 text-sm font-extrabold tabular-nums text-ads-secondary-strong shadow-ads-raised lg:block"
+              style={{ '--tilt': '-4deg' } as CSSProperties}
+            >
+              + R$ 1.621 salário mínimo
+            </span>
+            <span
+              aria-hidden="true"
+              className="home-chip absolute -right-4 -top-5 z-10 hidden rounded-ads-large bg-white px-4 py-2 text-sm font-extrabold tabular-nums text-ads-secondary shadow-ads-raised lg:block"
+              style={
+                { '--tilt': '3deg', animationDelay: '-2s' } as CSSProperties
+              }
+            >
+              Isento até R$ 5.000
+            </span>
+            <HeroCalculator />
+          </div>
         </Container>
       </section>
 

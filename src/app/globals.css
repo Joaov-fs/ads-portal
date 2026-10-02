@@ -199,7 +199,29 @@ a {
   box-shadow: 0 2px 8px rgb(12 49 43 / 35%);
 }
 
+@keyframes home-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--tilt, 0deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--tilt, 0deg));
+  }
+}
+
+.home-chip {
+  animation: home-bob 6s ease-in-out infinite;
+}
+
+.home-gradient-text {
+  background: linear-gradient(100deg, #6ee7b7 0%, #34d399 45%, #5eead4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .home-chip,
   .reveal,
   .home-orb,
   .home-marquee-track,

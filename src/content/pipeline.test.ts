@@ -12,7 +12,7 @@ import { contentRepository } from './repository';
 describe('content pipeline', () => {
   it('loads typed file content through the repository', () => {
     expect(contentRepository.list('news')).toHaveLength(17);
-    expect(contentRepository.list('guide')).toHaveLength(23);
+    expect(contentRepository.list('guide')).toHaveLength(41);
     expect(contentRepository.list('calculator')).toHaveLength(50);
     const guideSlugs = getContentStaticParams('guide').map((item) => item.slug);
 

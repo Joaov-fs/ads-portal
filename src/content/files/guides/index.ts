@@ -1,3 +1,21 @@
+import { guideComoConsultarARestituicaoDoImpostoDeRenda } from './como-consultar-a-restituicao-do-imposto-de-renda';
+import { guideComoConsultarSaldoEExtratoDoFgts } from './como-consultar-saldo-e-extrato-do-fgts';
+import { guideComoConsultarValoresAReceberNoBancoCentral } from './como-consultar-valores-a-receber-no-banco-central';
+import { guideComoUsarOMeuInssEConsultarOCnis } from './como-usar-o-meu-inss-e-consultar-o-cnis';
+import { guideComoConsultarCpfELimparONomePassoAPasso } from './como-consultar-cpf-e-limpar-o-nome-passo-a-passo';
+import { guideComoUsarOPixComSeguranca } from './como-usar-o-pix-com-seguranca';
+import { guideSaqueAniversarioDoFgtsComoFunciona } from './saque-aniversario-do-fgts-como-funciona';
+import { guideComoConsultarASituacaoDoCpf } from './como-consultar-a-situacao-do-cpf';
+import { guideComoAcessarACarteiraDeTrabalhoDigital } from './como-acessar-a-carteira-de-trabalho-digital';
+import { guideComoCriarEAumentarONivelDaContaGovbr } from './como-criar-e-aumentar-o-nivel-da-conta-govbr';
+import { guideComoEmitirODasDoMeiEFazerADeclaracaoAnual } from './como-emitir-o-das-do-mei-e-fazer-a-declaracao-anual';
+import { guideComoDarBaixaNoMei } from './como-dar-baixa-no-mei';
+import { guideComoIdentificarBoletoFalsoEPagarComSeguranca } from './como-identificar-boleto-falso-e-pagar-com-seguranca';
+import { guideComoConsultarEMelhorarOScoreDeCredito } from './como-consultar-e-melhorar-o-score-de-credito';
+import { guideComoLerOExtratoBancarioEContestarCobrancas } from './como-ler-o-extrato-bancario-e-contestar-cobrancas';
+import { guideComoMontarUmOrcamentoMensalSimples } from './como-montar-um-orcamento-mensal-simples';
+import { guideComoCancelarAssinaturasEComprasOnline } from './como-cancelar-assinaturas-e-compras-online';
+import { guideComoFazerOuAtualizarOCadastroUnico } from './como-fazer-ou-atualizar-o-cadastro-unico';
 import { guideComoCalcularOSalarioLiquido } from './como-calcular-o-salario-liquido';
 import { guideComoCalcularFeriasPassoAPasso } from './como-calcular-ferias-passo-a-passo';
 import { guideComoCalcularO13oSalario } from './como-calcular-o-13o-salario';
@@ -25,6 +43,24 @@ import { reservaEmergenciaGuide } from './reserva-emergencia';
 export const guideFiles = [
   holeriteGuide,
   reservaEmergenciaGuide,
+  guideComoConsultarARestituicaoDoImpostoDeRenda,
+  guideComoConsultarSaldoEExtratoDoFgts,
+  guideComoConsultarValoresAReceberNoBancoCentral,
+  guideComoUsarOMeuInssEConsultarOCnis,
+  guideComoConsultarCpfELimparONomePassoAPasso,
+  guideComoUsarOPixComSeguranca,
+  guideSaqueAniversarioDoFgtsComoFunciona,
+  guideComoConsultarASituacaoDoCpf,
+  guideComoAcessarACarteiraDeTrabalhoDigital,
+  guideComoCriarEAumentarONivelDaContaGovbr,
+  guideComoEmitirODasDoMeiEFazerADeclaracaoAnual,
+  guideComoDarBaixaNoMei,
+  guideComoIdentificarBoletoFalsoEPagarComSeguranca,
+  guideComoConsultarEMelhorarOScoreDeCredito,
+  guideComoLerOExtratoBancarioEContestarCobrancas,
+  guideComoMontarUmOrcamentoMensalSimples,
+  guideComoCancelarAssinaturasEComprasOnline,
+  guideComoFazerOuAtualizarOCadastroUnico,
   guideComoCalcularOSalarioLiquido,
   guideComoCalcularFeriasPassoAPasso,
   guideComoCalcularO13oSalario,
