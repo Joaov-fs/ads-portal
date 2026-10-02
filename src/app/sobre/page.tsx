@@ -38,6 +38,25 @@ export default function AboutPage() {
           ],
         },
         {
+          heading: 'Quem escreve e como checamos',
+          content: [
+            <p key="authorship">
+              O PortalFina não tem colunistas individuais. Os conteúdos são
+              assinados pela Redação PortalFina e produzidos com apoio de
+              inteligência artificial, a partir de fontes oficiais como
+              Receita Federal, INSS, Banco Central, ministérios e Diário
+              Oficial da União. As fontes aparecem ao final de cada notícia,
+              guia e calculadora, para que você confira os números por conta
+              própria.
+            </p>,
+            <p key="corrections">
+              Encontrou um erro ou um valor desatualizado? Escreva para a
+              redação pela página de contato. Corrigimos e registramos a data
+              da atualização.
+            </p>,
+          ],
+        },
+        {
           heading: 'Limites da informação',
           content: [
             <p key="limits">

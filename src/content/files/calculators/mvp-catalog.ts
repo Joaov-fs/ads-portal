@@ -677,8 +677,16 @@ const specs = [
       'A ferramenta aplica o percentual informado à base. Apenas a decisão judicial ou acordo define o valor devido.',
     tags: ['familia', 'pensao', 'trabalho'],
     fields: [
-      money('salary', 'Base de cálculo'),
-      percentage('rate', 'Percentual definido'),
+      money(
+        'salary',
+        'Base de cálculo',
+        'Valor sobre o qual incide a pensão: em geral a renda líquida (salário menos INSS e IRRF) ou o salário mínimo, conforme a decisão.',
+      ),
+      percentage(
+        'rate',
+        'Percentual definido (%)',
+        'O percentual fixado na decisão judicial ou no acordo. Não existe percentual padrão em lei.',
+      ),
     ],
   },
   {

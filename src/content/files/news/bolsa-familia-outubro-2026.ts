@@ -8,7 +8,7 @@ export const bolsaFamiliaOutubro2026News = {
   description:
     'O piso do Bolsa Família sobe de R$ 600 para R$ 691 em outubro. Benefícios por pessoa, crianças, adolescentes, gestantes e nutrizes também foram reajustados.',
   category: 'beneficios',
-  authorId: 'mariana-costa',
+  authorId: 'equipe-editorial',
   coverImage: {
     src: '/images/news/bolsa-familia-outubro-2026.png',
     alt: 'Responsável familiar consulta pelo celular informações sobre o pagamento do Bolsa Família.',

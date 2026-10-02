@@ -246,8 +246,9 @@ describe('calculator rules', () => {
   it('applies the regressive tax and compares prepayment strategies', () => {
     const cdb = fixedIncome(1000, 10, 12);
 
-    expect(cdb.taxRate).toBe(20);
-    expect(cdb.net).toBeCloseTo(cdb.gross * 0.8, 6);
+    expect(cdb.taxRate).toBe(17.5);
+    expect(cdb.net).toBeCloseTo(cdb.gross * 0.825, 6);
+    expect(fixedIncome(1000, 10, 6).taxRate).toBe(20);
     expect(fixedIncome(1000, 10, 12, false).tax).toBe(0);
 
     const result = prepayment(10000, 0.01, 24, 2000);

@@ -14,9 +14,24 @@ export type Author = Readonly<{
   role: string;
 }>;
 
+export type ContentTable = Readonly<{
+  caption?: string;
+  columns: readonly string[];
+  rows: readonly (readonly string[])[];
+}>;
+
 export type ContentSection = Readonly<{
   heading: string;
   paragraphs: readonly string[];
+  /** Tabela opcional exibida depois dos parágrafos. */
+  table?: ContentTable;
+}>;
+
+/** Número em destaque exibido no topo de uma notícia ("Em números"). */
+export type ContentHighlight = Readonly<{
+  label: string;
+  note?: string;
+  value: string;
 }>;
 
 export type ContentFaq = Readonly<{
@@ -26,7 +41,8 @@ export type ContentFaq = Readonly<{
 
 export type ContentSource = Readonly<{
   label: string;
-  url: string;
+  /** Opcional: fontes oficiais podem ser citadas só pelo nome. */
+  url?: string;
 }>;
 
 export type ContentCoverImage = Readonly<{
@@ -48,6 +64,9 @@ type BaseContentDocument = Readonly<{
   coverImage?: ContentCoverImage;
   description: string;
   faq: readonly ContentFaq[];
+  /** Calculadoras (slugs) que resolvem o assunto; viram botões de ação no topo. */
+  featuredCalculators?: readonly string[];
+  highlights?: readonly ContentHighlight[];
   publishedAt: string;
   sections: readonly ContentSection[];
   slug: string;
@@ -109,6 +128,7 @@ export type ContentPageModel<K extends ContentKind = ContentKind> = Readonly<{
   faqSchema?: JsonLd;
   mainSchema: JsonLd;
   pathname: string;
+  featured: readonly ContentSummary[];
   readingMinutes: number;
   related: readonly ContentSummary[];
   relatedByKind: Readonly<{

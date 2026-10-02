@@ -163,6 +163,69 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
           </section>
         ) : null}
 
+        {document.highlights && document.highlights.length > 0 ? (
+          <section
+            className="border-b border-ads-border bg-ads-surface py-8"
+            aria-labelledby="highlights-title"
+          >
+            <Container>
+              <h2
+                className="mb-5 text-xs font-bold uppercase tracking-[0.14em] text-ads-primary-strong"
+                id="highlights-title"
+              >
+                Em números
+              </h2>
+              <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {document.highlights.map((item) => (
+                  <div
+                    className="rounded-ads-large border border-ads-border bg-ads-background p-5"
+                    key={item.label}
+                  >
+                    <dd className="font-ads-display text-3xl font-bold tracking-tight text-ads-secondary">
+                      {item.value}
+                    </dd>
+                    <dt className="mt-1 text-sm font-semibold text-ads-text">
+                      {item.label}
+                    </dt>
+                    {item.note ? (
+                      <p className="mt-1 text-xs leading-5 text-ads-muted">
+                        {item.note}
+                      </p>
+                    ) : null}
+                  </div>
+                ))}
+              </dl>
+            </Container>
+          </section>
+        ) : null}
+
+        {model.featured.length > 0 ? (
+          <section
+            className="border-b border-ads-border bg-ads-primary-soft py-7"
+            aria-labelledby="featured-calculators-title"
+          >
+            <Container className="flex flex-wrap items-center gap-4">
+              <h2
+                className="text-lg font-bold text-ads-secondary"
+                id="featured-calculators-title"
+              >
+                Faça a conta com os seus dados
+              </h2>
+              <div className="flex flex-wrap gap-3">
+                {model.featured.map((item) => (
+                  <Link
+                    className="rounded-ads-full bg-ads-primary px-5 py-2.5 text-sm font-bold text-white transition hover:bg-ads-primary-strong"
+                    href={item.href}
+                    key={item.slug}
+                  >
+                    {item.title} →
+                  </Link>
+                ))}
+              </div>
+            </Container>
+          </section>
+        ) : null}
+
         {document.kind === 'guide' ? (
           <section
             className="border-b border-ads-border bg-ads-primary-soft py-7"
@@ -265,6 +328,47 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
                         {paragraph}
                       </p>
                     ))}
+                    {section.table ? (
+                      <div className="overflow-x-auto rounded-ads-large border border-ads-border">
+                        <table className="w-full min-w-96 text-left text-sm">
+                          {section.table.caption ? (
+                            <caption className="bg-ads-secondary-soft px-4 py-3 text-left font-bold text-ads-secondary">
+                              {section.table.caption}
+                            </caption>
+                          ) : null}
+                          <thead className="bg-ads-secondary-soft text-ads-secondary">
+                            <tr>
+                              {section.table.columns.map((column) => (
+                                <th
+                                  className="px-4 py-3 font-bold"
+                                  key={column}
+                                  scope="col"
+                                >
+                                  {column}
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {section.table.rows.map((row) => (
+                              <tr
+                                className="border-t border-ads-border"
+                                key={row.join('|')}
+                              >
+                                {row.map((cell, cellIndex) => (
+                                  <td
+                                    className="px-4 py-3 leading-6 text-ads-text"
+                                    key={`${cellIndex}-${cell}`}
+                                  >
+                                    {cell}
+                                  </td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    ) : null}
                   </section>
                   {document.kind !== 'calculator' &&
                   index === 0 &&
@@ -347,8 +451,8 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
                 <p className="text-sm leading-6 text-ads-muted">{author.bio}</p>
                 <ul className="grid gap-2 border-t border-ads-border pt-4 text-xs text-ads-muted">
                   <li className="flex items-center gap-2">
-                    <span className="text-ads-primary">✓</span> Revisado
-                    editorialmente
+                    <span className="text-ads-primary">✓</span> Baseado em
+                    fontes oficiais
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-ads-primary">✓</span> Metodologia
@@ -415,15 +519,25 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
             >
               Fontes oficiais
             </h2>
-            <ul className="grid gap-3 pl-5 text-ads-muted">
+            <p className="mb-4 text-sm leading-6 text-ads-muted">
+              Para conferir os números, procure estes documentos e páginas nos
+              sites dos próprios órgãos.
+            </p>
+            <ul className="grid list-disc gap-3 pl-5 text-ads-muted">
               {document.sources.map((source) => (
-                <li key={source.url}>
-                  <Link
-                    className="font-medium text-ads-primary-strong underline-offset-4 hover:underline"
-                    href={source.url}
-                  >
-                    {source.label}
-                  </Link>
+                <li key={source.label}>
+                  {source.url ? (
+                    <Link
+                      className="font-medium text-ads-primary-strong underline-offset-4 hover:underline"
+                      href={source.url}
+                    >
+                      {source.label}
+                    </Link>
+                  ) : (
+                    <span className="font-medium text-ads-text">
+                      {source.label}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

@@ -8,7 +8,7 @@ export const desenrolaMeiPequenoValorNews = {
   description:
     'Nova modalidade permite que microempreendedores negociem dívidas de até R$ 8.105. A adesão começou em 1º de outubro e pode reduzir pela metade parte do saldo após a entrada.',
   category: 'financas',
-  authorId: 'rafael-oliveira',
+  authorId: 'equipe-editorial',
   coverImage: {
     src: '/images/news/desenrola-mei-pequeno-valor.png',
     alt: 'Microempreendedor analisa documentos e condições para renegociação de dívida do MEI.',

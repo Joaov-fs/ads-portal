@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-  authors: [{ name: 'Equipe Editorial PortalFina', url: '/autor' }],
+  authors: [{ name: 'Redação PortalFina', url: '/autor' }],
   publisher: siteConfig.publisher,
   category: siteConfig.category,
   keywords: [...siteConfig.keywords],

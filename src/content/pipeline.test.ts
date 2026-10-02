@@ -11,7 +11,7 @@ import { contentRepository } from './repository';
 
 describe('content pipeline', () => {
   it('loads typed file content through the repository', () => {
-    expect(contentRepository.list('news')).toHaveLength(4);
+    expect(contentRepository.list('news')).toHaveLength(17);
     expect(contentRepository.list('guide')).toHaveLength(2);
     expect(contentRepository.list('calculator')).toHaveLength(50);
     expect(getContentStaticParams('guide')).toEqual([
@@ -21,10 +21,13 @@ describe('content pipeline', () => {
   });
 
   it('derives page data, schemas and related content from one document', () => {
-    const model = getContentPageModel('news', 'faixas-salariais-e-descontos');
+    const model = getContentPageModel(
+      'news',
+      'inss-2026-teto-de-r-8-475-55-e-aliquotas-por-faixa',
+    );
 
     expect(model).toBeDefined();
-    expect(model?.author.name).toBe('Equipe Editorial PortalFina');
+    expect(model?.author.name).toBe('Redação PortalFina');
     expect(model?.readingMinutes).toBeGreaterThan(0);
     expect(model?.mainSchema['@type']).toBe('NewsArticle');
     expect(model?.faqSchema?.['@type']).toBe('FAQPage');
@@ -56,5 +59,17 @@ describe('content pipeline', () => {
     expect(listContentSummaries('guide')[0]?.href).toMatch(
       /^\/guias\/[a-z0-9-]+$/,
     );
+  });
+
+  it('links every news item to existing calculators and keeps slugs unique', () => {
+    const slugs = contentRepository.listAll().map((item) => item.slug);
+
+    expect(new Set(slugs).size).toBe(slugs.length);
+
+    for (const news of contentRepository.list('news')) {
+      for (const slug of news.featuredCalculators ?? []) {
+        expect(contentRepository.findBySlug('calculator', slug)).toBeDefined();
+      }
+    }
   });
 });

@@ -154,6 +154,27 @@ function buildFaqSchema(document: ContentDocument): JsonLd | undefined {
   };
 }
 
+/** Intercala calculadora, notícia e guia para que toda página leve a outro tipo de conteúdo. */
+function mixRelated(
+  byKind: Readonly<Record<ContentKind, readonly ContentSummary[]>>,
+  featured: readonly ContentSummary[],
+) {
+  const calculators = [...featured, ...byKind.calculator];
+  const lists = [calculators, byKind.news, byKind.guide];
+  const mixed: ContentSummary[] = [];
+
+  for (let index = 0; index < 3; index += 1) {
+    for (const list of lists) {
+      const item = list[index];
+      if (item && !mixed.some((entry) => entry.href === item.href)) {
+        mixed.push(item);
+      }
+    }
+  }
+
+  return mixed.slice(0, 6);
+}
+
 export function getContentPageModel<K extends ContentKind>(
   kind: K,
   slug: string,
@@ -179,6 +200,16 @@ export function getContentPageModel<K extends ContentKind>(
     { label: document.title },
   ] as const;
 
+  const relatedByKind = {
+    calculator: getRelatedContentByKind(document, 'calculator', repository),
+    guide: getRelatedContentByKind(document, 'guide', repository),
+    news: getRelatedContentByKind(document, 'news', repository),
+  };
+  const featured = (document.featuredCalculators ?? [])
+    .map((featuredSlug) => repository.findBySlug('calculator', featuredSlug))
+    .filter((item) => item !== undefined)
+    .map(toContentSummary);
+
   return {
     author,
     breadcrumbSchema: {
@@ -194,15 +225,12 @@ export function getContentPageModel<K extends ContentKind>(
     breadcrumbs,
     document,
     faqSchema: buildFaqSchema(document),
+    featured,
     mainSchema: buildMainSchema(document, author.name, pathname),
     pathname,
     readingMinutes: calculateReadingMinutes(document),
-    related: getRelatedContent(document, repository),
-    relatedByKind: {
-      calculator: getRelatedContentByKind(document, 'calculator', repository),
-      guide: getRelatedContentByKind(document, 'guide', repository),
-      news: getRelatedContentByKind(document, 'news', repository),
-    },
+    related: mixRelated(relatedByKind, featured),
+    relatedByKind,
   };
 }
 
