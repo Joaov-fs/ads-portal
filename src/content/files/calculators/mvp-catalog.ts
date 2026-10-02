@@ -285,7 +285,7 @@ const specs = [
     category: 'utilidades',
     description: 'Descubra quantos dias existem entre duas datas.',
     howItWorks:
-      'Escolha as duas datas no calendário para ver os dias corridos entre elas, sem contar o dia inicial. Para prazos legais, confirme se a regra aplicável inclui o dia inicial ou o final.',
+      'Escolha as duas datas para ver os dias corridos, os dias úteis e a diferença em semanas, meses e anos. O dia inicial não é contado e feriados não são descontados.',
     tags: ['utilidades', 'dias', 'prazo'],
     fields: [date('startDate', 'Data inicial'), date('endDate', 'Data final')],
   },
@@ -535,11 +535,21 @@ const specs = [
     category: 'trabalho',
     description: 'Veja se o saldo de banco de horas está positivo ou negativo.',
     howItWorks:
-      'Créditos são somados e débitos subtraídos. A compensação segue acordo individual ou coletivo aplicável.',
+      'Créditos menos débitos dão o saldo. Informando o salário, mostramos quanto valeria o saldo positivo pago em dinheiro com 50%. Os prazos de compensação dependem do tipo de acordo.',
     tags: ['trabalho', 'horas', 'banco'],
     fields: [
       number('credits', 'Horas de crédito', 'Use horas decimais: 1h30 = 1,5.'),
       number('debits', 'Horas de débito', 'Use horas decimais: 1h30 = 1,5.'),
+      money(
+        'salary',
+        'Salário mensal (opcional)',
+        'Se informado, mostramos quanto vale o saldo positivo se for pago em dinheiro com 50% de adicional.',
+      ),
+      number(
+        'monthlyHours',
+        'Horas mensais de trabalho (opcional)',
+        'Em jornada de 44 horas semanais são 220 horas por mês.',
+      ),
     ],
   },
   {
@@ -640,7 +650,7 @@ const specs = [
     description:
       'Estime adicional de insalubridade a partir da base e grau aplicável.',
     howItWorks:
-      'Informe a base definida no caso concreto e o percentual correspondente ao grau reconhecido.',
+      'Informe o grau do laudo (10%, 20% ou 40%). Sem outra base, usamos o salário mínimo, e mostramos os reflexos médios em 13º, férias e FGTS.',
     tags: ['trabalho', 'adicional', 'insalubridade'],
     fields: [
       money(
@@ -663,7 +673,7 @@ const specs = [
     description:
       'Veja a referência do adicional de periculosidade sobre o salário-base.',
     howItWorks:
-      'O modelo aplica 30% ao salário informado. Enquadramento e base dependem das condições reconhecidas.',
+      'Aplica 30% ao salário-base e mostra os reflexos médios em 13º, férias e FGTS. O enquadramento depende de laudo e das condições de trabalho.',
     tags: ['trabalho', 'adicional', 'periculosidade'],
     fields: [money('salary', 'Salário-base')],
   },
@@ -674,7 +684,7 @@ const specs = [
     category: 'trabalho',
     description: 'Estime um percentual de pensão sobre a base determinada.',
     howItWorks:
-      'A ferramenta aplica o percentual informado à base. Apenas a decisão judicial ou acordo define o valor devido.',
+      'A ferramenta aplica o percentual à renda líquida (rendimento menos INSS e IRRF) e mostra quanto sobra para quem paga. Apenas a decisão judicial ou o acordo define o valor devido.',
     tags: ['familia', 'pensao', 'trabalho'],
     fields: [
       money(
@@ -686,6 +696,11 @@ const specs = [
         'rate',
         'Percentual definido (%)',
         'O percentual fixado na decisão judicial ou no acordo. Não existe percentual padrão em lei.',
+      ),
+      money(
+        'deductions',
+        'Descontos legais (INSS e IRRF)',
+        'Se a pensão incide sobre a renda líquida, informe quanto sai de INSS e IRRF. Deixe em branco se a base já é líquida.',
       ),
     ],
   },
@@ -852,7 +867,7 @@ const specs = [
     description:
       'Projete uma referência de benefício pelo salário e período de afastamento.',
     howItWorks:
-      'O salário mensal é multiplicado pelos meses de afastamento informados. Categoria de segurada e carência podem mudar a análise.',
+      'O salário mensal é multiplicado pelos meses de afastamento e o resultado mostra cada parcela. Categoria de segurada e carência podem mudar a análise.',
     tags: ['beneficios', 'maternidade', 'inss'],
     fields: [
       money('salary', 'Remuneração mensal'),
@@ -894,14 +909,28 @@ const specs = [
     description:
       'Estime o IPVA a partir do valor venal e alíquota do seu estado.',
     howItWorks:
-      'A alíquota estadual é aplicada ao valor venal informado. Descontos, isenções e calendário são definidos localmente.',
+      'A alíquota estadual é aplicada ao valor venal, com opção de proporcional aos meses do ano e de ver as parcelas. Descontos, isenções e calendário são definidos por cada estado.',
     tags: ['financas', 'ipva', 'veiculo'],
     fields: [
-      money('amount', 'Valor venal do veículo'),
+      money(
+        'amount',
+        'Valor venal do veículo',
+        'Valor de referência da tabela FIPE usado pelo seu estado.',
+      ),
       percentage(
         'rate',
         'Alíquota estadual (%)',
         'Varia por estado e tipo de veículo (em geral 1% a 4%). Consulte a Secretaria da Fazenda do seu estado.',
+      ),
+      number(
+        'monthsInYear',
+        'Meses a pagar no ano (opcional)',
+        'Deixe em branco para o ano inteiro (12). Para veículo novo, alguns estados cobram só os meses restantes.',
+      ),
+      number(
+        'installments',
+        'Número de parcelas (opcional)',
+        'Para ver o valor de cada parcela. Se vazio, mostramos 3.',
       ),
     ],
   },
@@ -986,7 +1015,7 @@ const specs = [
     description:
       'Converta uma taxa mensal em taxa efetiva anual para comparar propostas.',
     howItWorks:
-      'A taxa mensal é capitalizada por 12 períodos. Taxa nominal e taxa efetiva não são equivalentes.',
+      'A taxa mensal é capitalizada por 12 períodos e a tabela traz também as taxas trimestral e semestral. O mesmo número pode ser lido como taxa anual, para achar a mensal equivalente.',
     tags: ['utilidades', 'taxa', 'juros'],
     fields: [percentage('rate', 'Taxa mensal')],
   },
@@ -998,7 +1027,7 @@ const specs = [
     description:
       'Calcule o montante sem capitalização para prazos e taxas compatíveis.',
     howItWorks:
-      'O juro incide sempre sobre o capital inicial. Mantenha taxa e período na mesma unidade.',
+      'O juro incide sempre sobre o capital inicial. A tabela mostra cada período e compara com o resultado em juros compostos. Mantenha taxa e período na mesma unidade.',
     tags: ['financas', 'juros', 'investimentos'],
     fields: [
       money('amount', 'Valor inicial'),

@@ -29,6 +29,19 @@ import {
   plrTax,
   selfEmployedInss,
 } from './rules';
+import {
+  bancoDeHoras,
+  contadorDeDias,
+  conversaoTaxa,
+  insalubridade,
+  ipva,
+  jurosSimples,
+  pensaoAlimenticia,
+  periculosidade,
+  porcentagem,
+  salarioMaternidade,
+  valeTransporteDecision,
+} from './decision-more';
 import { resolveSimplesAnnex, simplesNacional } from './simples';
 import {
   calculateDismissalCost,
@@ -899,30 +912,6 @@ function dasLimiteMei(
   };
 }
 
-function valeTransporte(
-  values: CalculatorValues,
-  calculation: CalculationResult,
-): CalculatorDecision {
-  const salary = input(values, 'salary');
-  const cost = input(values, 'amount');
-
-  return {
-    summary: `O desconto é de ${money(calculation.value)} e a empresa paga os outros ${money(Math.max(0, cost - calculation.value))}.`,
-    table: {
-      title: 'Divisão do vale-transporte',
-      columns: ['Item', 'Valor'],
-      rows: [
-        ['Custo mensal do transporte', money(cost)],
-        ['Limite de desconto (6% do salário)', money(salary * 0.06)],
-        ['Desconto do trabalhador', money(calculation.value)],
-        ['Pago pela empresa', money(Math.max(0, cost - calculation.value))],
-      ],
-    },
-    references: ['Lei 7.418/1985 (vale-transporte)'],
-    alerts: [],
-  };
-}
-
 function netIncomeStatement(
   title: string,
   netLabel: string,
@@ -1608,7 +1597,7 @@ export function buildCalculatorDecision(
     case 'das-limite-mei':
       return dasLimiteMei(values, calculation);
     case 'vale-transporte':
-      return valeTransporte(values, calculation);
+      return valeTransporteDecision(values, calculation);
     case 'cdi':
       return cdi(values);
     case 'cdb-liquido':
@@ -1643,6 +1632,26 @@ export function buildCalculatorDecision(
       return proportionalAvos(values, 'ferias');
     case 'decimo-proporcional':
       return proportionalAvos(values, 'decimo');
+    case 'salario-maternidade':
+      return salarioMaternidade(values, calculation);
+    case 'periculosidade':
+      return periculosidade(values);
+    case 'insalubridade':
+      return insalubridade(values);
+    case 'pensao-alimenticia':
+      return pensaoAlimenticia(values, calculation);
+    case 'porcentagem':
+      return porcentagem(values, calculation);
+    case 'juros-simples':
+      return jurosSimples(values, calculation);
+    case 'conversao-taxa':
+      return conversaoTaxa(values, calculation);
+    case 'ipva':
+      return ipva(values, calculation);
+    case 'banco-de-horas':
+      return bancoDeHoras(values, calculation);
+    case 'contador-dias':
+      return contadorDeDias(values, calculation);
     default:
       return genericDecision(id);
   }

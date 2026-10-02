@@ -161,4 +161,69 @@ describe('calculator decision output', () => {
 
     expect(decision.table?.title).toBe('Resumo do benefício');
   });
+
+  it('detalha os adicionais, a pensão e as utilidades que faltavam', () => {
+    const build = (
+      id: Parameters<typeof buildCalculatorDecision>[0],
+      values: Record<string, number>,
+    ) => buildCalculatorDecision(id, values, calculateCalculator(id, values));
+
+    const danger = build('periculosidade', { salary: 3000 });
+    expect(danger.statement?.rows.map((row) => row.earning)).toEqual([
+      3000, 900,
+    ]);
+    expect(danger.table?.rows.at(-1)?.[1]).toBe('R$\u00a0247,00');
+
+    const unhealthy = build('insalubridade', { rate: 20 });
+    expect(unhealthy.statement?.rows[0]?.earning).toBe(1621);
+    expect(unhealthy.statement?.rows[1]?.earning).toBeCloseTo(324.2, 2);
+
+    const alimony = build('pensao-alimenticia', {
+      salary: 5000,
+      deductions: 1000,
+      rate: 30,
+    });
+    expect(alimony.statement?.rows[2]?.discount).toBe(1200);
+
+    const days = build('contador-dias', { startDate: 20000, endDate: 20030 });
+    expect(days.table?.rows[0]).toEqual(['Dias corridos', '30']);
+    expect(days.table?.rows[2]?.[1]).toBe('4 semanas e 2 dias');
+
+    const conversion = build('conversao-taxa', { rate: 1 });
+    expect(conversion.table?.rows[3]?.[1]).toBe('12,6825%');
+
+    const bank = build('banco-de-horas', {
+      credits: 10.5,
+      debits: 2,
+      salary: 2200,
+      monthlyHours: 220,
+    });
+    expect(bank.table?.rows[2]).toEqual(['Saldo do banco', '8h30']);
+    expect(bank.table?.rows.at(-1)?.[1]).toBe('R$\u00a0127,50');
+
+    const tax = build('ipva', {
+      amount: 50000,
+      rate: 4,
+      monthsInYear: 6,
+      installments: 3,
+    });
+    expect(tax.table?.rows[0]?.[1]).toBe('R$\u00a01.000,00');
+
+    const maternity = build('salario-maternidade', { salary: 3000, months: 4 });
+    expect(maternity.table?.rows).toHaveLength(5);
+
+    const simple = build('juros-simples', {
+      amount: 1000,
+      rate: 1,
+      months: 12,
+    });
+    expect(simple.table?.rows.at(-1)).toEqual([
+      'Período 12',
+      'R$\u00a0120,00',
+      'R$\u00a01.120,00',
+    ]);
+
+    const percentage = build('porcentagem', { amount: 200, rate: 10 });
+    expect(percentage.table?.rows[1]?.[1]).toBe('R$\u00a0220,00');
+  });
 });

@@ -32,6 +32,20 @@ function value(values: CalculatorValues, key: string) {
   return values[key] ?? 0;
 }
 
+/** Base do adicional de insalubridade: a informada ou, na falta dela, o salário mínimo. */
+export function insalubrityBase(values: CalculatorValues) {
+  const informed = value(values, 'baseSalary');
+
+  return informed > 0 ? informed : minimumWage2026;
+}
+
+/** Meses do IPVA a pagar no ano: 12 quando não informado. */
+export function ipvaMonths(values: CalculatorValues) {
+  const months = Math.round(value(values, 'monthsInYear'));
+
+  return months >= 1 && months <= 12 ? months : 12;
+}
+
 function percentage(base: number, rate: number) {
   return base * (rate / 100);
 }
@@ -652,8 +666,8 @@ export function calculateCalculator(
     case 'insalubridade':
       return result(
         'Adicional de insalubridade',
-        percentage(value(values, 'baseSalary'), rate),
-        'Aplica o grau percentual informado sobre a base definida pelo contrato ou norma aplicável.',
+        percentage(insalubrityBase(values), rate),
+        'Aplica o grau do laudo (10%, 20% ou 40%) sobre a base de cálculo. Sem outra base em contrato ou norma coletiva, usa o salário mínimo.',
       );
     case 'periculosidade':
       return result(
@@ -664,8 +678,8 @@ export function calculateCalculator(
     case 'pensao-alimenticia':
       return result(
         'Pensão estimada',
-        percentage(salary, rate),
-        'Aplica o percentual definido ao valor-base informado; decisão judicial pode estabelecer outra base.',
+        percentage(Math.max(0, salary - value(values, 'deductions')), rate),
+        'Aplica o percentual da decisão ou do acordo sobre a renda líquida, isto é, o rendimento menos os descontos legais (INSS e IRRF). Se a decisão fixar outra base, informe-a sem descontos.',
       );
     case 'custo-demissao':
       return result(
@@ -732,8 +746,8 @@ export function calculateCalculator(
     case 'ipva':
       return result(
         'IPVA estimado',
-        percentage(amount, rate),
-        'Aplica a alíquota estadual informada sobre o valor venal do veículo.',
+        (percentage(amount, rate) * ipvaMonths(values)) / 12,
+        'Aplica a alíquota estadual sobre o valor venal. No primeiro ano de um veículo novo, muitos estados cobram só os meses que faltam para o fim do ano.',
       );
     case 'cdb-liquido':
       return result(
