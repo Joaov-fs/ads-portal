@@ -723,10 +723,14 @@ export function HomeView({
               >
                 Guias para consultar quando precisar
               </h2>
+              <p className="leading-7 text-ads-muted">
+                Passo a passo para resolver o dia a dia: consultar extratos,
+                tirar documentos, usar os apps do governo e evitar golpes.
+              </p>
             </div>
           </Reveal>
           <div className="grid gap-5 md:grid-cols-2">
-            {featuredGuides.map((guide, index) => (
+            {featuredGuides.slice(0, 6).map((guide, index) => (
               <Reveal className="h-full" delay={index * 90} key={guide.href}>
                 <article className="group relative grid h-full content-between gap-6 rounded-ads-xlarge border border-ads-border bg-ads-background p-7 transition duration-300 hover:-translate-y-1 hover:border-ads-primary hover:shadow-ads-soft">
                   <div className="grid gap-3">
@@ -752,6 +756,14 @@ export function HomeView({
               </Reveal>
             ))}
           </div>
+          <Reveal>
+            <Link
+              className="mt-8 inline-block text-sm font-bold text-ads-primary-strong hover:underline"
+              href="/guias"
+            >
+              Ver todos os guias →
+            </Link>
+          </Reveal>
         </Container>
       </section>
 
