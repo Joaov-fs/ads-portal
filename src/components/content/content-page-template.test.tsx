@@ -26,11 +26,6 @@ describe('content templates', () => {
     expect(
       screen.getByRole('heading', { name: 'Continue explorando' }),
     ).toBeInTheDocument();
-    expect(
-      screen.getByRole('heading', {
-        name: 'Ao final deste guia, você vai saber',
-      }),
-    ).toBeInTheDocument();
   });
 
   it('validates and calculates through the shared calculator template', () => {

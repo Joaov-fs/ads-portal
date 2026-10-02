@@ -8,6 +8,7 @@ import {
   listContentSummaries,
 } from './pipeline';
 import { contentRepository } from './repository';
+import { metaTitleOf, metaTitles } from './seo';
 
 describe('content pipeline', () => {
   it('loads typed file content through the repository', () => {
@@ -48,7 +49,7 @@ describe('content pipeline', () => {
     if (!model) return;
 
     const metadata = buildContentMetadata(model);
-    expect(metadata.title).toBe(model.document.title);
+    expect(metadata.title).toBe(metaTitleOf(model.document));
     expect(metadata.description).toBe(model.document.description);
     expect(metadata.alternates?.canonical).toBe(model.pathname);
     expect(metadata.openGraph?.url).toBe(model.pathname);
@@ -76,6 +77,37 @@ describe('content pipeline', () => {
       for (const slug of news.featuredCalculators ?? []) {
         expect(contentRepository.findBySlug('calculator', slug)).toBeDefined();
       }
+    }
+  });
+
+  it('keeps search titles short and descriptions within snippet length', () => {
+    const documents = contentRepository.listAll();
+    const slugs = new Set(documents.map((item) => item.slug));
+
+    for (const slug of Object.keys(metaTitles)) {
+      expect(slugs.has(slug)).toBe(true);
+    }
+
+    for (const document of documents) {
+      expect(metaTitleOf(document).length).toBeLessThanOrEqual(52);
+      expect(document.description.length).toBeGreaterThanOrEqual(80);
+      expect(document.description.length).toBeLessThanOrEqual(170);
+    }
+  });
+
+  it('gives every calculator its own example, factors and questions', () => {
+    const calculators = contentRepository.list('calculator');
+    const questions = calculators.flatMap((item) =>
+      item.faq.map((entry) => entry.question),
+    );
+
+    expect(new Set(questions).size).toBe(questions.length);
+
+    for (const calculator of calculators) {
+      const headings = calculator.sections.map((section) => section.heading);
+
+      expect(headings).toContain('Exemplo prático');
+      expect(calculator.faq.length).toBeGreaterThanOrEqual(3);
     }
   });
 });

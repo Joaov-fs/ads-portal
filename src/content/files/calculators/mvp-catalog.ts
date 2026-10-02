@@ -1,5 +1,6 @@
 import type { CalculatorId } from '@/calculators/types';
 
+import { calculatorEditorial } from './editorial';
 import type {
   CalculatorDocument,
   CalculatorField,
@@ -126,7 +127,7 @@ const specs = [
     title: 'Calculadora de Seguro-Desemprego',
     category: 'trabalho',
     description:
-      'Tenha uma referência da parcela antes de consultar a habilitação oficial.',
+      'Calcule o valor e o número de parcelas do seguro-desemprego com a tabela de 2026, a partir dos últimos salários.',
     howItWorks:
       'O modelo aplica as faixas, o piso de R$ 1.621,00 e o teto de R$ 2.518,65 vigentes desde 11 de janeiro de 2026 à média dos três últimos salários. O número de parcelas segue a tabela do CODEFAT, pelos meses trabalhados nos últimos 36 meses e pela quantidade de solicitações anteriores. O direito depende da habilitação oficial.',
     tags: ['trabalho', 'beneficio', 'salario'],
@@ -160,7 +161,7 @@ const specs = [
     title: 'Calculadora de 13º Salário',
     category: 'trabalho',
     description:
-      'Veja uma referência do décimo terceiro bruto com base na remuneração mensal.',
+      'Calcule o 13º salário líquido com as duas parcelas, o desconto de INSS e o Imposto de Renda de 2026.',
     howItWorks:
       'O resultado considera o 13º integral. O INSS e o IRRF incidem só sobre o 13º, separados do salário do mês, e são descontados na segunda parcela. A primeira parcela, paga até 30 de novembro, é metade do bruto sem descontos.',
     tags: ['trabalho', 'salario', 'decimo'],
@@ -179,7 +180,7 @@ const specs = [
     title: 'Calculadora de IRRF',
     category: 'trabalho',
     description:
-      'Estime o imposto de renda retido na fonte após as deduções informadas.',
+      'Calcule o Imposto de Renda retido na fonte em 2026, com INSS, dependentes e a nova isenção até R$ 5.000.',
     howItWorks:
       'O INSS é descontado do rendimento, junto com dependentes e pensão. Sobre a base resultante aplica-se a tabela progressiva de 2026 e a redução da Lei 15.270/2025, que zera o imposto até R$ 5.000 por mês.',
     tags: ['trabalho', 'imposto', 'salario'],
@@ -209,7 +210,7 @@ const specs = [
     title: 'Calculadora de Horas Extras',
     category: 'trabalho',
     description:
-      'Converta horas extras e adicional em uma estimativa de remuneração.',
+      'Calcule o valor das horas extras de 50% e 100% e o reflexo no descanso semanal remunerado (DSR).',
     howItWorks:
       'O valor da hora é o salário dividido pela jornada mensal. As horas extras comuns pagam 50% a mais e as de domingos e feriados, 100%. O descanso semanal remunerado também reflete sobre as horas extras.',
     tags: ['trabalho', 'horas', 'salario'],
@@ -260,7 +261,7 @@ const specs = [
     title: 'Calculadora de INSS',
     category: 'trabalho',
     description:
-      'Estime a contribuição previdenciária do empregado com cálculo progressivo.',
+      'Calcule o desconto de INSS do seu salário em 2026, faixa por faixa, até o teto de R$ 8.475,55.',
     howItWorks:
       'A contribuição é calculada por faixas de referência, e não por uma alíquota única sobre todo o salário.',
     tags: ['trabalho', 'inss', 'salario'],
@@ -283,7 +284,8 @@ const specs = [
     slug: 'contador-de-dias',
     title: 'Contador de Dias',
     category: 'utilidades',
-    description: 'Descubra quantos dias existem entre duas datas.',
+    description:
+      'Conte os dias corridos e úteis entre duas datas, em semanas, meses e anos, para prazos e planejamentos.',
     howItWorks:
       'Escolha as duas datas para ver os dias corridos, os dias úteis e a diferença em semanas, meses e anos. O dia inicial não é contado e feriados não são descontados.',
     tags: ['utilidades', 'dias', 'prazo'],
@@ -332,7 +334,7 @@ const specs = [
     title: 'Financiamento SAC x Price',
     category: 'financas',
     description:
-      'Compare o comportamento inicial das parcelas nos sistemas SAC e Price.',
+      'Compare as parcelas e o total de juros de um financiamento nos sistemas SAC e Price com o mesmo valor, taxa e prazo.',
     howItWorks:
       'A comparação mostra a diferença entre a primeira parcela SAC e a prestação Price com os mesmos dados. O custo total exige análise do contrato.',
     tags: ['financas', 'financiamento', 'juros'],
@@ -348,7 +350,7 @@ const specs = [
     title: 'Calculadora de Reajuste de Aluguel',
     category: 'financas',
     description:
-      'Atualize um aluguel a partir do índice ou percentual previsto no contrato.',
+      'Calcule o novo valor do aluguel aplicando o IGP-M, o IPCA ou outro percentual previsto no contrato.',
     howItWorks:
       'A ferramenta aplica o percentual informado ao aluguel atual. Confira índice, período de apuração e cláusula contratual.',
     tags: ['financas', 'aluguel', 'reajuste'],
@@ -397,7 +399,8 @@ const specs = [
     slug: 'pis',
     title: 'Calculadora de PIS',
     category: 'beneficios',
-    description: 'Estime o abono salarial proporcional aos meses trabalhados.',
+    description:
+      'Calcule o abono salarial do PIS/Pasep proporcional aos meses trabalhados no ano-base, com base no salário mínimo.',
     howItWorks:
       'A referência é proporcional aos meses considerados e depende de todos os requisitos legais para pagamento.',
     tags: ['beneficios', 'pis', 'trabalho'],
@@ -415,7 +418,7 @@ const specs = [
     title: 'DAS / Limite MEI',
     category: 'financas',
     description:
-      'Acompanhe quanto do limite anual do MEI já foi utilizado pelo faturamento.',
+      'Veja quanto do limite anual de R$ 81.000 do MEI você já usou e quanto ainda pode faturar neste ano.',
     howItWorks:
       'O resultado mostra o percentual do limite anual de referência consumido. A guia DAS é definida pela atividade e regras tributárias.',
     tags: ['mei', 'negocios', 'impostos'],
@@ -427,7 +430,7 @@ const specs = [
     title: 'Custo de Funcionário CLT',
     category: 'trabalho',
     description:
-      'Projete o custo mensal total ao adicionar encargos e benefícios ao salário.',
+      'Calcule quanto um funcionário CLT custa por mês à empresa, com FGTS, férias, 13º, encargos e benefícios.',
     howItWorks:
       'Soma ao salário as provisões mensais de 13º e férias com 1/3, o FGTS de 8% e os encargos patronais sobre essa base, além dos benefícios pagos.',
     tags: ['trabalho', 'empresa', 'encargos'],
@@ -436,7 +439,7 @@ const specs = [
       percentage(
         'rate',
         'Encargos patronais sobre a folha (%)',
-        '0% no Simples Nacional (anexos I a III). Cerca de 28,8% no lucro presumido ou real (20% INSS, RAT e terceiros).',
+        '0% no Simples Nacional (anexos I, II, III e V). Cerca de 28,8% no lucro presumido ou real (20% INSS, RAT e terceiros).',
       ),
       money(
         'benefits',
@@ -451,7 +454,7 @@ const specs = [
     title: 'Calculadora de Fator R',
     category: 'financas',
     description:
-      'Calcule a relação entre folha e receita bruta para análise no Simples Nacional.',
+      'Calcule o Fator R (folha de salários dividida pela receita) e descubra se a empresa cai no Anexo III ou no V do Simples.',
     howItWorks:
       'O Fator R divide a folha acumulada pela receita bruta acumulada em 12 meses. A classificação tributária requer orientação contábil.',
     tags: ['negocios', 'simples', 'fator-r'],
@@ -466,7 +469,7 @@ const specs = [
     title: 'Calculadora de Salário por Hora',
     category: 'trabalho',
     description:
-      'Descubra o valor de uma hora de trabalho usando salário e jornada mensal.',
+      'Descubra quanto vale a sua hora de trabalho a partir do salário mensal e da jornada, base para horas extras.',
     howItWorks:
       'O cálculo divide a remuneração mensal pela quantidade de horas contratadas no mês.',
     tags: ['trabalho', 'salario', 'horas'],
@@ -485,7 +488,7 @@ const specs = [
     title: 'Calculadora de Adicional Noturno',
     category: 'trabalho',
     description:
-      'Estime o adicional devido pelas horas trabalhadas no período noturno.',
+      'Calcule o adicional noturno de 20% sobre as horas trabalhadas entre 22h e 5h e veja a hora reduzida de 52min30s.',
     howItWorks:
       'Encontra o valor da hora e aplica o adicional noturno sobre as horas trabalhadas das 22h às 5h. O efeito da hora noturna reduzida de 52min30s aparece separado.',
     tags: ['trabalho', 'adicional', 'horas'],
@@ -510,7 +513,7 @@ const specs = [
     title: 'Calculadora de DSR',
     category: 'trabalho',
     description:
-      'Estime o descanso semanal remunerado sobre valores variáveis.',
+      'Calcule o descanso semanal remunerado (DSR) sobre comissões, horas extras e outros valores variáveis.',
     howItWorks:
       'O valor variável é rateado pelos dias úteis e multiplicado pelos dias de repouso informados.',
     tags: ['trabalho', 'dsr', 'salario'],
@@ -533,7 +536,8 @@ const specs = [
     slug: 'banco-de-horas',
     title: 'Calculadora de Banco de Horas',
     category: 'trabalho',
-    description: 'Veja se o saldo de banco de horas está positivo ou negativo.',
+    description:
+      'Some créditos e débitos do banco de horas, veja o saldo e quanto vale em dinheiro se não for compensado.',
     howItWorks:
       'Créditos menos débitos dão o saldo. Informando o salário, mostramos quanto valeria o saldo positivo pago em dinheiro com 50%. Os prazos de compensação dependem do tipo de acordo.',
     tags: ['trabalho', 'horas', 'banco'],
@@ -558,7 +562,7 @@ const specs = [
     title: 'Calculadora de Férias Proporcionais',
     category: 'trabalho',
     description:
-      'Projete férias proporcionais e adicional de um terço pelo número de avos.',
+      'Calcule as férias proporcionais com o terço constitucional, a partir do salário e dos meses trabalhados (avos).',
     howItWorks:
       'A estimativa usa salário, meses trabalhados no período aquisitivo e adicional constitucional.',
     tags: ['trabalho', 'ferias', 'rescisao'],
@@ -577,7 +581,7 @@ const specs = [
     title: 'Calculadora de 13º Proporcional',
     category: 'trabalho',
     description:
-      'Calcule uma referência de décimo terceiro pelos meses trabalhados no ano.',
+      'Calcule o 13º salário proporcional pelos meses trabalhados no ano, em avos, antes de INSS e Imposto de Renda.',
     howItWorks:
       'O salário é dividido em 12 avos e multiplicado pelos meses informados.',
     tags: ['trabalho', 'decimo', 'salario'],
@@ -596,7 +600,7 @@ const specs = [
     title: 'Calculadora de Aviso Prévio',
     category: 'trabalho',
     description:
-      'Converta dias de aviso prévio em valor proporcional à remuneração.',
+      'Descubra quantos dias de aviso prévio você tem (30 dias mais 3 por ano) e quanto vale em dinheiro.',
     howItWorks:
       'O aviso prévio é de 30 dias mais 3 dias por ano completo de contrato, até 90 dias (Lei 12.506/2011). O valor é o salário dividido por 30 e multiplicado pelos dias.',
     tags: ['trabalho', 'rescisao', 'aviso'],
@@ -615,7 +619,7 @@ const specs = [
     title: 'Calculadora de PLR/PPR Líquido',
     category: 'trabalho',
     description:
-      'Projete um valor líquido de participação nos lucros com desconto estimado.',
+      'Calcule o valor líquido da PLR ou PPR depois do Imposto de Renda, que usa uma tabela própria e exclusiva.',
     howItWorks:
       'O modelo aplica uma estimativa de imposto ao valor bruto. A tributação efetiva tem regras próprias e deve ser conferida.',
     tags: ['trabalho', 'plr', 'imposto'],
@@ -633,7 +637,7 @@ const specs = [
     title: 'Calculadora de Vale-Transporte',
     category: 'trabalho',
     description:
-      'Compare o custo mensal de transporte com o teto de desconto do empregado.',
+      'Veja quanto é descontado do seu salário pelo vale-transporte (até 6%) e quanto a empresa paga.',
     howItWorks:
       'A simulação usa o menor valor entre o custo informado e 6% do salário-base.',
     tags: ['trabalho', 'beneficio', 'transporte'],
@@ -648,7 +652,7 @@ const specs = [
     title: 'Calculadora de Insalubridade',
     category: 'trabalho',
     description:
-      'Estime adicional de insalubridade a partir da base e grau aplicável.',
+      'Calcule o adicional de insalubridade de 10%, 20% ou 40% conforme o grau do laudo e a base de cálculo.',
     howItWorks:
       'Informe o grau do laudo (10%, 20% ou 40%). Sem outra base, usamos o salário mínimo, e mostramos os reflexos médios em 13º, férias e FGTS.',
     tags: ['trabalho', 'adicional', 'insalubridade'],
@@ -671,7 +675,7 @@ const specs = [
     title: 'Calculadora de Periculosidade',
     category: 'trabalho',
     description:
-      'Veja a referência do adicional de periculosidade sobre o salário-base.',
+      'Calcule o adicional de periculosidade de 30% sobre o salário-base e os reflexos em 13º, férias e FGTS.',
     howItWorks:
       'Aplica 30% ao salário-base e mostra os reflexos médios em 13º, férias e FGTS. O enquadramento depende de laudo e das condições de trabalho.',
     tags: ['trabalho', 'adicional', 'periculosidade'],
@@ -682,7 +686,8 @@ const specs = [
     slug: 'pensao-alimenticia',
     title: 'Calculadora de Pensão Alimentícia',
     category: 'trabalho',
-    description: 'Estime um percentual de pensão sobre a base determinada.',
+    description:
+      'Calcule a pensão alimentícia em percentual sobre a renda líquida, depois dos descontos legais de INSS e IRRF.',
     howItWorks:
       'A ferramenta aplica o percentual à renda líquida (rendimento menos INSS e IRRF) e mostra quanto sobra para quem paga. Apenas a decisão judicial ou o acordo define o valor devido.',
     tags: ['familia', 'pensao', 'trabalho'],
@@ -710,7 +715,7 @@ const specs = [
     title: 'Calculadora de Custo da Demissão',
     category: 'trabalho',
     description:
-      'Projete uma provisão inicial de desligamento para planejamento empresarial.',
+      'Calcule quanto custa para a empresa demitir sem justa causa: verbas rescisórias, aviso prévio e multa de 40% do FGTS.',
     howItWorks:
       'Soma as verbas de uma dispensa sem justa causa com aviso indenizado, a multa de 40% do FGTS e o FGTS de 8% sobre saldo de salário, aviso e 13º. Não inclui encargos patronais de INSS.',
     tags: ['empresa', 'rescisao', 'trabalho'],
@@ -749,7 +754,7 @@ const specs = [
     title: 'Calculadora de Pró-labore',
     category: 'financas',
     description:
-      'Estime o valor líquido do pró-labore após contribuição informada.',
+      'Calcule o pró-labore líquido do sócio depois do INSS de 11% e do Imposto de Renda de 2026.',
     howItWorks:
       'Desconta o INSS de 11% do sócio, sobre uma base entre o salário mínimo e o teto do INSS, e o IRRF pela tabela de 2026. A distribuição de lucros é tratada à parte pela contabilidade.',
     tags: ['negocios', 'pro-labore', 'inss'],
@@ -768,7 +773,7 @@ const specs = [
     title: 'Calculadora de INSS Autônomo',
     category: 'trabalho',
     description:
-      'Projete a contribuição previdenciária sobre uma base de contribuição.',
+      'Calcule a contribuição mensal do autônomo e do contribuinte individual ao INSS nos planos de 20%, 11% e 5%.',
     howItWorks:
       'A alíquota é aplicada à base, que fica entre o salário mínimo e o teto do INSS. Os planos de 5% e 11% incidem sempre sobre o salário mínimo.',
     tags: ['trabalho', 'inss', 'autonomo'],
@@ -790,7 +795,8 @@ const specs = [
     slug: 'simples-nacional',
     title: 'Calculadora de Simples Nacional',
     category: 'financas',
-    description: 'Estime o DAS mensal a partir da receita e alíquota efetiva.',
+    description:
+      'Calcule o DAS mensal do Simples Nacional com a alíquota efetiva, a faixa da receita e o Fator R.',
     howItWorks:
       'A faixa vem da receita dos últimos 12 meses. A alíquota efetiva é (receita × alíquota nominal − parcela a deduzir) ÷ receita, aplicada sobre a receita do mês.',
     tags: ['negocios', 'simples', 'imposto'],
@@ -819,7 +825,7 @@ const specs = [
     title: 'Calculadora de Excesso do Limite MEI',
     category: 'financas',
     description:
-      'Descubra quanto o faturamento anual supera o limite de referência do MEI.',
+      'Veja quanto o faturamento passou do limite de R$ 81.000 do MEI e o que acontece até e acima de 20% de excesso.',
     howItWorks:
       'A ferramenta compara o faturamento acumulado ao limite anual de R$ 81 mil. Consequências dependem do percentual excedente e do período.',
     tags: ['mei', 'negocios', 'limite'],
@@ -830,13 +836,18 @@ const specs = [
     slug: 'das-mei-atraso',
     title: 'Calculadora de DAS MEI em Atraso',
     category: 'financas',
-    description: 'Atualize uma guia DAS em atraso com multa de mora e juros.',
+    description:
+      'Calcule o valor atualizado de um DAS do MEI pago em atraso, com multa de 0,33% ao dia e juros pela Selic.',
     howItWorks:
       'A multa é de 0,33% por dia de atraso, limitada a 20%. Os juros são a Selic acumulada dos meses entre o vencimento e o pagamento, mais 1% no mês em que você paga, e a calculadora já traz a Selic oficial até setembro de 2026.',
     tags: ['mei', 'das', 'imposto'],
     fields: [
       money('amount', 'Valor original do DAS'),
-      date('dueDate', 'Data de vencimento', 'Dia 20 do mês de apuração.'),
+      date(
+        'dueDate',
+        'Data de vencimento',
+        'Dia 20 do mês seguinte ao da apuração.',
+      ),
       date(
         'payDate',
         'Data do pagamento',
@@ -850,7 +861,7 @@ const specs = [
     title: 'Calculadora de BPC',
     category: 'beneficios',
     description:
-      'Calcule a renda familiar por pessoa para organizar a consulta ao benefício.',
+      'Calcule a renda por pessoa da família e compare com o limite de R$ 405,25 para pedir o BPC/LOAS.',
     howItWorks:
       'A renda total é dividida pelo número de pessoas. A análise oficial considera CadÚnico, deficiência ou idade e outros critérios.',
     tags: ['beneficios', 'bpc', 'renda'],
@@ -865,7 +876,7 @@ const specs = [
     title: 'Calculadora de Salário-Maternidade',
     category: 'beneficios',
     description:
-      'Projete uma referência de benefício pelo salário e período de afastamento.',
+      'Calcule o salário-maternidade pelos 120 dias de afastamento, com a regra para CLT, autônoma e MEI.',
     howItWorks:
       'O salário mensal é multiplicado pelos meses de afastamento e o resultado mostra cada parcela. Categoria de segurada e carência podem mudar a análise.',
     tags: ['beneficios', 'maternidade', 'inss'],
@@ -884,7 +895,7 @@ const specs = [
     title: 'Calculadora de Auxílio por Incapacidade',
     category: 'beneficios',
     description:
-      'Estime uma referência de benefício a partir da média contributiva.',
+      'Estime o valor do auxílio por incapacidade temporária ou permanente a partir da média das contribuições.',
     howItWorks:
       'A ferramenta aplica o percentual informado sobre a média. A perícia e o histórico de contribuições definem o benefício oficial.',
     tags: ['beneficios', 'inss', 'incapacidade'],
@@ -907,7 +918,7 @@ const specs = [
     title: 'Calculadora de IPVA',
     category: 'financas',
     description:
-      'Estime o IPVA a partir do valor venal e alíquota do seu estado.',
+      'Calcule o IPVA pelo valor venal e pela alíquota do seu estado, na cota única ou parcelado.',
     howItWorks:
       'A alíquota estadual é aplicada ao valor venal, com opção de proporcional aos meses do ano e de ver as parcelas. Descontos, isenções e calendário são definidos por cada estado.',
     tags: ['financas', 'ipva', 'veiculo'],
@@ -940,7 +951,7 @@ const specs = [
     title: 'Calculadora de CDB Líquido',
     category: 'financas',
     description:
-      'Projete o rendimento líquido de um CDB com taxa, prazo e imposto.',
+      'Calcule o rendimento líquido de um CDB depois do Imposto de Renda regressivo, com taxa e prazo à sua escolha.',
     howItWorks:
       'A projeção capitaliza a taxa anual e desconta o IR pela tabela regressiva (22,5% até 180 dias, 20% até 360, 17,5% até 720 e 15% acima), somente sobre o rendimento.',
     tags: ['financas', 'cdb', 'investimentos'],
@@ -960,7 +971,7 @@ const specs = [
     title: 'Comparador CDB x Poupança',
     category: 'financas',
     description:
-      'Compare a diferença de rendimento entre duas taxas no mesmo período.',
+      'Compare quanto rende um CDB, depois do Imposto de Renda, e quanto rende a poupança no mesmo valor e prazo.',
     howItWorks:
       'O CDB é tributado pela tabela regressiva do IR; a poupança é isenta. O cálculo aplica as duas taxas anuais ao mesmo capital e mostra a diferença líquida.',
     tags: ['financas', 'cdb', 'poupanca'],
@@ -997,7 +1008,7 @@ const specs = [
     title: 'Calculadora de LCI/LCA',
     category: 'financas',
     description:
-      'Projete o rendimento de LCI ou LCA com uma taxa anual e prazo.',
+      'Calcule o rendimento de uma LCI ou LCA, isenta de Imposto de Renda, e compare com o CDB equivalente.',
     howItWorks:
       'A ferramenta capitaliza a taxa no período informado e considera a isenção de IR para pessoa física como premissa.',
     tags: ['financas', 'lci', 'lca'],
@@ -1013,7 +1024,7 @@ const specs = [
     title: 'Conversão de Taxa Mensal ↔ Anual',
     category: 'utilidades',
     description:
-      'Converta uma taxa mensal em taxa efetiva anual para comparar propostas.',
+      'Converta taxa mensal em anual (e o contrário) pela fórmula dos juros compostos, para comparar propostas.',
     howItWorks:
       'A taxa mensal é capitalizada por 12 períodos e a tabela traz também as taxas trimestral e semestral. O mesmo número pode ser lido como taxa anual, para achar a mensal equivalente.',
     tags: ['utilidades', 'taxa', 'juros'],
@@ -1025,7 +1036,7 @@ const specs = [
     title: 'Calculadora de Juros Simples',
     category: 'financas',
     description:
-      'Calcule o montante sem capitalização para prazos e taxas compatíveis.',
+      'Calcule juros simples período a período e compare com o resultado em juros compostos.',
     howItWorks:
       'O juro incide sempre sobre o capital inicial. A tabela mostra cada período e compara com o resultado em juros compostos. Mantenha taxa e período na mesma unidade.',
     tags: ['financas', 'juros', 'investimentos'],
@@ -1041,7 +1052,7 @@ const specs = [
     title: 'Simulador de Empréstimo',
     category: 'financas',
     description:
-      'Estime uma parcela pelo sistema Price usando valor, taxa mensal e prazo.',
+      'Simule as parcelas de um empréstimo pelo sistema Price e veja o total de juros pago no prazo.',
     howItWorks:
       'A prestação é nivelada pelo sistema Price. CET, seguros e tarifas podem aumentar o custo real.',
     tags: ['financas', 'emprestimo', 'juros'],
@@ -1057,7 +1068,7 @@ const specs = [
     title: 'Calculadora de Amortização Antecipada',
     category: 'financas',
     description:
-      'Projete a economia aproximada de juros ao antecipar parte de uma dívida.',
+      'Veja quanto você economiza de juros ao antecipar parte de um financiamento, encurtando prazo ou parcela.',
     howItWorks:
       'Considera financiamento no sistema Price. Compara manter a parcela e encurtar o prazo com reduzir a parcela mantendo o prazo. Peça ao credor o demonstrativo oficial de liquidação.',
     tags: ['financas', 'amortizacao', 'emprestimo'],
@@ -1070,44 +1081,60 @@ const specs = [
   },
 ] as const satisfies readonly CalculatorSpec[];
 
+/** Datas de publicação espalhadas pelo período de criação; a revisão é a mais recente. */
+const publicationDates = [
+  '2026-09-08',
+  '2026-09-09',
+  '2026-09-11',
+  '2026-09-12',
+  '2026-09-14',
+  '2026-09-15',
+  '2026-09-16',
+  '2026-09-18',
+  '2026-09-19',
+  '2026-09-21',
+  '2026-09-22',
+  '2026-09-24',
+  '2026-09-25',
+] as const;
+const reviewDates = ['2026-10-01', '2026-10-02'] as const;
+
 export const mvpCalculatorCatalog = specs.map(
-  (spec): CalculatorDocument => ({
-    ...spec,
-    kind: 'calculator',
-    authorId: 'equipe-editorial',
-    publishedAt: '2026-09-25',
-    updatedAt: '2026-09-29',
-    resultLabel: 'Resultado estimado',
-    resultPlaceholder: 'Preencha os campos para calcular.',
-    sections: [
-      {
-        heading: 'Como esta calculadora funciona',
-        paragraphs: [
-          spec.howItWorks,
-          `A conta considera ${spec.fields.map((field) => field.label.toLocaleLowerCase('pt-BR')).join(', ')}. Depois de calcular, você verá a memória com cada dado usado e a regra aplicada.`,
-        ],
-      },
-      {
-        heading: 'Antes de começar',
-        paragraphs: [
-          'Separe documentos, valores e taxas do mesmo período. Informações aproximadas produzem apenas uma ordem de grandeza, não um valor para conferência oficial.',
-          'Use a estimativa para organizar o próximo passo e confirme os valores na fonte oficial antes de assinar, pagar ou assumir uma obrigação.',
-        ],
-      },
-    ],
-    faq: [
-      {
-        question: `O resultado de ${spec.title} é oficial?`,
-        answer:
-          'Não. A ferramenta oferece uma estimativa educativa baseada nos dados informados. Regras vigentes, contratos e condições individuais podem alterar o resultado.',
-      },
-      {
-        question: 'Qual é o próximo passo?',
-        answer:
-          'Revise os dados de entrada, compare com seus documentos e use a fonte oficial indicada antes de tomar uma decisão.',
-      },
-    ],
-    sources:
-      'sources' in spec ? spec.sources : [sourcesByCategory[spec.category]],
-  }),
+  (spec, index): CalculatorDocument => {
+    const editorial = calculatorEditorial[spec.slug];
+
+    if (!editorial) {
+      throw new Error(`Calculadora sem texto editorial: ${spec.slug}`);
+    }
+
+    return {
+      ...spec,
+      kind: 'calculator',
+      authorId: 'equipe-editorial',
+      publishedAt: publicationDates[
+        (index * 5) % publicationDates.length
+      ] as string,
+      updatedAt: reviewDates[index % reviewDates.length] as string,
+      resultLabel: 'Resultado estimado',
+      resultPlaceholder: 'Preencha os campos para calcular.',
+      sections: [
+        { heading: 'Como o cálculo é feito', paragraphs: [spec.howItWorks] },
+        {
+          heading: 'Exemplo prático',
+          paragraphs: editorial.example.paragraphs,
+          ...(editorial.example.table
+            ? { table: editorial.example.table }
+            : {}),
+        },
+        { heading: 'O que muda o resultado', paragraphs: editorial.factors },
+        {
+          heading: 'Erros comuns ao preencher',
+          paragraphs: editorial.mistakes,
+        },
+      ],
+      faq: editorial.faq,
+      sources:
+        'sources' in spec ? spec.sources : [sourcesByCategory[spec.category]],
+    };
+  },
 );

@@ -6,11 +6,11 @@ export const guideComoCalcularHorasExtrasEDsr = {
   title:
     'Como calcular horas extras: adicional de 50%, 100% e o reflexo no DSR',
   description:
-    'Entenda a hora normal, quanto vale cada hora extra, quando o adicional sobe para 100% e como o descanso semanal remunerado entra na conta.',
+    'Ache o valor da hora, aplique o adicional de 50% ou 100% e some o DSR, com dois exemplos de salário em reais.',
   category: 'trabalho',
   authorId: 'equipe-editorial',
-  publishedAt: '2026-10-01',
-  updatedAt: '2026-10-01',
+  publishedAt: '2026-09-28',
+  updatedAt: '2026-10-02',
   tags: ['horas-extras', 'dsr', 'trabalho', 'salario'],
   featuredCalculators: [
     'horas-extras',
@@ -25,72 +25,120 @@ export const guideComoCalcularHorasExtrasEDsr = {
       note: 'Em dias úteis e sábados.',
     },
     {
-      value: '100%',
-      label: 'Domingos e feriados',
-      note: 'Quando não há folga compensatória.',
+      value: 'Em dobro',
+      label: 'Domingos e feriados sem folga',
+      note: 'O adicional sobe para 100%.',
     },
     {
-      value: '2 horas',
-      label: 'Limite diário de horas extras',
-      note: 'Salvo acordo ou convenção coletiva.',
+      value: 'R$ 640,38',
+      label: 'Extras do exemplo de R$ 3.300',
+      note: '18 h a 50%, 5 h a 100% e o DSR.',
     },
   ],
   sections: [
     {
       heading: 'Passo 1: o valor da hora normal',
       paragraphs: [
-        'Divida o salário mensal pelas horas do mês. Em uma jornada de 44 horas semanais, o divisor é 220. Com salário de R$ 2.640, a hora normal vale R$ 12,00.',
+        'Divida o salário mensal pelas horas contratadas no mês. Em uma jornada de 44 horas por semana, o divisor é 220; em 40 horas por semana, é 200; em 36 horas, é 180. Um erro frequente é usar 240 (30 dias vezes 8 horas), que deixa a hora mais barata do que a lei exige.',
+        'Se há adicionais fixos que integram a remuneração, como insalubridade, periculosidade ou adicional noturno habitual, eles entram na base antes da divisão.',
       ],
     },
     {
-      heading: 'Passo 2: o adicional',
+      heading: 'Passo 2: aplique o adicional',
       paragraphs: [
-        'A hora extra é paga com adicional de, no mínimo, 50%. Em domingos e feriados trabalhados sem folga compensatória costuma-se pagar 100%. Convenções coletivas podem fixar adicionais maiores.',
+        'A hora extra paga, no mínimo, 50% a mais que a hora normal. Em domingos e feriados trabalhados sem folga compensatória, o TST entende que o pagamento é em dobro (Lei 605/1949 e Súmula 146), o que na prática equivale a 100% a mais. Convenções coletivas podem fixar adicionais maiores, então confira a da sua categoria.',
+        'A jornada normal é de até 8 horas por dia, e o limite de horas extras é de 2 por dia, salvo regra específica em acordo ou convenção coletiva.',
+      ],
+    },
+    {
+      heading: 'Passo 3: some o reflexo no descanso semanal',
+      paragraphs: [
+        'O salário mensal já paga o descanso semanal remunerado (DSR) de quem não tem extras, mas as horas extras habituais geram reflexo nele (Súmula 172 do TST). A conta é: total das extras dividido pelos dias úteis do mês e multiplicado pelos domingos e feriados. Dias úteis, aqui, são os dias de trabalho de segunda a sábado, sem feriados.',
+      ],
+    },
+    {
+      heading:
+        'Exemplo 1: salário de R$ 3.300, mês com 26 dias úteis e 4 repousos',
+      paragraphs: [
+        'A hora normal é R$ 3.300 ÷ 220 = R$ 15,00. Uma hora extra a 50% vale R$ 22,50, e uma hora a 100% vale R$ 30,00. O empregado fez 18 horas a 50% e 5 horas a 100% (um domingo trabalhado sem folga).',
+        'O DSR é R$ 555,00 ÷ 26 × 4 = R$ 85,38. No total, as extras rendem R$ 640,38 brutos, e sobre esse valor entram INSS (12% nessa faixa, ou cerca de R$ 76,85) e eventualmente Imposto de Renda. Aqui o IRRF é zero, porque a remuneração total de R$ 3.940,38 fica abaixo de R$ 5.000.',
       ],
       table: {
-        caption: 'Exemplo: salário de R$ 2.640 (hora normal de R$ 12,00)',
+        caption:
+          'Horas extras de quem ganha R$ 3.300 (hora normal de R$ 15,00)',
         columns: ['Item', 'Cálculo', 'Valor'],
         rows: [
-          ['20 h extras a 50%', '20 × R$ 18,00', 'R$ 360,00'],
-          ['6 h extras a 100%', '6 × R$ 24,00', 'R$ 144,00'],
-          ['Reflexo no DSR', 'R$ 504 ÷ 26 dias úteis × 4 repousos', 'R$ 77,54'],
-          ['Total bruto das horas extras', '', 'R$ 581,54'],
+          ['18 h extras a 50%', '18 × R$ 22,50', 'R$ 405,00'],
+          ['5 h extras a 100%', '5 × R$ 30,00', 'R$ 150,00'],
+          ['Subtotal das extras', 'R$ 405,00 + R$ 150,00', 'R$ 555,00'],
+          ['Reflexo no DSR', 'R$ 555,00 ÷ 26 × 4', 'R$ 85,38'],
+          ['Total bruto das extras', '', 'R$ 640,38'],
         ],
       },
     },
     {
-      heading: 'Passo 3: o descanso semanal',
+      heading: 'Exemplo 2: salário de R$ 2.200, mês com 5 domingos',
       paragraphs: [
-        'Quem recebe hora extra habitual tem reflexo no descanso semanal remunerado (DSR). A conta divide o total das extras pelos dias úteis do mês e multiplica pelos domingos e feriados. Esse valor é somado ao pagamento.',
+        'Mês com 25 dias úteis e 5 repousos. A hora normal é R$ 2.200 ÷ 220 = R$ 10,00, e a hora extra a 50% vale R$ 15,00. Com 12 horas extras, o valor é R$ 180,00. O DSR é R$ 180,00 ÷ 25 × 5 = R$ 36,00, para um total de R$ 216,00. Repare que, com mais repousos no mês, o reflexo cresce, e é por isso que o DSR muda de mês para mês.',
       ],
     },
     {
-      heading: 'Cuidados',
+      heading: 'O que também muda: reflexos, ponto e exceções',
       paragraphs: [
-        'Horas extras também refletem em férias, 13º e FGTS. Confirme se a empresa registra o ponto e o banco de horas, e guarde os comprovantes. Se a hora extra for noturna, o adicional noturno de 20% entra na base.',
+        'As extras habituais refletem em férias, 13º salário, FGTS e aviso prévio. Por isso, uma hora extra não paga corretamente gera diferenças em vários pagamentos depois. O adicional noturno (20% sobre a hora entre 22h e 5h) também entra na base da hora extra feita à noite.',
+        'O ponto precisa registrar a jornada de empresas com mais de 20 empregados. Variações de até 5 minutos em cada marcação, no limite de 10 por dia, não contam. Cargos de gestão com função de confiança e trabalho externo sem controle de horário ficam de fora da regra (art. 62 da CLT).',
+        'O banco de horas permite compensar extras com folgas em vez de pagar. Por acordo individual escrito, a compensação deve ocorrer em até 6 meses; por acordo ou convenção coletiva, em até 12 meses. Vencido o prazo, as horas devem ser pagas com o adicional.',
+      ],
+    },
+    {
+      heading: 'Quando procurar o RH ou o sindicato',
+      paragraphs: [
+        'Compare o holerite com o espelho de ponto: horas extras, adicionais e DSR devem aparecer em linhas separadas. Se faltar pagamento, peça a correção por escrito ao RH e guarde os registros. Se não houver solução, procure o sindicato ou o Ministério do Trabalho e Emprego.',
       ],
     },
   ],
   faq: [
     {
-      question: 'O que é banco de horas?',
+      question: 'Hora extra tem INSS e Imposto de Renda?',
       answer:
-        'É a compensação das horas extras por folgas, em vez de pagamento em dinheiro. Há prazos para compensar: no mesmo mês, em até 6 meses ou em até 12 meses, conforme o tipo de acordo.',
+        'Sim. Ela compõe a remuneração e entra na base do INSS e do IRRF, assim como o DSR sobre ela.',
     },
     {
-      question: 'Hora extra tem INSS e IR?',
-      answer: 'Sim, ela compõe a remuneração e entra na base dos descontos.',
+      question: 'O DSR sobre hora extra é pago a quem recebe salário mensal?',
+      answer:
+        'Sim. O salário mensal já inclui o descanso, mas as horas extras habituais geram um reflexo separado, de acordo com a Súmula 172 do TST.',
+    },
+    {
+      question: 'Quantas horas extras posso fazer por dia?',
+      answer:
+        'No máximo 2 horas por dia, salvo regra diferente em acordo ou convenção coletiva.',
+    },
+    {
+      question: 'Hora extra noturna paga mais?',
+      answer:
+        'Sim. Soma-se o adicional noturno de, no mínimo, 20% ao adicional da hora extra, o que eleva o valor de cada hora.',
+    },
+    {
+      question: 'A empresa pode trocar a hora extra por folga?',
+      answer:
+        'Sim, pelo banco de horas, desde que respeite o acordo e os prazos de 6 ou 12 meses. Fora do prazo, as horas viram pagamento.',
     },
   ],
   sources: [
     {
-      label: 'CLT — Consolidação das Leis do Trabalho',
+      label: 'CLT — arts. 58 a 62 e 73 (jornada, extras e adicional noturno)',
     },
     {
       label: 'Constituição Federal, art. 7º',
     },
     {
+      label: 'Lei 605/1949 — repouso semanal remunerado',
+    },
+    {
       label: 'Súmula 172 do TST — reflexo no repouso semanal',
+    },
+    {
+      label: 'Súmula 146 do TST — trabalho em domingos e feriados',
     },
   ],
 } as const satisfies GuideDocument;

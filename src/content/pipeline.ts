@@ -3,6 +3,7 @@ import { siteConfig } from '@/config/site';
 import { authors } from './authors';
 import { contentCategoryLabels, contentKindConfig } from './config';
 import { contentRepository, type ContentRepository } from './repository';
+import { sharesTopic } from './topics';
 import type {
   ContentDocument,
   ContentKind,
@@ -57,7 +58,9 @@ export function toContentSummary(document: ContentDocument): ContentSummary {
 function relatedScore(source: ContentDocument, candidate: ContentDocument) {
   const sharedTags = candidate.tags.filter((tag) => source.tags.includes(tag));
   return (
-    sharedTags.length * 3 + (source.category === candidate.category ? 2 : 0)
+    (sharesTopic(source.slug, candidate.slug) ? 50 : 0) +
+    sharedTags.length * 3 +
+    (source.category === candidate.category ? 2 : 0)
   );
 }
 

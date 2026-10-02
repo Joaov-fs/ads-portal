@@ -226,4 +226,22 @@ describe('calculator decision output', () => {
     const percentage = build('porcentagem', { amount: 200, rate: 10 });
     expect(percentage.table?.rows[1]?.[1]).toBe('R$\u00a0220,00');
   });
+
+  it('mostra o percentual do limite do MEI e o Fator R em pontos percentuais', () => {
+    const mei = { amount: 5200 };
+    const fatorR = { payroll: 9000, amount: 40000 };
+
+    expect(calculateCalculator('das-limite-mei', mei).value).toBeCloseTo(
+      6.42,
+      2,
+    );
+    expect(calculateCalculator('fator-r', fatorR).value).toBeCloseTo(22.5, 2);
+    expect(
+      buildCalculatorDecision(
+        'fator-r',
+        fatorR,
+        calculateCalculator('fator-r', fatorR),
+      ).interpretation,
+    ).toContain('Abaixo de 28%');
+  });
 });

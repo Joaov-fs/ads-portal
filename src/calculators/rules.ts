@@ -593,7 +593,7 @@ export function calculateCalculator(
     case 'das-limite-mei':
       return result(
         'Percentual do limite anual usado',
-        percentage(amount, 100 / 81000),
+        (amount / 81000) * 100,
         'Compara o faturamento informado ao limite anual de referência do MEI.',
       );
     case 'custo-funcionario-clt':
@@ -605,7 +605,7 @@ export function calculateCalculator(
     case 'fator-r':
       return result(
         'Fator R',
-        percentage(value(values, 'payroll'), 100 / Math.max(1, amount)),
+        (value(values, 'payroll') / Math.max(1, amount)) * 100,
         'Divide folha de salários pela receita bruta dos últimos 12 meses.',
       );
     case 'salario-por-hora':

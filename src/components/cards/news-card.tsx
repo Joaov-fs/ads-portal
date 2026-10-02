@@ -1,9 +1,17 @@
+import { NewsCover } from '@/components/content/news-cover';
 import { Card } from '@/components/ui/card';
+import type { ContentCategory } from '@/content';
 
 import { CardLink, CardTag } from './card-shared';
 
 export type NewsCardProps = Readonly<{
   category: string;
+  /** Capa visual: categoria, número em destaque e legenda. */
+  cover?: Readonly<{
+    category: ContentCategory;
+    label: string;
+    value: string;
+  }>;
   date: string;
   description: string;
   href: string;
@@ -25,6 +33,7 @@ function formatDate(date: string) {
 
 export function NewsCard({
   category,
+  cover,
   date,
   description,
   href,
@@ -33,9 +42,17 @@ export function NewsCard({
 }: NewsCardProps) {
   return (
     <Card
-      className="group grid h-full content-between overflow-hidden border-t-4 border-t-ads-primary"
+      className="group grid h-full content-between overflow-hidden"
       interactive
     >
+      {cover ? (
+        <NewsCover
+          category={cover.category}
+          className="aspect-[1200/630] w-full"
+          label={cover.label}
+          value={cover.value}
+        />
+      ) : null}
       <div className="grid gap-4 p-5 sm:p-6">
         <CardTag>{category}</CardTag>
         <div className="grid gap-2">

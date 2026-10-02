@@ -33,6 +33,15 @@ function ContentSummaryCard({ item }: Readonly<{ item: ContentSummary }>) {
     return (
       <NewsCard
         {...common}
+        cover={
+          item.highlight
+            ? {
+                category: item.category,
+                label: item.highlight.label,
+                value: item.highlight.value,
+              }
+            : undefined
+        }
         date={item.updatedAt}
         readingTime={item.readingTime}
       />

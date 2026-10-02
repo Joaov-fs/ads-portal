@@ -5,11 +5,11 @@ export const guideComoCalcularOSalarioLiquido = {
   slug: 'como-calcular-o-salario-liquido',
   title: 'Como calcular o salário líquido em 2026, passo a passo',
   description:
-    'Do salário bruto ao valor que cai na conta: INSS por faixa, Imposto de Renda e o que muda com dependentes e outros descontos.',
+    'Do salário bruto ao valor que cai na conta: INSS por faixa, Imposto de Renda, dependentes e outros descontos, com exemplos de R$ 4.800 e de R$ 6.600.',
   category: 'trabalho',
   authorId: 'equipe-editorial',
-  publishedAt: '2026-10-01',
-  updatedAt: '2026-10-01',
+  publishedAt: '2026-09-30',
+  updatedAt: '2026-10-02',
   tags: ['salario', 'inss', 'irrf', 'holerite', 'descontos'],
   featuredCalculators: ['salario-liquido', 'inss', 'irrf'],
   highlights: [
@@ -24,24 +24,49 @@ export const guideComoCalcularOSalarioLiquido = {
       note: 'Entre R$ 5.000 e R$ 7.350 o desconto é gradual.',
     },
     {
-      value: 'R$ 3.631,40',
-      label: 'Líquido de quem ganha R$ 4.000',
-      note: 'Só o INSS pesa nessa faixa.',
+      value: 'R$ 3.858,49',
+      label: 'Líquido de quem ganha R$ 4.800',
+      note: 'Com 1 dependente, vale-transporte e plano de saúde.',
     },
   ],
   sections: [
     {
-      heading: 'O caminho em três passos',
+      heading: 'O caminho em quatro passos',
       paragraphs: [
-        'Primeiro vem o INSS, que é calculado por faixas: cada parte do salário paga uma alíquota (7,5%, 9%, 12% e 14%). Não é uma alíquota única sobre o total.',
-        'Depois calcula-se a base do Imposto de Renda: salário menos INSS e menos R$ 189,59 por dependente. Sobre essa base aplica-se a tabela do IRRF, e quem ganha até R$ 5.000 por mês fica sem imposto. De R$ 5.000 a R$ 7.350 o desconto é reduzido aos poucos.',
-        'Por fim, entram os demais descontos do holerite (vale-transporte, plano de saúde, pensão alimentícia) e o resultado é o salário líquido.',
+        'Passo 1: calcule o INSS por faixas. Cada parte do salário paga uma alíquota (7,5%, 9%, 12% e 14%); não existe uma alíquota única sobre o total. Passo 2: monte a base do Imposto de Renda, que é o salário menos o INSS e menos R$ 189,59 por dependente.',
+        'Passo 3: aplique a tabela do IRRF sobre essa base e subtraia a redução da Lei 15.270/2025, que zera o imposto de quem ganha até R$ 5.000 e o diminui aos poucos até R$ 7.350. Passo 4: tire do resultado os demais descontos do holerite, como vale-transporte, plano de saúde e pensão alimentícia.',
+      ],
+    },
+    {
+      heading: 'Exemplo 1: salário de R$ 4.800, 1 dependente',
+      paragraphs: [
+        'O INSS é a soma das faixas: R$ 121,57 (7,5% sobre R$ 1.621,00) + R$ 115,37 (9% sobre a parte até R$ 2.902,84) + R$ 174,17 (12% até R$ 4.354,27) + R$ 62,40 (14% sobre os R$ 445,73 restantes) = R$ 473,51.',
+        'A base do IRRF é R$ 4.800,00 − R$ 473,51 − R$ 189,59 = R$ 4.136,90. A tabela cobraria cerca de R$ 255 nessa base, mas como o salário está abaixo de R$ 5.000 a redução da lei anula o imposto. Em seguida, o vale-transporte de 6% do salário (R$ 288,00) e o plano de saúde de R$ 180,00 reduzem o valor que chega à conta.',
+      ],
+      table: {
+        caption: 'Líquido de quem ganha R$ 4.800',
+        columns: ['Item', 'Valor'],
+        rows: [
+          ['Salário bruto', 'R$ 4.800,00'],
+          ['INSS', '− R$ 473,51'],
+          ['Imposto de Renda', 'R$ 0,00'],
+          ['Vale-transporte (6%)', '− R$ 288,00'],
+          ['Plano de saúde', '− R$ 180,00'],
+          ['Líquido', 'R$ 3.858,49'],
+        ],
+      },
+    },
+    {
+      heading: 'Exemplo 2: salário de R$ 6.600, 2 dependentes',
+      paragraphs: [
+        'O INSS é de R$ 725,51. A base do IRRF é R$ 6.600,00 − R$ 725,51 − R$ 379,18 (dois dependentes) = R$ 5.495,31. Na faixa de 27,5%, a conta é R$ 5.495,31 × 27,5% − R$ 908,73 = R$ 602,48. A redução é R$ 978,62 − 0,133145 × R$ 6.600 = R$ 99,86, e o IRRF fica em R$ 502,62.',
+        'O líquido, antes de outros descontos, é R$ 6.600,00 − R$ 725,51 − R$ 502,62 = R$ 5.371,87. Sem os dois dependentes, o IRRF seria cerca de R$ 104 maior (R$ 379,18 × 27,5%), porque cada dependente reduz a base em R$ 189,59 e o imposto marginal nessa faixa é de 27,5%.',
       ],
     },
     {
       heading: 'Quanto sobra em cada salário',
       paragraphs: [
-        'A tabela mostra o desconto de INSS e IRRF para salários sem dependentes e sem outros descontos. Repare que o imposto só aparece a partir de R$ 5.000.',
+        'A tabela mostra INSS e IRRF para salários sem dependentes e sem outros descontos. O imposto só aparece a partir de cerca de R$ 5.000.',
       ],
       table: {
         caption: 'Salário líquido por faixa de salário bruto (sem dependentes)',
@@ -57,16 +82,17 @@ export const guideComoCalcularOSalarioLiquido = {
       },
     },
     {
-      heading: 'Dependentes e outros descontos',
+      heading: 'O que muda o resultado',
       paragraphs: [
-        'Cada dependente reduz em R$ 189,59 a base do Imposto de Renda. Isso só faz diferença para quem paga IRRF: abaixo de R$ 5.000 o imposto já é zero.',
-        'Pensão alimentícia paga por decisão judicial também reduz a base do IR. Vale-transporte, plano de saúde e outros benefícios descontados em folha reduzem o líquido, mas não mudam o INSS nem o IR.',
+        'Cada dependente reduz R$ 189,59 da base do IR, o que só faz diferença para quem paga imposto. Pensão alimentícia paga por decisão judicial também reduz essa base. O plano de saúde descontado em folha e o vale-transporte reduzem o líquido, mas não mudam o INSS nem o IRRF do mês.',
+        'Horas extras, comissões e adicionais entram no salário bruto e podem empurrar a base para uma faixa maior. Faltas sem justificativa descontam o dia e o descanso semanal. Para salários um pouco acima de R$ 5.000, a folha também pode aplicar o desconto simplificado mensal de R$ 607,20, no lugar do INSS e dos dependentes, quando ele resulta em menos imposto; por isso o holerite pode divergir da conta acima em alguns reais.',
       ],
     },
     {
-      heading: 'Como conferir o seu holerite',
+      heading: 'Erros comuns e quando procurar o RH ou o contador',
       paragraphs: [
-        'Compare o INSS do holerite com o da tabela por faixa e confira se o IRRF respeita a base com dependentes. Se algo não bater, peça o detalhamento ao setor de pessoal antes de concluir que há erro: horas extras, comissões e adicionais entram na base e mudam o resultado.',
+        'Os erros mais comuns são aplicar 14% sobre o salário inteiro, esquecer que o INSS para no teto de R$ 988,09 e achar que dependente reduz o INSS (ele só reduz a base do IR). Outro engano é ignorar o 13º e as férias, que têm cálculo próprio.',
+        'Compare o INSS do holerite com a soma das faixas e confira se o IRRF usa a base com dependentes. Se algo não bater, peça ao RH o demonstrativo detalhado das bases. Para dúvidas sobre dedução de pensão, dependentes e declaração anual, consulte um contador.',
       ],
     },
   ],
@@ -77,9 +103,24 @@ export const guideComoCalcularOSalarioLiquido = {
         'Porque a alíquota é progressiva: 14% só incide sobre a parte do salário que passa de R$ 4.354,27. As faixas anteriores pagam 7,5%, 9% e 12%.',
     },
     {
+      question: 'Quem ganha até R$ 5.000 nunca paga Imposto de Renda?',
+      answer:
+        'Na retenção mensal em folha, não. Mas a declaração anual considera todas as fontes de renda do ano, e pode haver imposto a pagar se houver outros rendimentos.',
+    },
+    {
+      question: 'Vale-transporte pode descontar mais de 6%?',
+      answer:
+        'Não. O desconto máximo é de 6% do salário-base, ou o custo real do vale, se for menor.',
+    },
+    {
       question: 'O 13º e as férias entram nesse cálculo?',
       answer:
-        'Têm cálculo próprio, também com INSS e IRRF, mas o IR do 13º é descontado separadamente do salário mensal.',
+        'Têm cálculo próprio, também com INSS e IRRF. O Imposto de Renda do 13º é apurado separado do salário mensal.',
+    },
+    {
+      question: 'Pensão alimentícia reduz o Imposto de Renda?',
+      answer:
+        'Sim, quando fixada por decisão judicial ou acordo homologado, o valor pago sai da base do IRRF. Com salário de R$ 6.000 e pensão de R$ 1.200, o IRRF cai de R$ 385,11 para R$ 80,42.',
     },
   ],
   sources: [
@@ -93,6 +134,10 @@ export const guideComoCalcularOSalarioLiquido = {
     },
     {
       label: 'Lei 15.270/2025 — isenção do IR até R$ 5.000',
+      url: 'https://www2.camara.leg.br/legin/fed/lei/2025/lei-15270-26-novembro-2025-798354-publicacaooriginal-177117-pl.html',
+    },
+    {
+      label: 'Lei 7.418/1985 — vale-transporte',
     },
   ],
 } as const satisfies GuideDocument;

@@ -160,6 +160,15 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               {news.map((item) => (
                 <NewsCard
                   category={category.label}
+                  cover={
+                    item.highlight
+                      ? {
+                          category: item.category,
+                          label: item.highlight.label,
+                          value: item.highlight.value,
+                        }
+                      : undefined
+                  }
                   date={item.date}
                   description={item.description}
                   href={item.href}

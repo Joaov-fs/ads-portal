@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 
 import { contentKindConfig } from './config';
+import { metaTitleOf } from './seo';
 import type { ContentKind, ContentPageModel } from './types';
 
 export function buildContentMetadata(model: ContentPageModel): Metadata {
@@ -17,13 +18,13 @@ export function buildContentMetadata(model: ContentPageModel): Metadata {
         };
 
   return {
-    title: document.title,
+    title: metaTitleOf(document),
     description: document.description,
     alternates: { canonical: pathname },
     openGraph: {
       ...articleFields,
       type: document.kind === 'calculator' ? 'website' : 'article',
-      title: document.title,
+      title: metaTitleOf(document),
       description: document.description,
       siteName: siteConfig.name,
       locale: 'pt_BR',
@@ -34,7 +35,7 @@ export function buildContentMetadata(model: ContentPageModel): Metadata {
     },
     twitter: {
       card: 'summary_large_image',
-      title: document.title,
+      title: metaTitleOf(document),
       description: document.description,
       images: document.coverImage ? [document.coverImage.src] : undefined,
     },

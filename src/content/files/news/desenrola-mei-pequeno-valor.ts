@@ -6,7 +6,7 @@ export const desenrolaMeiPequenoValorNews = {
   title:
     'Desenrola MEI começa com desconto de 50%: veja quem pode negociar e como aderir',
   description:
-    'Nova modalidade permite que microempreendedores negociem dívidas de até R$ 8.105. A adesão começou em 1º de outubro e pode reduzir pela metade parte do saldo após a entrada.',
+    'Microempreendedores podem negociar dívidas de até R$ 8.105. A adesão começou em 1º de outubro e pode reduzir pela metade parte do saldo após a entrada.',
   category: 'financas',
   authorId: 'equipe-editorial',
   coverImage: {

@@ -16,6 +16,7 @@ import {
 
 import { CalculatorPanel } from './calculator-panel';
 import { JsonLdScript } from './json-ld';
+import { NewsCover } from './news-cover';
 
 const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
   dateStyle: 'long',
@@ -34,32 +35,6 @@ function sectionId(heading: string) {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '');
 }
-
-const audienceByCategory = {
-  beneficios:
-    'Famílias e pessoas que dependem de benefícios ou estão verificando elegibilidade.',
-  economia:
-    'Quem possui crédito, dívidas, investimentos ou decisões de consumo em andamento.',
-  financas:
-    'Pessoas que estão organizando o orçamento, comparando produtos ou planejando objetivos.',
-  trabalho:
-    'Trabalhadores, empregadores e profissionais que conferem salários e direitos.',
-  utilidades:
-    'Pessoas que precisam transformar uma dúvida cotidiana em uma conta objetiva.',
-} as const;
-
-const whenToUseByCategory = {
-  beneficios:
-    'Antes de consultar ou solicitar um benefício, para organizar as informações do seu caso.',
-  economia:
-    'Ao comparar cenários econômicos e entender como uma mudança pode afetar seu orçamento.',
-  financas:
-    'Antes de contratar, investir, pagar ou comparar alternativas financeiras.',
-  trabalho:
-    'Ao conferir uma verba, desconto, benefício ou condição do seu vínculo de trabalho.',
-  utilidades:
-    'Quando você precisa transformar dados do dia a dia em uma referência simples e comparável.',
-} as const;
 
 type ContentPageTemplateProps = Readonly<{
   model: ContentPageModel;
@@ -100,7 +75,9 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
                 <span>Por {author.name}</span>
                 <span>{model.readingMinutes} min de leitura</span>
                 <span>
-                  Atualizado em{' '}
+                  {document.kind === 'calculator'
+                    ? 'Revisado em'
+                    : 'Atualizado em'}{' '}
                   <time dateTime={document.updatedAt}>
                     {formatDate(document.updatedAt)}
                   </time>
@@ -109,6 +86,21 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
             </div>
           </Container>
         </header>
+
+        {!document.coverImage &&
+        document.kind === 'news' &&
+        document.highlights?.[0] ? (
+          <section className="border-b border-ads-border bg-ads-background py-8">
+            <Container>
+              <NewsCover
+                category={document.category}
+                className="aspect-[1200/630] w-full max-w-4xl rounded-ads-xlarge shadow-ads-soft"
+                label={document.highlights[0].label}
+                value={document.highlights[0].value}
+              />
+            </Container>
+          </section>
+        ) : null}
 
         {document.coverImage ? (
           <section className="border-b border-ads-border bg-ads-background py-8">
@@ -142,10 +134,9 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
                   A notícia em 1 minuto
                 </h2>
               </div>
-              <div className="grid gap-4 md:grid-cols-3">
+              <div className="grid gap-4 md:grid-cols-2">
                 {[
                   ['O que aconteceu?', document.description],
-                  ['Quem será afetado?', audienceByCategory[document.category]],
                   [
                     'Como isso impacta você?',
                     document.sections[1]?.paragraphs[0] ??
@@ -231,48 +222,6 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
             <div className="grid max-w-ads-copy gap-10">
               {document.kind === 'calculator' ? (
                 <>
-                  <section
-                    className="overflow-hidden rounded-ads-xlarge border border-ads-border bg-ads-surface shadow-ads-subtle"
-                    aria-labelledby="calculator-overview-title"
-                  >
-                    <div className="border-b border-ads-border p-5 sm:p-6">
-                      <span className="text-xs font-bold uppercase tracking-[0.14em] text-ads-primary-strong">
-                        Antes de começar
-                      </span>
-                      <h2
-                        className="mt-2 font-ads-display text-2xl font-bold text-ads-secondary sm:text-3xl"
-                        id="calculator-overview-title"
-                      >
-                        Entenda se esta calculadora serve para você
-                      </h2>
-                    </div>
-                    <dl className="grid gap-px bg-ads-border sm:grid-cols-3">
-                      <div className="bg-ads-surface p-5">
-                        <dt className="text-sm font-bold text-ads-secondary">
-                          Qual é o objetivo?
-                        </dt>
-                        <dd className="mt-2 text-sm leading-6 text-ads-muted">
-                          {document.description}
-                        </dd>
-                      </div>
-                      <div className="bg-ads-surface p-5">
-                        <dt className="text-sm font-bold text-ads-secondary">
-                          Quando utilizar?
-                        </dt>
-                        <dd className="mt-2 text-sm leading-6 text-ads-muted">
-                          {whenToUseByCategory[document.category]}
-                        </dd>
-                      </div>
-                      <div className="bg-ads-surface p-5">
-                        <dt className="text-sm font-bold text-ads-secondary">
-                          Quem pode utilizar?
-                        </dt>
-                        <dd className="mt-2 text-sm leading-6 text-ads-muted">
-                          {audienceByCategory[document.category]}
-                        </dd>
-                      </div>
-                    </dl>
-                  </section>
                   <AdSlot
                     format="horizontal"
                     label="Publicidade antes da calculadora"

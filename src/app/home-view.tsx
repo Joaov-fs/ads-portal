@@ -8,6 +8,7 @@ import {
   ScrollStory,
   TaxCounter,
 } from '@/components/home';
+import { NewsCover } from '@/components/content/news-cover';
 import { Container } from '@/components/layout/container';
 import { Search } from '@/components/ui/search';
 import {
@@ -423,13 +424,16 @@ export function HomeView({
             <div className="grid gap-5 sm:grid-cols-2">
               {sideNews.map((news, index) => (
                 <Reveal className="h-full" delay={index * 80} key={news.href}>
-                  <article className="group relative flex h-full flex-col justify-between gap-5 rounded-ads-xlarge border border-ads-border bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-ads-primary hover:shadow-ads-soft">
-                    <div className="grid gap-3">
-                      {news.highlight ? (
-                        <strong className="font-ads-display text-3xl font-extrabold tracking-tight text-ads-primary">
-                          {news.highlight.value}
-                        </strong>
-                      ) : null}
+                  <article className="group relative flex h-full flex-col justify-between gap-5 overflow-hidden rounded-ads-xlarge border border-ads-border bg-white transition duration-300 hover:-translate-y-1 hover:border-ads-primary hover:shadow-ads-soft">
+                    {news.highlight ? (
+                      <NewsCover
+                        category={news.category}
+                        className="aspect-[1200/630] w-full"
+                        label={news.highlight.label}
+                        value={news.highlight.value}
+                      />
+                    ) : null}
+                    <div className="grid gap-3 px-6">
                       <h3 className="font-ads-display text-lg font-bold leading-snug text-ads-secondary">
                         <Link
                           className="after:absolute after:inset-0"
@@ -439,7 +443,7 @@ export function HomeView({
                         </Link>
                       </h3>
                     </div>
-                    <div className="relative z-10 grid gap-3">
+                    <div className="relative z-10 grid gap-3 px-6 pb-6">
                       {news.calculator ? (
                         <Link
                           className="w-fit rounded-ads-full bg-ads-primary-soft px-3.5 py-1.5 text-xs font-bold text-ads-primary-strong transition hover:bg-ads-primary hover:text-white"

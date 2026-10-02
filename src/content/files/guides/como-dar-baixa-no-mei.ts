@@ -8,8 +8,8 @@ export const guideComoDarBaixaNoMei = {
     'Quando vale encerrar o CNPJ, o passo a passo no Portal do Empreendedor e por que a baixa não apaga os débitos.',
   category: 'financas',
   authorId: 'equipe-editorial',
-  publishedAt: '2026-10-01',
-  updatedAt: '2026-10-01',
+  publishedAt: '2026-09-18',
+  updatedAt: '2026-10-02',
   tags: ['mei', 'baixa', 'cnpj', 'encerramento'],
   featuredCalculators: ['das-mei-atraso'],
   highlights: [
@@ -31,40 +31,98 @@ export const guideComoDarBaixaNoMei = {
   ],
   sections: [
     {
-      heading: 'Quando dar baixa',
+      heading: 'Quando vale a pena dar baixa',
       paragraphs: [
-        'Se você não quer mais trabalhar como MEI, passou do limite de faturamento ou arrumou um emprego que não combina com a atividade, encerre o CNPJ. Continuar sem faturar mantém o DAS mensal e as dívidas crescendo.',
+        'Dê baixa se você parou de trabalhar por conta própria, passou a ter sócio, foi para um emprego que não permite a atividade ou quer migrar para outro tipo de empresa. O DAS é fixo e continua sendo cobrado todo mês mesmo sem faturamento, e a dívida cresce com multa e juros.',
+        'Um exemplo: uma manicure (serviços, DAS de R$ 86,05) para de atender em março, mas só encerra o CNPJ em setembro. Foram seis meses de DAS, R$ 516,30, pagos sem receita. Se não pagou, o valor ainda aumenta com multa e juros. Quem pretende voltar a trabalhar como MEI no futuro também deve pesar que a baixa não pode ser desfeita.',
       ],
     },
     {
-      heading: 'Passo 1: acesse o Portal do Empreendedor',
+      heading: 'Antes de começar: o que conferir',
       paragraphs: [
-        'Entre no portal com a conta gov.br, escolha "Já sou MEI" e depois "Baixa do CNPJ". Siga as telas e confirme o encerramento.',
+        'Separe o CNPJ e a conta gov.br. Verifique no PGMEI quais meses de DAS estão em aberto e se todas as declarações anuais (DASN-SIMEI) foram entregues. Se tiver empregado, regularize a rescisão antes, porque a baixa do CNPJ não encerra as obrigações trabalhistas e previdenciárias.',
+        'Você pode dar baixa mesmo com débitos: o portal não impede o pedido. Mas isso só encerra a empresa, não a dívida, como mostram as seções abaixo.',
       ],
     },
     {
-      heading: 'Passo 2: entregue a declaração final',
+      heading: 'Passo a passo da baixa no Portal do Empreendedor',
       paragraphs: [
-        'É preciso fazer a DASN-SIMEI de extinção, com a receita do período trabalhado. Sem ela, a Receita pode manter pendências.',
+        'Passo 1: entre no Portal do Empreendedor com sua conta gov.br e acesse o serviço de baixa da empresa, na área de quem já é MEI. Passo 2: confirme os dados do CNPJ e o pedido de encerramento. Passo 3: guarde o comprovante, que mostra a situação do CNPJ como baixado.',
+        'O processo é gratuito e feito sozinho, sem contador. A baixa extingue o CNPJ e o enquadramento no MEI; também é uma boa hora de avisar a prefeitura e de cancelar alvará, inscrição municipal e notas fiscais que ainda usava.',
       ],
     },
     {
-      heading: 'Passo 3: cuide dos débitos',
+      heading: 'A declaração de extinção (DASN-SIMEI) e seus prazos',
       paragraphs: [
-        'A baixa não cancela o DAS em atraso. Os débitos continuam vinculados ao CPF e à empresa. Emita a guia atualizada e pague, ou peça parcelamento no portal. Dívidas não pagas podem ir para a dívida ativa.',
+        'Depois da baixa, é obrigatória a declaração anual de extinção, informando a receita bruta do período em que a empresa funcionou. O prazo é o último dia de junho, se a extinção ocorreu de janeiro a abril, ou o último dia do mês seguinte, se ocorreu de maio a dezembro.',
+      ],
+      table: {
+        caption: 'Prazo da DASN-SIMEI de extinção',
+        columns: ['Mês da baixa', 'Prazo da declaração'],
+        rows: [
+          [
+            'Janeiro a abril (exemplo: baixa em 10 de março)',
+            'Até 30 de junho',
+          ],
+          [
+            'Maio a dezembro (exemplo: baixa em 15 de agosto)',
+            'Até 30 de setembro',
+          ],
+        ],
+      },
+    },
+    {
+      heading: 'O que acontece com as dívidas',
+      paragraphs: [
+        'A baixa não cancela o DAS devido nem as multas. Os débitos continuam exigíveis e passam a ser cobrados do titular, pelo CPF. O DAS do mês em que a baixa foi feita também é devido.',
+        'Exemplo: dois DAS de comércio (R$ 82,05 cada) venceram em 20 de agosto e 20 de setembro de 2026 e foram pagos só em 15 de outubro. O primeiro sai por R$ 98,92 e o segundo por R$ 89,64, total de R$ 188,56, R$ 24,46 a mais que o valor original de R$ 164,10. Se a dívida não for paga, pode ser inscrita em dívida ativa e passar a ser cobrada pela Procuradoria da Fazenda Nacional, com impedimento para emitir certidões negativas.',
+        'É possível pedir parcelamento no Portal do Simples Nacional mesmo com o CNPJ baixado, mas os períodos precisam ter a DASN-SIMEI entregue, o limite é de 60 parcelas e cada parcela tem valor mínimo de R$ 50,00.',
+      ],
+    },
+    {
+      heading: 'Erros comuns na hora de encerrar',
+      paragraphs: [
+        'Esquecer a DASN-SIMEI de extinção, o que gera multa por atraso (mínimo de R$ 50,00). Acreditar que a baixa apaga o que foi devido antes. E deixar o CNPJ parado por anos sem faturar, acumulando DAS e multas.',
+        'Em caso de dúvida, o Sebrae atende pela Central de Relacionamento 0800 570 0800.',
+      ],
+    },
+    {
+      heading: 'E se eu quiser voltar a ser MEI',
+      paragraphs: [
+        'Não é possível reabrir o mesmo CNPJ. Se voltar a trabalhar como MEI, você abre um novo cadastro, com outro número, mas os débitos do CNPJ anterior continuam existindo no seu CPF e precisam ser tratados à parte.',
       ],
     },
   ],
   faq: [
     {
-      question: 'Posso abrir de novo depois?',
+      question: 'Posso dar baixa com DAS atrasado?',
       answer:
-        'Sim, mas se houver débitos pendentes eles precisam ser regularizados.',
+        'Sim, a baixa é aceita mesmo com débitos de DAS ou de declarações. Eles continuam sendo cobrados depois, em nome do titular, e podem ser pagos ou parcelados.',
     },
     {
-      question: 'A baixa cancela o INSS pago?',
+      question: 'Posso abrir de novo o mesmo CNPJ depois da baixa?',
       answer:
-        'Não. As contribuições já pagas continuam valendo para os benefícios.',
+        'Não. O CNPJ baixado não é reaberto. É possível abrir um novo MEI, com número diferente, e as dívidas do anterior continuam valendo.',
+    },
+    {
+      question: 'A baixa cancela o INSS que já paguei?',
+      answer:
+        'Não. As contribuições pagas continuam contando para os benefícios previdenciários. O que deixa de existir é a contribuição dos meses seguintes, o que pode reduzir ou interromper a proteção.',
+    },
+    {
+      question: 'Qual é o prazo da declaração depois da baixa?',
+      answer:
+        'Se a baixa foi de janeiro a abril, até o último dia de junho. De maio a dezembro, até o último dia do mês seguinte. Fora do prazo há multa, de no mínimo R$ 50,00.',
+    },
+    {
+      question: 'Preciso de contador para dar baixa?',
+      answer:
+        'Não. A baixa e a declaração de extinção são feitas gratuitamente pelo titular, no Portal do Empreendedor e no Portal do Simples Nacional.',
+    },
+    {
+      question: 'Se eu passei do limite de faturamento, preciso dar baixa?',
+      answer:
+        'Nem sempre. O excesso leva ao desenquadramento do MEI, que passa a empresa para outro regime, sem fechar o CNPJ. A baixa é o fim da empresa.',
     },
   ],
   sources: [
@@ -73,8 +131,20 @@ export const guideComoDarBaixaNoMei = {
       url: 'https://www.gov.br/empresas-e-negocios/pt-br/empreendedor',
     },
     {
-      label: 'Receita Federal do Brasil',
-      url: 'https://www.gov.br/receitafederal/pt-br',
+      label: 'Perguntas frequentes sobre baixa — Portal do Empreendedor',
+      url: 'https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/servicos-para-mei/baixa-de-mei/perguntas-frequentes-baixa',
+    },
+    {
+      label: 'Manual do Parcelamento de Débitos do MEI — Simples Nacional',
+      url: 'https://www8.receita.fazenda.gov.br/SimplesNacional/Arquivos/manual/Manual_Parcelamento_MEI.pdf',
+    },
+    {
+      label: 'Perguntas e Respostas MEI e Simei — Receita Federal',
+      url: 'https://www8.receita.fazenda.gov.br/simplesnacional/arquivos/manual/perguntaomei.pdf',
+    },
+    {
+      label: 'Sebrae — Central de Relacionamento 0800 570 0800',
+      url: 'https://sebrae.com.br/sites/PortalSebrae/artigos/como-entrar-em-contato-com-o-sebrae',
     },
   ],
 } as const satisfies GuideDocument;

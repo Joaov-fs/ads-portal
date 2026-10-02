@@ -6,7 +6,7 @@ export const jurosCompostosCalculator = {
   slug: 'juros-compostos',
   title: 'Juros compostos',
   description:
-    'Projete a evolução de um investimento com taxa e prazo na mesma unidade.',
+    'Projete quanto um investimento rende com juros compostos, usando taxa e prazo na mesma unidade, mês a mês.',
   category: 'financas',
   authorId: 'equipe-editorial',
   publishedAt: '2026-09-12',

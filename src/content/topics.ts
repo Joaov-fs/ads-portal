@@ -1,0 +1,111 @@
+/**
+ * Assuntos que aparecem em mais de um formato (notícia, guia, calculadora).
+ * Cada grupo se liga entre si: a notícia traz o dado do momento, o guia
+ * ensina o passo a passo e a calculadora faz a conta. Evita que páginas do
+ * mesmo tema compitam entre si e leva o leitor ao formato certo.
+ */
+export const topicGroups: readonly (readonly string[])[] = [
+  [
+    '13o-salario-2026-datas-e-quanto-voce-recebe',
+    'como-calcular-o-13o-salario',
+    'decimo-salario',
+    'decimo-proporcional',
+  ],
+  [
+    'abono-salarial-2026-prazo-para-sacar-vai-ate-30-de-dezembro',
+    'abono-salarial-pis-pasep-quem-tem-direito',
+    'pis',
+  ],
+  [
+    'bolsa-familia-691-outubro-2026-calendario',
+    'bolsa-familia-como-consultar-e-quanto-recebe',
+    'bolsa-familia',
+    'como-fazer-ou-atualizar-o-cadastro-unico',
+  ],
+  [
+    'demissao-sem-justa-causa-o-que-voce-recebe-exemplo-em-reais',
+    'como-calcular-a-rescisao-sem-justa-causa',
+    'rescisao-clt',
+    'aviso-previo',
+    'fgts-multa',
+  ],
+  [
+    'ferias-2026-como-calcular-o-um-terco-vender-10-dias-e-dividir-em-periodos',
+    'como-calcular-ferias-passo-a-passo',
+    'ferias',
+    'ferias-proporcionais',
+  ],
+  [
+    'financiamento-sac-ou-price-diferenca-de-r-135-mil-em-juros-no-exemplo',
+    'financiamento-sac-ou-price-qual-escolher',
+    'financiamento-sac-price',
+  ],
+  [
+    'horas-extras-como-calcular-50-100-e-o-reflexo-no-dsr',
+    'como-calcular-horas-extras-e-dsr',
+    'horas-extras',
+    'dsr',
+  ],
+  [
+    'imposto-de-renda-zero-ate-r-5-mil-quanto-voce-paga-no-contracheque',
+    'tabela-do-imposto-de-renda-2026-na-folha',
+    'como-calcular-o-salario-liquido',
+    'irrf',
+    'salario-liquido',
+  ],
+  [
+    'inss-2026-teto-de-r-8-475-55-e-aliquotas-por-faixa',
+    'como-funciona-o-desconto-do-inss',
+    'inss',
+  ],
+  [
+    'inss-de-autonomo-e-socio-20-11-ou-5-qual-plano-vale-a-pena',
+    'inss-autonomo',
+    'pro-labore',
+  ],
+  [
+    'mei-2026-das-de-r-81-05-limite-de-r-81-mil-e-multa-por-atraso',
+    'como-emitir-o-das-do-mei-e-fazer-a-declaracao-anual',
+    'mei-das-em-atraso-como-regularizar',
+    'das-mei-atraso',
+    'das-limite-mei',
+  ],
+  [
+    'desenrola-mei-pequeno-valor-desconto-dividas',
+    'mei-das-em-atraso-como-regularizar',
+    'como-sair-do-endividamento-passo-a-passo',
+  ],
+  [
+    'poupanca-rende-8-3-ao-ano-veja-quanto-cdb-e-lci-rendem-a-mais',
+    'poupanca-ou-cdb-qual-rende-mais',
+    'cdb-x-poupanca',
+    'cdb-liquido',
+  ],
+  [
+    'selic-13-75-o-que-muda-para-quem-investe-e-para-quem-deve',
+    'cdb-lci-lca-ou-tesouro-selic-qual-escolher',
+    'tesouro-selic',
+    'lci-lca',
+  ],
+  [
+    'reajuste-do-aluguel-igp-m-3-35-ou-ipca-4-22-veja-quanto-fica',
+    'reajuste-do-aluguel-como-calcular-igp-m-ou-ipca',
+    'reajuste-aluguel',
+  ],
+  [
+    'seguro-desemprego-2026-valores-parcelas-e-como-pedir',
+    'como-pedir-o-seguro-desemprego',
+    'seguro-desemprego',
+  ],
+  [
+    'salario-minimo-2026-r-1-621-o-que-ele-muda-no-seu-bolso',
+    'bpc-loas-quem-tem-direito-e-como-pedir',
+    'bpc',
+  ],
+];
+
+export function sharesTopic(left: string, right: string) {
+  return topicGroups.some(
+    (group) => group.includes(left) && group.includes(right),
+  );
+}

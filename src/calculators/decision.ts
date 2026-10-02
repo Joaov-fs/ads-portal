@@ -1403,7 +1403,7 @@ function custoFuncionario(values: CalculatorValues): CalculatorDecision {
       'Receita Federal — Simples Nacional',
     ],
     alerts: [
-      'Empresas do Simples Nacional nos anexos I a III não pagam a contribuição patronal de 20%; informe 0% nos encargos. Lucro presumido ou real costuma ficar perto de 28,8% (20% INSS, 1% a 3% RAT, 5,8% terceiros).',
+      'Empresas do Simples Nacional nos anexos I, II, III e V já pagam a contribuição patronal dentro do DAS; informe 0% nos encargos. Lucro presumido ou real costuma ficar perto de 28,8% (20% INSS, 1% a 3% RAT, 5,8% terceiros).',
     ],
   };
 }
