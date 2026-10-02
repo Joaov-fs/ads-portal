@@ -24,7 +24,9 @@ export function fixedIncome(
   taxable = true,
 ): FixedIncomeResult {
   const gross = amount * ((1 + annualRate / 100) ** (months / 12) - 1);
-  const taxRate = taxable ? incomeTaxRateForDays(Math.round((months * 365) / 12)) : 0;
+  const taxRate = taxable
+    ? incomeTaxRateForDays(Math.round((months * 365) / 12))
+    : 0;
   const tax = gross * (taxRate / 100);
 
   return { gross, net: gross - tax, tax, taxRate };

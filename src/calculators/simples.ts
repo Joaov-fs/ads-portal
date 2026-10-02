@@ -61,6 +61,25 @@ export const simplesAnnexes = {
   },
 } as const;
 
+/**
+ * Serviços dos anexos III e V mudam de anexo pelo Fator R (folha de 12 meses ÷ receita de
+ * 12 meses): a partir de 28% vale o Anexo III, que é mais barato.
+ */
+export function resolveSimplesAnnex(
+  annex: number,
+  payroll12: number,
+  rbt12: number,
+) {
+  const requested = Math.min(5, Math.max(1, Math.round(annex)));
+  const factor = rbt12 > 0 && payroll12 > 0 ? payroll12 / rbt12 : undefined;
+
+  if ((requested === 3 || requested === 5) && factor !== undefined) {
+    return { annex: factor >= 0.28 ? 3 : 5, factor };
+  }
+
+  return { annex: requested, factor };
+}
+
 export type SimplesResult = Readonly<{
   annexName: string;
   bracket: number;

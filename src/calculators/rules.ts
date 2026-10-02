@@ -13,7 +13,8 @@ import {
   sacSchedule,
   scheduleTotals,
 } from './finance';
-import { simplesNacional } from './simples';
+import { lateTaxInterest } from './selic';
+import { resolveSimplesAnnex, simplesNacional } from './simples';
 import {
   calculateDismissalCost,
   calculateTermination,
@@ -267,23 +268,94 @@ export function selfEmployedInss(amount: number, rate: number) {
 }
 
 export type LateDasBreakdown = Readonly<{
+  daysLate: number;
+  estimatedMonths: number;
   fine: number;
   finePercent: number;
   interest: number;
+  interestPercent: number;
   total: number;
 }>;
 
-/** DAS em atraso: multa de 0,33% por dia limitada a 20%, mais os juros informados. */
+/**
+ * DAS em atraso: multa de 0,33% por dia limitada a 20%, mais juros pela Selic acumulada
+ * (e 1% no mês do pagamento). Sem as datas, usa os dias e os juros informados.
+ */
 export function lateDas(values: CalculatorValues): LateDasBreakdown {
   const original = Math.max(0, value(values, 'amount'));
-  const finePercent = Math.min(
-    20,
-    Math.max(0, value(values, 'daysLate')) * 0.33,
-  );
+  const dueDate = value(values, 'dueDate');
+  const payDate = value(values, 'payDate');
+  const hasDates = dueDate > 0 && payDate > 0;
+  const daysLate = hasDates
+    ? Math.max(0, payDate - dueDate)
+    : Math.max(0, value(values, 'daysLate'));
+  const late =
+    hasDates && daysLate > 0 ? lateTaxInterest(dueDate, payDate) : undefined;
+  const interestPercent = late
+    ? late.percent
+    : hasDates
+      ? 0
+      : Math.max(0, value(values, 'interest'));
+  const finePercent = Math.min(20, daysLate * 0.33);
   const fine = original * (finePercent / 100);
-  const interest = original * (Math.max(0, value(values, 'interest')) / 100);
+  const interest = original * (interestPercent / 100);
 
-  return { fine, finePercent, interest, total: original + fine + interest };
+  return {
+    daysLate,
+    estimatedMonths: late?.estimatedMonths ?? 0,
+    fine,
+    finePercent,
+    interest,
+    interestPercent,
+    total: original + fine + interest,
+  };
+}
+
+export type VacationBreakdown = Readonly<{
+  allowance: number;
+  allowanceThird: number;
+  days: number;
+  gross: number;
+  inss: number;
+  irrf: number;
+  net: number;
+  sellDays: number;
+  taken: number;
+  takenThird: number;
+}>;
+
+/** Férias: dias gozados com 1/3 (tributados) e abono pecuniário com 1/3 (isento de INSS e IR). */
+export function calculateVacation(values: CalculatorValues): VacationBreakdown {
+  const salary = Math.max(0, value(values, 'salary'));
+  const days = Math.min(monthDays, Math.max(0, value(values, 'days')));
+  const sellDays = Math.min(
+    10,
+    monthDays - days >= 0 ? Math.max(0, value(values, 'sellDays')) : 0,
+    monthDays - days,
+  );
+  const dependents = Math.max(0, Math.floor(value(values, 'dependents')));
+  const taken = (salary / monthDays) * days;
+  const allowance = (salary / monthDays) * sellDays;
+  const takenGross = taken + taken / 3;
+  const inss = progressiveInss(takenGross);
+  const irrf = progressiveIrrf(
+    Math.max(0, takenGross - inss - dependents * irrfDependentDeduction),
+    takenGross,
+  );
+  const gross = takenGross + allowance + allowance / 3;
+
+  return {
+    allowance,
+    allowanceThird: allowance / 3,
+    days,
+    gross,
+    inss,
+    irrf,
+    net: gross - inss - irrf,
+    sellDays,
+    taken,
+    takenThird: taken / 3,
+  };
 }
 
 export type OvertimeBreakdown = Readonly<{
@@ -403,14 +475,12 @@ export function calculateCalculator(
         calculateNetSalary(values).net,
         'Desconta do salário bruto o INSS pelas faixas progressivas de 2026, o IRRF sobre a base já reduzida por INSS, dependentes e pensão, e os demais descontos informados.',
       );
-    case 'ferias': {
-      const vacationDays = Math.min(monthDays, value(values, 'days'));
+    case 'ferias':
       return result(
         'Férias brutas estimadas',
-        (salary / monthDays) * vacationDays * (4 / 3),
-        'Paga o salário proporcional aos dias de férias e soma o adicional constitucional de um terço. Antes dos descontos de INSS e IRRF.',
+        calculateVacation(values).gross,
+        'Paga o salário proporcional aos dias de férias e soma o adicional constitucional de um terço, inclusive sobre os dias vendidos (abono pecuniário). Antes dos descontos de INSS e IRRF.',
       );
-    }
     case 'seguro-desemprego':
       return result(
         'Valor de cada parcela',
@@ -618,9 +688,16 @@ export function calculateCalculator(
     case 'simples-nacional':
       return result(
         'DAS estimado',
-        simplesNacional(amount, value(values, 'rbt12'), value(values, 'annex'))
-          .das,
-        'Encontra a faixa pela receita bruta dos últimos 12 meses, calcula a alíquota efetiva (receita × alíquota nominal − parcela a deduzir, dividido pela receita) e aplica sobre a receita do mês.',
+        simplesNacional(
+          amount,
+          value(values, 'rbt12'),
+          resolveSimplesAnnex(
+            value(values, 'annex'),
+            value(values, 'payroll12'),
+            value(values, 'rbt12'),
+          ).annex,
+        ).das,
+        'Encontra a faixa pela receita bruta dos últimos 12 meses, calcula a alíquota efetiva (receita × alíquota nominal − parcela a deduzir, dividido pela receita) e aplica sobre a receita do mês. Em serviços, a folha de salários informada define pelo Fator R se vale o Anexo III ou o V.',
       );
     case 'excesso-limite-mei':
       return result(
@@ -632,7 +709,7 @@ export function calculateCalculator(
       return result(
         'DAS atualizado estimado',
         lateDas(values).total,
-        'Soma à guia original a multa de mora, de 0,33% por dia de atraso e limitada a 20%, e os juros que você informar.',
+        'Soma à guia original a multa de mora, de 0,33% por dia de atraso e limitada a 20%, e os juros: a Selic acumulada dos meses entre o vencimento e o pagamento, mais 1% no mês em que você paga.',
       );
     case 'bpc':
       return result(

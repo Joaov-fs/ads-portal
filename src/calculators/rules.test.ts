@@ -8,6 +8,7 @@ import {
   bolsaFamiliaParts,
   calculateCalculator,
   calculateEmployerCost,
+  calculateVacation,
   calculateNetSalary,
   calculateNightShift,
   calculateOvertime,
@@ -18,7 +19,7 @@ import {
   lateDas,
   selfEmployedInss,
 } from './rules';
-import { simplesNacional } from './simples';
+import { resolveSimplesAnnex, simplesNacional } from './simples';
 import { calculateTermination, noticeDaysFor } from './termination';
 
 describe('calculator rules', () => {
@@ -37,6 +38,10 @@ describe('calculator rules', () => {
     daysLate: 10,
     debits: 2,
     deductions: 100,
+    dueDate: 20685,
+    payDate: 20731,
+    payroll12: 80000,
+    sellDays: 5,
     dependents: 1,
     endDate: 20030,
     expiredVacations: 1,
@@ -231,6 +236,12 @@ describe('calculator rules', () => {
     expect(
       lateDas({ amount: 100, daysLate: 100, interest: 5 }).total,
     ).toBeCloseTo(125, 2);
+    // Vencimento em 20/08/2026 e pagamento em 05/10/2026: multa de 46 dias e
+    // Selic de setembro (1,08%) mais 1% no mês do pagamento.
+    const dated = lateDas({ amount: 81.05, dueDate: 20685, payDate: 20731 });
+
+    expect(dated.daysLate).toBe(46);
+    expect(dated.interestPercent).toBeCloseTo(2.08, 6);
   });
 
   it('follows the unemployment installment table and notice days', () => {
@@ -272,6 +283,28 @@ describe('calculator rules', () => {
     expect(ot.pay100).toBe(100);
     expect(ot.dsr).toBeCloseTo(50, 6);
     expect(ot.total).toBeCloseTo(300, 6);
+  });
+
+  it('sells vacation days without INSS or IRRF and picks the Simples annex by Fator R', () => {
+    const vacation = calculateVacation({
+      salary: 3000,
+      days: 20,
+      sellDays: 10,
+    });
+
+    expect(vacation.gross).toBeCloseTo(4000, 6);
+    expect(vacation.taken + vacation.takenThird).toBeCloseTo(2666.67, 2);
+    expect(vacation.allowance + vacation.allowanceThird).toBeCloseTo(
+      1333.33,
+      2,
+    );
+    expect(vacation.net).toBeCloseTo(4000 - vacation.inss - vacation.irrf, 6);
+    expect(
+      calculateCalculator('ferias', { salary: 3000, days: 30 }).value,
+    ).toBe(4000);
+    expect(resolveSimplesAnnex(5, 70000, 200000).annex).toBe(3);
+    expect(resolveSimplesAnnex(5, 20000, 200000).annex).toBe(5);
+    expect(resolveSimplesAnnex(1, 0, 200000).annex).toBe(1);
   });
 
   it('computes IRRF through INSS, dependents and the 2026 reduction', () => {

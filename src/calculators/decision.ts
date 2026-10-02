@@ -19,6 +19,7 @@ import {
   calculateNetSalary,
   calculateNightShift,
   calculateOvertime,
+  calculateVacation,
   calculateProLabore,
   calculateThirteenth,
   disabilityBenefit,
@@ -28,7 +29,7 @@ import {
   plrTax,
   selfEmployedInss,
 } from './rules';
-import { simplesNacional } from './simples';
+import { resolveSimplesAnnex, simplesNacional } from './simples';
 import {
   calculateDismissalCost,
   calculateTermination,
@@ -306,39 +307,68 @@ function rescisao(values: CalculatorValues): CalculatorDecision {
 }
 
 function ferias(values: CalculatorValues): CalculatorDecision {
-  const salary = input(values, 'salary');
+  const vacation = calculateVacation(values);
   const requestedDays = input(values, 'days');
-  const days = Math.min(30, requestedDays);
-  const base = (salary / 30) * days;
-  const alerts = [
-    'Valor bruto, antes de INSS e IRRF. Abono pecuniário (venda de dias) e médias de horas extras e adicionais não entram no cálculo.',
+  const rows: DecisionStatementRow[] = [
+    {
+      label: 'Salário dos dias de férias',
+      reference: `${number.format(vacation.days)} dias`,
+      earning: vacation.taken,
+    },
+    {
+      label: 'Adicional de 1/3 constitucional',
+      reference: '1/3',
+      earning: vacation.takenThird,
+    },
   ];
+  const alerts = [
+    'O INSS e o IRRF foram calculados só sobre as férias; no contracheque eles se somam ao salário do mês e podem mudar um pouco. Médias de horas extras e adicionais não entram.',
+  ];
+
+  if (vacation.sellDays > 0) {
+    rows.push(
+      {
+        label: 'Abono pecuniário (dias vendidos)',
+        reference: `${number.format(vacation.sellDays)} dias`,
+        earning: vacation.allowance,
+      },
+      {
+        label: 'Adicional de 1/3 sobre o abono',
+        reference: '1/3',
+        earning: vacation.allowanceThird,
+      },
+    );
+  }
+
+  rows.push(
+    { label: 'INSS', discount: vacation.inss },
+    {
+      label: 'IRRF',
+      reference: vacation.irrf > 0 ? 'Tabela mensal de 2026' : 'Isento',
+      discount: vacation.irrf,
+    },
+  );
 
   if (requestedDays > 30) {
     alerts.unshift('As férias têm no máximo 30 dias; o cálculo usou 30.');
   }
 
+  if (input(values, 'sellDays') > 10) {
+    alerts.unshift('Só é possível vender até 10 dias; o cálculo usou 10.');
+  }
+
   return {
-    summary: `${days} dias de férias pagam ${money(base)} de salário mais ${money(base / 3)} de adicional de um terço.`,
+    summary: `As férias somam ${money(vacation.gross)} brutos e ${money(vacation.net)} líquidos${vacation.sellDays > 0 ? ', já com a venda de dias' : ''}.`,
     statement: {
       title: 'Demonstrativo das férias',
-      netLabel: 'Total bruto das férias',
-      rows: [
-        {
-          label: 'Salário dos dias de férias',
-          reference: `${number.format(days)} dias`,
-          earning: base,
-        },
-        {
-          label: 'Adicional de 1/3 constitucional',
-          reference: '1/3',
-          earning: base / 3,
-        },
-      ],
+      netLabel: 'Férias líquidas',
+      rows,
+      note: 'O abono pecuniário não sofre desconto de INSS nem de IRRF.',
     },
     references: [
       'Constituição Federal, art. 7º, XVII (terço de férias)',
-      'CLT, arts. 129 a 153 (férias)',
+      'CLT, arts. 129 a 153 (férias e abono pecuniário)',
+      ...irrfReferences,
     ],
     alerts,
   };
@@ -662,26 +692,37 @@ function inssAutonomo(values: CalculatorValues): CalculatorDecision {
 function dasMeiAtraso(values: CalculatorValues): CalculatorDecision {
   const late = lateDas(values);
   const original = input(values, 'amount');
+  const alerts = [
+    'Confirme o valor na guia atualizada do Portal do Simples Nacional ou do aplicativo MEI, que usa a data exata do pagamento.',
+  ];
+
+  if (late.estimatedMonths > 0) {
+    alerts.unshift(
+      `A Selic de ${late.estimatedMonths} mês(es) ainda não foi divulgada; usamos a última conhecida como estimativa.`,
+    );
+  }
 
   return {
-    summary: `A guia de ${money(original)} passa a custar ${money(late.total)} com multa e juros.`,
+    summary:
+      late.daysLate > 0
+        ? `Com ${number.format(late.daysLate)} dias de atraso, a guia de ${money(original)} passa a custar ${money(late.total)}.`
+        : `Sem atraso, a guia continua em ${money(original)}.`,
     table: {
       title: 'Atualização da guia',
       columns: ['Item', 'Valor'],
       rows: [
         ['Valor original do DAS', money(original)],
         [`Multa de mora (${percent(late.finePercent)})`, money(late.fine)],
-        ['Juros informados', money(late.interest)],
+        [`Juros (${percent(late.interestPercent)})`, money(late.interest)],
         ['Total a pagar', money(late.total)],
       ],
     },
     references: [
       'Resolução CGSN 140/2018 (multa e juros do Simples Nacional e do MEI)',
+      'Banco Central — Selic acumulada no mês (série 4390 do SGS)',
       'Portal do Simples Nacional — Receita Federal',
     ],
-    alerts: [
-      'Para pagar, gere a guia atualizada no Portal do Simples Nacional ou no aplicativo MEI. O valor exato depende da data do pagamento.',
-    ],
+    alerts,
   };
 }
 
@@ -743,7 +784,7 @@ function pis(
       'Lei 7.998/1990, art. 9º (abono salarial)',
     ],
     alerts: [
-      'Só recebe quem trabalhou ao menos 30 dias com carteira no ano-base, ganhou em média até 2 salários mínimos por mês e está inscrito no PIS/Pasep há 5 anos ou mais. Consulte sua situação na Carteira de Trabalho Digital.',
+      'Só recebe quem trabalhou ao menos 30 dias com carteira em 2024, teve remuneração média mensal de até 2 salários mínimos (R$ 2.766, segundo o Ministério do Trabalho) e está inscrito no PIS/Pasep há 5 anos ou mais. No ciclo de 2026, o valor pode ser sacado até 30 de dezembro. Consulte sua situação na Carteira de Trabalho Digital.',
     ],
   };
 }
@@ -1379,13 +1420,21 @@ function custoFuncionario(values: CalculatorValues): CalculatorDecision {
 }
 
 function simplesDecision(values: CalculatorValues): CalculatorDecision {
+  const resolved = resolveSimplesAnnex(
+    input(values, 'annex'),
+    input(values, 'payroll12'),
+    input(values, 'rbt12'),
+  );
   const result = simplesNacional(
     input(values, 'amount'),
     input(values, 'rbt12'),
-    input(values, 'annex'),
+    resolved.annex,
   );
   const alerts = [
-    'Estimativa pela tabela geral. Anexos III e V dependem do Fator R, e ISS e ICMS têm sublimites estaduais.',
+    resolved.factor === undefined &&
+    (resolved.annex === 3 || resolved.annex === 5)
+      ? 'Em serviços dos anexos III e V, informe a folha de 12 meses para o Fator R escolher o anexo certo. ISS e ICMS têm sublimites estaduais.'
+      : 'Estimativa pela tabela geral. ISS e ICMS têm sublimites estaduais.',
   ];
 
   if (result.outOfLimit) {
@@ -1401,6 +1450,9 @@ function simplesDecision(values: CalculatorValues): CalculatorDecision {
       columns: ['Etapa', 'Valor'],
       rows: [
         ['Anexo', result.annexName],
+        ...(resolved.factor !== undefined
+          ? [['Fator R', percent(resolved.factor * 100)]]
+          : []),
         ['Receita dos últimos 12 meses', money(result.rbt12)],
         ['Faixa', `${result.bracket}ª faixa`],
         ['Alíquota nominal', percent(result.nominalRate)],

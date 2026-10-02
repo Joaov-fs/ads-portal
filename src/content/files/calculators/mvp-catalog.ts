@@ -357,7 +357,7 @@ const specs = [
       percentage(
         'rate',
         'Índice de reajuste (%)',
-        'Variação acumulada em 12 meses do índice do contrato (IGP-M da FGV ou IPCA do IBGE).',
+        'Variação acumulada em 12 meses do índice do contrato. Referência de outubro de 2026: IGP-M 3,35% (set/2026, FGV) e IPCA 4,22% (ago/2026, IBGE).',
       ),
     ],
   },
@@ -791,6 +791,11 @@ const specs = [
         'Anexo do Simples Nacional',
         '1 comércio, 2 indústria, 3 serviços, 4 construção, vigilância, limpeza e advocacia, 5 serviços intelectuais.',
       ),
+      money(
+        'payroll12',
+        'Folha de salários dos últimos 12 meses',
+        'Opcional, só para serviços (anexos 3 e 5). Inclui salários, pró-labore, FGTS e INSS patronal. Com ela, o Fator R escolhe entre o Anexo III e o V.',
+      ),
     ],
   },
   {
@@ -812,15 +817,15 @@ const specs = [
     category: 'financas',
     description: 'Atualize uma guia DAS em atraso com multa de mora e juros.',
     howItWorks:
-      'A multa é de 0,33% por dia de atraso, limitada a 20%. Os juros (Selic acumulada mais 1% no mês do pagamento) mudam todo mês, por isso você os informa. Gere a guia atualizada no Portal do Simples Nacional para confirmar.',
+      'A multa é de 0,33% por dia de atraso, limitada a 20%. Os juros são a Selic acumulada dos meses entre o vencimento e o pagamento, mais 1% no mês em que você paga, e a calculadora já traz a Selic oficial até setembro de 2026.',
     tags: ['mei', 'das', 'imposto'],
     fields: [
       money('amount', 'Valor original do DAS'),
-      number('daysLate', 'Dias de atraso', 'Contados a partir do vencimento.'),
-      percentage(
-        'interest',
-        'Juros totais (%)',
-        'Percentual de juros do período, informado na guia atualizada do Portal do Simples Nacional.',
+      date('dueDate', 'Data de vencimento', 'Dia 20 do mês de apuração.'),
+      date(
+        'payDate',
+        'Data do pagamento',
+        'Quando pretende pagar. Os juros usam a Selic acumulada até o mês anterior mais 1% no mês do pagamento.',
       ),
     ],
   },

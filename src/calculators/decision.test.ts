@@ -20,6 +20,10 @@ const standardValues = {
   daysLate: 10,
   debits: 2,
   deductions: 100,
+  dueDate: 20685,
+  payDate: 20731,
+  payroll12: 80000,
+  sellDays: 5,
   dependents: 1,
   endDate: 20030,
   expiredVacations: 1,
@@ -123,7 +127,12 @@ describe('calculator decision output', () => {
 
     expect(termination.statement?.rows.length).toBeGreaterThan(5);
     expect(termination.references?.length).toBeGreaterThan(0);
-    expect(vacation.statement?.rows).toHaveLength(2);
+    expect(vacation.statement?.rows.map((row) => row.label)).toEqual([
+      'Salário dos dias de férias',
+      'Adicional de 1/3 constitucional',
+      'INSS',
+      'IRRF',
+    ]);
   });
 
   it('explains how the Bolsa Família total reaches the floor', () => {
