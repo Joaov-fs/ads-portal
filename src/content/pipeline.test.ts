@@ -22,6 +22,16 @@ describe('content pipeline', () => {
     expect(new Set(guideSlugs).size).toBe(guideSlugs.length);
   });
 
+  it('gives every news item a cover number that fits the generated cover', () => {
+    for (const news of contentRepository.list('news')) {
+      const cover = news.highlights?.[0];
+
+      expect(cover, news.slug).toBeDefined();
+      expect(cover?.value.length, news.slug).toBeLessThanOrEqual(14);
+      expect(cover?.label.length, news.slug).toBeLessThanOrEqual(40);
+    }
+  });
+
   it('derives page data, schemas and related content from one document', () => {
     const model = getContentPageModel(
       'news',

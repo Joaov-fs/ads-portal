@@ -377,45 +377,44 @@ export function HomeView({
           <div className="grid gap-5 lg:grid-cols-[1.15fr_1fr]">
             {leadNews ? (
               <Reveal className="h-full">
-                <article className="group relative isolate flex h-full min-h-[26rem] flex-col justify-between gap-8 overflow-hidden rounded-ads-xlarge bg-ads-secondary p-7 text-white shadow-ads-soft sm:p-9">
-                  <div className="home-orb pointer-events-none absolute -right-16 -top-16 -z-10 size-72 rounded-full bg-emerald-400/30" />
-                  <div className="grid gap-5">
-                    <span className="w-fit rounded-ads-full bg-white/10 px-3 py-1 text-xs font-semibold text-emerald-100">
-                      Destaque ·{' '}
-                      {categories.find((c) => c.slug === leadNews.category)
-                        ?.label ?? 'Notícia'}
-                    </span>
-                    {leadNews.highlight ? (
-                      <div className="grid gap-1">
-                        <strong className="font-ads-display text-6xl font-extrabold tracking-tight text-emerald-300 sm:text-7xl">
-                          {leadNews.highlight.value}
-                        </strong>
-                        <span className="text-sm font-medium text-white/70">
-                          {leadNews.highlight.label}
-                        </span>
-                      </div>
-                    ) : null}
-                    <h3 className="max-w-xl font-ads-display text-2xl font-bold leading-tight sm:text-3xl">
-                      <Link
-                        className="after:absolute after:inset-0"
-                        href={leadNews.href}
-                      >
-                        {leadNews.title}
-                      </Link>
-                    </h3>
-                  </div>
-                  <div className="relative z-10 flex flex-wrap items-center gap-4 text-sm">
-                    {leadNews.calculator ? (
-                      <Link
-                        className="rounded-ads-full bg-emerald-300 px-5 py-2.5 font-bold text-ads-secondary-strong transition hover:bg-emerald-200"
-                        href={leadNews.calculator.href}
-                      >
-                        {leadNews.calculator.title} →
-                      </Link>
-                    ) : null}
-                    <span className="text-white/60">
-                      {formatDate(leadNews.date)} · {leadNews.readingTime}
-                    </span>
+                <article className="group relative isolate flex h-full flex-col overflow-hidden rounded-ads-xlarge bg-ads-secondary text-white shadow-ads-soft transition duration-300 hover:-translate-y-1">
+                  {leadNews.highlight ? (
+                    <NewsCover
+                      category={leadNews.category}
+                      className="aspect-[1200/630] w-full"
+                      label={leadNews.highlight.label}
+                      value={leadNews.highlight.value}
+                    />
+                  ) : null}
+                  <div className="flex flex-1 flex-col justify-between gap-6 p-7 sm:p-9">
+                    <div className="grid gap-4">
+                      <span className="w-fit rounded-ads-full bg-white/10 px-3 py-1 text-xs font-semibold text-emerald-100">
+                        Destaque ·{' '}
+                        {categories.find((c) => c.slug === leadNews.category)
+                          ?.label ?? 'Notícia'}
+                      </span>
+                      <h3 className="max-w-xl font-ads-display text-2xl font-bold leading-tight sm:text-3xl">
+                        <Link
+                          className="after:absolute after:inset-0"
+                          href={leadNews.href}
+                        >
+                          {leadNews.title}
+                        </Link>
+                      </h3>
+                    </div>
+                    <div className="relative z-10 flex flex-wrap items-center gap-4 text-sm">
+                      {leadNews.calculator ? (
+                        <Link
+                          className="rounded-ads-full bg-emerald-300 px-5 py-2.5 font-bold text-ads-secondary-strong transition hover:bg-emerald-200"
+                          href={leadNews.calculator.href}
+                        >
+                          {leadNews.calculator.title} →
+                        </Link>
+                      ) : null}
+                      <span className="text-white/60">
+                        {formatDate(leadNews.date)} · {leadNews.readingTime}
+                      </span>
+                    </div>
                   </div>
                 </article>
               </Reveal>
@@ -472,14 +471,22 @@ export function HomeView({
               {moreNews.map((news) => (
                 <li className="bg-white" key={news.href}>
                   <Link
-                    className="group flex h-full items-start gap-4 p-5 transition hover:bg-ads-primary-soft"
+                    className="group grid h-full content-start gap-3 pb-5 transition hover:bg-ads-primary-soft"
                     href={news.href}
                   >
-                    <span className="mt-0.5 text-lg font-bold text-ads-primary transition group-hover:translate-x-1">
-                      →
-                    </span>
-                    <span className="text-sm font-semibold leading-6 text-ads-secondary">
+                    {news.highlight ? (
+                      <NewsCover
+                        category={news.category}
+                        className="aspect-[1200/630] w-full"
+                        label={news.highlight.label}
+                        value={news.highlight.value}
+                      />
+                    ) : null}
+                    <span className="px-5 text-sm font-semibold leading-6 text-ads-secondary">
                       {news.title}
+                    </span>
+                    <span className="px-5 text-xs text-ads-muted">
+                      {formatDate(news.date)} · {news.readingTime}
                     </span>
                   </Link>
                 </li>

@@ -14,6 +14,11 @@ Cada notícia é **um arquivo TypeScript** em `src/content/files/news/` e **uma 
 5. **Leva para uma calculadora.** `featuredCalculators` com 1 a 3 slugs reais de `/calculadoras`.
 6. **Sem repetição.** Cada seção diz algo novo. Não reescreva a descrição no primeiro parágrafo.
 7. **Sem promessas.** Benefícios e prazos: "tem direito quem cumpre os requisitos", nunca "você vai receber".
+8. **Capa obrigatória.** A capa é gerada pelo portal a partir do **primeiro item de `highlights`**: ele vira o
+   número grande da capa (até 14 caracteres, ex.: `R$ 1.741`, `26/10`, `13,75%`) e a legenda (até 40
+   caracteres). Não use imagem de banco nem foto; não preencha `coverImage`. A capa aparece no destaque e nos
+   cards da home, nas listas, na página da notícia e no compartilhamento (Open Graph). O teste
+   `pipeline.test.ts` reprova a notícia sem esse primeiro destaque.
 
 ## Modelo do arquivo
 
@@ -22,33 +27,46 @@ import type { NewsDocument } from '../../types';
 
 export const newsSlugDaNoticia = {
   kind: 'news',
-  slug: 'slug-curto-com-palavras-chave',            // minúsculas, hífens, sem acento
-  title: 'Título com o fato e o número principal',   // até ~110 caracteres
-  description: 'Uma frase de 120 a 160 caracteres com o que mudou e o efeito prático.',
-  category: 'trabalho',   // beneficios | economia | financas | trabalho | utilidades
-  authorId: 'equipe-editorial',                      // sempre este: "Redação PortalFina"
-  publishedAt: '2026-10-01',                         // AAAA-MM-DD
+  slug: 'slug-curto-com-palavras-chave', // minúsculas, hífens, sem acento
+  title: 'Título com o fato e o número principal', // até ~110 caracteres
+  description:
+    'Uma frase de 120 a 160 caracteres com o que mudou e o efeito prático.',
+  category: 'trabalho', // beneficios | economia | financas | trabalho | utilidades
+  authorId: 'equipe-editorial', // sempre este: "Redação PortalFina"
+  publishedAt: '2026-10-01', // AAAA-MM-DD
   updatedAt: '2026-10-01',
-  tags: ['salario', 'inss', 'trabalho'],             // ajudam a ligar com guias e calculadoras
-  featuredCalculators: ['inss', 'salario-liquido'],  // slugs de calculadoras que já existem
-  highlights: [                                      // 3 ou 4 números do topo ("Em números")
-    { value: 'R$ 8.475,55', label: 'Teto de contribuição', note: 'Acima disso o desconto não aumenta.' },
+  tags: ['salario', 'inss', 'trabalho'], // ajudam a ligar com guias e calculadoras
+  featuredCalculators: ['inss', 'salario-liquido'], // slugs de calculadoras que já existem
+  highlights: [
+    // 3 ou 4 números do topo ("Em números")
+    {
+      value: 'R$ 8.475,55',
+      label: 'Teto de contribuição',
+      note: 'Acima disso o desconto não aumenta.',
+    },
   ],
-  sections: [                                        // 3 a 5 seções
+  sections: [
+    // 3 a 5 seções
     {
       heading: 'Pergunta ou afirmação direta',
       paragraphs: ['Parágrafo 1.', 'Parágrafo 2.'],
-      table: {                                       // opcional
+      table: {
+        // opcional
         caption: 'Legenda da tabela',
         columns: ['Coluna A', 'Coluna B'],
-        rows: [['a1', 'b1'], ['a2', 'b2']],
+        rows: [
+          ['a1', 'b1'],
+          ['a2', 'b2'],
+        ],
       },
     },
   ],
-  faq: [                                             // 2 ou 3 perguntas reais do leitor
+  faq: [
+    // 2 ou 3 perguntas reais do leitor
     { question: 'Pergunta?', answer: 'Resposta curta e objetiva.' },
   ],
-  sources: [                                         // 2 a 4 fontes oficiais
+  sources: [
+    // 2 a 4 fontes oficiais
     { label: 'INSS — tabela de contribuição mensal de 2026' },
     { label: 'Receita Federal', url: 'https://www.gov.br/receitafederal/' },
   ],
