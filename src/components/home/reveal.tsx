@@ -2,11 +2,21 @@
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 
+type RevealVariant =
+  | 'fade-up'
+  | 'fade-down'
+  | 'fade-left'
+  | 'fade-right'
+  | 'scale'
+  | 'zoom-in';
+
 type RevealProps = Readonly<{
   children: ReactNode;
   className?: string;
   /** Atraso da animação em milissegundos, para escalonar itens de uma lista. */
   delay?: number;
+  /** Direção / estilo da animação de entrada. */
+  variant?: RevealVariant;
 }>;
 
 /**
@@ -14,7 +24,12 @@ type RevealProps = Readonly<{
  * só o que está abaixo da dobra é escondido no navegador, então sem JavaScript
  * ou com "reduzir movimento" nada some.
  */
-export function Reveal({ children, className = '', delay = 0 }: RevealProps) {
+export function Reveal({
+  children,
+  className = '',
+  delay = 0,
+  variant = 'fade-up',
+}: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [state, setState] = useState<'hidden' | 'shown' | undefined>();
 
@@ -53,6 +68,7 @@ export function Reveal({ children, className = '', delay = 0 }: RevealProps) {
     <div
       className={`reveal ${className}`}
       data-state={state}
+      data-variant={variant}
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
     >

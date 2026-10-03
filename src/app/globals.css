@@ -101,20 +101,50 @@ a {
 
 /* ---------- Home: movimento e acabamento ---------- */
 
+/* Reveal base + variantes */
 .reveal {
   transition:
-    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
-    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal[data-state='hidden'] {
   opacity: 0;
-  transform: translateY(24px);
 }
 
 .reveal[data-state='shown'] {
   opacity: 1;
   transform: none;
+}
+
+/* fade-up (default) */
+.reveal[data-variant='fade-up'][data-state='hidden'] {
+  transform: translateY(32px);
+}
+
+/* fade-down */
+.reveal[data-variant='fade-down'][data-state='hidden'] {
+  transform: translateY(-24px);
+}
+
+/* fade-left */
+.reveal[data-variant='fade-left'][data-state='hidden'] {
+  transform: translateX(-40px);
+}
+
+/* fade-right */
+.reveal[data-variant='fade-right'][data-state='hidden'] {
+  transform: translateX(40px);
+}
+
+/* scale */
+.reveal[data-variant='scale'][data-state='hidden'] {
+  transform: scale(0.92);
+}
+
+/* zoom-in */
+.reveal[data-variant='zoom-in'][data-state='hidden'] {
+  transform: scale(0.85) translateY(20px);
 }
 
 @keyframes home-float {
@@ -265,6 +295,136 @@ a {
 @media (prefers-reduced-motion: reduce) {
   .home-draw,
   .home-glyph {
+    animation: none;
+  }
+}
+
+/* ---------- Hero calculator: visual de calculadora física ---------- */
+@keyframes calc-slide-up {
+  from {
+    opacity: 0;
+    transform: perspective(800px) rotateX(6deg) translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(800px) rotateX(0) translateY(0);
+  }
+}
+
+@keyframes calc-screen-glow {
+  0%,
+  100% {
+    box-shadow: inset 0 0 20px rgb(110 231 183 / 8%);
+  }
+  50% {
+    box-shadow: inset 0 0 30px rgb(110 231 183 / 15%);
+  }
+}
+
+.calc-body {
+  animation: calc-slide-up 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.calc-screen {
+  animation: calc-screen-glow 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .calc-body,
+  .calc-screen {
+    animation: none;
+  }
+}
+
+/* ---------- Impostômetro: contador dramático ---------- */
+@keyframes tax-glow {
+  0%,
+  100% {
+    text-shadow:
+      0 0 20px rgb(110 231 183 / 30%),
+      0 0 60px rgb(110 231 183 / 10%);
+  }
+  50% {
+    text-shadow:
+      0 0 30px rgb(110 231 183 / 50%),
+      0 0 80px rgb(110 231 183 / 20%);
+  }
+}
+
+@keyframes tax-ring-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes tax-scan {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.tax-glow {
+  animation: tax-glow 3s ease-in-out infinite;
+}
+
+.tax-ring {
+  animation: tax-ring-pulse 2.4s ease-out infinite;
+}
+
+.tax-scan {
+  animation: tax-scan 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tax-glow,
+  .tax-ring,
+  .tax-scan {
+    animation: none;
+  }
+}
+
+/* ---------- Hero entrance parallax ---------- */
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-stagger-1 {
+  animation: hero-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+.hero-stagger-2 {
+  animation: hero-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+.hero-stagger-3 {
+  animation: hero-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+.hero-stagger-4 {
+  animation: hero-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+}
+.hero-stagger-5 {
+  animation: hero-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stagger-1,
+  .hero-stagger-2,
+  .hero-stagger-3,
+  .hero-stagger-4,
+  .hero-stagger-5 {
     animation: none;
   }
 }

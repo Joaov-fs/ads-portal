@@ -250,27 +250,29 @@ export function HomeView({
         <Container className="relative grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 lg:py-28">
           <div className="grid gap-9">
             <div className="grid gap-6">
-              <span className="inline-flex w-fit items-center gap-2.5 rounded-ads-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-1.5 text-xs font-semibold text-emerald-100">
+              <span className="hero-stagger-1 inline-flex w-fit items-center gap-2.5 rounded-ads-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-1.5 text-xs font-semibold text-emerald-100">
                 <span className="home-live-dot size-2 rounded-full bg-emerald-300" />
                 Calculadoras, notícias e guias para o seu dinheiro
               </span>
-              <h1 className="font-ads-display text-[clamp(2.7rem,6.6vw,5.6rem)] font-extrabold leading-[1.02] tracking-[-0.045em] text-white">
+              <h1 className="hero-stagger-2 font-ads-display text-[clamp(2.7rem,6.6vw,5.6rem)] font-extrabold leading-[1.02] tracking-[-0.045em] text-white">
                 Entenda o que muda no{' '}
                 <span className="home-gradient-text">seu bolso.</span>
               </h1>
-              <p className="max-w-xl text-ads-lead leading-8 text-white/80">
+              <p className="hero-stagger-3 max-w-xl text-ads-lead leading-8 text-white/80">
                 Descubra quanto sobra do seu salário, quanto você recebe de
                 férias ou na rescisão e como cada notícia da economia pesa no
                 seu dinheiro.
               </p>
             </div>
 
-            <Search
-              className="max-w-2xl shadow-ads-soft"
-              placeholder="O que você precisa resolver hoje?"
-            />
+            <div className="hero-stagger-4">
+              <Search
+                className="max-w-2xl shadow-ads-soft"
+                placeholder="O que você precisa resolver hoje?"
+              />
+            </div>
 
-            <div className="grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-3">
+            <div className="hero-stagger-5 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-3">
               {[
                 [
                   'Salário líquido',
@@ -402,7 +404,10 @@ export function HomeView({
 
           <div className="grid gap-5 lg:grid-cols-3">
             {leadNews ? (
-              <Reveal className="h-full lg:col-span-2 lg:row-span-2">
+              <Reveal
+                className="h-full lg:col-span-2 lg:row-span-2"
+                variant="fade-left"
+              >
                 <LeadStoryCard
                   categoryLabel={
                     categories.find((c) => c.slug === leadNews.category)
@@ -417,6 +422,7 @@ export function HomeView({
                 className="h-full"
                 delay={(index + 1) * 80}
                 key={news.href}
+                variant="fade-right"
               >
                 <SecondaryStoryCard news={news} />
               </Reveal>
@@ -513,6 +519,87 @@ export function HomeView({
         </section>
       ) : null}
 
+      <section
+        aria-labelledby="impostometro-title"
+        className="relative isolate overflow-hidden bg-ads-secondary-strong py-16 text-white sm:py-24"
+        id="impostometro"
+      >
+        <div className="home-grid pointer-events-none absolute inset-0 -z-10 opacity-50" />
+        <div className="home-orb pointer-events-none absolute -right-32 top-1/2 -z-10 size-[30rem] -translate-y-1/2 rounded-full bg-emerald-500/20" />
+        <Container>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <Reveal variant="fade-left">
+              <div className="grid gap-4">
+                <span className="inline-flex w-fit items-center gap-2 text-ads-eyebrow font-bold uppercase tracking-[0.16em] text-emerald-200">
+                  <span
+                    aria-hidden="true"
+                    className="h-px w-6 bg-emerald-200/60"
+                  />
+                  Impostômetro
+                </span>
+                <h2
+                  className="font-ads-display text-ads-title font-extrabold tracking-tight text-white"
+                  id="impostometro-title"
+                >
+                  Quanto a União já arrecadou em 2026
+                </h2>
+                <p className="max-w-lg leading-7 text-white/65">
+                  Estimativa em tempo real a partir dos dados oficiais da
+                  Receita Federal. Veja o método e descubra quanto disso passa
+                  pelo seu salário.
+                </p>
+                <Link
+                  className="mt-2 w-fit rounded-ads-full border border-emerald-300/30 bg-emerald-300/10 px-5 py-2.5 text-sm font-bold text-emerald-200 transition hover:bg-emerald-300/20"
+                  href="/impostometro"
+                >
+                  Entender a conta →
+                </Link>
+              </div>
+            </Reveal>
+            <Reveal variant="scale">
+              <div className="relative flex items-center justify-center py-6">
+                {/* Anéis decorativos pulsantes */}
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  <div className="tax-ring absolute size-56 rounded-full border border-emerald-300/20 sm:size-72" />
+                  <div
+                    className="tax-ring absolute size-56 rounded-full border border-emerald-300/15 sm:size-72"
+                    style={{ animationDelay: '0.8s' }}
+                  />
+                  <div
+                    className="tax-ring absolute size-56 rounded-full border border-emerald-300/10 sm:size-72"
+                    style={{ animationDelay: '1.6s' }}
+                  />
+                </div>
+
+                {/* Contador central */}
+                <div className="relative grid place-items-center gap-3 rounded-2xl border border-emerald-300/15 bg-[#0a1614]/80 px-8 py-8 backdrop-blur sm:px-12 sm:py-10">
+                  {/* Linha de escaneamento */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl"
+                  >
+                    <div className="tax-scan absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald-300/40 to-transparent" />
+                  </div>
+                  <span className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-emerald-300/50">
+                    Arrecadação federal total
+                  </span>
+                  <p className="tax-glow font-ads-display text-4xl font-extrabold tabular-nums tracking-tight text-emerald-300 sm:text-5xl lg:text-[3.4rem]">
+                    <TaxCounter />
+                  </p>
+                  <span className="flex items-center gap-2 text-xs text-emerald-300/40">
+                    <span className="home-live-dot size-1.5 rounded-full bg-emerald-400" />
+                    Atualizando em tempo real
+                  </span>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
       {benefitsNews.length > 0 ? (
         <section
           aria-labelledby="beneficios-title"
@@ -581,7 +668,7 @@ export function HomeView({
           />
           <div className="grid gap-5 lg:grid-cols-[1.1fr_1fr]">
             {leadGuide ? (
-              <Reveal className="h-full">
+              <Reveal className="h-full" variant="fade-left">
                 <article className="group relative grid h-full content-between gap-8 overflow-hidden rounded-ads-xlarge bg-ads-primary-soft p-8 transition duration-300 hover:-translate-y-1 hover:shadow-ads-soft sm:p-10">
                   <div className="grid gap-4">
                     <span className="w-fit rounded-ads-full bg-white px-3 py-1 text-xs font-bold text-ads-primary-strong">
@@ -605,7 +692,7 @@ export function HomeView({
                 </article>
               </Reveal>
             ) : null}
-            <Reveal className="h-full">
+            <Reveal className="h-full" variant="fade-right">
               <ul className="grid h-full divide-y divide-ads-border overflow-hidden rounded-ads-xlarge border border-ads-border bg-white">
                 {otherGuides.map((guide) => (
                   <li key={guide.href}>
@@ -737,43 +824,6 @@ export function HomeView({
         </Container>
       </section>
 
-      <section
-        aria-labelledby="impostometro-title"
-        className="bg-ads-surface py-14 sm:py-20"
-      >
-        <Container>
-          <Reveal>
-            <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_1fr]">
-              <div className="grid gap-3">
-                <span className="text-ads-eyebrow font-bold uppercase tracking-[0.16em] text-ads-primary-strong">
-                  Impostômetro
-                </span>
-                <h2
-                  className="font-ads-display text-ads-title font-extrabold tracking-tight text-ads-secondary"
-                  id="impostometro-title"
-                >
-                  Quanto a União já arrecadou em 2026
-                </h2>
-                <p className="leading-7 text-ads-muted">
-                  Estimativa em tempo real a partir dos dados oficiais da
-                  Receita Federal. Veja o método e descubra quanto disso passa
-                  pelo seu salário.
-                </p>
-                <Link
-                  className="text-sm font-semibold text-ads-primary-strong hover:underline"
-                  href="/impostometro"
-                >
-                  Entender a conta →
-                </Link>
-              </div>
-              <p className="rounded-2xl border border-ads-border bg-white p-6 text-3xl font-extrabold tabular-nums text-ads-secondary shadow-sm sm:text-4xl">
-                <TaxCounter />
-              </p>
-            </div>
-          </Reveal>
-        </Container>
-      </section>
-
       <Container className="py-8">
         <AdSlot
           format="horizontal"
@@ -821,7 +871,12 @@ export function HomeView({
                 text: 'Achou um erro? Avise pelo contato e a correção é publicada com a data.',
               },
             ].map((item, index) => (
-              <Reveal className="h-full" delay={index * 90} key={item.title}>
+              <Reveal
+                className="h-full"
+                delay={index * 90}
+                key={item.title}
+                variant="zoom-in"
+              >
                 <div className="grid h-full content-start gap-3 rounded-ads-xlarge border border-white/10 bg-white/5 p-6 backdrop-blur">
                   <strong className="font-ads-display text-2xl font-extrabold tracking-tight text-emerald-300">
                     {item.title}
