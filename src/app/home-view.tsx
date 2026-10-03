@@ -1,14 +1,21 @@
 import Link from 'next/link';
-import type { CSSProperties } from 'react';
 
 import { AdSlot } from '@/components/advertising/ad-slot';
 import {
+  CalculatorShowcaseCard,
+  CompactStoryCard,
   HeroCalculator,
+  HeroDataLayer,
+  LeadStoryCard,
+  MomentShortcuts,
   Reveal,
   ScrollStory,
+  SecondaryStoryCard,
+  SectionHeading,
   TaxCounter,
+  TopicStories,
+  calculatorShowcase,
 } from '@/components/home';
-import { NewsCover } from '@/components/content/news-cover';
 import { Container } from '@/components/layout/container';
 import { Search } from '@/components/ui/search';
 import {
@@ -19,11 +26,6 @@ import {
   popularTools,
 } from '@/features/public-content';
 import type { Indicator } from '@/features/public-content';
-
-const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
-  dateStyle: 'long',
-  timeZone: 'UTC',
-});
 
 const toolGroups = [
   {
@@ -171,16 +173,64 @@ const storySteps = [
   },
 ] as const;
 
-function formatDate(value: string) {
-  return dateFormatter.format(new Date(`${value}T00:00:00Z`));
-}
-
 export function HomeView({
   marketIndicators = indicators,
 }: Readonly<{ marketIndicators?: readonly Indicator[] }>) {
   const [leadNews, ...otherNews] = latestNews;
-  const sideNews = otherNews.slice(0, 4);
-  const moreNews = otherNews.slice(4, 10);
+  const secondaryNews = otherNews.slice(0, 2);
+  const compactNews = otherNews.slice(2, 5);
+  const restNews = otherNews.slice(5);
+  const economyNews = restNews
+    .filter(
+      (news) => news.category === 'economia' || news.category === 'financas',
+    )
+    .slice(0, 3);
+  const benefitsNews = restNews
+    .filter(
+      (news) => news.category === 'beneficios' || news.category === 'trabalho',
+    )
+    .slice(0, 3);
+  const guides = featuredGuides.slice(0, 5);
+  const [leadGuide, ...otherGuides] = guides;
+  const newsHref = (slug: string) =>
+    latestNews.find((news) => news.href.endsWith(`/${slug}`))?.href;
+  const shortcuts = [
+    { label: 'Salário líquido', href: '/calculadoras/salario-liquido' },
+    {
+      label: 'Pagamento do INSS',
+      href: newsHref(
+        'inss-outubro-2026-calendario-de-pagamento-26-de-outubro-a-9-de-novembro',
+      ),
+    },
+    {
+      label: 'Salário mínimo 2027',
+      href: newsHref(
+        'salario-minimo-2027-orcamento-preve-r-1-741-veja-o-que-muda',
+      ),
+    },
+    {
+      label: 'Saque-aniversário FGTS',
+      href: newsHref(
+        'saque-aniversario-fgts-outubro-2026-ate-31-de-dezembro-quanto-sai',
+      ),
+    },
+    {
+      label: 'IR zero até R$ 5 mil',
+      href: newsHref(
+        'imposto-de-renda-zero-ate-r-5-mil-quanto-voce-paga-no-contracheque',
+      ),
+    },
+    {
+      label: 'Bolsa Família',
+      href: newsHref('bolsa-familia-691-outubro-2026-calendario'),
+    },
+    {
+      label: '13º salário',
+      href: newsHref('13o-salario-2026-datas-e-quanto-voce-recebe'),
+    },
+  ].flatMap((item) =>
+    item.href ? [{ label: item.label, href: item.href }] : [],
+  );
   const trendClass = {
     down: 'text-emerald-300',
     neutral: 'text-white/60',
@@ -191,6 +241,7 @@ export function HomeView({
     <main>
       <section className="relative overflow-hidden bg-ads-secondary-strong text-white">
         <div className="home-grid pointer-events-none absolute inset-0" />
+        <HeroDataLayer />
         <div className="home-orb pointer-events-none absolute -right-24 -top-24 size-[34rem] rounded-full bg-emerald-500/40" />
         <div
           className="home-orb pointer-events-none absolute -bottom-40 left-[-8rem] size-[30rem] rounded-full bg-teal-400/25"
@@ -265,22 +316,6 @@ export function HomeView({
           </div>
 
           <div className="relative">
-            <span
-              aria-hidden="true"
-              className="home-chip absolute -left-6 top-10 z-10 hidden rounded-ads-large bg-emerald-300 px-4 py-2 text-sm font-extrabold tabular-nums text-ads-secondary-strong shadow-ads-raised lg:block"
-              style={{ '--tilt': '-4deg' } as CSSProperties}
-            >
-              + R$ 1.621 salário mínimo
-            </span>
-            <span
-              aria-hidden="true"
-              className="home-chip absolute -right-4 -top-5 z-10 hidden rounded-ads-large bg-white px-4 py-2 text-sm font-extrabold tabular-nums text-ads-secondary shadow-ads-raised lg:block"
-              style={
-                { '--tilt': '3deg', animationDelay: '-2s' } as CSSProperties
-              }
-            >
-              Isento até R$ 5.000
-            </span>
             <HeroCalculator />
           </div>
         </Container>
@@ -342,157 +377,59 @@ export function HomeView({
         </div>
       </section>
 
+      <MomentShortcuts items={shortcuts} />
+
       <section
         aria-labelledby="noticias-title"
         className="bg-ads-background py-16 sm:py-24"
         id="noticias"
       >
         <Container>
-          <Reveal>
-            <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-              <div className="grid max-w-2xl gap-3">
-                <span className="text-ads-eyebrow font-bold uppercase tracking-[0.16em] text-ads-primary-strong">
-                  Em alta agora
-                </span>
-                <h2
-                  className="font-ads-display text-ads-title font-extrabold tracking-tight text-ads-secondary"
-                  id="noticias-title"
-                >
-                  O que mudou e quanto isso pesa no seu bolso
-                </h2>
-                <p className="leading-7 text-ads-muted">
-                  Cada notícia traz os números oficiais, um exemplo em reais e a
-                  calculadora para você refazer a conta com os seus dados.
-                </p>
-              </div>
+          <SectionHeading
+            action={
               <Link
                 className="text-sm font-semibold text-ads-primary-strong hover:underline"
                 href="/noticias"
               >
                 Ver todas as notícias →
               </Link>
-            </div>
-          </Reveal>
+            }
+            eyebrow="Agora no PortalFina"
+            id="noticias-title"
+            intro="Cada notícia traz os números oficiais, um exemplo em reais e a calculadora para você refazer a conta com os seus dados."
+            title="O que mudou e quanto isso pesa no seu bolso"
+          />
 
-          <div className="grid gap-5 lg:grid-cols-[1.15fr_1fr]">
+          <div className="grid gap-5 lg:grid-cols-3">
             {leadNews ? (
-              <Reveal className="h-full">
-                <article className="group relative isolate flex h-full flex-col overflow-hidden rounded-ads-xlarge bg-ads-secondary text-white shadow-ads-soft transition duration-300 hover:-translate-y-1">
-                  {leadNews.highlight ? (
-                    <NewsCover
-                      category={leadNews.category}
-                      className="aspect-[1200/630] w-full"
-                      label={leadNews.highlight.label}
-                      value={leadNews.highlight.value}
-                    />
-                  ) : null}
-                  <div className="flex flex-1 flex-col justify-between gap-6 p-7 sm:p-9">
-                    <div className="grid gap-4">
-                      <span className="w-fit rounded-ads-full bg-white/10 px-3 py-1 text-xs font-semibold text-emerald-100">
-                        Destaque ·{' '}
-                        {categories.find((c) => c.slug === leadNews.category)
-                          ?.label ?? 'Notícia'}
-                      </span>
-                      <h3 className="max-w-xl font-ads-display text-2xl font-bold leading-tight sm:text-3xl">
-                        <Link
-                          className="after:absolute after:inset-0"
-                          href={leadNews.href}
-                        >
-                          {leadNews.title}
-                        </Link>
-                      </h3>
-                    </div>
-                    <div className="relative z-10 flex flex-wrap items-center gap-4 text-sm">
-                      {leadNews.calculator ? (
-                        <Link
-                          className="rounded-ads-full bg-emerald-300 px-5 py-2.5 font-bold text-ads-secondary-strong transition hover:bg-emerald-200"
-                          href={leadNews.calculator.href}
-                        >
-                          {leadNews.calculator.title} →
-                        </Link>
-                      ) : null}
-                      <span className="text-white/60">
-                        {formatDate(leadNews.date)} · {leadNews.readingTime}
-                      </span>
-                    </div>
-                  </div>
-                </article>
+              <Reveal className="h-full lg:col-span-2 lg:row-span-2">
+                <LeadStoryCard
+                  categoryLabel={
+                    categories.find((c) => c.slug === leadNews.category)
+                      ?.label ?? 'Notícia'
+                  }
+                  news={leadNews}
+                />
               </Reveal>
             ) : null}
-
-            <div className="grid gap-5 sm:grid-cols-2">
-              {sideNews.map((news, index) => (
-                <Reveal className="h-full" delay={index * 80} key={news.href}>
-                  <article className="group relative flex h-full flex-col justify-between gap-5 overflow-hidden rounded-ads-xlarge border border-ads-border bg-white transition duration-300 hover:-translate-y-1 hover:border-ads-primary hover:shadow-ads-soft">
-                    {news.highlight ? (
-                      <NewsCover
-                        category={news.category}
-                        className="aspect-[1200/630] w-full"
-                        label={news.highlight.label}
-                        value={news.highlight.value}
-                      />
-                    ) : null}
-                    <div className="grid gap-3 px-6">
-                      <h3 className="font-ads-display text-lg font-bold leading-snug text-ads-secondary">
-                        <Link
-                          className="after:absolute after:inset-0"
-                          href={news.href}
-                        >
-                          {news.title}
-                        </Link>
-                      </h3>
-                    </div>
-                    <div className="relative z-10 grid gap-3 px-6 pb-6">
-                      {news.calculator ? (
-                        <Link
-                          className="w-fit rounded-ads-full bg-ads-primary-soft px-3.5 py-1.5 text-xs font-bold text-ads-primary-strong transition hover:bg-ads-primary hover:text-white"
-                          href={news.calculator.href}
-                        >
-                          Calcular:{' '}
-                          {news.calculator.title.replace(
-                            /^(Calculadora de |Calculadora |Simulador de )/,
-                            '',
-                          )}{' '}
-                          →
-                        </Link>
-                      ) : null}
-                      <span className="text-xs text-ads-muted">
-                        {formatDate(news.date)} · {news.readingTime}
-                      </span>
-                    </div>
-                  </article>
-                </Reveal>
-              ))}
-            </div>
+            {secondaryNews.map((news, index) => (
+              <Reveal
+                className="h-full"
+                delay={(index + 1) * 80}
+                key={news.href}
+              >
+                <SecondaryStoryCard news={news} />
+              </Reveal>
+            ))}
           </div>
 
-          <Reveal>
-            <ul className="mt-5 grid gap-px overflow-hidden rounded-ads-xlarge border border-ads-border bg-ads-border sm:grid-cols-2 lg:grid-cols-3">
-              {moreNews.map((news) => (
-                <li className="bg-white" key={news.href}>
-                  <Link
-                    className="group grid h-full content-start gap-3 pb-5 transition hover:bg-ads-primary-soft"
-                    href={news.href}
-                  >
-                    {news.highlight ? (
-                      <NewsCover
-                        category={news.category}
-                        className="aspect-[1200/630] w-full"
-                        label={news.highlight.label}
-                        value={news.highlight.value}
-                      />
-                    ) : null}
-                    <span className="px-5 text-sm font-semibold leading-6 text-ads-secondary">
-                      {news.title}
-                    </span>
-                    <span className="px-5 text-xs text-ads-muted">
-                      {formatDate(news.date)} · {news.readingTime}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
+          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {compactNews.map((news, index) => (
+              <Reveal className="h-full" delay={index * 80} key={news.href}>
+                <CompactStoryCard news={news} />
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
 
@@ -504,6 +441,198 @@ export function HomeView({
           size="banner"
         />
       </Container>
+
+      <section
+        aria-labelledby="calcule-agora-title"
+        className="relative isolate mt-16 overflow-hidden bg-ads-secondary-strong py-16 text-white sm:py-24"
+        id="calcule-agora"
+      >
+        <div className="home-grid pointer-events-none absolute inset-0 -z-10 opacity-70" />
+        <Container>
+          <SectionHeading
+            action={
+              <Link
+                className="text-sm font-semibold text-emerald-200 hover:underline"
+                href="/calculadoras"
+              >
+                Ver as {popularTools.length} calculadoras →
+              </Link>
+            }
+            eyebrow="Ferramentas"
+            id="calcule-agora-title"
+            intro="Escolha a conta, preencha só o que muda o resultado e veja o demonstrativo linha por linha."
+            title="Calcule agora"
+            tone="dark"
+          />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {calculatorShowcase.map((item, index) => (
+              <CalculatorShowcaseCard
+                index={index}
+                item={item}
+                key={item.slug}
+              />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {economyNews.length > 0 ? (
+        <section
+          aria-labelledby="economia-title"
+          className="bg-white py-16 sm:py-24"
+          id="economia"
+        >
+          <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+            <div className="grid content-start gap-4 lg:sticky lg:top-28 lg:self-start">
+              <Reveal>
+                <span className="inline-flex w-fit items-center gap-2 text-ads-eyebrow font-bold uppercase tracking-[0.16em] text-ads-primary-strong">
+                  <span
+                    aria-hidden="true"
+                    className="h-px w-6 bg-ads-primary"
+                  />
+                  Economia
+                </span>
+                <h2
+                  className="mt-3 font-ads-display text-ads-title font-extrabold tracking-tight text-ads-secondary"
+                  id="economia-title"
+                >
+                  Economia que afeta você
+                </h2>
+                <p className="mt-3 leading-7 text-ads-muted">
+                  Juros, inflação e decisões do governo traduzidos no que muda
+                  na parcela, no rendimento e no salário.
+                </p>
+              </Reveal>
+            </div>
+            <TopicStories
+              items={economyNews}
+              moreHref="/categorias/economia"
+              moreLabel="Mais sobre economia"
+            />
+          </Container>
+        </section>
+      ) : null}
+
+      {benefitsNews.length > 0 ? (
+        <section
+          aria-labelledby="beneficios-title"
+          className="bg-ads-background py-16 sm:py-24"
+          id="beneficios"
+        >
+          <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+            <div className="grid content-start gap-4 lg:sticky lg:top-28 lg:self-start">
+              <Reveal>
+                <span className="inline-flex w-fit items-center gap-2 text-ads-eyebrow font-bold uppercase tracking-[0.16em] text-ads-primary-strong">
+                  <span
+                    aria-hidden="true"
+                    className="h-px w-6 bg-ads-primary"
+                  />
+                  Direitos e programas
+                </span>
+                <h2
+                  className="mt-3 font-ads-display text-ads-title font-extrabold tracking-tight text-ads-secondary"
+                  id="beneficios-title"
+                >
+                  Benefícios e trabalho
+                </h2>
+                <p className="mt-3 leading-7 text-ads-muted">
+                  Datas, valores e regras de INSS, FGTS, Bolsa Família e dos
+                  direitos de quem trabalha.
+                </p>
+              </Reveal>
+            </div>
+            <TopicStories
+              items={benefitsNews}
+              moreHref="/categorias/beneficios"
+              moreLabel="Mais sobre benefícios"
+            />
+          </Container>
+        </section>
+      ) : null}
+
+      <Container>
+        <AdSlot
+          format="horizontal"
+          label="Publicidade entre assuntos e guias"
+          placementId="home-after-topics"
+          size="banner"
+        />
+      </Container>
+
+      <section
+        aria-labelledby="guias-title"
+        className="bg-white py-16 sm:py-24"
+        id="guias"
+      >
+        <Container>
+          <SectionHeading
+            action={
+              <Link
+                className="text-sm font-bold text-ads-primary-strong hover:underline"
+                href="/guias"
+              >
+                Ver todos os guias →
+              </Link>
+            }
+            eyebrow="Seu dinheiro"
+            id="guias-title"
+            intro="Passo a passo para resolver o dia a dia: consultar extratos, tirar documentos, usar os apps do governo e evitar golpes."
+            title="Guias para consultar quando precisar"
+          />
+          <div className="grid gap-5 lg:grid-cols-[1.1fr_1fr]">
+            {leadGuide ? (
+              <Reveal className="h-full">
+                <article className="group relative grid h-full content-between gap-8 overflow-hidden rounded-ads-xlarge bg-ads-primary-soft p-8 transition duration-300 hover:-translate-y-1 hover:shadow-ads-soft sm:p-10">
+                  <div className="grid gap-4">
+                    <span className="w-fit rounded-ads-full bg-white px-3 py-1 text-xs font-bold text-ads-primary-strong">
+                      Guia em destaque · {leadGuide.readingTime}
+                    </span>
+                    <h3 className="font-ads-display text-2xl font-extrabold leading-tight text-ads-secondary sm:text-3xl">
+                      <Link
+                        className="after:absolute after:inset-0"
+                        href={leadGuide.href}
+                      >
+                        {leadGuide.title}
+                      </Link>
+                    </h3>
+                    <p className="leading-7 text-ads-muted">
+                      {leadGuide.description}
+                    </p>
+                  </div>
+                  <span className="text-sm font-bold text-ads-primary-strong">
+                    Ler o guia →
+                  </span>
+                </article>
+              </Reveal>
+            ) : null}
+            <Reveal className="h-full">
+              <ul className="grid h-full divide-y divide-ads-border overflow-hidden rounded-ads-xlarge border border-ads-border bg-white">
+                {otherGuides.map((guide) => (
+                  <li key={guide.href}>
+                    <Link
+                      className="group grid h-full gap-1 p-5 transition hover:bg-ads-primary-soft sm:px-6"
+                      href={guide.href}
+                    >
+                      <span className="text-xs font-bold text-ads-primary-strong">
+                        Guia · {guide.readingTime}
+                      </span>
+                      <span className="flex items-start justify-between gap-3 font-semibold leading-6 text-ads-secondary">
+                        {guide.title}
+                        <span
+                          aria-hidden="true"
+                          className="text-ads-primary transition group-hover:translate-x-1"
+                        >
+                          →
+                        </span>
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
 
       <section
         aria-labelledby="como-funciona-title"
@@ -645,6 +774,15 @@ export function HomeView({
         </Container>
       </section>
 
+      <Container className="py-8">
+        <AdSlot
+          format="horizontal"
+          label="Publicidade antes do rodapé"
+          placementId="home-before-footer"
+          size="banner"
+        />
+      </Container>
+
       <section
         aria-labelledby="confianca-title"
         className="relative overflow-hidden bg-ads-secondary-strong py-16 text-white sm:py-24"
@@ -713,67 +851,6 @@ export function HomeView({
               </Link>
               .
             </p>
-          </Reveal>
-        </Container>
-      </section>
-
-      <section
-        aria-labelledby="guias-title"
-        className="bg-white py-16 sm:py-24"
-        id="guias"
-      >
-        <Container>
-          <Reveal>
-            <div className="mb-10 grid max-w-2xl gap-3">
-              <span className="text-ads-eyebrow font-bold uppercase tracking-[0.16em] text-ads-primary-strong">
-                Aprenda no seu ritmo
-              </span>
-              <h2
-                className="font-ads-display text-ads-title font-extrabold tracking-tight text-ads-secondary"
-                id="guias-title"
-              >
-                Guias para consultar quando precisar
-              </h2>
-              <p className="leading-7 text-ads-muted">
-                Passo a passo para resolver o dia a dia: consultar extratos,
-                tirar documentos, usar os apps do governo e evitar golpes.
-              </p>
-            </div>
-          </Reveal>
-          <div className="grid gap-5 md:grid-cols-2">
-            {featuredGuides.slice(0, 6).map((guide, index) => (
-              <Reveal className="h-full" delay={index * 90} key={guide.href}>
-                <article className="group relative grid h-full content-between gap-6 rounded-ads-xlarge border border-ads-border bg-ads-background p-7 transition duration-300 hover:-translate-y-1 hover:border-ads-primary hover:shadow-ads-soft">
-                  <div className="grid gap-3">
-                    <span className="w-fit rounded-ads-full bg-ads-primary-soft px-3 py-1 text-xs font-bold text-ads-primary-strong">
-                      Guia · {guide.readingTime}
-                    </span>
-                    <h3 className="font-ads-display text-2xl font-bold leading-tight text-ads-secondary">
-                      <Link
-                        className="after:absolute after:inset-0"
-                        href={guide.href}
-                      >
-                        {guide.title}
-                      </Link>
-                    </h3>
-                    <p className="leading-7 text-ads-muted">
-                      {guide.description}
-                    </p>
-                  </div>
-                  <span className="text-sm font-bold text-ads-primary-strong">
-                    Ler o guia →
-                  </span>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal>
-            <Link
-              className="mt-8 inline-block text-sm font-bold text-ads-primary-strong hover:underline"
-              href="/guias"
-            >
-              Ver todos os guias →
-            </Link>
           </Reveal>
         </Container>
       </section>

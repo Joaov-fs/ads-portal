@@ -230,3 +230,41 @@ a {
     transition: none;
   }
 }
+
+/* Camada de dados do hero: gráfico que se desenha e símbolos que flutuam. */
+@keyframes home-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes home-glyph-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-3deg);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0) rotate(3deg);
+  }
+}
+
+.home-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  animation: home-draw 2.6s cubic-bezier(0.3, 0.6, 0.2, 1) 0.3s both;
+}
+
+.home-glyph {
+  opacity: 0.1;
+  animation: home-glyph-drift 11s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-draw,
+  .home-glyph {
+    animation: none;
+  }
+}

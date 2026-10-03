@@ -19,6 +19,9 @@ describe('Home', () => {
 
     for (const section of [
       'O que mudou e quanto isso pesa no seu bolso',
+      'Calcule agora',
+      'Economia que afeta você',
+      'Benefícios e trabalho',
       'Uma conta que você consegue conferir',
       'Uma calculadora para cada momento da vida',
       'Guias para consultar quando precisar',
@@ -78,6 +81,30 @@ describe('Home', () => {
           link.getAttribute('href')?.startsWith('/calculadoras/'),
         ),
     ).toBe(true);
+  });
+
+  it('shows a cover for every news card and a product card for each featured calculator', () => {
+    render(<HomeView />);
+
+    expect(screen.getAllByRole('img').length).toBeGreaterThanOrEqual(6);
+    for (const slug of [
+      'salario-liquido',
+      'rescisao-clt',
+      'ferias',
+      'decimo-salario',
+      'seguro-desemprego',
+      'fgts-multa',
+      'juros-compostos',
+      'cdi',
+    ]) {
+      expect(
+        screen
+          .getAllByRole('link')
+          .some(
+            (link) => link.getAttribute('href') === `/calculadoras/${slug}`,
+          ),
+      ).toBe(true);
+    }
   });
 
   it('does not render unavailable newsletter controls', () => {
