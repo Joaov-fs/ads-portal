@@ -14,10 +14,16 @@ import { newsInssDeAutonomoESocio2011Ou5QualPlanoValeAPena } from './inss-de-aut
 import { newsFinanciamentoSacOuPriceDiferencaDeR135MilEmJurosNoExemplo } from './financiamento-sac-ou-price-diferenca-de-r-135-mil-em-juros-no-exemplo';
 import { newsAbonoSalarial2026PrazoParaSacarVaiAte30DeDezembro } from './abono-salarial-2026-prazo-para-sacar-vai-ate-30-de-dezembro';
 import { bolsaFamiliaOutubro2026News } from './bolsa-familia-outubro-2026';
+import { newsInssOutubro2026Calendario } from './inss-outubro-2026-calendario-de-pagamento-26-de-outubro-a-9-de-novembro';
+import { newsSalarioMinimo2027Orcamento } from './salario-minimo-2027-orcamento-preve-r-1-741-veja-o-que-muda';
+import { newsSaqueAniversarioFgtsOutubro2026 } from './saque-aniversario-fgts-outubro-2026-ate-31-de-dezembro-quanto-sai';
 import { desenrolaMeiPequenoValorNews } from './desenrola-mei-pequeno-valor';
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
 export const newsFiles = [
+  newsInssOutubro2026Calendario,
+  newsSalarioMinimo2027Orcamento,
+  newsSaqueAniversarioFgtsOutubro2026,
   bolsaFamiliaOutubro2026News,
   newsSelic1375OQueMudaParaQuemInvesteEParaQuemDeve,
   newsImpostoDeRendaZeroAteR5MilQuantoVocePagaNoContracheque,

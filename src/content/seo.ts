@@ -69,6 +69,12 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'inss-outubro-2026-calendario-de-pagamento-26-de-outubro-a-9-de-novembro':
+    'INSS outubro 2026: calendário de pagamento',
+  'salario-minimo-2027-orcamento-preve-r-1-741-veja-o-que-muda':
+    'Salário mínimo 2027: Orçamento prevê R$ 1.741',
+  'saque-aniversario-fgts-outubro-2026-ate-31-de-dezembro-quanto-sai':
+    'Saque-aniversário FGTS: nascidos em outubro',
   'bolsa-familia-691-outubro-2026-calendario':
     'Bolsa Família: mínimo de R$ 691 em outubro',
   'selic-13-75-o-que-muda-para-quem-investe-e-para-quem-deve':

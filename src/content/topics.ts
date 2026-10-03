@@ -99,8 +99,23 @@ export const topicGroups: readonly (readonly string[])[] = [
   ],
   [
     'salario-minimo-2026-r-1-621-o-que-ele-muda-no-seu-bolso',
+    'salario-minimo-2027-orcamento-preve-r-1-741-veja-o-que-muda',
     'bpc-loas-quem-tem-direito-e-como-pedir',
     'bpc',
+    'inss-autonomo',
+  ],
+  [
+    'inss-outubro-2026-calendario-de-pagamento-26-de-outubro-a-9-de-novembro',
+    'como-usar-o-meu-inss-e-consultar-o-cnis',
+    'bpc-loas-quem-tem-direito-e-como-pedir',
+    'bpc',
+    'inss',
+  ],
+  [
+    'saque-aniversario-fgts-outubro-2026-ate-31-de-dezembro-quanto-sai',
+    'saque-aniversario-do-fgts-como-funciona',
+    'como-consultar-saldo-e-extrato-do-fgts',
+    'fgts-multa',
   ],
 ];
 
