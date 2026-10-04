@@ -17,6 +17,7 @@ import { bolsaFamiliaOutubro2026News } from './bolsa-familia-outubro-2026';
 import { newsInssOutubro2026Calendario } from './inss-outubro-2026-calendario-de-pagamento-26-de-outubro-a-9-de-novembro';
 import { newsSalarioMinimo2027Orcamento } from './salario-minimo-2027-orcamento-preve-r-1-741-veja-o-que-muda';
 import { newsSaqueAniversarioFgtsOutubro2026 } from './saque-aniversario-fgts-outubro-2026-ate-31-de-dezembro-quanto-sai';
+import { newsQuintoDiaUtilDeOutubro2026 } from './quinto-dia-util-de-outubro-2026-prazo-do-salario-vai-ate-6-de-outubro';
 import { desenrolaMeiPequenoValorNews } from './desenrola-mei-pequeno-valor';
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
@@ -41,4 +42,5 @@ export const newsFiles = [
   newsFinanciamentoSacOuPriceDiferencaDeR135MilEmJurosNoExemplo,
   newsAbonoSalarial2026PrazoParaSacarVaiAte30DeDezembro,
   desenrolaMeiPequenoValorNews,
+  newsQuintoDiaUtilDeOutubro2026,
 ] as const;
