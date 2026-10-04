@@ -271,67 +271,67 @@ a {
   }
 }
 
-@keyframes home-glyph-drift {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) rotate(-3deg);
-  }
-  50% {
-    transform: translate3d(0, -14px, 0) rotate(3deg);
-  }
-}
-
 .home-draw {
   stroke-dasharray: 1;
   stroke-dashoffset: 0;
   animation: home-draw 2.6s cubic-bezier(0.3, 0.6, 0.2, 1) 0.3s both;
 }
 
-.home-glyph {
-  opacity: 0.1;
-  animation: home-glyph-drift 11s ease-in-out infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .home-draw,
-  .home-glyph {
+  .home-draw {
     animation: none;
   }
 }
 
-/* ---------- Hero calculator: visual de calculadora física ---------- */
-@keyframes calc-slide-up {
+/* ---------- Hero calculator: entrada escalonada ---------- */
+@keyframes calc-enter {
   from {
     opacity: 0;
-    transform: perspective(800px) rotateX(6deg) translateY(60px);
+    transform: translateY(40px) scale(0.97);
   }
   to {
     opacity: 1;
-    transform: perspective(800px) rotateX(0) translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
-@keyframes calc-screen-glow {
-  0%,
-  100% {
-    box-shadow: inset 0 0 20px rgb(110 231 183 / 8%);
+@keyframes calc-step-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
   }
-  50% {
-    box-shadow: inset 0 0 30px rgb(110 231 183 / 15%);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 .calc-body {
-  animation: calc-slide-up 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+  animation: calc-enter 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
 }
 
-.calc-screen {
-  animation: calc-screen-glow 4s ease-in-out infinite;
+.calc-step-1 {
+  animation: calc-step-enter 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+
+.calc-step-2 {
+  animation: calc-step-enter 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+}
+
+.calc-step-3 {
+  animation: calc-step-enter 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
+}
+
+.calc-step-4 {
+  animation: calc-step-enter 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .calc-body,
-  .calc-screen {
+  .calc-step-1,
+  .calc-step-2,
+  .calc-step-3,
+  .calc-step-4 {
     animation: none;
   }
 }

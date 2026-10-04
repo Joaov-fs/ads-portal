@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { CSSProperties, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { NewsCover } from '@/components/content/news-cover';
 import { Container } from '@/components/layout/container';
@@ -79,13 +79,6 @@ export function SectionHeading({
  * financeiros que flutuam devagar. É só decoração (CSS/SVG), sem JavaScript.
  */
 export function HeroDataLayer() {
-  const glyphs = [
-    { text: 'R$', className: 'left-[4%] top-[14%] text-6xl', delay: '0s' },
-    { text: '%', className: 'right-[7%] top-[9%] text-7xl', delay: '-3s' },
-    { text: '13º', className: 'left-[44%] bottom-[8%] text-5xl', delay: '-5s' },
-    { text: '↗', className: 'right-[3%] bottom-[22%] text-6xl', delay: '-2s' },
-  ] as const;
-
   return (
     <div
       aria-hidden="true"
@@ -117,15 +110,6 @@ export function HeroDataLayer() {
           strokeWidth="3"
         />
       </svg>
-      {glyphs.map((glyph) => (
-        <span
-          className={`home-glyph absolute hidden font-ads-display font-extrabold text-emerald-200 sm:block ${glyph.className}`}
-          key={glyph.text}
-          style={{ animationDelay: glyph.delay } as CSSProperties}
-        >
-          {glyph.text}
-        </span>
-      ))}
     </div>
   );
 }
