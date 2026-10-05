@@ -52,20 +52,20 @@ export const newsSalarioMinimo2026R1621OQueEleMudaNoSeuBolso = {
         caption: 'Valores ligados ao salário mínimo de 2026',
         columns: ['Item', 'Regra', 'Valor em 2026'],
         rows: [
-          ['MEI — contribuição ao INSS', '5% do mínimo', 'R$ 81,05'],
+          ['MEI: contribuição ao INSS', '5% do mínimo', 'R$ 81,05'],
           [
-            'Seguro-desemprego — piso da parcela',
+            'Seguro-desemprego: piso da parcela',
             '1 salário mínimo',
             'R$ 1.621,00',
           ],
           [
-            'Abono salarial — valor máximo',
+            'Abono salarial: valor máximo',
             '1 salário mínimo (12 meses)',
             'R$ 1.621,00',
           ],
-          ['BPC — valor do benefício', '1 salário mínimo', 'R$ 1.621,00'],
+          ['BPC: valor do benefício', '1 salário mínimo', 'R$ 1.621,00'],
           [
-            'BPC — renda por pessoa da família',
+            'BPC: renda por pessoa da família',
             'Até 1/4 do mínimo',
             'R$ 405,25',
           ],
@@ -99,18 +99,18 @@ export const newsSalarioMinimo2026R1621OQueEleMudaNoSeuBolso = {
   ],
   sources: [
     {
-      label: 'Presidência da República — decreto do salário mínimo de 2026',
+      label: 'Presidência da República: decreto do salário mínimo de 2026',
     },
     {
-      label: 'Portal do Empreendedor (MEI) — valores do DAS-MEI em 2026',
+      label: 'Portal do Empreendedor (MEI): valores do DAS-MEI em 2026',
       url: 'https://www.gov.br/empresas-e-negocios/pt-br/empreendedor',
     },
     {
       label:
-        'Ministério do Trabalho e Emprego — seguro-desemprego e abono salarial',
+        'Ministério do Trabalho e Emprego: seguro-desemprego e abono salarial',
     },
     {
-      label: 'Ministério do Desenvolvimento e Assistência Social — BPC',
+      label: 'Ministério do Desenvolvimento e Assistência Social: BPC',
     },
   ],
 } as const satisfies NewsDocument;

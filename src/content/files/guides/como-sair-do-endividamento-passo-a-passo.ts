@@ -130,10 +130,10 @@ export const guideComoSairDoEndividamentoPassoAPasso = {
   ],
   sources: [
     {
-      label: 'Lei 14.690/2023 — Desenrola e limite de encargos no cartão',
+      label: 'Lei 14.690/2023: Desenrola e limite de encargos no cartão',
     },
     {
-      label: 'Lei 14.181/2021 — tratamento do superendividamento',
+      label: 'Lei 14.181/2021: tratamento do superendividamento',
     },
     {
       label: 'Código de Defesa do Consumidor (Lei 8.078/1990)',
@@ -143,7 +143,7 @@ export const guideComoSairDoEndividamentoPassoAPasso = {
       url: 'https://www.bcb.gov.br/',
     },
     {
-      label: 'consumidor.gov.br — Senacon',
+      label: 'consumidor.gov.br: Senacon',
       url: 'https://www.consumidor.gov.br/',
     },
     {

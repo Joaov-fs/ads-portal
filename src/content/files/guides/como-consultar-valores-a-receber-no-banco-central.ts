@@ -122,7 +122,7 @@ export const guideComoConsultarValoresAReceberNoBancoCentral = {
   ],
   sources: [
     {
-      label: 'Banco Central do Brasil — Valores a Receber',
+      label: 'Banco Central do Brasil: Valores a Receber',
       url: 'https://valoresareceber.bcb.gov.br/',
     },
     {
@@ -131,7 +131,7 @@ export const guideComoConsultarValoresAReceberNoBancoCentral = {
     },
     {
       label:
-        'Banco Central do Brasil — reclamação contra instituições financeiras',
+        'Banco Central do Brasil: reclamação contra instituições financeiras',
       url: 'https://www.gov.br/pt-br/servicos/registrar-reclamacao-contra-instituicao-supervisionada-pelo-banco-central',
     },
   ],

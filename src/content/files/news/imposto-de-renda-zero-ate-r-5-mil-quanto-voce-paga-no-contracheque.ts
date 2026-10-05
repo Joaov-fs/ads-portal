@@ -98,14 +98,14 @@ export const newsImpostoDeRendaZeroAteR5MilQuantoVocePagaNoContracheque = {
   sources: [
     {
       label:
-        'Lei 15.270/2025 — isenção do Imposto de Renda até R$ 5.000 por mês',
+        'Lei 15.270/2025: isenção do Imposto de Renda até R$ 5.000 por mês',
     },
     {
-      label: 'Receita Federal — tabela do Imposto de Renda de 2026',
+      label: 'Receita Federal: tabela do Imposto de Renda de 2026',
       url: 'https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026',
     },
     {
-      label: 'INSS — tabela de contribuição mensal de 2026',
+      label: 'INSS: tabela de contribuição mensal de 2026',
     },
   ],
 } as const satisfies NewsDocument;

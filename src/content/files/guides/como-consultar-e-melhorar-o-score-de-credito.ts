@@ -126,7 +126,7 @@ export const guideComoConsultarEMelhorarOScoreDeCredito = {
   ],
   sources: [
     {
-      label: 'Lei 12.414/2011 — Lei do Cadastro Positivo',
+      label: 'Lei 12.414/2011: Lei do Cadastro Positivo',
     },
     {
       label: 'Lei Complementar 166/2019',
@@ -136,7 +136,7 @@ export const guideComoConsultarEMelhorarOScoreDeCredito = {
     },
     {
       label:
-        'Banco Central do Brasil — reclamação contra instituições financeiras',
+        'Banco Central do Brasil: reclamação contra instituições financeiras',
       url: 'https://www.gov.br/pt-br/servicos/registrar-reclamacao-contra-instituicao-supervisionada-pelo-banco-central',
     },
   ],

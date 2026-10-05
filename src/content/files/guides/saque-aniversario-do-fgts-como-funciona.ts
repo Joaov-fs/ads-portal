@@ -136,15 +136,15 @@ export const guideSaqueAniversarioDoFgtsComoFunciona = {
   ],
   sources: [
     {
-      label: 'Caixa Econômica Federal — FGTS',
+      label: 'Caixa Econômica Federal: FGTS',
       url: 'https://www.caixa.gov.br/beneficios-trabalhador/fgts/',
     },
     {
-      label: 'Agência Brasil — saque-aniversário do FGTS 2026',
+      label: 'Agência Brasil: saque-aniversário do FGTS 2026',
       url: 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-01/saque-aniversario-do-fgts-2026-comeca-ser-liberado',
     },
     {
-      label: 'Lei 8.036/1990 — FGTS',
+      label: 'Lei 8.036/1990: FGTS',
     },
   ],
 } as const satisfies GuideDocument;

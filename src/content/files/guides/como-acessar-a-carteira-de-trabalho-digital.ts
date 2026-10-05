@@ -136,7 +136,7 @@ export const guideComoAcessarACarteiraDeTrabalhoDigital = {
       url: 'https://www.gov.br/trabalho-e-emprego/',
     },
     {
-      label: 'Carteira de Trabalho Digital — portal gov.br',
+      label: 'Carteira de Trabalho Digital: portal gov.br',
       url: 'https://www.gov.br/pt-br/apps/ctps-digital',
     },
     {

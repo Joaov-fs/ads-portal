@@ -160,15 +160,15 @@ export const guideComoPedirOSeguroDesemprego = {
   ],
   sources: [
     {
-      label: 'Ministério do Trabalho e Emprego — Seguro-Desemprego',
+      label: 'Ministério do Trabalho e Emprego: Seguro-Desemprego',
       url: 'https://www.gov.br/trabalho-e-emprego/pt-br/servicos/trabalhador/seguro-desemprego',
     },
     {
-      label: 'Portal gov.br — solicitar o seguro-desemprego',
+      label: 'Portal gov.br: solicitar o seguro-desemprego',
       url: 'https://www.gov.br/pt-br/servicos/solicitar-o-seguro-desemprego',
     },
     {
-      label: 'Lei 7.998/1990 — Programa do Seguro-Desemprego',
+      label: 'Lei 7.998/1990: Programa do Seguro-Desemprego',
     },
   ],
 } as const satisfies GuideDocument;

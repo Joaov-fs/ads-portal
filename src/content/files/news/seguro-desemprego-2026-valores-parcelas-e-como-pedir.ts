@@ -106,18 +106,18 @@ export const newsSeguroDesemprego2026ValoresParcelasEComoPedir = {
   ],
   sources: [
     {
-      label: 'Ministério do Trabalho e Emprego — Seguro-Desemprego',
+      label: 'Ministério do Trabalho e Emprego: Seguro-Desemprego',
       url: 'https://www.gov.br/trabalho-e-emprego/pt-br/servicos/trabalhador/seguro-desemprego',
     },
     {
-      label: 'Fundo de Amparo ao Trabalhador (FAT) — tabela de valores de 2026',
+      label: 'Fundo de Amparo ao Trabalhador (FAT): tabela de valores de 2026',
       url: 'https://portalfat.mte.gov.br/mte-reajusta-valores-do-beneficio-seguro-desemprego/',
     },
     {
-      label: 'Lei 7.998/1990 — Programa do Seguro-Desemprego',
+      label: 'Lei 7.998/1990: Programa do Seguro-Desemprego',
     },
     {
-      label: 'Resolução do CODEFAT — tabela de parcelas',
+      label: 'Resolução do CODEFAT: tabela de parcelas',
     },
   ],
 } as const satisfies NewsDocument;

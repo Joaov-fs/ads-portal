@@ -156,9 +156,9 @@ const storySteps = [
           Onde conferir
         </span>
         {[
-          'Receita Federal — tabela do IRRF de 2026',
-          'INSS — tabela de contribuição mensal de 2026',
-          'Lei 15.270/2025 — isenção até R$ 5.000',
+          'Receita Federal: tabela do IRRF de 2026',
+          'INSS: tabela de contribuição mensal de 2026',
+          'Lei 15.270/2025: isenção até R$ 5.000',
         ].map((source) => (
           <div
             className="flex items-start gap-3 rounded-ads-medium bg-ads-background px-4 py-3 text-sm font-medium text-ads-secondary"

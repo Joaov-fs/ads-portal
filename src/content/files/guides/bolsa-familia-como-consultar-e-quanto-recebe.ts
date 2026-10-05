@@ -140,10 +140,10 @@ export const guideBolsaFamiliaComoConsultarEQuantoRecebe = {
       url: 'https://www.gov.br/mds/',
     },
     {
-      label: 'Caixa Econômica Federal — Bolsa Família',
+      label: 'Caixa Econômica Federal: Bolsa Família',
     },
     {
-      label: 'Lei 14.601/2023 — Bolsa Família',
+      label: 'Lei 14.601/2023: Bolsa Família',
     },
   ],
 } as const satisfies GuideDocument;

@@ -116,11 +116,11 @@ export const bolsaFamiliaOutubro2026News = {
   sources: [
     {
       label:
-        'Ministério do Desenvolvimento e Assistência Social — Bolsa Família',
+        'Ministério do Desenvolvimento e Assistência Social: Bolsa Família',
       url: 'https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia',
     },
     {
-      label: 'CAIXA — Bolsa Família',
+      label: 'CAIXA: Bolsa Família',
       url: 'https://www.caixa.gov.br/programas-sociais/bolsa-familia/',
     },
   ],

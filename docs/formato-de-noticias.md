@@ -9,12 +9,13 @@ Cada notícia é **um arquivo TypeScript** em `src/content/files/news/` e **uma 
    Ministério do Trabalho e Emprego, MDS, Caixa, Diário Oficial). Nada de "segundo especialistas".
 2. **Um número por frase, em reais.** Troque adjetivos por exemplos: "salário de R$ 3.000 paga R$ 248,60 de INSS".
 3. **Exemplo calculado.** Todo exemplo deve ser conferido na calculadora do portal antes de publicar.
-4. **Fontes pelo nome.** Cite o documento ou a página ("Lei 15.270/2025", "INSS — tabela de contribuição mensal de 2026").
+4. **Fontes pelo nome.** Cite o documento ou a página ("Lei 15.270/2025", "INSS: tabela de contribuição mensal de 2026").
    Use `url` só quando levar a uma página oficial estável e fizer sentido para o leitor.
 5. **Leva para uma calculadora.** `featuredCalculators` com 1 a 3 slugs reais de `/calculadoras`.
 6. **Sem repetição.** Cada seção diz algo novo. Não reescreva a descrição no primeiro parágrafo.
 7. **Sem promessas.** Benefícios e prazos: "tem direito quem cumpre os requisitos", nunca "você vai receber".
-8. **Capa obrigatória.** A capa é gerada pelo portal a partir do **primeiro item de `highlights`**: ele vira o
+8. **Sem travessão (— ou –).** Nem em título, subtítulo, seção, tabela ou fonte. Use dois-pontos, vírgula ou ponto. O travessão sozinho só vale como célula vazia de tabela.
+9. **Capa obrigatória.** A capa é gerada pelo portal a partir do **primeiro item de `highlights`**: ele vira o
    número grande da capa (até 14 caracteres, ex.: `R$ 1.741`, `26/10`, `13,75%`) e a legenda (até 40
    caracteres). Não use imagem de banco nem foto; não preencha `coverImage`. A capa aparece no destaque e nos
    cards da home, nas listas, na página da notícia e no compartilhamento (Open Graph). O teste
@@ -67,7 +68,7 @@ export const newsSlugDaNoticia = {
   ],
   sources: [
     // 2 a 4 fontes oficiais
-    { label: 'INSS — tabela de contribuição mensal de 2026' },
+    { label: 'INSS: tabela de contribuição mensal de 2026' },
     { label: 'Receita Federal', url: 'https://www.gov.br/receitafederal/' },
   ],
 } as const satisfies NewsDocument;

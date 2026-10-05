@@ -127,7 +127,7 @@ export const guideFinanciamentoSacOuPriceQualEscolher = {
       label: 'Código de Defesa do Consumidor (Lei 8.078/1990), art. 52',
     },
     {
-      label: 'Caixa Econômica Federal — financiamento habitacional',
+      label: 'Caixa Econômica Federal: financiamento habitacional',
     },
     {
       label: 'Resolução CMN sobre o CET',

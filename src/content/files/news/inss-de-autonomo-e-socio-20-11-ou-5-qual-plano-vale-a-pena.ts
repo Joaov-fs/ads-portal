@@ -101,17 +101,17 @@ export const newsInssDeAutonomoESocio2011Ou5QualPlanoValeAPena = {
   ],
   sources: [
     {
-      label: 'INSS — contribuinte individual e facultativo',
+      label: 'INSS: contribuinte individual e facultativo',
       url: 'https://www.gov.br/inss/pt-br',
     },
     {
-      label: 'Lei 8.212/1991 — custeio da Seguridade Social',
+      label: 'Lei 8.212/1991: custeio da Seguridade Social',
     },
     {
-      label: 'Emenda Constitucional 103/2019 — reforma da Previdência',
+      label: 'Emenda Constitucional 103/2019: reforma da Previdência',
     },
     {
-      label: 'Receita Federal — tabela do IRRF de 2026',
+      label: 'Receita Federal: tabela do IRRF de 2026',
     },
   ],
 } as const satisfies NewsDocument;

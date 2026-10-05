@@ -86,15 +86,15 @@ export const newsAbonoSalarial2026PrazoParaSacarVaiAte30DeDezembro = {
   ],
   sources: [
     {
-      label: 'Ministério do Trabalho e Emprego — Abono Salarial',
+      label: 'Ministério do Trabalho e Emprego: Abono Salarial',
       url: 'https://www.gov.br/trabalho-e-emprego/pt-br/servicos/trabalhador/abono-salarial',
     },
     {
-      label: 'Caixa Econômica Federal — Abono Salarial PIS',
+      label: 'Caixa Econômica Federal: Abono Salarial PIS',
       url: 'https://www.caixa.gov.br/beneficios-trabalhador/abono-salarial/Paginas/default.aspx',
     },
     {
-      label: 'Lei 7.998/1990 — Programa do Seguro-Desemprego e Abono Salarial',
+      label: 'Lei 7.998/1990: Programa do Seguro-Desemprego e Abono Salarial',
     },
   ],
 } as const satisfies NewsDocument;

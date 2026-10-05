@@ -135,7 +135,7 @@ export const guideBpcLoasQuemTemDireitoEComoPedir = {
   ],
   sources: [
     {
-      label: 'INSS — Benefício assistencial à pessoa idosa (BPC-LOAS)',
+      label: 'INSS: Benefício assistencial à pessoa idosa (BPC-LOAS)',
       url: 'https://www.gov.br/inss/pt-br/direitos-e-deveres/beneficios-assistenciais/beneficio-assistencial-a-pessoa-idosa-bpc-loas',
     },
     {
@@ -143,7 +143,7 @@ export const guideBpcLoasQuemTemDireitoEComoPedir = {
       url: 'https://www.gov.br/mds/',
     },
     {
-      label: 'Lei 8.742/1993 — LOAS',
+      label: 'Lei 8.742/1993: LOAS',
     },
   ],
 } as const satisfies GuideDocument;

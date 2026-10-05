@@ -121,7 +121,7 @@ export const guideComoLerOExtratoBancarioEContestarCobrancas = {
   ],
   sources: [
     {
-      label: 'Banco Central do Brasil — Registrato',
+      label: 'Banco Central do Brasil: Registrato',
       url: 'https://www.bcb.gov.br/meubc/registrato',
     },
     {
@@ -132,11 +132,11 @@ export const guideComoLerOExtratoBancarioEContestarCobrancas = {
       label: 'Código de Defesa do Consumidor (Lei 8.078/1990)',
     },
     {
-      label: 'Decreto 6.523/2008 — Serviço de Atendimento ao Consumidor',
+      label: 'Decreto 6.523/2008: Serviço de Atendimento ao Consumidor',
       url: 'https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/decreto/d6523.htm',
     },
     {
-      label: 'Resolução CMN 4.860/2020 — ouvidoria',
+      label: 'Resolução CMN 4.860/2020: ouvidoria',
     },
     {
       label: 'consumidor.gov.br',

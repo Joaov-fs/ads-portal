@@ -97,17 +97,17 @@ export const newsFerias2026ComoCalcularOUmTercoVender10DiasEDividirEmPeriodos =
     ],
     sources: [
       {
-        label: 'CLT, arts. 129 a 153 — férias',
+        label: 'CLT, arts. 129 a 153: férias',
       },
       {
-        label: 'Constituição Federal, art. 7º, XVII — adicional de 1/3',
+        label: 'Constituição Federal, art. 7º, XVII: adicional de 1/3',
       },
       {
         label:
-          'Lei 13.467/2017 — reforma trabalhista (fracionamento das férias)',
+          'Lei 13.467/2017: reforma trabalhista (fracionamento das férias)',
       },
       {
-        label: 'Ministério do Trabalho e Emprego — férias',
+        label: 'Ministério do Trabalho e Emprego: férias',
         url: 'https://www.gov.br/trabalho-e-emprego/',
       },
     ],

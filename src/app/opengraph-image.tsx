@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/og';
 import { designTokens } from '@/config/design-tokens';
 import { siteConfig } from '@/config/site';
 
-export const alt = `${siteConfig.name} — ferramentas e informação clara`;
+export const alt = `${siteConfig.name}: ferramentas e informação clara`;
 export const size = { height: 630, width: 1200 };
 export const contentType = 'image/png';
 

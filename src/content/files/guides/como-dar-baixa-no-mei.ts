@@ -131,19 +131,19 @@ export const guideComoDarBaixaNoMei = {
       url: 'https://www.gov.br/empresas-e-negocios/pt-br/empreendedor',
     },
     {
-      label: 'Perguntas frequentes sobre baixa — Portal do Empreendedor',
+      label: 'Perguntas frequentes sobre baixa: Portal do Empreendedor',
       url: 'https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/servicos-para-mei/baixa-de-mei/perguntas-frequentes-baixa',
     },
     {
-      label: 'Manual do Parcelamento de Débitos do MEI — Simples Nacional',
+      label: 'Manual do Parcelamento de Débitos do MEI: Simples Nacional',
       url: 'https://www8.receita.fazenda.gov.br/SimplesNacional/Arquivos/manual/Manual_Parcelamento_MEI.pdf',
     },
     {
-      label: 'Perguntas e Respostas MEI e Simei — Receita Federal',
+      label: 'Perguntas e Respostas MEI e Simei: Receita Federal',
       url: 'https://www8.receita.fazenda.gov.br/simplesnacional/arquivos/manual/perguntaomei.pdf',
     },
     {
-      label: 'Sebrae — Central de Relacionamento 0800 570 0800',
+      label: 'Sebrae: Central de Relacionamento 0800 570 0800',
       url: 'https://sebrae.com.br/sites/PortalSebrae/artigos/como-entrar-em-contato-com-o-sebrae',
     },
   ],

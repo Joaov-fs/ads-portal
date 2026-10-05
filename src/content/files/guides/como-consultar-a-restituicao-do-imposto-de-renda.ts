@@ -149,11 +149,11 @@ export const guideComoConsultarARestituicaoDoImpostoDeRenda = {
       url: 'https://www.gov.br/receitafederal/pt-br',
     },
     {
-      label: 'Receita Federal — restituição do Imposto de Renda',
+      label: 'Receita Federal: restituição do Imposto de Renda',
       url: 'https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/restituicao',
     },
     {
-      label: 'Banco do Brasil — restituição do Imposto de Renda',
+      label: 'Banco do Brasil: restituição do Imposto de Renda',
     },
   ],
 } as const satisfies GuideDocument;

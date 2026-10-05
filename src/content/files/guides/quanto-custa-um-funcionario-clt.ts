@@ -117,13 +117,13 @@ export const guideQuantoCustaUmFuncionarioClt = {
   ],
   sources: [
     {
-      label: 'CLT — Consolidação das Leis do Trabalho',
+      label: 'CLT: Consolidação das Leis do Trabalho',
     },
     {
-      label: 'Lei 8.036/1990 — FGTS',
+      label: 'Lei 8.036/1990: FGTS',
     },
     {
-      label: 'Lei 8.212/1991 — contribuição patronal ao INSS',
+      label: 'Lei 8.212/1991: contribuição patronal ao INSS',
     },
     {
       label: 'Ministério do Trabalho e Emprego',

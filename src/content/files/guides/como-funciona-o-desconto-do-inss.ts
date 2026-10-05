@@ -145,11 +145,11 @@ export const guideComoFuncionaODescontoDoInss = {
   ],
   sources: [
     {
-      label: 'INSS — tabela de contribuição mensal de 2026',
+      label: 'INSS: tabela de contribuição mensal de 2026',
       url: 'https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabela-de-contribuicao-mensal',
     },
     {
-      label: 'Lei 8.212/1991 — custeio da Seguridade Social',
+      label: 'Lei 8.212/1991: custeio da Seguridade Social',
     },
     {
       label: 'Meu INSS',

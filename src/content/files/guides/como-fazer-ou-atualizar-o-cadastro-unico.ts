@@ -140,11 +140,11 @@ export const guideComoFazerOuAtualizarOCadastroUnico = {
       url: 'https://www.gov.br/mds/',
     },
     {
-      label: 'MDS — Carta de serviços: Cadastro Único',
+      label: 'MDS: Carta de serviços: Cadastro Único',
       url: 'https://www.gov.br/mds/pt-br/acesso-a-informacao/carta-de-servicos/avaliacao-e-gestao-da-informacao-e-cadastro-unico/cadastro-unico',
     },
     {
-      label: 'Decreto 11.016/2022 — Cadastro Único',
+      label: 'Decreto 11.016/2022: Cadastro Único',
     },
   ],
 } as const satisfies GuideDocument;

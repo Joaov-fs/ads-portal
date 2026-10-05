@@ -113,19 +113,19 @@ export const guideComoUsarOMeuInssEConsultarOCnis = {
   ],
   sources: [
     {
-      label: 'Meu INSS — Instituto Nacional do Seguro Social',
+      label: 'Meu INSS: Instituto Nacional do Seguro Social',
       url: 'https://meu.inss.gov.br/',
     },
     {
-      label: 'Portal gov.br — emitir extrato de contribuição (CNIS)',
+      label: 'Portal gov.br: emitir extrato de contribuição (CNIS)',
       url: 'https://www.gov.br/pt-br/servicos/emitir-extrato-de-contribuicao-cnis',
     },
     {
-      label: 'INSS — atualização de tempo de contribuição',
+      label: 'INSS: atualização de tempo de contribuição',
       url: 'https://www.gov.br/inss/pt-br/saiba-mais/seus-direitos-e-deveres/atualizacao-de-tempo-de-contribuicao',
     },
     {
-      label: 'Lei 8.213/1991 — Planos de Benefícios da Previdência Social',
+      label: 'Lei 8.213/1991: Planos de Benefícios da Previdência Social',
     },
   ],
 } as const satisfies GuideDocument;

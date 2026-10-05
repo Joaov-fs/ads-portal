@@ -132,7 +132,7 @@ export const guideComoCancelarAssinaturasEComprasOnline = {
       label: 'Código de Defesa do Consumidor (Lei 8.078/1990)',
     },
     {
-      label: 'Decreto 7.962/2013 — comércio eletrônico',
+      label: 'Decreto 7.962/2013: comércio eletrônico',
     },
     {
       label: 'Plataforma consumidor.gov.br',

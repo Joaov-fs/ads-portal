@@ -32,7 +32,7 @@ export function HeroCalculator() {
       <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-ads-primary via-emerald-300 to-ads-primary" />
 
       <div className="grid gap-5">
-        {/* Passo 1: Contexto — o que é isso */}
+        {/* Passo 1: Contexto: o que é isso */}
         <div className="calc-step-1 grid gap-2">
           <div className="flex items-center justify-between">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-ads-primary-strong">
@@ -63,7 +63,7 @@ export function HeroCalculator() {
           </p>
         </div>
 
-        {/* Passo 2: Input — o que digitar */}
+        {/* Passo 2: Input: o que digitar */}
         <div className="calc-step-2 grid gap-2">
           <label
             className="text-sm font-semibold text-ads-secondary"
@@ -97,7 +97,7 @@ export function HeroCalculator() {
           />
         </div>
 
-        {/* Passo 3: Resultado — tela de resposta */}
+        {/* Passo 3: Resultado: tela de resposta */}
         <div className="calc-step-3 grid gap-4 rounded-ads-large bg-ads-secondary p-5 text-white">
           <div className="flex items-end justify-between gap-3">
             <div className="grid gap-1">

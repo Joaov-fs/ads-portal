@@ -67,11 +67,11 @@ export const salarioLiquidoCalculator = {
   ],
   sources: [
     {
-      label: 'INSS — tabela de contribuição mensal de 2026',
+      label: 'INSS: tabela de contribuição mensal de 2026',
       url: 'https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabela-de-contribuicao-mensal',
     },
     {
-      label: 'Receita Federal — tributação de 2026',
+      label: 'Receita Federal: tributação de 2026',
       url: 'https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026',
     },
   ],

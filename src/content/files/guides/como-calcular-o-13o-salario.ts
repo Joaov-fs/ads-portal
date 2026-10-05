@@ -117,13 +117,13 @@ export const guideComoCalcularO13oSalario = {
   ],
   sources: [
     {
-      label: 'Lei 4.090/1962 — 13º salário',
+      label: 'Lei 4.090/1962: 13º salário',
     },
     {
-      label: 'Lei 4.749/1965 — pagamento do 13º em duas parcelas',
+      label: 'Lei 4.749/1965: pagamento do 13º em duas parcelas',
     },
     {
-      label: 'Lei 15.270/2025 — redução do IR, inclusive no 13º',
+      label: 'Lei 15.270/2025: redução do IR, inclusive no 13º',
       url: 'https://www2.camara.leg.br/legin/fed/lei/2025/lei-15270-26-novembro-2025-798354-publicacaooriginal-177117-pl.html',
     },
     {
@@ -131,7 +131,7 @@ export const guideComoCalcularO13oSalario = {
       url: 'https://www.gov.br/trabalho-e-emprego/',
     },
     {
-      label: 'Receita Federal — tabela do IRRF de 2026',
+      label: 'Receita Federal: tabela do IRRF de 2026',
       url: 'https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026',
     },
   ],

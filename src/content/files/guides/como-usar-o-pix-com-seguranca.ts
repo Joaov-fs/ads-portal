@@ -121,15 +121,15 @@ export const guideComoUsarOPixComSeguranca = {
   ],
   sources: [
     {
-      label: 'Banco Central do Brasil — Pix',
+      label: 'Banco Central do Brasil: Pix',
       url: 'https://www.bcb.gov.br/estabilidadefinanceira/pix',
     },
     {
-      label: 'Federação Brasileira de Bancos (Febraban) — dicas de segurança',
+      label: 'Federação Brasileira de Bancos (Febraban): dicas de segurança',
     },
     {
       label:
-        'Banco Central do Brasil — reclamação contra instituições financeiras',
+        'Banco Central do Brasil: reclamação contra instituições financeiras',
       url: 'https://www.gov.br/pt-br/servicos/registrar-reclamacao-contra-instituicao-supervisionada-pelo-banco-central',
     },
   ],

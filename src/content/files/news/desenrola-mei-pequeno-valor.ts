@@ -118,7 +118,7 @@ export const desenrolaMeiPequenoValorNews = {
   ],
   sources: [
     {
-      label: 'Procuradoria-Geral da Fazenda Nacional — Regularize',
+      label: 'Procuradoria-Geral da Fazenda Nacional: Regularize',
       url: 'https://www.regularize.pgfn.gov.br/',
     },
     {

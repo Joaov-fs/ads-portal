@@ -127,10 +127,10 @@ export const guideComoConsultarCpfELimparONomePassoAPasso = {
       label: 'Código de Defesa do Consumidor (Lei 8.078/1990), art. 43',
     },
     {
-      label: 'Súmula 548 do STJ — prazo para exclusão do registro',
+      label: 'Súmula 548 do STJ: prazo para exclusão do registro',
     },
     {
-      label: 'Súmula 323 do STJ — prazo máximo de manutenção do registro',
+      label: 'Súmula 323 do STJ: prazo máximo de manutenção do registro',
     },
     {
       label: 'Plataforma consumidor.gov.br',

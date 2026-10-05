@@ -94,16 +94,16 @@ export const newsDemissaoSemJustaCausaOQueVoceRecebeExemploEmReais = {
   ],
   sources: [
     {
-      label: 'CLT, arts. 477 e 487 — rescisão e aviso prévio',
+      label: 'CLT, arts. 477 e 487: rescisão e aviso prévio',
     },
     {
-      label: 'Lei 12.506/2011 — aviso prévio proporcional',
+      label: 'Lei 12.506/2011: aviso prévio proporcional',
     },
     {
-      label: 'Lei 8.036/1990 — FGTS e multa rescisória',
+      label: 'Lei 8.036/1990: FGTS e multa rescisória',
     },
     {
-      label: 'Caixa Econômica Federal — saque do FGTS na rescisão',
+      label: 'Caixa Econômica Federal: saque do FGTS na rescisão',
       url: 'https://www.caixa.gov.br/beneficios-trabalhador/fgts/',
     },
   ],

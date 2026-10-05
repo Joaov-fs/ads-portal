@@ -135,7 +135,7 @@ export const guidePoupancaOuCdbQualRendeMais = {
       url: 'https://www.bcb.gov.br/',
     },
     {
-      label: 'Lei 12.703/2012 — regra da poupança',
+      label: 'Lei 12.703/2012: regra da poupança',
     },
     {
       label: 'Lei 11.033/2004',

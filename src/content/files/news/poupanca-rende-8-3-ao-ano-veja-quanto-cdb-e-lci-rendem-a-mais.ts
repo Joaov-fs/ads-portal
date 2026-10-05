@@ -97,16 +97,16 @@ export const newsPoupancaRende83AoAnoVejaQuantoCdbELciRendemAMais = {
   sources: [
     {
       label:
-        'Banco Central do Brasil — Poupança: rendimentos (série 195 do SGS)',
+        'Banco Central do Brasil: Poupança: rendimentos (série 195 do SGS)',
     },
     {
-      label: 'Lei 12.703/2012 — regra de remuneração da poupança',
+      label: 'Lei 12.703/2012: regra de remuneração da poupança',
     },
     {
-      label: 'Lei 11.033/2004 — Imposto de Renda sobre renda fixa',
+      label: 'Lei 11.033/2004: Imposto de Renda sobre renda fixa',
     },
     {
-      label: 'Fundo Garantidor de Créditos (FGC) — limite de cobertura',
+      label: 'Fundo Garantidor de Créditos (FGC): limite de cobertura',
       url: 'https://www.fgc.org.br/',
     },
   ],

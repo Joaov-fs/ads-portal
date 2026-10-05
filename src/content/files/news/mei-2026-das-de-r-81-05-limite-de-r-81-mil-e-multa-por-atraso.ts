@@ -95,17 +95,17 @@ export const newsMei2026DasDeR8105LimiteDeR81MilEMultaPorAtraso = {
   ],
   sources: [
     {
-      label: 'Portal do Simples Nacional — DAS-MEI',
+      label: 'Portal do Simples Nacional: DAS-MEI',
       url: 'https://www8.receita.fazenda.gov.br/simplesnacional/',
     },
     {
-      label: 'Lei Complementar 123/2006 — Estatuto da Microempresa',
+      label: 'Lei Complementar 123/2006: Estatuto da Microempresa',
     },
     {
       label: 'Resolução CGSN 140/2018',
     },
     {
-      label: 'Agência Brasil — contribuição do MEI sobe para R$ 81,05 em 2026',
+      label: 'Agência Brasil: contribuição do MEI sobe para R$ 81,05 em 2026',
     },
   ],
 } as const satisfies NewsDocument;

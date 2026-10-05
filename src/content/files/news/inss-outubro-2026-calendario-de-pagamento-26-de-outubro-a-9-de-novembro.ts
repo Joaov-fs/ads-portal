@@ -112,7 +112,7 @@ export const newsInssOutubro2026Calendario = {
     },
   ],
   sources: [
-    { label: 'INSS — calendário de pagamentos de benefícios 2026' },
-    { label: 'Meu INSS — consulta de benefícios e pagamentos' },
+    { label: 'INSS: calendário de pagamentos de benefícios 2026' },
+    { label: 'Meu INSS: consulta de benefícios e pagamentos' },
   ],
 } as const satisfies NewsDocument;

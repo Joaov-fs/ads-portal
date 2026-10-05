@@ -126,20 +126,20 @@ export const guideComoCalcularFeriasPassoAPasso = {
   ],
   sources: [
     {
-      label: 'CLT — arts. 129 a 145 (férias)',
+      label: 'CLT: arts. 129 a 145 (férias)',
     },
     {
       label: 'Constituição Federal, art. 7º, XVII',
     },
     {
-      label: 'Súmula 450 do TST — férias pagas fora do prazo',
+      label: 'Súmula 450 do TST: férias pagas fora do prazo',
     },
     {
       label: 'Ministério do Trabalho e Emprego',
       url: 'https://www.gov.br/trabalho-e-emprego/',
     },
     {
-      label: 'Receita Federal — tabela do IRRF de 2026',
+      label: 'Receita Federal: tabela do IRRF de 2026',
       url: 'https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026',
     },
   ],

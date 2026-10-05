@@ -222,8 +222,8 @@ function salarioLiquido(
     },
     chart: { title: 'Para onde vai o salário bruto', items: chartItems },
     references: [
-      'INSS — tabela de contribuição mensal de 2026',
-      'Receita Federal — tabela do IRRF de 2026',
+      'INSS: tabela de contribuição mensal de 2026',
+      'Receita Federal: tabela do IRRF de 2026',
       'Lei 15.270/2025 (isenção do IR até R$ 5 mil)',
     ],
     alerts,
@@ -445,7 +445,7 @@ function bolsaFamilia(values: CalculatorValues): CalculatorDecision {
       rows,
     },
     references: [
-      'MDS — Bolsa Família: valores a partir de outubro de 2026',
+      'MDS: Bolsa Família: valores a partir de outubro de 2026',
       'Lei 14.601/2023 (Programa Bolsa Família)',
     ],
     alerts,
@@ -453,8 +453,8 @@ function bolsaFamilia(values: CalculatorValues): CalculatorDecision {
 }
 
 const irrfReferences = [
-  'INSS — tabela de contribuição mensal de 2026',
-  'Receita Federal — tabela do IRRF de 2026',
+  'INSS: tabela de contribuição mensal de 2026',
+  'Receita Federal: tabela do IRRF de 2026',
   'Lei 15.270/2025 (isenção do IR até R$ 5 mil)',
 ] as const;
 const fixedIncomeTaxReference =
@@ -536,7 +536,7 @@ function seguroDesemprego(
       ],
     },
     references: [
-      'Ministério do Trabalho e Emprego e FAT — valores do seguro-desemprego em 2026',
+      'Ministério do Trabalho e Emprego e FAT: valores do seguro-desemprego em 2026',
       'Lei 7.998/1990 (Programa do Seguro-Desemprego)',
       'Resoluções do CODEFAT (número de parcelas)',
     ],
@@ -570,7 +570,7 @@ function fgtsMulta(values: CalculatorValues): CalculatorDecision {
         },
       ],
     },
-    references: ['Lei 8.036/1990 (FGTS), art. 18', 'Caixa — aplicativo FGTS'],
+    references: ['Lei 8.036/1990 (FGTS), art. 18', 'Caixa: aplicativo FGTS'],
     alerts: [
       'Estimativa sem a correção do saldo (TR mais 3% ao ano) e sem depósitos sobre o 13º. O extrato do aplicativo FGTS mostra o valor real.',
     ],
@@ -695,7 +695,7 @@ function inssAutonomo(values: CalculatorValues): CalculatorDecision {
       ],
     },
     references: [
-      'INSS — tabela de contribuição do contribuinte individual (2026)',
+      'INSS: tabela de contribuição do contribuinte individual (2026)',
       'Lei 8.212/1991, art. 21 (alíquotas do contribuinte individual)',
     ],
     alerts,
@@ -732,8 +732,8 @@ function dasMeiAtraso(values: CalculatorValues): CalculatorDecision {
     },
     references: [
       'Resolução CGSN 140/2018 (multa e juros do Simples Nacional e do MEI)',
-      'Banco Central — Selic acumulada no mês (série 4390 do SGS)',
-      'Portal do Simples Nacional — Receita Federal',
+      'Banco Central: Selic acumulada no mês (série 4390 do SGS)',
+      'Portal do Simples Nacional: Receita Federal',
     ],
     alerts,
   };
@@ -765,7 +765,7 @@ function bpc(
     references: [
       'Lei 8.742/1993 (LOAS), art. 20',
       'Lei 14.176/2021 (critério de renda do BPC)',
-      'INSS — Benefício de Prestação Continuada',
+      'INSS: Benefício de Prestação Continuada',
     ],
     alerts: [
       'Nem toda renda entra na conta, e quem mora junto conta como família. A análise oficial é do INSS.',
@@ -793,7 +793,7 @@ function pis(
       ],
     },
     references: [
-      'Ministério do Trabalho e Emprego — Abono Salarial',
+      'Ministério do Trabalho e Emprego: Abono Salarial',
       'Lei 7.998/1990, art. 9º (abono salarial)',
     ],
     alerts: [
@@ -821,7 +821,7 @@ function plrLiquida(values: CalculatorValues): CalculatorDecision {
       ],
     },
     references: [
-      'Receita Federal — tabela de tributação da PLR em 2026',
+      'Receita Federal: tabela de tributação da PLR em 2026',
       'Lei 10.101/2000 (participação nos lucros ou resultados)',
     ],
     alerts: [
@@ -960,7 +960,7 @@ function cdi(values: CalculatorValues): CalculatorDecision {
       'Rendimento líquido',
       result,
     ),
-    references: ['B3 — taxa DI/CDI', fixedIncomeTaxReference],
+    references: ['B3: taxa DI/CDI', fixedIncomeTaxReference],
     alerts: [
       'O CDI muda todos os dias. A projeção supõe a taxa informada constante pelo prazo todo.',
     ],
@@ -996,9 +996,9 @@ function fixedIncomeDecision(
       kind === 'cdb'
         ? [
             fixedIncomeTaxReference,
-            'Receita Federal — tributação de aplicações financeiras',
+            'Receita Federal: tributação de aplicações financeiras',
           ]
-        : [fixedIncomeTaxReference, 'Tesouro Nacional — Tesouro Direto'],
+        : [fixedIncomeTaxReference, 'Tesouro Nacional: Tesouro Direto'],
     alerts:
       kind === 'cdb'
         ? [
@@ -1021,7 +1021,7 @@ function lciLca(values: CalculatorValues): CalculatorDecision {
     interpretation: `Para render o mesmo líquido, um CDB precisaria pagar ${percent(cdbEquivalent)} ao ano brutos, já descontado o Imposto de Renda de ${percent(taxRate)} desse prazo.`,
     references: [
       'Lei 11.033/2004, art. 3º (isenção de IR para LCI e LCA)',
-      'Banco Central do Brasil — Cidadania Financeira',
+      'Banco Central do Brasil: Cidadania Financeira',
     ],
     alerts: [
       'Confira a carência e a liquidez: LCI e LCA costumam ter prazo mínimo para resgate.',
@@ -1059,7 +1059,7 @@ function cdbPoupanca(
     },
     references: [
       'Lei 12.703/2012 (regra de remuneração da poupança)',
-      'Banco Central do Brasil — rendimento da poupança',
+      'Banco Central do Brasil: rendimento da poupança',
       fixedIncomeTaxReference,
     ],
     alerts: [
@@ -1248,7 +1248,7 @@ function inssDecision(values: CalculatorValues): CalculatorDecision {
       ],
     },
     references: [
-      'INSS — tabela de contribuição mensal de 2026',
+      'INSS: tabela de contribuição mensal de 2026',
       'Portaria Interministerial MPS/MF de 2026 (reajuste do teto e das faixas)',
     ],
     alerts: [
@@ -1400,7 +1400,7 @@ function custoFuncionario(values: CalculatorValues): CalculatorDecision {
     references: [
       'Lei 8.212/1991 (contribuição patronal ao INSS)',
       'Lei 8.036/1990 (FGTS)',
-      'Receita Federal — Simples Nacional',
+      'Receita Federal: Simples Nacional',
     ],
     alerts: [
       'Empresas do Simples Nacional nos anexos I, II, III e V já pagam a contribuição patronal dentro do DAS; informe 0% nos encargos. Lucro presumido ou real costuma ficar perto de 28,8% (20% INSS, 1% a 3% RAT, 5,8% terceiros).',
@@ -1493,7 +1493,7 @@ function auxilioIncapacidade(values: CalculatorValues): CalculatorDecision {
     references: [
       'Emenda Constitucional 103/2019 (regra de cálculo)',
       'Lei 8.213/1991, arts. 59 a 63 (auxílio por incapacidade temporária)',
-      'INSS — Meu INSS',
+      'INSS: Meu INSS',
     ],
     alerts,
   };

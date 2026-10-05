@@ -117,18 +117,18 @@ export const guideReajusteDoAluguelComoCalcularIgpMOuIpca = {
   ],
   sources: [
     {
-      label: 'Lei 8.245/1991 — Lei do Inquilinato',
+      label: 'Lei 8.245/1991: Lei do Inquilinato',
       url: 'https://www.planalto.gov.br/ccivil_03/leis/l8245.htm',
     },
     {
-      label: 'Lei 10.192/2001 — periodicidade mínima do reajuste',
+      label: 'Lei 10.192/2001: periodicidade mínima do reajuste',
       url: 'https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10192.htm',
     },
     {
-      label: 'FGV IBRE — IGP-M',
+      label: 'FGV IBRE: IGP-M',
     },
     {
-      label: 'IBGE — IPCA',
+      label: 'IBGE: IPCA',
     },
   ],
 } as const satisfies GuideDocument;

@@ -101,16 +101,15 @@ export const newsFinanciamentoSacOuPriceDiferencaDeR135MilEmJurosNoExemplo = {
   sources: [
     {
       label:
-        'Banco Central do Brasil — Custo Efetivo Total (CET) e taxas de juros do crédito imobiliário',
+        'Banco Central do Brasil: Custo Efetivo Total (CET) e taxas de juros do crédito imobiliário',
       url: 'https://www.bcb.gov.br/estatisticas/reporttxjuros',
     },
     {
-      label:
-        'Caixa Econômica Federal — financiamento imobiliário (SAC e Price)',
+      label: 'Caixa Econômica Federal: financiamento imobiliário (SAC e Price)',
       url: 'https://www.caixa.gov.br/voce/habitacao/',
     },
     {
-      label: 'Lei 9.514/1997 — Sistema de Financiamento Imobiliário',
+      label: 'Lei 9.514/1997: Sistema de Financiamento Imobiliário',
     },
   ],
 } as const satisfies NewsDocument;

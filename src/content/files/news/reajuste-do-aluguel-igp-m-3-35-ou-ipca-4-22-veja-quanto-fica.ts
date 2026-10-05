@@ -94,17 +94,17 @@ export const newsReajusteDoAluguelIgpM335OuIpca422VejaQuantoFica = {
   ],
   sources: [
     {
-      label: 'FGV IBRE — Índice Geral de Preços do Mercado (IGP-M)',
+      label: 'FGV IBRE: Índice Geral de Preços do Mercado (IGP-M)',
     },
     {
-      label: 'IBGE — Índice Nacional de Preços ao Consumidor Amplo (IPCA)',
+      label: 'IBGE: Índice Nacional de Preços ao Consumidor Amplo (IPCA)',
     },
     {
       label:
-        'Banco Central do Brasil — Sistema Gerenciador de Séries Temporais, séries 189 e 13522',
+        'Banco Central do Brasil: Sistema Gerenciador de Séries Temporais, séries 189 e 13522',
     },
     {
-      label: 'Lei 8.245/1991 — Lei do Inquilinato',
+      label: 'Lei 8.245/1991: Lei do Inquilinato',
     },
   ],
 } as const satisfies NewsDocument;

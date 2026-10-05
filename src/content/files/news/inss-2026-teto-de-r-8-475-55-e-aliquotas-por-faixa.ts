@@ -86,15 +86,15 @@ export const newsInss2026TetoDeR847555EAliquotasPorFaixa = {
   ],
   sources: [
     {
-      label: 'INSS — tabela de contribuição mensal de 2026',
+      label: 'INSS: tabela de contribuição mensal de 2026',
       url: 'https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabela-de-contribuicao-mensal',
     },
     {
       label:
-        'Portaria Interministerial MPS/MF — reajuste dos benefícios e do teto em 2026',
+        'Portaria Interministerial MPS/MF: reajuste dos benefícios e do teto em 2026',
     },
     {
-      label: 'Emenda Constitucional 103/2019 — reforma da Previdência',
+      label: 'Emenda Constitucional 103/2019: reforma da Previdência',
     },
   ],
 } as const satisfies NewsDocument;

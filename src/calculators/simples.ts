@@ -5,7 +5,7 @@ export const simplesBracketLimits = [
 
 export const simplesAnnexes = {
   1: {
-    name: 'Anexo I — Comércio',
+    name: 'Anexo I: Comércio',
     brackets: [
       [4, 0],
       [7.3, 5940],
@@ -16,7 +16,7 @@ export const simplesAnnexes = {
     ],
   },
   2: {
-    name: 'Anexo II — Indústria',
+    name: 'Anexo II: Indústria',
     brackets: [
       [4.5, 0],
       [7.8, 5940],
@@ -27,7 +27,7 @@ export const simplesAnnexes = {
     ],
   },
   3: {
-    name: 'Anexo III — Serviços',
+    name: 'Anexo III: Serviços',
     brackets: [
       [6, 0],
       [11.2, 9360],
@@ -38,7 +38,7 @@ export const simplesAnnexes = {
     ],
   },
   4: {
-    name: 'Anexo IV — Serviços (construção, vigilância, limpeza e advocacia)',
+    name: 'Anexo IV: Serviços (construção, vigilância, limpeza e advocacia)',
     brackets: [
       [4.5, 0],
       [9, 8100],
@@ -49,7 +49,7 @@ export const simplesAnnexes = {
     ],
   },
   5: {
-    name: 'Anexo V — Serviços intelectuais',
+    name: 'Anexo V: Serviços intelectuais',
     brackets: [
       [15.5, 0],
       [18, 4500],

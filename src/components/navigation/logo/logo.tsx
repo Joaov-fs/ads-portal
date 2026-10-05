@@ -13,7 +13,7 @@ type LogoProps = Readonly<{
 export function Logo({ className, tone = 'light' }: LogoProps) {
   return (
     <Link
-      aria-label="PortalFina — início"
+      aria-label="PortalFina: início"
       className={mergeClassNames(
         'inline-flex items-center gap-2.5 text-xl font-extrabold tracking-[-0.04em] sm:text-[1.65rem]',
         tone === 'dark' ? 'text-white' : 'text-ads-secondary',

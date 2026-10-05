@@ -123,17 +123,17 @@ export const news13oSalario2026DatasEQuantoVoceRecebe = {
   ],
   sources: [
     {
-      label: 'Lei 4.090/1962 — Gratificação de Natal (13º salário)',
+      label: 'Lei 4.090/1962: Gratificação de Natal (13º salário)',
     },
     {
-      label: 'Lei 4.749/1965 — prazos de pagamento do 13º',
+      label: 'Lei 4.749/1965: prazos de pagamento do 13º',
     },
     {
-      label: 'Ministério do Trabalho e Emprego — 13º salário',
+      label: 'Ministério do Trabalho e Emprego: 13º salário',
       url: 'https://www.gov.br/trabalho-e-emprego/',
     },
     {
-      label: 'Receita Federal — tabela do IRRF de 2026',
+      label: 'Receita Federal: tabela do IRRF de 2026',
     },
   ],
 } as const satisfies NewsDocument;

@@ -135,11 +135,11 @@ export const guideTabelaDoImpostoDeRenda2026NaFolha = {
   ],
   sources: [
     {
-      label: 'Receita Federal — tabela do IRRF de 2026',
+      label: 'Receita Federal: tabela do IRRF de 2026',
       url: 'https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026',
     },
     {
-      label: 'Lei 15.270/2025 — isenção do IR até R$ 5.000',
+      label: 'Lei 15.270/2025: isenção do IR até R$ 5.000',
       url: 'https://www2.camara.leg.br/legin/fed/lei/2025/lei-15270-26-novembro-2025-798354-publicacaooriginal-177117-pl.html',
     },
   ],

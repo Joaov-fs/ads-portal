@@ -91,18 +91,17 @@ export const newsHorasExtrasComoCalcular50100EOReflexoNoDsr = {
   ],
   sources: [
     {
-      label: 'Constituição Federal, art. 7º, XVI — adicional de hora extra',
+      label: 'Constituição Federal, art. 7º, XVI: adicional de hora extra',
+    },
+    {
+      label: 'CLT, arts. 58, 59 e 59-B: jornada, horas extras e banco de horas',
     },
     {
       label:
-        'CLT, arts. 58, 59 e 59-B — jornada, horas extras e banco de horas',
+        'Súmula 172 do Tribunal Superior do Trabalho: reflexo no repouso semanal',
     },
     {
-      label:
-        'Súmula 172 do Tribunal Superior do Trabalho — reflexo no repouso semanal',
-    },
-    {
-      label: 'Ministério do Trabalho e Emprego — jornada de trabalho',
+      label: 'Ministério do Trabalho e Emprego: jornada de trabalho',
       url: 'https://www.gov.br/trabalho-e-emprego/',
     },
   ],

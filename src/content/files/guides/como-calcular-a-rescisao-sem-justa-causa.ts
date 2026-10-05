@@ -121,20 +121,20 @@ export const guideComoCalcularARescisaoSemJustaCausa = {
   ],
   sources: [
     {
-      label: 'CLT — arts. 477 e 487 a 491 (rescisão e aviso prévio)',
+      label: 'CLT: arts. 477 e 487 a 491 (rescisão e aviso prévio)',
     },
     {
-      label: 'Lei 12.506/2011 — aviso prévio proporcional',
+      label: 'Lei 12.506/2011: aviso prévio proporcional',
     },
     {
-      label: 'Lei 8.036/1990 — FGTS e multa rescisória',
+      label: 'Lei 8.036/1990: FGTS e multa rescisória',
     },
     {
       label: 'Ministério do Trabalho e Emprego',
       url: 'https://www.gov.br/trabalho-e-emprego/',
     },
     {
-      label: 'Caixa Econômica Federal — FGTS',
+      label: 'Caixa Econômica Federal: FGTS',
       url: 'https://www.caixa.gov.br/beneficios-trabalhador/fgts/',
     },
   ],

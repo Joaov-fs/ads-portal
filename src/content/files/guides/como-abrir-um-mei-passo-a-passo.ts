@@ -124,24 +124,24 @@ export const guideComoAbrirUmMeiPassoAPasso = {
   ],
   sources: [
     {
-      label: 'Portal do Empreendedor — Governo Federal',
+      label: 'Portal do Empreendedor: Governo Federal',
       url: 'https://www.gov.br/empresas-e-negocios/pt-br/empreendedor',
     },
     {
       label:
-        'Quero crescer ou deixar de ser MEI (desenquadramento) — Portal do Empreendedor',
+        'Quero crescer ou deixar de ser MEI (desenquadramento): Portal do Empreendedor',
       url: 'https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/servicos-para-mei/quero-crescer-desenquadramento',
     },
     {
-      label: 'Perguntas e Respostas MEI e Simei — Receita Federal',
+      label: 'Perguntas e Respostas MEI e Simei: Receita Federal',
       url: 'https://www8.receita.fazenda.gov.br/simplesnacional/arquivos/manual/perguntaomei.pdf',
     },
     {
-      label: 'Lei Complementar 123/2006 — Estatuto da Microempresa',
+      label: 'Lei Complementar 123/2006: Estatuto da Microempresa',
       url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm',
     },
     {
-      label: 'Sebrae — Central de Relacionamento 0800 570 0800',
+      label: 'Sebrae: Central de Relacionamento 0800 570 0800',
       url: 'https://sebrae.com.br/sites/PortalSebrae/artigos/como-entrar-em-contato-com-o-sebrae',
     },
   ],

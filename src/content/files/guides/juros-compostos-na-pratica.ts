@@ -124,10 +124,10 @@ export const guideJurosCompostosNaPratica = {
       url: 'https://www.bcb.gov.br/',
     },
     {
-      label: 'Banco Central — Cidadania Financeira',
+      label: 'Banco Central: Cidadania Financeira',
     },
     {
-      label: 'Resolução CMN 4.765/2019 — limite de juros do cheque especial',
+      label: 'Resolução CMN 4.765/2019: limite de juros do cheque especial',
     },
   ],
 } as const satisfies GuideDocument;

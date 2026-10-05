@@ -89,8 +89,8 @@ export const newsSaqueAniversarioFgtsOutubro2026 = {
     },
   ],
   sources: [
-    { label: 'Caixa Econômica Federal — saque-aniversário do FGTS' },
+    { label: 'Caixa Econômica Federal: saque-aniversário do FGTS' },
     { label: 'Lei 8.036/1990 (Lei do FGTS)' },
-    { label: 'Aplicativo FGTS — consulta de saldo e modalidade' },
+    { label: 'Aplicativo FGTS: consulta de saldo e modalidade' },
   ],
 } as const satisfies NewsDocument;

@@ -140,11 +140,11 @@ export const guideComoConsultarSaldoEExtratoDoFgts = {
   ],
   sources: [
     {
-      label: 'Caixa Econômica Federal — FGTS',
+      label: 'Caixa Econômica Federal: FGTS',
       url: 'https://www.caixa.gov.br/beneficios-trabalhador/fgts/',
     },
     {
-      label: 'Lei 8.036/1990 — FGTS',
+      label: 'Lei 8.036/1990: FGTS',
     },
     {
       label: 'Ministério do Trabalho e Emprego',

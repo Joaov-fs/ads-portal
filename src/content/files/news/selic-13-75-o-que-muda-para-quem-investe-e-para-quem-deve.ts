@@ -97,18 +97,18 @@ export const newsSelic1375OQueMudaParaQuemInvesteEParaQuemDeve = {
   ],
   sources: [
     {
-      label: 'Banco Central do Brasil — Comitê de Política Monetária (Copom)',
+      label: 'Banco Central do Brasil: Comitê de Política Monetária (Copom)',
       url: 'https://www.bcb.gov.br/controleinflacao/historicotaxasjuros',
     },
     {
       label:
-        'Banco Central do Brasil — Sistema Gerenciador de Séries Temporais, série 432 (meta Selic)',
+        'Banco Central do Brasil: Sistema Gerenciador de Séries Temporais, série 432 (meta Selic)',
     },
     {
-      label: 'IBGE — IPCA, acumulado em 12 meses',
+      label: 'IBGE: IPCA, acumulado em 12 meses',
     },
     {
-      label: 'Lei 11.033/2004 — tabela regressiva do Imposto de Renda',
+      label: 'Lei 11.033/2004: tabela regressiva do Imposto de Renda',
     },
   ],
 } as const satisfies NewsDocument;

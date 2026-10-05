@@ -136,7 +136,7 @@ export const guideComoConsultarASituacaoDoCpf = {
       url: 'https://www.gov.br/',
     },
     {
-      label: 'Receita Federal — Cadastro de Pessoas Físicas (CPF)',
+      label: 'Receita Federal: Cadastro de Pessoas Físicas (CPF)',
     },
   ],
 } as const satisfies GuideDocument;

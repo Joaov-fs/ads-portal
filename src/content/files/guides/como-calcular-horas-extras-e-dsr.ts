@@ -126,19 +126,19 @@ export const guideComoCalcularHorasExtrasEDsr = {
   ],
   sources: [
     {
-      label: 'CLT — arts. 58 a 62 e 73 (jornada, extras e adicional noturno)',
+      label: 'CLT: arts. 58 a 62 e 73 (jornada, extras e adicional noturno)',
     },
     {
       label: 'Constituição Federal, art. 7º',
     },
     {
-      label: 'Lei 605/1949 — repouso semanal remunerado',
+      label: 'Lei 605/1949: repouso semanal remunerado',
     },
     {
-      label: 'Súmula 172 do TST — reflexo no repouso semanal',
+      label: 'Súmula 172 do TST: reflexo no repouso semanal',
     },
     {
-      label: 'Súmula 146 do TST — trabalho em domingos e feriados',
+      label: 'Súmula 146 do TST: trabalho em domingos e feriados',
     },
   ],
 } as const satisfies GuideDocument;

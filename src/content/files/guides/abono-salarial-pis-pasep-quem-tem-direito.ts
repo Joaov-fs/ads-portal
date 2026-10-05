@@ -153,18 +153,18 @@ export const guideAbonoSalarialPisPasepQuemTemDireito = {
   ],
   sources: [
     {
-      label: 'Ministério do Trabalho e Emprego — Abono Salarial',
+      label: 'Ministério do Trabalho e Emprego: Abono Salarial',
       url: 'https://www.gov.br/trabalho-e-emprego/pt-br/servicos/trabalhador/abono-salarial',
     },
     {
-      label: 'Agência Brasil — como consultar o abono salarial PIS/Pasep 2026',
+      label: 'Agência Brasil: como consultar o abono salarial PIS/Pasep 2026',
       url: 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-02/saiba-como-consultar-se-tem-direito-ao-abono-salarial-pispasep-2026',
     },
     {
-      label: 'Caixa Econômica Federal — PIS',
+      label: 'Caixa Econômica Federal: PIS',
     },
     {
-      label: 'Banco do Brasil — Pasep',
+      label: 'Banco do Brasil: Pasep',
     },
   ],
 } as const satisfies GuideDocument;

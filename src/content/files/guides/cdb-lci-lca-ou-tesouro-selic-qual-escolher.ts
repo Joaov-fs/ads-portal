@@ -150,17 +150,17 @@ export const guideCdbLciLcaOuTesouroSelicQualEscolher = {
   ],
   sources: [
     {
-      label: 'Lei 11.033/2004 — tributação da renda fixa',
+      label: 'Lei 11.033/2004: tributação da renda fixa',
     },
     {
       label: 'Fundo Garantidor de Créditos',
       url: 'https://www.fgc.org.br/',
     },
     {
-      label: 'Tesouro Nacional — Tesouro Direto',
+      label: 'Tesouro Nacional: Tesouro Direto',
     },
     {
-      label: 'B3 — Tarifas do Tesouro Direto',
+      label: 'B3: Tarifas do Tesouro Direto',
       url: 'https://www.b3.com.br/pt_br/produtos-e-servicos/tarifas/tarifas-de-tesouro-direto/',
     },
     {

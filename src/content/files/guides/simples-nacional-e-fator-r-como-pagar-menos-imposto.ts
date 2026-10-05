@@ -126,11 +126,11 @@ export const guideSimplesNacionalEFatorRComoPagarMenosImposto = {
   ],
   sources: [
     {
-      label: 'Lei Complementar 123/2006 — Simples Nacional',
+      label: 'Lei Complementar 123/2006: Simples Nacional',
       url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm',
     },
     {
-      label: 'Receita Federal — Simples Nacional',
+      label: 'Receita Federal: Simples Nacional',
     },
     {
       label: 'Comitê Gestor do Simples Nacional',

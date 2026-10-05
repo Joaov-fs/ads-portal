@@ -120,18 +120,18 @@ export const holeriteGuide = {
   ],
   sources: [
     {
-      label: 'CLT — arts. 459, 462 e 464 (pagamento e descontos do salário)',
+      label: 'CLT: arts. 459, 462 e 464 (pagamento e descontos do salário)',
     },
     {
       label: 'Ministério do Trabalho e Emprego',
       url: 'https://www.gov.br/trabalho-e-emprego/',
     },
     {
-      label: 'INSS — tabela de contribuição mensal de 2026',
+      label: 'INSS: tabela de contribuição mensal de 2026',
       url: 'https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabela-de-contribuicao-mensal',
     },
     {
-      label: 'Receita Federal — tabela do IRRF de 2026',
+      label: 'Receita Federal: tabela do IRRF de 2026',
       url: 'https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026',
     },
   ],

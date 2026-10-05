@@ -123,17 +123,17 @@ export const guideComoIdentificarBoletoFalsoEPagarComSeguranca = {
   ],
   sources: [
     {
-      label: 'Federação Brasileira de Bancos (Febraban) — dicas de segurança',
+      label: 'Federação Brasileira de Bancos (Febraban): dicas de segurança',
     },
     {
-      label: 'Banco Central do Brasil — dicas de segurança',
+      label: 'Banco Central do Brasil: dicas de segurança',
     },
     {
       label: 'Código de Defesa do Consumidor (Lei 8.078/1990)',
     },
     {
       label:
-        'Banco Central do Brasil — reclamação contra instituições financeiras',
+        'Banco Central do Brasil: reclamação contra instituições financeiras',
       url: 'https://www.gov.br/pt-br/servicos/registrar-reclamacao-contra-instituicao-supervisionada-pelo-banco-central',
     },
   ],

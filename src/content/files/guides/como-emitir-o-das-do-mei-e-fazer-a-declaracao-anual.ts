@@ -51,7 +51,7 @@ export const guideComoEmitirODasDoMeiEFazerADeclaracaoAnual = {
     {
       heading: 'Passo 1: emita a guia do mês',
       paragraphs: [
-        'Acesse o Portal do Simples Nacional, entre em "PGMEI — Gerar DAS" com o CNPJ, ou use o aplicativo MEI. Escolha o ano e o mês (a competência) e gere o documento. O valor já vem calculado conforme a atividade: R$ 82,05 para comércio, R$ 86,05 para serviços e R$ 87,05 para quem faz as duas coisas.',
+        'Acesse o Portal do Simples Nacional, entre em "PGMEI: Gerar DAS" com o CNPJ, ou use o aplicativo MEI. Escolha o ano e o mês (a competência) e gere o documento. O valor já vem calculado conforme a atividade: R$ 82,05 para comércio, R$ 86,05 para serviços e R$ 87,05 para quem faz as duas coisas.',
         'Confira se o CNPJ e a competência estão corretos antes de pagar. Pagar a guia de um mês no lugar da de outro não quita o mês que ficou em aberto.',
       ],
     },
@@ -138,11 +138,11 @@ export const guideComoEmitirODasDoMeiEFazerADeclaracaoAnual = {
       url: 'https://www.gov.br/empresas-e-negocios/pt-br/empreendedor',
     },
     {
-      label: 'Perguntas e Respostas MEI e Simei — Receita Federal',
+      label: 'Perguntas e Respostas MEI e Simei: Receita Federal',
       url: 'https://www8.receita.fazenda.gov.br/simplesnacional/arquivos/manual/perguntaomei.pdf',
     },
     {
-      label: 'Sebrae — Central de Relacionamento 0800 570 0800',
+      label: 'Sebrae: Central de Relacionamento 0800 570 0800',
       url: 'https://sebrae.com.br/sites/PortalSebrae/artigos/como-entrar-em-contato-com-o-sebrae',
     },
   ],

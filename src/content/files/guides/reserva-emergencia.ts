@@ -124,7 +124,7 @@ export const reservaEmergenciaGuide = {
       url: 'https://www.gov.br/investidor/',
     },
     {
-      label: 'Banco Central do Brasil — Cidadania Financeira',
+      label: 'Banco Central do Brasil: Cidadania Financeira',
       url: 'https://www.bcb.gov.br/cidadaniafinanceira',
     },
     {
@@ -132,7 +132,7 @@ export const reservaEmergenciaGuide = {
       url: 'https://www.fgc.org.br/',
     },
     {
-      label: 'Lei 11.033/2004 — tributação da renda fixa',
+      label: 'Lei 11.033/2004: tributação da renda fixa',
     },
   ],
 } as const satisfies GuideDocument;

@@ -63,7 +63,7 @@ const date = (name: string, label: string, hint?: string): CalculatorField => ({
 
 const sourcesByCategory = {
   beneficios: {
-    label: 'Portal Gov.br — Benefícios',
+    label: 'Portal Gov.br: Benefícios',
     url: 'https://www.gov.br/pt-br/servicos/solicitar-beneficios-assistenciais',
   },
   economia: {
@@ -71,7 +71,7 @@ const sourcesByCategory = {
     url: 'https://www.bcb.gov.br/',
   },
   financas: {
-    label: 'Banco Central do Brasil — Cidadania Financeira',
+    label: 'Banco Central do Brasil: Cidadania Financeira',
     url: 'https://www.bcb.gov.br/cidadaniafinanceira',
   },
   trabalho: {
@@ -150,7 +150,7 @@ const specs = [
     ],
     sources: [
       {
-        label: 'Fundo de Amparo ao Trabalhador — tabela 2026',
+        label: 'Fundo de Amparo ao Trabalhador: tabela 2026',
         url: 'https://portalfat.mte.gov.br/mte-reajusta-valores-do-beneficio-seguro-desemprego/',
       },
     ],
@@ -199,7 +199,7 @@ const specs = [
     ],
     sources: [
       {
-        label: 'Receita Federal — tributação de 2026',
+        label: 'Receita Federal: tributação de 2026',
         url: 'https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026',
       },
     ],
@@ -274,7 +274,7 @@ const specs = [
     ],
     sources: [
       {
-        label: 'INSS — tabela de contribuição mensal de 2026',
+        label: 'INSS: tabela de contribuição mensal de 2026',
         url: 'https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabela-de-contribuicao-mensal',
       },
     ],
@@ -389,7 +389,7 @@ const specs = [
     sources: [
       {
         label:
-          'MDS — Bolsa Família terá valor mínimo de R$ 691 a partir de outubro',
+          'MDS: Bolsa Família terá valor mínimo de R$ 691 a partir de outubro',
         url: 'https://www.gov.br/mds/pt-br/noticias/bolsa-familia-tera-valor-minimo-de-r-691-a-partir-de-outubro',
       },
     ],
@@ -626,7 +626,7 @@ const specs = [
     fields: [money('amount', 'PLR/PPR bruta')],
     sources: [
       {
-        label: 'Receita Federal — tabela exclusiva de PLR',
+        label: 'Receita Federal: tabela exclusiva de PLR',
         url: 'https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026',
       },
     ],

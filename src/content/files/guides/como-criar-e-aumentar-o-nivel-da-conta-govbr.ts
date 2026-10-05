@@ -116,7 +116,7 @@ export const guideComoCriarEAumentarONivelDaContaGovbr = {
   ],
   sources: [
     {
-      label: 'Níveis da conta gov.br — Governo Digital',
+      label: 'Níveis da conta gov.br: Governo Digital',
       url: 'https://www.gov.br/governodigital/pt-br/identidade/conta-gov-br/niveis-da-conta-govbr',
     },
     {
@@ -124,7 +124,7 @@ export const guideComoCriarEAumentarONivelDaContaGovbr = {
       url: 'https://www.gov.br/',
     },
     {
-      label: 'Decreto 10.332/2020 — Estratégia de Governo Digital',
+      label: 'Decreto 10.332/2020: Estratégia de Governo Digital',
     },
   ],
 } as const satisfies GuideDocument;

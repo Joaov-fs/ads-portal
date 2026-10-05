@@ -138,7 +138,7 @@ export const guideComoMontarUmOrcamentoMensalSimples = {
       url: 'https://www.bcb.gov.br/',
     },
     {
-      label: 'Banco Central do Brasil — Cidadania Financeira',
+      label: 'Banco Central do Brasil: Cidadania Financeira',
       url: 'https://www.bcb.gov.br/cidadaniafinanceira',
     },
   ],
