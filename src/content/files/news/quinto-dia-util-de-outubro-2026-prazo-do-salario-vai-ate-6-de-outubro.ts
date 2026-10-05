@@ -100,13 +100,12 @@ export const newsQuintoDiaUtilDeOutubro2026 = {
   ],
   sources: [
     {
-      label:
-        'CLT (Decreto-Lei 5.452/1943) — art. 459, parágrafo 1º, e art. 483',
+      label: 'CLT (Decreto-Lei 5.452/1943): art. 459, parágrafo 1º, e art. 483',
     },
     {
       label:
-        'Tribunal Superior do Trabalho — Súmula 381 (correção monetária do salário)',
+        'Tribunal Superior do Trabalho: Súmula 381 (correção monetária do salário)',
     },
-    { label: 'INSS — tabela de contribuição mensal de 2026' },
+    { label: 'INSS: tabela de contribuição mensal de 2026' },
   ],
 } as const satisfies NewsDocument;

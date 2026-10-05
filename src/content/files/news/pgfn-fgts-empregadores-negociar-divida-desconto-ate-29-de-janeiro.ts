@@ -121,9 +121,9 @@ export const newsPgfnFgtsEmpregadoresNegociarDivida = {
   sources: [
     {
       label:
-        'PGFN — Novos editais da PGFN para renegociação de dívidas (2/10/2026)',
+        'PGFN: Novos editais da PGFN para renegociação de dívidas (2/10/2026)',
     },
-    { label: 'PGFN — Edital de Transação PGDAU nº 12/2026' },
+    { label: 'PGFN: Edital de Transação PGDAU nº 12/2026' },
     { label: 'Lei nº 8.036/1990 (FGTS) e Lei Complementar nº 110/2001' },
   ],
 } as const satisfies NewsDocument;

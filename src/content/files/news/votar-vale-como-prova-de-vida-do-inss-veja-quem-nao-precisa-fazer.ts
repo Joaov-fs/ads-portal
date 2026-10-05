@@ -115,11 +115,11 @@ export const newsVotarValeComoProvaDeVidaDoInss = {
   sources: [
     {
       label:
-        'INSS — Comparecimento às urnas vale como Prova de Vida automática no INSS (publicada em 18/9/2026 e atualizada em 1º/10/2026)',
+        'INSS: Comparecimento às urnas vale como Prova de Vida automática no INSS (publicada em 18/9/2026 e atualizada em 1º/10/2026)',
     },
     {
       label:
-        'Tribunal Superior Eleitoral — Comparecimento à votação nas Eleições 2026 pode ser utilizado como prova de vida do INSS (22/9/2026)',
+        'Tribunal Superior Eleitoral: Comparecimento à votação nas Eleições 2026 pode ser utilizado como prova de vida do INSS (22/9/2026)',
     },
     { label: 'Lei 13.846/2019 e Portaria PRES/INSS nº 1.408/2022' },
   ],
