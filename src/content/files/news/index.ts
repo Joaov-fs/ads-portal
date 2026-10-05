@@ -20,9 +20,11 @@ import { newsSaqueAniversarioFgtsOutubro2026 } from './saque-aniversario-fgts-ou
 import { newsQuintoDiaUtilDeOutubro2026 } from './quinto-dia-util-de-outubro-2026-prazo-do-salario-vai-ate-6-de-outubro';
 import { desenrolaMeiPequenoValorNews } from './desenrola-mei-pequeno-valor';
 import { newsVotarValeComoProvaDeVidaDoInss } from './votar-vale-como-prova-de-vida-do-inss-veja-quem-nao-precisa-fazer';
+import { newsPgfnFgtsEmpregadoresNegociarDivida } from './pgfn-fgts-empregadores-negociar-divida-desconto-ate-29-de-janeiro';
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
 export const newsFiles = [
+  newsPgfnFgtsEmpregadoresNegociarDivida,
   newsVotarValeComoProvaDeVidaDoInss,
   newsInssOutubro2026Calendario,
   newsSalarioMinimo2027Orcamento,
