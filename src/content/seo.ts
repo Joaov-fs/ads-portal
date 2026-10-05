@@ -69,6 +69,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'votar-vale-como-prova-de-vida-do-inss-veja-quem-nao-precisa-fazer':
+    'Votar vale como prova de vida do INSS em 2026',
   'inss-outubro-2026-calendario-de-pagamento-26-de-outubro-a-9-de-novembro':
     'INSS outubro 2026: calendário de pagamento',
   'salario-minimo-2027-orcamento-preve-r-1-741-veja-o-que-muda':

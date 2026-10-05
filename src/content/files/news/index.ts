@@ -19,9 +19,11 @@ import { newsSalarioMinimo2027Orcamento } from './salario-minimo-2027-orcamento-
 import { newsSaqueAniversarioFgtsOutubro2026 } from './saque-aniversario-fgts-outubro-2026-ate-31-de-dezembro-quanto-sai';
 import { newsQuintoDiaUtilDeOutubro2026 } from './quinto-dia-util-de-outubro-2026-prazo-do-salario-vai-ate-6-de-outubro';
 import { desenrolaMeiPequenoValorNews } from './desenrola-mei-pequeno-valor';
+import { newsVotarValeComoProvaDeVidaDoInss } from './votar-vale-como-prova-de-vida-do-inss-veja-quem-nao-precisa-fazer';
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
 export const newsFiles = [
+  newsVotarValeComoProvaDeVidaDoInss,
   newsInssOutubro2026Calendario,
   newsSalarioMinimo2027Orcamento,
   newsSaqueAniversarioFgtsOutubro2026,
