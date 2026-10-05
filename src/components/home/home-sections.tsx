@@ -46,10 +46,6 @@ export function SectionHeading({
               dark ? 'text-emerald-200' : 'text-ads-primary-strong'
             }`}
           >
-            <span
-              aria-hidden="true"
-              className={`h-px w-6 ${dark ? 'bg-emerald-200/60' : 'bg-ads-primary'}`}
-            />
             {eyebrow}
           </span>
           <h2

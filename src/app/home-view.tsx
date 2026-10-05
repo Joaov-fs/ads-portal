@@ -492,10 +492,6 @@ export function HomeView({
             <div className="grid content-start gap-4 lg:sticky lg:top-28 lg:self-start">
               <Reveal>
                 <span className="inline-flex w-fit items-center gap-2 text-ads-eyebrow font-bold uppercase tracking-[0.16em] text-ads-primary-strong">
-                  <span
-                    aria-hidden="true"
-                    className="h-px w-6 bg-ads-primary"
-                  />
                   Economia
                 </span>
                 <h2
@@ -531,10 +527,6 @@ export function HomeView({
             <Reveal variant="fade-left">
               <div className="grid gap-4">
                 <span className="inline-flex w-fit items-center gap-2 text-ads-eyebrow font-bold uppercase tracking-[0.16em] text-emerald-200">
-                  <span
-                    aria-hidden="true"
-                    className="h-px w-6 bg-emerald-200/60"
-                  />
                   Impostômetro
                 </span>
                 <h2
@@ -610,10 +602,6 @@ export function HomeView({
             <div className="grid content-start gap-4 lg:sticky lg:top-28 lg:self-start">
               <Reveal>
                 <span className="inline-flex w-fit items-center gap-2 text-ads-eyebrow font-bold uppercase tracking-[0.16em] text-ads-primary-strong">
-                  <span
-                    aria-hidden="true"
-                    className="h-px w-6 bg-ads-primary"
-                  />
                   Direitos e programas
                 </span>
                 <h2
