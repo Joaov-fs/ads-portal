@@ -22,9 +22,11 @@ import { desenrolaMeiPequenoValorNews } from './desenrola-mei-pequeno-valor';
 import { newsVotarValeComoProvaDeVidaDoInss } from './votar-vale-como-prova-de-vida-do-inss-veja-quem-nao-precisa-fazer';
 import { newsPgfnFgtsEmpregadoresNegociarDivida } from './pgfn-fgts-empregadores-negociar-divida-desconto-ate-29-de-janeiro';
 import { newsFocusInflacao501Selic135 } from './focus-inflacao-5-01-selic-13-5-fim-de-2026-o-que-o-mercado-preve';
+import { newsPixPorAproximacaoSemTetoDeR500 } from './pix-por-aproximacao-sem-teto-de-r-500-como-ajustar-o-limite-no-app';
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
 export const newsFiles = [
+  newsPixPorAproximacaoSemTetoDeR500,
   newsFocusInflacao501Selic135,
   newsPgfnFgtsEmpregadoresNegociarDivida,
   newsVotarValeComoProvaDeVidaDoInss,
