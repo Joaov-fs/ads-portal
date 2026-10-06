@@ -21,9 +21,11 @@ import { newsQuintoDiaUtilDeOutubro2026 } from './quinto-dia-util-de-outubro-202
 import { desenrolaMeiPequenoValorNews } from './desenrola-mei-pequeno-valor';
 import { newsVotarValeComoProvaDeVidaDoInss } from './votar-vale-como-prova-de-vida-do-inss-veja-quem-nao-precisa-fazer';
 import { newsPgfnFgtsEmpregadoresNegociarDivida } from './pgfn-fgts-empregadores-negociar-divida-desconto-ate-29-de-janeiro';
+import { newsFocusInflacao501Selic135 } from './focus-inflacao-5-01-selic-13-5-fim-de-2026-o-que-o-mercado-preve';
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
 export const newsFiles = [
+  newsFocusInflacao501Selic135,
   newsPgfnFgtsEmpregadoresNegociarDivida,
   newsVotarValeComoProvaDeVidaDoInss,
   newsInssOutubro2026Calendario,
