@@ -54,6 +54,12 @@ export const topicGroups: readonly (readonly string[])[] = [
     'salario-liquido',
   ],
   [
+    'receita-envia-cartas-a-498-mil-contribuintes-na-malha-fina-ate-20-de-outubro',
+    'como-consultar-a-restituicao-do-imposto-de-renda',
+    'irrf',
+    'salario-liquido',
+  ],
+  [
     'inss-2026-teto-de-r-8-475-55-e-aliquotas-por-faixa',
     'como-funciona-o-desconto-do-inss',
     'inss',

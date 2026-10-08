@@ -24,9 +24,11 @@ import { newsPgfnFgtsEmpregadoresNegociarDivida } from './pgfn-fgts-empregadores
 import { newsFocusInflacao501Selic135 } from './focus-inflacao-5-01-selic-13-5-fim-de-2026-o-que-o-mercado-preve';
 import { newsPixPorAproximacaoSemTetoDeR500 } from './pix-por-aproximacao-sem-teto-de-r-500-como-ajustar-o-limite-no-app';
 import { newsPgfnSemanaRegularizacaoTributaria } from './pgfn-semana-regularizacao-tributaria-adesao-ate-9-de-outubro-desconto-ate-100-em-juros-e-multas';
+import { newsReceitaCartasMalhaFina2026 } from './receita-envia-cartas-a-498-mil-contribuintes-na-malha-fina-ate-20-de-outubro';
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
 export const newsFiles = [
+  newsReceitaCartasMalhaFina2026,
   newsPgfnSemanaRegularizacaoTributaria,
   newsPixPorAproximacaoSemTetoDeR500,
   newsFocusInflacao501Selic135,

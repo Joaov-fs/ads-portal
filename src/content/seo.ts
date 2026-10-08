@@ -69,6 +69,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'receita-envia-cartas-a-498-mil-contribuintes-na-malha-fina-ate-20-de-outubro':
+    'Malha fina: Receita envia 498 mil cartas',
   'votar-vale-como-prova-de-vida-do-inss-veja-quem-nao-precisa-fazer':
     'Votar vale como prova de vida do INSS em 2026',
   'inss-outubro-2026-calendario-de-pagamento-26-de-outubro-a-9-de-novembro':
