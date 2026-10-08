@@ -1,3 +1,4 @@
+import { newsValeRefeicaoAlimentacaoInteroperabilidadeNovembro2026 } from './vale-refeicao-e-alimentacao-cartao-em-qualquer-maquininha-prazo-termina-em-novembro-de-2026';
 import { newsSelic1375OQueMudaParaQuemInvesteEParaQuemDeve } from './selic-13-75-o-que-muda-para-quem-investe-e-para-quem-deve';
 import { newsImpostoDeRendaZeroAteR5MilQuantoVocePagaNoContracheque } from './imposto-de-renda-zero-ate-r-5-mil-quanto-voce-paga-no-contracheque';
 import { news13oSalario2026DatasEQuantoVoceRecebe } from './13o-salario-2026-datas-e-quanto-voce-recebe';
@@ -55,4 +56,5 @@ export const newsFiles = [
   newsAbonoSalarial2026PrazoParaSacarVaiAte30DeDezembro,
   desenrolaMeiPequenoValorNews,
   newsQuintoDiaUtilDeOutubro2026,
+  newsValeRefeicaoAlimentacaoInteroperabilidadeNovembro2026,
 ] as const;
