@@ -3,6 +3,27 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
+  /**
+   * portalfina.com.br (sem www) vai para www, menos o /ads.txt: o AdSense lê o
+   * arquivo no domínio cadastrado e não segue o 308 do redirecionamento de domínio.
+   */
+  redirects() {
+    const apex = [{ type: 'host' as const, value: 'portalfina.com.br' }];
+    return Promise.resolve([
+      {
+        source: '/',
+        has: apex,
+        destination: 'https://www.portalfina.com.br/',
+        statusCode: 301 as const,
+      },
+      {
+        source: '/:path((?!ads\\.txt$).*)',
+        has: apex,
+        destination: 'https://www.portalfina.com.br/:path',
+        statusCode: 301 as const,
+      },
+    ]);
+  },
   headers() {
     return Promise.resolve([
       {
