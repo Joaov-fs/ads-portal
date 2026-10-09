@@ -8,6 +8,11 @@ export const newsPgfnSemanaRegularizacaoTributaria = {
   description:
     'A PGFN recebe adesões até 9 de outubro, às 19h, para negociar dívidas com a União. Veja as quatro modalidades, o desconto e a parcela mínima de R$ 25 para MEI.',
   category: 'financas',
+  coverImage: {
+    src: '/images/news/pgfn-semana-regularizacao-tributaria-adesao-ate-9-de-outubro-desconto-ate-100-em-juros-e-multas.jpg',
+    alt: 'Tesoura cortando o boleto de juros e multa ao lado do boleto da dívida com valor menor.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-07',
   updatedAt: '2026-10-07',
@@ -46,6 +51,13 @@ export const newsPgfnSemanaRegularizacaoTributaria = {
     },
     {
       heading: 'As quatro modalidades e o desconto de cada uma',
+      image: {
+        src: '/images/news/pgfn-semana-regularizacao-tributaria-adesao-ate-9-de-outubro-desconto-ate-100-em-juros-e-multas-detalhe.jpg',
+        alt: 'Detalhe da ilustração: tesoura cortando o boleto de juros e multa ao lado do boleto da dívida com valor menor.',
+        caption:
+          'Exemplo: sem juros e multa, a dívida cai para o valor principal.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'O edital traz quatro modalidades de transação: por capacidade de pagamento, de débitos considerados irrecuperáveis, de inscrições garantidas por seguro garantia ou carta fiança e de pequeno valor. Cada dívida se encaixa em uma delas, e o enquadramento define as condições.',
         'Nas três primeiras, a PGFN prevê descontos maiores para pagamento à vista, entrada facilitada e desconto de até 100% sobre o valor dos juros, das multas e do encargo legal. Note que o abatimento citado pela PGFN incide sobre esses acréscimos, e não sobre o valor do tributo em si.',

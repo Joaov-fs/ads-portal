@@ -12,6 +12,7 @@ export const bolsaFamiliaOutubro2026News = {
   coverImage: {
     src: '/images/news/bolsa-familia-outubro-2026.png',
     alt: 'Responsável familiar consulta pelo celular informações sobre o pagamento do Bolsa Família.',
+    credit: 'Imagem ilustrativa',
   },
   featuredCalculators: ['bolsa-familia', 'bpc'],
   highlights: [

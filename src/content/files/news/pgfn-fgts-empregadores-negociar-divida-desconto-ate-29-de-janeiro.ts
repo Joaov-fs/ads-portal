@@ -8,6 +8,11 @@ export const newsPgfnFgtsEmpregadoresNegociarDivida = {
   description:
     'Edital da PGFN permite renegociar dívidas de FGTS de até R$ 45 milhões, com até 133 parcelas. Veja quem pode aderir e como o trabalhador é protegido.',
   category: 'trabalho',
+  coverImage: {
+    src: '/images/news/pgfn-fgts-empregadores-negociar-divida-desconto-ate-29-de-janeiro.jpg',
+    alt: 'Carteira de trabalho, pasta do FGTS com acordo da PGFN e calendário com o dia 15 de outubro marcado.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-05',
   updatedAt: '2026-10-05',
@@ -46,6 +51,12 @@ export const newsPgfnFgtsEmpregadoresNegociarDivida = {
     },
     {
       heading: 'Quanto de desconto e em quantas parcelas',
+      image: {
+        src: '/images/news/pgfn-fgts-empregadores-negociar-divida-desconto-ate-29-de-janeiro-detalhe.jpg',
+        alt: 'Detalhe da ilustração: carteira de trabalho, pasta do FGTS com acordo da PGFN e calendário com o dia 15 de outubro marcado.',
+        caption: 'A adesão ao acordo começa em 15 de outubro.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'O desconto pode chegar a 100% sobre os juros que não são destinados ao trabalhador, sobre as multas e sobre os encargos legais, mas fica limitado a 65% do valor total da dívida. Em outras palavras, o principal que cabe ao empregado não entra na conta do abatimento.',
         'O pagamento tem duas etapas. O FGTS de rescisão, aquele devido a quem já foi desligado, pode ser pago em até 12 prestações. O saldo restante pode ser dividido em 108 ou 133 prestações mensais, conforme a modalidade escolhida no edital.',

@@ -8,6 +8,11 @@ export const newsHorasExtrasComoCalcular50100EOReflexoNoDsr = {
   description:
     'Exemplo com salário de R$ 2.640: a hora normal vale R$ 12, a extra a 50% vale R$ 18 e o mês fecha com R$ 581,54 em horas extras.',
   category: 'trabalho',
+  coverImage: {
+    src: '/images/news/horas-extras-como-calcular-50-100-e-o-reflexo-no-dsr.jpg',
+    alt: 'Cartão de ponto com saídas depois do horário, relógio e notas com os adicionais de 50% e 100%.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
@@ -45,6 +50,13 @@ export const newsHorasExtrasComoCalcular50100EOReflexoNoDsr = {
     },
     {
       heading: 'Exemplo: salário de R$ 2.640',
+      image: {
+        src: '/images/news/horas-extras-como-calcular-50-100-e-o-reflexo-no-dsr-detalhe.jpg',
+        alt: 'Detalhe da ilustração: cartão de ponto com saídas depois do horário, relógio e notas com os adicionais de 50% e 100%.',
+        caption:
+          'No cartão de ponto, cada saída depois do horário é hora extra.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'Veja um mês com 20 horas extras comuns e 6 horas em domingos e feriados, com 26 dias úteis e 4 de repouso.',
       ],

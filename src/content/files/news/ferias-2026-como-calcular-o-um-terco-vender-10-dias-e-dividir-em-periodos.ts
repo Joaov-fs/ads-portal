@@ -9,6 +9,11 @@ export const newsFerias2026ComoCalcularOUmTercoVender10DiasEDividirEmPeriodos =
     description:
       'Quanto você recebe de férias com salário de R$ 3.000, o que muda se vender 10 dias e quais são as regras para fracionar o descanso.',
     category: 'trabalho',
+    coverImage: {
+      src: '/images/news/ferias-2026-como-calcular-o-um-terco-vender-10-dias-e-dividir-em-periodos.jpg',
+      alt: 'Toalha de praia, óculos de sol, chinelos e um calendário com os dias de férias marcados.',
+      credit: 'Ilustração: PortalFina',
+    },
     authorId: 'equipe-editorial',
     publishedAt: '2026-10-01',
     updatedAt: '2026-10-01',
@@ -46,6 +51,12 @@ export const newsFerias2026ComoCalcularOUmTercoVender10DiasEDividirEmPeriodos =
       },
       {
         heading: 'Vender 10 dias de férias',
+        image: {
+          src: '/images/news/ferias-2026-como-calcular-o-um-terco-vender-10-dias-e-dividir-em-periodos-detalhe.jpg',
+          alt: 'Detalhe da ilustração: toalha de praia, óculos de sol, chinelos e um calendário com os dias de férias marcados.',
+          caption: 'Os 10 dias vendidos também recebem o adicional de 1/3.',
+          credit: 'Ilustração: PortalFina',
+        },
         paragraphs: [
           'O empregado pode converter até um terço das férias em dinheiro, o chamado abono pecuniário. É um direito do trabalhador, que deve pedir até 15 dias antes do fim do período aquisitivo. O abono também recebe o adicional de 1/3, e, em regra, não tem desconto de INSS nem de IR.',
         ],

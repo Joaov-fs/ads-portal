@@ -22,6 +22,8 @@ export type ContentTable = Readonly<{
 
 export type ContentSection = Readonly<{
   heading: string;
+  /** Imagem opcional exibida depois do título da seção. */
+  image?: ContentImage;
   paragraphs: readonly string[];
   /** Tabela opcional exibida depois dos parágrafos. */
   table?: ContentTable;
@@ -45,10 +47,16 @@ export type ContentSource = Readonly<{
   url?: string;
 }>;
 
-export type ContentCoverImage = Readonly<{
+export type ContentImage = Readonly<{
   alt: string;
+  /** Legenda opcional exibida abaixo da imagem. */
+  caption?: string;
+  /** Crédito: "Ilustração: PortalFina" ou "Foto: Nome/Agência Brasil". */
+  credit?: string;
   src: string;
 }>;
+
+export type ContentCoverImage = ContentImage;
 
 export type CalculatorField = Readonly<{
   hint?: string;
@@ -106,6 +114,7 @@ export type ContentSummary = Readonly<{
   category: ContentCategory;
   description: string;
   featuredCalculators?: readonly string[];
+  coverImage?: ContentCoverImage;
   highlight?: ContentHighlight;
   href: string;
   kind: ContentKind;

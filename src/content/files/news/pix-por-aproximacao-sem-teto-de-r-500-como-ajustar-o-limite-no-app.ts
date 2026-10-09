@@ -8,6 +8,11 @@ export const newsPixPorAproximacaoSemTetoDeR500 = {
   description:
     'Desde 1º de outubro de 2026, o Pix por aproximação não tem mais o teto fixo de R$ 500 por transação. O limite passa a seguir o que você definir com o banco.',
   category: 'financas',
+  coverImage: {
+    src: '/images/news/pix-por-aproximacao-sem-teto-de-r-500-como-ajustar-o-limite-no-app.jpg',
+    alt: 'Celular encostado na maquininha pagando R$ 1.000 por aproximação.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-06',
   updatedAt: '2026-10-06',
@@ -42,6 +47,13 @@ export const newsPixPorAproximacaoSemTetoDeR500 = {
     },
     {
       heading: 'Como o limite funciona agora',
+      image: {
+        src: '/images/news/pix-por-aproximacao-sem-teto-de-r-500-como-ajustar-o-limite-no-app-detalhe.jpg',
+        alt: 'Detalhe da ilustração: celular encostado na maquininha pagando R$ 1.000 por aproximação.',
+        caption:
+          'O pagamento por aproximação passa a seguir o limite definido no app do banco.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'Antes, havia um limite próprio de R$ 500 só para o Pix por aproximação, separado do limite geral do Pix. Agora não existe mais um número único para todos: o valor é o que você combinar com o banco, dentro das regras de segurança.',
         'Isso significa que o limite pode ser diferente de uma pessoa para outra e de um banco para outro. O que continua igual são as regras gerais de segurança do Pix, e o banco pode exigir autenticação conforme a configuração da sua conta.',

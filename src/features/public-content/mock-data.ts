@@ -70,6 +70,7 @@ export const latestNews = listContentSummaries('news').map((item) => {
     highlight: item.highlight
       ? { label: item.highlight.label, value: item.highlight.value }
       : undefined,
+    image: item.coverImage?.src,
     readingTime: item.readingTime,
     href: item.href,
   };

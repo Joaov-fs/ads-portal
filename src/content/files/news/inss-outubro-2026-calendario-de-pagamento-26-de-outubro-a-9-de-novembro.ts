@@ -8,6 +8,11 @@ export const newsInssOutubro2026Calendario = {
   description:
     'Veja a data do seu pagamento do INSS pelo final do número do benefício, para quem recebe até um salário mínimo (R$ 1.621) e para quem recebe mais.',
   category: 'beneficios',
+  coverImage: {
+    src: '/images/news/inss-outubro-2026-calendario-de-pagamento-26-de-outubro-a-9-de-novembro.jpg',
+    alt: 'Calendários de outubro e novembro com os dias de pagamento do INSS marcados e celular com benefício creditado.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-03',
   updatedAt: '2026-10-03',
@@ -41,6 +46,13 @@ export const newsInssOutubro2026Calendario = {
     },
     {
       heading: 'Data de pagamento de quem recebe até um salário mínimo',
+      image: {
+        src: '/images/news/inss-outubro-2026-calendario-de-pagamento-26-de-outubro-a-9-de-novembro-detalhe.jpg',
+        alt: 'Detalhe da ilustração: calendários de outubro e novembro com os dias de pagamento do INSS marcados e celular com benefício creditado.',
+        caption:
+          'Os dias de pagamento de outubro e novembro marcados no calendário.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'Para benefícios de até R$ 1.621, o pagamento segue a ordem dos finais, do 1 ao 0. Como 2 de novembro é feriado de Finados, o calendário pula essa data.',
       ],

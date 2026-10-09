@@ -8,6 +8,11 @@ export const newsInss2026TetoDeR847555EAliquotasPorFaixa = {
   description:
     'O INSS não incide com uma alíquota única sobre o salário inteiro. Veja a tabela de 2026, a contribuição máxima de R$ 988,09 e exemplos.',
   category: 'trabalho',
+  coverImage: {
+    src: '/images/news/inss-2026-teto-de-r-8-475-55-e-aliquotas-por-faixa.jpg',
+    alt: 'Holerite com desconto do INSS no teto e blocos com as alíquotas de 7,5%, 9%, 12% e 14%.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
@@ -55,6 +60,13 @@ export const newsInss2026TetoDeR847555EAliquotasPorFaixa = {
     },
     {
       heading: 'Exemplos em reais',
+      image: {
+        src: '/images/news/inss-2026-teto-de-r-8-475-55-e-aliquotas-por-faixa-detalhe.jpg',
+        alt: 'Detalhe da ilustração: holerite com desconto do INSS no teto e blocos com as alíquotas de 7,5%, 9%, 12% e 14%.',
+        caption:
+          'As quatro faixas do INSS: cada parte do salário paga a sua alíquota.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'Com salário de R$ 3.000, o INSS é de R$ 248,60. Com R$ 5.000, é de R$ 501,51. A partir de R$ 8.475,55 o desconto trava em R$ 988,09, e quem ganha R$ 10.000 ou R$ 20.000 paga exatamente o mesmo valor.',
         'O teto também limita o benefício: a aposentadoria pelo INSS não passa do teto previdenciário, e quem quer receber mais precisa de previdência complementar.',

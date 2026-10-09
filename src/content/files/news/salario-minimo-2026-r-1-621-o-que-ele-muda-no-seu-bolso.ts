@@ -8,6 +8,11 @@ export const newsSalarioMinimo2026R1621OQueEleMudaNoSeuBolso = {
   description:
     'O mínimo de 2026 subiu 6,8% e serve de base para o DAS do MEI, o piso do seguro-desemprego, o abono salarial e o BPC. Veja onde ele aparece.',
   category: 'economia',
+  coverImage: {
+    src: '/images/news/salario-minimo-2026-r-1-621-o-que-ele-muda-no-seu-bolso.jpg',
+    alt: 'Carteira com notas, holerite com o salário mínimo de R$ 1.621 e calculadora.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
@@ -45,6 +50,12 @@ export const newsSalarioMinimo2026R1621OQueEleMudaNoSeuBolso = {
     },
     {
       heading: 'Onde o salário mínimo entra na sua vida',
+      image: {
+        src: '/images/news/salario-minimo-2026-r-1-621-o-que-ele-muda-no-seu-bolso-detalhe.jpg',
+        alt: 'Detalhe da ilustração: carteira com notas, holerite com o salário mínimo de R$ 1.621 e calculadora.',
+        caption: 'O mínimo de 2026 é a base de vários benefícios.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'A tabela mostra os usos mais comuns e o valor correspondente em 2026.',
       ],

@@ -8,6 +8,11 @@ export const newsVotarValeComoProvaDeVidaDoInss = {
   description:
     'O comparecimento às urnas é repassado pela Justiça Eleitoral ao INSS e conta como prova de vida. Quem não votou não tem o benefício bloqueado só por isso.',
   category: 'beneficios',
+  coverImage: {
+    src: '/images/news/votar-vale-como-prova-de-vida-do-inss-veja-quem-nao-precisa-fazer.jpg',
+    alt: 'Urna eletrônica, título de eleitor, óculos e celular com prova de vida confirmada.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-05',
   updatedAt: '2026-10-05',
@@ -49,6 +54,13 @@ export const newsVotarValeComoProvaDeVidaDoInss = {
     },
     {
       heading: 'De onde vem essa regra',
+      image: {
+        src: '/images/news/votar-vale-como-prova-de-vida-do-inss-veja-quem-nao-precisa-fazer-detalhe.jpg',
+        alt: 'Detalhe da ilustração: urna eletrônica, título de eleitor, óculos e celular com prova de vida confirmada.',
+        caption:
+          'Ao votar, o eleitor aposentado tem a prova de vida registrada.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'A Lei 13.846/2019 passou ao Estado a responsabilidade de verificar de forma ativa se o beneficiário está vivo, em vez de depender só de uma ida do segurado ao banco. A Portaria PRES/INSS nº 1.408/2022 listou o comparecimento à votação entre as bases usadas para essa confirmação.',
         'Do lado da Justiça Eleitoral, a Resolução-TSE nº 23.656/2021 trata do acesso às informações dos sistemas eleitorais. O Tribunal Superior Eleitoral informa que mantém um serviço de consulta que permite ao INSS verificar se o beneficiário compareceu à seção eleitoral.',

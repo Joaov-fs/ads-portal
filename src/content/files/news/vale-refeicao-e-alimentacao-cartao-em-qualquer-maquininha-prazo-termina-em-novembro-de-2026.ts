@@ -8,6 +8,11 @@ export const newsValeRefeicaoAlimentacaoInteroperabilidadeNovembro2026 = {
   description:
     'O Decreto 12.712/2025 deu 360 dias para a interoperabilidade total do VR e do VA. Veja o que muda, os tetos de taxa de 3,6% e o repasse em 15 dias.',
   category: 'trabalho',
+  coverImage: {
+    src: '/images/news/vale-refeicao-e-alimentacao-cartao-em-qualquer-maquininha-prazo-termina-em-novembro-de-2026.jpg',
+    alt: 'Prato feito, maquininha com pagamento aprovado e cartão de vale-refeição.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-08',
   updatedAt: '2026-10-08',
@@ -48,6 +53,13 @@ export const newsValeRefeicaoAlimentacaoInteroperabilidadeNovembro2026 = {
     },
     {
       heading: 'Os prazos do decreto, um por um',
+      image: {
+        src: '/images/news/vale-refeicao-e-alimentacao-cartao-em-qualquer-maquininha-prazo-termina-em-novembro-de-2026-detalhe.jpg',
+        alt: 'Detalhe da ilustração: prato feito, maquininha com pagamento aprovado e cartão de vale-refeição.',
+        caption:
+          'O cartão de refeição passa a funcionar em qualquer maquininha.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'As regras não chegaram todas de uma vez. O decreto usa a data de publicação como ponto de partida e libera cada etapa em um momento. A tabela mostra o calendário, com base no texto do decreto e nas notícias do governo sobre cada fase.',
       ],

@@ -164,6 +164,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                     item.highlight
                       ? {
                           category: item.category,
+                          image: item.image,
                           label: item.highlight.label,
                           value: item.highlight.value,
                         }

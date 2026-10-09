@@ -8,6 +8,11 @@ export const newsPoupancaRende83AoAnoVejaQuantoCdbELciRendemAMais = {
   description:
     'Simulação de R$ 10.000 em 12 meses: poupança, CDB de 100% do CDI e LCI de 90% do CDI, com o Imposto de Renda descontado.',
   category: 'financas',
+  coverImage: {
+    src: '/images/news/poupanca-rende-8-3-ao-ano-veja-quanto-cdb-e-lci-rendem-a-mais.jpg',
+    alt: 'Cofrinho de porco e dois potes de moedas, um da poupança e outro maior do CDB.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
@@ -64,6 +69,13 @@ export const newsPoupancaRende83AoAnoVejaQuantoCdbELciRendemAMais = {
     },
     {
       heading: 'Por que a LCI pode ganhar do CDB',
+      image: {
+        src: '/images/news/poupanca-rende-8-3-ao-ano-veja-quanto-cdb-e-lci-rendem-a-mais-detalhe.jpg',
+        alt: 'Detalhe da ilustração: cofrinho de porco e dois potes de moedas, um da poupança e outro maior do CDB.',
+        caption:
+          'Com a mesma quantia, o CDB tende a render mais que a poupança.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'LCI e LCA não pagam Imposto de Renda para pessoa física. Um título de 90% do CDI isento rende mais que um CDB de 100% do CDI tributado a 17,5% no prazo de 1 a 2 anos. Para prazos curtos, de até 6 meses, o IR do CDB é de 20% a 22,5%, o que favorece ainda mais as LCIs e LCAs.',
         'O contrário também acontece: LCIs com prazo de carência longo podem prender o dinheiro por 12 meses ou mais, ao passo que muitos CDBs têm liquidez diária.',

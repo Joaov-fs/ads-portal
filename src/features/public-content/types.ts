@@ -27,6 +27,7 @@ export type NewsItem = Readonly<{
   date: string;
   description: string;
   highlight?: Readonly<{ label: string; value: string }>;
+  image?: string;
   href: string;
   readingTime: string;
   title: string;

@@ -8,6 +8,11 @@ export const newsSeguroDesemprego2026ValoresParcelasEComoPedir = {
   description:
     'Piso, teto, faixas de cálculo e a tabela de parcelas do seguro-desemprego em 2026, com exemplos e o prazo de 7 a 120 dias para pedir.',
   category: 'trabalho',
+  coverImage: {
+    src: '/images/news/seguro-desemprego-2026-valores-parcelas-e-como-pedir.jpg',
+    alt: 'Caixa com objetos de escritório, requerimento do seguro-desemprego e carteira de trabalho.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
@@ -55,6 +60,12 @@ export const newsSeguroDesemprego2026ValoresParcelasEComoPedir = {
     },
     {
       heading: 'Quantas parcelas você recebe',
+      image: {
+        src: '/images/news/seguro-desemprego-2026-valores-parcelas-e-como-pedir-detalhe.jpg',
+        alt: 'Detalhe da ilustração: caixa com objetos de escritório, requerimento do seguro-desemprego e carteira de trabalho.',
+        caption: 'As parcelas vão de R$ 1.621,00 a R$ 2.518,65.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'O número de parcelas depende de quantas vezes você já pediu o benefício e de quantos meses trabalhou com carteira assinada nos últimos 36 meses.',
       ],

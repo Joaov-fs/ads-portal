@@ -7,6 +7,11 @@ export const newsSaqueAniversarioFgtsOutubro2026 = {
   description:
     'Quem nasceu em outubro e aderiu ao saque-aniversário pode sacar até 31 de dezembro. Veja a tabela de alíquotas e quanto sai em cada faixa de saldo, com exemplos.',
   category: 'trabalho',
+  coverImage: {
+    src: '/images/news/saque-aniversario-fgts-outubro-2026-ate-31-de-dezembro-quanto-sai.jpg',
+    alt: 'Bolo de aniversário, carteira de trabalho e celular com saque do FGTS disponível.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-03',
   updatedAt: '2026-10-03',
@@ -39,6 +44,12 @@ export const newsSaqueAniversarioFgtsOutubro2026 = {
     },
     {
       heading: 'Quanto sai: a tabela de alíquotas e parcela adicional',
+      image: {
+        src: '/images/news/saque-aniversario-fgts-outubro-2026-ate-31-de-dezembro-quanto-sai-detalhe.jpg',
+        alt: 'Detalhe da ilustração: bolo de aniversário, carteira de trabalho e celular com saque do FGTS disponível.',
+        caption: 'Exemplo: com saldo de R$ 4 mil, o saque é de R$ 1.350.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'O valor depende do saldo total das contas do FGTS. Aplica-se uma alíquota sobre o saldo e soma-se uma parcela adicional fixa, o que faz o percentual efetivo diminuir conforme o saldo aumenta.',
       ],

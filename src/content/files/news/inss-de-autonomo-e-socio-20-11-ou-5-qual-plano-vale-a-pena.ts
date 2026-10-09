@@ -8,6 +8,11 @@ export const newsInssDeAutonomoESocio2011Ou5QualPlanoValeAPena = {
   description:
     'Plano normal, simplificado, MEI e pró-labore: quanto cada um custa por mês, para que serve e a pegadinha da aposentadoria por tempo de contribuição.',
   category: 'financas',
+  coverImage: {
+    src: '/images/news/inss-de-autonomo-e-socio-20-11-ou-5-qual-plano-vale-a-pena.jpg',
+    alt: 'Três potes de moedas com 20%, 11% e 5%, os planos de contribuição do INSS.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
@@ -69,6 +74,12 @@ export const newsInssDeAutonomoESocio2011Ou5QualPlanoValeAPena = {
     },
     {
       heading: 'A pegadinha dos planos de 11% e 5%',
+      image: {
+        src: '/images/news/inss-de-autonomo-e-socio-20-11-ou-5-qual-plano-vale-a-pena-detalhe.jpg',
+        alt: 'Detalhe da ilustração: três potes de moedas com 20%, 11% e 5%, os planos de contribuição do INSS.',
+        caption: 'Cada plano tem uma alíquota e garante benefícios diferentes.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'Os planos de 11% e de 5% contam para aposentadoria por idade, auxílio por incapacidade, salário-maternidade e pensão, mas não contam para a aposentadoria por tempo de contribuição, a menos que o trabalhador complemente a diferença para 20%. Quem escolhe esses planos precisa saber disso desde o começo.',
         'Quem tem renda irregular pode alternar entre planos conforme o mês, mas contribuições abaixo do mínimo não contam como carência.',

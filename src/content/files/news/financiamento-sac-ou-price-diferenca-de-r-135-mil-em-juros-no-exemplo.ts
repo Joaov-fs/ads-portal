@@ -8,6 +8,11 @@ export const newsFinanciamentoSacOuPriceDiferencaDeR135MilEmJurosNoExemplo = {
   description:
     'Simulação de 30 anos a 0,85% ao mês: parcelas, total pago e juros de cada sistema, e como escolher o que cabe no seu orçamento.',
   category: 'financas',
+  coverImage: {
+    src: '/images/news/financiamento-sac-ou-price-diferenca-de-r-135-mil-em-juros-no-exemplo.jpg',
+    alt: 'Gráficos das parcelas no SAC, que caem, e na Price, que ficam iguais, ao lado de uma casa e chaves.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
@@ -68,6 +73,13 @@ export const newsFinanciamentoSacOuPriceDiferencaDeR135MilEmJurosNoExemplo = {
     },
     {
       heading: 'Por que o SAC paga menos juros',
+      image: {
+        src: '/images/news/financiamento-sac-ou-price-diferenca-de-r-135-mil-em-juros-no-exemplo-detalhe.jpg',
+        alt: 'Detalhe da ilustração: gráficos das parcelas no SAC, que caem, e na Price, que ficam iguais, ao lado de uma casa e chaves.',
+        caption:
+          'No SAC a parcela começa alta e cai; na Price ela fica igual do início ao fim.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'No SAC, a amortização do saldo é igual todo mês (R$ 555,56 neste exemplo), então o saldo devedor cai mais rápido e os juros diminuem. Na Price, a parcela é fixa e as primeiras parcelas são formadas quase só de juros, de modo que o saldo cai devagar.',
         'O preço do SAC é uma parcela inicial mais alta, que exige renda maior para aprovar o crédito e pesa mais no começo, justamente quando a família costuma ter outros gastos com a mudança.',

@@ -8,6 +8,11 @@ export const newsMei2026DasDeR8105LimiteDeR81MilEMultaPorAtraso = {
   description:
     'Valores do DAS-MEI por atividade, a regra do limite anual de faturamento e quanto custa pagar a guia depois do vencimento.',
   category: 'financas',
+  coverImage: {
+    src: '/images/news/mei-2026-das-de-r-81-05-limite-de-r-81-mil-e-multa-por-atraso.jpg',
+    alt: 'Boleto do DAS do MEI, documento do CNPJ, avental e maquininha.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
@@ -57,6 +62,12 @@ export const newsMei2026DasDeR8105LimiteDeR81MilEMultaPorAtraso = {
     },
     {
       heading: 'O limite de R$ 81.000 por ano',
+      image: {
+        src: '/images/news/mei-2026-das-de-r-81-05-limite-de-r-81-mil-e-multa-por-atraso-detalhe.jpg',
+        alt: 'Detalhe da ilustração: boleto do DAS do MEI, documento do CNPJ, avental e maquininha.',
+        caption: 'O DAS do MEI vence todo dia 20.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'O MEI pode faturar até R$ 81.000 por ano, o que dá em média R$ 6.750 por mês. Quem abre a empresa durante o ano tem limite proporcional: R$ 6.750 vezes os meses de atividade.',
         'Se o faturamento passar do limite em até 20% (até R$ 97.200), o MEI paga a diferença como imposto do Simples Nacional e passa a ser desenquadrado no ano seguinte. Passando de 20%, o desenquadramento vale retroativamente desde janeiro, e os impostos são recalculados.',

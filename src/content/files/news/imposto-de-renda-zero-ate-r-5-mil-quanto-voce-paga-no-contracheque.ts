@@ -8,6 +8,11 @@ export const newsImpostoDeRendaZeroAteR5MilQuantoVocePagaNoContracheque = {
   description:
     'Desde janeiro, quem recebe até R$ 5.000 por mês não paga Imposto de Renda na fonte. Veja a tabela de quem ganha mais, com INSS e líquido calculados.',
   category: 'trabalho',
+  coverImage: {
+    src: '/images/news/imposto-de-renda-zero-ate-r-5-mil-quanto-voce-paga-no-contracheque.jpg',
+    alt: 'Contracheque de R$ 5.000 com o IRRF zerado e carimbo de isento, ao lado de calculadora e celular.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
@@ -45,6 +50,13 @@ export const newsImpostoDeRendaZeroAteR5MilQuantoVocePagaNoContracheque = {
     },
     {
       heading: 'Quanto cada salário paga',
+      image: {
+        src: '/images/news/imposto-de-renda-zero-ate-r-5-mil-quanto-voce-paga-no-contracheque-detalhe.jpg',
+        alt: 'Detalhe da ilustração: contracheque de R$ 5.000 com o IRRF zerado e carimbo de isento, ao lado de calculadora e celular.',
+        caption:
+          'Com salário de R$ 5.000, o desconto do IR no contracheque fica zerado.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'A tabela abaixo mostra o salário bruto, o INSS, o IRRF e o valor líquido de quem não tem dependentes nem pensão alimentícia. Repare no salto gradual: quem ganha R$ 5.100 paga apenas R$ 56,44 de IR, e não o valor cheio da tabela.',
       ],

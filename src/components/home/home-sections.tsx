@@ -150,6 +150,7 @@ export function LeadStoryCard({
         <NewsCover
           category={news.category}
           className="aspect-[1200/630] w-full"
+          image={news.image}
           label={news.highlight.label}
           value={news.highlight.value}
         />
@@ -192,6 +193,7 @@ export function SecondaryStoryCard({ news }: Readonly<{ news: NewsItem }>) {
         <NewsCover
           category={news.category}
           className="aspect-[1200/630] w-full"
+          image={news.image}
           label={news.highlight.label}
           value={news.highlight.value}
         />
@@ -236,6 +238,7 @@ export function CompactStoryCard({ news }: Readonly<{ news: NewsItem }>) {
         <NewsCover
           category={news.category}
           className="aspect-[1200/630] w-full"
+          image={news.image}
           label={news.highlight.label}
           value={news.highlight.value}
         />

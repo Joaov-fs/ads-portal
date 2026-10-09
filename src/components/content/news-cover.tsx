@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { contentCategoryLabels, type ContentCategory } from '@/content';
 
 import { coverThemes } from './cover-theme';
@@ -5,6 +7,12 @@ import { coverThemes } from './cover-theme';
 type NewsCoverProps = Readonly<{
   category: ContentCategory;
   className?: string;
+  /** Ilustração ou foto da notícia; sem ela, a capa é só tipográfica. */
+  image?: string;
+  /** Carrega a imagem com prioridade (capa acima da dobra). */
+  priority?: boolean;
+  /** Largura aproximada exibida, para o navegador escolher o tamanho certo. */
+  sizes?: string;
   /** Texto curto abaixo do número (ex.: "Teto de contribuição"). */
   label: string;
   /** Número em destaque (ex.: "R$ 8.475,55"). */
@@ -18,10 +26,57 @@ type NewsCoverProps = Readonly<{
 export function NewsCover({
   category,
   className = '',
+  image,
   label,
+  priority = false,
+  sizes = '(min-width: 1024px) 33vw, 100vw',
   value,
 }: NewsCoverProps) {
   const theme = coverThemes[category];
+
+  if (image) {
+    return (
+      <div
+        className={`relative isolate overflow-hidden bg-ads-secondary ${className}`}
+        style={{ containerType: 'inline-size' }}
+      >
+        <Image
+          alt=""
+          className="-z-10 object-cover transition duration-500 group-hover:scale-[1.03]"
+          fill
+          priority={priority}
+          sizes={sizes}
+          src={image}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+        />
+        <div className="absolute inset-0 flex flex-col justify-between p-[4.5cqw]">
+          <span
+            className="w-fit rounded-full bg-black/45 px-[2.4cqw] py-[0.9cqw] font-bold uppercase tracking-[0.14em] text-white backdrop-blur-sm"
+            style={{ fontSize: 'clamp(0.6rem, 2.2cqw, 0.8rem)' }}
+          >
+            {contentCategoryLabels[category]}
+          </span>
+          <div className="grid gap-[0.6cqw]">
+            <strong
+              className="font-ads-display font-extrabold leading-none tracking-tight text-white drop-shadow-[0_2px_10px_rgb(0_0_0/45%)]"
+              style={{ fontSize: 'clamp(1.4rem, 8cqw, 3.4rem)' }}
+            >
+              {value}
+            </strong>
+            <span
+              className="font-semibold text-white/90 drop-shadow-[0_1px_6px_rgb(0_0_0/50%)]"
+              style={{ fontSize: 'clamp(0.7rem, 3cqw, 1.05rem)' }}
+            >
+              {label}
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div

@@ -8,6 +8,11 @@ export const newsReajusteDoAluguelIgpM335OuIpca422VejaQuantoFica = {
   description:
     'Confira os dois índices mais usados em contratos, com exemplos de aluguéis de R$ 1.500 a R$ 5.000 e como saber qual vale para o seu.',
   category: 'financas',
+  coverImage: {
+    src: '/images/news/reajuste-do-aluguel-igp-m-3-35-ou-ipca-4-22-veja-quanto-fica.jpg',
+    alt: 'Contrato de locação com IGP-M e IPCA, casa em miniatura e chaves.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
@@ -45,6 +50,12 @@ export const newsReajusteDoAluguelIgpM335OuIpca422VejaQuantoFica = {
     },
     {
       heading: 'Quanto fica o seu aluguel',
+      image: {
+        src: '/images/news/reajuste-do-aluguel-igp-m-3-35-ou-ipca-4-22-veja-quanto-fica-detalhe.jpg',
+        alt: 'Detalhe da ilustração: contrato de locação com IGP-M e IPCA, casa em miniatura e chaves.',
+        caption: 'O índice do contrato define o reajuste do aluguel.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'Aplicando cada índice sobre o valor atual, o aluguel muda assim.',
       ],

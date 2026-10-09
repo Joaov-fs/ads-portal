@@ -8,6 +8,11 @@ export const newsQuintoDiaUtilDeOutubro2026 = {
   description:
     'A CLT dá até o quinto dia útil para pagar o salário do mês anterior. Em outubro de 2026, o limite é terça-feira, 6. Veja a contagem e o que fazer se atrasar.',
   category: 'trabalho',
+  coverImage: {
+    src: '/images/news/quinto-dia-util-de-outubro-2026-prazo-do-salario-vai-ate-6-de-outubro.jpg',
+    alt: 'Calendário de outubro com o dia 6 marcado, holerite de setembro e envelope com dinheiro.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-04',
   updatedAt: '2026-10-04',
@@ -40,6 +45,13 @@ export const newsQuintoDiaUtilDeOutubro2026 = {
     },
     {
       heading: 'Como contar o quinto dia útil de outubro',
+      image: {
+        src: '/images/news/quinto-dia-util-de-outubro-2026-prazo-do-salario-vai-ate-6-de-outubro-detalhe.jpg',
+        alt: 'Detalhe da ilustração: calendário de outubro com o dia 6 marcado, holerite de setembro e envelope com dinheiro.',
+        caption:
+          'O dia 6 de outubro é o prazo máximo para o salário de setembro.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'Para o pagamento de salário, a contagem segue a prática da fiscalização trabalhista: o sábado conta como dia útil, enquanto domingos e feriados ficam de fora. Por isso, o quinto dia útil não é o quinto dia da semana comercial, e sim o quinto dia que não seja domingo nem feriado.',
         'Em outubro de 2026, o dia 1º cai numa quinta-feira e o domingo, dia 4, precisa ser pulado. Não há feriado nacional entre os dias 1º e 6. A contagem fica assim:',

@@ -43,6 +43,7 @@ export function toContentSummary(document: ContentDocument): ContentSummary {
 
   return {
     category: document.category,
+    coverImage: document.coverImage,
     description: document.description,
     featuredCalculators: document.featuredCalculators,
     highlight: document.highlights?.[0],

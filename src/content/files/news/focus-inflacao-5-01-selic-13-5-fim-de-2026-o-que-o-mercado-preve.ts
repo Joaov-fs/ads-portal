@@ -8,6 +8,11 @@ export const newsFocusInflacao501Selic135 = {
   description:
     'O boletim Focus de 5 de outubro elevou a projeção do IPCA de 2026 para 5,01%. Veja o que isso significa para CDB, poupança e dívidas, com conta em reais.',
   category: 'economia',
+  coverImage: {
+    src: '/images/news/focus-inflacao-5-01-selic-13-5-fim-de-2026-o-que-o-mercado-preve.jpg',
+    alt: 'Relatório do boletim Focus com as projeções, cesta de compras e etiqueta de preço com 5,01%.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-06',
   updatedAt: '2026-10-06',
@@ -57,6 +62,12 @@ export const newsFocusInflacao501Selic135 = {
     },
     {
       heading: 'Quanto a inflação de 5,01% pesa no seu dinheiro',
+      image: {
+        src: '/images/news/focus-inflacao-5-01-selic-13-5-fim-de-2026-o-que-o-mercado-preve-detalhe.jpg',
+        alt: 'Detalhe da ilustração: relatório do boletim Focus com as projeções, cesta de compras e etiqueta de preço com 5,01%.',
+        caption: 'As principais projeções do Focus para 2026.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'Inflação de 5,01% significa que algo que custava R$ 10.000 no começo do ano passaria a custar R$ 10.501 no fim. Quem deixou dinheiro parado perdeu esses R$ 501 de poder de compra.',
         'A poupança rende 0,5% ao mês mais a TR enquanto a Selic está acima de 8,5% ao ano. Em 12 meses, isso dá cerca de 6,17% mais a TR: R$ 616,78 em R$ 10.000, sem imposto. O ganho acima da inflação é pequeno.',

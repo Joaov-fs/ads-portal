@@ -7,6 +7,11 @@ export const newsSalarioMinimo2027Orcamento = {
   description:
     'O projeto de Orçamento de 2027 prevê salário mínimo de R$ 1.741, alta de R$ 120. Veja o efeito em benefícios, INSS de autônomo, MEI e BPC, se o valor se confirmar.',
   category: 'economia',
+  coverImage: {
+    src: '/images/news/salario-minimo-2027-orcamento-preve-r-1-741-veja-o-que-muda.jpg',
+    alt: 'Documento do Orçamento 2027 com o salário mínimo de R$ 1.741, notas e calculadora.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-03',
   updatedAt: '2026-10-03',
@@ -39,6 +44,12 @@ export const newsSalarioMinimo2027Orcamento = {
     },
     {
       heading: 'Por que o valor ainda pode mudar',
+      image: {
+        src: '/images/news/salario-minimo-2027-orcamento-preve-r-1-741-veja-o-que-muda-detalhe.jpg',
+        alt: 'Detalhe da ilustração: documento do Orçamento 2027 com o salário mínimo de R$ 1.741, notas e calculadora.',
+        caption: 'A proposta do Orçamento prevê R$ 120 a mais no mínimo.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'O reajuste segue a regra de valorização em vigor: a inflação medida pelo INPC acumulada até novembro, mais o crescimento do PIB de dois anos antes, com o ganho real limitado a 2,5% ao ano pelas regras fiscais.',
         'Como o INPC de outubro e novembro ainda não foi divulgado, o número final pode ficar acima ou abaixo de R$ 1.741. As estimativas já mudaram durante o ano: em abril, a previsão era menor, de R$ 1.717.',

@@ -15,11 +15,21 @@ Cada notícia é **um arquivo TypeScript** em `src/content/files/news/` e **uma 
 6. **Sem repetição.** Cada seção diz algo novo. Não reescreva a descrição no primeiro parágrafo.
 7. **Sem promessas.** Benefícios e prazos: "tem direito quem cumpre os requisitos", nunca "você vai receber".
 8. **Sem travessão (— ou –).** Nem em título, subtítulo, seção, tabela ou fonte. Use dois-pontos, vírgula ou ponto. O travessão sozinho só vale como célula vazia de tabela.
-9. **Capa obrigatória.** A capa é gerada pelo portal a partir do **primeiro item de `highlights`**: ele vira o
-   número grande da capa (até 14 caracteres, ex.: `R$ 1.741`, `26/10`, `13,75%`) e a legenda (até 40
-   caracteres). Não use imagem de banco nem foto; não preencha `coverImage`. A capa aparece no destaque e nos
-   cards da home, nas listas, na página da notícia e no compartilhamento (Open Graph). O teste
+9. **Número da capa.** O **primeiro item de `highlights`** aparece por cima da imagem da capa: número curto
+   (até 14 caracteres, ex.: `R$ 1.741`, `26/10`, `13,75%`) e legenda (até 40 caracteres). O teste
    `pipeline.test.ts` reprova a notícia sem esse primeiro destaque.
+10. **Imagem obrigatória: capa + uma no meio do texto.** Toda notícia tem `coverImage` (aparece na home, nas
+    listas, na página e no compartilhamento do WhatsApp/Google) e uma `image` na 2ª seção, para o leitor
+    continuar rolando. O padrão é ilustração própria, desenhada pelo gerador do projeto:
+    - crie uma cena nova em `scripts/covers/scenes.py` (veja as regras no topo do arquivo: objetos do
+      assunto, números iguais aos da notícia, sem logotipo de órgão ou marca) e rode
+      `python3 scripts/covers/make.py <cena> <slug>`. Saem `public/images/news/<slug>.jpg` e
+      `<slug>-detalhe.jpg`;
+    - confira as duas imagens antes de publicar (abra o arquivo e olhe);
+    - crédito: `'Ilustração: PortalFina'`.
+      Foto de terceiros só com licença livre explícita (ex.: Agência Brasil, CC BY), com o crédito exigido
+      (`'Foto: Nome/Agência Brasil'`). Dar crédito não basta: foto de jornal, banco pago ou Google Imagens não
+      pode ser usada.
 
 ## Modelo do arquivo
 
@@ -33,6 +43,11 @@ export const newsSlugDaNoticia = {
   description:
     'Uma frase de 120 a 160 caracteres com o que mudou e o efeito prático.',
   category: 'trabalho', // beneficios | economia | financas | trabalho | utilidades
+  coverImage: {
+    src: '/images/news/slug-curto-com-palavras-chave.jpg',
+    alt: 'O que a imagem mostra, em uma frase.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial', // sempre este: "Redação PortalFina"
   publishedAt: '2026-10-01', // AAAA-MM-DD
   updatedAt: '2026-10-01',
@@ -50,6 +65,13 @@ export const newsSlugDaNoticia = {
     // 3 a 5 seções
     {
       heading: 'Pergunta ou afirmação direta',
+      image: {
+        // na 2ª seção: o close gerado junto com a capa
+        src: '/images/news/slug-curto-com-palavras-chave-detalhe.jpg',
+        alt: 'O que o detalhe mostra.',
+        caption: 'Uma frase que ligue a imagem ao texto.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: ['Parágrafo 1.', 'Parágrafo 2.'],
       table: {
         // opcional

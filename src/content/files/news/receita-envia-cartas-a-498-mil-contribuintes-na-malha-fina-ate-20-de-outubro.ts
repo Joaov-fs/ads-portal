@@ -8,6 +8,11 @@ export const newsReceitaCartasMalhaFina2026 = {
   description:
     'O Projeto Cartas 2026 avisa 498.487 contribuintes com o IRPF 2026 retido. Veja como consultar a pendência, corrigir a declaração e evitar multa.',
   category: 'economia',
+  coverImage: {
+    src: '/images/news/receita-envia-cartas-a-498-mil-contribuintes-na-malha-fina-ate-20-de-outubro.jpg',
+    alt: 'Declaração do Imposto de Renda com carimbo de pendência, lupa sobre a linha marcada, cartas e calculadora.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-08',
   updatedAt: '2026-10-08',
@@ -41,6 +46,13 @@ export const newsReceitaCartasMalhaFina2026 = {
     },
     {
       heading: 'Como saber se a sua declaração está na malha fina',
+      image: {
+        src: '/images/news/receita-envia-cartas-a-498-mil-contribuintes-na-malha-fina-ate-20-de-outubro-detalhe.jpg',
+        alt: 'Detalhe da ilustração: declaração do Imposto de Renda com carimbo de pendência, lupa sobre a linha marcada, cartas e calculadora.',
+        caption:
+          'A carta aponta a linha da declaração que precisa ser conferida.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'A consulta é feita no serviço Meu Imposto de Renda, disponível no site da Receita Federal e no aplicativo para celular, nos sistemas iOS e Android. Para entrar, é preciso ter conta gov.br com nível prata ou ouro.',
         'As declarações retidas aparecem com a informação "Com Pendência". Ao abrir o link da pendência, o contribuinte vê o motivo da retenção e as orientações para corrigir. Não é necessário ir a uma unidade da Receita Federal.',

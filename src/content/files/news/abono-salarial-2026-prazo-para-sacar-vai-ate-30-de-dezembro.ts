@@ -8,6 +8,11 @@ export const newsAbonoSalarial2026PrazoParaSacarVaiAte30DeDezembro = {
   description:
     'O abono varia de cerca de R$ 135 a R$ 1.621, conforme os meses trabalhados em 2024. Veja as regras e como conferir se você tem direito.',
   category: 'beneficios',
+  coverImage: {
+    src: '/images/news/abono-salarial-2026-prazo-para-sacar-vai-ate-30-de-dezembro.jpg',
+    alt: 'Carteira de trabalho, cartão do PIS/Pasep e calendário de dezembro com o dia 30 marcado.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
@@ -45,6 +50,13 @@ export const newsAbonoSalarial2026PrazoParaSacarVaiAte30DeDezembro = {
     },
     {
       heading: 'Quanto você recebe',
+      image: {
+        src: '/images/news/abono-salarial-2026-prazo-para-sacar-vai-ate-30-de-dezembro-detalhe.jpg',
+        alt: 'Detalhe da ilustração: carteira de trabalho, cartão do PIS/Pasep e calendário de dezembro com o dia 30 marcado.',
+        caption:
+          'O cartão do PIS/Pasep e a carteira de trabalho ajudam a conferir o direito ao abono.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'O valor é proporcional aos meses trabalhados: o salário mínimo atual, de R$ 1.621, dividido por 12 e multiplicado pelos meses de trabalho em 2024. Mês com 15 dias ou mais conta como inteiro.',
       ],

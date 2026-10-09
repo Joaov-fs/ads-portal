@@ -27,6 +27,37 @@ function formatDate(value: string) {
   return dateFormatter.format(new Date(`${value}T00:00:00Z`));
 }
 
+function ArticleFigure({
+  image,
+  priority = false,
+}: Readonly<{
+  image: NonNullable<ContentPageModel['document']['coverImage']>;
+  priority?: boolean;
+}>) {
+  return (
+    <figure className="grid max-w-4xl gap-2">
+      <Image
+        alt={image.alt}
+        className="aspect-[1200/630] w-full rounded-ads-xlarge object-cover shadow-ads-soft"
+        height={630}
+        priority={priority}
+        sizes="(min-width: 1024px) 56rem, 100vw"
+        src={image.src}
+        width={1200}
+      />
+      {image.caption || image.credit ? (
+        <figcaption className="text-xs leading-5 text-ads-muted">
+          {image.caption}
+          {image.caption && image.credit ? ' ' : null}
+          {image.credit ? (
+            <span className="font-semibold">{image.credit}</span>
+          ) : null}
+        </figcaption>
+      ) : null}
+    </figure>
+  );
+}
+
 function sectionId(heading: string) {
   return heading
     .normalize('NFD')
@@ -105,14 +136,7 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
         {document.coverImage ? (
           <section className="border-b border-ads-border bg-ads-background py-8">
             <Container>
-              <Image
-                alt={document.coverImage.alt}
-                className="aspect-video w-full rounded-ads-xlarge object-cover"
-                height={675}
-                priority
-                src={document.coverImage.src}
-                width={1200}
-              />
+              <ArticleFigure image={document.coverImage} priority />
             </Container>
           </section>
         ) : null}
@@ -247,6 +271,9 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
                     <h2 className="font-ads-display text-2xl font-bold tracking-tight text-ads-secondary sm:text-3xl">
                       {section.heading}
                     </h2>
+                    {section.image ? (
+                      <ArticleFigure image={section.image} />
+                    ) : null}
                     {section.paragraphs.map((paragraph) => (
                       <p
                         className="text-base leading-8 text-ads-text"

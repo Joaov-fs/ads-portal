@@ -8,6 +8,11 @@ export const news13oSalario2026DatasEQuantoVoceRecebe = {
   description:
     'A 1ª parcela vai até 30 de novembro e a 2ª, que venceria no domingo 20 de dezembro, deve ser paga até sexta, 18. Veja exemplos com INSS e IR.',
   category: 'trabalho',
+  coverImage: {
+    src: '/images/news/13o-salario-2026-datas-e-quanto-voce-recebe.jpg',
+    alt: 'Holerite do 13º salário ao lado de um calendário de dezembro com o dia 18 marcado e um presente.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
@@ -49,6 +54,13 @@ export const news13oSalario2026DatasEQuantoVoceRecebe = {
     },
     {
       heading: 'Quanto você recebe: exemplos em reais',
+      image: {
+        src: '/images/news/13o-salario-2026-datas-e-quanto-voce-recebe-detalhe.jpg',
+        alt: 'Detalhe da ilustração: holerite do 13º salário ao lado de um calendário de dezembro com o dia 18 marcado e um presente.',
+        caption:
+          'Exemplo do holerite do 13º: a 2ª parcela já vem com o INSS descontado.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'A primeira parcela é metade do salário bruto, sem desconto algum. Todo o INSS e o Imposto de Renda incidem sobre o 13º inteiro, mas são descontados só na segunda parcela. Por isso a 2ª parcela costuma ser bem menor que a 1ª.',
       ],

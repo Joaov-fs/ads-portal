@@ -9,6 +9,7 @@ export type NewsCardProps = Readonly<{
   /** Capa visual: categoria, número em destaque e legenda. */
   cover?: Readonly<{
     category: ContentCategory;
+    image?: string;
     label: string;
     value: string;
   }>;
@@ -49,6 +50,7 @@ export function NewsCard({
         <NewsCover
           category={cover.category}
           className="aspect-[1200/630] w-full"
+          image={cover.image}
           label={cover.label}
           value={cover.value}
         />

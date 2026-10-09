@@ -8,6 +8,11 @@ export const newsDemissaoSemJustaCausaOQueVoceRecebeExemploEmReais = {
   description:
     'Salário de R$ 3.000 e 30 meses de empresa: aviso prévio de 36 dias, 13º, férias, multa de 40% do FGTS e o total da rescisão.',
   category: 'trabalho',
+  coverImage: {
+    src: '/images/news/demissao-sem-justa-causa-o-que-voce-recebe-exemplo-em-reais.jpg',
+    alt: 'Caixa com objetos de escritório ao lado do termo de rescisão com as verbas em reais.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
@@ -45,6 +50,12 @@ export const newsDemissaoSemJustaCausaOQueVoceRecebeExemploEmReais = {
     },
     {
       heading: 'Exemplo: salário de R$ 3.000 e 30 meses de empresa',
+      image: {
+        src: '/images/news/demissao-sem-justa-causa-o-que-voce-recebe-exemplo-em-reais-detalhe.jpg',
+        alt: 'Detalhe da ilustração: caixa com objetos de escritório ao lado do termo de rescisão com as verbas em reais.',
+        caption: 'As verbas do exemplo de rescisão, uma a uma.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'O cenário a seguir considera uma saída em 15 de julho, com aviso prévio indenizado e sem férias vencidas. O saldo do FGTS é estimado em 8% do salário por mês de contrato, ou R$ 7.200.',
       ],

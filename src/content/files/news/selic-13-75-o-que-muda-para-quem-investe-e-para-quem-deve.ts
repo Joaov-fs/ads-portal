@@ -7,6 +7,11 @@ export const newsSelic1375OQueMudaParaQuemInvesteEParaQuemDeve = {
   description:
     'Com o corte de 17 de setembro, a taxa básica chegou a 13,75% ao ano. Veja o efeito em CDB, poupança, financiamentos e dívidas, com exemplos em reais.',
   category: 'economia',
+  coverImage: {
+    src: '/images/news/selic-13-75-o-que-muda-para-quem-investe-e-para-quem-deve.jpg',
+    alt: 'Medidor apontando 13,75%, gráfico da Selic em queda e celular com investimentos.',
+    credit: 'Ilustração: PortalFina',
+  },
   authorId: 'equipe-editorial',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
@@ -56,6 +61,12 @@ export const newsSelic1375OQueMudaParaQuemInvesteEParaQuemDeve = {
     },
     {
       heading: 'Quem investe: o rendimento da renda fixa diminui um pouco',
+      image: {
+        src: '/images/news/selic-13-75-o-que-muda-para-quem-investe-e-para-quem-deve-detalhe.jpg',
+        alt: 'Detalhe da ilustração: medidor apontando 13,75%, gráfico da Selic em queda e celular com investimentos.',
+        caption: 'A Selic em 13,75% ao ano.',
+        credit: 'Ilustração: PortalFina',
+      },
       paragraphs: [
         'O CDI, que é a referência da maioria dos CDBs, acompanha a Selic de perto e fica cerca de 0,10 ponto abaixo dela. Um CDB que paga 100% do CDI rende, portanto, algo perto de 13,65% ao ano antes do Imposto de Renda.',
         'Em R$ 10.000 aplicados por 12 meses nessa taxa, o rendimento bruto é de R$ 1.365,00. Com IR de 17,5% (R$ 238,88), sobram R$ 1.126,13. Com a Selic em 15%, o mesmo CDB renderia cerca de R$ 1.229 líquidos: a queda de 1,25 ponto custou aproximadamente R$ 103 por ano a cada R$ 10 mil aplicados.',

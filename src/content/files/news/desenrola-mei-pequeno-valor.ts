@@ -12,6 +12,7 @@ export const desenrolaMeiPequenoValorNews = {
   coverImage: {
     src: '/images/news/desenrola-mei-pequeno-valor.png',
     alt: 'Microempreendedor analisa documentos e condições para renegociação de dívida do MEI.',
+    credit: 'Imagem ilustrativa',
   },
   featuredCalculators: ['das-mei-atraso', 'das-limite-mei'],
   highlights: [
