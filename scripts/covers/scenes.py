@@ -517,3 +517,16 @@ def _():
         + g(1430, 520, 0, 1, coins_stack(5), 'sh')
         + g(470, 560, -4, 1, phone(250, 500, phone_screen('Abono salarial', 'R$ 1.621,00', 'valor máximo', '#1864ab')), 'sh')
     )
+
+
+@scene('afastamento-medida-protetiva', '#6b3f7a', (560, 90, 700))
+def _():
+    medida = sheet(430, 560, 'MEDIDA PROTETIVA', '#6b3f7a', seed=62, extra='<g transform="translate(215 470)">' + stamp('6 MESES', 240, '#c0392b', -8) + '</g>')
+    quem_paga = payslip([('Primeiros 15 dias', 'Empregador'), ('Dias seguintes', 'INSS'), ('Duração máxima', '6 meses')], hl=(2, '#f3e5f5'), header='QUEM PAGA', accent='#6b3f7a', w=450, h=340)
+    return (
+        g(110, 150, -6, 1, medida)
+        + g(640, 120, 4, 1, quem_paga)
+        + g(1230, 110, 9, 1, phone(250, 500, phone_screen('Afastamento', '6 meses', 'salário pago', '#6b3f7a')))
+        + g(1330, 690, 0, 1, coins_stack(4), 'sh')
+        + g(760, 640, -14, 1, pen(330, '#2d3436'))
+    )

@@ -113,6 +113,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Abono salarial 2026: saque até 30 de dezembro',
   'desenrola-mei-pequeno-valor-desconto-dividas':
     'Desenrola MEI: desconto de 50% e como aderir',
+  'inss-paga-afastamento-de-ate-6-meses-a-mulheres-com-medida-protetiva':
+    'INSS paga afastamento de até 6 meses a vítimas',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */
