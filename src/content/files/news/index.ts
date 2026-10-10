@@ -1,3 +1,4 @@
+import { newsIpcaSetembro2026Sobe082Inflacao458 } from './ipca-de-setembro-sobe-0-82-e-inflacao-em-12-meses-chega-a-4-58';
 import { newsInssAfastamentoMedidaProtetiva6Meses } from './inss-paga-afastamento-de-ate-6-meses-a-mulheres-com-medida-protetiva';
 import { newsValeRefeicaoAlimentacaoInteroperabilidadeNovembro2026 } from './vale-refeicao-e-alimentacao-cartao-em-qualquer-maquininha-prazo-termina-em-novembro-de-2026';
 import { newsSelic1375OQueMudaParaQuemInvesteEParaQuemDeve } from './selic-13-75-o-que-muda-para-quem-investe-e-para-quem-deve';
@@ -59,4 +60,5 @@ export const newsFiles = [
   desenrolaMeiPequenoValorNews,
   newsQuintoDiaUtilDeOutubro2026,
   newsValeRefeicaoAlimentacaoInteroperabilidadeNovembro2026,
+  newsIpcaSetembro2026Sobe082Inflacao458,
 ] as const;

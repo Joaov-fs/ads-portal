@@ -530,3 +530,16 @@ def _():
         + g(1330, 690, 0, 1, coins_stack(4), 'sh')
         + g(760, 640, -14, 1, pen(330, '#2d3436'))
     )
+
+
+@scene('ipca-setembro', '#5f7a2e', (110, 90, 700))
+def _():
+    rep = doc(520, 600, 'IPCA SETEMBRO 2026', '#5f7a2e',
+              label_rows([('No mês', '0,82%'), ('Agosto', '-0,32%'), ('No ano', '3,95%'), ('12 meses', '4,58%')], 46, 140, 428, 52, 20, hl=(3, '#fff3bf'))
+              + '<g transform="translate(30 370)">' + chart_paper(460, 200, (0.15, 0.1, 0.3, 0.2, 0.45, 0.8), '#e03131') + '</g>')
+    return (
+        g(160, 110, -5, 1, rep)
+        + g(900, 150, 10, 1, tag('+7,98%', 240, '#e8590c'), 'shs')
+        + g(1000, 330, -6, 1, calculator(260, 360) + '<rect x="22" y="24" width="216" height="70" rx="10" fill="#c8d6c0"/><text x="224" y="74" font-size="34" font-weight="700" text-anchor="end" fill="#2d3a2a" font-family="DejaVu Sans Mono,monospace">2.091,60</text>')
+        + g(780, 560, 4, 1, coins_stack(3), 'sh')
+    )
