@@ -543,3 +543,14 @@ def _():
         + g(1000, 330, -6, 1, calculator(260, 360) + '<rect x="22" y="24" width="216" height="70" rx="10" fill="#c8d6c0"/><text x="224" y="74" font-size="34" font-weight="700" text-anchor="end" fill="#2d3a2a" font-family="DejaVu Sans Mono,monospace">2.091,60</text>')
         + g(780, 560, 4, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('pix-conta-salario', '#9c3d54', (90, 110, 540))
+def _():
+    conta = payslip([('Conta-salário', 'Pix Automático'), ('Início', '1º/7/2027'), ('Envio avulso', 'segue restrito')], hl=(1, '#ffe3ea'), header='CONTA-SALÁRIO', accent='#9c3d54', w=460, h=360)
+    return (
+        g(120, 130, -5, 1, conta)
+        + g(700, 90, 6, 1, calendar_month('JULHO 2027', 4, 31, marks=(1,), w=460, h=500, accent='#9c3d54', mark_color='#e67e22'))
+        + g(1260, 130, 8, 1, phone(250, 500, phone_screen('Pix Automático', '1º/7/2027', 'conta-salário', '#9c3d54')))
+        + g(250, 600, 3, 1, coins_stack(4), 'sh')
+    )

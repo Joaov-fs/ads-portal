@@ -1,3 +1,4 @@
+import { newsPixAutomaticoContaSalario2027 } from './pix-automatico-na-conta-salario-a-partir-de-1-de-julho-de-2027';
 import { newsIpcaSetembro2026Sobe082Inflacao458 } from './ipca-de-setembro-sobe-0-82-e-inflacao-em-12-meses-chega-a-4-58';
 import { newsInssAfastamentoMedidaProtetiva6Meses } from './inss-paga-afastamento-de-ate-6-meses-a-mulheres-com-medida-protetiva';
 import { newsValeRefeicaoAlimentacaoInteroperabilidadeNovembro2026 } from './vale-refeicao-e-alimentacao-cartao-em-qualquer-maquininha-prazo-termina-em-novembro-de-2026';
@@ -61,4 +62,5 @@ export const newsFiles = [
   newsQuintoDiaUtilDeOutubro2026,
   newsValeRefeicaoAlimentacaoInteroperabilidadeNovembro2026,
   newsIpcaSetembro2026Sobe082Inflacao458,
+  newsPixAutomaticoContaSalario2027,
 ] as const;
