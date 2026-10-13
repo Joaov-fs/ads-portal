@@ -5,6 +5,19 @@
  * mesmo tema compitam entre si e leva o leitor ao formato certo.
  */
 export const topicGroups: readonly (readonly string[])[] = [
+  ['vale-transporte-como-funciona-o-desconto-de-6', 'vale-transporte'],
+  ['adicional-de-insalubridade-como-calcular-os-graus', 'insalubridade'],
+  ['adicional-de-periculosidade-quem-recebe-e-como-calcular', 'periculosidade'],
+  ['banco-de-horas-como-funciona-e-como-calcular-o-saldo', 'banco-de-horas'],
+  ['salario-maternidade-quem-recebe-e-como-calcular', 'salario-maternidade'],
+  [
+    'como-calcular-a-pensao-alimenticia-percentual-e-base',
+    'pensao-alimenticia',
+  ],
+  ['pro-labore-como-calcular-inss-e-imposto-de-renda', 'pro-labore'],
+  ['mei-passou-do-limite-de-r-81-mil-o-que-acontece', 'excesso-limite-mei'],
+  ['cdi-o-que-e-e-como-calcular-o-rendimento', 'cdi'],
+  ['plr-como-funciona-e-como-calcular-o-imposto', 'plr-ppr-liquido'],
   ['como-calcular-o-13o-salario', 'decimo-salario', 'decimo-proporcional'],
   [
     'abono-salarial-2026-prazo-para-sacar-vai-ate-30-de-dezembro',

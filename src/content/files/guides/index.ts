@@ -1,3 +1,13 @@
+import { guideValeTransporteDesconto6 } from './vale-transporte-como-funciona-o-desconto-de-6';
+import { guideAdicionalInsalubridade } from './adicional-de-insalubridade-como-calcular-os-graus';
+import { guideAdicionalPericulosidade } from './adicional-de-periculosidade-quem-recebe-e-como-calcular';
+import { guideBancoDeHoras } from './banco-de-horas-como-funciona-e-como-calcular-o-saldo';
+import { guideSalarioMaternidade } from './salario-maternidade-quem-recebe-e-como-calcular';
+import { guideComoCalcularPensaoAlimenticia } from './como-calcular-a-pensao-alimenticia-percentual-e-base';
+import { guideProLaboreInssIr } from './pro-labore-como-calcular-inss-e-imposto-de-renda';
+import { guideMeiPassouDoLimite } from './mei-passou-do-limite-de-r-81-mil-o-que-acontece';
+import { guideCdiComoCalcular } from './cdi-o-que-e-e-como-calcular-o-rendimento';
+import { guidePlrComoCalcular } from './plr-como-funciona-e-como-calcular-o-imposto';
 import { guideComoConsultarARestituicaoDoImpostoDeRenda } from './como-consultar-a-restituicao-do-imposto-de-renda';
 import { guideComoConsultarSaldoEExtratoDoFgts } from './como-consultar-saldo-e-extrato-do-fgts';
 import { guideComoConsultarValoresAReceberNoBancoCentral } from './como-consultar-valores-a-receber-no-banco-central';
@@ -82,4 +92,14 @@ export const guideFiles = [
   guideQuantoCustaUmFuncionarioClt,
   guideSimplesNacionalEFatorRComoPagarMenosImposto,
   guideReajusteDoAluguelComoCalcularIgpMOuIpca,
+  guideValeTransporteDesconto6,
+  guideAdicionalInsalubridade,
+  guideAdicionalPericulosidade,
+  guideBancoDeHoras,
+  guideSalarioMaternidade,
+  guideComoCalcularPensaoAlimenticia,
+  guideProLaboreInssIr,
+  guideMeiPassouDoLimite,
+  guideCdiComoCalcular,
+  guidePlrComoCalcular,
 ] as const;

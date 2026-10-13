@@ -532,7 +532,7 @@ function seguroDesemprego(
             ? String(installments)
             : 'Sem direito pelo tempo informado',
         ],
-        ['Total a receber', installments > 0 ? money(total) : '—'],
+        ['Total a receber', installments > 0 ? money(total) : 'Sem direito'],
       ],
     },
     references: [
@@ -1191,7 +1191,7 @@ function amortizacaoAntecipada(values: CalculatorValues): CalculatorDecision {
           'Sem antecipar',
           money(result.payment),
           `${number.format(months)} meses`,
-          '—',
+          'R$ 0,00',
         ],
         [
           'Manter a parcela e encurtar o prazo',

@@ -46,7 +46,7 @@ export const guideTabelaDoImpostoDeRenda2026NaFolha = {
         caption: 'Tabela progressiva mensal (antes da redução da lei)',
         columns: ['Base de cálculo', 'Alíquota', 'Parcela a deduzir'],
         rows: [
-          ['Até R$ 2.428,80', 'Isento', '—'],
+          ['Até R$ 2.428,80', 'Isento', ''],
           ['De R$ 2.428,81 a R$ 2.826,65', '7,5%', 'R$ 182,16'],
           ['De R$ 2.826,66 a R$ 3.751,05', '15%', 'R$ 394,16'],
           ['De R$ 3.751,06 a R$ 4.664,68', '22,5%', 'R$ 675,49'],

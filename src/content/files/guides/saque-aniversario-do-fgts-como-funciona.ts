@@ -46,7 +46,7 @@ export const guideSaqueAniversarioDoFgtsComoFunciona = {
         caption: 'Saque-aniversário por faixa de saldo',
         columns: ['Saldo', 'Alíquota', 'Parcela adicional'],
         rows: [
-          ['Até R$ 500', '50%', '—'],
+          ['Até R$ 500', '50%', ''],
           ['R$ 500,01 a R$ 1.000', '40%', 'R$ 50'],
           ['R$ 1.000,01 a R$ 5.000', '30%', 'R$ 150'],
           ['R$ 5.000,01 a R$ 10.000', '20%', 'R$ 650'],
@@ -87,7 +87,7 @@ export const guideSaqueAniversarioDoFgtsComoFunciona = {
           ['Saldo restante', 'R$ 0,00', 'R$ 7.200,00, em saques anuais'],
           [
             'Primeiro saque anual',
-            '—',
+            '',
             'R$ 7.200 x 0,20 + R$ 650 = R$ 2.090,00',
           ],
         ],

@@ -47,7 +47,7 @@ export const guideMeiDasEmAtrasoComoRegularizar = {
         caption: 'DAS de R$ 82,05 pago com 46 dias de atraso',
         columns: ['Item', 'Percentual', 'Valor'],
         rows: [
-          ['DAS original', '—', 'R$ 82,05'],
+          ['DAS original', '', 'R$ 82,05'],
           ['Multa (0,33% ao dia)', '15,18%', 'R$ 12,46'],
           ['Juros (Selic + 1%)', '2,08%', 'R$ 1,71'],
           ['Total a pagar', '', 'R$ 96,21'],

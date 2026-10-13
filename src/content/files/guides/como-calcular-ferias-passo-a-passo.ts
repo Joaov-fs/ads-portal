@@ -49,8 +49,8 @@ export const guideComoCalcularFeriasPassoAPasso = {
         rows: [
           ['Dias de descanso', 'R$ 2.800,00', 'R$ 1.866,67'],
           ['1/3 sobre o descanso', 'R$ 933,33', 'R$ 622,22'],
-          ['Abono de 10 dias', '—', 'R$ 933,33'],
-          ['1/3 sobre o abono', '—', 'R$ 311,11'],
+          ['Abono de 10 dias', '', 'R$ 933,33'],
+          ['1/3 sobre o abono', '', 'R$ 311,11'],
           ['Total bruto', 'R$ 3.733,33', 'R$ 3.733,33'],
           ['INSS', 'R$ 336,60', 'R$ 199,68'],
           ['Imposto de Renda', 'R$ 0,00', 'R$ 0,00'],
@@ -69,7 +69,7 @@ export const guideComoCalcularFeriasPassoAPasso = {
         columns: ['Item', '30 dias de descanso', '20 dias + 10 vendidos'],
         rows: [
           ['Parte tributada (descanso + 1/3)', 'R$ 8.666,67', 'R$ 5.777,78'],
-          ['Abono + 1/3 (isento)', '—', 'R$ 2.888,89'],
+          ['Abono + 1/3 (isento)', '', 'R$ 2.888,89'],
           ['INSS', 'R$ 988,09', 'R$ 610,40'],
           ['Imposto de Renda', 'R$ 1.150,75', 'R$ 250,83'],
           ['Líquido', 'R$ 6.527,83', 'R$ 7.805,43'],

@@ -6,6 +6,26 @@ import type { ContentDocument } from './types';
  */
 export const metaTitles: Readonly<Record<string, string>> = {
   // Guias
+  'vale-transporte-como-funciona-o-desconto-de-6':
+    'Vale-transporte: desconto de 6% e parte da empresa',
+  'adicional-de-insalubridade-como-calcular-os-graus':
+    'Insalubridade: como calcular os graus de 10 a 40%',
+  'adicional-de-periculosidade-quem-recebe-e-como-calcular':
+    'Periculosidade: quem recebe e como calcular 30%',
+  'banco-de-horas-como-funciona-e-como-calcular-o-saldo':
+    'Banco de horas: prazos e como calcular o saldo',
+  'salario-maternidade-quem-recebe-e-como-calcular':
+    'Salário-maternidade: quem recebe e quanto',
+  'como-calcular-a-pensao-alimenticia-percentual-e-base':
+    'Pensão alimentícia: percentual, base e desconto',
+  'pro-labore-como-calcular-inss-e-imposto-de-renda':
+    'Pró-labore: INSS de 11% e Imposto de Renda',
+  'mei-passou-do-limite-de-r-81-mil-o-que-acontece':
+    'MEI passou de R$ 81 mil: o que acontece',
+  'cdi-o-que-e-e-como-calcular-o-rendimento':
+    'CDI: o que é e como calcular o rendimento',
+  'plr-como-funciona-e-como-calcular-o-imposto':
+    'PLR: como funciona e como calcular o imposto',
   'como-consultar-a-restituicao-do-imposto-de-renda':
     'Como consultar a restituição do Imposto de Renda',
   'como-consultar-saldo-e-extrato-do-fgts':
@@ -69,6 +89,22 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'pgfn-semana-regularizacao-tributaria-adesao-ate-9-de-outubro-desconto-ate-100-em-juros-e-multas':
+    'PGFN: semana de regularização, desconto até 100%',
+  'pix-por-aproximacao-sem-teto-de-r-500-como-ajustar-o-limite-no-app':
+    'Pix por aproximação sem teto de R$ 500: ajuste',
+  'focus-inflacao-5-01-selic-13-5-fim-de-2026-o-que-o-mercado-preve':
+    'Focus: inflação de 5,01% e Selic de 13,5% em 2026',
+  'pgfn-fgts-empregadores-negociar-divida-desconto-ate-29-de-janeiro':
+    'PGFN: dívida de FGTS de empregadores, desconto',
+  'quinto-dia-util-de-outubro-2026-prazo-do-salario-vai-ate-6-de-outubro':
+    'Quinto dia útil de outubro 2026: prazo do salário',
+  'vale-refeicao-e-alimentacao-cartao-em-qualquer-maquininha-prazo-termina-em-novembro-de-2026':
+    'Vale-refeição: cartão em qualquer maquininha',
+  'ipca-de-setembro-sobe-0-82-e-inflacao-em-12-meses-chega-a-4-58':
+    'IPCA de setembro: 0,82% e 4,58% em 12 meses',
+  'pix-automatico-na-conta-salario-a-partir-de-1-de-julho-de-2027':
+    'Pix Automático na conta-salário a partir de 2027',
   'receita-envia-cartas-a-498-mil-contribuintes-na-malha-fina-ate-20-de-outubro':
     'Malha fina: Receita envia 498 mil cartas',
   'votar-vale-como-prova-de-vida-do-inss-veja-quem-nao-precisa-fazer':

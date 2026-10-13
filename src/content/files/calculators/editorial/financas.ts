@@ -542,7 +542,7 @@ export const editorialFinancas: CalculatorEditorialMap = {
           'R$ 60.000,00, 1,1% ao mês, 120 meses, antecipando R$ 10.000,00',
         columns: ['Opção', 'Parcela', 'Prazo restante', 'Juros economizados'],
         rows: [
-          ['Sem antecipar', 'R$ 902,96', '120 meses', '—'],
+          ['Sem antecipar', 'R$ 902,96', '120 meses', ''],
           [
             'Manter a parcela e encurtar o prazo',
             'R$ 902,96',

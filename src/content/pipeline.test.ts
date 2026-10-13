@@ -13,7 +13,7 @@ import { metaTitleOf, metaTitles } from './seo';
 describe('content pipeline', () => {
   it('loads typed file content through the repository', () => {
     expect(contentRepository.list('news')).toHaveLength(21);
-    expect(contentRepository.list('guide')).toHaveLength(41);
+    expect(contentRepository.list('guide')).toHaveLength(51);
     expect(contentRepository.list('calculator')).toHaveLength(50);
     const guideSlugs = getContentStaticParams('guide').map((item) => item.slug);
 
