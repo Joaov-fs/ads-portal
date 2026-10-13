@@ -5,6 +5,8 @@
  * mesmo tema compitam entre si e leva o leitor ao formato certo.
  */
 export const topicGroups: readonly (readonly string[])[] = [
+  ['como-contar-prazos-dias-corridos-e-dias-uteis', 'contador-de-dias'],
+  ['ipva-como-calcular-valor-venal-aliquota-e-parcelas', 'ipva'],
   ['vale-transporte-como-funciona-o-desconto-de-6', 'vale-transporte'],
   ['adicional-de-insalubridade-como-calcular-os-graus', 'insalubridade'],
   ['adicional-de-periculosidade-quem-recebe-e-como-calcular', 'periculosidade'],

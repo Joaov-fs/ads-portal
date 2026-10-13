@@ -60,6 +60,55 @@ export const guideProLaboreInssIr = {
       },
     },
     {
+      heading: 'Tabela: pró-labore, descontos e INSS patronal',
+      paragraphs: [
+        'A tabela usa o motor da calculadora para quatro valores de pró-labore, sem dependentes. A última coluna mostra o INSS patronal de 20%, que a empresa paga além do pró-labore quando está fora do Simples Nacional, e que não sai do bolso do sócio.',
+        'No teto do INSS, o desconto do sócio para de crescer, mas o IRRF continua subindo com o valor do pró-labore. Já o INSS patronal é calculado sobre o valor total, e por isso pesa mais no caixa da empresa em pró-labores altos.',
+      ],
+      table: {
+        caption: 'Pró-labore líquido e custo para a empresa',
+        columns: [
+          'Pró-labore',
+          'INSS de 11%',
+          'IRRF',
+          'Líquido do sócio',
+          'INSS patronal de 20%',
+        ],
+        rows: [
+          ['R$ 2.000,00', 'R$ 220,00', 'R$ 0,00', 'R$ 1.780,00', 'R$ 400,00'],
+          ['R$ 4.000,00', 'R$ 440,00', 'R$ 0,00', 'R$ 3.560,00', 'R$ 800,00'],
+          [
+            'R$ 8.000,00',
+            'R$ 880,00',
+            'R$ 1.049,28',
+            'R$ 6.070,72',
+            'R$ 1.600,00',
+          ],
+          [
+            'R$ 10.000,00',
+            'R$ 932,31',
+            'R$ 1.584,89',
+            'R$ 7.482,80',
+            'R$ 2.000,00',
+          ],
+        ],
+      },
+    },
+    {
+      heading: 'Exemplo: pró-labore mais distribuição de lucros',
+      paragraphs: [
+        'Imagine uma empresa que gera R$ 15.000,00 de resultado disponível no mês. O sócio retira R$ 3.000,00 de pró-labore, com INSS de R$ 330,00 e IRRF de R$ 0,00, e R$ 12.000,00 de distribuição de lucros, que fica abaixo do limite de R$ 50 mil por mês e, nesse exemplo, não tem retenção.',
+        'O sócio recebe R$ 14.670,00 no total, sendo R$ 2.670,00 do pró-labore e R$ 12.000,00 de lucros. Só o pró-labore gera contribuição ao INSS, e é ele que forma a base da aposentadoria e dos benefícios. A distribuição de lucros só pode ser feita se a empresa tiver lucro apurado na contabilidade.',
+      ],
+    },
+    {
+      heading: 'Pró-labore e aposentadoria',
+      paragraphs: [
+        'A contribuição do sócio entra no cálculo dos benefícios do INSS, e quanto maior o pró-labore, maior a base usada, até o teto. Quem contribui só sobre o salário mínimo terá benefícios próximos do mínimo, e quem contribui mais terá benefícios maiores, no limite do teto.',
+        'Antes de reduzir o pró-labore para economizar imposto, compare a economia de hoje com o benefício que o sócio terá no futuro. Vale ainda lembrar que o INSS de 11% do pró-labore é uma contribuição obrigatória, e a fiscalização pode cobrar a diferença se o valor for abaixo do mínimo.',
+      ],
+    },
+    {
       heading: 'Quanto pró-labore retirar',
       paragraphs: [
         'Um pró-labore maior reduz o lucro disponível e aumenta o INSS, mas também melhora a aposentadoria e a base de benefícios. Um pró-labore menor economiza imposto agora, mas pode reduzir benefícios e, no Simples Nacional, mexer no Fator R, que usa a folha de pagamentos para definir se a empresa paga pelo Anexo III ou pelo V.',

@@ -47,10 +47,14 @@ import { guideAbonoSalarialPisPasepQuemTemDireito } from './abono-salarial-pis-p
 import { guideQuantoCustaUmFuncionarioClt } from './quanto-custa-um-funcionario-clt';
 import { guideSimplesNacionalEFatorRComoPagarMenosImposto } from './simples-nacional-e-fator-r-como-pagar-menos-imposto';
 import { guideReajusteDoAluguelComoCalcularIgpMOuIpca } from './reajuste-do-aluguel-como-calcular-igp-m-ou-ipca';
+import { guideComoContarPrazos } from './como-contar-prazos-dias-corridos-e-dias-uteis';
+import { guideIpvaComoCalcular } from './ipva-como-calcular-valor-venal-aliquota-e-parcelas';
 import { holeriteGuide } from './holerite';
 import { reservaEmergenciaGuide } from './reserva-emergencia';
 
 export const guideFiles = [
+  guideComoContarPrazos,
+  guideIpvaComoCalcular,
   holeriteGuide,
   reservaEmergenciaGuide,
   guideComoConsultarARestituicaoDoImpostoDeRenda,

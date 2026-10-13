@@ -74,6 +74,42 @@ export const guideMeiPassouDoLimite = {
       },
     },
     {
+      heading: 'Tabela: limite proporcional de quem abriu no ano',
+      paragraphs: [
+        'Quem abre o MEI durante o ano não tem R$ 81.000,00 de limite. O limite é de R$ 6.750,00 vezes os meses de atividade, contando o mês de abertura. A tabela mostra o limite e o teto da tolerância de 20% conforme o mês de abertura.',
+        'Isso significa que quem abre no segundo semestre estoura o limite com muito menos faturamento do que parece. Um MEI aberto em outubro, por exemplo, tem limite de R$ 20.250,00 (3 meses) até o fim do ano.',
+      ],
+      table: {
+        caption: 'Limite proporcional por mês de abertura',
+        columns: [
+          'Mês de abertura',
+          'Meses no ano',
+          'Limite do ano',
+          'Teto com tolerância de 20%',
+        ],
+        rows: [
+          ['Janeiro', '12', 'R$ 81.000,00', 'R$ 97.200,00'],
+          ['Abril', '9', 'R$ 60.750,00', 'R$ 72.900,00'],
+          ['Julho', '6', 'R$ 40.500,00', 'R$ 48.600,00'],
+          ['Outubro', '3', 'R$ 20.250,00', 'R$ 24.300,00'],
+        ],
+      },
+    },
+    {
+      heading: 'Como projetar o faturamento do ano',
+      paragraphs: [
+        'Para saber se você vai estourar o limite, divida o faturamento acumulado pelos meses passados e multiplique por 12. Se em junho o acumulado é de R$ 45.000,00, a média é de R$ 7.500,00 por mês, e a projeção para o ano é de R$ 90.000,00. Isso passa o limite em R$ 9.000,00 (11,11%), dentro da tolerância de 20%.',
+        'Ainda é possível se ajustar: o que sobra de limite é R$ 36.000,00, e nos 6 meses restantes isso dá R$ 6.000,00 por mês. Se a média mensal continuar acima disso, o desenquadramento é uma questão de tempo. Planejar a migração antes é mais barato do que correr atrás da diferença depois.',
+      ],
+    },
+    {
+      heading: 'O que muda ao virar microempresa',
+      paragraphs: [
+        'O MEI paga um valor fixo mensal no DAS. A microempresa no Simples Nacional paga uma porcentagem do faturamento, que começa em 4% para comércio (Anexo I) e 6% em serviços do Anexo III, e sobe a cada faixa de receita dos últimos 12 meses. Com faturamento de R$ 8.000,00 por mês no comércio, o imposto inicial seria de R$ 320,00, bem mais que o DAS do MEI.',
+        'Além do imposto maior, a microempresa tem mais obrigações, como escrituração e nota fiscal em todas as vendas, e normalmente precisa de contador. Essa conta deve entrar no preço antes de decidir crescer acima do limite.',
+      ],
+    },
+    {
       heading: 'Como se organizar',
       paragraphs: [
         'O melhor caminho é acompanhar o faturamento mês a mês e comparar com a meta de R$ 6.750,00. Quem está perto do limite deve planejar a migração para microempresa, o que exige contador, CNPJ ajustado, nota fiscal pelas regras do Simples e outros custos mensais.',

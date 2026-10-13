@@ -77,6 +77,39 @@ export const guidePlrComoCalcular = {
       },
     },
     {
+      heading: 'Tabela: PLR líquida e alíquota efetiva por valor',
+      paragraphs: [
+        'A tabela mostra seis valores de PLR, o imposto retido, o líquido e a alíquota efetiva, que é o imposto dividido pelo valor bruto. A alíquota efetiva é sempre menor que a da faixa, porque a dedução reduz o imposto, e isso explica por que uma PLR maior não "come" quase tudo no imposto.',
+        'Por exemplo, uma PLR de R$ 25.000,00 está na faixa de 27,5%, mas a alíquota efetiva fica bem menor por causa da dedução. A conta completa é o valor vezes a alíquota da faixa, menos a dedução da faixa.',
+      ],
+      table: {
+        caption: 'PLR líquida por valor bruto no ano',
+        columns: ['PLR bruta', 'Imposto', 'Líquido', 'Alíquota efetiva'],
+        rows: [
+          ['R$ 8.000,00', 'R$ 0,00', 'R$ 8.000,00', '0,00%'],
+          ['R$ 9.500,00', 'R$ 96,42', 'R$ 9.403,58', '1,01%'],
+          ['R$ 12.000,00', 'R$ 439,75', 'R$ 11.560,25', '3,66%'],
+          ['R$ 15.000,00', 'R$ 1.027,22', 'R$ 13.972,78', '6,85%'],
+          ['R$ 18.000,00', 'R$ 1.783,20', 'R$ 16.216,80', '9,91%'],
+          ['R$ 25.000,00', 'R$ 3.708,20', 'R$ 21.291,80', '14,83%'],
+        ],
+      },
+    },
+    {
+      heading: 'O que a lei exige para a PLR valer',
+      paragraphs: [
+        'Para não ser tratada como salário, a PLR precisa de um acordo negociado entre a empresa e uma comissão de empregados, com participação do sindicato, ou de convenção ou acordo coletivo. O texto deve ter regras claras e objetivas, metas, forma de medir os resultados e prazo de vigência.',
+        'É proibido pagar a PLR em substituição ao salário ou com periodicidade menor que um trimestre civil, e o limite é de dois pagamentos no ano. Se essas regras não forem seguidas, a Justiça pode reconhecer a PLR como salário e cobrar INSS, FGTS e reflexos.',
+      ],
+    },
+    {
+      heading: 'PLR na rescisão e para quem entrou no ano',
+      paragraphs: [
+        'Quem foi desligado antes da data de pagamento costuma ter direito à PLR proporcional ao tempo trabalhado no período, conforme entendimento do TST, salvo regra diferente no acordo. Quem entrou durante o ano geralmente recebe também de forma proporcional, e o acordo deve dizer como é feita a conta.',
+        'Se você deixou a empresa e achou que a PLR deveria ter sido paga, peça ao RH o acordo, a memória de cálculo e o critério de proporcionalidade. Em caso de dúvida, o sindicato da categoria pode ajudar a conferir.',
+      ],
+    },
+    {
       heading: 'PLR parcelada: o imposto é anual',
       paragraphs: [
         'Como a base é anual, quem recebe a PLR em duas parcelas não escapa da faixa mais alta. A segunda parcela é tributada considerando o que já foi pago no ano. Dividir o pagamento muda o fluxo de caixa, mas o imposto final do ano continua pela soma das parcelas.',

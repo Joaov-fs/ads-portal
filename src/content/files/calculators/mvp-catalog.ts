@@ -2,6 +2,7 @@ import type { CalculatorId } from '@/calculators/types';
 
 import { calculatorEditorial } from './editorial';
 import { calculatorExtras } from './editorial/aprofundamento';
+import { calculatorExtras2 } from './editorial/aprofundamento-2';
 import type {
   CalculatorDocument,
   CalculatorField,
@@ -1129,6 +1130,7 @@ export const mvpCalculatorCatalog = specs.map(
         },
         { heading: 'O que muda o resultado', paragraphs: editorial.factors },
         ...(calculatorExtras[spec.slug] ?? []),
+        ...(calculatorExtras2[spec.slug] ?? []),
         {
           heading: 'Erros comuns ao preencher',
           paragraphs: editorial.mistakes,

@@ -6,6 +6,10 @@ import type { ContentDocument } from './types';
  */
 export const metaTitles: Readonly<Record<string, string>> = {
   // Guias
+  'como-contar-prazos-dias-corridos-e-dias-uteis':
+    'Como contar prazos: dias corridos e dias úteis',
+  'ipva-como-calcular-valor-venal-aliquota-e-parcelas':
+    'IPVA: como calcular valor venal, alíquota e parcelas',
   'vale-transporte-como-funciona-o-desconto-de-6':
     'Vale-transporte: desconto de 6% e parte da empresa',
   'adicional-de-insalubridade-como-calcular-os-graus':

@@ -62,10 +62,48 @@ export const guideSalarioMaternidade = {
       ],
     },
     {
+      heading: 'Tabela: valor total por salário',
+      paragraphs: [
+        'A tabela mostra o total bruto do salário-maternidade da empregada CLT em 120 dias (4 meses) e em 180 dias (6 meses, na Empresa Cidadã), além da diferença entre os dois. É o valor mensal multiplicado pelos meses de afastamento.',
+        'Os valores são brutos, antes do Imposto de Renda, e usam uma remuneração mensal fixa. Se o seu holerite tem comissão, hora extra ou adicional habitual, a média desses valores entra na conta e o total fica maior.',
+      ],
+      table: {
+        caption: 'Salário-maternidade da empregada CLT',
+        columns: ['Salário mensal', '120 dias', '180 dias', 'Diferença'],
+        rows: [
+          ['R$ 2.000,00', 'R$ 8.000,00', 'R$ 12.000,00', 'R$ 4.000,00'],
+          ['R$ 3.000,00', 'R$ 12.000,00', 'R$ 18.000,00', 'R$ 6.000,00'],
+          ['R$ 4.000,00', 'R$ 16.000,00', 'R$ 24.000,00', 'R$ 8.000,00'],
+          ['R$ 5.000,00', 'R$ 20.000,00', 'R$ 30.000,00', 'R$ 10.000,00'],
+        ],
+      },
+    },
+    {
+      heading: 'Contribuinte individual: como a média é calculada',
+      paragraphs: [
+        'Para a contribuinte individual e a facultativa, o valor mensal é a média dos últimos 12 salários de contribuição, apurados em até 15 meses. Como exemplo, quem contribuiu 6 meses sobre R$ 1.621,00 e 6 meses sobre R$ 3.000,00 tem média de R$ 2.310,50 por mês, e recebe R$ 9.242,00 nos 4 meses.',
+        'Por isso vale manter a contribuição em dia e, se possível, sobre uma base mais alta nos meses antes do parto. A MEI, que contribui sobre o salário mínimo, recebe sempre um salário mínimo por mês.',
+      ],
+    },
+    {
+      heading: 'Direitos durante a licença',
+      paragraphs: [
+        'O período do salário-maternidade conta como tempo de serviço para férias e 13º, e a empresa continua depositando o FGTS. Ao voltar, a empregada mantém o cargo e o salário, e a estabilidade vai até 5 meses depois do parto.',
+        'A empresa não pode demitir a empregada sem justa causa desde a confirmação da gravidez. Se isso acontecer, ela tem direito a reintegração ou indenização do período de estabilidade, e deve procurar o sindicato ou a Justiça do Trabalho.',
+      ],
+    },
+    {
       heading: 'Quando começa e outros detalhes',
       paragraphs: [
         'O afastamento pode começar até 28 dias antes do parto, mediante atestado médico, e vai até 91 dias depois, no padrão de 120 dias. Em adoção, o prazo de 120 dias vale independentemente da idade da criança. No caso de aborto não criminoso, o salário-maternidade é de 2 semanas.',
         'A gestante tem estabilidade no emprego desde a confirmação da gravidez até 5 meses depois do parto, o que protege de demissão sem justa causa nesse período.',
+      ],
+    },
+    {
+      heading: 'Passo a passo para organizar o afastamento',
+      paragraphs: [
+        'Quatro cuidados evitam a maior parte dos problemas. Primeiro, avise o RH da data prevista do parto e entregue o atestado médico no prazo combinado. Segundo, peça por escrito a data de início e de fim da licença, para conferir se são 120 ou 180 dias. Terceiro, confira no primeiro pagamento se o valor inclui a média de comissões e adicionais habituais.',
+        'Por fim, combine com antecedência a data de retorno e as férias que ainda restam. Guardar a certidão de nascimento, o atestado e os holerites do período facilita qualquer correção depois, tanto na empresa quanto no INSS.',
       ],
     },
     {

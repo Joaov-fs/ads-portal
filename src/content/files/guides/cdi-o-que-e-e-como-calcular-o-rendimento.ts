@@ -68,6 +68,37 @@ export const guideCdiComoCalcular = {
       },
     },
     {
+      heading: 'Tabela: R$ 10.000 a 100% do CDI por prazo',
+      paragraphs: [
+        'O prazo muda o imposto, e o imposto muda o líquido. A tabela mostra o que sobra de R$ 10.000,00 aplicados a 100% do CDI em quatro prazos, com o CDI em 13,65% ao ano e a alíquota regressiva do Imposto de Renda de cada prazo.',
+        'Note que o imposto cai quando o prazo passa de 6, 12 e 24 meses, e o rendimento líquido dos 24 meses é mais que o dobro do de 12 meses. Esperar um pouco mais pode compensar mais do que procurar um percentual maior do CDI.',
+      ],
+      table: {
+        caption: 'CDB de 100% do CDI, CDI de 13,65% ao ano',
+        columns: ['Prazo', 'Rendimento bruto', 'Alíquota de IR', 'Líquido'],
+        rows: [
+          ['3 meses', 'R$ 325,05', '22,50%', 'R$ 251,92'],
+          ['6 meses', 'R$ 660,68', '20,00%', 'R$ 528,54'],
+          ['12 meses', 'R$ 1.365,00', '17,50%', 'R$ 1.126,13'],
+          ['24 meses', 'R$ 2.916,32', '15,00%', 'R$ 2.478,87'],
+        ],
+      },
+    },
+    {
+      heading: 'O que acontece quando a Selic cai',
+      paragraphs: [
+        'O rendimento acompanha o CDI. Com R$ 10.000,00 a 100% do CDI por 12 meses, um CDI de 13,65% rende R$ 1.126,13 líquidos. Se o CDI cair 2 pontos percentuais, para 11,65%, o líquido cai para R$ 961,13, uma perda de R$ 165,00 no ano.',
+        'Por isso o percentual do CDI importa menos do que parece quando a taxa básica muda. Um CDB de 110% do CDI em um cenário de Selic mais baixa pode render menos, em reais, do que um de 100% em um cenário de Selic mais alta.',
+      ],
+    },
+    {
+      heading: 'Como o rendimento diário é calculado',
+      paragraphs: [
+        'O CDI é divulgado como taxa anual, mas o rendimento é aplicado por dia útil, com base em 252 dias úteis por ano. A taxa diária equivalente a 13,65% ao ano é de cerca de 0,0508% por dia útil.',
+        'Por isso o rendimento depende dos dias úteis e não dos dias corridos, e o saldo do investimento pós-fixado aparece em extratos como o valor atualizado a cada dia. Fim de semana e feriado não rendem, mas o dia seguinte compensa.',
+      ],
+    },
+    {
       heading: 'Como comparar e erros comuns',
       paragraphs: [
         'Compare sempre o rendimento líquido no mesmo prazo, e não apenas o percentual do CDI. Considere também a liquidez (se dá para resgatar a qualquer momento), a garantia do Fundo Garantidor de Créditos (FGC, até R$ 250 mil por CPF e por instituição) e o valor mínimo da aplicação.',

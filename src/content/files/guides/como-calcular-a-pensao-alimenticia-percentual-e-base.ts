@@ -80,6 +80,55 @@ export const guideComoCalcularPensaoAlimenticia = {
       },
     },
     {
+      heading: 'Tabela: pensão por percentual e renda líquida',
+      paragraphs: [
+        'A tabela aplica quatro percentuais a quatro rendas líquidas. Ela serve para entender a ordem de grandeza, e não para definir o valor: o percentual correto é o que está na decisão ou no acordo, e pode ser diferente de todos eles.',
+        'Quando há mais de um filho, a decisão costuma indicar um percentual total, dividido entre eles, ou um valor para cada um. Leia o texto com atenção, porque a soma pode mudar o que cabe a cada beneficiário.',
+      ],
+      table: {
+        caption: 'Pensão em quatro percentuais da renda líquida',
+        columns: ['Renda líquida', '20%', '25%', '30%', '33%'],
+        rows: [
+          ['R$ 3.000,00', 'R$ 600,00', 'R$ 750,00', 'R$ 900,00', 'R$ 990,00'],
+          [
+            'R$ 4.000,00',
+            'R$ 800,00',
+            'R$ 1.000,00',
+            'R$ 1.200,00',
+            'R$ 1.320,00',
+          ],
+          [
+            'R$ 5.000,00',
+            'R$ 1.000,00',
+            'R$ 1.250,00',
+            'R$ 1.500,00',
+            'R$ 1.650,00',
+          ],
+          [
+            'R$ 8.000,00',
+            'R$ 1.600,00',
+            'R$ 2.000,00',
+            'R$ 2.400,00',
+            'R$ 2.640,00',
+          ],
+        ],
+      },
+    },
+    {
+      heading: 'Pensão sobre 13º, férias e rescisão',
+      paragraphs: [
+        'Se a decisão manda a pensão incidir sobre o 13º, o desconto é feito sobre o valor líquido dessa verba. Com salário de R$ 5.000,00, o 13º líquido é de R$ 4.498,49, e uma pensão de 30% sobre ele vale R$ 1.349,55. O mesmo raciocínio vale para as férias com um terço e para as verbas da rescisão, quando a decisão as inclui.',
+        'Se o texto não fala nessas verbas, a empresa não deve descontar por conta própria. A dúvida deve ser levada ao juiz, e o pagamento deve seguir o que está escrito.',
+      ],
+    },
+    {
+      heading: 'Revisão, redução e fim da pensão',
+      paragraphs: [
+        'O valor pode ser revisto se mudar a necessidade de quem recebe ou a possibilidade de quem paga, por exemplo com perda de emprego, nascimento de outro filho ou aumento de despesas. A revisão é pedida na Justiça, e até a nova decisão vale o que foi fixado.',
+        'A pensão não acaba automaticamente quando o filho faz 18 anos. A exoneração precisa de decisão judicial, e o juiz pode manter o pagamento se o filho continua estudando ou não consegue se sustentar. Parar de pagar por conta própria gera dívida.',
+      ],
+    },
+    {
       heading: 'Desconto em folha e atraso',
       paragraphs: [
         'Quando o pai ou a mãe tem emprego formal, a pensão pode ser descontada direto no contracheque e repassada ao beneficiário, o que evita atrasos. Quem não tem carteira assinada paga por depósito ou transferência, e deve guardar os comprovantes.',

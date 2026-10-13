@@ -71,6 +71,42 @@ export const guideAdicionalInsalubridade = {
       },
     },
     {
+      heading: 'Quando a norma da categoria usa o salário-base',
+      paragraphs: [
+        'Algumas convenções coletivas e contratos definem uma base maior que o salário mínimo, como o salário-base do empregado. Nesses casos o adicional cresce junto com o salário. A tabela mostra o valor mensal em cada grau para quatro salários, e só vale para quem tem essa previsão por escrito. Se a sua categoria não tem, a base continua sendo o salário mínimo.',
+        'Se não souber qual base se aplica, confira a convenção coletiva da categoria no sindicato ou no RH, e compare o valor do adicional no holerite com a conta feita.',
+      ],
+      table: {
+        caption: 'Adicional mensal se a base for o salário-base',
+        columns: [
+          'Salário-base',
+          'Grau mínimo (10%)',
+          'Grau médio (20%)',
+          'Grau máximo (40%)',
+        ],
+        rows: [
+          ['R$ 2.000,00', 'R$ 200,00', 'R$ 400,00', 'R$ 800,00'],
+          ['R$ 2.400,00', 'R$ 240,00', 'R$ 480,00', 'R$ 960,00'],
+          ['R$ 3.000,00', 'R$ 300,00', 'R$ 600,00', 'R$ 1.200,00'],
+          ['R$ 4.000,00', 'R$ 400,00', 'R$ 800,00', 'R$ 1.600,00'],
+        ],
+      },
+    },
+    {
+      heading: 'Exemplo de contracheque com grau médio',
+      paragraphs: [
+        'Um empregado com salário-base de R$ 2.400,00 e insalubridade de grau médio sobre o salário mínimo recebe R$ 324,20 de adicional, e a remuneração bruta do mês vai a R$ 2.724,20. Como o adicional é parte do salário, ele entra na base do INSS e do Imposto de Renda.',
+        'Nesse exemplo, o INSS é de R$ 220,86 e o IRRF é de R$ 0,00, sem dependentes, o que deixa R$ 2.503,34 líquidos. O adicional aumenta o líquido, mas parte dele volta em desconto, e é isso que explica por que o valor que cai na conta é menor que o do adicional somado ao salário.',
+      ],
+    },
+    {
+      heading: 'Laudo, perícia e quando o adicional acaba',
+      paragraphs: [
+        'O enquadramento depende de perícia feita por médico do trabalho ou engenheiro de segurança do trabalho, que mede a exposição e classifica o grau. O laudo deve ser guardado pela empresa e consultado pelo empregado quando houver dúvida sobre o grau pago.',
+        'O adicional deixa de ser devido quando o risco é eliminado ou neutralizado de forma comprovada, por exemplo com uma mudança no ambiente ou equipamento de proteção que reduz o agente abaixo do limite. A empresa não pode simplesmente cortar o valor: precisa de laudo que mostre a mudança, e a decisão pode ser contestada pelo empregado.',
+      ],
+    },
+    {
       heading: 'Insalubridade e periculosidade juntas',
       paragraphs: [
         'Pela CLT, quem tem direito aos dois adicionais escolhe o mais vantajoso, e a possibilidade de acumular os dois é discutida na Justiça do Trabalho. Como a periculosidade é de 30% sobre o salário-base e a insalubridade incide em regra sobre o salário mínimo, para salários mais altos a periculosidade costuma pagar mais.',

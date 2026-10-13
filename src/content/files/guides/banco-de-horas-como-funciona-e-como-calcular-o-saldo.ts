@@ -64,6 +64,59 @@ export const guideBancoDeHoras = {
       ],
     },
     {
+      heading: 'Tabela: valor da hora e do saldo por salário',
+      paragraphs: [
+        'A hora normal é o salário dividido por 220 horas mensais. Se o saldo precisar ser pago em dinheiro, cada hora vale 50% a mais. A tabela mostra os valores para quatro salários e o total de um saldo de 12 horas, para você saber o que esperar se a empresa não compensar as horas no prazo.',
+      ],
+      table: {
+        caption: 'Hora normal, hora com 50% e saldo de 12 horas',
+        columns: ['Salário', 'Hora normal', 'Hora com 50%', '12 horas pagas'],
+        rows: [
+          ['R$ 2.000,00', 'R$ 9,09', 'R$ 13,64', 'R$ 163,64'],
+          ['R$ 2.640,00', 'R$ 12,00', 'R$ 18,00', 'R$ 216,00'],
+          ['R$ 3.500,00', 'R$ 15,91', 'R$ 23,86', 'R$ 286,36'],
+          ['R$ 5.000,00', 'R$ 22,73', 'R$ 34,09', 'R$ 409,09'],
+        ],
+      },
+    },
+    {
+      heading: 'Prazos e formas de acordo',
+      paragraphs: [
+        'O prazo para compensar depende do tipo de acordo. O acordo individual escrito vale para compensação em até 6 meses. Acordo ou convenção coletiva pode estender até 1 ano. Quando a compensação acontece no mesmo mês, a regra é mais simples e pode ser combinada de forma individual, inclusive de forma tácita.',
+        'Em qualquer caso, a jornada diária não pode passar de 10 horas e deve haver intervalo para descanso. Se o acordo não existe por escrito, as horas a mais devem ser pagas como hora extra no mês, e não acumuladas.',
+      ],
+      table: {
+        caption: 'Prazo máximo de compensação por tipo de acordo',
+        columns: ['Tipo de acordo', 'Prazo máximo', 'Forma'],
+        rows: [
+          ['Individual', '6 meses', 'Por escrito'],
+          [
+            'Acordo ou convenção coletiva',
+            '1 ano',
+            'Negociação com o sindicato',
+          ],
+          ['Compensação no mesmo mês', 'Até o fim do mês', 'Escrito ou tácito'],
+        ],
+      },
+    },
+    {
+      heading: 'Exemplo de uma semana de trabalho',
+      paragraphs: [
+        'Para conferir o extrato, some o crédito de cada dia e subtraia o débito. Em uma jornada de 8 horas por dia, uma semana pode ter dias com mais e dias com menos horas, e o saldo da semana é a soma das diferenças.',
+      ],
+      table: {
+        caption: 'Saldo de uma semana com jornada de 8 horas',
+        columns: ['Dia', 'Horas trabalhadas', 'Diferença', 'Saldo acumulado'],
+        rows: [
+          ['Segunda', '10 horas', '+2 horas', '+2 horas'],
+          ['Terça', '9 horas', '+1 hora', '+3 horas'],
+          ['Quarta', '8 horas', '0', '+3 horas'],
+          ['Quinta', '7 horas', '-1 hora', '+2 horas'],
+          ['Sexta', '9 horas', '+1 hora', '+3 horas'],
+        ],
+      },
+    },
+    {
       heading: 'Banco de horas, hora extra e DSR',
       paragraphs: [
         'Hora extra paga em dinheiro tem adicional de 50% e reflete no descanso semanal remunerado. Hora compensada em folga não tem adicional, porque a folga já paga a hora trabalhada. Por isso a empresa que escolhe o banco de horas economiza o adicional, e o empregado só recebe esse valor se o saldo não for compensado.',

@@ -13,7 +13,7 @@ Projeto solo, baixa manutenção. Este é o único checklist recorrente.
 - Tabela do IRRF, faixa de isenção, desconto por dependente.
 - Seguro-desemprego, Bolsa Família, BPC, abono PIS (prazo), limite e DAS do MEI.
 - Depois de ajustar `src/calculators`, rodar os testes e atualizar as datas de revisão (`reviewDates` em `mvp-catalog.ts`).
-- Refazer as tabelas de referência das calculadoras: `npx tsx scripts/aprofundamento/gerar.mts` (revise antes os valores fixos citados no texto do script).
+- Refazer as tabelas de referência das calculadoras: `npx tsx scripts/aprofundamento/gerar.mts` e `npx tsx scripts/aprofundamento/gerar-2.mts` (revise antes os valores fixos citados no texto dos scripts: salário mínimo, limite do MEI, taxas de exemplo). Os guias de pró-labore, PLR, pensão e outros citam valores calculados no texto: depois da virada do ano, procure por eles com grep.
 - Guias e notícias trazem valores no texto (R$ 1.621, R$ 8.475,55, R$ 81.000 etc.): busque por eles com `grep -rn "1.621" src/content/files` e ajuste os que mudaram.
 
 ## Quando sair norma nova

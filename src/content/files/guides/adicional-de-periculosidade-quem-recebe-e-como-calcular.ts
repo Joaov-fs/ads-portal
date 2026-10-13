@@ -56,10 +56,78 @@ export const guideAdicionalPericulosidade = {
       },
     },
     {
+      heading: 'Tabela: periculosidade por faixa de salário',
+      paragraphs: [
+        'A tabela mostra o adicional de 30% para quatro salários-base, a remuneração mensal com o adicional, o efeito de um ano inteiro (12 meses mais 13º e férias com um terço) e o FGTS que a empresa deposita sobre esse total.',
+        'Como o adicional cresce com o salário, quem ganha mais recebe uma diferença maior em cada reflexo. Para salários acima do mínimo, a periculosidade costuma pagar mais que a insalubridade de grau máximo.',
+      ],
+      table: {
+        caption: 'Efeito do adicional de 30% por salário-base',
+        columns: [
+          'Salário-base',
+          'Adicional mensal',
+          'Remuneração com adicional',
+          'Efeito anual bruto',
+          'FGTS no ano',
+        ],
+        rows: [
+          [
+            'R$ 2.000,00',
+            'R$ 600,00',
+            'R$ 2.600,00',
+            'R$ 8.600,00',
+            'R$ 688,00',
+          ],
+          [
+            'R$ 3.000,00',
+            'R$ 900,00',
+            'R$ 3.900,00',
+            'R$ 12.900,00',
+            'R$ 1.032,00',
+          ],
+          [
+            'R$ 4.000,00',
+            'R$ 1.200,00',
+            'R$ 5.200,00',
+            'R$ 17.200,00',
+            'R$ 1.376,00',
+          ],
+          [
+            'R$ 6.000,00',
+            'R$ 1.800,00',
+            'R$ 7.800,00',
+            'R$ 25.800,00',
+            'R$ 2.064,00',
+          ],
+        ],
+      },
+    },
+    {
+      heading: 'Periculosidade e hora extra',
+      paragraphs: [
+        'O adicional entra na base da hora extra. Com salário de R$ 3.000,00 e adicional de R$ 900,00, a base mensal é de R$ 3.900,00. Dividindo por 220 horas, a hora normal vale R$ 17,73 e a hora extra com 50% vale R$ 26,59. Sem o adicional na base, a hora extra seria de R$ 20,45, o que mostra o tamanho da diferença.',
+        'Por isso, quem trabalha com periculosidade e faz hora extra deve conferir se o holerite usa o salário com adicional como base. É um dos erros mais comuns de cálculo e pode ser cobrado com os valores retroativos.',
+      ],
+    },
+    {
+      heading: 'Quais atividades costumam ser reconhecidas',
+      paragraphs: [
+        'A lista de atividades perigosas vem da CLT e da NR-16: trabalho com explosivos e inflamáveis, energia elétrica em condições de risco, segurança pessoal ou patrimonial exposta a roubos e outras violências físicas, e trabalho com motocicleta como instrumento da função. O reconhecimento depende de perícia, e não do cargo.',
+        'Se a sua rotina se encaixa em uma delas e o holerite não traz o adicional, peça o laudo do setor ao RH. Quem já recebe o adicional deve guardar os holerites, pois eles servem de prova se a empresa deixar de pagar sem laudo novo.',
+      ],
+    },
+    {
       heading: 'Periculosidade ou insalubridade: qual paga mais',
       paragraphs: [
         'Com o salário mínimo de R$ 1.621,00 como base, a insalubridade de grau máximo (40%) paga R$ 648,40. A periculosidade de quem ganha R$ 3.000,00 paga R$ 900,00. Para salários acima do mínimo, a periculosidade costuma ser mais vantajosa.',
         'A CLT manda o empregado escolher entre os dois quando ambos se aplicam. A possibilidade de acumular os adicionais é discutida na Justiça do Trabalho, então vale confirmar com o sindicato da sua categoria antes de pedir.',
+      ],
+    },
+    {
+      heading: 'Como conferir o adicional no holerite',
+      paragraphs: [
+        'Faça três contas simples. Divida o adicional pago pelo salário-base: o resultado deve ser 30%. Confira se a linha de periculosidade aparece em todos os meses, inclusive nos meses de férias e no 13º. E veja se as horas extras são calculadas sobre o salário somado ao adicional.',
+        'Se alguma dessas contas não fechar, peça por escrito a explicação ao RH, anexando os holerites. Em meses de afastamento por doença, o adicional pode deixar de ser pago porque não há exposição ao risco, e essa regra deve estar clara na empresa.',
       ],
     },
     {

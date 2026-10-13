@@ -72,6 +72,43 @@ export const guideValeTransporteDesconto6 = {
       ],
     },
     {
+      heading: 'Tabela: desconto e parte da empresa por salário',
+      paragraphs: [
+        'A tabela mostra o desconto máximo de 6% para cinco salários, com um gasto de transporte de R$ 380,00 por mês. Quanto menor o salário, menor o desconto, e maior a parte que a empresa paga. Em todos os casos o desconto nunca passa do gasto real: se o transporte custar menos que 6% do salário, o empregado paga só o que o transporte custa.',
+        'Repare que a parte da empresa é maior quanto menor o salário. Para o empregado que ganha o salário mínimo, o vale cobre mais da metade do gasto com transporte.',
+      ],
+      table: {
+        caption: 'Quem paga o quê com transporte de R$ 380,00 por mês',
+        columns: [
+          'Salário-base',
+          'Teto de 6%',
+          'Desconto do empregado',
+          'Parte da empresa',
+        ],
+        rows: [
+          ['R$ 1.621,00', 'R$ 97,26', 'R$ 97,26', 'R$ 282,74'],
+          ['R$ 2.000,00', 'R$ 120,00', 'R$ 120,00', 'R$ 260,00'],
+          ['R$ 2.400,00', 'R$ 144,00', 'R$ 144,00', 'R$ 236,00'],
+          ['R$ 3.000,00', 'R$ 180,00', 'R$ 180,00', 'R$ 200,00'],
+          ['R$ 4.000,00', 'R$ 240,00', 'R$ 240,00', 'R$ 140,00'],
+        ],
+      },
+    },
+    {
+      heading: 'Exemplo 3: ida e volta em 22 dias de trabalho',
+      paragraphs: [
+        'Para estimar o gasto do mês, multiplique a tarifa pelas passagens do dia e pelos dias de trabalho. Com tarifa de R$ 5,00 (valor ilustrativo), duas passagens por dia e 22 dias presenciais, o custo é de R$ 5,00 × 2 × 22 = R$ 220,00. Para um salário de R$ 2.400,00, o teto de 6% é R$ 144,00, e a empresa paga R$ 76,00.',
+        'Se o empregado trabalha em escala, em jornada híbrida ou tira dias de folga, conte só os dias de deslocamento. O desconto também é proporcional à quantidade de vales concedidos no período, e não um valor fixo de 6% todo mês.',
+      ],
+    },
+    {
+      heading: 'Cartão, aplicativo e troca de linha',
+      paragraphs: [
+        'Hoje a maior parte das empresas credita o vale em cartão de transporte ou aplicativo, e não em bilhetes de papel. O valor continua sendo o mesmo e a regra dos 6% também. O que muda é que você consegue conferir o saldo e o extrato das viagens, o que ajuda a perceber erros de crédito.',
+        'Se você mudou de endereço, trocou de linha ou passou a usar um meio de transporte diferente, atualize a declaração por escrito. A empresa só pode calcular o vale pelo trajeto informado. Informar um trajeto falso é falta grave, então mantenha os dados corretos.',
+      ],
+    },
+    {
       heading: 'Erros comuns',
       paragraphs: [
         'O erro mais frequente é calcular os 6% sobre o salário com adicionais, o que desconta mais que o permitido. Outro é a empresa descontar 6% cheios mesmo quando o gasto é menor, ou descontar do empregado que não usou o vale no mês.',
