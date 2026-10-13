@@ -1,3 +1,4 @@
+import { newsGasolinaSemTributosFederais30DiasR089 } from './gasolina-sem-tributos-federais-por-30-dias-desoneracao-de-r-0-89-por-litro';
 import { newsPixAutomaticoContaSalario2027 } from './pix-automatico-na-conta-salario-a-partir-de-1-de-julho-de-2027';
 import { newsIpcaSetembro2026Sobe082Inflacao458 } from './ipca-de-setembro-sobe-0-82-e-inflacao-em-12-meses-chega-a-4-58';
 import { newsInssAfastamentoMedidaProtetiva6Meses } from './inss-paga-afastamento-de-ate-6-meses-a-mulheres-com-medida-protetiva';
@@ -22,6 +23,7 @@ import { newsReceitaCartasMalhaFina2026 } from './receita-envia-cartas-a-498-mil
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
 export const newsFiles = [
+  newsGasolinaSemTributosFederais30DiasR089,
   newsInssAfastamentoMedidaProtetiva6Meses,
   newsReceitaCartasMalhaFina2026,
   newsPgfnSemanaRegularizacaoTributaria,

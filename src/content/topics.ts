@@ -100,6 +100,11 @@ export const topicGroups: readonly (readonly string[])[] = [
     'como-consultar-saldo-e-extrato-do-fgts',
     'fgts-multa',
   ],
+  [
+    'gasolina-sem-tributos-federais-por-30-dias-desoneracao-de-r-0-89-por-litro',
+    'porcentagem',
+    'como-montar-um-orcamento-mensal-simples',
+  ],
 ];
 
 export function sharesTopic(left: string, right: string) {

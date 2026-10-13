@@ -554,3 +554,31 @@ def _():
         + g(1260, 130, 8, 1, phone(250, 500, phone_screen('Pix Automático', '1º/7/2027', 'conta-salário', '#9c3d54')))
         + g(250, 600, 3, 1, coins_stack(4), 'sh')
     )
+
+
+def fuel_pump():
+    return ('<rect width="230" height="400" rx="22" fill="#e8e3d8"/><rect x="0" y="360" width="230" height="40" rx="12" fill="#5b5f66"/>'
+            '<rect x="28" y="34" width="174" height="96" rx="12" fill="#2b2f36"/>'
+            '<rect x="40" y="46" width="150" height="72" rx="8" fill="#c8d6c0"/>'
+            '<circle cx="115" cy="82" r="22" fill="#2d3a2a" opacity=".85"/><path d="M115 64 C103 82 100 88 100 94 A15 15 0 0 0 130 94 C130 88 127 82 115 64 Z" fill="#c8d6c0"/>'
+            '<rect x="28" y="160" width="174" height="26" rx="8" fill="#d9643a"/><rect x="28" y="206" width="174" height="26" rx="8" fill="#cfc8b8"/>'
+            '<path d="M230 90 H280 Q310 90 310 124 V250 Q310 268 292 268" stroke="#2b2f36" stroke-width="14" fill="none" stroke-linecap="round"/>'
+            '<rect x="278" y="262" width="46" height="28" rx="8" fill="#2b2f36" transform="rotate(-20 290 270)"/>')
+
+
+def jerrycan():
+    return ('<rect width="260" height="300" rx="26" fill="#d9483b"/><rect x="18" y="18" width="224" height="264" rx="16" fill="none" stroke="#a8322a" stroke-width="5"/>'
+            '<rect x="30" y="-26" width="130" height="50" rx="14" fill="#a8322a"/><circle cx="215" cy="14" r="26" fill="#2b2f36"/><circle cx="215" cy="14" r="14" fill="#d9483b"/>'
+            '<path d="M130 100 C100 150 90 168 90 188 A40 40 0 0 0 170 188 C170 168 160 150 130 100 Z" fill="#fff" opacity=".92"/>')
+
+
+@scene('gasolina-tributos-zerados', '#8a3b12', (100, 110, 700))
+def _():
+    rows = label_rows([('PIS/Pasep e Cofins', 'R$ 0,79'), ('Cide-Combustíveis', 'R$ 0,10'), ('Zerados por litro', 'R$ 0,89')], 46, 170, 408, 64, 21, hl=(2, '#ffe3a3'))
+    return (
+        g(130, 120, -4, 1, doc(500, 580, 'TRIBUTOS DA GASOLINA', '#8a3b12', rows + '<g transform="translate(30 400)">' + chart_paper(440, 150, bars=((0.9, '#e8a87c'), (0.55, '#d9643a'), (0.12, '#8a3b12'))) + '</g>'))
+        + g(760, 150, 5, 1, fuel_pump())
+        + g(1170, 120, 8, 1, tag('R$ 0,26', 250, '#2a7f62'))
+        + g(1130, 400, -6, 1, jerrycan())
+        + g(1480, 640, 0, 1, coins_stack(4), 'sh')
+    )
