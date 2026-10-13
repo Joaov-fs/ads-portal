@@ -10,7 +10,7 @@ export const guideComoCalcularARescisaoSemJustaCausa = {
   category: 'trabalho',
   authorId: 'equipe-editorial',
   publishedAt: '2026-09-25',
-  updatedAt: '2026-10-02',
+  updatedAt: '2026-10-12',
   tags: ['rescisao', 'demissao', 'fgts', 'aviso-previo', 'trabalho'],
   featuredCalculators: [
     'rescisao-clt',
@@ -83,6 +83,26 @@ export const guideComoCalcularARescisaoSemJustaCausa = {
         'A empresa deve pagar as verbas em até 10 dias corridos após o fim do contrato. O atraso pode gerar multa equivalente a um salário. Confira o termo de rescisão, a guia do seguro-desemprego e o código para sacar o FGTS. O seguro-desemprego deve ser pedido em até 120 dias após a demissão.',
         'No pedido de demissão não há multa do FGTS nem saque, e o empregado cumpre o aviso. Na demissão por acordo, a multa é de 20%, o aviso indenizado é pago pela metade e o saque do FGTS é de até 80%, sem seguro-desemprego. Na justa causa, perdem-se o aviso, a multa e o 13º proporcional, e as férias proporcionais não são devidas.',
       ],
+    },
+    {
+      heading: 'Exemplo 3: salário de R$ 3.000 e 30 meses de empresa',
+      paragraphs: [
+        'O cenário considera uma saída em 15 de julho, com aviso prévio indenizado e sem férias vencidas. Com 30 meses de empresa (2 anos completos), o aviso é de 36 dias: 30 dias mais 3 por ano completo. O saldo do FGTS é estimado em 8% do salário por mês de contrato, ou R$ 7.200, e a multa de 40% sobre ele é de R$ 2.880.',
+        'Os valores são brutos, antes dos descontos legais, e a tabela não projeta o aviso prévio nos avos. Com a projeção, 13º e férias proporcionais ganham mais um avo, o que soma cerca de R$ 583 ao total.',
+      ],
+      table: {
+        caption: 'Rescisão sem justa causa, valores brutos',
+        columns: ['Verba', 'Base', 'Valor'],
+        rows: [
+          ['Saldo de salário', '15 dias', 'R$ 1.500,00'],
+          ['Aviso prévio indenizado', '36 dias', 'R$ 3.600,00'],
+          ['13º salário proporcional', '7/12', 'R$ 1.750,00'],
+          ['Férias proporcionais', '7/12', 'R$ 1.750,00'],
+          ['1/3 sobre as férias', '', 'R$ 583,33'],
+          ['Multa de 40% do FGTS', '40% de R$ 7.200', 'R$ 2.880,00'],
+          ['Total', '', 'R$ 12.063,33'],
+        ],
+      },
     },
     {
       heading: 'Quando procurar ajuda',

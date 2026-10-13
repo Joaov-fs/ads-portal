@@ -5,12 +5,7 @@
  * mesmo tema compitam entre si e leva o leitor ao formato certo.
  */
 export const topicGroups: readonly (readonly string[])[] = [
-  [
-    '13o-salario-2026-datas-e-quanto-voce-recebe',
-    'como-calcular-o-13o-salario',
-    'decimo-salario',
-    'decimo-proporcional',
-  ],
+  ['como-calcular-o-13o-salario', 'decimo-salario', 'decimo-proporcional'],
   [
     'abono-salarial-2026-prazo-para-sacar-vai-ate-30-de-dezembro',
     'abono-salarial-pis-pasep-quem-tem-direito',
@@ -23,31 +18,15 @@ export const topicGroups: readonly (readonly string[])[] = [
     'como-fazer-ou-atualizar-o-cadastro-unico',
   ],
   [
-    'demissao-sem-justa-causa-o-que-voce-recebe-exemplo-em-reais',
     'como-calcular-a-rescisao-sem-justa-causa',
     'rescisao-clt',
     'aviso-previo',
     'fgts-multa',
   ],
+  ['como-calcular-ferias-passo-a-passo', 'ferias', 'ferias-proporcionais'],
+  ['financiamento-sac-ou-price-qual-escolher', 'financiamento-sac-price'],
+  ['como-calcular-horas-extras-e-dsr', 'horas-extras', 'dsr'],
   [
-    'ferias-2026-como-calcular-o-um-terco-vender-10-dias-e-dividir-em-periodos',
-    'como-calcular-ferias-passo-a-passo',
-    'ferias',
-    'ferias-proporcionais',
-  ],
-  [
-    'financiamento-sac-ou-price-diferenca-de-r-135-mil-em-juros-no-exemplo',
-    'financiamento-sac-ou-price-qual-escolher',
-    'financiamento-sac-price',
-  ],
-  [
-    'horas-extras-como-calcular-50-100-e-o-reflexo-no-dsr',
-    'como-calcular-horas-extras-e-dsr',
-    'horas-extras',
-    'dsr',
-  ],
-  [
-    'imposto-de-renda-zero-ate-r-5-mil-quanto-voce-paga-no-contracheque',
     'tabela-do-imposto-de-renda-2026-na-folha',
     'como-calcular-o-salario-liquido',
     'irrf',
@@ -59,11 +38,7 @@ export const topicGroups: readonly (readonly string[])[] = [
     'irrf',
     'salario-liquido',
   ],
-  [
-    'inss-2026-teto-de-r-8-475-55-e-aliquotas-por-faixa',
-    'como-funciona-o-desconto-do-inss',
-    'inss',
-  ],
+  ['como-funciona-o-desconto-do-inss', 'inss'],
   [
     'inss-de-autonomo-e-socio-20-11-ou-5-qual-plano-vale-a-pena',
     'inss-autonomo',
@@ -81,28 +56,15 @@ export const topicGroups: readonly (readonly string[])[] = [
     'mei-das-em-atraso-como-regularizar',
     'como-sair-do-endividamento-passo-a-passo',
   ],
-  [
-    'poupanca-rende-8-3-ao-ano-veja-quanto-cdb-e-lci-rendem-a-mais',
-    'poupanca-ou-cdb-qual-rende-mais',
-    'cdb-x-poupanca',
-    'cdb-liquido',
-  ],
+  ['poupanca-ou-cdb-qual-rende-mais', 'cdb-x-poupanca', 'cdb-liquido'],
   [
     'selic-13-75-o-que-muda-para-quem-investe-e-para-quem-deve',
     'cdb-lci-lca-ou-tesouro-selic-qual-escolher',
     'tesouro-selic',
     'lci-lca',
   ],
-  [
-    'reajuste-do-aluguel-igp-m-3-35-ou-ipca-4-22-veja-quanto-fica',
-    'reajuste-do-aluguel-como-calcular-igp-m-ou-ipca',
-    'reajuste-aluguel',
-  ],
-  [
-    'seguro-desemprego-2026-valores-parcelas-e-como-pedir',
-    'como-pedir-o-seguro-desemprego',
-    'seguro-desemprego',
-  ],
+  ['reajuste-do-aluguel-como-calcular-igp-m-ou-ipca', 'reajuste-aluguel'],
+  ['como-pedir-o-seguro-desemprego', 'seguro-desemprego'],
   [
     'salario-minimo-2026-r-1-621-o-que-ele-muda-no-seu-bolso',
     'salario-minimo-2027-orcamento-preve-r-1-741-veja-o-que-muda',

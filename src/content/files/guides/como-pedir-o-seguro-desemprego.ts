@@ -9,7 +9,7 @@ export const guideComoPedirOSeguroDesemprego = {
   category: 'beneficios',
   authorId: 'equipe-editorial',
   publishedAt: '2026-09-19',
-  updatedAt: '2026-10-02',
+  updatedAt: '2026-10-12',
   tags: ['seguro-desemprego', 'demissao', 'beneficios', 'trabalho'],
   featuredCalculators: ['seguro-desemprego', 'rescisao-clt', 'salario-liquido'],
   highlights: [
@@ -123,6 +123,24 @@ export const guideComoPedirOSeguroDesemprego = {
         'O pedido pode ser feito pelo aplicativo Carteira de Trabalho Digital, pelo portal gov.br ou pelo telefone 158 (Alô Trabalho), que também agenda atendimento presencial. Tenha em mãos o CPF, um documento de identificação e os dados da rescisão, como o termo de rescisão do contrato de trabalho. Se o sistema não encontrar a sua demissão, peça à empresa que confirme a informação.',
         'O governo informa que o serviço é concluído entre 31 e 60 dias corridos; na prática, a primeira parcela costuma ser liberada cerca de 30 dias após o pedido. O pagamento é feito pela Caixa, em conta ou em poupança social digital. Enquanto recebe, o benefício é suspenso se você começar a ter renda com trabalho e suspenso se você for admitido com carteira assinada; se for dispensado sem justa causa de novo, volta a receber as parcelas restantes. Passar a receber benefício continuado da Previdência cancela o seguro.',
       ],
+    },
+    {
+      heading: 'Valor da parcela por média salarial',
+      paragraphs: [
+        'O valor depende da média dos três últimos salários antes da dispensa. Até R$ 2.222,17, a parcela é de 80% da média. Entre R$ 2.222,18 e R$ 3.703,99, soma-se R$ 1.777,74 a 50% do que passar de R$ 2.222,17. Acima disso, vale o teto de R$ 2.518,65. Nenhuma parcela pode ser menor do que um salário mínimo (R$ 1.621).',
+        'O seguro-desemprego não substitui o que a empresa deve na rescisão, nem o saque do FGTS com a multa de 40%.',
+      ],
+      table: {
+        caption: 'Valor da parcela por média salarial',
+        columns: ['Média dos 3 últimos salários', 'Parcela'],
+        rows: [
+          ['R$ 1.500,00', 'R$ 1.621,00 (piso)'],
+          ['R$ 2.000,00', 'R$ 1.621,00 (piso)'],
+          ['R$ 2.500,00', 'R$ 1.916,66'],
+          ['R$ 3.000,00', 'R$ 2.166,65'],
+          ['R$ 4.000,00', 'R$ 2.518,65 (teto)'],
+        ],
+      },
     },
     {
       heading: 'Pedido negado: o que fazer',

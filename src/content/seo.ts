@@ -83,32 +83,12 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Bolsa Família: mínimo de R$ 691 em outubro',
   'selic-13-75-o-que-muda-para-quem-investe-e-para-quem-deve':
     'Selic em 13,75%: o que muda para você',
-  'imposto-de-renda-zero-ate-r-5-mil-quanto-voce-paga-no-contracheque':
-    'IR zero até R$ 5 mil: quanto você paga em 2026',
-  '13o-salario-2026-datas-e-quanto-voce-recebe':
-    '13º salário 2026: datas e quanto você recebe',
-  'inss-2026-teto-de-r-8-475-55-e-aliquotas-por-faixa':
-    'INSS 2026: teto de R$ 8.475,55 e alíquotas',
   'salario-minimo-2026-r-1-621-o-que-ele-muda-no-seu-bolso':
     'Salário mínimo de R$ 1.621: o que muda',
-  'seguro-desemprego-2026-valores-parcelas-e-como-pedir':
-    'Seguro-desemprego 2026: valores e parcelas',
   'mei-2026-das-de-r-81-05-limite-de-r-81-mil-e-multa-por-atraso':
     'MEI 2026: DAS de R$ 81,05 e limite de R$ 81 mil',
-  'reajuste-do-aluguel-igp-m-3-35-ou-ipca-4-22-veja-quanto-fica':
-    'Reajuste do aluguel: IGP-M 3,35% ou IPCA 4,22%',
-  'poupanca-rende-8-3-ao-ano-veja-quanto-cdb-e-lci-rendem-a-mais':
-    'Poupança rende 8,3%; veja quanto CDB e LCI pagam',
-  'ferias-2026-como-calcular-o-um-terco-vender-10-dias-e-dividir-em-periodos':
-    'Férias 2026: 1/3, venda de 10 dias e períodos',
-  'demissao-sem-justa-causa-o-que-voce-recebe-exemplo-em-reais':
-    'Demissão sem justa causa: o que você recebe',
-  'horas-extras-como-calcular-50-100-e-o-reflexo-no-dsr':
-    'Horas extras: adicionais de 50%, 100% e o DSR',
   'inss-de-autonomo-e-socio-20-11-ou-5-qual-plano-vale-a-pena':
     'INSS de autônomo: 20%, 11% ou 5%? Veja o custo',
-  'financiamento-sac-ou-price-diferenca-de-r-135-mil-em-juros-no-exemplo':
-    'SAC ou Price: diferença de R$ 135 mil em juros',
   'abono-salarial-2026-prazo-para-sacar-vai-ate-30-de-dezembro':
     'Abono salarial 2026: saque até 30 de dezembro',
   'desenrola-mei-pequeno-valor-desconto-dividas':

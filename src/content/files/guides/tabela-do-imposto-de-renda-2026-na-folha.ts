@@ -9,7 +9,7 @@ export const guideTabelaDoImpostoDeRenda2026NaFolha = {
   category: 'economia',
   authorId: 'equipe-editorial',
   publishedAt: '2026-09-22',
-  updatedAt: '2026-10-02',
+  updatedAt: '2026-10-12',
   tags: ['imposto-de-renda', 'irrf', 'isencao', 'tabela'],
   featuredCalculators: ['irrf', 'salario-liquido', 'inss'],
   highlights: [
@@ -98,6 +98,27 @@ export const guideTabelaDoImpostoDeRenda2026NaFolha = {
         'A tabela da Receita prevê um desconto simplificado de até R$ 607,20 por mês, que a folha pode usar no lugar do INSS e dos dependentes quando resulta em menos imposto. Isso pesa principalmente em salários próximos de R$ 5.000 a R$ 6.000, e por isso o valor do holerite pode diferir em alguns reais da conta feita só com INSS e dependentes.',
         'A mesma lei criou uma tributação mínima para rendas anuais muito altas e passou a tributar lucros e dividendos. Isso não altera a retenção mensal na folha, mas pode importar para quem tem outras rendas.',
       ],
+    },
+    {
+      heading: 'Quanto cada salário paga em 2026',
+      paragraphs: [
+        'A tabela mostra o salário bruto, o INSS, o IRRF e o valor líquido de quem não tem dependentes nem pensão alimentícia.',
+        'Repare no salto gradual: de R$ 5.000 para R$ 5.100, o imposto sai de zero para R$ 56,44, e não para o valor cheio da tabela, porque a redução de 2026 diminui o imposto aos poucos até R$ 7.350. Acima disso vale a tabela cheia.',
+      ],
+      table: {
+        caption: 'Salário bruto, INSS, IRRF e líquido em 2026, sem dependentes',
+        columns: ['Salário bruto', 'INSS', 'IRRF', 'Líquido'],
+        rows: [
+          ['R$ 3.000,00', 'R$ 248,60', 'R$ 0,00', 'R$ 2.751,40'],
+          ['R$ 5.000,00', 'R$ 501,51', 'R$ 0,00', 'R$ 4.498,49'],
+          ['R$ 5.100,00', 'R$ 515,51', 'R$ 56,44', 'R$ 4.528,04'],
+          ['R$ 5.500,00', 'R$ 571,51', 'R$ 200,29', 'R$ 4.728,20'],
+          ['R$ 6.000,00', 'R$ 641,51', 'R$ 385,11', 'R$ 4.973,37'],
+          ['R$ 7.000,00', 'R$ 781,51', 'R$ 754,76', 'R$ 5.463,73'],
+          ['R$ 8.000,00', 'R$ 921,51', 'R$ 1.037,86', 'R$ 6.040,62'],
+          ['R$ 10.000,00', 'R$ 988,09', 'R$ 1.569,55', 'R$ 7.442,36'],
+        ],
+      },
     },
     {
       heading: 'Quando procurar o RH ou o contador',

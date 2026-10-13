@@ -10,7 +10,7 @@ export const guideComoCalcularO13oSalario = {
   category: 'trabalho',
   authorId: 'equipe-editorial',
   publishedAt: '2026-09-21',
-  updatedAt: '2026-10-02',
+  updatedAt: '2026-10-12',
   tags: ['13-salario', 'decimo-terceiro', 'trabalho', 'salario'],
   featuredCalculators: [
     'decimo-salario',
@@ -80,6 +80,50 @@ export const guideComoCalcularO13oSalario = {
         'Na demissão sem justa causa e no pedido de demissão, o 13º proporcional entra na rescisão; na justa causa, não. Na demissão sem justa causa com aviso indenizado, o aviso conta como tempo de serviço e pode acrescentar mais um avo.',
         'Os erros mais comuns são descontar INSS e IRRF da primeira parcela (ela sai sem descontos), esquecer a média das horas extras e achar que o 13º entra na conta do salário do mês. Se pedir em janeiro, o empregado pode receber a primeira parcela junto com as férias.',
       ],
+    },
+    {
+      heading: '13º líquido em três faixas de salário',
+      paragraphs: [
+        'Para comparar sem refazer a conta, a tabela mostra o 13º de quem trabalhou o ano inteiro, sem dependentes. A primeira parcela é metade do salário bruto, sem desconto algum. Todo o INSS e o Imposto de Renda incidem sobre o 13º inteiro, mas são descontados só na segunda parcela.',
+        'Até R$ 5.000 o 13º não paga Imposto de Renda. Com salário de R$ 8.000, o imposto passa de R$ 1.000 e a segunda parcela fica em cerca de metade da primeira.',
+      ],
+      table: {
+        caption: '13º integral de quem trabalhou o ano todo, sem dependentes',
+        columns: [
+          'Salário',
+          '1ª parcela',
+          'INSS',
+          'IRRF',
+          '2ª parcela',
+          'Total líquido',
+        ],
+        rows: [
+          [
+            'R$ 3.500,00',
+            'R$ 1.750,00',
+            'R$ 308,60',
+            'R$ 0,00',
+            'R$ 1.441,40',
+            'R$ 3.191,40',
+          ],
+          [
+            'R$ 5.000,00',
+            'R$ 2.500,00',
+            'R$ 501,51',
+            'R$ 0,00',
+            'R$ 1.998,49',
+            'R$ 4.498,49',
+          ],
+          [
+            'R$ 8.000,00',
+            'R$ 4.000,00',
+            'R$ 921,51',
+            'R$ 1.037,86',
+            'R$ 2.040,62',
+            'R$ 6.040,62',
+          ],
+        ],
+      },
     },
     {
       heading: 'Quando procurar o RH ou o sindicato',

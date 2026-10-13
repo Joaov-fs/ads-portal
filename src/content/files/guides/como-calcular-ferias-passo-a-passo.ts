@@ -9,7 +9,7 @@ export const guideComoCalcularFeriasPassoAPasso = {
   category: 'trabalho',
   authorId: 'equipe-editorial',
   publishedAt: '2026-09-18',
-  updatedAt: '2026-10-02',
+  updatedAt: '2026-10-12',
   tags: ['ferias', 'trabalho', 'salario', 'direitos'],
   featuredCalculators: ['ferias', 'ferias-proporcionais', 'salario-liquido'],
   highlights: [
@@ -88,6 +88,30 @@ export const guideComoCalcularFeriasPassoAPasso = {
       paragraphs: [
         'O pagamento deve cair até 2 dias antes do início do descanso, e o período não pode começar nos 2 dias que antecedem feriado ou dia de repouso semanal. O pedido para vender os 10 dias precisa ser feito até 15 dias antes do fim do período aquisitivo.',
         'Os erros mais frequentes são esquecer o terço sobre o abono, calcular a venda sobre o salário-base sem a média das variáveis e aceitar férias depois de 12 meses do fim do período aquisitivo sem o pagamento em dobro. Se a empresa pagar com atraso, o Tribunal Superior do Trabalho entende que também cabe o pagamento em dobro (Súmula 450).',
+      ],
+    },
+    {
+      heading: 'Exemplo 3: vender 10 dias com salário de R$ 3.000',
+      paragraphs: [
+        'O empregado pode converter até um terço das férias em dinheiro, o chamado abono pecuniário. É um direito do trabalhador, que deve pedir até 15 dias antes do fim do período aquisitivo. O abono também recebe o adicional de 1/3 e, em regra, não tem desconto de INSS nem de Imposto de Renda.',
+      ],
+      table: {
+        caption:
+          'Férias de quem ganha R$ 3.000, com 20 dias de descanso e 10 vendidos',
+        columns: ['Parcela', 'Cálculo', 'Valor bruto'],
+        rows: [
+          ['Férias de 20 dias', 'R$ 3.000 ÷ 30 × 20', 'R$ 2.000,00'],
+          ['1/3 sobre as férias', 'R$ 2.000 ÷ 3', 'R$ 666,67'],
+          ['Abono pecuniário de 10 dias', 'R$ 3.000 ÷ 30 × 10', 'R$ 1.000,00'],
+          ['1/3 sobre o abono', 'R$ 1.000 ÷ 3', 'R$ 333,33'],
+          ['Total bruto', '', 'R$ 4.000,00'],
+        ],
+      },
+    },
+    {
+      heading: 'Como dividir as férias em períodos',
+      paragraphs: [
+        'Desde a reforma trabalhista, as férias podem ser divididas em até 3 períodos, desde que o empregado concorde. Um deles precisa ter pelo menos 14 dias corridos, e os demais, pelo menos 5 dias cada. A empresa não pode começar as férias nos dois dias que antecedem feriado ou o descanso semanal.',
       ],
     },
     {

@@ -35,7 +35,7 @@ describe('content pipeline', () => {
   it('derives page data, schemas and related content from one document', () => {
     const model = getContentPageModel(
       'news',
-      'inss-2026-teto-de-r-8-475-55-e-aliquotas-por-faixa',
+      'inss-de-autonomo-e-socio-20-11-ou-5-qual-plano-vale-a-pena',
     );
 
     expect(model).toBeDefined();

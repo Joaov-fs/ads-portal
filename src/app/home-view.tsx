@@ -216,9 +216,7 @@ export function HomeView({
     },
     {
       label: 'IR zero até R$ 5 mil',
-      href: newsHref(
-        'imposto-de-renda-zero-ate-r-5-mil-quanto-voce-paga-no-contracheque',
-      ),
+      href: '/guias/tabela-do-imposto-de-renda-2026-na-folha',
     },
     {
       label: 'Bolsa Família',
@@ -226,7 +224,7 @@ export function HomeView({
     },
     {
       label: '13º salário',
-      href: newsHref('13o-salario-2026-datas-e-quanto-voce-recebe'),
+      href: '/guias/como-calcular-o-13o-salario',
     },
   ].flatMap((item) =>
     item.href ? [{ label: item.label, href: item.href }] : [],

@@ -9,7 +9,7 @@ export const guideComoFuncionaODescontoDoInss = {
   category: 'trabalho',
   authorId: 'equipe-editorial',
   publishedAt: '2026-09-30',
-  updatedAt: '2026-10-02',
+  updatedAt: '2026-10-12',
   tags: ['inss', 'previdencia', 'salario', 'descontos'],
   featuredCalculators: ['inss', 'salario-liquido', 'inss-autonomo'],
   highlights: [
@@ -109,6 +109,23 @@ export const guideComoFuncionaODescontoDoInss = {
         'Quem tem dois empregos paga INSS em cada um, mas a soma dos descontos fica limitada ao teto. Informe o RH de cada empresa sobre o outro salário para o desconto ser ajustado e, se ainda houver cobrança a mais, peça revisão ao RH ou procure o INSS pelo Meu INSS ou pela Central 135.',
         'Quem não tem carteira assinada escolhe como contribuir. No plano de 20%, a contribuição incide sobre a renda entre R$ 1.621 e R$ 8.475,55 (de R$ 324,20 a R$ 1.695,11). No plano de 11% do salário mínimo, a contribuição é de R$ 178,31, e no de 5%, para MEI e facultativo de baixa renda, é de R$ 81,05. Os planos reduzidos têm restrições, como não contar tempo para aposentadoria por tempo de contribuição sem complementação.',
       ],
+    },
+    {
+      heading: 'Quanto cada salário paga: de R$ 3.000 a R$ 20.000',
+      paragraphs: [
+        'Como o desconto é progressivo e tem teto, quem ganha R$ 10.000 ou R$ 20.000 paga exatamente o mesmo valor, R$ 988,09. Por isso a alíquota efetiva cai nos salários mais altos.',
+        'O teto também limita o benefício: a aposentadoria pelo INSS não passa do teto previdenciário, e quem quer receber mais precisa de previdência complementar.',
+      ],
+      table: {
+        caption: 'INSS do empregado em 2026 e alíquota efetiva',
+        columns: ['Salário', 'INSS', 'Alíquota efetiva'],
+        rows: [
+          ['R$ 3.000,00', 'R$ 248,60', '8,29%'],
+          ['R$ 5.000,00', 'R$ 501,51', '10,03%'],
+          ['R$ 10.000,00', 'R$ 988,09', '9,88%'],
+          ['R$ 20.000,00', 'R$ 988,09', '4,94%'],
+        ],
+      },
     },
     {
       heading: 'Para que serve e quando procurar ajuda',

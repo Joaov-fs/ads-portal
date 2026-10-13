@@ -9,7 +9,7 @@ export const guideReajusteDoAluguelComoCalcularIgpMOuIpca = {
   category: 'financas',
   authorId: 'equipe-editorial',
   publishedAt: '2026-09-16',
-  updatedAt: '2026-10-02',
+  updatedAt: '2026-10-12',
   tags: ['aluguel', 'igp-m', 'ipca', 'reajuste', 'imovel'],
   featuredCalculators: ['reajuste-aluguel', 'porcentagem', 'juros-compostos'],
   highlights: [
@@ -78,6 +78,30 @@ export const guideReajusteDoAluguelComoCalcularIgpMOuIpca = {
         'Os erros mais frequentes são somar os índices mensais em vez de acumular, usar o índice de um período errado (o mês-base é o que o contrato indicar), reajustar condomínio e IPTU pelo mesmo índice (esses valores seguem o que é cobrado, não o índice do aluguel) e aplicar o reajuste antes de completar 12 meses.',
         'Outro ponto é o reajuste esquecido. Se o aniversário passou sem cobrança, o reajuste pode virar tema de acordo entre as partes, e a regra depende do contrato e do entendimento aplicado ao caso; em dúvida, procure a Defensoria Pública ou um advogado. Dois anos sem reajuste, com os índices do exemplo, levariam um aluguel de R$ 1.850,00 a R$ 1.992,66 (R$ 1.850,00 x 1,0335 x 1,0422). Por isso, combine por escrito se o aumento será aplicado de uma vez ou dividido.',
       ],
+    },
+    {
+      heading: 'Quanto fica o aluguel com IGP-M de 3,35% e IPCA de 4,22%',
+      paragraphs: [
+        'Aplicando cada índice sobre o valor atual, o aluguel muda como na tabela. O IGP-M de 3,35% é o acumulado em 12 meses até setembro de 2026 e o IPCA de 4,22%, até agosto de 2026. Use o índice previsto no seu contrato e o acumulado dos 12 meses anteriores ao mês do reajuste.',
+      ],
+      table: {
+        caption: 'Aluguel reajustado pelo IGP-M (3,35%) e pelo IPCA (4,22%)',
+        columns: ['Aluguel atual', 'Pelo IGP-M', 'Pelo IPCA'],
+        rows: [
+          ['R$ 1.500,00', 'R$ 1.550,25 (+R$ 50,25)', 'R$ 1.563,30 (+R$ 63,30)'],
+          ['R$ 2.000,00', 'R$ 2.067,00 (+R$ 67,00)', 'R$ 2.084,40 (+R$ 84,40)'],
+          [
+            'R$ 3.000,00',
+            'R$ 3.100,50 (+R$ 100,50)',
+            'R$ 3.126,60 (+R$ 126,60)',
+          ],
+          [
+            'R$ 5.000,00',
+            'R$ 5.167,50 (+R$ 167,50)',
+            'R$ 5.211,00 (+R$ 211,00)',
+          ],
+        ],
+      },
     },
     {
       heading: 'Quando negociar e quando procurar ajuda',

@@ -9,7 +9,7 @@ export const guidePoupancaOuCdbQualRendeMais = {
   category: 'financas',
   authorId: 'equipe-editorial',
   publishedAt: '2026-09-30',
-  updatedAt: '2026-10-02',
+  updatedAt: '2026-10-12',
   tags: ['poupanca', 'cdb', 'investimentos', 'selic'],
   featuredCalculators: ['cdb-x-poupanca', 'cdb-liquido', 'juros-compostos'],
   highlights: [
@@ -93,6 +93,37 @@ export const guidePoupancaOuCdbQualRendeMais = {
         'A poupança serve para quem precisa de simplicidade: saldo disponível em qualquer dia útil, sem escolher produto, sem declarar rendimento tributável e sem se preocupar com carência. Para valores pequenos, como o fundo para uma despesa do mês que vem, a diferença de rendimento é de poucos reais.',
         'Mas há CDBs com liquidez diária e Tesouro Selic que costumam render mais. O que você precisa conferir é a liquidez real (se o resgate é no mesmo dia), o prazo mínimo, eventuais taxas de custódia e a garantia do FGC.',
       ],
+    },
+    {
+      heading: 'Exemplo 3: R$ 10.000 por 12 meses em três aplicações',
+      paragraphs: [
+        'Com a Selic em 13,75% ao ano, a poupança continua rendendo 0,5% ao mês mais a TR, o que dá cerca de 8,3% ao ano. Já o CDB que paga 100% do CDI, em torno de 13,65% ao ano, rende R$ 1.365,00 brutos em R$ 10.000 por 12 meses. Depois do Imposto de Renda de 17,5%, sobram R$ 1.126,13, ou cerca de R$ 292 a mais que a poupança.',
+        'A LCI ou LCA que paga 90% do CDI rende menos bruto, mas é isenta de Imposto de Renda para a pessoa física, e por isso termina na frente do CDB no valor líquido.',
+      ],
+      table: {
+        caption: 'R$ 10.000 aplicados por 12 meses, com CDI constante',
+        columns: ['Aplicação', 'Rendimento bruto', 'IR', 'Rendimento líquido'],
+        rows: [
+          [
+            'Poupança (cerca de 8,3% ao ano)',
+            'R$ 833,65',
+            'Isenta',
+            'R$ 833,65',
+          ],
+          [
+            'CDB 100% do CDI (13,65% ao ano)',
+            'R$ 1.365,00',
+            'R$ 238,88',
+            'R$ 1.126,13',
+          ],
+          [
+            'LCI ou LCA 90% do CDI (12,29% ao ano)',
+            'R$ 1.228,50',
+            'Isenta',
+            'R$ 1.228,50',
+          ],
+        ],
+      },
     },
     {
       heading: 'Erros comuns e como decidir',

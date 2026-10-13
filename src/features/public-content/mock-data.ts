@@ -103,7 +103,7 @@ export const indicators: readonly Indicator[] = [
     change: 'estável',
     trend: 'neutral',
     note: 'Em 30/09/2026 · Banco Central',
-    href: '/noticias/poupanca-rende-8-3-ao-ano-veja-quanto-cdb-e-lci-rendem-a-mais',
+    href: '/guias/poupanca-ou-cdb-qual-rende-mais',
   },
   {
     label: 'IPCA em 12 meses',
@@ -111,7 +111,7 @@ export const indicators: readonly Indicator[] = [
     change: 'era 4,44%',
     trend: 'down',
     note: 'Agosto de 2026 · IBGE',
-    href: '/noticias/reajuste-do-aluguel-igp-m-3-35-ou-ipca-4-22-veja-quanto-fica',
+    href: '/guias/reajuste-do-aluguel-como-calcular-igp-m-ou-ipca',
   },
   {
     label: 'IGP-M em 12 meses',
@@ -119,7 +119,7 @@ export const indicators: readonly Indicator[] = [
     change: '+1,57% no mês',
     trend: 'up',
     note: 'Setembro de 2026 · FGV',
-    href: '/noticias/reajuste-do-aluguel-igp-m-3-35-ou-ipca-4-22-veja-quanto-fica',
+    href: '/guias/reajuste-do-aluguel-como-calcular-igp-m-ou-ipca',
   },
   {
     label: 'Dólar comercial',

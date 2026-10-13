@@ -10,7 +10,7 @@ export const guideComoCalcularHorasExtrasEDsr = {
   category: 'trabalho',
   authorId: 'equipe-editorial',
   publishedAt: '2026-09-28',
-  updatedAt: '2026-10-02',
+  updatedAt: '2026-10-12',
   tags: ['horas-extras', 'dsr', 'trabalho', 'salario'],
   featuredCalculators: [
     'horas-extras',
@@ -89,6 +89,24 @@ export const guideComoCalcularHorasExtrasEDsr = {
         'O ponto precisa registrar a jornada de empresas com mais de 20 empregados. Variações de até 5 minutos em cada marcação, no limite de 10 por dia, não contam. Cargos de gestão com função de confiança e trabalho externo sem controle de horário ficam de fora da regra (art. 62 da CLT).',
         'O banco de horas permite compensar extras com folgas em vez de pagar. Por acordo individual escrito, a compensação deve ocorrer em até 6 meses; por acordo ou convenção coletiva, em até 12 meses. Vencido o prazo, as horas devem ser pagas com o adicional.',
       ],
+    },
+    {
+      heading: 'Exemplo 3: horas a 50% e a 100% no mesmo mês',
+      paragraphs: [
+        'Veja um mês de quem ganha R$ 2.640 (220 horas mensais), com 20 horas extras comuns e 6 horas em domingos e feriados, com 26 dias úteis e 4 de repouso.',
+        'O reflexo no descanso semanal é calculado sobre o total das horas extras: R$ 504 ÷ 26 dias úteis × 4 repousos = R$ 77,54.',
+      ],
+      table: {
+        caption: 'Horas extras de um mês, salário de R$ 2.640',
+        columns: ['Item', 'Cálculo', 'Valor'],
+        rows: [
+          ['Hora normal', 'R$ 2.640 ÷ 220', 'R$ 12,00'],
+          ['20 horas a 50%', '20 × R$ 18,00', 'R$ 360,00'],
+          ['6 horas a 100%', '6 × R$ 24,00', 'R$ 144,00'],
+          ['Reflexo no DSR', 'R$ 504 ÷ 26 × 4', 'R$ 77,54'],
+          ['Total bruto', '', 'R$ 581,54'],
+        ],
+      },
     },
     {
       heading: 'Quando procurar o RH ou o sindicato',
