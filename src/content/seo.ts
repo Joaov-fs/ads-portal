@@ -151,6 +151,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Desenrola MEI: desconto de 50% e como aderir',
   'inss-paga-afastamento-de-ate-6-meses-a-mulheres-com-medida-protetiva':
     'INSS paga afastamento de até 6 meses a vítimas',
+  'pe-de-meia-7a-parcela-de-r-200-sai-de-19-a-26-de-outubro-veja-as-datas':
+    'Pé-de-Meia: 7ª parcela de R$ 200 em 19 a 26/10',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */

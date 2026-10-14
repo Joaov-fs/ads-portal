@@ -594,3 +594,14 @@ def _():
         + g(1130, 400, -6, 1, calculator(260, 360) + '<rect x="22" y="24" width="216" height="70" rx="10" fill="#c8d6c0"/><text x="224" y="74" font-size="34" font-weight="700" text-anchor="end" fill="#2d3a2a" font-family="DejaVu Sans Mono,monospace">9.166,67</text>')
         + g(1480, 640, 0, 1, coins_stack(4), 'sh')
     )
+
+
+@scene('pe-de-meia', '#4b4fa3', (80, 100, 860))
+def _():
+    rows = label_rows([('7ª parcela', 'R$ 200'), ('Pagamento', '19 a 26/10'), ('Frequência', 'mín. 80%'), ('Parcelas no ano', '9')], 46, 170, 408, 64, 21, hl=(0, '#dfe3ff'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'PÉ-DE-MEIA', '#4b4fa3', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.45, '#aeb4ee'), (0.7, '#7b82d6'), (1.0, '#4b4fa3'))) + '</g>'))
+        + g(700, 90, 5, 1, calendar_month('OUTUBRO 2026', 4, 31, marks=(19, 20, 21, 22, 23, 26), w=460, h=500, accent='#4b4fa3', mark_color='#e8590c'))
+        + g(1260, 110, 8, 1, phone(250, 500, phone_screen('Pé-de-Meia', 'R$ 200,00', '7ª parcela', '#4b4fa3')))
+        + g(1030, 690, 3, 1, coins_stack(3), 'sh')
+    )
