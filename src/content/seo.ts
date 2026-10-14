@@ -105,6 +105,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'pacote-mei-perdao-de-r-12-6-bilhoes-pix-de-ate-r-5-mil-e-teto-de-r-110-mil':
+    'Pacote MEI: perdão de R$ 12,6 bi e Pix de R$ 5 mil',
   'gasolina-sem-tributos-federais-por-30-dias-desoneracao-de-r-0-89-por-litro':
     'Gasolina sem tributos federais: R$ 0,89 por litro',
   'pgfn-semana-regularizacao-tributaria-adesao-ate-9-de-outubro-desconto-ate-100-em-juros-e-multas':

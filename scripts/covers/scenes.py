@@ -582,3 +582,15 @@ def _():
         + g(1130, 400, -6, 1, jerrycan())
         + g(1480, 640, 0, 1, coins_stack(4), 'sh')
     )
+
+
+@scene('pacote-mei', '#c98a1b', (100, 110, 820))
+def _():
+    rows = label_rows([('Dívidas perdoadas', 'R$ 12,6 bi'), ('Desenrola 3.0', 'desc. 90%'), ('Pix MEI', 'até R$ 5.000'), ('Teto em 2027', 'R$ 110 mil')], 46, 170, 408, 64, 21, hl=(3, '#ffe3a3'))
+    return (
+        g(130, 120, -4, 1, doc(500, 580, 'PACOTE PARA MEI', '#7a4e0b', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.5, '#e8c07a'), (0.75, '#d9a441'), (1.0, '#7a4e0b'))) + '</g>'))
+        + g(760, 150, 5, 1, banknote(420, 210, '#5fb37a', '#3c8f5a', 'R$ 5.000'))
+        + g(1170, 120, 8, 1, tag('R$ 110 mil', 270, '#2a7f62'))
+        + g(1130, 400, -6, 1, calculator(260, 360) + '<rect x="22" y="24" width="216" height="70" rx="10" fill="#c8d6c0"/><text x="224" y="74" font-size="34" font-weight="700" text-anchor="end" fill="#2d3a2a" font-family="DejaVu Sans Mono,monospace">9.166,67</text>')
+        + g(1480, 640, 0, 1, coins_stack(4), 'sh')
+    )

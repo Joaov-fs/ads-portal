@@ -1,3 +1,4 @@
+import { newsPacoteMeiPerdaoPixTeto110Mil } from './pacote-mei-perdao-de-r-12-6-bilhoes-pix-de-ate-r-5-mil-e-teto-de-r-110-mil';
 import { newsGasolinaSemTributosFederais30DiasR089 } from './gasolina-sem-tributos-federais-por-30-dias-desoneracao-de-r-0-89-por-litro';
 import { newsPixAutomaticoContaSalario2027 } from './pix-automatico-na-conta-salario-a-partir-de-1-de-julho-de-2027';
 import { newsIpcaSetembro2026Sobe082Inflacao458 } from './ipca-de-setembro-sobe-0-82-e-inflacao-em-12-meses-chega-a-4-58';
@@ -45,4 +46,5 @@ export const newsFiles = [
   newsValeRefeicaoAlimentacaoInteroperabilidadeNovembro2026,
   newsIpcaSetembro2026Sobe082Inflacao458,
   newsPixAutomaticoContaSalario2027,
+  newsPacoteMeiPerdaoPixTeto110Mil,
 ] as const;
