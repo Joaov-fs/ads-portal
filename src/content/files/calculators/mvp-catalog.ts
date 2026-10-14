@@ -3,6 +3,7 @@ import type { CalculatorId } from '@/calculators/types';
 import { calculatorEditorial } from './editorial';
 import { calculatorExtras } from './editorial/aprofundamento';
 import { calculatorExtras2 } from './editorial/aprofundamento-2';
+import { inssExtras } from './editorial/inss-extras';
 import type {
   CalculatorDocument,
   CalculatorField,
@@ -915,6 +916,104 @@ const specs = [
     ],
   },
   {
+    calculatorId: 'retroativos-inss',
+    slug: 'retroativos-inss',
+    title: 'Calculadora de Retroativos do INSS',
+    category: 'beneficios',
+    description:
+      'Estime o valor dos atrasados do INSS entre a data de início do direito e o primeiro pagamento do benefício.',
+    howItWorks:
+      'A ferramenta divide a mensalidade por 30, multiplica pelos dias entre as duas datas e mostra meses completos e dias restantes. Correção monetária e Imposto de Renda não entram na conta.',
+    tags: ['beneficios', 'inss', 'retroativos'],
+    fields: [
+      money(
+        'monthly',
+        'Valor mensal do benefício',
+        'Valor da renda mensal que aparece na carta de concessão ou no Meu INSS.',
+      ),
+      date(
+        'startDate',
+        'Início do direito (DIB)',
+        'Em geral, a data do requerimento (DER) ou o dia seguinte ao fim do benefício anterior.',
+      ),
+      date(
+        'endDate',
+        'Data do primeiro pagamento',
+        'Dia em que o benefício passou a ser pago na competência regular.',
+      ),
+    ],
+    sources: [
+      {
+        label: 'INSS: consulta de pagamentos e extrato no Meu INSS',
+        url: 'https://meu.inss.gov.br',
+      },
+    ],
+  },
+  {
+    calculatorId: 'prazo-auxilio-inss',
+    slug: 'prazo-prorrogacao-auxilio-inss',
+    title: 'Calculadora de Prazo do Auxílio do INSS',
+    category: 'beneficios',
+    description:
+      'Descubra a partir de que dia pedir a prorrogação do auxílio por incapacidade temporária e quantos dias o benefício dura.',
+    howItWorks:
+      'Informe o início do benefício e a data de cessação (alta programada). A ferramenta mostra a janela de 15 dias antes da cessação em que o pedido de prorrogação deve ser feito.',
+    tags: ['beneficios', 'inss', 'prorrogacao'],
+    fields: [
+      date(
+        'startDate',
+        'Início do benefício',
+        'Data de início que consta na carta de concessão ou no Meu INSS.',
+      ),
+      date(
+        'endDate',
+        'Data de cessação (alta programada)',
+        'Também chamada de DCB. Aparece no Meu INSS e na carta de concessão.',
+      ),
+    ],
+    sources: [
+      {
+        label: 'INSS: prorrogação do auxílio por incapacidade temporária',
+        url: 'https://www.gov.br/inss/pt-br',
+      },
+    ],
+  },
+  {
+    calculatorId: 'aposentadoria-idade',
+    slug: 'aposentadoria-por-idade',
+    title: 'Calculadora de Aposentadoria por Idade',
+    category: 'beneficios',
+    description:
+      'Veja se você cumpre a idade e o tempo de contribuição da aposentadoria por idade e estime o valor pela regra permanente.',
+    howItWorks:
+      'A ferramenta confere a idade mínima (62 anos para mulheres, 65 para homens) e a contribuição mínima (15 e 20 anos) e aplica 60% mais 2% por ano acima do mínimo sobre a média dos salários.',
+    tags: ['beneficios', 'inss', 'aposentadoria'],
+    fields: [
+      number(
+        'gender',
+        'Sexo (1 para mulher, 2 para homem)',
+        'Define a idade e a contribuição mínimas da regra.',
+      ),
+      number('age', 'Idade em anos'),
+      number(
+        'years',
+        'Anos de contribuição',
+        'Some o tempo que aparece no CNIS, no Meu INSS.',
+      ),
+      money(
+        'amount',
+        'Média de todos os salários de contribuição',
+        'Média desde julho de 1994, ou desde o início, se posterior.',
+      ),
+    ],
+    sources: [
+      {
+        label: 'INSS: aposentadoria por idade',
+        url: 'https://www.gov.br/inss/pt-br',
+      },
+    ],
+  },
+  {
     calculatorId: 'ipva',
     slug: 'ipva',
     title: 'Calculadora de IPVA',
@@ -1131,6 +1230,7 @@ export const mvpCalculatorCatalog = specs.map(
         { heading: 'O que muda o resultado', paragraphs: editorial.factors },
         ...(calculatorExtras[spec.slug] ?? []),
         ...(calculatorExtras2[spec.slug] ?? []),
+        ...(inssExtras[spec.slug] ?? []),
         {
           heading: 'Erros comuns ao preencher',
           paragraphs: editorial.mistakes,

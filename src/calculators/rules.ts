@@ -64,6 +64,7 @@ function result(
 
 const nonCurrencyResultIds = new Set<CalculatorId>([
   'banco-de-horas',
+  'prazo-auxilio-inss',
   'contador-dias',
   'conversao-taxa',
   'das-limite-mei',
@@ -467,6 +468,34 @@ export function disabilityBenefit(average: number, ratePercent: number) {
   return Math.min(inssCeiling2026, Math.max(minimumWage2026, raw));
 }
 
+/** Regra permanente da aposentadoria por idade: 60% mais 2% por ano de contribuição acima de 15 (mulher) ou 20 (homem). */
+export function retirementByAge(values: CalculatorValues) {
+  const woman = value(values, 'gender') === 1;
+  const minAge = woman ? 62 : 65;
+  const minYears = woman ? 15 : 20;
+  const years = Math.floor(Math.max(0, value(values, 'years')));
+  const age = Math.max(0, value(values, 'age'));
+  const rate = 60 + 2 * Math.max(0, years - minYears);
+  const raw = Math.max(0, value(values, 'amount')) * (rate / 100);
+
+  return {
+    ageOk: age >= minAge,
+    benefit: Math.min(inssCeiling2026, Math.max(minimumWage2026, raw)),
+    minAge,
+    minYears,
+    rate,
+    woman,
+    yearsOk: years >= minYears,
+  };
+}
+
+/** Atrasados do INSS: mensalidade proporcional aos dias entre o início do direito e o primeiro pagamento. */
+export function inssBackPay(monthly: number, startDay: number, endDay: number) {
+  const days = Math.max(0, endDay - startDay);
+
+  return { days, total: (Math.max(0, monthly) * days) / monthDays };
+}
+
 export function calculateCalculator(
   id: CalculatorId,
   values: CalculatorValues,
@@ -742,6 +771,31 @@ export function calculateCalculator(
         'Benefício estimado',
         disabilityBenefit(amount, rate),
         'Aplica o percentual sobre a média das contribuições e respeita o piso (salário mínimo) e o teto do INSS. A concessão depende de perícia do INSS.',
+      );
+    case 'retroativos-inss': {
+      const backPay = inssBackPay(
+        value(values, 'monthly'),
+        value(values, 'startDate'),
+        value(values, 'endDate'),
+      );
+
+      return result(
+        'Retroativos estimados',
+        backPay.total,
+        'Divide a mensalidade por 30 e multiplica pelos dias entre o início do direito e a data do primeiro pagamento. Correção monetária e Imposto de Renda não estão incluídos.',
+      );
+    }
+    case 'prazo-auxilio-inss':
+      return result(
+        'Dias de benefício concedidos',
+        Math.max(0, value(values, 'endDate') - value(values, 'startDate') + 1),
+        'Conta os dias do início do benefício até a data de cessação, incluindo os dois extremos. O pedido de prorrogação vale nos 15 dias que antecedem essa data.',
+      );
+    case 'aposentadoria-idade':
+      return result(
+        'Aposentadoria por idade estimada',
+        retirementByAge(values).benefit,
+        'Aplica 60% mais 2% por ano de contribuição acima de 15 anos (mulher) ou 20 anos (homem) sobre a média de todos os salários, respeitando piso e teto. A idade mínima e a carência precisam estar cumpridas.',
       );
     case 'ipva':
       return result(

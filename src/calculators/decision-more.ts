@@ -1,5 +1,10 @@
-import { minimumWage2026 } from './constants';
-import { insalubrityBase, ipvaMonths } from './rules';
+import { inssCeiling2026, minimumWage2026 } from './constants';
+import {
+  inssBackPay,
+  insalubrityBase,
+  ipvaMonths,
+  retirementByAge,
+} from './rules';
 import type {
   CalculationResult,
   CalculatorDecision,
@@ -513,6 +518,137 @@ export function valeTransporteDecision(
         ? 'O transporte custa menos que 6% do salário, então o desconto é o próprio custo e a empresa não paga nada.'
         : 'O desconto é de no máximo 6% do salário básico, sem horas extras, comissões ou outros adicionais.',
       'O vale-transporte não tem natureza salarial e não entra no cálculo de férias, 13º ou FGTS. O trabalhador pode abrir mão do benefício por declaração escrita.',
+    ],
+  };
+}
+
+const dateLabel = (days: number) =>
+  new Date(days * dayInMs).toLocaleDateString('pt-BR', { timeZone: 'UTC' });
+
+export function retroativosInss(
+  values: CalculatorValues,
+  calculation: CalculationResult,
+): CalculatorDecision {
+  const monthly = input(values, 'monthly');
+  const start = input(values, 'startDate');
+  const end = input(values, 'endDate');
+  const { days } = inssBackPay(monthly, start, end);
+  const fullMonths = Math.floor(days / 30);
+  const restDays = days - fullMonths * 30;
+
+  return {
+    summary:
+      days > 0
+        ? `Entre ${dateLabel(start)} e ${dateLabel(end)} são ${days} dias, ou ${fullMonths} ${fullMonths === 1 ? 'mês' : 'meses'} e ${restDays} ${restDays === 1 ? 'dia' : 'dias'} pela regra de 30 dias por mês. Os retroativos estimados são de ${money(calculation.value)}.`
+        : 'A data do primeiro pagamento precisa ser posterior ao início do direito para existir valor atrasado.',
+    table: {
+      title: 'Como chegamos ao valor',
+      columns: ['Item', 'Valor'],
+      rows: [
+        ['Mensalidade do benefício', money(monthly)],
+        [
+          'Valor de cada dia (mensalidade dividida por 30)',
+          money(monthly / 30),
+        ],
+        ['Dias entre as datas', number.format(days)],
+        ['Meses completos', money(monthly * fullMonths)],
+        ['Dias restantes', money((monthly / 30) * restDays)],
+        ['Retroativos estimados', money(calculation.value)],
+      ],
+    },
+    references: [
+      'Lei 8.213/1991, arts. 43, 49 e 60 (data de início do benefício)',
+      'INSS: Meu INSS, consulta de pagamentos',
+    ],
+    alerts: [
+      'O INSS corrige os atrasados e, em ações judiciais, pode somar juros. A calculadora não inclui correção, por isso o valor real tende a ser um pouco maior.',
+      'Quando o valor acumulado é pago de uma só vez, pode haver Imposto de Renda sobre rendimentos acumulados. Confira o extrato de pagamento no Meu INSS.',
+      'Se houve parcelas já pagas no período, desconte-as antes de comparar com o que o INSS informa.',
+    ],
+  };
+}
+
+export function prazoAuxilioInss(
+  values: CalculatorValues,
+  calculation: CalculationResult,
+): CalculatorDecision {
+  const start = input(values, 'startDate');
+  const end = input(values, 'endDate');
+  const days = calculation.value;
+  const windowStart = end - 15;
+  const atestmedLimit = days > 0 && days <= 90;
+
+  return {
+    summary:
+      end >= start
+        ? `Com cessação em ${dateLabel(end)}, o pedido de prorrogação deve ser feito de ${dateLabel(windowStart)} até ${dateLabel(end)}. O benefício dura ${days} ${days === 1 ? 'dia' : 'dias'} no total.`
+        : 'A data de cessação precisa ser igual ou posterior ao início do benefício.',
+    table: {
+      title: 'Datas importantes',
+      columns: ['Etapa', 'Data'],
+      rows: [
+        ['Início do benefício', dateLabel(start)],
+        ['Primeiro dia para pedir a prorrogação', dateLabel(windowStart)],
+        ['Cessação programada (alta)', dateLabel(end)],
+        ['Dias de benefício', number.format(days)],
+        [
+          'Dentro do limite de 90 dias da análise documental',
+          atestmedLimit ? 'Sim' : 'Não',
+        ],
+      ],
+    },
+    references: [
+      'Portaria Conjunta PRES/INSS/SRGPS/MPS nº 49/2024',
+      'INSS: Meu INSS, pedido de prorrogação',
+    ],
+    alerts: [
+      'Pedir fora dessa janela pode fazer o sistema não aceitar a prorrogação. Nesse caso, pode ser preciso fazer um novo pedido de benefício, com nova análise.',
+      'Em regra, o benefício é mantido enquanto o pedido de prorrogação aguarda a análise. Guarde o protocolo e acompanhe a situação no Meu INSS.',
+      'A regra do atestado analisado sem perícia presencial vale para benefícios de até 90 dias somados. Acima disso, o INSS pode marcar perícia.',
+    ],
+  };
+}
+
+export function aposentadoriaIdade(
+  values: CalculatorValues,
+  calculation: CalculationResult,
+): CalculatorDecision {
+  const r = retirementByAge(values);
+  const age = input(values, 'age');
+  const years = Math.floor(input(values, 'years'));
+  const average = input(values, 'amount');
+  const ready = r.ageOk && r.yearsOk;
+  const raw = average * (r.rate / 100);
+  const limited =
+    raw < minimumWage2026
+      ? ' O valor foi elevado ao salário mínimo.'
+      : raw > inssCeiling2026
+        ? ' O valor foi limitado ao teto do INSS.'
+        : '';
+
+  return {
+    summary: ready
+      ? `Com ${age} anos de idade e ${years} anos de contribuição, a regra permanente indica ${percent(r.rate)} da média, ou ${money(calculation.value)} por mês.${limited}`
+      : `Pela regra permanente, ${r.woman ? 'mulheres' : 'homens'} precisam de ${r.minAge} anos de idade e ${r.minYears} anos de contribuição. ${r.ageOk ? '' : `Faltam ${Math.max(0, r.minAge - age)} ano(s) de idade. `}${r.yearsOk ? '' : `Faltam ${Math.max(0, r.minYears - years)} ano(s) de contribuição. `}O valor abaixo é uma projeção para quando os requisitos forem cumpridos.`,
+    table: {
+      title: 'Requisitos e cálculo',
+      columns: ['Item', 'Situação'],
+      rows: [
+        ['Idade mínima', `${r.minAge} anos (você informou ${age})`],
+        ['Contribuição mínima', `${r.minYears} anos (você informou ${years})`],
+        ['Percentual', percent(r.rate)],
+        ['Média dos salários', money(average)],
+        ['Resultado antes de piso e teto', money(raw)],
+        ['Aposentadoria estimada', money(calculation.value)],
+      ],
+    },
+    references: [
+      'Emenda Constitucional 103/2019, arts. 19 e 26',
+      'INSS: aposentadoria por idade',
+    ],
+    alerts: [
+      'Esta é a regra permanente, aplicada a quem começou a contribuir depois de 13/11/2019. Quem já contribuía antes pode ter regras de transição, com idade e tempo diferentes.',
+      'A média usa todos os salários de contribuição desde julho de 1994, corrigidos. Consulte o CNIS no Meu INSS para ver o histórico e use a calculadora de INSS para simular a média.',
     ],
   };
 }

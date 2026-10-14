@@ -47,12 +47,24 @@ import { guideAbonoSalarialPisPasepQuemTemDireito } from './abono-salarial-pis-p
 import { guideQuantoCustaUmFuncionarioClt } from './quanto-custa-um-funcionario-clt';
 import { guideSimplesNacionalEFatorRComoPagarMenosImposto } from './simples-nacional-e-fator-r-como-pagar-menos-imposto';
 import { guideReajusteDoAluguelComoCalcularIgpMOuIpca } from './reajuste-do-aluguel-como-calcular-igp-m-ou-ipca';
+import { guideProrrogacaoAuxilio } from './prorrogacao-do-auxilio-por-incapacidade-temporaria-quando-e-como-pedir';
+import { guideAuxilioIncapacidadeValor } from './auxilio-por-incapacidade-temporaria-valor-carencia-e-como-pedir';
+import { guideRetroativosInss } from './retroativos-do-inss-o-que-sao-e-como-conferir-o-pagamento';
+import { guidePericiaInss } from './pericia-medica-do-inss-como-funciona-e-como-se-preparar';
+import { guideAposentadoriaIdade } from './aposentadoria-por-idade-regras-valor-e-como-pedir';
+import { guideQualidadeSegurado } from './qualidade-de-segurado-e-carencia-no-inss-como-funciona';
 import { guideComoContarPrazos } from './como-contar-prazos-dias-corridos-e-dias-uteis';
 import { guideIpvaComoCalcular } from './ipva-como-calcular-valor-venal-aliquota-e-parcelas';
 import { holeriteGuide } from './holerite';
 import { reservaEmergenciaGuide } from './reserva-emergencia';
 
 export const guideFiles = [
+  guideProrrogacaoAuxilio,
+  guideAuxilioIncapacidadeValor,
+  guideRetroativosInss,
+  guidePericiaInss,
+  guideAposentadoriaIdade,
+  guideQualidadeSegurado,
   guideComoContarPrazos,
   guideIpvaComoCalcular,
   holeriteGuide,

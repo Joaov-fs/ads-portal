@@ -1,5 +1,6 @@
 export type CalculatorId =
   | 'adicional-noturno'
+  | 'aposentadoria-idade'
   | 'amortizacao-antecipada'
   | 'auxilio-incapacidade'
   | 'aviso-previo'
@@ -39,8 +40,10 @@ export type CalculatorId =
   | 'pis'
   | 'plr-ppr-liquido'
   | 'porcentagem'
+  | 'prazo-auxilio-inss'
   | 'pro-labore'
   | 'reajuste-aluguel'
+  | 'retroativos-inss'
   | 'rescisao-clt'
   | 'salario-liquido'
   | 'salario-maternidade'

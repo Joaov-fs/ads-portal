@@ -30,6 +30,9 @@ import {
   selfEmployedInss,
 } from './rules';
 import {
+  aposentadoriaIdade,
+  prazoAuxilioInss,
+  retroativosInss,
   bancoDeHoras,
   contadorDeDias,
   conversaoTaxa,
@@ -67,6 +70,7 @@ const money = (value: number) => currency.format(value);
 const input = (values: CalculatorValues, name: string) => values[name] ?? 0;
 const nonCurrencyIds = new Set<CalculatorId>([
   'banco-de-horas',
+  'prazo-auxilio-inss',
   'contador-dias',
   'conversao-taxa',
   'das-limite-mei',
@@ -88,6 +92,7 @@ export const outputProfileByCalculator: Readonly<
 > = {
   'adicional-noturno': 'work',
   'amortizacao-antecipada': 'finance',
+  'aposentadoria-idade': 'benefit',
   'auxilio-incapacidade': 'benefit',
   'aviso-previo': 'work',
   'banco-de-horas': 'work',
@@ -126,8 +131,10 @@ export const outputProfileByCalculator: Readonly<
   pis: 'benefit',
   'plr-ppr-liquido': 'work',
   porcentagem: 'utility',
+  'prazo-auxilio-inss': 'benefit',
   'pro-labore': 'tax',
   'reajuste-aluguel': 'finance',
+  'retroativos-inss': 'benefit',
   'rescisao-clt': 'work',
   'salario-liquido': 'work',
   'salario-maternidade': 'benefit',
@@ -1652,6 +1659,12 @@ export function buildCalculatorDecision(
       return bancoDeHoras(values, calculation);
     case 'contador-dias':
       return contadorDeDias(values, calculation);
+    case 'retroativos-inss':
+      return retroativosInss(values, calculation);
+    case 'prazo-auxilio-inss':
+      return prazoAuxilioInss(values, calculation);
+    case 'aposentadoria-idade':
+      return aposentadoriaIdade(values, calculation);
     default:
       return genericDecision(id);
   }

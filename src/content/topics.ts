@@ -5,6 +5,25 @@
  * mesmo tema compitam entre si e leva o leitor ao formato certo.
  */
 export const topicGroups: readonly (readonly string[])[] = [
+  [
+    'prorrogacao-do-auxilio-por-incapacidade-temporaria-quando-e-como-pedir',
+    'prazo-prorrogacao-auxilio-inss',
+    'pericia-medica-do-inss-como-funciona-e-como-se-preparar',
+  ],
+  [
+    'auxilio-por-incapacidade-temporaria-valor-carencia-e-como-pedir',
+    'auxilio-incapacidade',
+    'qualidade-de-segurado-e-carencia-no-inss-como-funciona',
+  ],
+  [
+    'retroativos-do-inss-o-que-sao-e-como-conferir-o-pagamento',
+    'retroativos-inss',
+  ],
+  [
+    'aposentadoria-por-idade-regras-valor-e-como-pedir',
+    'aposentadoria-por-idade',
+    'como-usar-o-meu-inss-e-consultar-o-cnis',
+  ],
   ['como-contar-prazos-dias-corridos-e-dias-uteis', 'contador-de-dias'],
   ['ipva-como-calcular-valor-venal-aliquota-e-parcelas', 'ipva'],
   ['vale-transporte-como-funciona-o-desconto-de-6', 'vale-transporte'],

@@ -6,6 +6,18 @@ import type { ContentDocument } from './types';
  */
 export const metaTitles: Readonly<Record<string, string>> = {
   // Guias
+  'prorrogacao-do-auxilio-por-incapacidade-temporaria-quando-e-como-pedir':
+    'Prorrogação do auxílio-doença: quando e como pedir',
+  'auxilio-por-incapacidade-temporaria-valor-carencia-e-como-pedir':
+    'Auxílio-doença do INSS: valor, carência e pedido',
+  'retroativos-do-inss-o-que-sao-e-como-conferir-o-pagamento':
+    'Retroativos do INSS: como calcular e conferir',
+  'pericia-medica-do-inss-como-funciona-e-como-se-preparar':
+    'Perícia do INSS: como funciona e como se preparar',
+  'aposentadoria-por-idade-regras-valor-e-como-pedir':
+    'Aposentadoria por idade: regras, valor e pedido',
+  'qualidade-de-segurado-e-carencia-no-inss-como-funciona':
+    'Qualidade de segurado e carência no INSS',
   'como-contar-prazos-dias-corridos-e-dias-uteis':
     'Como contar prazos: dias corridos e dias úteis',
   'ipva-como-calcular-valor-venal-aliquota-e-parcelas':
