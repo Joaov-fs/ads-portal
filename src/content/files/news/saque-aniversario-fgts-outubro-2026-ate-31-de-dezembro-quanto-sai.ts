@@ -12,7 +12,7 @@ export const newsSaqueAniversarioFgtsOutubro2026 = {
     alt: 'Bolo de aniversário, carteira de trabalho e celular com saque do FGTS disponível.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'joao-vitor-ferreira',
   publishedAt: '2026-10-03',
   updatedAt: '2026-10-03',
   tags: ['fgts', 'saque-aniversario', 'trabalho', 'beneficios', 'demissao'],
@@ -100,8 +100,17 @@ export const newsSaqueAniversarioFgtsOutubro2026 = {
     },
   ],
   sources: [
-    { label: 'Caixa Econômica Federal: saque-aniversário do FGTS' },
-    { label: 'Lei 8.036/1990 (Lei do FGTS)' },
-    { label: 'Aplicativo FGTS: consulta de saldo e modalidade' },
+    {
+      label: 'Caixa Econômica Federal: saque-aniversário do FGTS',
+      url: 'https://www.caixa.gov.br/beneficios-trabalhador/fgts/saque-FGTS/Paginas/default.aspx',
+    },
+    {
+      label: 'Lei 8.036/1990 (Lei do FGTS)',
+      url: 'https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm',
+    },
+    {
+      label: 'Aplicativo FGTS: consulta de saldo e modalidade',
+      url: 'https://www.fgts.gov.br/Paginas/trabalhador/saque/saque-aniversario.aspx',
+    },
   ],
 } as const satisfies NewsDocument;

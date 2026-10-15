@@ -39,7 +39,9 @@ describe('content pipeline', () => {
     );
 
     expect(model).toBeDefined();
-    expect(model?.author.name).toBe('Redação PortalFina');
+    expect(['João Vitor Ferreira', 'Gustavo Xavier']).toContain(
+      model?.author.name,
+    );
     expect(model?.readingMinutes).toBeGreaterThan(0);
     expect(model?.mainSchema['@type']).toBe('NewsArticle');
     expect(model?.faqSchema?.['@type']).toBe('FAQPage');

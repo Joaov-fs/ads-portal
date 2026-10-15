@@ -13,7 +13,7 @@ export const newsPixPorAproximacaoSemTetoDeR500 = {
     alt: 'Celular encostado na maquininha pagando R$ 1.000 por aproximação.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'gustavo-xavier',
   publishedAt: '2026-10-06',
   updatedAt: '2026-10-06',
   tags: ['pix', 'seguranca', 'banco', 'pix-por-aproximacao', 'limite'],
@@ -115,11 +115,16 @@ export const newsPixPorAproximacaoSemTetoDeR500 = {
   sources: [
     {
       label: 'Banco Central do Brasil: Instrução Normativa BCB nº 746, de 2026',
+      url: 'https://normativos.bcb.gov.br/',
     },
     {
       label:
         'Agência Brasil: Pix por aproximação deixa de ter teto de R$ 500 a partir desta quinta, 1º de outubro de 2026',
+      url: 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/pix-por-aproximacao-deixa-de-ter-teto-de-r-500-partir-desta-quinta',
     },
-    { label: 'Banco Central do Brasil: regulamento do Pix' },
+    {
+      label: 'Banco Central do Brasil: regulamento do Pix',
+      url: 'https://www.bcb.gov.br/estabilidadefinanceira/pix',
+    },
   ],
 } as const satisfies NewsDocument;

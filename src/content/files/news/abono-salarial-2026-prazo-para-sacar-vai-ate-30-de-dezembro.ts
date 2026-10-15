@@ -13,7 +13,7 @@ export const newsAbonoSalarial2026PrazoParaSacarVaiAte30DeDezembro = {
     alt: 'Carteira de trabalho, cartão do PIS/Pasep e calendário de dezembro com o dia 30 marcado.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'gustavo-xavier',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
   tags: ['pis', 'abono', 'beneficios', 'trabalho', 'salario'],
@@ -107,6 +107,7 @@ export const newsAbonoSalarial2026PrazoParaSacarVaiAte30DeDezembro = {
     },
     {
       label: 'Lei 7.998/1990: Programa do Seguro-Desemprego e Abono Salarial',
+      url: 'https://www.planalto.gov.br/ccivil_03/leis/l7998.htm',
     },
   ],
 } as const satisfies NewsDocument;

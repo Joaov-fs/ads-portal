@@ -13,7 +13,7 @@ export const newsQuintoDiaUtilDeOutubro2026 = {
     alt: 'Calendário de outubro com o dia 6 marcado, holerite de setembro e envelope com dinheiro.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'joao-vitor-ferreira',
   publishedAt: '2026-10-04',
   updatedAt: '2026-10-04',
   tags: ['salario', 'clt', 'holerite', 'descontos', 'trabalho', 'direitos'],
@@ -113,11 +113,16 @@ export const newsQuintoDiaUtilDeOutubro2026 = {
   sources: [
     {
       label: 'CLT (Decreto-Lei 5.452/1943): art. 459, parágrafo 1º, e art. 483',
+      url: 'https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm',
     },
     {
       label:
         'Tribunal Superior do Trabalho: Súmula 381 (correção monetária do salário)',
+      url: 'https://www.tst.jus.br/sumulas',
     },
-    { label: 'INSS: tabela de contribuição mensal de 2026' },
+    {
+      label: 'INSS: tabela de contribuição mensal de 2026',
+      url: 'https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabela-de-contribuicao-mensal',
+    },
   ],
 } as const satisfies NewsDocument;

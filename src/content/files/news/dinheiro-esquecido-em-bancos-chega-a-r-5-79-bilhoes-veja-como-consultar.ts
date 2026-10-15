@@ -13,7 +13,7 @@ export const newsDinheiroEsquecidoBancosAgosto2026 = {
     alt: 'Lupa sobre o valor de R$ 5,79 bilhões, ao lado de um documento com os totais de pessoas e empresas e de um celular com a consulta do Valores a Receber.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'gustavo-xavier',
   publishedAt: '2026-10-15',
   updatedAt: '2026-10-15',
   tags: [
@@ -118,10 +118,12 @@ export const newsDinheiroEsquecidoBancosAgosto2026 = {
     {
       label:
         'Banco Central: Sistema Valores a Receber, dados de agosto de 2026',
+      url: 'https://valoresareceber.bcb.gov.br/',
     },
     {
       label:
         'Agência Brasil: Dinheiro esquecido em bancos sobe para R$ 5,8 bilhões em agosto',
+      url: 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dinheiro-esquecido-em-bancos-sobe-para-r-58-bilhoes-em-agosto',
     },
   ],
 } as const satisfies NewsDocument;

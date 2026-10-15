@@ -12,7 +12,7 @@ export const newsSelic1375OQueMudaParaQuemInvesteEParaQuemDeve = {
     alt: 'Medidor apontando 13,75%, gráfico da Selic em queda e celular com investimentos.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'joao-vitor-ferreira',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
   tags: ['juros', 'selic', 'investimentos', 'credito', 'cdb'],
@@ -114,12 +114,15 @@ export const newsSelic1375OQueMudaParaQuemInvesteEParaQuemDeve = {
     {
       label:
         'Banco Central do Brasil: Sistema Gerenciador de Séries Temporais, série 432 (meta Selic)',
+      url: 'https://www3.bcb.gov.br/sgspub/',
     },
     {
       label: 'IBGE: IPCA, acumulado em 12 meses',
+      url: 'https://www.ibge.gov.br/estatisticas/economicas/precos-e-custos/9256-indice-nacional-de-precos-ao-consumidor-amplo.html',
     },
     {
       label: 'Lei 11.033/2004: tabela regressiva do Imposto de Renda',
+      url: 'https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l11033.htm',
     },
   ],
 } as const satisfies NewsDocument;

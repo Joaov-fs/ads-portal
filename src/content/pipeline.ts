@@ -123,7 +123,10 @@ function buildMainSchema(
     url: absoluteUrl(pathname),
     datePublished: document.publishedAt,
     dateModified: document.updatedAt,
-    author: { '@type': 'Organization', name: authorName },
+    author: {
+      '@type': authorName === 'Redação PortalFina' ? 'Organization' : 'Person',
+      name: authorName,
+    },
     publisher: { '@type': 'Organization', name: siteConfig.name },
   };
 

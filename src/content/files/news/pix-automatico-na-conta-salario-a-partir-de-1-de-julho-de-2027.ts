@@ -13,7 +13,7 @@ export const newsPixAutomaticoContaSalario2027 = {
     alt: 'Extrato de conta-salário, calendário de julho de 2027 com o dia 1 marcado e celular com o Pix Automático.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'joao-vitor-ferreira',
   publishedAt: '2026-10-11',
   updatedAt: '2026-10-11',
   tags: ['pix', 'conta-salario', 'banco', 'seguranca', 'fraude'],
@@ -110,8 +110,15 @@ export const newsPixAutomaticoContaSalario2027 = {
     {
       label:
         'Agência Gov: Pix amplia funcionalidades e reforça segurança com nova rodada de aperfeiçoamentos regulatórios, 5/10/2026',
+      url: 'https://agenciagov.ebc.com.br/noticias/202610/pix-amplia-funcionalidades-e-reforca-seguranca-com-nova-rodada-de-aperfeicoamentos-regulatorios',
     },
-    { label: 'Banco Central do Brasil: Resolução BCB nº 587, de 18/9/2026' },
-    { label: 'Banco Central do Brasil: regulamento do Pix' },
+    {
+      label: 'Banco Central do Brasil: Resolução BCB nº 587, de 18/9/2026',
+      url: 'https://normativos.bcb.gov.br/',
+    },
+    {
+      label: 'Banco Central do Brasil: regulamento do Pix',
+      url: 'https://www.bcb.gov.br/estabilidadefinanceira/pix',
+    },
   ],
 } as const satisfies NewsDocument;

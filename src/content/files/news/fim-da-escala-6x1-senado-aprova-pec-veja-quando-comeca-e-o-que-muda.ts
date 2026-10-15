@@ -13,7 +13,7 @@ export const newsFimEscala6x1SenadoAprova = {
     alt: 'Documento com a votação de 75 a 1, calendário de outubro de 2026 com os dias 14 e 20 marcados, relógio e etiqueta 5x2.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'gustavo-xavier',
   publishedAt: '2026-10-15',
   updatedAt: '2026-10-15',
   tags: ['escala-6x1', 'jornada-de-trabalho', 'clt', 'pec', 'trabalho'],
@@ -158,22 +158,27 @@ export const newsFimEscala6x1SenadoAprova = {
     {
       label:
         'Senado Notícias: PEC do fim da 6x1 pode ser votada nesta quarta (13/10/2026)',
+      url: 'https://www12.senado.leg.br/noticias/materias/2026/10/13/pec-do-fim-da-6x1-pode-ser-votada-nesta-quarta-apos-quinta-sessao-de-discussao',
     },
     {
       label:
         'Exame: Fim da escala 6x1 aprovada no Senado, o que acontece agora e quando começa (15/10/2026)',
+      url: 'https://exame.com/brasil/fim-da-escala-6x1-aprovada-no-senado-o-que-acontece-agora-e-quando-comeca/',
     },
     {
       label:
         'A Tarde: Senado aprova fim da escala 6x1 em dois turnos e PEC será promulgada (15/10/2026)',
+      url: 'https://atarde.com.br/politica/senado-aprova-fim-da-escala-6x1-em-dois-turnos-e-pec-sera-promulgada-1405756',
     },
     {
       label:
         'BM&C News: Fim da escala 6x1 é aprovado no Senado; veja quando novas regras começam a valer (15/10/2026)',
+      url: 'https://bmcnews.com.br/economia/fim-da-escala-6x1-e-aprovado-no-senado-veja-quando-novas-regras-comecam-a-valer/',
     },
     {
       label:
         'CNN Brasil: Fim da 6x1, cronograma se a PEC for aprovada (14/10/2026)',
+      url: 'https://www.cnnbrasil.com.br/economia/money/macroeconomia/fim-da-6x1-quando-regra-passa-a-valer-se-pec-for-aprovada-veja-cronograma/',
     },
   ],
 } as const satisfies NewsDocument;

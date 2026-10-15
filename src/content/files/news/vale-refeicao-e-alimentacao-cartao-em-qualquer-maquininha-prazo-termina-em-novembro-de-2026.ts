@@ -13,7 +13,7 @@ export const newsValeRefeicaoAlimentacaoInteroperabilidadeNovembro2026 = {
     alt: 'Prato feito, maquininha com pagamento aprovado e cartão de vale-refeição.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'joao-vitor-ferreira',
   publishedAt: '2026-10-08',
   updatedAt: '2026-10-08',
   tags: [
@@ -132,14 +132,17 @@ export const newsValeRefeicaoAlimentacaoInteroperabilidadeNovembro2026 = {
   sources: [
     {
       label: 'Decreto 12.712, de 11 de novembro de 2025 (DOU de 12/11/2025)',
+      url: 'https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12712.htm',
     },
     {
       label:
         'Agência Brasil: Novas regras para vales-alimentação e refeição entram em vigor (fevereiro de 2026)',
+      url: 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-02/novas-regras-para-vales-alimentacao-e-refeicao-entram-em-vigor',
     },
     {
       label:
         'Ministério do Trabalho e Emprego: Programa de Alimentação do Trabalhador, perguntas e respostas (maio de 2026)',
+      url: 'https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/fevereiro/novas-regras-do-programa-de-alimentacao-do-trabalhador-entram-em-vigor-nesta-terca-feira-10',
     },
   ],
 } as const satisfies NewsDocument;

@@ -12,7 +12,7 @@ export const newsIpcaSetembro2026Sobe082Inflacao458 = {
     alt: 'Relatório do IPCA de setembro com 0,82% no mês e 4,58% em 12 meses, gráfico de alta, etiqueta de energia elétrica e calculadora.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'joao-vitor-ferreira',
   publishedAt: '2026-10-10',
   updatedAt: '2026-10-10',
   tags: [
@@ -131,9 +131,21 @@ export const newsIpcaSetembro2026Sobe082Inflacao458 = {
     },
   ],
   sources: [
-    { label: 'IBGE: IPCA fica em 0,82% em setembro (divulgado em 9/10/2026)' },
-    { label: 'IBGE: INPC de setembro de 2026' },
-    { label: 'Banco Central do Brasil: boletim Focus de 5/10/2026' },
-    { label: 'Conselho Monetário Nacional: meta de inflação' },
+    {
+      label: 'IBGE: IPCA fica em 0,82% em setembro (divulgado em 9/10/2026)',
+      url: 'https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48246-ipca-fica-em-0-82-em-setembro',
+    },
+    {
+      label: 'IBGE: INPC de setembro de 2026',
+      url: 'https://www.ibge.gov.br/estatisticas/economicas/precos-e-custos/9258-indice-nacional-de-precos-ao-consumidor.html',
+    },
+    {
+      label: 'Banco Central do Brasil: boletim Focus de 5/10/2026',
+      url: 'https://www.bcb.gov.br/content/focus/focus/R20261002.pdf',
+    },
+    {
+      label: 'Conselho Monetário Nacional: meta de inflação',
+      url: 'https://www.bcb.gov.br/controleinflacao',
+    },
   ],
 } as const satisfies NewsDocument;

@@ -13,7 +13,7 @@ export const newsPacoteMeiPerdaoPixTeto110Mil = {
     alt: 'Documento com o pacote para MEI: R$ 12,6 bi de dívidas perdoadas, desconto de 90% e teto de R$ 110 mil, ao lado de cédula de R$ 5.000 e calculadora.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'joao-vitor-ferreira',
   publishedAt: '2026-10-14',
   updatedAt: '2026-10-14',
   tags: ['mei', 'divida', 'desenrola', 'pix', 'impostos', 'negocios'],
@@ -161,10 +161,12 @@ export const newsPacoteMeiPerdaoPixTeto110Mil = {
     {
       label:
         'Agência Brasil: Governo anuncia perdão de dívidas e pacote de estímulo para MEIs (13/10/2026)',
+      url: 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/governo-anuncia-perdao-de-dividas-e-pacote-de-estimulo-para-meis',
     },
     {
       label:
         'Poder360: Saiba quais são as medidas anunciadas para os MEIs (13/10/2026)',
+      url: 'https://www.poder360.com.br/poder-economia/saiba-quais-sao-as-6-medidas-de-lula-anunciadas-para-os-meis/',
     },
     {
       label: 'Portal do Simples Nacional: DAS-MEI e limite de faturamento',
@@ -172,6 +174,7 @@ export const newsPacoteMeiPerdaoPixTeto110Mil = {
     },
     {
       label: 'Lei Complementar 123/2006: Estatuto da Microempresa',
+      url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm',
     },
   ],
 } as const satisfies NewsDocument;

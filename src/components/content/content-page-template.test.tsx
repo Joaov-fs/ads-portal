@@ -59,7 +59,7 @@ describe('content templates', () => {
       'Transforme a simulação em ação',
       'Legislação e referências aplicáveis',
       'Perguntas frequentes',
-      'Fontes oficiais',
+      'Fontes e referências',
     ]) {
       expect(
         screen.getByRole('heading', { name: heading }),

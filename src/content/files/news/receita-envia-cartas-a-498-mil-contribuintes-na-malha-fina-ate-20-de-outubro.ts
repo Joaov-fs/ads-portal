@@ -13,7 +13,7 @@ export const newsReceitaCartasMalhaFina2026 = {
     alt: 'Declaração do Imposto de Renda com carimbo de pendência, lupa sobre a linha marcada, cartas e calculadora.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'gustavo-xavier',
   publishedAt: '2026-10-08',
   updatedAt: '2026-10-08',
   tags: ['imposto-de-renda', 'malha-fina', 'receita-federal', 'irpf-2026'],
@@ -138,11 +138,16 @@ export const newsReceitaCartasMalhaFina2026 = {
     {
       label:
         'Receita Federal: Projeto Cartas 2026 incentiva autorregularização de declarações retidas em malha fiscal (6/10/2026)',
+      url: 'https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/outubro/projeto-cartas-2026-incentiva-autorregularizacao-de-declaracoes-retidas-em-malha-fiscal',
     },
     {
       label:
         'Agência Brasil: Receita envia cartas a 498 mil que estão na malha fina até o dia 20 (7/10/2026)',
+      url: 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/receita-envia-cartas-498-mil-que-estao-na-malha-fina-ate-o-dia-20',
     },
-    { label: 'Lei 9.430/1996, artigos 44 e 61' },
+    {
+      label: 'Lei 9.430/1996, artigos 44 e 61',
+      url: 'https://www.planalto.gov.br/ccivil_03/leis/l9430.htm',
+    },
   ],
 } as const satisfies NewsDocument;

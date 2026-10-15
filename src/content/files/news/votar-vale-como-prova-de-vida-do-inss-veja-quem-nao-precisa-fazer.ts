@@ -13,7 +13,7 @@ export const newsVotarValeComoProvaDeVidaDoInss = {
     alt: 'Urna eletrônica, título de eleitor, óculos e celular com prova de vida confirmada.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'joao-vitor-ferreira',
   publishedAt: '2026-10-05',
   updatedAt: '2026-10-05',
   tags: [
@@ -128,11 +128,16 @@ export const newsVotarValeComoProvaDeVidaDoInss = {
     {
       label:
         'INSS: Comparecimento às urnas vale como Prova de Vida automática no INSS (publicada em 18/9/2026 e atualizada em 1º/10/2026)',
+      url: 'https://www.gov.br/inss/pt-br/assuntos/noticias/comparecimento-as-urnas-vale-como-prova-de-vida-automatica-no-inss',
     },
     {
       label:
         'Tribunal Superior Eleitoral: Comparecimento à votação nas Eleições 2026 pode ser utilizado como prova de vida do INSS (22/9/2026)',
+      url: 'https://www.tse.jus.br/comunicacao/noticias/2026/Setembro/comparecimento-a-votacao-nas-eleicoes-2026-pode-ser-utilizado-como-prova-de-vida-do-inss',
     },
-    { label: 'Lei 13.846/2019 e Portaria PRES/INSS nº 1.408/2022' },
+    {
+      label: 'Lei 13.846/2019 e Portaria PRES/INSS nº 1.408/2022',
+      url: 'https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/L13846.htm',
+    },
   ],
 } as const satisfies NewsDocument;

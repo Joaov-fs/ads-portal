@@ -4,7 +4,7 @@ import { authors } from '@/content/authors';
 import { buildInstitutionalMetadata } from '@/content';
 
 const description =
-  'Conheça a equipe responsável pelo conteúdo editorial do PortalFina.';
+  'Conheça quem assina as notícias, os guias e as calculadoras do PortalFina.';
 
 export const metadata = buildInstitutionalMetadata(
   'Equipe editorial',
@@ -14,6 +14,7 @@ export const metadata = buildInstitutionalMetadata(
 
 export default function AuthorPage() {
   const author = authors[0];
+  const editors = authors.slice(1);
 
   return (
     <>
@@ -34,11 +35,20 @@ export default function AuthorPage() {
             heading: author.name,
             content: [<p key="bio">{author.bio}</p>],
           },
+          ...editors.map((editor) => ({
+            heading: editor.name,
+            content: [
+              <p key={`${editor.id}-role`}>
+                <strong>{editor.role}.</strong>
+              </p>,
+              <p key={`${editor.id}-bio`}>{editor.bio}</p>,
+            ],
+          })),
           {
             heading: 'Responsabilidade editorial',
             content: [
               <p key="responsibility">
-                A equipe revisa clareza, estrutura, fontes e datas de
+                A redação revisa clareza, estrutura, fontes e datas de
                 atualização. Simulações são educativas e devem ser confirmadas
                 em fontes oficiais antes de decisões relevantes.
               </p>,

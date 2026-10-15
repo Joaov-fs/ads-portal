@@ -13,7 +13,7 @@ export const newsInssDeAutonomoESocio2011Ou5QualPlanoValeAPena = {
     alt: 'Três potes de moedas com 20%, 11% e 5%, os planos de contribuição do INSS.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'joao-vitor-ferreira',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
   tags: ['inss', 'autonomo', 'pro-labore', 'previdencia', 'negocios'],
@@ -117,12 +117,15 @@ export const newsInssDeAutonomoESocio2011Ou5QualPlanoValeAPena = {
     },
     {
       label: 'Lei 8.212/1991: custeio da Seguridade Social',
+      url: 'https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm',
     },
     {
       label: 'Emenda Constitucional 103/2019: reforma da Previdência',
+      url: 'https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm',
     },
     {
       label: 'Receita Federal: tabela do IRRF de 2026',
+      url: 'https://www.gov.br/receitafederal/pt-br',
     },
   ],
 } as const satisfies NewsDocument;

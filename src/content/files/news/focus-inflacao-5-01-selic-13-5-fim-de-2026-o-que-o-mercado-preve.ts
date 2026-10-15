@@ -13,7 +13,7 @@ export const newsFocusInflacao501Selic135 = {
     alt: 'Relatório do boletim Focus com as projeções, cesta de compras e etiqueta de preço com 5,01%.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'joao-vitor-ferreira',
   publishedAt: '2026-10-06',
   updatedAt: '2026-10-06',
   tags: ['focus', 'inflacao', 'ipca', 'selic', 'juros', 'investimentos', 'cdb'],
@@ -112,17 +112,21 @@ export const newsFocusInflacao501Selic135 = {
   sources: [
     {
       label: 'Banco Central do Brasil: Boletim Focus, 5 de outubro de 2026',
+      url: 'https://www.bcb.gov.br/content/focus/focus/R20261002.pdf',
     },
     {
       label:
         'Banco Central do Brasil: Comitê de Política Monetária (Copom), calendário de reuniões de 2026',
+      url: 'https://www.bcb.gov.br/controleinflacao/historicotaxasjuros',
     },
     {
       label:
         'Banco Central do Brasil: meta para a inflação, 3% com tolerância de 1,5 ponto',
+      url: 'https://www.bcb.gov.br/controleinflacao',
     },
     {
       label: 'Lei 11.033/2004: tabela regressiva do Imposto de Renda',
+      url: 'https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l11033.htm',
     },
   ],
 } as const satisfies NewsDocument;

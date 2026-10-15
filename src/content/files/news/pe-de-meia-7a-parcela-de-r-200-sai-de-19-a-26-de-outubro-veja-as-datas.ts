@@ -13,7 +13,7 @@ export const newsPeDeMeiaSetimaParcelaOutubro2026 = {
     alt: 'Calendário de outubro de 2026 com os dias 19 a 23 e 26 marcados, ao lado de um celular com a parcela de R$ 200,00 e de um documento do Pé-de-Meia.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'gustavo-xavier',
   publishedAt: '2026-10-14',
   updatedAt: '2026-10-14',
   tags: [
@@ -128,15 +128,21 @@ export const newsPeDeMeiaSetimaParcelaOutubro2026 = {
     {
       label:
         'Ministério da Educação: calendário de pagamentos do Pé-de-Meia 2026',
+      url: 'https://www.gov.br/mec/pt-br/pe-de-meia/calendario-pagamentos',
     },
     {
       label:
         'Agência Brasil: MEC divulga calendário de pagamento do Pé-de-Meia 2026',
+      url: 'https://agenciabrasil.ebc.com.br/educacao/noticia/2026-02/mec-divulga-calendario-de-pagamento-do-pe-de-meia-2026',
     },
     {
       label:
         'Agência Brasil: Pé-de-Meia, nascidos em setembro e outubro recebem parcela',
+      url: 'https://agenciabrasil.ebc.com.br/educacao/noticia/2026-07/pe-de-meia-nascidos-em-setembro-e-outubro-recebem-parcela',
     },
-    { label: 'Lei 14.818, de 16 de janeiro de 2024' },
+    {
+      label: 'Lei 14.818, de 16 de janeiro de 2024',
+      url: 'https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14818.htm',
+    },
   ],
 } as const satisfies NewsDocument;

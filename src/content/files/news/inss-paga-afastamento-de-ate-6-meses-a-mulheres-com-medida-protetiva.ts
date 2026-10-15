@@ -13,7 +13,7 @@ export const newsInssAfastamentoMedidaProtetiva6Meses = {
     alt: 'Documento de medida protetiva, quadro de quem paga o afastamento e celular com a duração de 6 meses.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'joao-vitor-ferreira',
   publishedAt: '2026-10-09',
   updatedAt: '2026-10-09',
   tags: [
@@ -127,11 +127,16 @@ export const newsInssAfastamentoMedidaProtetiva6Meses = {
     {
       label:
         'INSS: INSS pagará salário de trabalhadoras afastadas do emprego por violência doméstica (1º/10/2026, atualizada em 6/10/2026)',
+      url: 'https://www.gov.br/inss/pt-br/assuntos/noticias/inss-pagara-salario-de-trabalhadoras-afastadas-do-emprego-por-violencia-domestica-1',
     },
-    { label: 'Lei 11.340/2006 (Lei Maria da Penha)' },
+    {
+      label: 'Lei 11.340/2006 (Lei Maria da Penha)',
+      url: 'https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm',
+    },
     {
       label:
         'Supremo Tribunal Federal: decisão de junho de 2026 sobre o pagamento do afastamento',
+      url: 'https://noticias.stf.jus.br/postsnoticias/inss-e-empregador-devem-garantir-salario-de-mulheres-afastadas-do-trabalho-por-violencia-domestica-decide-stf/',
     },
   ],
 } as const satisfies NewsDocument;

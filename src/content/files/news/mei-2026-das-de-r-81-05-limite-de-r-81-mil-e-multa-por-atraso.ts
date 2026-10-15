@@ -13,7 +13,7 @@ export const newsMei2026DasDeR8105LimiteDeR81MilEMultaPorAtraso = {
     alt: 'Boleto do DAS do MEI, documento do CNPJ, avental e maquininha.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'joao-vitor-ferreira',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
   tags: ['mei', 'das', 'imposto', 'negocios', 'limite'],
@@ -111,12 +111,15 @@ export const newsMei2026DasDeR8105LimiteDeR81MilEMultaPorAtraso = {
     },
     {
       label: 'Lei Complementar 123/2006: Estatuto da Microempresa',
+      url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm',
     },
     {
       label: 'Resolução CGSN 140/2018',
+      url: 'https://www8.receita.fazenda.gov.br/simplesnacional/',
     },
     {
       label: 'Agência Brasil: contribuição do MEI sobe para R$ 81,05 em 2026',
+      url: 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-01/recolhimento-do-mei-sobe-para-r-8105-em-2026',
     },
   ],
 } as const satisfies NewsDocument;

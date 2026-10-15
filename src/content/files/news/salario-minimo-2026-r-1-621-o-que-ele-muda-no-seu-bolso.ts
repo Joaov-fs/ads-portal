@@ -13,7 +13,7 @@ export const newsSalarioMinimo2026R1621OQueEleMudaNoSeuBolso = {
     alt: 'Carteira com notas, holerite com o salário mínimo de R$ 1.621 e calculadora.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'gustavo-xavier',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
   tags: ['salario', 'salario-minimo', 'beneficios', 'mei', 'trabalho'],
@@ -111,6 +111,7 @@ export const newsSalarioMinimo2026R1621OQueEleMudaNoSeuBolso = {
   sources: [
     {
       label: 'Presidência da República: decreto do salário mínimo de 2026',
+      url: 'https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12797.htm',
     },
     {
       label: 'Portal do Empreendedor (MEI): valores do DAS-MEI em 2026',
@@ -119,9 +120,11 @@ export const newsSalarioMinimo2026R1621OQueEleMudaNoSeuBolso = {
     {
       label:
         'Ministério do Trabalho e Emprego: seguro-desemprego e abono salarial',
+      url: 'https://www.gov.br/trabalho-e-emprego/pt-br/servicos/trabalhador/seguro-desemprego',
     },
     {
       label: 'Ministério do Desenvolvimento e Assistência Social: BPC',
+      url: 'https://www.gov.br/mds/pt-br',
     },
   ],
 } as const satisfies NewsDocument;

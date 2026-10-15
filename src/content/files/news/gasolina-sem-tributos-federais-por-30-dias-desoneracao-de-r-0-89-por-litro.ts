@@ -13,7 +13,7 @@ export const newsGasolinaSemTributosFederais30DiasR089 = {
     alt: 'Documento com os tributos da gasolina somando R$ 0,89 por litro, bomba de combustível, galão vermelho, etiqueta de R$ 0,26 e moedas.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'gustavo-xavier',
   publishedAt: '2026-10-13',
   updatedAt: '2026-10-13',
   tags: [
@@ -140,18 +140,22 @@ export const newsGasolinaSemTributosFederais30DiasR089 = {
     {
       label:
         'Ministério da Fazenda: Governo Federal prorroga desoneração da gasolina e do etanol (9/10/2026)',
+      url: 'https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/outubro/governo-federal-prorroga-desoneracao-da-gasolina-e-do-etanol',
     },
     {
       label:
         'Ministério da Fazenda: Governo Federal adota novas medidas para combustíveis frente a oscilações do petróleo (setembro de 2026)',
+      url: 'https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/setembro/governo-federal-adota-novas-medidas-para-combustiveis-frente-a-oscilacoes-do-petroleo',
     },
     {
       label:
         'Ministério da Justiça e Segurança Pública: Governo Federal zera tributos sobre a gasolina e reforça subvenção a importadores de diesel (9/10/2026)',
+      url: 'https://www.gov.br/mj/pt-br/assuntos/noticias-1/governo-federal-zera-tributos-sobre-a-gasolina-e-reforca-subvencao-a-importadores-de-diesel',
     },
     {
       label:
         'Agência Brasil: Tributos da gasolina são zerados e subsídios a combustíveis ampliados (outubro de 2026)',
+      url: 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/tributos-da-gasolina-sao-zerados-e-subsidios-combustiveis-ampliados',
     },
   ],
 } as const satisfies NewsDocument;

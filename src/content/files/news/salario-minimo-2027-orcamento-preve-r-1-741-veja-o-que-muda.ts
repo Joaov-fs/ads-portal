@@ -12,7 +12,7 @@ export const newsSalarioMinimo2027Orcamento = {
     alt: 'Documento do Orçamento 2027 com o salário mínimo de R$ 1.741, notas e calculadora.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'gustavo-xavier',
   publishedAt: '2026-10-03',
   updatedAt: '2026-10-03',
   tags: ['salario-minimo', 'orcamento', 'inss', 'bpc', 'mei'],
@@ -113,8 +113,17 @@ export const newsSalarioMinimo2027Orcamento = {
     },
   ],
   sources: [
-    { label: 'Projeto de Lei Orçamentária Anual de 2027 (PLOA 2027)' },
-    { label: 'Ministério do Planejamento e Orçamento' },
-    { label: 'Lei de valorização do salário mínimo' },
+    {
+      label: 'Projeto de Lei Orçamentária Anual de 2027 (PLOA 2027)',
+      url: 'https://www.gov.br/planejamento/pt-br/assuntos/orcamento/orcamentos-anuais/2027/ploa-2027/volume_1.pdf/@@display-file/file',
+    },
+    {
+      label: 'Ministério do Planejamento e Orçamento',
+      url: 'https://www.gov.br/planejamento/pt-br',
+    },
+    {
+      label: 'Lei de valorização do salário mínimo',
+      url: 'https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14663.htm',
+    },
   ],
 } as const satisfies NewsDocument;

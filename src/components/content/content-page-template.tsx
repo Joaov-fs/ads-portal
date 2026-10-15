@@ -388,7 +388,7 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
                         className="hover:text-ads-primary-strong"
                         href="#sources-title"
                       >
-                        Fontes oficiais
+                        Fontes e referências
                       </Link>
                     </li>
                   </ul>
@@ -471,11 +471,11 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
               className="mb-5 font-ads-display text-2xl font-bold text-ads-secondary"
               id="sources-title"
             >
-              Fontes oficiais
+              Fontes e referências
             </h2>
             <p className="mb-4 text-sm leading-6 text-ads-muted">
-              Para conferir os números, procure estes documentos e páginas nos
-              sites dos próprios órgãos.
+              Confira os números nas páginas dos órgãos oficiais e nas matérias
+              consultadas. Os links abrem o site de origem em outra aba.
             </p>
             <ul className="grid list-disc gap-3 pl-5 text-ads-muted">
               {document.sources.map((source) => (
@@ -484,6 +484,8 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
                     <Link
                       className="font-medium text-ads-primary-strong underline-offset-4 hover:underline"
                       href={source.url}
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       {source.label}
                     </Link>

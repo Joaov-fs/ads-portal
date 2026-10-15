@@ -13,7 +13,7 @@ export const newsPgfnSemanaRegularizacaoTributaria = {
     alt: 'Tesoura cortando o boleto de juros e multa ao lado do boleto da dívida com valor menor.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'gustavo-xavier',
   publishedAt: '2026-10-07',
   updatedAt: '2026-10-07',
   tags: ['mei', 'divida', 'impostos', 'pgfn', 'regularizacao', 'negocios'],
@@ -118,8 +118,15 @@ export const newsPgfnSemanaRegularizacaoTributaria = {
     {
       label:
         'PGFN: III Semana Nacional da Regularização Tributária (notícia de 6 de outubro de 2026)',
+      url: 'https://www.gov.br/pgfn/pt-br/assuntos/noticias/2026/iii-semana-nacional-da-regularizacao-tributaria',
     },
-    { label: 'PGFN: Edital de Transação nº 11/2026' },
-    { label: 'PGFN: Portal Regularize' },
+    {
+      label: 'PGFN: Edital de Transação nº 11/2026',
+      url: 'https://www.gov.br/pgfn/pt-br/servicos/editais-de-notificacao/acordo-de-transacao-por-adesao-1',
+    },
+    {
+      label: 'PGFN: Portal Regularize',
+      url: 'https://www.regularize.pgfn.gov.br/',
+    },
   ],
 } as const satisfies NewsDocument;

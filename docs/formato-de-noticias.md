@@ -9,8 +9,10 @@ Cada notícia é **um arquivo TypeScript** em `src/content/files/news/` e **uma 
    Ministério do Trabalho e Emprego, MDS, Caixa, Diário Oficial). Nada de "segundo especialistas".
 2. **Um número por frase, em reais.** Troque adjetivos por exemplos: "salário de R$ 3.000 paga R$ 248,60 de INSS".
 3. **Exemplo calculado.** Todo exemplo deve ser conferido na calculadora do portal antes de publicar.
-4. **Fontes pelo nome.** Cite o documento ou a página ("Lei 15.270/2025", "INSS: tabela de contribuição mensal de 2026").
-   Use `url` só quando levar a uma página oficial estável e fizer sentido para o leitor.
+4. **Fontes com link.** Toda fonte leva `url` (desde 15/10/2026, para passar credibilidade). Cite o documento ou a página ("Lei 15.270/2025",
+   "INSS: tabela de contribuição mensal de 2026") e use o endereço real da matéria ou página oficial, copiado do resultado de busca
+   (WebSearch com `allowed_domains` ajuda: gov.br, agenciabrasil.ebc.com.br, bcb.gov.br, planalto.gov.br etc.). Nunca invente URL: sem a
+   página exata, use a página oficial do órgão. O corpo do texto continua sem links externos; os links ficam só na seção de fontes.
 5. **Leva para uma calculadora.** `featuredCalculators` com 1 a 3 slugs reais de `/calculadoras`.
 6. **Sem repetição.** Cada seção diz algo novo. Não reescreva a descrição no primeiro parágrafo.
 7. **Sem promessas.** Benefícios e prazos: "tem direito quem cumpre os requisitos", nunca "você vai receber".
@@ -48,7 +50,7 @@ export const newsSlugDaNoticia = {
     alt: 'O que a imagem mostra, em uma frase.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial', // sempre este: "Redação PortalFina"
+  authorId: 'joao-vitor-ferreira', // notícias: alterne ao acaso entre 'joao-vitor-ferreira' e 'gustavo-xavier'
   publishedAt: '2026-10-01', // AAAA-MM-DD
   updatedAt: '2026-10-01',
   tags: ['salario', 'inss', 'trabalho'], // ajudam a ligar com guias e calculadoras
@@ -90,7 +92,10 @@ export const newsSlugDaNoticia = {
   ],
   sources: [
     // 2 a 4 fontes oficiais
-    { label: 'INSS: tabela de contribuição mensal de 2026' },
+    {
+      label: 'INSS: tabela de contribuição mensal de 2026',
+      url: 'https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabela-de-contribuicao-mensal',
+    },
     { label: 'Receita Federal', url: 'https://www.gov.br/receitafederal/' },
   ],
 } as const satisfies NewsDocument;

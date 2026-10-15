@@ -13,7 +13,7 @@ export const newsPgfnFgtsEmpregadoresNegociarDivida = {
     alt: 'Carteira de trabalho, pasta do FGTS com acordo da PGFN e calendário com o dia 15 de outubro marcado.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'equipe-editorial',
+  authorId: 'gustavo-xavier',
   publishedAt: '2026-10-05',
   updatedAt: '2026-10-05',
   tags: ['fgts', 'trabalho', 'empresa', 'negocios', 'clt', 'divida'],
@@ -133,8 +133,15 @@ export const newsPgfnFgtsEmpregadoresNegociarDivida = {
     {
       label:
         'PGFN: Novos editais da PGFN para renegociação de dívidas (2/10/2026)',
+      url: 'https://www.gov.br/pgfn/pt-br/assuntos/noticias/2026/novos-editais-da-pgfn-para-renegociacao-de-dividas',
     },
-    { label: 'PGFN: Edital de Transação PGDAU nº 12/2026' },
-    { label: 'Lei nº 8.036/1990 (FGTS) e Lei Complementar nº 110/2001' },
+    {
+      label: 'PGFN: Edital de Transação PGDAU nº 12/2026',
+      url: 'https://www.gov.br/pgfn/pt-br/servicos/orientacoes-contribuintes/acordo-de-transacao/transacao-de-inscricoes-em-divida-ativa-do-fgts-e-contribuicoes-sociais-instituidas-pela-lc-ndeg-110-2001',
+    },
+    {
+      label: 'Lei nº 8.036/1990 (FGTS) e Lei Complementar nº 110/2001',
+      url: 'https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm',
+    },
   ],
 } as const satisfies NewsDocument;
