@@ -12,7 +12,7 @@ export const newsIpcaSetembro2026Sobe082Inflacao458 = {
     alt: 'Relatório do IPCA de setembro com 0,82% no mês e 4,58% em 12 meses, gráfico de alta, etiqueta de energia elétrica e calculadora.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'joao-vitor-ferreira',
+  authorId: 'thales-xavier',
   publishedAt: '2026-10-10',
   updatedAt: '2026-10-10',
   tags: [

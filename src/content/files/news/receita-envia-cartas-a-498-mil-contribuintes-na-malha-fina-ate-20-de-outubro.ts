@@ -13,7 +13,7 @@ export const newsReceitaCartasMalhaFina2026 = {
     alt: 'Declaração do Imposto de Renda com carimbo de pendência, lupa sobre a linha marcada, cartas e calculadora.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'gustavo-xavier',
+  authorId: 'sara-souza',
   publishedAt: '2026-10-08',
   updatedAt: '2026-10-08',
   tags: ['imposto-de-renda', 'malha-fina', 'receita-federal', 'irpf-2026'],

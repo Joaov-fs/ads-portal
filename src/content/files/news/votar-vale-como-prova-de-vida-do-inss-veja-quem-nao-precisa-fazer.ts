@@ -13,7 +13,7 @@ export const newsVotarValeComoProvaDeVidaDoInss = {
     alt: 'Urna eletrônica, título de eleitor, óculos e celular com prova de vida confirmada.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'joao-vitor-ferreira',
+  authorId: 'sara-souza',
   publishedAt: '2026-10-05',
   updatedAt: '2026-10-05',
   tags: [

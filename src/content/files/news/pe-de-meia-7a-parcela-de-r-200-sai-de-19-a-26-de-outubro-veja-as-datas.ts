@@ -13,7 +13,7 @@ export const newsPeDeMeiaSetimaParcelaOutubro2026 = {
     alt: 'Calendário de outubro de 2026 com os dias 19 a 23 e 26 marcados, ao lado de um celular com a parcela de R$ 200,00 e de um documento do Pé-de-Meia.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'gustavo-xavier',
+  authorId: 'sara-souza',
   publishedAt: '2026-10-14',
   updatedAt: '2026-10-14',
   tags: [

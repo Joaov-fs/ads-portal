@@ -13,7 +13,7 @@ export const newsQuintoDiaUtilDeOutubro2026 = {
     alt: 'Calendário de outubro com o dia 6 marcado, holerite de setembro e envelope com dinheiro.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'joao-vitor-ferreira',
+  authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-10-04',
   updatedAt: '2026-10-04',
   tags: ['salario', 'clt', 'holerite', 'descontos', 'trabalho', 'direitos'],

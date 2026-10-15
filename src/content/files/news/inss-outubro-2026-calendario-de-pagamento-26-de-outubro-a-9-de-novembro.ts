@@ -13,7 +13,7 @@ export const newsInssOutubro2026Calendario = {
     alt: 'Calendários de outubro e novembro com os dias de pagamento do INSS marcados e celular com benefício creditado.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'joao-vitor-ferreira',
+  authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-10-03',
   updatedAt: '2026-10-03',
   tags: ['inss', 'aposentadoria', 'beneficios', 'calendario', 'bpc'],

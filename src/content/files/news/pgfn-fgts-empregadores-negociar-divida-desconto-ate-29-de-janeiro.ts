@@ -13,7 +13,7 @@ export const newsPgfnFgtsEmpregadoresNegociarDivida = {
     alt: 'Carteira de trabalho, pasta do FGTS com acordo da PGFN e calendário com o dia 15 de outubro marcado.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'gustavo-xavier',
+  authorId: 'thales-xavier',
   publishedAt: '2026-10-05',
   updatedAt: '2026-10-05',
   tags: ['fgts', 'trabalho', 'empresa', 'negocios', 'clt', 'divida'],

@@ -12,7 +12,7 @@ export const newsSelic1375OQueMudaParaQuemInvesteEParaQuemDeve = {
     alt: 'Medidor apontando 13,75%, gráfico da Selic em queda e celular com investimentos.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'joao-vitor-ferreira',
+  authorId: 'thales-xavier',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
   tags: ['juros', 'selic', 'investimentos', 'credito', 'cdb'],

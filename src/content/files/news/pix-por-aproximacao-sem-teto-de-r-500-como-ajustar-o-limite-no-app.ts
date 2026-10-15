@@ -13,7 +13,7 @@ export const newsPixPorAproximacaoSemTetoDeR500 = {
     alt: 'Celular encostado na maquininha pagando R$ 1.000 por aproximação.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'gustavo-xavier',
+  authorId: 'thales-xavier',
   publishedAt: '2026-10-06',
   updatedAt: '2026-10-06',
   tags: ['pix', 'seguranca', 'banco', 'pix-por-aproximacao', 'limite'],

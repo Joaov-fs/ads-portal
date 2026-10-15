@@ -13,7 +13,7 @@ export const newsFimEscala6x1SenadoAprova = {
     alt: 'Documento com a votação de 75 a 1, calendário de outubro de 2026 com os dias 14 e 20 marcados, relógio e etiqueta 5x2.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'gustavo-xavier',
+  authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-10-15',
   updatedAt: '2026-10-15',
   tags: ['escala-6x1', 'jornada-de-trabalho', 'clt', 'pec', 'trabalho'],

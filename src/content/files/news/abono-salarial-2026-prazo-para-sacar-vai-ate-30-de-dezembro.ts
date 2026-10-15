@@ -13,7 +13,7 @@ export const newsAbonoSalarial2026PrazoParaSacarVaiAte30DeDezembro = {
     alt: 'Carteira de trabalho, cartão do PIS/Pasep e calendário de dezembro com o dia 30 marcado.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'gustavo-xavier',
+  authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
   tags: ['pis', 'abono', 'beneficios', 'trabalho', 'salario'],

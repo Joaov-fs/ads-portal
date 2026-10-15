@@ -13,7 +13,7 @@ export const newsMei2026DasDeR8105LimiteDeR81MilEMultaPorAtraso = {
     alt: 'Boleto do DAS do MEI, documento do CNPJ, avental e maquininha.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'joao-vitor-ferreira',
+  authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
   tags: ['mei', 'das', 'imposto', 'negocios', 'limite'],

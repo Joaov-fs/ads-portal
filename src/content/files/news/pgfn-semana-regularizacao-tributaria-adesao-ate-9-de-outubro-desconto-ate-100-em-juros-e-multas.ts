@@ -13,7 +13,7 @@ export const newsPgfnSemanaRegularizacaoTributaria = {
     alt: 'Tesoura cortando o boleto de juros e multa ao lado do boleto da dívida com valor menor.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'gustavo-xavier',
+  authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-10-07',
   updatedAt: '2026-10-07',
   tags: ['mei', 'divida', 'impostos', 'pgfn', 'regularizacao', 'negocios'],

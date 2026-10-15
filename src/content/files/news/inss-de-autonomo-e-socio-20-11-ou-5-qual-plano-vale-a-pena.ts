@@ -13,7 +13,7 @@ export const newsInssDeAutonomoESocio2011Ou5QualPlanoValeAPena = {
     alt: 'Três potes de moedas com 20%, 11% e 5%, os planos de contribuição do INSS.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'joao-vitor-ferreira',
+  authorId: 'thales-xavier',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
   tags: ['inss', 'autonomo', 'pro-labore', 'previdencia', 'negocios'],

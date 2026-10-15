@@ -13,7 +13,7 @@ export const newsInssAfastamentoMedidaProtetiva6Meses = {
     alt: 'Documento de medida protetiva, quadro de quem paga o afastamento e celular com a duração de 6 meses.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'joao-vitor-ferreira',
+  authorId: 'sara-souza',
   publishedAt: '2026-10-09',
   updatedAt: '2026-10-09',
   tags: [

@@ -39,7 +39,7 @@ describe('content pipeline', () => {
     );
 
     expect(model).toBeDefined();
-    expect(['João Vitor Ferreira', 'Gustavo Xavier']).toContain(
+    expect(['Pedro Bueno Salvador', 'Sara Souza', 'Thales Xavier']).toContain(
       model?.author.name,
     );
     expect(model?.readingMinutes).toBeGreaterThan(0);

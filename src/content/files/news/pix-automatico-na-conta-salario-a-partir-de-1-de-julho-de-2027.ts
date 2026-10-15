@@ -13,7 +13,7 @@ export const newsPixAutomaticoContaSalario2027 = {
     alt: 'Extrato de conta-salário, calendário de julho de 2027 com o dia 1 marcado e celular com o Pix Automático.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'joao-vitor-ferreira',
+  authorId: 'sara-souza',
   publishedAt: '2026-10-11',
   updatedAt: '2026-10-11',
   tags: ['pix', 'conta-salario', 'banco', 'seguranca', 'fraude'],

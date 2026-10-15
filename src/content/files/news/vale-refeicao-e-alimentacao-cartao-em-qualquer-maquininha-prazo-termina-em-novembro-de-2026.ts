@@ -13,7 +13,7 @@ export const newsValeRefeicaoAlimentacaoInteroperabilidadeNovembro2026 = {
     alt: 'Prato feito, maquininha com pagamento aprovado e cartão de vale-refeição.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'joao-vitor-ferreira',
+  authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-10-08',
   updatedAt: '2026-10-08',
   tags: [

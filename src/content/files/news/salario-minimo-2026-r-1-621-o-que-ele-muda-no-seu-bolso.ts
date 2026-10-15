@@ -13,7 +13,7 @@ export const newsSalarioMinimo2026R1621OQueEleMudaNoSeuBolso = {
     alt: 'Carteira com notas, holerite com o salário mínimo de R$ 1.621 e calculadora.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'gustavo-xavier',
+  authorId: 'thales-xavier',
   publishedAt: '2026-10-01',
   updatedAt: '2026-10-01',
   tags: ['salario', 'salario-minimo', 'beneficios', 'mei', 'trabalho'],

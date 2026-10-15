@@ -50,7 +50,7 @@ export const newsSlugDaNoticia = {
     alt: 'O que a imagem mostra, em uma frase.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'joao-vitor-ferreira', // notícias: alterne ao acaso entre 'joao-vitor-ferreira' e 'gustavo-xavier'
+  authorId: 'sara-souza', // notícias: alterne ao acaso entre 'pedro-bueno-salvador', 'sara-souza' e 'thales-xavier'
   publishedAt: '2026-10-01', // AAAA-MM-DD
   updatedAt: '2026-10-01',
   tags: ['salario', 'inss', 'trabalho'], // ajudam a ligar com guias e calculadoras

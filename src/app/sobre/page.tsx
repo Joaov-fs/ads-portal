@@ -41,9 +41,9 @@ export default function AboutPage() {
           heading: 'Quem escreve e como checamos',
           content: [
             <p key="authorship">
-              As notícias são assinadas por João Vitor Ferreira e Gustavo
-              Xavier, e os guias e calculadoras, pela Redação PortalFina. Os
-              textos são produzidos com apoio de inteligência artificial, a
+              As notícias são assinadas por Pedro Bueno Salvador, Sara Souza e
+              Thales Xavier, e os guias e calculadoras, pela Redação PortalFina.
+              Os textos são produzidos com apoio de inteligência artificial, a
               partir de fontes oficiais como Receita Federal, INSS, Banco
               Central, ministérios e Diário Oficial da União, e de veículos de
               referência. As fontes aparecem com link ao final de cada notícia,

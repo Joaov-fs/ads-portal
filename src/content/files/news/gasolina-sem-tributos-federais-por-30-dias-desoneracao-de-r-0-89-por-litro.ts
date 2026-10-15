@@ -13,7 +13,7 @@ export const newsGasolinaSemTributosFederais30DiasR089 = {
     alt: 'Documento com os tributos da gasolina somando R$ 0,89 por litro, bomba de combustível, galão vermelho, etiqueta de R$ 0,26 e moedas.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'gustavo-xavier',
+  authorId: 'sara-souza',
   publishedAt: '2026-10-13',
   updatedAt: '2026-10-13',
   tags: [

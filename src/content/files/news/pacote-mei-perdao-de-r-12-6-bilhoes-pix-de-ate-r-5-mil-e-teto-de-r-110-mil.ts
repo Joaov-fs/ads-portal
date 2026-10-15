@@ -13,7 +13,7 @@ export const newsPacoteMeiPerdaoPixTeto110Mil = {
     alt: 'Documento com o pacote para MEI: R$ 12,6 bi de dívidas perdoadas, desconto de 90% e teto de R$ 110 mil, ao lado de cédula de R$ 5.000 e calculadora.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'joao-vitor-ferreira',
+  authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-10-14',
   updatedAt: '2026-10-14',
   tags: ['mei', 'divida', 'desenrola', 'pix', 'impostos', 'negocios'],

@@ -12,7 +12,7 @@ export const newsSaqueAniversarioFgtsOutubro2026 = {
     alt: 'Bolo de aniversário, carteira de trabalho e celular com saque do FGTS disponível.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'joao-vitor-ferreira',
+  authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-10-03',
   updatedAt: '2026-10-03',
   tags: ['fgts', 'saque-aniversario', 'trabalho', 'beneficios', 'demissao'],

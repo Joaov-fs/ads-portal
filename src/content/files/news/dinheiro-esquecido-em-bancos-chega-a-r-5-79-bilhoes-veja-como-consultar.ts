@@ -13,7 +13,7 @@ export const newsDinheiroEsquecidoBancosAgosto2026 = {
     alt: 'Lupa sobre o valor de R$ 5,79 bilhões, ao lado de um documento com os totais de pessoas e empresas e de um celular com a consulta do Valores a Receber.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'gustavo-xavier',
+  authorId: 'sara-souza',
   publishedAt: '2026-10-15',
   updatedAt: '2026-10-15',
   tags: [

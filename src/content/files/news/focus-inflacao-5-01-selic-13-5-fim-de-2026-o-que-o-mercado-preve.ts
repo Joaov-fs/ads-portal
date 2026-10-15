@@ -13,7 +13,7 @@ export const newsFocusInflacao501Selic135 = {
     alt: 'Relatório do boletim Focus com as projeções, cesta de compras e etiqueta de preço com 5,01%.',
     credit: 'Ilustração: PortalFina',
   },
-  authorId: 'joao-vitor-ferreira',
+  authorId: 'thales-xavier',
   publishedAt: '2026-10-06',
   updatedAt: '2026-10-06',
   tags: ['focus', 'inflacao', 'ipca', 'selic', 'juros', 'investimentos', 'cdb'],
