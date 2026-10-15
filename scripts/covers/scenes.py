@@ -628,3 +628,15 @@ def _():
         + g(1330, 250, 6, 1, clock(120, 10, 0))
         + g(1210, 560, -4, 1, tag('5x2', 240, '#e8590c'))
     )
+
+
+@scene('simples-2027-prazo', '#8a5a14', (80, 100, 860))
+def _():
+    rows = label_rows([('Opção Simples 2027', 'até 15/10'), ('IBS e CBS regular', 'até 30/10'), ('Limite de receita', 'R$ 4,8 mi/ano'), ('Efeitos', 'a partir de 1/1/2027')], 46, 170, 408, 64, 21, hl=(0, '#fdebc8'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'SIMPLES NACIONAL 2027', '#8a5a14', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.5, '#e6c07a'), (0.75, '#c89236'), (1.0, '#8a5a14'))) + '</g>'))
+        + g(700, 90, 5, 1, calendar_month('OUTUBRO 2026', 4, 31, marks=(15, 30), w=460, h=500, accent='#8a5a14', mark_color='#d9480f'))
+        + g(1330, 250, 6, 1, clock(120, 10, 0))
+        + g(1210, 560, -4, 1, tag('30/10', 240, '#d9480f'))
+        + g(1000, 690, 3, 1, coins_stack(3), 'sh')
+    )

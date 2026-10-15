@@ -24,9 +24,11 @@ import { newsPixPorAproximacaoSemTetoDeR500 } from './pix-por-aproximacao-sem-te
 import { newsPgfnSemanaRegularizacaoTributaria } from './pgfn-semana-regularizacao-tributaria-adesao-ate-9-de-outubro-desconto-ate-100-em-juros-e-multas';
 import { newsReceitaCartasMalhaFina2026 } from './receita-envia-cartas-a-498-mil-contribuintes-na-malha-fina-ate-20-de-outubro';
 import { newsDinheiroEsquecidoBancosAgosto2026 } from './dinheiro-esquecido-em-bancos-chega-a-r-5-79-bilhoes-veja-como-consultar';
+import { newsSimplesNacional2027PrazoIbsCbs } from './prazo-do-simples-nacional-2027-termina-hoje-e-ibs-cbs-tem-escolha-ate-30-de-outubro';
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
 export const newsFiles = [
+  newsSimplesNacional2027PrazoIbsCbs,
   newsDinheiroEsquecidoBancosAgosto2026,
   newsGasolinaSemTributosFederais30DiasR089,
   newsInssAfastamentoMedidaProtetiva6Meses,
