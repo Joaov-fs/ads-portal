@@ -617,3 +617,14 @@ def _():
         + g(1260, 380, 8, 1, phone(250, 500, phone_screen('Valores a Receber', 'R$ 5,79 bi', 'agosto de 2026', '#1f7a6d')))
         + g(720, 640, 3, 1, coins_stack(4), 'sh')
     )
+
+
+@scene('escala-6x1', '#1f6f78', (80, 100, 860))
+def _():
+    rows = label_rows([('Senado', '75 a 1'), ('Jornada', '44h para 40h'), ('Descanso', '2 dias por semana'), ('Transição', '14 meses')], 46, 170, 408, 64, 21, hl=(0, '#d4eef0'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'FIM DA ESCALA 6x1', '#1f6f78', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((1.0, '#7bbfc6'), (0.95, '#4d9ea8'), (0.9, '#1f6f78'))) + '</g>'))
+        + g(700, 90, 5, 1, calendar_month('OUTUBRO 2026', 4, 31, marks=(14, 20), w=460, h=500, accent='#1f6f78', mark_color='#e8590c'))
+        + g(1330, 250, 6, 1, clock(120, 10, 0))
+        + g(1210, 560, -4, 1, tag('5x2', 240, '#e8590c'))
+    )

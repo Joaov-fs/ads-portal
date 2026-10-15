@@ -155,6 +155,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'INSS paga afastamento de até 6 meses a vítimas',
   'pe-de-meia-7a-parcela-de-r-200-sai-de-19-a-26-de-outubro-veja-as-datas':
     'Pé-de-Meia: 7ª parcela de R$ 200 em 19 a 26/10',
+  'fim-da-escala-6x1-senado-aprova-pec-veja-quando-comeca-e-o-que-muda':
+    'Fim da escala 6x1 aprovado: o que muda e quando',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */

@@ -6,6 +6,12 @@
  */
 export const topicGroups: readonly (readonly string[])[] = [
   [
+    'fim-da-escala-6x1-senado-aprova-pec-veja-quando-comeca-e-o-que-muda',
+    'como-calcular-horas-extras-e-dsr',
+    'salario-por-hora',
+    'horas-extras',
+  ],
+  [
     'prorrogacao-do-auxilio-por-incapacidade-temporaria-quando-e-como-pedir',
     'prazo-prorrogacao-auxilio-inss',
     'pericia-medica-do-inss-como-funciona-e-como-se-preparar',
