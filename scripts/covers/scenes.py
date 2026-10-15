@@ -605,3 +605,15 @@ def _():
         + g(1260, 110, 8, 1, phone(250, 500, phone_screen('Pé-de-Meia', 'R$ 200,00', '7ª parcela', '#4b4fa3')))
         + g(1030, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('dinheiro-esquecido', '#1f7a6d', (80, 100, 740))
+def _():
+    rows = label_rows([('Total a receber', 'R$ 5,79 bi'), ('Pessoas', '23,94 mi'), ('Empresas', '2,36 mi'), ('Valores até R$ 10', '69,4%')], 46, 170, 408, 64, 21, hl=(0, '#d8f3ec'))
+    lens = '<rect x="-200" y="-200" width="400" height="400" fill="#fff"/><text y="22" font-size="44" font-weight="900" text-anchor="middle" fill="#1f7a6d">R$ 5,79 bi</text>'
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'VALORES A RECEBER', '#1f7a6d', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.45, '#9fd9cc'), (0.7, '#4fb3a0'), (1.0, '#1f7a6d'))) + '</g>'))
+        + g(1010, 190, -8, 1, magnifier(150, lens))
+        + g(1260, 380, 8, 1, phone(250, 500, phone_screen('Valores a Receber', 'R$ 5,79 bi', 'agosto de 2026', '#1f7a6d')))
+        + g(720, 640, 3, 1, coins_stack(4), 'sh')
+    )

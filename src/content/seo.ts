@@ -137,6 +137,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Saque-aniversário FGTS: nascidos em outubro',
   'bolsa-familia-691-outubro-2026-calendario':
     'Bolsa Família: mínimo de R$ 691 em outubro',
+  'dinheiro-esquecido-em-bancos-chega-a-r-5-79-bilhoes-veja-como-consultar':
+    'Dinheiro esquecido em bancos: R$ 5,79 bilhões',
   'selic-13-75-o-que-muda-para-quem-investe-e-para-quem-deve':
     'Selic em 13,75%: o que muda para você',
   'salario-minimo-2026-r-1-621-o-que-ele-muda-no-seu-bolso':
