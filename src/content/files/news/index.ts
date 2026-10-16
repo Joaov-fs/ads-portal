@@ -1,3 +1,4 @@
+import { newsAntecipacaoSaqueAniversarioFgts3Parcelas } from './antecipacao-do-saque-aniversario-do-fgts-cai-para-3-parcelas-e-r-1-500-em-1-de-novembro';
 import { newsFimEscala6x1SenadoAprova } from './fim-da-escala-6x1-senado-aprova-pec-veja-quando-comeca-e-o-que-muda';
 import { newsPeDeMeiaSetimaParcelaOutubro2026 } from './pe-de-meia-7a-parcela-de-r-200-sai-de-19-a-26-de-outubro-veja-as-datas';
 import { newsPacoteMeiPerdaoPixTeto110Mil } from './pacote-mei-perdao-de-r-12-6-bilhoes-pix-de-ate-r-5-mil-e-teto-de-r-110-mil';
@@ -55,4 +56,5 @@ export const newsFiles = [
   newsPacoteMeiPerdaoPixTeto110Mil,
   newsPeDeMeiaSetimaParcelaOutubro2026,
   newsFimEscala6x1SenadoAprova,
+  newsAntecipacaoSaqueAniversarioFgts3Parcelas,
 ] as const;

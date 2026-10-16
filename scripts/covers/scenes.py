@@ -640,3 +640,14 @@ def _():
         + g(1210, 560, -4, 1, tag('30/10', 240, '#d9480f'))
         + g(1000, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('fgts-antecipacao-3-parcelas', '#3b5b92', (80, 100, 860))
+def _():
+    rows = label_rows([('Até 31/10', '5 parcelas'), ('Teto até 31/10', 'R$ 2.500'), ('Desde 1º/11', '3 parcelas'), ('Teto desde 1º/11', 'R$ 1.500')], 46, 170, 408, 64, 21, hl=(2, '#dbe6fb'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'ANTECIPAÇÃO FGTS', '#3b5b92', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((1.0, '#9db6e3'), (0.6, '#3b5b92'))) + '</g>'))
+        + g(700, 90, 5, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(1,), w=460, h=500, accent='#3b5b92', mark_color='#e8590c'))
+        + g(1330, 250, 6, 1, phone(250, 500, phone_screen('App FGTS', 'R$ 1.500', 'teto em 3 parcelas', '#3b5b92')))
+        + g(1000, 690, 3, 1, coins_stack(3), 'sh')
+    )
