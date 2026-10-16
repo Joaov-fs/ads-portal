@@ -161,6 +161,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Pé-de-Meia: 7ª parcela de R$ 200 em 19 a 26/10',
   'fim-da-escala-6x1-senado-aprova-pec-veja-quando-comeca-e-o-que-muda':
     'Fim da escala 6x1 aprovado: o que muda e quando',
+  'abono-salarial-lote-complementar-1-milhao-de-trabalhadores-recebe-desde-15-de-outubro':
+    'Abono salarial: lote extra paga 1,03 milhão',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */

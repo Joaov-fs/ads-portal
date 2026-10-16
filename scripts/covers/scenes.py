@@ -651,3 +651,14 @@ def _():
         + g(1330, 250, 6, 1, phone(250, 500, phone_screen('App FGTS', 'R$ 1.500', 'teto em 3 parcelas', '#3b5b92')))
         + g(1000, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('abono-lote-complementar', '#2e7d4f', (80, 100, 860))
+def _():
+    rows = label_rows([('Trabalhadores', '1.030.899'), ('Valor total', 'R$ 804,2 mi'), ('Cada abono', 'R$ 136 a R$ 1.621'), ('Saque até', '30/12')], 46, 170, 408, 64, 20, hl=(0, '#d6f0de'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'ABONO SALARIAL', '#2e7d4f', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.55, '#9fd3b0'), (0.8, '#5fae7b'), (1.0, '#2e7d4f'))) + '</g>'))
+        + g(700, 90, 5, 1, calendar_month('DEZEMBRO 2026', 2, 31, marks=(30,), w=460, h=500, accent='#2e7d4f', mark_color='#e8590c'))
+        + g(1330, 250, 6, 1, phone(250, 500, phone_screen('Abono Salarial', 'R$ 1.621', 'valor máximo', '#2e7d4f')))
+        + g(1000, 690, 3, 1, coins_stack(3), 'sh')
+    )

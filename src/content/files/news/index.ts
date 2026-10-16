@@ -26,6 +26,7 @@ import { newsPgfnSemanaRegularizacaoTributaria } from './pgfn-semana-regularizac
 import { newsReceitaCartasMalhaFina2026 } from './receita-envia-cartas-a-498-mil-contribuintes-na-malha-fina-ate-20-de-outubro';
 import { newsDinheiroEsquecidoBancosAgosto2026 } from './dinheiro-esquecido-em-bancos-chega-a-r-5-79-bilhoes-veja-como-consultar';
 import { newsSimplesNacional2027PrazoIbsCbs } from './prazo-do-simples-nacional-2027-termina-hoje-e-ibs-cbs-tem-escolha-ate-30-de-outubro';
+import { newsAbonoSalarialLoteComplementar2026 } from './abono-salarial-lote-complementar-1-milhao-de-trabalhadores-recebe-desde-15-de-outubro';
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
 export const newsFiles = [
@@ -57,4 +58,5 @@ export const newsFiles = [
   newsPeDeMeiaSetimaParcelaOutubro2026,
   newsFimEscala6x1SenadoAprova,
   newsAntecipacaoSaqueAniversarioFgts3Parcelas,
+  newsAbonoSalarialLoteComplementar2026,
 ] as const;
