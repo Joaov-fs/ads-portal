@@ -1,3 +1,4 @@
+import { newsIr2026Restituicoes } from './ir-2026-restituicoes-41-bilhoes-como-consultar';
 import { newsBolsaFamiliaOutubroAntecipado } from './bolsa-familia-outubro-antecipado-21-de-outubro';
 import { newsAntecipacaoSaqueAniversarioFgts3Parcelas } from './antecipacao-do-saque-aniversario-do-fgts-cai-para-3-parcelas-e-r-1-500-em-1-de-novembro';
 import { newsFimEscala6x1SenadoAprova } from './fim-da-escala-6x1-senado-aprova-pec-veja-quando-comeca-e-o-que-muda';
@@ -31,6 +32,7 @@ import { newsAbonoSalarialLoteComplementar2026 } from './abono-salarial-lote-com
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
 export const newsFiles = [
+  newsIr2026Restituicoes,
   newsBolsaFamiliaOutubroAntecipado,
   newsSimplesNacional2027PrazoIbsCbs,
   newsDinheiroEsquecidoBancosAgosto2026,

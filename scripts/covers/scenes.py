@@ -673,3 +673,14 @@ def _():
         + g(1280, 220, 7, 1, phone(250, 500, phone_screen('Pagamento', '21/10', 'calendário unificado', '#71519a')))
         + g(1000, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('ir-restituicoes-2026', '#285c78', (1160, 160, 420))
+def _():
+    rows = label_rows([('Total devolvido', 'R$ 41 bi+'), ('Contribuintes', '25,9 milhões'), ('Balanço', '20/10/2026'), ('Consulta', 'canal oficial')], 46, 170, 408, 64, 21, hl=(0, '#d9edf7'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'RESTITUIÇÃO IR 2026', '#285c78', rows))
+        + g(720, 150, 5, 1, doc(420, 470, 'MEU IMPOSTO DE RENDA', '#285c78', label_rows([('1', 'Consultar'), ('2', 'Conferir situação'), ('3', 'Ver pendências')], 35, 160, 350, 70, 21)))
+        + g(1260, 220, 7, 1, phone(250, 500, phone_screen('Restituição IR', 'CONSULTAR', 'situação individual', '#285c78')))
+        + g(950, 690, 3, 1, coins_stack(3), 'sh')
+    )
