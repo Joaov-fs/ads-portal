@@ -30,13 +30,13 @@ export const bolsaFamiliaOutubro2026News = {
       label: 'Primeira Infância, por criança até 6 anos',
     },
     {
-      value: '19 a 30/10',
+      value: '19 a 21/10',
       label: 'Pagamentos de outubro',
-      note: 'Conforme o final do NIS.',
+      note: 'Calendário antecipado, atualizado em 19/10.',
     },
   ],
   publishedAt: '2026-10-01',
-  updatedAt: '2026-10-01',
+  updatedAt: '2026-10-19',
   tags: ['beneficios', 'bolsa-familia', 'familia', 'cadastro-unico'],
   sections: [
     {
@@ -58,9 +58,8 @@ export const bolsaFamiliaOutubro2026News = {
     {
       heading: 'Quando o Bolsa Família de outubro será pago?',
       paragraphs: [
-        'Os pagamentos começam em 19 de outubro e seguem até 30 de outubro, conforme o último dígito do NIS do responsável familiar.',
-        'O calendário é: NIS final 1, 19 de outubro; 2, 20 de outubro; 3, 21 de outubro; 4, 22 de outubro; 5, 23 de outubro; 6, 26 de outubro; 7, 27 de outubro; 8, 28 de outubro; 9, 29 de outubro; 0, 30 de outubro.',
-        'O calendário oficial segue a sequência dos últimos dez dias úteis do mês. Em situações excepcionais, o governo pode antecipar o benefício em municípios específicos. Quando isso ocorre, a informação é divulgada oficialmente.',
+        'Atualização de 19 de outubro: o MDS anunciou a antecipação do calendário. O NIS final 1 recebe em 19/10. O final 2 recebe em 20/10. Os finais 3 a 9 e 0 recebem em 21/10.',
+        'Em municípios incluídos na relação oficial de emergência ou calamidade pública, a liberação ocorre no primeiro dia, sem depender do final do NIS. Consulte o extrato nos canais oficiais da Caixa.',
       ],
     },
     {
@@ -107,7 +106,8 @@ export const bolsaFamiliaOutubro2026News = {
     },
     {
       question: 'Quando recebe quem tem NIS final 0?',
-      answer: 'Em 30 de outubro.',
+      answer:
+        'Em 21 de outubro, conforme a antecipação anunciada pelo MDS em 19/10. Municípios em emergência incluídos na relação oficial têm liberação no primeiro dia.',
     },
     {
       question: 'Onde consultar meu valor?',
@@ -115,6 +115,10 @@ export const bolsaFamiliaOutubro2026News = {
     },
   ],
   sources: [
+    {
+      label: 'MDS: calendário de outubro antecipado, comunicado de 19/10/2026',
+      url: 'https://www.gov.br/mds/pt-br/noticias/pagamentos-de-outubro-do-bolsa-familia-comecam-nesta-segunda-feira-19-10-1/',
+    },
     {
       label:
         'Ministério do Desenvolvimento e Assistência Social: Bolsa Família',

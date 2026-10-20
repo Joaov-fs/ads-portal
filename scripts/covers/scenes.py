@@ -662,3 +662,14 @@ def _():
         + g(1330, 250, 6, 1, phone(250, 500, phone_screen('Abono Salarial', 'R$ 1.621', 'valor máximo', '#2e7d4f')))
         + g(1000, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('bolsa-outubro-antecipado', '#71519a', (650, 310, 650))
+def _():
+    rows = label_rows([('NIS final 1', '19/10'), ('NIS final 2', '20/10'), ('NIS 3 a 9 e 0', '21/10'), ('Calendário', 'antecipado')], 46, 170, 408, 64, 21, hl=(2, '#ece3fa'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'BOLSA FAMÍLIA', '#71519a', rows))
+        + g(700, 90, 5, 1, calendar_month('OUTUBRO 2026', 4, 31, marks=(21,), w=460, h=500, accent='#71519a', mark_color='#e8590c'))
+        + g(1280, 220, 7, 1, phone(250, 500, phone_screen('Pagamento', '21/10', 'calendário unificado', '#71519a')))
+        + g(1000, 690, 3, 1, coins_stack(3), 'sh')
+    )

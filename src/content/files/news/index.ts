@@ -1,3 +1,4 @@
+import { newsBolsaFamiliaOutubroAntecipado } from './bolsa-familia-outubro-antecipado-21-de-outubro';
 import { newsAntecipacaoSaqueAniversarioFgts3Parcelas } from './antecipacao-do-saque-aniversario-do-fgts-cai-para-3-parcelas-e-r-1-500-em-1-de-novembro';
 import { newsFimEscala6x1SenadoAprova } from './fim-da-escala-6x1-senado-aprova-pec-veja-quando-comeca-e-o-que-muda';
 import { newsPeDeMeiaSetimaParcelaOutubro2026 } from './pe-de-meia-7a-parcela-de-r-200-sai-de-19-a-26-de-outubro-veja-as-datas';
@@ -30,6 +31,7 @@ import { newsAbonoSalarialLoteComplementar2026 } from './abono-salarial-lote-com
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
 export const newsFiles = [
+  newsBolsaFamiliaOutubroAntecipado,
   newsSimplesNacional2027PrazoIbsCbs,
   newsDinheiroEsquecidoBancosAgosto2026,
   newsGasolinaSemTributosFederais30DiasR089,

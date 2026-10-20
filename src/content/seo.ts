@@ -5,6 +5,8 @@ import type { ContentDocument } from './types';
  * antes do sufixo da marca). O título completo continua sendo o H1 da página.
  */
 export const metaTitles: Readonly<Record<string, string>> = {
+  'bolsa-familia-outubro-antecipado-21-de-outubro':
+    'Bolsa Família: outubro antecipado para 21/10',
   // Guias
   'prorrogacao-do-auxilio-por-incapacidade-temporaria-quando-e-como-pedir':
     'Prorrogação do auxílio-doença: quando e como pedir',
