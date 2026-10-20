@@ -684,3 +684,14 @@ def _():
         + g(1260, 220, 7, 1, phone(250, 500, phone_screen('Restituição IR', 'CONSULTAR', 'situação individual', '#285c78')))
         + g(950, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('escala-promulgada-2026', '#286a56', (650, 310, 650))
+def _():
+    rows = label_rows([('Emenda', '141/2026'), ('Primeira etapa', '42 horas'), ('Limite final', '40 horas'), ('Salário', 'sem redução')], 46, 170, 408, 64, 21, hl=(1, '#d8f0e5'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'JORNADA DE TRABALHO', '#286a56', rows))
+        + g(700, 90, 5, 1, calendar_month('DEZEMBRO 2026', 2, 31, marks=(15,), w=460, h=500, accent='#286a56', mark_color='#e8590c'))
+        + g(1320, 210, 6, 1, clock(110, 10, 0))
+        + g(1190, 560, -4, 1, tag('2 FOLGAS', 300, '#e8590c'))
+    )
