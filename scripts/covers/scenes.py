@@ -695,3 +695,14 @@ def _():
         + g(1320, 210, 6, 1, clock(110, 10, 0))
         + g(1190, 560, -4, 1, tag('2 FOLGAS', 300, '#e8590c'))
     )
+
+
+@scene('garantia-safra-bahia-2026', '#946025', (650, 310, 650))
+def _():
+    rows = label_rows([('Inscrição', '21/10'), ('Boleto', '30/11'), ('Benefício previsto', 'R$ 1.200'), ('Safra Verão', '2026/2027')], 46, 170, 408, 64, 21, hl=(0, '#f8e5c9'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'GARANTIA-SAFRA BAHIA', '#946025', rows))
+        + g(700, 90, 5, 1, calendar_month('OUTUBRO 2026', 4, 31, marks=(21,), w=460, h=500, accent='#946025', mark_color='#d9480f'))
+        + g(1240, 290, 7, 1, doc(270, 370, 'BOLETO', '#946025', '<text x="135" y="215" text-anchor="middle" font-size="42" font-weight="800" fill="#946025">30/11</text>'))
+        + g(1030, 690, 3, 1, coins_stack(3), 'sh')
+    )

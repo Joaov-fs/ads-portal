@@ -5,6 +5,8 @@ import type { ContentDocument } from './types';
  * antes do sufixo da marca). O título completo continua sendo o H1 da página.
  */
 export const metaTitles: Readonly<Record<string, string>> = {
+  'garantia-safra-bahia-inscricao-21-outubro-2026':
+    'Garantia-Safra Bahia: inscrição termina em 21/10',
   'ir-2026-restituicoes-41-bilhoes-como-consultar':
     'IR 2026: R$ 41 bilhões restituídos; como consultar',
   'bolsa-familia-outubro-antecipado-21-de-outubro':

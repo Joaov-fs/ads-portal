@@ -1,3 +1,4 @@
+import { newsGarantiaSafraBahia2026 } from './garantia-safra-bahia-inscricao-21-outubro-2026';
 import { newsIr2026Restituicoes } from './ir-2026-restituicoes-41-bilhoes-como-consultar';
 import { newsBolsaFamiliaOutubroAntecipado } from './bolsa-familia-outubro-antecipado-21-de-outubro';
 import { newsAntecipacaoSaqueAniversarioFgts3Parcelas } from './antecipacao-do-saque-aniversario-do-fgts-cai-para-3-parcelas-e-r-1-500-em-1-de-novembro';
@@ -32,6 +33,7 @@ import { newsAbonoSalarialLoteComplementar2026 } from './abono-salarial-lote-com
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
 export const newsFiles = [
+  newsGarantiaSafraBahia2026,
   newsIr2026Restituicoes,
   newsBolsaFamiliaOutubroAntecipado,
   newsSimplesNacional2027PrazoIbsCbs,
