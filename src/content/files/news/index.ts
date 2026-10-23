@@ -1,5 +1,6 @@
 import { newsSegundoTurno2026MultaJustificativa } from './segundo-turno-25-de-outubro-quem-nao-votar-paga-multa-de-r-3-51-e-prazo-para-justificar';
 import { newsGarantiaSafraBahia2026 } from './garantia-safra-bahia-inscricao-21-outubro-2026';
+import { newsDesenrola3EditalR90Bi } from './desenrola-3-0-edital-de-r-90-bi-em-dividas-de-ate-r-10-mil-desconto-minimo-de-90';
 import { newsIr2026Restituicoes } from './ir-2026-restituicoes-41-bilhoes-como-consultar';
 import { newsBolsaFamiliaOutubroAntecipado } from './bolsa-familia-outubro-antecipado-21-de-outubro';
 import { newsAntecipacaoSaqueAniversarioFgts3Parcelas } from './antecipacao-do-saque-aniversario-do-fgts-cai-para-3-parcelas-e-r-1-500-em-1-de-novembro';
@@ -67,4 +68,5 @@ export const newsFiles = [
   newsFimEscala6x1SenadoAprova,
   newsAntecipacaoSaqueAniversarioFgts3Parcelas,
   newsAbonoSalarialLoteComplementar2026,
+  newsDesenrola3EditalR90Bi,
 ] as const;

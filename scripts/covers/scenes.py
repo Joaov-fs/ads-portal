@@ -716,4 +716,15 @@ def _():
         + g(730, 110, 4, 1, calendar_month('OUTUBRO 2026', 4, 31, marks=(25,), w=440, h=500, accent='#a8432f', mark_color='#1d3557'))
         + g(1250, 80, 7, 1, phone(250, 500, phone_screen('e-Título', 'Justificar', 'ausência', '#a8432f')))
         + g(1150, 680, -3, 1, tag('R$ 3,51', 320, '#1d3557'))
+
+@scene('desenrola-3-edital', '#b5493a', (80, 100, 860))
+def _():
+    rows = label_rows([('Dívida até', 'R$ 10.000'), ('Atraso', '720 a 1.645 dias'), ('Desconto mínimo', '90%'), ('Oferta inicial', 'até R$ 90 bi')], 46, 170, 408, 64, 21, hl=(2, '#fbe3dd'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'DESENROLA 3.0', '#b5493a', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((1.0, '#e8a99d'), (0.4, '#cf6b59'), (0.1, '#b5493a'))) + '</g>'))
+        + g(700, 110, 5, 1, card(380, 240, '#2d3436', '#4a5459', 'CARTÃO EM ATRASO'))
+        + g(760, 430, -4, 1, tag('90%', 260, '#2a7f62'))
+        + g(1250, 150, 8, 1, boleto(300, 150, 'DÍVIDA', '#b5493a', 'R$ 10.000'))
+        + g(1250, 520, -5, 1, tag('R$ 1.000', 300, '#e8590c'))
+        + g(1000, 690, 3, 1, coins_stack(3), 'sh')
     )

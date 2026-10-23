@@ -92,6 +92,7 @@ export const topicGroups: readonly (readonly string[])[] = [
     'das-limite-mei',
   ],
   [
+    'desenrola-3-0-edital-de-r-90-bi-em-dividas-de-ate-r-10-mil-desconto-minimo-de-90',
     'desenrola-mei-pequeno-valor-desconto-dividas',
     'mei-das-em-atraso-como-regularizar',
     'como-sair-do-endividamento-passo-a-passo',
