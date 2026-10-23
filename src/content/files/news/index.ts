@@ -1,3 +1,4 @@
+import { newsArrecadacaoFederalSetembro2026 } from './arrecadacao-federal-recorde-de-r-239-4-bilhoes-em-setembro-o-que-a-alta-de-5-62-significa-para-voce';
 import { newsSegundoTurno2026MultaJustificativa } from './segundo-turno-25-de-outubro-quem-nao-votar-paga-multa-de-r-3-51-e-prazo-para-justificar';
 import { newsGarantiaSafraBahia2026 } from './garantia-safra-bahia-inscricao-21-outubro-2026';
 import { newsDesenrola3EditalR90Bi } from './desenrola-3-0-edital-de-r-90-bi-em-dividas-de-ate-r-10-mil-desconto-minimo-de-90';
@@ -35,6 +36,7 @@ import { newsAbonoSalarialLoteComplementar2026 } from './abono-salarial-lote-com
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
 export const newsFiles = [
+  newsArrecadacaoFederalSetembro2026,
   newsSegundoTurno2026MultaJustificativa,
   newsGarantiaSafraBahia2026,
   newsIr2026Restituicoes,

@@ -730,3 +730,17 @@ def _():
         + g(1250, 520, -5, 1, tag('R$ 1.000', 300, '#e8590c'))
         + g(1000, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('arrecadacao-setembro-2026', '#6a5c1f', (90, 100, 860))
+def _():
+    rep = doc(500, 660, 'ARRECADAÇÃO SET/2026', '#6a5c1f',
+              label_rows([('Total no mês', 'R$ 239,4 bi'), ('Alta real', '5,62%'), ('Previdência', 'R$ 64,6 bi'), ('No ano', 'R$ 2,35 tri')], 46, 150, 408, 54, 20, hl=(0, '#fff3bf'))
+              + '<g transform="translate(30 350)">' + chart_paper(440, 270, (), '#6a5c1f', bars=[(0.35, '#c9b458'), (0.5, '#c9b458'), (0.62, '#c9b458'), (0.9, '#6a5c1f')]) + '</g>')
+    return (
+        g(110, 90, -4, 1, rep)
+        + g(720, 130, 7, 1, calculator(260, 360) + '<rect x="22" y="24" width="216" height="70" rx="10" fill="#c8d6c0"/><text x="224" y="74" font-size="34" font-weight="700" text-anchor="end" fill="#2d3a2a" font-family="DejaVu Sans Mono,monospace">239,4</text>')
+        + g(1080, 120, -6, 1, tag('+6,97%', 260, '#2b8a3e'), 'shs')
+        + g(1150, 360, 5, 1, tag('+5,62%', 260, '#e8590c'), 'shs')
+        + g(780, 640, 0, 1, coins_stack(4), 'sh')
+    )
