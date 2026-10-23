@@ -32,8 +32,9 @@ def glasses(s=1):
 def calendar_month(title, first_wd, days, marks=(), w=520, h=520, accent='#1e7d55', mark_color='#1e7d55'):
     b = f'<rect width="{w}" height="{h}" rx="16" fill="#fff"/>'
     b += f'<rect width="{w}" height="96" rx="16" fill="{accent}"/><rect y="70" width="{w}" height="26" fill="{accent}"/>'
+    rs = (w - 140) / 4
     for i in range(5):
-        b += f'<circle cx="{70 + i * 95}" cy="-4" r="11" fill="#d0d4d2"/><rect x="{64 + i * 95}" y="-26" width="12" height="40" rx="6" fill="#8a918e"/>'
+        b += f'<circle cx="{70 + i * rs:.0f}" cy="-4" r="11" fill="#d0d4d2"/><rect x="{64 + i * rs:.0f}" y="-26" width="12" height="40" rx="6" fill="#8a918e"/>'
     b += f'<text x="{w / 2}" y="62" font-size="34" font-weight="800" text-anchor="middle" fill="#fff" letter-spacing="2">{title}</text>'
     cw = (w - 40) / 7
     for i, d in enumerate('DSTQQSS'):
@@ -777,4 +778,17 @@ def _():
         + g(1020, 120, -6, 1, tag('Tomate +24,54%', 420, '#e03131'), 'shs')
         + g(1150, 360, 5, 1, tag('Luz -0,89%', 290, '#2b8a3e'), 'shs')
         + g(780, 640, 0, 1, coins_stack(3), 'sh')
+    )
+
+
+@scene('decimo-terceiro-2026-datas', '#1f7a8c', (640, 80, 940))
+def _():
+    rows = label_rows([('Salário', 'R$ 4.200'), ('1ª parcela', 'R$ 2.100'), ('2ª parcela', 'R$ 1.707,40'), ('Prazo final 2ª', '18/12')], 46, 170, 408, 64, 21, hl=(1, '#d6eef2'))
+    return (
+        g(90, 110, -4, 1, doc(500, 580, '13º SALÁRIO 2026', '#1f7a8c', rows))
+        + g(670, 120, 3, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(30,), w=420, h=460, accent='#1f7a8c', mark_color='#e8590c'))
+        + g(1120, 140, -3, 1, calendar_month('DEZEMBRO 2026', 2, 31, marks=(18,), w=420, h=460, accent='#1f7a8c', mark_color='#e8590c'))
+        + g(700, 650, -4, 1, tag('até 30/11', 270, '#e8590c'), 'shs')
+        + g(1000, 660, 4, 1, tag('até 18/12', 270, '#1d3557'), 'shs')
+        + g(1380, 680, 3, 1, coins_stack(3), 'sh')
     )
