@@ -716,6 +716,8 @@ def _():
         + g(730, 110, 4, 1, calendar_month('OUTUBRO 2026', 4, 31, marks=(25,), w=440, h=500, accent='#a8432f', mark_color='#1d3557'))
         + g(1250, 80, 7, 1, phone(250, 500, phone_screen('e-Título', 'Justificar', 'ausência', '#a8432f')))
         + g(1150, 680, -3, 1, tag('R$ 3,51', 320, '#1d3557'))
+    )
+
 
 @scene('desenrola-3-edital', '#b5493a', (80, 100, 860))
 def _():
