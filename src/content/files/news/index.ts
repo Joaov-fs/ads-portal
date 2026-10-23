@@ -1,3 +1,4 @@
+import { newsIpca15Outubro2026 } from './ipca-15-de-outubro-sobe-0-32-e-inflacao-em-12-meses-vai-a-4-62-tomate-puxa-a-alta';
 import { newsArrecadacaoFederalSetembro2026 } from './arrecadacao-federal-recorde-de-r-239-4-bilhoes-em-setembro-o-que-a-alta-de-5-62-significa-para-voce';
 import { newsGasDoPovoDia10 } from './gas-do-povo-recarga-todo-dia-10-proxima-em-10-de-novembro-quem-recebe-e-quanto-vale';
 import { newsSegundoTurno2026MultaJustificativa } from './segundo-turno-25-de-outubro-quem-nao-votar-paga-multa-de-r-3-51-e-prazo-para-justificar';
@@ -73,4 +74,5 @@ export const newsFiles = [
   newsAbonoSalarialLoteComplementar2026,
   newsDesenrola3EditalR90Bi,
   newsGasDoPovoDia10,
+  newsIpca15Outubro2026,
 ] as const;
