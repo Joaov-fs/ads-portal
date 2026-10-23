@@ -4,9 +4,9 @@ export const newsSimplesNacional2027PrazoIbsCbs = {
   kind: 'news',
   slug: 'prazo-do-simples-nacional-2027-termina-hoje-e-ibs-cbs-tem-escolha-ate-30-de-outubro',
   title:
-    'Prazo do Simples Nacional 2027 termina hoje, 15/10; escolha de IBS e CBS vai até 30/10',
+    'Prazo do Simples Nacional 2027 terminou em 15/10; escolha de IBS e CBS vai até 30/10',
   description:
-    'A opção pelo Simples Nacional para 2027 acaba em 15/10. Veja os prazos de IBS e CBS, quem precisa agir e o que acontece com quem já é optante.',
+    'A opção pelo Simples Nacional para 2027 terminou em 15/10. Veja o prazo de IBS e CBS até 30/10, quem precisa agir e o que muda para o optante.',
   category: 'financas',
   coverImage: {
     src: '/images/news/prazo-do-simples-nacional-2027-termina-hoje-e-ibs-cbs-tem-escolha-ate-30-de-outubro.jpg',
@@ -15,7 +15,7 @@ export const newsSimplesNacional2027PrazoIbsCbs = {
   },
   authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-10-15',
-  updatedAt: '2026-10-15',
+  updatedAt: '2026-10-22',
   tags: [
     'simples-nacional',
     'ibs',
@@ -50,9 +50,9 @@ export const newsSimplesNacional2027PrazoIbsCbs = {
   ],
   sections: [
     {
-      heading: 'O que termina hoje e quem precisa agir',
+      heading: 'O que terminou em 15/10 e quem precisa agir',
       paragraphs: [
-        'Termina nesta quinta-feira, 15 de outubro de 2026, o prazo para a empresa pedir ingresso ou retorno ao Simples Nacional em 2027. O período começou em 1º de setembro. Por causa da reforma tributária, a janela foi antecipada em quatro meses: antes, a opção ficava para janeiro do ano seguinte. O prazo original era 30 de setembro e foi estendido para 15 de outubro pelo Comitê Gestor do Simples Nacional, depois de pedidos de entidades como o Conselho Federal de Contabilidade e o Sebrae.',
+        'Terminou na quinta-feira, 15 de outubro de 2026, o prazo para a empresa pedir ingresso ou retorno ao Simples Nacional em 2027. O período começou em 1º de setembro. Por causa da reforma tributária, a janela foi antecipada em quatro meses: antes, a opção ficava para janeiro do ano seguinte. O prazo original era 30 de setembro e foi estendido para 15 de outubro pelo Comitê Gestor do Simples Nacional, depois de pedidos de entidades como o Conselho Federal de Contabilidade e o Sebrae.',
         'As regras estão na Resolução CGSN nº 194, publicada no Diário Oficial da União em 28 de setembro de 2026. Ela leva para dentro do Simples Nacional os novos tributos sobre o consumo, o IBS (estadual e municipal) e a CBS (federal).',
         'Quem já é optante, em geral, não precisa pedir de novo para continuar no regime. A Receita Federal recomenda conferir a situação da empresa no Portal do Simples Nacional, para ver se existe alguma pendência ou exclusão prevista para 2027. O Simples Nacional é destinado a microempresas e empresas de pequeno porte com receita bruta de até R$ 4,8 milhões por ano, o que equivale a uma média de R$ 400 mil por mês (R$ 4.800.000 dividido por 12).',
       ],
