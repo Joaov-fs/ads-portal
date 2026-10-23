@@ -1,4 +1,5 @@
 import { newsArrecadacaoFederalSetembro2026 } from './arrecadacao-federal-recorde-de-r-239-4-bilhoes-em-setembro-o-que-a-alta-de-5-62-significa-para-voce';
+import { newsGasDoPovoDia10 } from './gas-do-povo-recarga-todo-dia-10-proxima-em-10-de-novembro-quem-recebe-e-quanto-vale';
 import { newsSegundoTurno2026MultaJustificativa } from './segundo-turno-25-de-outubro-quem-nao-votar-paga-multa-de-r-3-51-e-prazo-para-justificar';
 import { newsGarantiaSafraBahia2026 } from './garantia-safra-bahia-inscricao-21-outubro-2026';
 import { newsDesenrola3EditalR90Bi } from './desenrola-3-0-edital-de-r-90-bi-em-dividas-de-ate-r-10-mil-desconto-minimo-de-90';
@@ -71,4 +72,5 @@ export const newsFiles = [
   newsAntecipacaoSaqueAniversarioFgts3Parcelas,
   newsAbonoSalarialLoteComplementar2026,
   newsDesenrola3EditalR90Bi,
+  newsGasDoPovoDia10,
 ] as const;

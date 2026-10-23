@@ -744,3 +744,23 @@ def _():
         + g(1150, 360, 5, 1, tag('+5,62%', 260, '#e8590c'), 'shs')
         + g(780, 640, 0, 1, coins_stack(4), 'sh')
     )
+
+
+def botijao():
+    return ('<rect x="30" y="-40" width="140" height="40" rx="12" fill="#3b4a52"/><rect x="60" y="-70" width="80" height="34" rx="10" fill="#566872"/>'
+            '<path d="M0 60 Q0 0 100 0 Q200 0 200 60 V330 Q200 380 100 380 Q0 380 0 330 Z" fill="#e8b02e"/>'
+            '<rect x="0" y="150" width="200" height="110" fill="#fff" opacity=".92"/>'
+            '<text x="100" y="212" font-size="34" font-weight="900" text-anchor="middle" fill="#2d6a4f">13 kg</text>'
+            '<text x="100" y="244" font-size="18" font-weight="700" text-anchor="middle" fill="#6b7570">GÁS DE COZINHA</text>')
+
+
+@scene('gas-do-povo-dia-10', '#5f7f2a', (80, 100, 860))
+def _():
+    rows = label_rows([('Recarga liberada', 'todo dia 10'), ('Próxima', '10/11'), ('Renda por pessoa', 'até R$ 810,50'), ('Botijão médio ANP', 'R$ 114,88')], 46, 170, 408, 64, 21, hl=(1, '#e6f0d3'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'GÁS DO POVO', '#5f7f2a', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.5, '#b9d08a'), (0.75, '#8fb04c'), (1.0, '#5f7f2a'))) + '</g>'))
+        + g(700, 90, 5, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(10,), w=460, h=500, accent='#5f7f2a', mark_color='#e8590c'))
+        + g(1280, 330, 6, 1, botijao())
+        + g(1300, 90, -4, 1, tag('R$ 114,88', 290, '#e8590c'))
+        + g(1060, 730, 3, 1, coins_stack(3), 'sh')
+    )

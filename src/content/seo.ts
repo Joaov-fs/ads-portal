@@ -111,6 +111,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'gas-do-povo-recarga-todo-dia-10-proxima-em-10-de-novembro-quem-recebe-e-quanto-vale':
+    'Gás do Povo: recarga todo dia 10, próxima em 10/11',
   'arrecadacao-federal-recorde-de-r-239-4-bilhoes-em-setembro-o-que-a-alta-de-5-62-significa-para-voce':
     'Arrecadação recorde: R$ 239,4 bi em setembro',
   'segundo-turno-25-de-outubro-quem-nao-votar-paga-multa-de-r-3-51-e-prazo-para-justificar':

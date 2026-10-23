@@ -53,6 +53,7 @@ export const topicGroups: readonly (readonly string[])[] = [
   ],
   [
     'bolsa-familia-691-outubro-2026-calendario',
+    'gas-do-povo-recarga-todo-dia-10-proxima-em-10-de-novembro-quem-recebe-e-quanto-vale',
     'bolsa-familia-como-consultar-e-quanto-recebe',
     'bolsa-familia',
     'como-fazer-ou-atualizar-o-cadastro-unico',
