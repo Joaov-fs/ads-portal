@@ -706,3 +706,14 @@ def _():
         + g(1240, 290, 7, 1, doc(270, 370, 'BOLETO', '#946025', '<text x="135" y="215" text-anchor="middle" font-size="42" font-weight="800" fill="#946025">30/11</text>'))
         + g(1030, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('segundo-turno-multa-justificativa', '#a8432f', (690, 200, 860))
+def _():
+    return (
+        g(110, 80, -6, 1, voter_card())
+        + g(90, 360, 3, 1, urna())
+        + g(730, 110, 4, 1, calendar_month('OUTUBRO 2026', 4, 31, marks=(25,), w=440, h=500, accent='#a8432f', mark_color='#1d3557'))
+        + g(1250, 80, 7, 1, phone(250, 500, phone_screen('e-Título', 'Justificar', 'ausência', '#a8432f')))
+        + g(1150, 680, -3, 1, tag('R$ 3,51', 320, '#1d3557'))
+    )

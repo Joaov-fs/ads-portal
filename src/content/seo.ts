@@ -111,6 +111,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'segundo-turno-25-de-outubro-quem-nao-votar-paga-multa-de-r-3-51-e-prazo-para-justificar':
+    '2º turno: multa de R$ 3,51 e como justificar',
   'antecipacao-do-saque-aniversario-do-fgts-cai-para-3-parcelas-e-r-1-500-em-1-de-novembro':
     'FGTS: antecipação cai para 3 parcelas em 1º/11',
   'prazo-do-simples-nacional-2027-termina-hoje-e-ibs-cbs-tem-escolha-ate-30-de-outubro':
