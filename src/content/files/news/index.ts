@@ -8,6 +8,7 @@ import { newsDesenrola3EditalR90Bi } from './desenrola-3-0-edital-de-r-90-bi-em-
 import { newsIr2026Restituicoes } from './ir-2026-restituicoes-41-bilhoes-como-consultar';
 import { newsBolsaFamiliaOutubroAntecipado } from './bolsa-familia-outubro-antecipado-21-de-outubro';
 import { newsAntecipacaoSaqueAniversarioFgts3Parcelas } from './antecipacao-do-saque-aniversario-do-fgts-cai-para-3-parcelas-e-r-1-500-em-1-de-novembro';
+import { newsRestituicaoLoteResidualOutubro2026 } from './restituicao-ir-lote-residual-184-mil-contribuintes-credito-em-30-de-outubro';
 import { newsFimEscala6x1SenadoAprova } from './fim-da-escala-6x1-senado-aprova-pec-veja-quando-comeca-e-o-que-muda';
 import { newsPeDeMeiaSetimaParcelaOutubro2026 } from './pe-de-meia-7a-parcela-de-r-200-sai-de-19-a-26-de-outubro-veja-as-datas';
 import { newsPacoteMeiPerdaoPixTeto110Mil } from './pacote-mei-perdao-de-r-12-6-bilhoes-pix-de-ate-r-5-mil-e-teto-de-r-110-mil';
@@ -77,4 +78,5 @@ export const newsFiles = [
   newsGasDoPovoDia10,
   newsIpca15Outubro2026,
   news13oSalario2026Datas,
+  newsRestituicaoLoteResidualOutubro2026,
 ] as const;

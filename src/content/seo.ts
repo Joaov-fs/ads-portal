@@ -111,6 +111,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'restituicao-ir-lote-residual-184-mil-contribuintes-credito-em-30-de-outubro':
+    'Restituição IR: lote residual paga em 30/10',
   '13o-salario-2026-primeira-parcela-ate-30-de-novembro-e-segunda-ate-18-de-dezembro':
     '13º salário 2026: 1ª parcela 30/11, 2ª 18/12',
   'ipca-15-de-outubro-sobe-0-32-e-inflacao-em-12-meses-vai-a-4-62-tomate-puxa-a-alta':

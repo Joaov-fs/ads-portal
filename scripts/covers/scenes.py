@@ -792,3 +792,15 @@ def _():
         + g(1000, 660, 4, 1, tag('até 18/12', 270, '#1d3557'), 'shs')
         + g(1380, 680, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('restituicao-lote-residual-ir', '#5d4a9c', (80, 90, 900))
+def _():
+    rows = label_rows([('Contribuintes', '184.442'), ('Total', 'R$ 531,6 mi'), ('Crédito em', '30/10'), ('Prioritários', 'R$ 293,4 mi')], 46, 170, 408, 64, 21, hl=(2, '#e6e0f7'))
+    return (
+        g(90, 100, -4, 1, doc(500, 580, 'LOTE RESIDUAL IR', '#5d4a9c', rows))
+        + g(680, 120, 3, 1, calendar_month('OUTUBRO 2026', 4, 31, marks=(30,), w=420, h=460, accent='#5d4a9c', mark_color='#e8590c'))
+        + g(1160, 120, 4, 1, phone(250, 500, phone_screen('Restituição IR', 'R$ 531,6 mi', 'lote residual', '#5d4a9c')))
+        + g(720, 650, -4, 1, tag('30/10', 230, '#e8590c'), 'shs')
+        + g(1020, 690, 3, 1, coins_stack(3), 'sh')
+    )
