@@ -804,3 +804,15 @@ def _():
         + g(720, 650, -4, 1, tag('30/10', 230, '#e8590c'), 'shs')
         + g(1020, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('dolar-abaixo-de-5', '#b3541e', (80, 100, 860))
+def _():
+    rows = label_rows([('Fechamento', 'R$ 4,993'), ('No dia', '-0,92%'), ('Na semana', '-1,58%'), ('Brent', 'US$ 116,72')], 46, 170, 408, 64, 21, hl=(0, '#fbe3d2'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'DÓLAR 23/10/2026', '#b3541e', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((1.0, '#e8b793'), (0.8, '#d27f4b'), (0.62, '#b3541e'))) + '</g>'))
+        + g(700, 110, 5, 1, banknote(380, 190, '#5fb37a', '#3c8f5a', 'US$'))
+        + g(760, 380, -4, 1, calculator(260, 360) + '<rect x="22" y="24" width="216" height="70" rx="10" fill="#c8d6c0"/><text x="224" y="74" font-size="34" font-weight="700" text-anchor="end" fill="#2d3a2a" font-family="DejaVu Sans Mono,monospace">4,993</text>')
+        + g(1250, 120, 7, 1, phone(250, 500, phone_screen('Dólar comercial', 'R$ 4,993', 'fechamento de 23/10', '#b3541e')))
+        + g(1060, 640, -4, 1, tag('-1,58%', 280, '#2b8a3e'), 'shs')
+    )

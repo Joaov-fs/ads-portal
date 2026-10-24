@@ -1,3 +1,4 @@
+import { newsDolarFechaAbaixoDeR5 } from './dolar-fecha-a-r-4-993-e-cai-1-58-na-semana-o-que-muda-para-quem-compra-e-viaja';
 import { news13oSalario2026Datas } from './13o-salario-2026-primeira-parcela-ate-30-de-novembro-e-segunda-ate-18-de-dezembro';
 import { newsIpca15Outubro2026 } from './ipca-15-de-outubro-sobe-0-32-e-inflacao-em-12-meses-vai-a-4-62-tomate-puxa-a-alta';
 import { newsArrecadacaoFederalSetembro2026 } from './arrecadacao-federal-recorde-de-r-239-4-bilhoes-em-setembro-o-que-a-alta-de-5-62-significa-para-voce';
@@ -79,4 +80,5 @@ export const newsFiles = [
   newsIpca15Outubro2026,
   news13oSalario2026Datas,
   newsRestituicaoLoteResidualOutubro2026,
+  newsDolarFechaAbaixoDeR5,
 ] as const;

@@ -111,6 +111,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'dolar-fecha-a-r-4-993-e-cai-1-58-na-semana-o-que-muda-para-quem-compra-e-viaja':
+    'Dólar fecha a R$ 4,993 e cai 1,58% na semana',
   'restituicao-ir-lote-residual-184-mil-contribuintes-credito-em-30-de-outubro':
     'Restituição IR: lote residual paga em 30/10',
   '13o-salario-2026-primeira-parcela-ate-30-de-novembro-e-segunda-ate-18-de-dezembro':
