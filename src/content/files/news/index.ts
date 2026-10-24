@@ -40,6 +40,8 @@ import { newsSimplesNacional2027PrazoIbsCbs } from './prazo-do-simples-nacional-
 import { newsAbonoSalarialLoteComplementar2026 } from './abono-salarial-lote-complementar-1-milhao-de-trabalhadores-recebe-desde-15-de-outubro';
 
 /** Para publicar uma nova notícia: crie o arquivo e acrescente uma linha aqui. */
+import { newsAposentadoriaAgentesSaudeEc140 } from './aposentadoria-especial-de-agentes-de-saude-ec-140-idade-minima-de-57-e-60-anos';
+
 export const newsFiles = [
   newsArrecadacaoFederalSetembro2026,
   newsSegundoTurno2026MultaJustificativa,
@@ -81,4 +83,5 @@ export const newsFiles = [
   news13oSalario2026Datas,
   newsRestituicaoLoteResidualOutubro2026,
   newsDolarFechaAbaixoDeR5,
+  newsAposentadoriaAgentesSaudeEc140,
 ] as const;

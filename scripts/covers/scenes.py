@@ -816,3 +816,15 @@ def _():
         + g(1250, 120, 7, 1, phone(250, 500, phone_screen('Dólar comercial', 'R$ 4,993', 'fechamento de 23/10', '#b3541e')))
         + g(1060, 640, -4, 1, tag('-1,58%', 280, '#2b8a3e'), 'shs')
     )
+
+
+@scene('aposentadoria-agentes-saude-ec140', '#2f5d8a', (80, 100, 860))
+def _():
+    rows = label_rows([('Mulher, idade mínima', '57 anos'), ('Homem, idade mínima', '60 anos'), ('Contribuição e atividade', '25 anos'), ('Regra geral INSS', '62 e 65')], 46, 170, 408, 64, 21, hl=(0, '#dce8f5'))
+    return (
+        g(100, 110, -4, 1, doc(500, 580, 'EMENDA 140/2026', '#2f5d8a', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((1.0, '#9db9d6'), (0.8, '#5f8bb8'), (0.62, '#2f5d8a'))) + '</g>'))
+        + g(700, 110, 5, 1, calendar_month('OUTUBRO 2026', 4, 31, marks=(16,), w=420, h=460, accent='#2f5d8a', mark_color='#e8590c'))
+        + g(1180, 120, 4, 1, phone(250, 500, phone_screen('Aposentadoria', '57 / 60 anos', 'agentes de saúde', '#2f5d8a')))
+        + g(720, 650, -4, 1, tag('57 e 60 anos', 330, '#e8590c'), 'shs')
+        + g(1100, 690, 3, 1, coins_stack(3), 'sh')
+    )

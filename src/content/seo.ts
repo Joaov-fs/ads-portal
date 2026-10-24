@@ -111,6 +111,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'aposentadoria-especial-de-agentes-de-saude-ec-140-idade-minima-de-57-e-60-anos':
+    'Aposentadoria de agentes de saúde: 57 e 60 anos',
   'dolar-fecha-a-r-4-993-e-cai-1-58-na-semana-o-que-muda-para-quem-compra-e-viaja':
     'Dólar fecha a R$ 4,993 e cai 1,58% na semana',
   'restituicao-ir-lote-residual-184-mil-contribuintes-credito-em-30-de-outubro':
