@@ -840,3 +840,16 @@ def _():
         + g(1130, 400, -6, 1, jerrycan())
         + g(1480, 640, 0, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('bc-ofertas-credito-2027', '#a23b72', (80, 100, 860))
+def _():
+    rows = label_rows([('Ofertas ativas', 'a partir de 31/03/2027'), ('Painel de Dívidas', 'a partir de 01/07/2027'), ('Oferta via Pix', 'a partir de 01/07/2027'), ('Intervalo mínimo', '24 horas')], 46, 170, 408, 64, 18, hl=(3, '#f6dcea'))
+    return (
+        g(100, 110, -4, 1, doc(500, 580, 'BC: CRÉDITO 2027', '#a23b72', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((1.0, '#e3b2cb'), (0.8, '#c9729f'), (0.62, '#a23b72'))) + '</g>'))
+        + g(700, 110, 5, 1, phone(250, 500, phone_screen('Oferta de crédito', '24 horas', 'antes da 1ª oferta', '#a23b72')))
+        + g(1050, 150, -5, 1, card(340, 214, '#ff7a45', '#e8590c', 'CARTÃO'))
+        + g(1030, 480, 6, 1, tag('31/03/2027', 300, '#e8590c'), 'shs')
+        + g(1120, 700, -3, 1, tag('01/07/2027', 300, '#1d3557'), 'shs')
+        + g(760, 700, 3, 1, coins_stack(3), 'sh')
+    )

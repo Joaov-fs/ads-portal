@@ -189,6 +189,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Fim da escala 6x1: emenda promulgada e transição',
   'abono-salarial-lote-complementar-1-milhao-de-trabalhadores-recebe-desde-15-de-outubro':
     'Abono salarial: lote extra paga 1,03 milhão',
+  'bc-ofertas-de-credito-novas-regras-2027':
+    'BC muda ofertas de crédito: regras a partir de 2027',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */
