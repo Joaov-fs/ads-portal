@@ -828,3 +828,15 @@ def _():
         + g(720, 650, -4, 1, tag('57 e 60 anos', 330, '#e8590c'), 'shs')
         + g(1100, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('gasolina-anp-primeira-semana', '#4a5568', (100, 110, 700))
+def _():
+    rows = label_rows([('4 a 10/10', 'R$ 6,54'), ('11 a 17/10', 'R$ 6,53'), ('Queda na bomba', 'R$ 0,01')], 46, 170, 408, 64, 21, hl=(2, '#ffe3a3'))
+    return (
+        g(130, 120, -4, 1, doc(500, 580, 'GASOLINA NA ANP', '#4a5568', rows + '<g transform="translate(30 400)">' + chart_paper(440, 150, bars=((0.95, '#9aa8bd'), (0.94, '#d9643a'), (0.3, '#4a5568'))) + '</g>'))
+        + g(760, 150, 5, 1, fuel_pump())
+        + g(1170, 120, 8, 1, tag('R$ 6,53', 250, '#2a7f62'))
+        + g(1130, 400, -6, 1, jerrycan())
+        + g(1480, 640, 0, 1, coins_stack(3), 'sh')
+    )

@@ -111,6 +111,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'gasolina-na-bomba-quase-nao-cai-anp-mostra-r-6-53-na-1a-semana-sem-tributos-federais':
+    'Gasolina a R$ 6,53: o corte de tributos chegou?',
   'aposentadoria-especial-de-agentes-de-saude-ec-140-idade-minima-de-57-e-60-anos':
     'Aposentadoria de agentes de saúde: 57 e 60 anos',
   'dolar-fecha-a-r-4-993-e-cai-1-58-na-semana-o-que-muda-para-quem-compra-e-viaja':
