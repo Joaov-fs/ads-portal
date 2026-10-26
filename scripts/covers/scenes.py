@@ -875,3 +875,14 @@ def _():
         + g(1260, 220, 7, 1, phone(250, 500, phone_screen('Pix MEI', 'EDITAL', 'acompanhar regras', '#79528c')))
         + g(950, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('copom-4-novembro-2026', '#8a5a14', (80, 100, 860))
+def _():
+    rows = label_rows([('Reunião', '3 e 4/11'), ('Decisão', '4/11, 18h30'), ('Selic hoje', '13,75%'), ('Focus fim de 2026', '13,25%')], 46, 170, 408, 64, 21, hl=(1, '#f6e7c8'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'COPOM: SELIC', '#8a5a14', rows))
+        + g(700, 90, 5, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(3, 4), w=460, h=500, accent='#8a5a14', mark_color='#c0392b'))
+        + g(1340, 360, 0, 1, gauge(140, 0.62, '13,75%'))
+        + g(1000, 700, 3, 1, coins_stack(3), 'sh')
+    )
