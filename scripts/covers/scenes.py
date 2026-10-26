@@ -886,3 +886,14 @@ def _():
         + g(1340, 360, 0, 1, gauge(140, 0.62, '13,75%'))
         + g(1000, 700, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('pis-pasep-cotas-lote-26-outubro', '#1d7a72', (80, 100, 860))
+def _():
+    rows = label_rows([('Pediu até 30/09', 'crédito em 26/10'), ('Pedir até 31/10', 'crédito em 25/11'), ('Pedir até 30/11', 'crédito em 28/12'), ('Valor médio', 'R$ 2,8 a 2,9 mil')], 46, 170, 408, 64, 18, hl=(0, '#d6efec'))
+    return (
+        g(100, 110, -4, 1, doc(500, 580, 'PIS/PASEP: COTAS', '#1d7a72', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((1.0, '#a9d9d4'), (0.7, '#5cb3aa'), (0.45, '#1d7a72'))) + '</g>'))
+        + g(700, 90, 5, 1, calendar_month('OUTUBRO 2026', 4, 31, marks=(26,), w=460, h=500, accent='#1d7a72', mark_color='#e8590c'))
+        + g(1270, 220, 7, 1, phone(250, 500, phone_screen('Ressarcimento', '26/10', 'crédito na Caixa', '#1d7a72')))
+        + g(1000, 700, 3, 1, coins_stack(3), 'sh')
+    )

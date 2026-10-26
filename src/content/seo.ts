@@ -193,6 +193,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Abono salarial: lote extra paga 1,03 milhão',
   'bc-ofertas-de-credito-novas-regras-2027':
     'BC muda ofertas de crédito: regras a partir de 2027',
+  'pis-pasep-antigo-fundo-caixa-paga-26-de-outubro-e-pedido-ate-31-de-outubro-sai-em-25-de-novembro':
+    'Antigo PIS/Pasep: Caixa paga hoje e abre lote de 25/11',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */

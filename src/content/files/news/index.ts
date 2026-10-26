@@ -1,4 +1,5 @@
 import { newsCopom4DeNovembroSelic1375 } from './copom-4-de-novembro-selic-13-75-focus-preve-13-25-no-fim-de-2026';
+import { newsPisPasepAntigoFundoLote26Outubro } from './pis-pasep-antigo-fundo-caixa-paga-26-de-outubro-e-pedido-ate-31-de-outubro-sai-em-25-de-novembro';
 import { newsBcOfertasCreditoNovasRegras2027 } from './bc-ofertas-de-credito-novas-regras-2027';
 import { newsGasolinaAnpPrimeiraSemanaSemTributos } from './gasolina-na-bomba-quase-nao-cai-anp-mostra-r-6-53-na-1a-semana-sem-tributos-federais';
 import { newsDolarFechaAbaixoDeR5 } from './dolar-fecha-a-r-4-993-e-cai-1-58-na-semana-o-que-muda-para-quem-compra-e-viaja';
@@ -90,4 +91,5 @@ export const newsFiles = [
   newsGasolinaAnpPrimeiraSemanaSemTributos,
   newsBcOfertasCreditoNovasRegras2027,
   newsCopom4DeNovembroSelic1375,
+  newsPisPasepAntigoFundoLote26Outubro,
 ] as const;
