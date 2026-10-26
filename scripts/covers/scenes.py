@@ -864,3 +864,14 @@ def _():
         + g(1270, 220, 7, 1, phone(250, 500, phone_screen('Meu INSS', 'EXTRATO', 'consultar pagamento', '#345e89')))
         + g(1000, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('prospera-mei-sancao-2026', '#79528c', (80, 230, 700))
+def _():
+    rows = label_rows([('2026: teto mantido', 'R$ 81 mil'), ('2027: novo limite', 'R$ 110 mil'), ('2028: próxima etapa', 'R$ 140 mil'), ('Pix MEI', 'aguardar edital')], 46, 170, 408, 64, 21, hl=(0, '#eee1f4'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'PROSPERA MEI', '#79528c', rows))
+        + g(720, 150, 5, 1, doc(420, 470, 'SANÇÃO INFORMADA', '#79528c', label_rows([('Data', '21/10/2026'), ('Mudanças', 'em etapas'), ('Exercício atual', '2026')], 35, 160, 350, 70, 21)))
+        + g(1260, 220, 7, 1, phone(250, 500, phone_screen('Pix MEI', 'EDITAL', 'acompanhar regras', '#79528c')))
+        + g(950, 690, 3, 1, coins_stack(3), 'sh')
+    )

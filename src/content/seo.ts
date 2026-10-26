@@ -136,7 +136,7 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'prazo-do-simples-nacional-2027-termina-hoje-e-ibs-cbs-tem-escolha-ate-30-de-outubro':
     'Simples Nacional 2027: prazo até 15/10; IBS e CBS',
   'pacote-mei-perdao-de-r-12-6-bilhoes-pix-de-ate-r-5-mil-e-teto-de-r-110-mil':
-    'Pacote MEI: perdão de R$ 12,6 bi e Pix de R$ 5 mil',
+    'Prospera MEI: sanção, limites e regras do Pix MEI',
   'gasolina-sem-tributos-federais-por-30-dias-desoneracao-de-r-0-89-por-litro':
     'Gasolina sem tributos federais: R$ 0,89 por litro',
   'pgfn-semana-regularizacao-tributaria-adesao-ate-9-de-outubro-desconto-ate-100-em-juros-e-multas':
