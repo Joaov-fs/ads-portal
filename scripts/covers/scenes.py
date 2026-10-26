@@ -853,3 +853,14 @@ def _():
         + g(1120, 700, -3, 1, tag('01/07/2027', 300, '#1d3557'), 'shs')
         + g(760, 700, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('inss-outubro-inicio-2026', '#345e89', (650, 310, 650))
+def _():
+    rows = label_rows([('Até 1 salário mínimo', 'desde 26/10'), ('Acima do mínimo', 'desde 03/11'), ('Última data', '09/11'), ('Consulta', 'Meu INSS')], 46, 170, 408, 64, 21, hl=(0, '#dce9fa'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'INSS: FOLHA DE OUTUBRO', '#345e89', rows))
+        + g(700, 90, 5, 1, calendar_month('OUTUBRO 2026', 4, 31, marks=(26,), w=460, h=500, accent='#345e89', mark_color='#e8590c'))
+        + g(1270, 220, 7, 1, phone(250, 500, phone_screen('Meu INSS', 'EXTRATO', 'consultar pagamento', '#345e89')))
+        + g(1000, 690, 3, 1, coins_stack(3), 'sh')
+    )

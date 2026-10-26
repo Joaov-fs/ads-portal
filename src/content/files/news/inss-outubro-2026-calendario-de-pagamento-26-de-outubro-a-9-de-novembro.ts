@@ -4,133 +4,133 @@ export const newsInssOutubro2026Calendario = {
   kind: 'news',
   slug: 'inss-outubro-2026-calendario-de-pagamento-26-de-outubro-a-9-de-novembro',
   title:
-    'INSS: pagamento da folha de outubro começa em 26/10 e vai até 9 de novembro',
+    'INSS começa a pagar outubro em 26/10: confira o final do benefício e a data do depósito',
   description:
-    'Veja a data do seu pagamento do INSS pelo final do número do benefício, para quem recebe até um salário mínimo (R$ 1.621) e para quem recebe mais.',
+    'Pagamentos de até um salário mínimo começam em 26/10. Para valores maiores, o início é em 3/11. Veja as datas e como consultar o extrato.',
   category: 'beneficios',
-  coverImage: {
-    src: '/images/news/inss-outubro-2026-calendario-de-pagamento-26-de-outubro-a-9-de-novembro.jpg',
-    alt: 'Calendários de outubro e novembro com os dias de pagamento do INSS marcados e celular com benefício creditado.',
-    credit: 'Ilustração: PortalFina',
-  },
   authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-10-03',
-  updatedAt: '2026-10-03',
+  updatedAt: '2026-10-25',
   tags: ['inss', 'aposentadoria', 'beneficios', 'calendario', 'bpc'],
   featuredCalculators: ['inss', 'bpc'],
+  coverImage: {
+    src: '/images/news/inss-outubro-inicio-pagamento-26-2026.jpg',
+    alt: 'Documento com as datas do INSS, calendário de outubro com o dia 26 marcado e celular mostrando a opção de extrato.',
+    credit: 'Ilustração: PortalFina',
+  },
   highlights: [
     {
       value: '26/10',
-      label: 'Início da folha de outubro',
-      note: 'Benefícios de até um salário mínimo, final 1.',
+      label: 'Início para até um salário mínimo',
+      note: 'Primeiro grupo: benefício com final 1.',
+    },
+    {
+      value: '03/11',
+      label: 'Início para valores acima do mínimo',
+      note: 'Primeiro grupo: finais 1 e 6.',
     },
     {
       value: '09/11',
-      label: 'Último pagamento do calendário',
-      note: 'Benefícios com final 0, em qualquer faixa.',
-    },
-    {
-      value: 'R$ 1.621',
-      label: 'Salário mínimo de 2026',
-      note: 'É o valor que separa os dois calendários.',
+      label: 'Encerramento da folha de outubro',
+      note: 'Confira o calendário da sua faixa.',
     },
   ],
   sections: [
     {
-      heading: 'Quando o INSS paga a folha de outubro',
+      heading: 'Qual número usar para encontrar sua data',
       paragraphs: [
-        'O INSS paga cada folha mensal em dois blocos: quem recebe até um salário mínimo começa a receber nos últimos dias úteis do mês, e quem recebe mais de um salário mínimo recebe nos primeiros dias úteis do mês seguinte. Na folha de outubro, o calendário vai de 26 de outubro a 9 de novembro de 2026.',
-        'A data de cada pessoa depende de dois fatores: se o benefício é de até R$ 1.621 ou maior que isso, e qual é o final do número do benefício. O calendário vale para aposentadorias, pensões, auxílios e o BPC.',
-        'Os últimos pagamentos da folha de setembro, para quem recebe acima do mínimo, terminam em 7 de outubro.',
+        'O INSS confirmou, em comunicado publicado em 22 de outubro, o início dos pagamentos da folha na segunda-feira, 26. A matéria foi revisada em 25 de outubro para reunir o calendário confirmado e a consulta individual.',
+        'A ordem usa o final do número do benefício antes do traço. O algarismo que vem depois dele é o dígito verificador e deve ser desconsiderado. Não use o final do CPF ou do cartão bancário.',
+        'Confira também a faixa do benefício. As tabelas de quem recebe até um salário mínimo e de quem recebe mais são diferentes.',
       ],
     },
     {
-      heading: 'Data de pagamento de quem recebe até um salário mínimo',
+      heading: 'Até um salário mínimo: depósitos de 26/10 a 9/11',
       image: {
-        src: '/images/news/inss-outubro-2026-calendario-de-pagamento-26-de-outubro-a-9-de-novembro-detalhe.jpg',
-        alt: 'Detalhe da ilustração: calendários de outubro e novembro com os dias de pagamento do INSS marcados e celular com benefício creditado.',
+        src: '/images/news/inss-outubro-inicio-pagamento-26-2026-detalhe.jpg',
+        alt: 'Detalhe do calendário de outubro com o dia 26 destacado.',
         caption:
-          'Os dias de pagamento de outubro e novembro marcados no calendário.',
+          'O início do calendário não significa que todos os benefícios serão pagos no mesmo dia.',
         credit: 'Ilustração: PortalFina',
       },
       paragraphs: [
-        'Para benefícios de até R$ 1.621, o pagamento segue a ordem dos finais, do 1 ao 0. Como 2 de novembro é feriado de Finados, o calendário pula essa data.',
+        'Localize o final do benefício na tabela correspondente à sua faixa. O primeiro grupo tem pagamento previsto para 26 de outubro.',
       ],
       table: {
-        caption: 'Benefícios de até um salário mínimo (R$ 1.621)',
-        columns: ['Final do benefício', 'Data do pagamento'],
+        caption:
+          'Folha de outubro de 2026: benefícios de até um salário mínimo',
+        columns: ['Final do benefício', 'Data'],
         rows: [
-          ['1', '26 de outubro'],
-          ['2', '27 de outubro'],
-          ['3', '28 de outubro'],
-          ['4', '29 de outubro'],
-          ['5', '30 de outubro'],
-          ['6', '3 de novembro'],
-          ['7', '4 de novembro'],
-          ['8', '5 de novembro'],
-          ['9', '6 de novembro'],
-          ['0', '9 de novembro'],
+          ['1', '26/10'],
+          ['2', '27/10'],
+          ['3', '28/10'],
+          ['4', '29/10'],
+          ['5', '30/10'],
+          ['6', '03/11'],
+          ['7', '04/11'],
+          ['8', '05/11'],
+          ['9', '06/11'],
+          ['0', '09/11'],
         ],
       },
     },
     {
-      heading: 'Data de pagamento de quem recebe acima do mínimo',
+      heading: 'Acima de um salário mínimo: pagamentos a partir de 3/11',
       paragraphs: [
-        'Para benefícios acima de R$ 1.621, o pagamento é concentrado em cinco dias úteis, com dois finais por data.',
+        'Para quem recebe mais de um salário mínimo, a folha é organizada em pares de finais. Consulte esse calendário mesmo que você veja notícias sobre o início dos depósitos em outubro.',
       ],
       table: {
-        caption: 'Benefícios acima de um salário mínimo',
-        columns: ['Finais do benefício', 'Data do pagamento'],
+        caption:
+          'Folha de outubro de 2026: benefícios acima de um salário mínimo',
+        columns: ['Finais do benefício', 'Data'],
         rows: [
-          ['1 e 6', '3 de novembro'],
-          ['2 e 7', '4 de novembro'],
-          ['3 e 8', '5 de novembro'],
-          ['4 e 9', '6 de novembro'],
-          ['5 e 0', '9 de novembro'],
+          ['1 e 6', '03/11'],
+          ['2 e 7', '04/11'],
+          ['3 e 8', '05/11'],
+          ['4 e 9', '06/11'],
+          ['5 e 0', '09/11'],
         ],
       },
     },
     {
-      heading: 'Como descobrir o final do seu benefício',
+      heading: 'Onde consultar o valor e o banco do pagamento',
       paragraphs: [
-        'O final que vale é o último algarismo do número do benefício antes do traço, sem contar o dígito verificador, que é o número depois do traço. Se o benefício é 123.456.789-0, o final considerado é 9.',
-        'Exemplo 1: uma aposentada que recebe R$ 1.621 e tem benefício com final 7 recebe em 4 de novembro. Exemplo 2: um pensionista que recebe R$ 2.500 e tem benefício com final 2 também recebe em 4 de novembro. As datas coincidem por acaso: os calendários são diferentes e seguem a regra de cada faixa.',
-        'O número do benefício aparece no aplicativo e no site Meu INSS e no extrato bancário. Em caso de dúvida, a Central 135 atende de segunda a sábado, das 7h às 22h.',
-      ],
-    },
-    {
-      heading: 'O que conferir antes da data de pagamento',
-      paragraphs: [
-        'O valor que cai na conta pode ser menor que o do benefício, porque empréstimos consignados e outros descontos autorizados são retirados antes do pagamento. O extrato no Meu INSS mostra cada desconto. A calculadora do INSS ajuda a entender a contribuição de quem ainda trabalha, e a do BPC mostra a regra de renda do benefício assistencial.',
-        'O INSS orienta que o calendário seja consultado somente pelos canais oficiais, porque páginas falsas que prometem antecipação ou liberação de valores são usadas em golpes.',
+        'O extrato de pagamento é o comprovante oficial com valores, data e banco do depósito. O serviço está disponível pela internet no Meu INSS, sem necessidade de comparecer a uma agência do instituto.',
+        'Acesse o Meu INSS com sua conta gov.br e procure o serviço de extrato de pagamento. A consulta é individual: o calendário geral, sozinho, não confirma a situação de uma parcela específica.',
+        'Beneficiários atendidos pela Caixa também podem consultar informações do INSS no aplicativo Benefícios Sociais CAIXA. A página do banco reúne calendário, situação das parcelas e orientações de atendimento.',
+        'As calculadoras de INSS e BPC do PortalFina servem para simulações das regras de cada ferramenta. Elas não acessam sua conta nem substituem o extrato oficial.',
       ],
     },
   ],
   faq: [
     {
-      question: 'Como saber o final do meu benefício?',
+      question: 'O final é o número depois do traço?',
       answer:
-        'É o último algarismo do número do benefício antes do traço. O dígito que aparece depois do traço não conta. O número aparece no Meu INSS e no extrato.',
+        'Não. Considere o último algarismo antes do traço no número do benefício.',
     },
     {
-      question: 'Por que a folha de outubro começa em 26 de outubro?',
+      question: 'Quem recebe acima do salário mínimo começa em 26/10?',
       answer:
-        'Quem recebe até um salário mínimo começa a receber nos últimos dias úteis do mês de referência. Quem recebe mais recebe nos primeiros dias úteis do mês seguinte.',
+        'Não. Nessa faixa, o calendário começa em 3 de novembro e segue os pares de finais da tabela.',
     },
     {
-      question: 'O BPC segue o mesmo calendário?',
+      question: 'Preciso ir ao INSS para emitir o extrato?',
       answer:
-        'Sim. O BPC vale um salário mínimo, então segue o calendário dos benefícios de até R$ 1.621, pelo final do número do benefício.',
+        'Não. O serviço de extrato de pagamento pode ser acessado pela internet no Meu INSS.',
     },
   ],
   sources: [
     {
-      label: 'INSS: calendário de pagamentos de benefícios 2026',
-      url: 'https://www.gov.br/inss/pt-br/assuntos/noticias/calendario-de-pagamentos-do-inss-de-2026-esta-disponivel',
+      label: 'INSS: início dos pagamentos de outubro, comunicado de 22/10/2026',
+      url: 'https://www.gov.br/inss/pt-br/assuntos/noticias/comeca-na-proxima-segunda-26-o-pagamento-de-beneficios-e-auxilios-referentes-ao-mes-de-outubro',
     },
     {
-      label: 'Meu INSS: consulta de benefícios e pagamentos',
-      url: 'https://meu.inss.gov.br/',
+      label: 'Gov.br: emitir extrato de pagamento de benefício do INSS',
+      url: 'https://www.gov.br/pt-br/servicos/emitir-extrato-de-pagamento-de-beneficio',
+    },
+    {
+      label: 'Caixa: benefícios do INSS e calendário de pagamentos',
+      url: 'https://www.caixa.gov.br/beneficios-trabalhador/inss/Paginas/default.aspx',
     },
   ],
 } as const satisfies NewsDocument;
