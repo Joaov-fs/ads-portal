@@ -897,3 +897,27 @@ def _():
         + g(1270, 220, 7, 1, phone(250, 500, phone_screen('Ressarcimento', '26/10', 'crédito na Caixa', '#1d7a72')))
         + g(1000, 700, 3, 1, coins_stack(3), 'sh')
     )
+
+
+def bus(w=560, h=260, body='#f2b632'):
+    out = f'<rect width="{w}" height="{h - 40}" rx="30" fill="{body}"/>'
+    out += f'<rect y="{h - 120}" width="{w}" height="26" fill="#e3a21a"/>'
+    for i in range(4):
+        out += f'<rect x="{30 + i * 90}" y="30" width="74" height="70" rx="10" fill="#cfe9f7"/>'
+    out += f'<rect x="{w - 110}" y="30" width="80" height="110" rx="10" fill="#bcdcec"/>'
+    out += '<rect x="30" y="120" width="190" height="34" rx="8" fill="#fff"/><text x="125" y="146" font-size="24" font-weight="900" text-anchor="middle" fill="#2c7a4b" letter-spacing="1">R$ 0,00</text>'
+    for cx in (110, w - 130):
+        out += f'<circle cx="{cx}" cy="{h - 40}" r="38" fill="#1b1d21"/><circle cx="{cx}" cy="{h - 40}" r="16" fill="#9aa19d"/>'
+    return out
+
+
+@scene('tarifa-zero-pec-18-2026', '#3d6b35', (80, 100, 860))
+def _():
+    rows = label_rows([('Quando', 'sáb, dom e feriados'), ('Custo previsto', 'R$ 12 bi'), ('Fonte', '26,8% das emendas'), ('Início, se aprovada', '2027')], 46, 170, 408, 64, 19, hl=(1, '#dcebd8'))
+    return (
+        g(100, 110, -4, 1, doc(500, 580, 'PEC 18/26: TARIFA ZERO', '#3d6b35', rows))
+        + g(690, 130, 3, 1, bus())
+        + g(1290, 230, 7, 1, phone(250, 500, phone_screen('Ônibus urbano', 'R$ 0,00', 'sáb, dom e feriados', '#3d6b35')))
+        + g(760, 520, -3, 1, tag('R$ 12 bi', 230, '#e8590c'))
+        + g(1000, 760, 3, 1, coins_stack(3), 'sh')
+    )
