@@ -111,6 +111,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'tesouro-recompra-ntn-b-leilao-de-tesouro-selic-cancelado-27-de-outubro':
+    'Tesouro recompra NTN-B e cancela leilão de LFT',
   'imposto-seletivo-mp-sai-esta-semana-e-diesel-mantem-subvencao-de-r-2-12':
     'Imposto Seletivo: MP sai e diesel mantém R$ 2,12',
   'dolar-sobe-8-21-a-r-5-403-e-bolsa-cai-13-88-o-que-muda-para-o-seu-bolso':

@@ -945,3 +945,15 @@ def _():
         + g(1150, 400, -6, 1, jerrycan())
         + g(1480, 660, 0, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('tesouro-recompra-27-outubro-2026', '#2b5f8f', (50, 100, 740))
+def _():
+    rows = label_rows([('Recompra em 26/10', 'R$ 14,8 bi'), ('Títulos NTN-B', '4 vencimentos'), ('Leilão de LFT', 'cancelado'), ('Selic', '13,75%')], 46, 170, 408, 64, 21, hl=(0, '#d6e6f5'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'TESOURO NACIONAL', '#2b5f8f', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.5, '#a9c8e6'), (0.8, '#6c9ccc'), (1.0, '#2b5f8f'))) + '</g>'))
+        + g(1000, 150, 5, 1, stamp('LEILÃO CANCELADO', 440, '#d63031', -4))
+        + g(760, 330, -4, 1, boleto(520, 230, 'TESOURO SELIC', '#2b5f8f', 'R$ 10.000,00'))
+        + g(1290, 150, 7, 1, phone(250, 500, phone_screen('Tesouro Direto', '13,75%', 'Selic ao ano', '#2b5f8f')))
+        + g(1060, 660, 3, 1, coins_stack(3), 'sh')
+    )
