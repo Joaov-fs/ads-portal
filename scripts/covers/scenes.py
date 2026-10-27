@@ -921,3 +921,15 @@ def _():
         + g(760, 520, -3, 1, tag('R$ 12 bi', 230, '#e8590c'))
         + g(1000, 760, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('dolar-bolsa-26-outubro-2026', '#2e3d49', (80, 100, 860))
+def _():
+    rows = label_rows([('Dólar', 'R$ 5,403'), ('Alta no dia', '+8,21%'), ('Ibovespa', '176.608 pts'), ('Queda no dia', '-13,88%')], 46, 170, 408, 64, 21, hl=(0, '#f1d9d4'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'MERCADO 26/10/2026', '#a8321f', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((1.0, '#e8b2a8'), (0.8, '#d27f6f'), (0.45, '#a8321f'))) + '</g>'))
+        + g(700, 110, 5, 1, banknote(380, 190, '#5fb37a', '#3c8f5a', 'US$'))
+        + g(760, 380, -4, 1, calculator(260, 360) + '<rect x="22" y="24" width="216" height="70" rx="10" fill="#c8d6c0"/><text x="224" y="74" font-size="34" font-weight="700" text-anchor="end" fill="#2d3a2a" font-family="DejaVu Sans Mono,monospace">5,403</text>')
+        + g(1250, 120, 7, 1, phone(250, 500, phone_screen('Dólar comercial', 'R$ 5,403', 'fechamento de 26/10', '#a8321f')))
+        + g(1060, 640, -4, 1, tag('-13,88%', 300, '#e03131'), 'shs')
+    )

@@ -1,3 +1,4 @@
+import { newsDolarBolsa26Outubro2026 } from './dolar-sobe-8-21-a-r-5-403-e-bolsa-cai-13-88-o-que-muda-para-o-seu-bolso';
 import { newsCopom4DeNovembroSelic1375 } from './copom-4-de-novembro-selic-13-75-focus-preve-13-25-no-fim-de-2026';
 import { newsTarifaZeroPec18 } from './tarifa-zero-pec-18-fins-de-semana-e-feriados-r-12-bilhoes-em-2027';
 import { newsPisPasepAntigoFundoLote26Outubro } from './pis-pasep-antigo-fundo-caixa-paga-26-de-outubro-e-pedido-ate-31-de-outubro-sai-em-25-de-novembro';
@@ -88,6 +89,7 @@ export const newsFiles = [
   news13oSalario2026Datas,
   newsRestituicaoLoteResidualOutubro2026,
   newsDolarFechaAbaixoDeR5,
+  newsDolarBolsa26Outubro2026,
   newsAposentadoriaAgentesSaudeEc140,
   newsGasolinaAnpPrimeiraSemanaSemTributos,
   newsBcOfertasCreditoNovasRegras2027,
