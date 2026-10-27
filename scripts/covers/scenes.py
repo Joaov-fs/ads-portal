@@ -933,3 +933,15 @@ def _():
         + g(1250, 120, 7, 1, phone(250, 500, phone_screen('Dólar comercial', 'R$ 5,403', 'fechamento de 26/10', '#a8321f')))
         + g(1060, 640, -4, 1, tag('-13,88%', 300, '#e03131'), 'shs')
     )
+
+
+@scene('imposto-seletivo-diesel-27-outubro-2026', '#7a2e3b', (80, 100, 860))
+def _():
+    rows = label_rows([('Imposto Seletivo', 'desde 2027'), ('MP das alíquotas', 'esta semana'), ('Diesel por litro', 'R$ 2,12'), ('Subvenção', '1 mês')], 46, 170, 408, 64, 21, hl=(2, '#f3d9dc'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'IMPOSTO SELETIVO', '#7a2e3b', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((1.0, '#e3b3ba'), (0.7, '#c2707c'), (0.4, '#7a2e3b'))) + '</g>'))
+        + g(720, 140, 5, 1, fuel_pump())
+        + g(1170, 120, 8, 1, tag('R$ 2,12', 250, '#2a7f62'))
+        + g(1150, 400, -6, 1, jerrycan())
+        + g(1480, 660, 0, 1, coins_stack(3), 'sh')
+    )

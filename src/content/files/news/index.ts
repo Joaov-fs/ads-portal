@@ -1,3 +1,4 @@
+import { newsImpostoSeletivoMpDiesel27Outubro2026 } from './imposto-seletivo-mp-sai-esta-semana-e-diesel-mantem-subvencao-de-r-2-12';
 import { newsDolarBolsa26Outubro2026 } from './dolar-sobe-8-21-a-r-5-403-e-bolsa-cai-13-88-o-que-muda-para-o-seu-bolso';
 import { newsCopom4DeNovembroSelic1375 } from './copom-4-de-novembro-selic-13-75-focus-preve-13-25-no-fim-de-2026';
 import { newsTarifaZeroPec18 } from './tarifa-zero-pec-18-fins-de-semana-e-feriados-r-12-bilhoes-em-2027';
@@ -96,4 +97,5 @@ export const newsFiles = [
   newsCopom4DeNovembroSelic1375,
   newsPisPasepAntigoFundoLote26Outubro,
   newsTarifaZeroPec18,
+  newsImpostoSeletivoMpDiesel27Outubro2026,
 ] as const;

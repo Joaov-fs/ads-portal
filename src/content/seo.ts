@@ -111,6 +111,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'imposto-seletivo-mp-sai-esta-semana-e-diesel-mantem-subvencao-de-r-2-12':
+    'Imposto Seletivo: MP sai e diesel mantém R$ 2,12',
   'dolar-sobe-8-21-a-r-5-403-e-bolsa-cai-13-88-o-que-muda-para-o-seu-bolso':
     'Dólar a R$ 5,403 e bolsa -13,88%: o que muda',
   'copom-4-de-novembro-selic-13-75-focus-preve-13-25-no-fim-de-2026':
