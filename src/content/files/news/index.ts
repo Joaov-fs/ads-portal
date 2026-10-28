@@ -1,3 +1,4 @@
+import { newsPixMed80DiasEtapa26Outubro } from './pix-med-prazo-de-80-dias-e-nova-etapa-entre-bancos-vale-desde-26-de-outubro';
 import { newsBolsaFamiliaNovembroDezembro2026 } from './bolsa-familia-novembro-16-17-e-18-dezembro-10-11-e-14-calendario-do-nis';
 import { newsTesouroRecompraNtnB27Outubro2026 } from './tesouro-recompra-ntn-b-leilao-de-tesouro-selic-cancelado-27-de-outubro';
 import { newsImpostoSeletivoMpDiesel27Outubro2026 } from './imposto-seletivo-mp-sai-esta-semana-e-diesel-mantem-subvencao-de-r-2-12';
@@ -102,4 +103,5 @@ export const newsFiles = [
   newsImpostoSeletivoMpDiesel27Outubro2026,
   newsTesouroRecompraNtnB27Outubro2026,
   newsBolsaFamiliaNovembroDezembro2026,
+  newsPixMed80DiasEtapa26Outubro,
 ] as const;

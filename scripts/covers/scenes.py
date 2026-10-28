@@ -968,3 +968,14 @@ def _():
         + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Bolsa Família', '16/11', 'NIS final 1', '#a8552e')))
         + g(1180, 680, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('pix-med-80-dias-2026', '#5b3f8c', (50, 100, 740))
+def _():
+    rows = label_rows([('Prazo para pedir o MED', '80 dias'), ('Para contestar devolução', '80 dias'), ('Análise dos bancos', 'até 7 dias'), ('Nova etapa entre bancos', '26/10')], 46, 170, 408, 64, 21, hl=(0, '#e6dcf5'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'PIX: GOLPE E MED', '#5b3f8c', rows))
+        + g(640, 130, 5, 1, calendar_month('OUTUBRO', 4, 31, (26,), w=470, h=500, accent='#5b3f8c', mark_color='#e67e22'))
+        + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Pix: contestar', '80 dias', 'prazo do MED', '#5b3f8c')))
+        + g(1180, 690, 3, 1, coins_stack(3), 'sh')
+    )

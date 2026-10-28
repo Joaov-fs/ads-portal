@@ -111,6 +111,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'pix-med-prazo-de-80-dias-e-nova-etapa-entre-bancos-vale-desde-26-de-outubro':
+    'Pix: MED tem prazo de 80 dias para contestar golpe',
   'bolsa-familia-novembro-16-17-e-18-dezembro-10-11-e-14-calendario-do-nis':
     'Bolsa Família: datas de novembro e dezembro',
   'tesouro-recompra-ntn-b-leilao-de-tesouro-selic-cancelado-27-de-outubro':
