@@ -957,3 +957,14 @@ def _():
         + g(1290, 150, 7, 1, phone(250, 500, phone_screen('Tesouro Direto', '13,75%', 'Selic ao ano', '#2b5f8f')))
         + g(1060, 660, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('bolsa-familia-novembro-dezembro-2026', '#a8552e', (50, 100, 740))
+def _():
+    rows = label_rows([('NIS final 1', '16/11'), ('NIS final 2', '17/11'), ('NIS finais 3 a 9 e 0', '18/11'), ('Dezembro', '10, 11 e 14')], 46, 170, 408, 64, 21, hl=(0, '#f6dccd'))
+    return (
+        g(60, 100, -3, 1, calendar_month('NOVEMBRO', 0, 30, (16, 17, 18), accent='#a8552e', mark_color='#a8552e'))
+        + g(640, 130, 4, 1, doc(500, 580, 'BOLSA FAMÍLIA', '#a8552e', rows))
+        + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Bolsa Família', '16/11', 'NIS final 1', '#a8552e')))
+        + g(1180, 680, 3, 1, coins_stack(3), 'sh')
+    )
