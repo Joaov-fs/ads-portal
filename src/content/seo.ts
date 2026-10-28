@@ -111,6 +111,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'tcu-aprova-cbs-de-11-3-para-2027-o-que-muda-para-o-consumidor':
+    'TCU aprova CBS de 11,3% para 2027: o que muda',
   'pix-med-prazo-de-80-dias-e-nova-etapa-entre-bancos-vale-desde-26-de-outubro':
     'Pix: MED tem prazo de 80 dias para contestar golpe',
   'bolsa-familia-novembro-16-17-e-18-dezembro-10-11-e-14-calendario-do-nis':

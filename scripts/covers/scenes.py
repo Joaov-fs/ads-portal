@@ -979,3 +979,14 @@ def _():
         + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Pix: contestar', '80 dias', 'prazo do MED', '#5b3f8c')))
         + g(1180, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('cbs-aliquota-tcu-2027', '#59622e', (50, 100, 740))
+def _():
+    rows = label_rows([('Alíquota de referência', '11,3%'), ('Compras públicas (redutor)', '44,16%'), ('Início da cobrança', '2027'), ('Decisão do TCU', '28/10')], 46, 170, 408, 64, 21, hl=(0, '#e8ecd3'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'CBS: ALÍQUOTA 2027', '#59622e', rows))
+        + g(660, 150, 4, 1, calculator(260, 360).replace('1.621,00', '11,3%'))
+        + g(1230, 150, 7, 1, phone(250, 500, phone_screen('CBS em 2027', '11,3%', 'alíquota de referência', '#59622e')))
+        + g(1180, 690, 3, 1, coins_stack(3), 'sh')
+    )
