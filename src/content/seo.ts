@@ -213,6 +213,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'PEC da tarifa zero: ônibus grátis em fins de semana',
   'bancos-fecham-no-feriado-de-finados-2-de-novembro-boletos-pagam-3-de-novembro':
     'Bancos fecham em Finados: boleto paga em 3/11',
+  'inss-biometria-e-golpe-beneficio-nao-sera-bloqueado-para-quem-ja-recebe':
+    'INSS desmente bloqueio por falta de biometria',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */

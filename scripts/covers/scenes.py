@@ -1013,3 +1013,14 @@ def _():
         + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Pix', '24 horas', 'inclusive no feriado', '#1f6f6b')))
         + g(1000, 640, -4, 1, boleto(400, 190, 'BOLETO', '#1f6f6b', 'vence 2/11'))
     )
+
+
+@scene('inss-biometria-falso-bloqueio-2026', '#7d5a14', (50, 100, 740))
+def _():
+    rows = label_rows([('Pedidos novos', 'desde 21/11/2025'), ('Quem já recebe', 'sem bloqueio'), ('Ir à agência', 'não precisa'), ('Mais de 80 anos', 'isento')], 46, 170, 408, 64, 21, hl=(0, '#f1e6c9'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'INSS: BIOMETRIA', '#7d5a14', rows))
+        + g(660, 150, 5, 1, card(380, 240, '#3b6ea5', '#27507f', 'IDENTIDADE'))
+        + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Mensagem falsa', 'GOLPE', 'INSS não pede senha', '#b02a2a', check=False)))
+        + g(960, 560, -8, 1, stamp('FALSO', 300, '#d63031'))
+    )
