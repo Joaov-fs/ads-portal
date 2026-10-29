@@ -1002,3 +1002,14 @@ def _():
         + g(1150, 400, -6, 1, jerrycan())
         + g(1480, 660, 0, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('bancos-finados-2-novembro-2026', '#1f6f6b', (50, 100, 740))
+def _():
+    rows = label_rows([('Agências', 'fechadas 2/11'), ('Boleto de 2/11', 'paga em 3/11'), ('Pix', '24 horas'), ('Tributos', 'pagar antes')], 46, 170, 408, 64, 21, hl=(0, '#d6ecea'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'FERIADO BANCÁRIO', '#1f6f6b', rows))
+        + g(640, 130, 5, 1, calendar_month('NOVEMBRO', 0, 30, (2,), w=470, h=500, accent='#1f6f6b', mark_color='#d9643a'))
+        + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Pix', '24 horas', 'inclusive no feriado', '#1f6f6b')))
+        + g(1000, 640, -4, 1, boleto(400, 190, 'BOLETO', '#1f6f6b', 'vence 2/11'))
+    )
