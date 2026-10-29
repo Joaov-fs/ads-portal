@@ -990,3 +990,15 @@ def _():
         + g(1230, 150, 7, 1, phone(250, 500, phone_screen('CBS em 2027', '11,3%', 'alíquota de referência', '#59622e')))
         + g(1180, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('gasolina-anp-18-24-outubro-2026', '#2a3f7a', (80, 100, 860))
+def _():
+    rows = label_rows([('Gasolina 18 a 24/10', 'R$ 6,49'), ('Semana anterior', 'R$ 6,53'), ('Etanol', 'R$ 4,11'), ('Etanol / gasolina', '63,33%')], 46, 170, 408, 64, 21, hl=(0, '#d9e0f2'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'ANP: 18 A 24/10', '#2a3f7a', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((1.0, '#b9c4e3'), (0.9, '#7f93c9'), (0.65, '#2a3f7a'))) + '</g>'))
+        + g(720, 140, 5, 1, fuel_pump())
+        + g(1170, 120, 8, 1, tag('R$ 6,49', 250, '#2a7f62'))
+        + g(1150, 400, -6, 1, jerrycan())
+        + g(1480, 660, 0, 1, coins_stack(3), 'sh')
+    )
