@@ -1,3 +1,4 @@
+import { newsAneelBandeiraVerdeNovembro2026 } from './aneel-mantem-bandeira-verde-em-novembro-de-2026-conta-de-luz-sem-taxa-extra';
 import { newsPnadDesemprego3Trimestre2026 } from './pnad-desemprego-3o-trimestre-5-2-menor-desde-2012-103-6-milhoes-ocupados';
 import { newsTcuCbs113Para2027 } from './tcu-aprova-cbs-de-11-3-para-2027-o-que-muda-para-o-consumidor';
 import { newsPixMed80DiasEtapa26Outubro } from './pix-med-prazo-de-80-dias-e-nova-etapa-entre-bancos-vale-desde-26-de-outubro';
@@ -116,4 +117,5 @@ export const newsFiles = [
   newsBancosFinados2Novembro2026,
   newsInssBiometriaFalsoBloqueio,
   newsInssNovembro2026Calendario13oNovos,
+  newsAneelBandeiraVerdeNovembro2026,
 ] as const;

@@ -1049,3 +1049,15 @@ def _():
         + g(700, 640, -4, 1, banknote(330, 160, value='R$'))
         + g(1100, 640, 0, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('bandeira-verde-novembro-2026', '#2c6a45', (50, 100, 740))
+def _():
+    rows = label_rows([('Verde', 'sem adicional'), ('Amarela', 'R$ 1,885'), ('Vermelha 1', 'R$ 4,463'), ('Vermelha 2', 'R$ 7,877')], 46, 170, 408, 64, 21, hl=(0, '#d9efdf'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'BANDEIRA: NOVEMBRO', '#2c6a45', rows))
+        + g(660, 130, 5, 1, boleto(520, 230, 'CONTA DE LUZ', '#2c6a45', 'R$ 0,00 extra'))
+        + g(1000, 400, 8, 1, tag('VERDE', 250, '#3aa564'))
+        + g(1290, 150, 6, 1, phone(250, 500, phone_screen('Bandeira tarifária', 'Verde', 'por 100 kWh', '#2c6a45')))
+        + g(700, 680, -4, 1, coins_stack(3), 'sh')
+    )
