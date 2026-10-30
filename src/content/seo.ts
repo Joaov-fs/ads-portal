@@ -177,6 +177,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Votar vale como prova de vida do INSS em 2026',
   'inss-outubro-2026-calendario-de-pagamento-26-de-outubro-a-9-de-novembro':
     'INSS: pagamento de outubro começa em 26/10',
+  'inss-novembro-2026-calendario-24-de-novembro-e-13o-para-quem-comecou-em-maio':
+    'INSS novembro: datas de 24/11 a 7/12 e 13º novo',
   'salario-minimo-2027-orcamento-preve-r-1-741-veja-o-que-muda':
     'Salário mínimo 2027: Orçamento prevê R$ 1.741',
   'saque-aniversario-fgts-outubro-2026-ate-31-de-dezembro-quanto-sai':

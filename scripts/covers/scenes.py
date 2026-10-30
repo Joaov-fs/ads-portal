@@ -1024,3 +1024,15 @@ def _():
         + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Mensagem falsa', 'GOLPE', 'INSS não pede senha', '#b02a2a', check=False)))
         + g(960, 560, -8, 1, stamp('FALSO', 300, '#d63031'))
     )
+
+
+@scene('inss-novembro-2026-13o-novos-beneficiarios', '#8a3b72', (50, 100, 740))
+def _():
+    rows = label_rows([('Folha de novembro', '24/11 a 7/12'), ('Mínimo, final 1', '24/11'), ('Acima do mínimo', 'de 1/12 a 7/12'), ('13º novos benefícios', 'desde maio')], 46, 170, 408, 64, 21, hl=(0, '#f0dbe8'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'INSS: NOVEMBRO', '#8a3b72', rows))
+        + g(640, 130, 5, 1, calendar_month('NOVEMBRO', 0, 30, (24,), w=470, h=500, accent='#8a3b72', mark_color='#d9643a'))
+        + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Extrato de pagamento', '13º salário', 'consulte no Meu INSS', '#8a3b72')))
+        + g(1000, 640, -4, 1, banknote(330, 160, value='13º'))
+        + g(1480, 640, 0, 1, coins_stack(3), 'sh')
+    )
