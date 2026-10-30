@@ -1,3 +1,4 @@
+import { newsPnadDesemprego3Trimestre2026 } from './pnad-desemprego-3o-trimestre-5-2-menor-desde-2012-103-6-milhoes-ocupados';
 import { newsTcuCbs113Para2027 } from './tcu-aprova-cbs-de-11-3-para-2027-o-que-muda-para-o-consumidor';
 import { newsPixMed80DiasEtapa26Outubro } from './pix-med-prazo-de-80-dias-e-nova-etapa-entre-bancos-vale-desde-26-de-outubro';
 import { newsBolsaFamiliaNovembroDezembro2026 } from './bolsa-familia-novembro-16-17-e-18-dezembro-10-11-e-14-calendario-do-nis';
@@ -58,6 +59,7 @@ import { newsAposentadoriaAgentesSaudeEc140 } from './aposentadoria-especial-de-
 import { newsGasolinaAnpSegundaSemanaSemTributos } from './gasolina-cai-a-r-6-49-na-2a-semana-sem-tributos-federais-etanol-a-r-4-11';
 
 export const newsFiles = [
+  newsPnadDesemprego3Trimestre2026,
   newsArrecadacaoFederalSetembro2026,
   newsSegundoTurno2026MultaJustificativa,
   newsGarantiaSafraBahia2026,

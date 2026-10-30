@@ -111,6 +111,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'pnad-desemprego-3o-trimestre-5-2-menor-desde-2012-103-6-milhoes-ocupados':
+    'Desemprego cai a 5,2%, o menor desde 2012',
   'gasolina-cai-a-r-6-49-na-2a-semana-sem-tributos-federais-etanol-a-r-4-11':
     'Gasolina cai a R$ 6,49 e etanol fica em R$ 4,11',
   'tcu-aprova-cbs-de-11-3-para-2027-o-que-muda-para-o-consumidor':

@@ -1036,3 +1036,16 @@ def _():
         + g(1000, 640, -4, 1, banknote(330, 160, value='13º'))
         + g(1480, 640, 0, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('pnad-desemprego-3-trimestre-2026', '#b4532a', (50, 100, 740))
+def _():
+    rows = label_rows([('3º tri 2026', '5,2%'), ('2º tri 2026', '5,4%'), ('3º tri 2025', '5,6%'), ('Renda média', 'R$ 3.790')], 46, 170, 408, 64, 21, hl=(0, '#f6dccf'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'PNAD: 3º TRIMESTRE', '#b4532a', rows))
+        + g(660, 150, 5, 1, booklet(260, 360))
+        + g(1000, 120, 8, 1, tag('5,2%', 250, '#2a7f62'))
+        + g(1230, 330, 6, 1, phone(250, 500, phone_screen('Ocupados', '103,6 mi', 'recorde da série', '#b4532a')))
+        + g(700, 640, -4, 1, banknote(330, 160, value='R$'))
+        + g(1100, 640, 0, 1, coins_stack(3), 'sh')
+    )
