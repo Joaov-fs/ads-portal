@@ -264,7 +264,7 @@ const specs = [
     title: 'Calculadora de INSS',
     category: 'trabalho',
     description:
-      'Calcule o desconto de INSS do seu salário em 2026, faixa por faixa, até o teto de R$ 8.475,55.',
+      'Calcule o desconto de INSS do seu salário em 2026, faixa por faixa, até o teto de R$ 8.475,55. Resultado na hora.',
     howItWorks:
       'A contribuição é calculada por faixas de referência, e não por uma alíquota única sobre todo o salário.',
     tags: ['trabalho', 'inss', 'salario'],
@@ -312,7 +312,7 @@ const specs = [
     title: 'Calculadora de CDI',
     category: 'financas',
     description:
-      'Projete o rendimento bruto de um investimento remunerado como percentual do CDI.',
+      'Simule o rendimento bruto de um investimento remunerado como percentual do CDI, como 100% do CDI. Resultado na hora.',
     howItWorks:
       'A projeção aplica a taxa anual do CDI que você informar ao percentual contratado e ao prazo. O CDI muda com a Selic, então consulte o valor atual no site do Banco Central. O resultado é bruto, antes do Imposto de Renda.',
     tags: ['financas', 'cdi', 'investimentos'],
@@ -372,7 +372,7 @@ const specs = [
     title: 'Calculadora de Bolsa Família',
     category: 'beneficios',
     description:
-      'Estime o valor mensal do Bolsa Família com os novos valores de outubro de 2026, a partir da composição da família.',
+      'Estime o valor mensal do Bolsa Família com os novos valores de outubro de 2026, a partir da composição da família. Simule em segundos.',
     howItWorks:
       'A estimativa soma a Renda de Cidadania de R$ 164 por pessoa, o Primeira Infância de R$ 173 por criança de 0 a 6 anos e o Variável Familiar de R$ 58 por integrante elegível. Se a soma não chega a R$ 691, o Benefício Complementar garante o piso. Quem tem direito e o valor pago são definidos pelo CadÚnico e pelo Ministério.',
     tags: ['beneficios', 'bolsa-familia', 'familia'],
@@ -403,7 +403,7 @@ const specs = [
     title: 'Calculadora de PIS',
     category: 'beneficios',
     description:
-      'Calcule o abono salarial do PIS/Pasep proporcional aos meses trabalhados no ano-base, com base no salário mínimo.',
+      'Calcule o abono salarial do PIS/Pasep proporcional aos meses trabalhados no ano-base, com base no salário mínimo. Veja quanto você recebe.',
     howItWorks:
       'A referência é proporcional aos meses considerados e depende de todos os requisitos legais para pagamento.',
     tags: ['beneficios', 'pis', 'trabalho'],
@@ -565,7 +565,7 @@ const specs = [
     title: 'Calculadora de Férias Proporcionais',
     category: 'trabalho',
     description:
-      'Calcule as férias proporcionais com o terço constitucional, a partir do salário e dos meses trabalhados (avos).',
+      'Calcule as férias proporcionais com o terço constitucional, a partir do salário e dos meses trabalhados (avos). Resultado na hora.',
     howItWorks:
       'A estimativa usa salário, meses trabalhados no período aquisitivo e adicional constitucional.',
     tags: ['trabalho', 'ferias', 'rescisao'],
@@ -584,7 +584,7 @@ const specs = [
     title: 'Calculadora de 13º Proporcional',
     category: 'trabalho',
     description:
-      'Calcule o 13º salário proporcional pelos meses trabalhados no ano, em avos, antes de INSS e Imposto de Renda.',
+      'Calcule o 13º salário proporcional pelos meses trabalhados no ano, em avos, antes de INSS e Imposto de Renda. Resultado na hora.',
     howItWorks:
       'O salário é dividido em 12 avos e multiplicado pelos meses informados.',
     tags: ['trabalho', 'decimo', 'salario'],
@@ -622,7 +622,7 @@ const specs = [
     title: 'Calculadora de PLR/PPR Líquido',
     category: 'trabalho',
     description:
-      'Calcule o valor líquido da PLR ou PPR depois do Imposto de Renda, que usa uma tabela própria e exclusiva.',
+      'Calcule quanto sobra da PLR ou PPR depois do Imposto de Renda, que usa uma tabela própria e exclusiva. Veja o valor líquido na hora.',
     howItWorks:
       'O modelo aplica uma estimativa de imposto ao valor bruto. A tributação efetiva tem regras próprias e deve ser conferida.',
     tags: ['trabalho', 'plr', 'imposto'],
@@ -690,7 +690,7 @@ const specs = [
     title: 'Calculadora de Pensão Alimentícia',
     category: 'trabalho',
     description:
-      'Calcule a pensão alimentícia em percentual sobre a renda líquida, depois dos descontos legais de INSS e IRRF.',
+      'Calcule a pensão alimentícia em percentual sobre a renda líquida, depois dos descontos legais de INSS e IRRF. Veja o valor estimado na hora.',
     howItWorks:
       'A ferramenta aplica o percentual à renda líquida (rendimento menos INSS e IRRF) e mostra quanto sobra para quem paga. Apenas a decisão judicial ou o acordo define o valor devido.',
     tags: ['familia', 'pensao', 'trabalho'],
@@ -955,7 +955,7 @@ const specs = [
     title: 'Calculadora de Prazo do Auxílio do INSS',
     category: 'beneficios',
     description:
-      'Descubra a partir de que dia pedir a prorrogação do auxílio por incapacidade temporária e quantos dias o benefício dura.',
+      'Descubra a partir de que dia pedir a prorrogação do auxílio por incapacidade temporária e quantos dias o benefício dura. Calcule em segundos.',
     howItWorks:
       'Informe o início do benefício e a data de cessação (alta programada). A ferramenta mostra a janela de 15 dias antes da cessação em que o pedido de prorrogação deve ser feito.',
     tags: ['beneficios', 'inss', 'prorrogacao'],
@@ -1089,7 +1089,7 @@ const specs = [
     title: 'Calculadora de Tesouro Selic',
     category: 'financas',
     description:
-      'Projete o rendimento líquido de um investimento pós-fixado com imposto estimado.',
+      'Simule quanto rende o Tesouro Selic: projeção do rendimento líquido de um investimento pós-fixado, com imposto estimado. Resultado na hora.',
     howItWorks:
       'A taxa anual é capitalizada pelo prazo e o IR pela tabela regressiva incide sobre o rendimento. Não inclui a taxa de custódia da B3 nem a da corretora.',
     tags: ['financas', 'tesouro', 'selic'],

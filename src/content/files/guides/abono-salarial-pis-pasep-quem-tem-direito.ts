@@ -6,7 +6,7 @@ export const guideAbonoSalarialPisPasepQuemTemDireito = {
   title:
     'Abono salarial PIS/Pasep: quem tem direito, quanto recebe e onde sacar',
   description:
-    'As regras do abono do ano-base 2024, a tabela por meses trabalhados e como conferir se há valor para você.',
+    'Quem tem direito ao abono salarial PIS/Pasep, quanto recebe pela tabela de meses trabalhados e como conferir se há valor para você.',
   category: 'beneficios',
   authorId: 'equipe-editorial',
   publishedAt: '2026-09-16',
