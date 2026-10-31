@@ -1,3 +1,4 @@
+import { newsNfseNacionalSimples2026 } from './nfs-e-nacional-obrigatoria-para-empresas-do-simples-a-partir-de-1-de-novembro';
 import { newsFiesRemanescentes2026 } from './fies-vagas-remanescentes-2026-inscricao-ate-3-de-novembro-50-mil-vagas-e-renda-de-ate-3-salarios';
 import { newsAneelBandeiraVerdeNovembro2026 } from './aneel-mantem-bandeira-verde-em-novembro-de-2026-conta-de-luz-sem-taxa-extra';
 import { newsPnadDesemprego3Trimestre2026 } from './pnad-desemprego-3o-trimestre-5-2-menor-desde-2012-103-6-milhoes-ocupados';
@@ -120,4 +121,5 @@ export const newsFiles = [
   newsInssBiometriaFalsoBloqueio,
   newsInssNovembro2026Calendario13oNovos,
   newsAneelBandeiraVerdeNovembro2026,
+  newsNfseNacionalSimples2026,
 ] as const;

@@ -1072,3 +1072,15 @@ def _():
         + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Fies 2º semestre', '50 mil vagas', 'inscrição gratuita', '#2a5f85')))
         + g(1160, 640, -4, 1, tag('até 3/11', 260, '#f4a261'))
     )
+
+
+@scene('nfse-nacional-simples-1-novembro-2026', '#a0692c', (50, 100, 740))
+def _():
+    rows = label_rows([('Emissor', 'Nacional'), ('Obrigatório desde', '1/11/2026'), ('CBS e IBS na nota', 'a partir de 1/1/2027'), ('Custo para emitir', 'gratuito')], 46, 170, 408, 64, 21, hl=(1, '#f1dfc4'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'NFS-e NACIONAL', '#8a5316', rows))
+        + g(640, 130, 5, 1, calendar_month('NOVEMBRO', 0, 30, (1,), w=470, h=500, accent='#8a5316', mark_color='#c0392b'))
+        + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Emissor Nacional', 'NFS-e', 'login com gov.br', '#8a5316')))
+        + g(1000, 640, -4, 1, tag('1º/11', 250, '#2a7f62'))
+        + g(1480, 640, 0, 1, coins_stack(3), 'sh')
+    )

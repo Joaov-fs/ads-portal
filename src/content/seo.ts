@@ -111,6 +111,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'nfs-e-nacional-obrigatoria-para-empresas-do-simples-a-partir-de-1-de-novembro':
+    'NFS-e Nacional obrigatória no Simples em 1º/11',
   'fies-vagas-remanescentes-2026-inscricao-ate-3-de-novembro-50-mil-vagas-e-renda-de-ate-3-salarios':
     'Fies: 50 mil vagas com inscrição até 3/11',
   'aneel-mantem-bandeira-verde-em-novembro-de-2026-conta-de-luz-sem-taxa-extra':
