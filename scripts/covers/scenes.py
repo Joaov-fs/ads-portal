@@ -1061,3 +1061,14 @@ def _():
         + g(1290, 150, 6, 1, phone(250, 500, phone_screen('Bandeira tarifária', 'Verde', 'por 100 kWh', '#2c6a45')))
         + g(700, 680, -4, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('fies-remanescentes-2026', '#3a7ca5', (610, 150, 620))
+def _():
+    rows = label_rows([('Inscrição', '26/10 a 3/11'), ('Resultado', '16/11'), ('Validação', '17 e 18/11'), ('Lista de espera', '25 a 30/11')], 46, 170, 408, 64, 21, hl=(0, '#d6e8f3'))
+    return (
+        g(60, 100, -3, 1, calendar_month('NOVEMBRO', 0, 30, (3, 16), accent='#2a5f85', mark_color='#2a5f85'))
+        + g(640, 130, 4, 1, doc(500, 580, 'FIES: VAGAS REMANESCENTES', '#2a5f85', rows))
+        + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Fies 2º semestre', '50 mil vagas', 'inscrição gratuita', '#2a5f85')))
+        + g(1160, 640, -4, 1, tag('até 3/11', 260, '#f4a261'))
+    )

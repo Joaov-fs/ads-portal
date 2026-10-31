@@ -1,3 +1,4 @@
+import { newsFiesRemanescentes2026 } from './fies-vagas-remanescentes-2026-inscricao-ate-3-de-novembro-50-mil-vagas-e-renda-de-ate-3-salarios';
 import { newsAneelBandeiraVerdeNovembro2026 } from './aneel-mantem-bandeira-verde-em-novembro-de-2026-conta-de-luz-sem-taxa-extra';
 import { newsPnadDesemprego3Trimestre2026 } from './pnad-desemprego-3o-trimestre-5-2-menor-desde-2012-103-6-milhoes-ocupados';
 import { newsTcuCbs113Para2027 } from './tcu-aprova-cbs-de-11-3-para-2027-o-que-muda-para-o-consumidor';
@@ -60,6 +61,7 @@ import { newsAposentadoriaAgentesSaudeEc140 } from './aposentadoria-especial-de-
 import { newsGasolinaAnpSegundaSemanaSemTributos } from './gasolina-cai-a-r-6-49-na-2a-semana-sem-tributos-federais-etanol-a-r-4-11';
 
 export const newsFiles = [
+  newsFiesRemanescentes2026,
   newsPnadDesemprego3Trimestre2026,
   newsArrecadacaoFederalSetembro2026,
   newsSegundoTurno2026MultaJustificativa,
