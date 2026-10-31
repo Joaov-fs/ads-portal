@@ -1084,3 +1084,14 @@ def _():
         + g(1000, 640, -4, 1, tag('1º/11', 250, '#2a7f62'))
         + g(1480, 640, 0, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('fgts-transicao-novembro-2026', '#246e68', (80, 110, 720))
+def _():
+    rows = label_rows([('A partir de', '01/11/2026'), ('Saques anuais', 'até 3'), ('Teto cedido', 'R$ 1.500'), ('Por competência', 'até R$ 500')], 46, 170, 408, 64, 21, hl=(1, '#dcefe8'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'ANTECIPAÇÃO FGTS', '#246e68', rows))
+        + g(730, 110, 5, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(1,), w=450, h=500, accent='#246e68', mark_color='#e8590c'))
+        + g(1280, 230, 6, 1, phone(250, 500, phone_screen('Empréstimo', 'CONTRATO', 'confira o valor líquido', '#246e68')))
+        + g(980, 710, 3, 1, coins_stack(3), 'sh')
+    )

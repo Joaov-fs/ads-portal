@@ -218,7 +218,7 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'bc-ofertas-de-credito-novas-regras-2027':
     'BC muda ofertas de crédito: regras a partir de 2027',
   'pis-pasep-antigo-fundo-caixa-paga-26-de-outubro-e-pedido-ate-31-de-outubro-sai-em-25-de-novembro':
-    'Antigo PIS/Pasep: Caixa paga hoje e abre lote de 25/11',
+    'Antigo PIS/Pasep: pedido até 31/10, crédito em 25/11',
   'tarifa-zero-pec-18-fins-de-semana-e-feriados-r-12-bilhoes-em-2027':
     'PEC da tarifa zero: ônibus grátis em fins de semana',
   'bancos-fecham-no-feriado-de-finados-2-de-novembro-boletos-pagam-3-de-novembro':

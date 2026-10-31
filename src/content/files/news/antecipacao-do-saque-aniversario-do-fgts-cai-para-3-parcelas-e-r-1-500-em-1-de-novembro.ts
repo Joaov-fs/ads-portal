@@ -3,125 +3,119 @@ import type { NewsDocument } from '../../types';
 export const newsAntecipacaoSaqueAniversarioFgts3Parcelas = {
   kind: 'news',
   slug: 'antecipacao-do-saque-aniversario-do-fgts-cai-para-3-parcelas-e-r-1-500-em-1-de-novembro',
-  title:
-    'Antecipação do saque-aniversário do FGTS cai para 3 parcelas e R$ 1.500 em 1º de novembro',
+  title: 'FGTS: antecipação cai para 3 saques anuais amanhã, 1º de novembro',
   description:
-    'A partir de 1º de novembro, a antecipação do saque-aniversário do FGTS cai de 5 para 3 parcelas e de R$ 2.500 para R$ 1.500. Veja a conta e o que fazer.',
+    'A transição da antecipação do FGTS termina em 31/10. Desde 1º/11, o limite é de três saques anuais. Entenda o teto e o valor líquido do empréstimo.',
   category: 'trabalho',
   coverImage: {
-    src: '/images/news/antecipacao-do-saque-aniversario-do-fgts-cai-para-3-parcelas-e-r-1-500-em-1-de-novembro.jpg',
-    alt: 'Quadro com os limites de 5 e 3 parcelas, calendário de novembro com o dia 1 marcado e celular com o teto de R$ 1.500.',
+    src: '/images/news/fgts-antecipacao-transicao-novembro-2026.jpg',
+    alt: 'Documento com três saques anuais e teto de R$ 1.500, calendário marcando 1º de novembro e celular indicando consulta ao contrato.',
     credit: 'Ilustração: PortalFina',
   },
   authorId: 'thales-xavier',
   publishedAt: '2026-10-16',
-  updatedAt: '2026-10-16',
+  updatedAt: '2026-10-31',
   tags: ['fgts', 'saque-aniversario', 'antecipacao', 'emprestimo', 'trabalho'],
   featuredCalculators: ['simulador-de-emprestimo', 'fgts-multa'],
   highlights: [
     {
+      value: '1º/11',
+      label: 'Começa o limite de três saques',
+      note: 'Fim da transição prevista na Resolução 1.130/2025.',
+    },
+    {
       value: 'R$ 1.500',
-      label: 'Teto da antecipação desde 1º/11',
-      note: 'Hoje o teto é de R$ 2.500, em até 5 parcelas.',
+      label: 'Teto de direitos cedidos',
+      note: 'Não corresponde a um crédito líquido garantido.',
     },
     {
-      value: '3 parcelas',
-      label: 'Limite a partir de 1º de novembro',
-      note: 'Até 31/10 ainda é possível antecipar 5.',
-    },
-    {
-      value: 'R$ 500',
-      label: 'Teto por parcela antecipada',
-      note: 'O piso por parcela é de R$ 100.',
+      value: '90 dias',
+      label: 'Espera após a adesão',
+      note: 'Prazo para autorizar consulta e bloqueio para antecipação.',
     },
   ],
   sections: [
     {
-      heading: 'O que muda no saque-aniversário em 1º de novembro',
+      heading: 'Transição termina neste sábado, 31 de outubro',
       paragraphs: [
-        'Quem aderiu ao saque-aniversário do FGTS pode pedir a um banco que adiante os saques dos próximos anos, em um empréstimo com esses saques como garantia. Até 31 de outubro de 2026, a antecipação pode alcançar até cinco saques anuais. A partir de 1º de novembro de 2026, o limite cai para três.',
-        'O teto por parcela antecipada continua em R$ 500, e o piso, em R$ 100. Por isso o valor máximo de uma operação cai de R$ 2.500 (cinco parcelas de até R$ 500) para R$ 1.500 (três parcelas de até R$ 500). A informação consta na página do saque-aniversário no portal do FGTS.',
-        'A mudança é a segunda etapa das regras aprovadas pelo Conselho Curador do FGTS em outubro de 2025. A primeira etapa começou em 1º de novembro de 2025 e criou a carência de 90 dias entre a adesão e o primeiro pedido de antecipação, o limite de uma operação por ano e as faixas de valor por parcela.',
-        'Em dados divulgados pelo governo na época, o saque-aniversário reunia 21,5 milhões de trabalhadores, cerca de 51% das contas ativas do FGTS, e aproximadamente 70% deles já tinham feito alguma antecipação. É esse grupo que mais sente a nova regra.',
+        'A partir de domingo, 1º de novembro de 2026, novas antecipações do saque-aniversário ficam limitadas aos direitos dos próximos três saques anuais. A Resolução CCFGTS 1.130/2025 permitiu antecipar até cinco durante o período de transição que termina neste sábado.',
+        'A data foi confirmada na página operacional da Caixa no portal do FGTS. É uma etapa de uma regra aprovada no ano passado, não um benefício novo. Esta matéria foi atualizada em 31 de outubro para destacar o encerramento da transição e esclarecer as condições de contratação.',
       ],
     },
     {
-      heading: 'Quanto muda na prática: a conta em reais',
+      heading: 'R$ 1.500 é o teto cedido, não dinheiro líquido garantido',
       image: {
-        src: '/images/news/antecipacao-do-saque-aniversario-do-fgts-cai-para-3-parcelas-e-r-1-500-em-1-de-novembro-detalhe.jpg',
-        alt: 'Detalhe da ilustração: quadro com 5 parcelas e R$ 2.500 até 31/10 e 3 parcelas e R$ 1.500 desde 1º/11.',
+        src: '/images/news/fgts-antecipacao-transicao-novembro-2026-detalhe.jpg',
+        alt: 'Detalhe do documento com a data de início e os limites da antecipação.',
         caption:
-          'Até 31 de outubro o teto é de R$ 2.500; desde 1º de novembro, R$ 1.500.',
+          'Os valores indicam direitos cedidos ao banco; confira juros e valor líquido na proposta.',
         credit: 'Ilustração: PortalFina',
       },
       paragraphs: [
-        'O que o banco pode adiantar depende de duas coisas: do número de parcelas permitido e do valor do saque anual de cada trabalhador, que segue a tabela de alíquotas do saque-aniversário. Cada parcela antecipada é limitada a R$ 500.',
-        'Um trabalhador com saldo de R$ 3.000 tem saque anual de R$ 1.050 (30% do saldo mais R$ 150). Como cada parcela antecipada é limitada a R$ 500, o teto é de R$ 2.500 com cinco parcelas e de R$ 1.500 com três, uma diferença de R$ 1.000 no valor máximo.',
-        'Quem tem saldo menor sente a mudança de outro jeito. Com saldo de R$ 800, o saque anual é de R$ 370 (40% do saldo mais R$ 50). Cinco saques somam R$ 1.850, e três somam R$ 1.110, ou R$ 740 a menos.',
-        'Esses valores são brutos, antes dos juros que o banco desconta do que entrega ao trabalhador. O dinheiro que chega à conta é sempre menor que o teto, e a diferença depende da taxa de cada instituição.',
+        'Cada saque anual cedido deve respeitar o mínimo de R$ 100. O máximo por competência é de R$ 500. Com a redução do número de saques, a Caixa informa teto agregado de R$ 1.500 após a transição.',
+        'O valor efetivamente depositado depende do saldo disponível, das condições de elegibilidade e dos encargos da instituição. Não confunda a soma dos direitos futuros com o dinheiro que o banco oferece hoje. Confira o custo efetivo total e a proposta antes de contratar.',
       ],
       table: {
-        caption: 'Valor máximo antecipado antes e depois de 1º de novembro',
+        caption: 'Limites informados pela Caixa para a antecipação',
         columns: [
-          'Saque anual',
-          'Até 31/10 (5 parcelas)',
-          'Desde 1º/11 (3 parcelas)',
-          'Diferença',
+          'Período',
+          'Máximo de saques anuais',
+          'Teto dos direitos cedidos',
         ],
         rows: [
-          ['R$ 370', 'R$ 1.850', 'R$ 1.110', 'R$ 740'],
-          ['R$ 500 ou mais', 'R$ 2.500', 'R$ 1.500', 'R$ 1.000'],
+          ['Até 31/10/2026', '5', 'R$ 2.500'],
+          ['A partir de 1º/11/2026', '3', 'R$ 1.500'],
         ],
       },
     },
     {
-      heading: 'Quem é afetado e quem não precisa fazer nada',
+      heading: 'Uma contratação por competência e espera após a adesão',
       paragraphs: [
-        'A regra vale para os novos contratos de antecipação. Pelas informações divulgadas, quem já assinou um contrato continua com as condições do que foi contratado. Quem aderiu ao saque-aniversário, mas nunca antecipou, segue recebendo o saque todo ano, sem mudança.',
-        'Quem ainda não aderiu enfrenta um prazo apertado. Como existe carência de 90 dias entre a adesão e a antecipação, quem aderir hoje, 16 de outubro, só poderia pedir o empréstimo a partir de meados de janeiro de 2027, já dentro da regra de três parcelas. Para essas pessoas, o prazo de 31 de outubro já não ajuda.',
-        'Vale lembrar a regra mais importante do saque-aniversário: quem aderiu e é demitido sem justa causa recebe a multa de 40%, mas não saca o saldo da conta. Se há uma antecipação em curso, os saques que a garantem seguem comprometidos com o banco. Para entender a diferença entre as modalidades, o guia sobre saque-aniversário do portal explica a tabela e o saque-rescisão.',
+        'A norma limita a uma contratação cada competência anual do saque-aniversário. Isso não significa que basta virar o ano civil para contratar novamente. Uma nova operação depende da quitação da antecipação vigente referente ao próximo saque-aniversário.',
+        'A Caixa também informa que a autorização de consulta e bloqueio só pode ocorrer depois de decorridos 90 dias da adesão à modalidade. Portanto, aderir agora não dá acesso imediato ao empréstimo nem garante aproveitar a regra de cinco saques.',
+        'Depósitos novos no FGTS não permitem complementar uma competência anual já comprometida com outra operação. Consulte o contrato e a disponibilidade no aplicativo FGTS, sem presumir que o teto máximo está livre.',
       ],
     },
     {
-      heading: 'O que avaliar antes de contratar até 31 de outubro',
+      heading: 'O que permanece no saque anual e na demissão',
       paragraphs: [
-        'A antecipação é um empréstimo, e não um saque. Você recebe hoje um valor menor do que o total dos saques futuros, e perde esses saques nos anos seguintes. Antes de assinar, peça o custo efetivo total, que reúne juros e tarifas, e compare com outras linhas de crédito.',
-        'A cobrança de juros faz diferença no bolso. Para estimar quanto custa um empréstimo com parcelas e taxa conhecidas, use o simulador de empréstimo do portal. Se a ideia for trocar uma dívida mais cara, como o rotativo do cartão, a conta precisa mostrar economia real, e não só alívio no mês.',
-        'Quem pensa em mudar de emprego ou teme ser demitido deve pesar o risco. Com o saque-aniversário, o saldo fica preso na demissão, e com a antecipação os saques futuros já estão comprometidos. Nessa situação, o saque-rescisão costuma ser mais protetor. Em caso de dúvida, o aplicativo FGTS mostra a modalidade, o saldo e os contratos de antecipação em andamento.',
-        'Por fim, desconfie de ofertas que prometem liberar mais do que a regra permite, que pedem pagamento adiantado ou que chegam por mensagem de desconhecidos. A antecipação só é feita por instituição financeira autorizada, com a sua autorização dada no aplicativo FGTS.',
+        'A mudança trata do empréstimo garantido por saques futuros. Quem usa o saque-aniversário sem antecipação continua sujeito à tabela do saque anual. A regra de três competências não limita esse saque comum a R$ 500.',
+        'Na demissão sem justa causa durante a vigência do saque-aniversário, a regra geral permite retirar a multa rescisória quando devida, mas não o saldo integral por esse motivo. Outras hipóteses legais de saque permanecem aplicáveis.',
+        'O retorno ao saque-rescisão exige que não exista antecipação contratada e só produz efeito no primeiro dia do 25º mês após o pedido. A calculadora de multa do FGTS ajuda a distinguir a multa do saldo; o simulador de empréstimo serve para comparar crédito com parcelas e taxa conhecidas, sem substituir a proposta específica da antecipação.',
       ],
     },
   ],
   faq: [
     {
-      question: 'Quantas parcelas posso antecipar a partir de 1º de novembro?',
+      question: 'O teto de R$ 1.500 é depositado automaticamente?',
       answer:
-        'Até três saques-aniversário anuais, com teto de R$ 500 por parcela e valor máximo de R$ 1.500 na operação. Até 31 de outubro de 2026 o limite ainda é de cinco parcelas e R$ 2.500.',
+        'Não. Trata-se do limite agregado dos direitos cedidos em até três saques anuais. O crédito líquido depende do saldo, dos encargos e da aprovação da instituição.',
     },
     {
-      question: 'Meu contrato de antecipação já assinado muda?',
+      question: 'O saque-aniversário comum também fica limitado a R$ 500?',
       answer:
-        'Pelas informações divulgadas, a nova regra vale para os contratos feitos depois da data de corte. Confirme as condições do seu contrato com o banco e no aplicativo FGTS.',
+        'Não. Esse limite por competência pertence à antecipação. O saque anual sem empréstimo segue a tabela própria da modalidade.',
     },
     {
-      question: 'Posso antecipar logo depois de aderir ao saque-aniversário?',
+      question: 'Posso antecipar imediatamente depois de aderir?',
       answer:
-        'Não. Existe carência de 90 dias entre a adesão e o pedido de antecipação, e só é permitida uma operação por ano.',
+        'Não. A autorização de consulta e bloqueio para antecipação depende de 90 dias decorridos da adesão, além das demais condições.',
     },
   ],
   sources: [
     {
-      label: 'FGTS: saque-aniversário, regras da antecipação',
+      label:
+        'Caixa no portal FGTS: regras operacionais do saque-aniversário e da antecipação',
       url: 'https://www.fgts.gov.br/Paginas/trabalhador/saque/saque-aniversario.aspx',
     },
     {
       label:
-        'Agência Brasil: novas regras do saque-aniversário do FGTS entram em vigor neste sábado, 1/11/2025',
-      url: 'https://agenciabrasil.ebc.com.br/economia/noticia/2025-10/novas-regras-do-saque-aniversario-do-fgts-entram-em-vigor-neste-sabado',
+        'Resolução CCFGTS 1.130/2025: texto reproduzido na base oficial da ANTT',
+      url: 'https://anttlegis.antt.gov.br/action/ActionDatalegis.php?acao=abrirTextoAto&cod_menu=7145&cod_modulo=420&desItem=&desItemFim=&nomeTitulo=codigos&numeroAto=00001130&orgao=CCFGTS%2FMTE&seqAto=000&tipo=RES&valorAno=2025',
     },
     {
-      label: 'Caixa: antecipação do saque-aniversário do FGTS',
-      url: 'https://www.caixa.gov.br/voce/credito-financiamento/emprestimo/antecipacao-saque-aniversario-FGTS/Paginas/default.aspx',
+      label: 'Secom: regras aprovadas pelo Conselho Curador em outubro de 2025',
+      url: 'https://www.gov.br/secom/pt-br/acompanhe-a-secom/noticias/2025/10/saque-aniversario-do-fgts-tera-novas-regras-a-partir-de-novembro',
     },
   ],
 } as const satisfies NewsDocument;
