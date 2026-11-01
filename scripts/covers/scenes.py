@@ -1095,3 +1095,15 @@ def _():
         + g(1280, 230, 6, 1, phone(250, 500, phone_screen('Empréstimo', 'CONTRATO', 'confira o valor líquido', '#246e68')))
         + g(980, 710, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('sac-decreto-2-novembro-2026', '#4a4f9c', (50, 100, 740))
+def _():
+    rows = label_rows([('Vale desde', '2/11/2026'), ('Atendente humano', '8h às 20h'), ('Espera ao telefone', '20 segundos'), ('Níveis de menu', 'até 5')], 46, 170, 408, 64, 21, hl=(0, '#dfe1f4'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'NOVO DECRETO DO SAC', '#353a85', rows))
+        + g(830, 360, 5, 1, clock(130, 8, 0, ring='#353a85'))
+        + g(1000, 120, 8, 1, tag('2/11', 250, '#e8590c'))
+        + g(1230, 330, 6, 1, phone(250, 500, phone_screen('Cancelar contrato', 'Imediato', 'em qualquer nível', '#353a85')))
+        + g(700, 660, -4, 1, tag('7 dias', 250, '#2a7f62'))
+    )

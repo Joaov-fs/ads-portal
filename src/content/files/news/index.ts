@@ -1,3 +1,4 @@
+import { newsSacDecreto13135Novembro2026 } from './sac-novas-regras-valem-desde-2-de-novembro-atendente-humano-das-8h-as-20h-e-espera-de-20-segundos';
 import { newsNfseNacionalSimples2026 } from './nfs-e-nacional-obrigatoria-para-empresas-do-simples-a-partir-de-1-de-novembro';
 import { newsFiesRemanescentes2026 } from './fies-vagas-remanescentes-2026-inscricao-ate-3-de-novembro-50-mil-vagas-e-renda-de-ate-3-salarios';
 import { newsAneelBandeiraVerdeNovembro2026 } from './aneel-mantem-bandeira-verde-em-novembro-de-2026-conta-de-luz-sem-taxa-extra';
@@ -122,4 +123,5 @@ export const newsFiles = [
   newsInssNovembro2026Calendario13oNovos,
   newsAneelBandeiraVerdeNovembro2026,
   newsNfseNacionalSimples2026,
+  newsSacDecreto13135Novembro2026,
 ] as const;
