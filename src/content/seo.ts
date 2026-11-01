@@ -111,6 +111,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'igp-m-outubro-1-47-acumulado-5-24-aluguel-de-r-2-000-vai-a-r-2-104-80':
+    'IGP-M de outubro: 1,47% e 5,24% em 12 meses',
   'sac-novas-regras-valem-desde-2-de-novembro-atendente-humano-das-8h-as-20h-e-espera-de-20-segundos':
     'SAC: novas regras valem desde 2/11 (Decreto 13.135)',
   'nfs-e-nacional-obrigatoria-para-empresas-do-simples-a-partir-de-1-de-novembro':

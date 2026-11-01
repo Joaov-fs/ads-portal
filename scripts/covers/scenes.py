@@ -1107,3 +1107,14 @@ def _():
         + g(1230, 330, 6, 1, phone(250, 500, phone_screen('Cancelar contrato', 'Imediato', 'em qualquer nível', '#353a85')))
         + g(700, 660, -4, 1, tag('7 dias', 250, '#2a7f62'))
     )
+
+
+@scene('igpm-outubro-2026', '#a23b5a', (100, 120, 820))
+def _():
+    rows = label_rows([('Aluguel atual', 'R$ 2.000,00'), ('IGP-M 12 meses', '5,24%'), ('Aumento máximo', 'R$ 104,80'), ('Aluguel novo', 'R$ 2.104,80')], 46, 150, 378, 54, 19, hl=(3, '#fff3bf'))
+    return (
+        g(150, 120, -4, 1, doc(470, 580, 'CONTRATO DE LOCAÇÃO', '#8a2c49', rows + lines(46, 400, 378, 5, seed=41)))
+        + g(870, 470, 0, 1.15, house(1, '#f4e3c3', '#c7523a'))
+        + g(1270, 170, 0, 1, keys(), 'shs')
+        + g(740, 130, -10, 1, tag('IGP-M 1,47%', 290, '#2b8a3e'), 'shs')
+    )
