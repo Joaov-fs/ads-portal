@@ -1130,3 +1130,15 @@ def _():
         + g(1400, 470, 5, 1, clock(105, 10, 10, ring='#6b4220'))
         + g(1180, 690, -4, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('enem-2026-8-e-15-novembro', '#2a7f9e', (50, 100, 740))
+def _():
+    rows = label_rows([('1º dia', 'dom, 8/11'), ('2º dia', 'dom, 15/11'), ('Portões fecham', '13h'), ('Início da prova', '13h30')], 46, 170, 408, 64, 21, hl=(2, '#d6ecf4'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'ENEM 2026', '#1d5f7a', rows))
+        + g(660, 110, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(8, 15), w=520, h=520, accent='#1d5f7a', mark_color='#e8590c'))
+        + g(1290, 120, 6, 1, tag('R$ 200', 250, '#2a7f62'))
+        + g(1380, 470, 5, 1, clock(110, 1, 0, ring='#1d5f7a'))
+        + g(1180, 700, -4, 1, pen(300))
+    )

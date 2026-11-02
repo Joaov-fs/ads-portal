@@ -1,3 +1,4 @@
+import { newsEnem2026ProvasPortoes } from './enem-2026-provas-8-e-15-de-novembro-portoes-fecham-as-13h-e-pe-de-meia-paga-r-200';
 import { newsFeriadosNovembro2026 } from './feriados-de-novembro-de-2026-sexta-20-e-feriadao-dia-15-cai-no-domingo-e-quem-trabalha-recebe-em-dobro';
 import { newsIgpMOutubro2026Aluguel } from './igp-m-outubro-1-47-acumulado-5-24-aluguel-de-r-2-000-vai-a-r-2-104-80';
 import { newsSacDecreto13135Novembro2026 } from './sac-novas-regras-valem-desde-2-de-novembro-atendente-humano-das-8h-as-20h-e-espera-de-20-segundos';
@@ -128,4 +129,5 @@ export const newsFiles = [
   newsSacDecreto13135Novembro2026,
   newsIgpMOutubro2026Aluguel,
   newsFeriadosNovembro2026,
+  newsEnem2026ProvasPortoes,
 ] as const;

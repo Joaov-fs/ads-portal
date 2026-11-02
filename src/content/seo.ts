@@ -231,6 +231,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Bancos fecham em Finados: boleto paga em 3/11',
   'inss-biometria-e-golpe-beneficio-nao-sera-bloqueado-para-quem-ja-recebe':
     'INSS desmente bloqueio por falta de biometria',
+  'enem-2026-provas-8-e-15-de-novembro-portoes-fecham-as-13h-e-pe-de-meia-paga-r-200':
+    'Enem 2026: provas 8 e 15/11, portões fecham 13h',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */
