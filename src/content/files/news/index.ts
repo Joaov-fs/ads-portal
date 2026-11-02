@@ -1,3 +1,4 @@
+import { newsFeriadosNovembro2026 } from './feriados-de-novembro-de-2026-sexta-20-e-feriadao-dia-15-cai-no-domingo-e-quem-trabalha-recebe-em-dobro';
 import { newsIgpMOutubro2026Aluguel } from './igp-m-outubro-1-47-acumulado-5-24-aluguel-de-r-2-000-vai-a-r-2-104-80';
 import { newsSacDecreto13135Novembro2026 } from './sac-novas-regras-valem-desde-2-de-novembro-atendente-humano-das-8h-as-20h-e-espera-de-20-segundos';
 import { newsNfseNacionalSimples2026 } from './nfs-e-nacional-obrigatoria-para-empresas-do-simples-a-partir-de-1-de-novembro';
@@ -126,4 +127,5 @@ export const newsFiles = [
   newsNfseNacionalSimples2026,
   newsSacDecreto13135Novembro2026,
   newsIgpMOutubro2026Aluguel,
+  newsFeriadosNovembro2026,
 ] as const;

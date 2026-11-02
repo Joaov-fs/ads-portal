@@ -1118,3 +1118,15 @@ def _():
         + g(1270, 170, 0, 1, keys(), 'shs')
         + g(740, 130, -10, 1, tag('IGP-M 1,47%', 290, '#2b8a3e'), 'shs')
     )
+
+
+@scene('feriados-novembro-2026', '#8a5a2b', (60, 100, 760))
+def _():
+    rows = label_rows([('Finados', 'seg, 2/11'), ('Proclamação', 'dom, 15/11'), ('Consciência Negra', 'sex, 20/11'), ('Dias úteis de folga', '2')], 46, 170, 408, 64, 21, hl=(2, '#fbe9d0'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'FERIADOS NACIONAIS', '#6b4220', rows))
+        + g(700, 90, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(2, 15, 20), w=520, h=520, accent='#6b4220', mark_color='#e8590c'))
+        + g(1300, 90, 6, 1, tag('20/11', 250, '#2a7f62'))
+        + g(1400, 470, 5, 1, clock(105, 10, 10, ring='#6b4220'))
+        + g(1180, 690, -4, 1, coins_stack(3), 'sh')
+    )
