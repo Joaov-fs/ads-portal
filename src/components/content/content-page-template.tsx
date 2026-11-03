@@ -78,7 +78,7 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
   const hasLongFormContent = document.sections.length >= 4;
 
   return (
-    <main>
+    <main data-editoria={document.category}>
       <JsonLdScript data={model.mainSchema} />
       <JsonLdScript data={model.breadcrumbSchema} />
       {model.faqSchema ? <JsonLdScript data={model.faqSchema} /> : null}

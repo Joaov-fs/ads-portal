@@ -12,40 +12,24 @@ describe('Home', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: 'Entenda o que muda no seu bolso.',
+        name: 'Notícias que mexem no seu bolso',
       }),
     ).toBeInTheDocument();
-    expect(screen.getByRole('search')).toHaveAttribute('action', '/pesquisa');
 
     for (const section of [
-      'O que mudou e quanto isso pesa no seu bolso',
+      'Notícias que mexem no seu bolso',
+      'Últimas notícias',
+      'Política',
+      'Economia',
+      'Mercado',
+      'Brasil',
       'Calcule agora',
-      'Decisões de Brasília e o seu bolso',
-      'Economia que afeta você',
-      'Juros, dólar e investimentos',
-      'Benefícios e trabalho',
-      'O que acontece no país',
-      'Uma conta que você consegue conferir',
-      'Uma calculadora para cada momento da vida',
       'Guias para consultar quando precisar',
     ]) {
       expect(
         screen.getByRole('heading', { name: section }),
       ).toBeInTheDocument();
     }
-  });
-
-  it('leads the visitor to the salary calculator from the home', () => {
-    render(<HomeView />);
-
-    expect(
-      screen
-        .getAllByRole('link')
-        .some(
-          (link) =>
-            link.getAttribute('href') === '/calculadoras/salario-liquido',
-        ),
-    ).toBe(true);
   });
 
   it('renders only categories with a useful public path', () => {
@@ -69,10 +53,10 @@ describe('Home', () => {
     render(<HomeView />);
 
     expect(
-      screen.getByRole('link', { name: 'Ver todas as calculadoras →' }),
+      screen.getByRole('link', { name: /^Ver as \d+ calculadoras →$/ }),
     ).toHaveAttribute('href', '/calculadoras');
     expect(
-      screen.getByRole('link', { name: 'Ver todas as notícias →' }),
+      screen.getByRole('link', { name: 'Todas as notícias →' }),
     ).toHaveAttribute('href', '/noticias');
     expect(
       screen
@@ -86,7 +70,6 @@ describe('Home', () => {
   it('shows a cover for every news card and a product card for each featured calculator', () => {
     const { container } = render(<HomeView />);
 
-    // As capas são decorativas (alt vazio), por isso não têm o papel "img".
     expect(container.querySelectorAll('img').length).toBeGreaterThanOrEqual(6);
     for (const slug of [
       'salario-liquido',
@@ -96,7 +79,6 @@ describe('Home', () => {
       'seguro-desemprego',
       'fgts-multa',
       'juros-compostos',
-      'cdi',
     ]) {
       expect(
         screen

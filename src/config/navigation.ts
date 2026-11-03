@@ -1,12 +1,16 @@
 import type { NavigationItem } from '@/components/navigation/navigation';
 
 export const primaryNavigationItems = [
-  { href: '/categorias/financas', label: 'Finanças' },
-  { href: '/categorias/politica', label: 'Política' },
-  { href: '/categorias/economia', label: 'Economia' },
-  { href: '/categorias/mercado', label: 'Mercado' },
-  { href: '/categorias/brasil', label: 'Brasil' },
-  { href: '/categorias/beneficios', label: 'Benefícios' },
+  { editoria: 'financas', href: '/categorias/financas', label: 'Finanças' },
+  { editoria: 'politica', href: '/categorias/politica', label: 'Política' },
+  { editoria: 'economia', href: '/categorias/economia', label: 'Economia' },
+  { editoria: 'mercado', href: '/categorias/mercado', label: 'Mercado' },
+  { editoria: 'brasil', href: '/categorias/brasil', label: 'Brasil' },
+  {
+    editoria: 'beneficios',
+    href: '/categorias/beneficios',
+    label: 'Benefícios',
+  },
 ] as const satisfies readonly NavigationItem[];
 
 export const footerNavigationGroups = [

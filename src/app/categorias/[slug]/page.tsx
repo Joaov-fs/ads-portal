@@ -78,7 +78,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     .slice(0, 3);
 
   return (
-    <main>
+    <main data-editoria={category.slug}>
       <section className="border-b border-ads-border bg-ads-surface py-12 sm:py-18">
         <Container>
           <Breadcrumb
@@ -90,7 +90,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           />
           <div className="mt-9 grid max-w-3xl gap-5">
             <span className="text-ads-eyebrow font-bold uppercase tracking-[0.14em] text-ads-primary-strong">
-              Categoria
+              Editoria
             </span>
             <h1 className="text-ads-display font-bold tracking-[-0.045em] text-ads-secondary">
               {category.label}

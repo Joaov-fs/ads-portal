@@ -7,12 +7,12 @@ import { HomeView } from './home-view';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'PortalFina | Calculadoras, notícias e guias financeiros',
+    absolute: 'PortalFina | Notícias que mexem no seu bolso',
   },
   description: siteConfig.description,
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'PortalFina | Calculadoras, notícias e guias financeiros',
+    title: 'PortalFina | Notícias que mexem no seu bolso',
     description: siteConfig.description,
     url: '/',
     type: 'website',
