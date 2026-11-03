@@ -111,6 +111,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'black-friday-27-de-novembro-checklist-de-compra-segura-e-arrependimento-de-7-dias':
+    'Black Friday 27/11: como conferir o desconto',
   'feriados-de-novembro-de-2026-sexta-20-e-feriadao-dia-15-cai-no-domingo-e-quem-trabalha-recebe-em-dobro':
     'Feriados de novembro 2026: 20/11 é feriadão (sexta)',
   'igp-m-outubro-1-47-acumulado-5-24-aluguel-de-r-2-000-vai-a-r-2-104-80':

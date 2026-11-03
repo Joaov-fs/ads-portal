@@ -1142,3 +1142,15 @@ def _():
         + g(1380, 470, 5, 1, clock(110, 1, 0, ring='#1d5f7a'))
         + g(1180, 700, -4, 1, pen(300))
     )
+
+
+@scene('black-friday-2026', '#2f3b52', (50, 100, 740))
+def _():
+    rows = label_rows([('Preço anunciado', 'R$ 2.400'), ('Preço em outubro', 'R$ 2.300'), ('Diferença', '+R$ 100'), ('Arrependimento', '7 dias')], 46, 170, 408, 64, 21, hl=(2, '#fde3e0'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'CONFIRA ANTES DE COMPRAR', '#c92a2a', rows))
+        + g(700, 110, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(27,), w=520, h=520, accent='#c92a2a', mark_color='#e8590c'))
+        + g(1290, 110, 6, 1, tag('27/11', 250, '#2a7f62'))
+        + g(1330, 460, 5, 1, box(300, 230))
+        + g(1180, 700, -4, 1, pen(300))
+    )
