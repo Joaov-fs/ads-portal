@@ -3,9 +3,10 @@ import type { NewsDocument } from '../../types';
 export const newsAntecipacaoSaqueAniversarioFgts3Parcelas = {
   kind: 'news',
   slug: 'antecipacao-do-saque-aniversario-do-fgts-cai-para-3-parcelas-e-r-1-500-em-1-de-novembro',
-  title: 'FGTS: antecipação cai para 3 saques anuais amanhã, 1º de novembro',
+  title:
+    'FGTS: corte da antecipação para 3 saques anuais foi adiado para 31/03/2027',
   description:
-    'A transição da antecipação do FGTS termina em 31/10. Desde 1º/11, o limite é de três saques anuais. Entenda o teto e o valor líquido do empréstimo.',
+    'Atualização: em 29/10 o Conselho adiou o corte para três saques anuais. Até 31/03/2027 vale o limite de cinco. Entenda o teto e o valor líquido.',
   category: 'trabalho',
   coverImage: {
     src: '/images/news/fgts-antecipacao-transicao-novembro-2026.jpg',
@@ -14,7 +15,7 @@ export const newsAntecipacaoSaqueAniversarioFgts3Parcelas = {
   },
   authorId: 'thales-xavier',
   publishedAt: '2026-10-16',
-  updatedAt: '2026-10-31',
+  updatedAt: '2026-11-03',
   tags: ['fgts', 'saque-aniversario', 'antecipacao', 'emprestimo', 'trabalho'],
   featuredCalculators: ['simulador-de-emprestimo', 'fgts-multa'],
   highlights: [
@@ -36,8 +37,9 @@ export const newsAntecipacaoSaqueAniversarioFgts3Parcelas = {
   ],
   sections: [
     {
-      heading: 'Transição termina neste sábado, 31 de outubro',
+      heading: 'Atualização: o corte para três saques foi adiado',
       paragraphs: [
+        'Atualização de 03/11/2026: o Conselho Curador do FGTS aprovou em 29/10 o adiamento da redução de cinco para três saques anuais. O limite de até cinco saques vale até 31/03/2027, e a resolução ainda depende de parecer jurídico e publicação no Diário Oficial. O texto abaixo foi escrito antes dessa decisão e descreve a regra que estava prevista.',
         'A partir de domingo, 1º de novembro de 2026, novas antecipações do saque-aniversário ficam limitadas aos direitos dos próximos três saques anuais. A Resolução CCFGTS 1.130/2025 permitiu antecipar até cinco durante o período de transição que termina neste sábado.',
         'A data foi confirmada na página operacional da Caixa no portal do FGTS. É uma etapa de uma regra aprovada no ano passado, não um benefício novo. Esta matéria foi atualizada em 31 de outubro para destacar o encerramento da transição e esclarecer as condições de contratação.',
       ],

@@ -1190,3 +1190,14 @@ def _():
         + g(1310, 470, 5, 1, card(300, 190, '#2a7f62', '#1e5f48', 'CARTÃO'))
         + g(1180, 700, -4, 1, pen(300))
     )
+
+
+@scene('fgts-antecipacao-adiada-marco-2027', '#9c4f2e', (80, 110, 720))
+def _():
+    rows = label_rows([('Decisão do Conselho', '29/10'), ('Saques antecipáveis', 'até 5'), ('Valor por saque', 'R$ 100 a R$ 500'), ('Regra vale até', '31/03/2027')], 46, 170, 408, 64, 20, hl=(3, '#f6e3d8'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'FGTS: ANTECIPAÇÃO', '#8a3f20', rows))
+        + g(730, 110, 5, 1, calendar_month('MARÇO 2027', 1, 31, marks=(31,), w=450, h=500, accent='#8a3f20', mark_color='#1e7d55'))
+        + g(1280, 230, 6, 1, phone(250, 500, phone_screen('App FGTS', '5 saques', 'até 31/03/2027', '#8a3f20')))
+        + g(980, 710, 3, 1, coins_stack(3), 'sh')
+    )

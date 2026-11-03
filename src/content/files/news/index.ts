@@ -31,6 +31,7 @@ import { newsGarantiaSafraBahia2026 } from './garantia-safra-bahia-inscricao-21-
 import { newsDesenrola3EditalR90Bi } from './desenrola-3-0-edital-de-r-90-bi-em-dividas-de-ate-r-10-mil-desconto-minimo-de-90';
 import { newsIr2026Restituicoes } from './ir-2026-restituicoes-41-bilhoes-como-consultar';
 import { newsBolsaFamiliaOutubroAntecipado } from './bolsa-familia-outubro-antecipado-21-de-outubro';
+import { newsFgtsAntecipacaoCincoSaquesAdiada } from './fgts-antecipacao-cinco-saques-adiada-ate-31-de-marco-de-2027';
 import { newsAntecipacaoSaqueAniversarioFgts3Parcelas } from './antecipacao-do-saque-aniversario-do-fgts-cai-para-3-parcelas-e-r-1-500-em-1-de-novembro';
 import { newsRestituicaoLoteResidualOutubro2026 } from './restituicao-ir-lote-residual-184-mil-contribuintes-credito-em-30-de-outubro';
 import { newsFimEscala6x1SenadoAprova } from './fim-da-escala-6x1-senado-aprova-pec-veja-quando-comeca-e-o-que-muda';
@@ -138,4 +139,5 @@ export const newsFiles = [
   newsMpBetsStfAudiencia,
   newsFocus3Novembro2026Selic1350,
   newsLulaProgramasSociais4oMandato,
+  newsFgtsAntecipacaoCincoSaquesAdiada,
 ] as const;

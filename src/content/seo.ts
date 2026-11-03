@@ -168,7 +168,9 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'desenrola-3-0-edital-de-r-90-bi-em-dividas-de-ate-r-10-mil-desconto-minimo-de-90':
     'Desenrola 3.0: edital de R$ 90 bi, desconto de 90%',
   'antecipacao-do-saque-aniversario-do-fgts-cai-para-3-parcelas-e-r-1-500-em-1-de-novembro':
-    'FGTS: antecipação cai para 3 parcelas em 1º/11',
+    'FGTS: corte para 3 parcelas foi adiado',
+  'fgts-antecipacao-cinco-saques-adiada-ate-31-de-marco-de-2027':
+    'FGTS: antecipação de 5 saques vai a 31/03/2027',
   'prazo-do-simples-nacional-2027-termina-hoje-e-ibs-cbs-tem-escolha-ate-30-de-outubro':
     'Simples Nacional 2027: prazo até 15/10; IBS e CBS',
   'pacote-mei-perdao-de-r-12-6-bilhoes-pix-de-ate-r-5-mil-e-teto-de-r-110-mil':
