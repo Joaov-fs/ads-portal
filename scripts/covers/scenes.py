@@ -1154,3 +1154,15 @@ def _():
         + g(1330, 460, 5, 1, box(300, 230))
         + g(1180, 700, -4, 1, pen(300))
     )
+
+
+@scene('mp-bets-stf-audiencia-2026', '#3f6d3a', (50, 100, 740))
+def _():
+    rows = label_rows([('Medida provisória', '1.394/2026'), ('Audiência no STF', '3/11'), ('Ações contra a MP', '4'), ('Prazo no Congresso', '120 dias')], 46, 170, 408, 64, 21, hl=(1, '#dcebd8'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'MP DAS BETS', '#2c5a28', rows))
+        + g(690, 120, 4, 1, calendar_month('OUTUBRO 2026', 4, 31, marks=(5, 6, 14), w=520, h=520, accent='#2c5a28', mark_color='#c0392b'))
+        + g(1290, 120, 6, 1, tag('5/10', 250, '#c0392b'))
+        + g(1300, 470, -4, 1, banknote(300, 150))
+        + g(1230, 700, -6, 1, stamp('PROIBIDAS', 300, '#c0392b', -8))
+    )

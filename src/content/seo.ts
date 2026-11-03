@@ -235,6 +235,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'INSS desmente bloqueio por falta de biometria',
   'enem-2026-provas-8-e-15-de-novembro-portoes-fecham-as-13h-e-pe-de-meia-paga-r-200':
     'Enem 2026: provas 8 e 15/11, portões fecham 13h',
+  'mp-das-bets-stf-audiencia-3-de-novembro-saldo-devolvido-ate-14-de-outubro':
+    'MP das bets: STF ouve setor e governo em 3/11',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */

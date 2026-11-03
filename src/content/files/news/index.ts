@@ -66,6 +66,7 @@ import { newsAbonoSalarialLoteComplementar2026 } from './abono-salarial-lote-com
 import { newsAposentadoriaAgentesSaudeEc140 } from './aposentadoria-especial-de-agentes-de-saude-ec-140-idade-minima-de-57-e-60-anos';
 import { newsGasolinaAnpSegundaSemanaSemTributos } from './gasolina-cai-a-r-6-49-na-2a-semana-sem-tributos-federais-etanol-a-r-4-11';
 
+import { newsMpBetsStfAudiencia } from './mp-das-bets-stf-audiencia-3-de-novembro-saldo-devolvido-ate-14-de-outubro';
 export const newsFiles = [
   newsFiesRemanescentes2026,
   newsPnadDesemprego3Trimestre2026,
@@ -132,4 +133,5 @@ export const newsFiles = [
   newsFeriadosNovembro2026,
   newsEnem2026ProvasPortoes,
   newsBlackFriday27Novembro2026,
+  newsMpBetsStfAudiencia,
 ] as const;
