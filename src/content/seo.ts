@@ -5,6 +5,22 @@ import type { ContentDocument } from './types';
  * antes do sufixo da marca). O título completo continua sendo o H1 da página.
  */
 export const metaTitles: Readonly<Record<string, string>> = {
+  // Calculadoras e guias com demanda no Search Console (out/2026)
+  inss: 'Calculadora INSS 2026: desconto por faixa',
+  'prazo-prorrogacao-auxilio-inss':
+    'Prazo de prorrogação do auxílio-doença: calcule',
+  'bolsa-familia': 'Calculadora Bolsa Família 2026: quanto recebo',
+  'tesouro-selic': 'Simulador Tesouro Selic: quanto seu dinheiro rende',
+  'pensao-alimenticia': 'Calculadora de pensão alimentícia: % e valor',
+  'plr-ppr-liquido': 'Calculadora PLR/PPR líquida: quanto sobra após IR',
+  'decimo-proporcional': 'Calculadora de 13º proporcional: quanto recebo',
+  cdi: 'Calculadora CDI: simule % do CDI e o rendimento',
+  pis: 'Calculadora PIS/Pasep: valor do abono salarial',
+  'ferias-proporcionais': 'Calculadora de férias proporcionais com 1/3',
+  'cdb-lci-lca-ou-tesouro-selic-qual-escolher':
+    'CDB, LCI, LCA ou Tesouro Selic: qual rende mais?',
+  'abono-salarial-pis-pasep-quem-tem-direito':
+    'Abono salarial PIS/Pasep 2026: quem tem direito',
   'garantia-safra-bahia-inscricao-21-outubro-2026':
     'Garantia-Safra Bahia: inscrição termina em 21/10',
   'ir-2026-restituicoes-41-bilhoes-como-consultar':

@@ -5,7 +5,7 @@ export const guideCdbLciLcaOuTesouroSelicQualEscolher = {
   slug: 'cdb-lci-lca-ou-tesouro-selic-qual-escolher',
   title: 'CDB, LCI, LCA ou Tesouro Selic: como comparar e escolher',
   description:
-    'Aprenda a comparar investimentos de renda fixa pelo que realmente sobra no bolso, com a tabela regressiva do Imposto de Renda e exemplos.',
+    'Compare CDB, LCI, LCA e Tesouro Selic pelo que realmente sobra no bolso, com a tabela regressiva do Imposto de Renda e exemplos.',
   category: 'financas',
   authorId: 'equipe-editorial',
   publishedAt: '2026-09-29',
