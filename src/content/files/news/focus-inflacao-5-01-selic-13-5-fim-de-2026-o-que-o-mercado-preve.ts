@@ -7,7 +7,7 @@ export const newsFocusInflacao501Selic135 = {
     'Focus: mercado prevê inflação de 5,01% em 2026 e Selic de 13,5% no fim do ano',
   description:
     'O boletim Focus de 5 de outubro elevou a projeção do IPCA de 2026 para 5,01%. Veja o que isso significa para CDB, poupança e dívidas, com conta em reais.',
-  category: 'economia',
+  category: 'mercado',
   coverImage: {
     src: '/images/news/focus-inflacao-5-01-selic-13-5-fim-de-2026-o-que-o-mercado-preve.jpg',
     alt: 'Relatório do boletim Focus com as projeções, cesta de compras e etiqueta de preço com 5,01%.',

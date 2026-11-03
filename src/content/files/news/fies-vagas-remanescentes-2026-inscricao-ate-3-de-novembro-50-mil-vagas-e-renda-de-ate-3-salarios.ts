@@ -7,7 +7,7 @@ export const newsFiesRemanescentes2026 = {
     'Fies: 50 mil vagas remanescentes com inscrição até 3 de novembro e renda de até 3 salários por pessoa',
   description:
     'O MEC abriu 50 mil vagas remanescentes do Fies, com inscrição gratuita até 3/11. Veja quem pode se inscrever, a regra de renda em reais e as datas até 30/11.',
-  category: 'financas',
+  category: 'brasil',
   coverImage: {
     src: '/images/news/fies-vagas-remanescentes-2026-inscricao-ate-3-de-novembro-50-mil-vagas-e-renda-de-ate-3-salarios.jpg',
     alt: 'Calendário de novembro com o dia 3 marcado, documento com as datas do Fies, celular mostrando 50 mil vagas e etiqueta com o prazo de 3/11.',

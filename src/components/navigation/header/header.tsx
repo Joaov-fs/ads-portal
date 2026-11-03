@@ -57,7 +57,7 @@ export function Header({ items = primaryNavigationItems }: HeaderProps) {
           </form>
 
           <Link
-            className="hidden rounded-ads-full bg-ads-primary px-5 py-2.5 text-sm font-bold text-white shadow-ads-subtle transition hover:bg-ads-primary-strong sm:inline-flex"
+            className="hidden whitespace-nowrap rounded-ads-full bg-ads-primary px-5 py-2.5 text-sm font-bold text-white shadow-ads-subtle transition hover:bg-ads-primary-strong sm:inline-flex"
             href="/calculadoras"
           >
             Calcular agora

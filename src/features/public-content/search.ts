@@ -14,15 +14,13 @@ function normalize(value: string) {
 }
 
 const searchableContent: readonly SearchResult[] = [
-  ...categories
-    .filter((category) => category.slug !== 'politica')
-    .map((category) => ({
-      type: 'categoria' as const,
-      title: category.label,
-      description: category.description,
-      category: 'Categoria',
-      href: `/categorias/${category.slug}`,
-    })),
+  ...categories.map((category) => ({
+    type: 'categoria' as const,
+    title: category.label,
+    description: category.description,
+    category: 'Categoria',
+    href: `/categorias/${category.slug}`,
+  })),
   ...popularTools.map((tool) => ({
     type: 'ferramenta' as const,
     title: tool.title,

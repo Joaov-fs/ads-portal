@@ -2,8 +2,11 @@ export type ContentKind = 'calculator' | 'guide' | 'news';
 
 export type ContentCategory =
   | 'beneficios'
+  | 'brasil'
   | 'economia'
   | 'financas'
+  | 'mercado'
+  | 'politica'
   | 'trabalho'
   | 'utilidades';
 

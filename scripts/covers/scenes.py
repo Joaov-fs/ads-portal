@@ -1166,3 +1166,27 @@ def _():
         + g(1300, 470, -4, 1, banknote(300, 150))
         + g(1230, 700, -6, 1, stamp('PROIBIDAS', 300, '#c0392b', -8))
     )
+
+
+@scene('focus-3-novembro-2026', '#24465c', (50, 100, 740))
+def _():
+    rows = label_rows([('Selic fim de 2026', '13,50%'), ('Semana anterior', '13,25%'), ('IPCA 2026', '5,22%'), ('Dólar fim de 2026', 'R$ 5,34')], 46, 170, 408, 64, 21, hl=(0, '#dde8f0'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'BOLETIM FOCUS 3/11', '#1b3a4f', rows))
+        + g(690, 120, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(3, 4), w=520, h=520, accent='#1b3a4f', mark_color='#e8590c'))
+        + g(1270, 110, 6, 1, tag('13,50%', 260, '#e8590c'))
+        + g(1300, 470, 5, 1, banknote(300, 150))
+        + g(1180, 700, -4, 1, pen(300))
+    )
+
+
+@scene('lula-programas-sociais-2027', '#5b4a8a', (50, 100, 740))
+def _():
+    rows = label_rows([('Mandato', '2027 a 2030'), ('Bolsa Família mínimo', 'R$ 691'), ('Próximo pagamento', '16/11'), ('Gás do Povo', 'todo dia 10')], 46, 170, 408, 64, 21, hl=(1, '#e6e0f3'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'PROGRAMAS SOCIAIS', '#45366f', rows))
+        + g(690, 120, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(10, 16, 17, 18), w=520, h=520, accent='#45366f', mark_color='#e8590c'))
+        + g(1290, 120, 6, 1, tag('R$ 691', 250, '#2a7f62'))
+        + g(1310, 470, 5, 1, card(300, 190, '#2a7f62', '#1e5f48', 'CARTÃO'))
+        + g(1180, 700, -4, 1, pen(300))
+    )

@@ -65,6 +65,7 @@ const date = (name: string, label: string, hint?: string): CalculatorField => ({
 });
 
 const sourcesByCategory = {
+  brasil: { label: 'Portal Gov.br', url: 'https://www.gov.br/' },
   beneficios: {
     label: 'Portal Gov.br: Benefícios',
     url: 'https://www.gov.br/pt-br/servicos/solicitar-beneficios-assistenciais',
@@ -76,6 +77,14 @@ const sourcesByCategory = {
   financas: {
     label: 'Banco Central do Brasil: Cidadania Financeira',
     url: 'https://www.bcb.gov.br/cidadaniafinanceira',
+  },
+  mercado: {
+    label: 'Banco Central do Brasil',
+    url: 'https://www.bcb.gov.br/',
+  },
+  politica: {
+    label: 'Congresso Nacional',
+    url: 'https://www.congressonacional.leg.br/',
   },
   trabalho: {
     label: 'Ministério do Trabalho e Emprego',

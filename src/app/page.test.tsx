@@ -20,8 +20,11 @@ describe('Home', () => {
     for (const section of [
       'O que mudou e quanto isso pesa no seu bolso',
       'Calcule agora',
+      'Decisões de Brasília e o seu bolso',
       'Economia que afeta você',
+      'Juros, dólar e investimentos',
       'Benefícios e trabalho',
+      'O que acontece no país',
       'Uma conta que você consegue conferir',
       'Uma calculadora para cada momento da vida',
       'Guias para consultar quando precisar',
@@ -48,9 +51,7 @@ describe('Home', () => {
   it('renders only categories with a useful public path', () => {
     render(<HomeView />);
 
-    for (const category of categories.filter(
-      (item) => item.slug !== 'politica',
-    )) {
+    for (const category of categories) {
       expect(
         screen
           .getAllByRole('link', { name: new RegExp(category.label) })

@@ -6,7 +6,7 @@ export const newsSalarioMinimo2027Orcamento = {
   title: 'Salário mínimo de 2027: Orçamento prevê R$ 1.741. Veja o que muda',
   description:
     'O projeto de Orçamento de 2027 prevê salário mínimo de R$ 1.741, alta de R$ 120. Veja o efeito em benefícios, INSS de autônomo, MEI e BPC, se o valor se confirmar.',
-  category: 'economia',
+  category: 'politica',
   coverImage: {
     src: '/images/news/salario-minimo-2027-orcamento-preve-r-1-741-veja-o-que-muda.jpg',
     alt: 'Documento do Orçamento 2027 com o salário mínimo de R$ 1.741, notas e calculadora.',

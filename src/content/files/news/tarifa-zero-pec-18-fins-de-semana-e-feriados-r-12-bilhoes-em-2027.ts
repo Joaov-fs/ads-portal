@@ -7,7 +7,7 @@ export const newsTarifaZeroPec18 = {
     'PEC da tarifa zero: ônibus grátis aos sábados, domingos e feriados custaria R$ 12 bi em 2027',
   description:
     'O governo enviou ao Congresso a PEC 18/26, que usa 26,8% das emendas impositivas para bancar a tarifa zero em fins de semana e feriados. Veja o que muda e o que falta.',
-  category: 'economia',
+  category: 'politica',
   coverImage: {
     src: '/images/news/tarifa-zero-pec-18-fins-de-semana-e-feriados-r-12-bilhoes-em-2027.jpg',
     alt: 'Documento com os números da PEC da tarifa zero, ônibus com a tarifa R$ 0,00, etiqueta de R$ 12 bi e celular com a passagem zerada.',

@@ -44,7 +44,7 @@ export const newsSlugDaNoticia = {
   title: 'Título com o fato e o número principal', // até ~110 caracteres
   description:
     'Uma frase de 120 a 160 caracteres com o que mudou e o efeito prático.',
-  category: 'trabalho', // beneficios | economia | financas | trabalho | utilidades
+  category: 'trabalho', // financas | politica | economia | mercado | brasil | beneficios | trabalho | utilidades
   coverImage: {
     src: '/images/news/slug-curto-com-palavras-chave.jpg',
     alt: 'O que a imagem mostra, em uma frase.',

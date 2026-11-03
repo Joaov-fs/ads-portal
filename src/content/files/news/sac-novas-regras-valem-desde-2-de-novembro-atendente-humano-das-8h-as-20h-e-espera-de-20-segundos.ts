@@ -7,7 +7,7 @@ export const newsSacDecreto13135Novembro2026 = {
     'SAC: novas regras valem desde 2 de novembro, com atendente humano das 8h às 20h e espera de até 20 segundos',
   description:
     'O Decreto 13.135 muda o SAC a partir de 2/11: pessoa de verdade das 8h às 20h, cancelamento fácil e resposta em até 7 dias. Veja o que a empresa não pode mais fazer.',
-  category: 'utilidades',
+  category: 'brasil',
   coverImage: {
     src: '/images/news/sac-novas-regras-valem-desde-2-de-novembro-atendente-humano-das-8h-as-20h-e-espera-de-20-segundos.jpg',
     alt: 'Documento com as regras do novo decreto do SAC, relógio marcando 8 horas, etiquetas com 2/11 e 7 dias e celular com a tela de cancelar contrato.',

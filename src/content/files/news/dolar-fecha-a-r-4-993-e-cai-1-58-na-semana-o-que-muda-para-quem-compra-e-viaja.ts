@@ -7,7 +7,7 @@ export const newsDolarFechaAbaixoDeR5 = {
     'Dólar fecha a R$ 4,993 e cai 1,58% na semana: o que muda para quem compra e viaja',
   description:
     'O dólar comercial terminou a sexta-feira (23) abaixo de R$ 5, com queda de 0,92% no dia. Veja a conta em reais para compras no exterior e o que pesa nos preços.',
-  category: 'economia',
+  category: 'mercado',
   coverImage: {
     src: '/images/news/dolar-fecha-a-r-4-993-e-cai-1-58-na-semana-o-que-muda-para-quem-compra-e-viaja.jpg',
     alt: 'Documento com a cotação do dólar, nota de US$, calculadora com 4,993 e etiqueta de queda de 1,58%.',

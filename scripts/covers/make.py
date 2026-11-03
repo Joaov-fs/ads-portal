@@ -41,7 +41,7 @@ def page(bg, body, vb=f'0 0 {W} {H}'):
 
 def chromium_path():
     base = os.environ.get('PLAYWRIGHT_BROWSERS_PATH', '/opt/pw-browsers')
-    found = sorted(glob.glob(f'{base}/chromium-*/chrome-linux/chrome'))
+    found = sorted(glob.glob(f'{base}/chromium-*/chrome-linux*/chrome'))
     return found[-1] if found else None
 
 

@@ -17,6 +17,16 @@ export const coverThemes: Readonly<Record<ContentCategory, CoverTheme>> = {
     ],
     to: '#0a7a5c',
   },
+  brasil: {
+    accent: '#a8e3d0',
+    from: '#14343a',
+    icon: [
+      'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z',
+      'M3.6 9h16.8M3.6 15h16.8',
+      'M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3Z',
+    ],
+    to: '#2a6b62',
+  },
   economia: {
     accent: '#9ee0f0',
     from: '#12303f',
@@ -32,6 +42,23 @@ export const coverThemes: Readonly<Record<ContentCategory, CoverTheme>> = {
       'M9.6 9.7c0-1 1-1.6 2.4-1.6s2.4.7 2.4 1.8-1 1.5-2.4 1.7-2.4.7-2.4 1.8 1 1.7 2.4 1.7 2.4-.6 2.4-1.6',
     ],
     to: '#08785a',
+  },
+  mercado: {
+    accent: '#9fdcc8',
+    from: '#102b30',
+    icon: ['M4 20V10', 'M10 20V4', 'M16 20v-7', 'M22 20H2'],
+    to: '#155f5b',
+  },
+  politica: {
+    accent: '#c3e8dc',
+    from: '#1a3236',
+    icon: [
+      'M3 21h18',
+      'M4 10h16',
+      'M12 3 3 8v2h18V8l-9-5Z',
+      'M6 10v8M10 10v8M14 10v8M18 10v8',
+    ],
+    to: '#3a6560',
   },
   trabalho: {
     accent: '#72d4b2',

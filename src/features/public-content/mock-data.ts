@@ -6,7 +6,36 @@ export const categories = [
     slug: 'financas',
     label: 'Finanças',
     icon: '↗',
-    description: 'Organize seu dinheiro, compare opções e planeje objetivos.',
+    description:
+      'Organize seu dinheiro, compare opções e planeje objetivos com guias e calculadoras.',
+  },
+  {
+    slug: 'politica',
+    label: 'Política',
+    icon: '§',
+    description:
+      'Decisões do Congresso, do governo e do STF e o que cada uma muda na sua vida.',
+  },
+  {
+    slug: 'economia',
+    label: 'Economia',
+    icon: '%',
+    description:
+      'Inflação, emprego, impostos e preços: a ponte entre as decisões públicas e o seu bolso.',
+  },
+  {
+    slug: 'mercado',
+    label: 'Mercado',
+    icon: '◆',
+    description:
+      'Bolsa, dólar, Petrobras, juros e investimentos explicados para quem investe e para quem deve.',
+  },
+  {
+    slug: 'brasil',
+    label: 'Brasil',
+    icon: '◎',
+    description:
+      'Notícias nacionais de grande interesse público: prazos, calendários, consumo e serviços.',
   },
   {
     slug: 'trabalho',
@@ -19,18 +48,6 @@ export const categories = [
     label: 'Benefícios',
     icon: '＋',
     description: 'Consulte regras e simule benefícios sociais.',
-  },
-  {
-    slug: 'economia',
-    label: 'Economia',
-    icon: '%',
-    description: 'Acompanhe indicadores e decisões que afetam seu bolso.',
-  },
-  {
-    slug: 'politica',
-    label: 'Política',
-    icon: '§',
-    description: 'Veja medidas públicas explicadas de forma objetiva.',
   },
   {
     slug: 'guias',

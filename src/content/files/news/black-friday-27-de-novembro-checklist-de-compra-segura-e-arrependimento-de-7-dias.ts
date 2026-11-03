@@ -7,7 +7,7 @@ export const newsBlackFriday27Novembro2026 = {
     'Black Friday é em 27 de novembro: o que fazer antes de comprar e o prazo de 7 dias para desistir',
   description:
     'A Black Friday 2026 cai em 27/11, e as novas regras do SAC já valem. Veja como conferir se o desconto é real, o direito de arrependimento e como evitar golpes.',
-  category: 'utilidades',
+  category: 'brasil',
   coverImage: {
     src: '/images/news/black-friday-27-de-novembro-checklist-de-compra-segura-e-arrependimento-de-7-dias.jpg',
     alt: 'Lista de conferência com preço anunciado de R$ 2.400, preço de outubro de R$ 2.300 e arrependimento de 7 dias, ao lado do calendário de novembro de 2026 com o dia 27 marcado e uma caixa de entrega.',

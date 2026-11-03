@@ -7,7 +7,7 @@ export const newsCopom4DeNovembroSelic1375 = {
     'Copom decide a Selic em 4 de novembro: Focus prevê 13,25% no fim de 2026',
   description:
     'O Copom se reúne em 3 e 4 de novembro com a Selic em 13,75%. Veja o que o Focus espera e quanto cada 0,25 ponto muda no CDB e na dívida, em reais.',
-  category: 'economia',
+  category: 'mercado',
   coverImage: {
     src: '/images/news/copom-4-de-novembro-selic-13-75-focus-preve-13-25-no-fim-de-2026.jpg',
     alt: 'Calendário de novembro com os dias 3 e 4 marcados, medidor da Selic em 13,75% e ficha com as datas do Copom.',

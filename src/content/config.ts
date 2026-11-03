@@ -38,8 +38,11 @@ export const contentKindConfig = {
 
 export const contentCategoryLabels = {
   beneficios: 'Benefícios',
+  brasil: 'Brasil',
   economia: 'Economia',
   financas: 'Finanças',
+  mercado: 'Mercado',
+  politica: 'Política',
   trabalho: 'Trabalho',
   utilidades: 'Utilidades',
 } as const satisfies Record<ContentCategory, string>;

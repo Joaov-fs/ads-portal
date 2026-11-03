@@ -4,6 +4,8 @@ export type CategorySlug =
   | 'beneficios'
   | 'economia'
   | 'politica'
+  | 'mercado'
+  | 'brasil'
   | 'guias'
   | 'utilidades';
 

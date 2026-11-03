@@ -7,7 +7,7 @@ export const newsAposentadoriaAgentesSaudeEc140 = {
     'Aposentadoria especial de agentes de saúde: EC 140 fixa 57 anos para mulheres e 60 para homens',
   description:
     'Emenda promulgada em 16/10 cria aposentadoria diferenciada para agentes comunitários de saúde e de endemias, com 25 anos de atividade. Veja as regras.',
-  category: 'trabalho',
+  category: 'politica',
   coverImage: {
     src: '/images/news/aposentadoria-especial-de-agentes-de-saude-ec-140-idade-minima-de-57-e-60-anos.jpg',
     alt: 'Documento da Emenda 140/2026 com idades de 57 e 60 anos, calendário de outubro com o dia 16 marcado e celular com a regra.',

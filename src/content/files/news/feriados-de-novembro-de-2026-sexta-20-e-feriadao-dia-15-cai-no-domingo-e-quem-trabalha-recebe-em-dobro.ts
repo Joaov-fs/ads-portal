@@ -7,7 +7,7 @@ export const newsFeriadosNovembro2026 = {
     'Feriados de novembro de 2026: sexta 20/11 é feriadão, dia 15 cai no domingo e quem trabalha recebe em dobro',
   description:
     'Novembro tem três feriados: Finados (2/11), Proclamação no domingo (15/11) e Consciência Negra na sexta (20/11). Veja o que muda no salário e nos boletos.',
-  category: 'trabalho',
+  category: 'brasil',
   coverImage: {
     src: '/images/news/feriados-de-novembro-de-2026-sexta-20-e-feriadao-dia-15-cai-no-domingo-e-quem-trabalha-recebe-em-dobro.jpg',
     alt: 'Calendário de novembro de 2026 com os dias 2, 15 e 20 marcados, lista dos feriados nacionais, etiqueta 20/11 e relógio.',

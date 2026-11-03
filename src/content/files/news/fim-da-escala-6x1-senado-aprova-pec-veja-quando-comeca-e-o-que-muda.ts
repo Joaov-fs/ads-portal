@@ -7,7 +7,7 @@ export const newsFimEscala6x1SenadoAprova = {
     'Fim da escala 6x1: emenda promulgada prevê 42 horas na primeira etapa; veja o que muda',
   description:
     'EC 141/2026 já foi promulgada. Senado aponta início da jornada de 42 horas em 15 de dezembro, com duas folgas e transição para 40 horas.',
-  category: 'trabalho',
+  category: 'politica',
   authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-10-15',
   updatedAt: '2026-10-20',

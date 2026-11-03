@@ -7,7 +7,7 @@ export const newsEnem2026ProvasPortoes = {
     'Enem 2026: provas em 8 e 15 de novembro, portões fecham às 13h e Pé-de-Meia paga R$ 200 a concluintes',
   description:
     'O Enem 2026 será aplicado em 8 e 15/11, com portões fechando às 13h. Veja horários, documentos aceitos, o que levar e o extra de R$ 200 do Pé-de-Meia.',
-  category: 'utilidades',
+  category: 'brasil',
   coverImage: {
     src: '/images/news/enem-2026-provas-8-e-15-de-novembro-portoes-fecham-as-13h-e-pe-de-meia-paga-r-200.jpg',
     alt: 'Calendário de novembro de 2026 com os dias 8 e 15 marcados, ao lado de um documento do Enem com horários, um despertador marcando 13h, uma etiqueta de R$ 200 e uma caneta.',

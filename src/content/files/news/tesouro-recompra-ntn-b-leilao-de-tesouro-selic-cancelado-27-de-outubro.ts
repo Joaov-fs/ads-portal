@@ -7,7 +7,7 @@ export const newsTesouroRecompraNtnB27Outubro2026 = {
     'Tesouro recompra NTN-B e cancela leilão de Tesouro Selic: o que muda para quem investe',
   description:
     'O Tesouro recomprou mais de R$ 14,8 bi em 26/10, anunciou nova recompra de NTN-B e cancelou o leilão de LFT. Veja o efeito no seu Tesouro Direto.',
-  category: 'financas',
+  category: 'mercado',
   coverImage: {
     src: '/images/news/tesouro-recompra-ntn-b-leilao-de-tesouro-selic-cancelado-27-de-outubro.jpg',
     alt: 'Documento do Tesouro Nacional com recompra de R$ 14,8 bi, carimbo de leilão cancelado, celular com Selic a 13,75% e moedas.',

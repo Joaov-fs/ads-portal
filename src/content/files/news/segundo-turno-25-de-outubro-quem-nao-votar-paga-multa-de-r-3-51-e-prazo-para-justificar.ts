@@ -7,7 +7,7 @@ export const newsSegundoTurno2026MultaJustificativa = {
     'Segundo turno em 25 de outubro: quem não votar paga multa de R$ 3,51 e tem até 8 de janeiro para justificar',
   description:
     'Votação vai das 8h às 17h de domingo. Quem faltar pode justificar no e-Título; sem justificar nem pagar, ficam travados passaporte, identidade e posse em concurso.',
-  category: 'utilidades',
+  category: 'politica',
   coverImage: {
     src: '/images/news/segundo-turno-25-de-outubro-quem-nao-votar-paga-multa-de-r-3-51-e-prazo-para-justificar.jpg',
     alt: 'Urna eletrônica, título de eleitor, calendário com o dia 25 de outubro, celular com a opção de justificar ausência e etiqueta com R$ 3,51.',

@@ -7,7 +7,7 @@ export const newsMpBetsStfAudiencia = {
     'MP das bets no STF: audiência de 3 de novembro discute a proibição e o saldo já devolvido aos apostadores',
   description:
     'O STF fez audiência pública sobre a MP 1.394/2026, que proibiu as bets. Veja o que já mudou, o que ainda depende do Congresso e o que fazer se seu saldo não voltou.',
-  category: 'financas',
+  category: 'politica',
   coverImage: {
     src: '/images/news/mp-das-bets-stf-audiencia-3-de-novembro-saldo-devolvido-ate-14-de-outubro.jpg',
     alt: 'Documento com os números da MP das bets, calendário de outubro com os dias 5, 6 e 14 marcados, etiqueta 5/10, nota de dinheiro e carimbo de proibidas.',

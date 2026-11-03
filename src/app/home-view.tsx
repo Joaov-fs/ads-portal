@@ -1,3 +1,4 @@
+import type { ComponentProps } from 'react';
 import Link from 'next/link';
 
 import { AdSlot } from '@/components/advertising/ad-slot';
@@ -173,6 +174,58 @@ const storySteps = [
   },
 ] as const;
 
+function TopicSection({
+  background,
+  eyebrow,
+  id,
+  intro,
+  items,
+  moreLabel,
+  title,
+}: Readonly<{
+  background: 'white' | 'muted';
+  eyebrow: string;
+  id: string;
+  intro: string;
+  items: ComponentProps<typeof TopicStories>['items'];
+  moreLabel: string;
+  title: string;
+}>) {
+  if (items.length === 0) {
+    return null;
+  }
+
+  return (
+    <section
+      aria-labelledby={`${id}-title`}
+      className={`${background === 'white' ? 'bg-white' : 'bg-ads-background'} py-16 sm:py-24`}
+      id={id}
+    >
+      <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+        <div className="grid content-start gap-4 lg:sticky lg:top-28 lg:self-start">
+          <Reveal>
+            <span className="inline-flex w-fit items-center gap-2 text-ads-eyebrow font-bold uppercase tracking-[0.16em] text-ads-primary-strong">
+              {eyebrow}
+            </span>
+            <h2
+              className="mt-3 font-ads-display text-ads-title font-extrabold tracking-tight text-ads-secondary"
+              id={`${id}-title`}
+            >
+              {title}
+            </h2>
+            <p className="mt-3 leading-7 text-ads-muted">{intro}</p>
+          </Reveal>
+        </div>
+        <TopicStories
+          items={items}
+          moreHref={`/categorias/${id}`}
+          moreLabel={moreLabel}
+        />
+      </Container>
+    </section>
+  );
+}
+
 export function HomeView({
   marketIndicators = indicators,
 }: Readonly<{ marketIndicators?: readonly Indicator[] }>) {
@@ -180,11 +233,12 @@ export function HomeView({
   const secondaryNews = otherNews.slice(0, 2);
   const compactNews = otherNews.slice(2, 5);
   const restNews = otherNews.slice(5);
-  const economyNews = restNews
-    .filter(
-      (news) => news.category === 'economia' || news.category === 'financas',
-    )
-    .slice(0, 3);
+  const byCategory = (...slugs: readonly string[]) =>
+    restNews.filter((news) => slugs.includes(news.category)).slice(0, 3);
+  const politicsNews = byCategory('politica');
+  const economyNews = byCategory('economia', 'financas');
+  const marketNews = byCategory('mercado');
+  const brazilNews = byCategory('brasil');
   const benefitsNews = restNews
     .filter(
       (news) => news.category === 'beneficios' || news.category === 'trabalho',
@@ -480,6 +534,16 @@ export function HomeView({
         </Container>
       </section>
 
+      <TopicSection
+        background="muted"
+        eyebrow="Política"
+        id="politica"
+        intro="Votações no Congresso, medidas do governo e decisões do STF, com o que cada uma muda no salário, nos impostos e nos benefícios."
+        items={politicsNews}
+        moreLabel="Mais sobre política"
+        title="Decisões de Brasília e o seu bolso"
+      />
+
       {economyNews.length > 0 ? (
         <section
           aria-labelledby="economia-title"
@@ -512,6 +576,16 @@ export function HomeView({
           </Container>
         </section>
       ) : null}
+
+      <TopicSection
+        background="muted"
+        eyebrow="Mercado"
+        id="mercado"
+        intro="Bolsa, dólar, Petrobras, juros e Tesouro Direto, explicados para quem investe e para quem tem dívida."
+        items={marketNews}
+        moreLabel="Mais sobre mercado"
+        title="Juros, dólar e investimentos"
+      />
 
       <section
         aria-labelledby="impostometro-title"
@@ -622,6 +696,16 @@ export function HomeView({
           </Container>
         </section>
       ) : null}
+
+      <TopicSection
+        background="white"
+        eyebrow="Brasil"
+        id="brasil"
+        intro="Prazos, calendários, consumo e serviços públicos que valem para o país inteiro."
+        items={brazilNews}
+        moreLabel="Mais notícias do Brasil"
+        title="O que acontece no país"
+      />
 
       <Container>
         <AdSlot
@@ -910,20 +994,18 @@ export function HomeView({
               Explore por tema
             </h2>
             <div className="flex flex-wrap gap-3">
-              {categories
-                .filter((category) => category.slug !== 'politica')
-                .map((category) => (
-                  <Link
-                    className="group flex items-center gap-3 rounded-ads-full border border-ads-border bg-white py-2.5 pl-3 pr-5 text-sm font-semibold text-ads-secondary transition hover:border-ads-primary hover:bg-ads-primary-soft"
-                    href={`/categorias/${category.slug}`}
-                    key={category.slug}
-                  >
-                    <span className="grid size-8 place-items-center rounded-full bg-ads-primary-soft text-ads-primary-strong transition group-hover:bg-ads-primary group-hover:text-white">
-                      {category.icon}
-                    </span>
-                    {category.label}
-                  </Link>
-                ))}
+              {categories.map((category) => (
+                <Link
+                  className="group flex items-center gap-3 rounded-ads-full border border-ads-border bg-white py-2.5 pl-3 pr-5 text-sm font-semibold text-ads-secondary transition hover:border-ads-primary hover:bg-ads-primary-soft"
+                  href={`/categorias/${category.slug}`}
+                  key={category.slug}
+                >
+                  <span className="grid size-8 place-items-center rounded-full bg-ads-primary-soft text-ads-primary-strong transition group-hover:bg-ads-primary group-hover:text-white">
+                    {category.icon}
+                  </span>
+                  {category.label}
+                </Link>
+              ))}
             </div>
           </Reveal>
         </Container>

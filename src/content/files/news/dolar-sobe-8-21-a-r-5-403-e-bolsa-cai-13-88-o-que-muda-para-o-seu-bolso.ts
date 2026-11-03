@@ -7,7 +7,7 @@ export const newsDolarBolsa26Outubro2026 = {
     'Dólar sobe 8,21% a R$ 5,403 e bolsa cai 13,88%: o que muda para o seu bolso',
   description:
     'Na segunda-feira (26), o dólar fechou a R$ 5,403 e o Ibovespa caiu 13,88%. Veja a conta em reais para compras, viagens e investimentos.',
-  category: 'economia',
+  category: 'mercado',
   coverImage: {
     src: '/images/news/dolar-sobe-8-21-a-r-5-403-e-bolsa-cai-13-88-o-que-muda-para-o-seu-bolso.jpg',
     alt: 'Documento com dólar a R$ 5,403, alta de 8,21%, Ibovespa em 176.608 pontos e etiqueta de queda de 13,88%.',

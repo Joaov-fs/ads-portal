@@ -1,3 +1,5 @@
+import { newsFocus3Novembro2026Selic1350 } from './focus-3-novembro-selic-13-50-fim-de-2026-dolar-r-5-34-copom-decide-dia-4';
+import { newsLulaProgramasSociais4oMandato } from './lula-garante-programas-sociais-no-4o-mandato-bolsa-familia-paga-r-691-e-novembro-comeca-dia-16';
 import { newsEnem2026ProvasPortoes } from './enem-2026-provas-8-e-15-de-novembro-portoes-fecham-as-13h-e-pe-de-meia-paga-r-200';
 import { newsBlackFriday27Novembro2026 } from './black-friday-27-de-novembro-checklist-de-compra-segura-e-arrependimento-de-7-dias';
 import { newsFeriadosNovembro2026 } from './feriados-de-novembro-de-2026-sexta-20-e-feriadao-dia-15-cai-no-domingo-e-quem-trabalha-recebe-em-dobro';
@@ -134,4 +136,6 @@ export const newsFiles = [
   newsEnem2026ProvasPortoes,
   newsBlackFriday27Novembro2026,
   newsMpBetsStfAudiencia,
+  newsFocus3Novembro2026Selic1350,
+  newsLulaProgramasSociais4oMandato,
 ] as const;

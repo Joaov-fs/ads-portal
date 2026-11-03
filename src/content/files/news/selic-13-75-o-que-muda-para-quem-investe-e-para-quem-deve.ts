@@ -6,7 +6,7 @@ export const newsSelic1375OQueMudaParaQuemInvesteEParaQuemDeve = {
   title: 'Selic cai para 13,75%: o que muda para quem investe e para quem deve',
   description:
     'Com o corte de 17 de setembro, a taxa básica chegou a 13,75% ao ano. Veja o efeito em CDB, poupança, financiamentos e dívidas, com exemplos em reais.',
-  category: 'economia',
+  category: 'mercado',
   coverImage: {
     src: '/images/news/selic-13-75-o-que-muda-para-quem-investe-e-para-quem-deve.jpg',
     alt: 'Medidor apontando 13,75%, gráfico da Selic em queda e celular com investimentos.',

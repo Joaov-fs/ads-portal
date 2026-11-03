@@ -7,7 +7,7 @@ export const newsBancosFinados2Novembro2026 = {
     'Bancos fecham no feriado de Finados, 2 de novembro: boletos podem ser pagos em 3/11 sem multa',
   description:
     'Agências não abrem na segunda, 2/11. Veja o que vale para boletos, contas de consumo, tributos, TED e Pix, e como evitar atraso e multa no feriado.',
-  category: 'financas',
+  category: 'brasil',
   coverImage: {
     src: '/images/news/bancos-fecham-no-feriado-de-finados-2-de-novembro-boletos-pagam-3-de-novembro.jpg',
     alt: 'Calendário de novembro com o dia 2 marcado, boleto com vencimento em 2/11, celular com Pix 24 horas e quadro com as regras do feriado bancário.',
