@@ -145,7 +145,9 @@ export function LeadStoryCard({
   news,
 }: Readonly<{ categoryLabel: string; news: NewsItem }>) {
   return (
-    <article className="group relative isolate flex h-full flex-col overflow-hidden rounded-ads-xlarge bg-ads-secondary text-white shadow-ads-soft transition duration-300 hover:-translate-y-1 hover:shadow-ads-raised">
+    <article
+      className={`editoria-${news.category} group relative isolate flex h-full flex-col overflow-hidden rounded-ads-xlarge bg-ads-secondary text-white shadow-ads-soft transition duration-300 hover:-translate-y-1 hover:shadow-ads-raised`}
+    >
       {news.highlight ? (
         <NewsCover
           category={news.category}
@@ -157,8 +159,8 @@ export function LeadStoryCard({
       ) : null}
       <div className="flex flex-1 flex-col justify-between gap-6 p-7 sm:p-9">
         <div className="grid gap-4">
-          <span className="w-fit rounded-ads-full bg-white/10 px-3 py-1 text-xs font-semibold text-emerald-100">
-            Destaque · {categoryLabel}
+          <span className="w-fit rounded-ads-full bg-ads-primary px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-white">
+            {categoryLabel}
           </span>
           <h3 className="max-w-xl font-ads-display text-2xl font-bold leading-tight sm:text-3xl">
             <Link className="after:absolute after:inset-0" href={news.href}>
@@ -170,7 +172,7 @@ export function LeadStoryCard({
         <div className="relative z-10 flex flex-wrap items-center gap-4 text-sm">
           {news.calculator ? (
             <Link
-              className="rounded-ads-full bg-emerald-300 px-5 py-2.5 font-bold text-ads-secondary-strong transition hover:bg-emerald-200"
+              className="rounded-ads-full bg-white px-5 py-2.5 font-bold text-ads-primary-strong transition hover:bg-ads-primary-soft"
               href={news.calculator.href}
             >
               {news.calculator.title} →
@@ -188,7 +190,9 @@ export function LeadStoryCard({
 /** Notícia secundária: capa, título e botão da calculadora. */
 export function SecondaryStoryCard({ news }: Readonly<{ news: NewsItem }>) {
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-ads-xlarge border border-ads-border bg-white transition duration-300 hover:-translate-y-1 hover:border-ads-primary hover:shadow-ads-soft">
+    <article
+      className={`editoria-${news.category} group relative flex h-full flex-col overflow-hidden rounded-ads-xlarge border border-ads-border bg-white transition duration-300 hover:-translate-y-1 hover:border-ads-primary hover:shadow-ads-soft`}
+    >
       {news.highlight ? (
         <NewsCover
           category={news.category}
@@ -231,7 +235,7 @@ export function SecondaryStoryCard({ news }: Readonly<{ news: NewsItem }>) {
 export function CompactStoryCard({ news }: Readonly<{ news: NewsItem }>) {
   return (
     <Link
-      className="group grid h-full content-start overflow-hidden rounded-ads-large border border-ads-border bg-white transition duration-300 hover:-translate-y-0.5 hover:border-ads-primary hover:shadow-ads-soft"
+      className={`editoria-${news.category} group grid h-full content-start overflow-hidden rounded-ads-large border border-ads-border bg-white transition duration-300 hover:-translate-y-0.5 hover:border-ads-primary hover:shadow-ads-soft`}
       href={news.href}
     >
       {news.highlight ? (

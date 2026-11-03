@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { mergeClassNames } from '@/lib/merge-class-names';
 
 export type NavigationItem = Readonly<{
+  /** Slug da editoria: o item ganha um ponto na cor dela. */
+  editoria?: string;
   href: string;
   label: string;
 }>;
@@ -41,7 +43,19 @@ export function Navigation({
               )}
               href={item.href}
             >
-              {item.label}
+              {item.editoria ? (
+                <span
+                  className={`editoria-${item.editoria} inline-flex items-center gap-2`}
+                >
+                  <span
+                    aria-hidden="true"
+                    className="size-2 shrink-0 rounded-full bg-ads-primary"
+                  />
+                  {item.label}
+                </span>
+              ) : (
+                item.label
+              )}
             </Link>
           </li>
         ))}

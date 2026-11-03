@@ -43,7 +43,7 @@ export function NewsCard({
 }: NewsCardProps) {
   return (
     <Card
-      className="group grid h-full content-between overflow-hidden"
+      className={`group grid h-full content-between overflow-hidden ${cover ? `editoria-${cover.category}` : ''}`}
       interactive
     >
       {cover ? (

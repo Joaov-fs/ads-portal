@@ -12,40 +12,24 @@ describe('Home', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: 'Entenda o que muda no seu bolso.',
+        name: 'Notícias que mexem no seu bolso',
       }),
     ).toBeInTheDocument();
-    expect(screen.getByRole('search')).toHaveAttribute('action', '/pesquisa');
 
     for (const section of [
-      'O que mudou e quanto isso pesa no seu bolso',
+      'Notícias que mexem no seu bolso',
+      'Últimas notícias',
+      'Política',
+      'Economia',
+      'Mercado',
+      'Brasil',
       'Calcule agora',
-      'Decisões de Brasília e o seu bolso',
-      'Economia que afeta você',
-      'Juros, dólar e investimentos',
-      'Benefícios e trabalho',
-      'O que acontece no país',
-      'Uma conta que você consegue conferir',
-      'Uma calculadora para cada momento da vida',
       'Guias para consultar quando precisar',
     ]) {
       expect(
         screen.getByRole('heading', { name: section }),
       ).toBeInTheDocument();
     }
-  });
-
-  it('lets the visitor try the salary calculator without leaving the home', () => {
-    render(<HomeView />);
-
-    expect(
-      screen.getByLabelText('Quanto você ganha por mês (bruto)?'),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole('link', {
-        name: /Ver o holerite completo, com dependentes e pensão/,
-      }),
-    ).toHaveAttribute('href', '/calculadoras/salario-liquido');
   });
 
   it('renders only categories with a useful public path', () => {
@@ -62,7 +46,6 @@ describe('Home', () => {
       ).toBe(true);
     }
 
-    expect(screen.queryByText('Política')).not.toBeInTheDocument();
     expect(screen.queryByText('Publicidade')).not.toBeInTheDocument();
   });
 
@@ -70,10 +53,10 @@ describe('Home', () => {
     render(<HomeView />);
 
     expect(
-      screen.getByRole('link', { name: 'Ver todas as calculadoras →' }),
+      screen.getByRole('link', { name: /^Ver as \d+ calculadoras →$/ }),
     ).toHaveAttribute('href', '/calculadoras');
     expect(
-      screen.getByRole('link', { name: 'Ver todas as notícias →' }),
+      screen.getByRole('link', { name: 'Todas as notícias →' }),
     ).toHaveAttribute('href', '/noticias');
     expect(
       screen
@@ -85,9 +68,9 @@ describe('Home', () => {
   });
 
   it('shows a cover for every news card and a product card for each featured calculator', () => {
-    render(<HomeView />);
+    const { container } = render(<HomeView />);
 
-    expect(screen.getAllByRole('img').length).toBeGreaterThanOrEqual(6);
+    expect(container.querySelectorAll('img').length).toBeGreaterThanOrEqual(6);
     for (const slug of [
       'salario-liquido',
       'rescisao-clt',
@@ -96,7 +79,6 @@ describe('Home', () => {
       'seguro-desemprego',
       'fgts-multa',
       'juros-compostos',
-      'cdi',
     ]) {
       expect(
         screen

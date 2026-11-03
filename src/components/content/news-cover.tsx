@@ -37,7 +37,7 @@ export function NewsCover({
   if (image) {
     return (
       <div
-        className={`relative isolate overflow-hidden bg-ads-secondary ${className}`}
+        className={`editoria-${category} relative isolate overflow-hidden bg-ads-secondary ${className}`}
         style={{ containerType: 'inline-size' }}
       >
         <Image
@@ -54,7 +54,7 @@ export function NewsCover({
         />
         <div className="absolute inset-0 flex flex-col justify-between p-[4.5cqw]">
           <span
-            className="w-fit rounded-full bg-black/45 px-[2.4cqw] py-[0.9cqw] font-bold uppercase tracking-[0.14em] text-white backdrop-blur-sm"
+            className="w-fit rounded-full bg-ads-primary px-[2.4cqw] py-[0.9cqw] font-bold uppercase tracking-[0.14em] text-white"
             style={{ fontSize: 'clamp(0.6rem, 2.2cqw, 0.8rem)' }}
           >
             {contentCategoryLabels[category]}

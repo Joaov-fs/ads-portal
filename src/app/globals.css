@@ -73,10 +73,13 @@ textarea:disabled {
   cursor: not-allowed;
 }
 
-a {
-  color: inherit;
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.18em;
+/* Na camada base, para que as classes de cor do Tailwind (text-*) valham nos links. */
+@layer base {
+  a {
+    color: inherit;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -427,4 +430,88 @@ a {
   .hero-stagger-5 {
     animation: none;
   }
+}
+
+/*
+ * Cores das editorias. A classe .editoria-<slug> recolore um bloco (card, selo, item do menu);
+ * a página inteira assume a cor quando o <main> traz data-editoria, inclusive o logo.
+ */
+.editoria-financas,
+body:has(main[data-editoria='financas']) {
+  --ads-color-primary: #08785a;
+  --ads-color-primary-strong: #055d45;
+  --ads-color-primary-soft: #eaf6f1;
+  --ads-color-primary-ring: rgb(8 120 90 / 20%);
+  --ads-logo-bg: #163c3f;
+  --ads-logo-dot: #72d4b2;
+}
+
+.editoria-utilidades,
+body:has(main[data-editoria='utilidades']) {
+  --ads-color-primary: #08785a;
+  --ads-color-primary-strong: #055d45;
+  --ads-color-primary-soft: #eaf6f1;
+  --ads-color-primary-ring: rgb(8 120 90 / 20%);
+  --ads-logo-bg: #163c3f;
+  --ads-logo-dot: #72d4b2;
+}
+
+.editoria-politica,
+body:has(main[data-editoria='politica']) {
+  --ads-color-primary: #b13d1a;
+  --ads-color-primary-strong: #8a2c10;
+  --ads-color-primary-soft: #fbede7;
+  --ads-color-primary-ring: rgb(177 61 26 / 20%);
+  --ads-logo-bg: #4a1d0e;
+  --ads-logo-dot: #f4a887;
+}
+
+.editoria-economia,
+body:has(main[data-editoria='economia']) {
+  --ads-color-primary: #1d5f9e;
+  --ads-color-primary-strong: #164a7c;
+  --ads-color-primary-soft: #e8f0f9;
+  --ads-color-primary-ring: rgb(29 95 158 / 20%);
+  --ads-logo-bg: #13314f;
+  --ads-logo-dot: #8fc1ef;
+}
+
+.editoria-mercado,
+body:has(main[data-editoria='mercado']) {
+  --ads-color-primary: #6d3fae;
+  --ads-color-primary-strong: #552f8a;
+  --ads-color-primary-soft: #f2ecfa;
+  --ads-color-primary-ring: rgb(109 63 174 / 20%);
+  --ads-logo-bg: #2e1a4d;
+  --ads-logo-dot: #c4a6ef;
+}
+
+.editoria-brasil,
+body:has(main[data-editoria='brasil']) {
+  --ads-color-primary: #946200;
+  --ads-color-primary-strong: #734c00;
+  --ads-color-primary-soft: #fbf3e0;
+  --ads-color-primary-ring: rgb(148 98 0 / 20%);
+  --ads-logo-bg: #3d2a05;
+  --ads-logo-dot: #f2c45a;
+}
+
+.editoria-beneficios,
+body:has(main[data-editoria='beneficios']) {
+  --ads-color-primary: #0b7487;
+  --ads-color-primary-strong: #075a69;
+  --ads-color-primary-soft: #e6f5f7;
+  --ads-color-primary-ring: rgb(11 116 135 / 20%);
+  --ads-logo-bg: #0d3a42;
+  --ads-logo-dot: #7fd3e0;
+}
+
+.editoria-trabalho,
+body:has(main[data-editoria='trabalho']) {
+  --ads-color-primary: #4b5f6e;
+  --ads-color-primary-strong: #384854;
+  --ads-color-primary-soft: #edf1f4;
+  --ads-color-primary-ring: rgb(75 95 110 / 20%);
+  --ads-logo-bg: #1f2a33;
+  --ads-logo-dot: #a9bccb;
 }
