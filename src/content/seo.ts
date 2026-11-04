@@ -145,6 +145,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Imposto Seletivo: MP sai e diesel mantém R$ 2,12',
   'dolar-sobe-8-21-a-r-5-403-e-bolsa-cai-13-88-o-que-muda-para-o-seu-bolso':
     'Dólar a R$ 5,403 e bolsa -13,88%: o que muda',
+  'dolar-fecha-a-r-5-486-e-ibovespa-tem-6a-queda-seguida-o-que-muda-no-seu-bolso':
+    'Dólar a R$ 5,486 e Ibovespa em 6ª queda',
   'copom-4-de-novembro-selic-13-75-focus-preve-13-25-no-fim-de-2026':
     'Copom decide a Selic em 4/11: o que esperar',
   'gasolina-na-bomba-quase-nao-cai-anp-mostra-r-6-53-na-1a-semana-sem-tributos-federais':

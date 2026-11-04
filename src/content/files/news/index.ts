@@ -1,3 +1,4 @@
+import { newsDolarIbovespa3Novembro2026 } from './dolar-fecha-a-r-5-486-e-ibovespa-tem-6a-queda-seguida-o-que-muda-no-seu-bolso';
 import { newsFocus3Novembro2026Selic1350 } from './focus-3-novembro-selic-13-50-fim-de-2026-dolar-r-5-34-copom-decide-dia-4';
 import { newsLulaProgramasSociais4oMandato } from './lula-garante-programas-sociais-no-4o-mandato-bolsa-familia-paga-r-691-e-novembro-comeca-dia-16';
 import { newsEnem2026ProvasPortoes } from './enem-2026-provas-8-e-15-de-novembro-portoes-fecham-as-13h-e-pe-de-meia-paga-r-200';
@@ -140,4 +141,5 @@ export const newsFiles = [
   newsFocus3Novembro2026Selic1350,
   newsLulaProgramasSociais4oMandato,
   newsFgtsAntecipacaoCincoSaquesAdiada,
+  newsDolarIbovespa3Novembro2026,
 ] as const;
