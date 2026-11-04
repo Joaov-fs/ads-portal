@@ -149,6 +149,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Dólar a R$ 5,486 e Ibovespa em 6ª queda',
   'copom-4-de-novembro-selic-13-75-focus-preve-13-25-no-fim-de-2026':
     'Copom decide a Selic em 4/11: o que esperar',
+  'copom-mantem-selic-em-13-75-por-unanimidade-o-que-muda-no-seu-bolso':
+    'Copom mantém Selic em 13,75%: o que muda',
   'gasolina-na-bomba-quase-nao-cai-anp-mostra-r-6-53-na-1a-semana-sem-tributos-federais':
     'Gasolina a R$ 6,53: o corte de tributos chegou?',
   'aposentadoria-especial-de-agentes-de-saude-ec-140-idade-minima-de-57-e-60-anos':

@@ -1225,3 +1225,15 @@ def _():
         + g(1310, 440, 5, 1, phone(250, 500, phone_screen('Negociar dívidas', 'até 99%', 'prazo: 6/12', '#8a2f4b')))
         + g(1000, 700, -4, 1, boleto(300, 150, 'DÍVIDA', '#8a2f4b', 'R$ 7.093,83'))
     )
+
+
+@scene('copom-mantem-selic-4-novembro-2026', '#2b5d9e', (80, 100, 860))
+def _():
+    rows = label_rows([('Decisão', '4/11/2026'), ('Selic ao ano', '13,75%'), ('Votação', 'unânime'), ('Próxima decisão', '9/12')], 46, 170, 408, 64, 21, hl=(1, '#dbe6f5'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'COPOM: DECISÃO', '#1d4577', rows))
+        + g(700, 90, 5, 1, calendar_month('DEZEMBRO 2026', 2, 31, marks=(9,), w=460, h=500, accent='#1d4577', mark_color='#e8590c'))
+        + g(1340, 330, 0, 1, gauge(140, 0.62, '13,75%'))
+        + g(1280, 100, 6, 1, stamp('MANTIDA', 260, '#2a7f62', -8))
+        + g(1000, 700, 3, 1, coins_stack(3), 'sh')
+    )
