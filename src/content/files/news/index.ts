@@ -1,3 +1,4 @@
+import { newsFeiraoLimpaNome2026 } from './feirao-limpa-nome-2026-desconto-ate-99-e-prazo-ate-6-de-dezembro-em-7-mil-agencias';
 import { newsDolarIbovespa3Novembro2026 } from './dolar-fecha-a-r-5-486-e-ibovespa-tem-6a-queda-seguida-o-que-muda-no-seu-bolso';
 import { newsFocus3Novembro2026Selic1350 } from './focus-3-novembro-selic-13-50-fim-de-2026-dolar-r-5-34-copom-decide-dia-4';
 import { newsLulaProgramasSociais4oMandato } from './lula-garante-programas-sociais-no-4o-mandato-bolsa-familia-paga-r-691-e-novembro-comeca-dia-16';
@@ -142,4 +143,5 @@ export const newsFiles = [
   newsLulaProgramasSociais4oMandato,
   newsFgtsAntecipacaoCincoSaquesAdiada,
   newsDolarIbovespa3Novembro2026,
+  newsFeiraoLimpaNome2026,
 ] as const;

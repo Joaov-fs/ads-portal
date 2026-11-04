@@ -1213,3 +1213,15 @@ def _():
         + g(1250, 120, 7, 1, phone(250, 500, phone_screen('Dólar comercial', 'R$ 5,486', 'fechamento de 3/11', '#1f5a3a')))
         + g(1060, 640, -4, 1, tag('6ª queda', 280, '#e03131'), 'shs')
     )
+
+
+@scene('feirao-limpa-nome-2026', '#a6405f', (50, 100, 740))
+def _():
+    rows = label_rows([('Desconto de até', '99%'), ('Edição', '36ª'), ('Agências com balcão', '7 mil'), ('Prazo final', '6/12')], 46, 170, 408, 64, 21, hl=(0, '#f6dde5'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'FEIRÃO DE DÍVIDAS', '#8a2f4b', rows))
+        + g(690, 120, 4, 1, calendar_month('DEZEMBRO 2026', 2, 31, marks=(6,), w=520, h=520, accent='#8a2f4b', mark_color='#e8590c'))
+        + g(1290, 120, 6, 1, tag('até 99%', 260, '#2a7f62'))
+        + g(1310, 440, 5, 1, phone(250, 500, phone_screen('Negociar dívidas', 'até 99%', 'prazo: 6/12', '#8a2f4b')))
+        + g(1000, 700, -4, 1, boleto(300, 150, 'DÍVIDA', '#8a2f4b', 'R$ 7.093,83'))
+    )
