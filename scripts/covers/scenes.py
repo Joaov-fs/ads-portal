@@ -1262,3 +1262,15 @@ def _():
         + g(700, 640, -4, 1, banknote(330, 160, value='R$'))
         + g(1100, 640, 0, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('imposto-seletivo-mp-1399-2026', '#2a6a74', (80, 100, 860))
+def _():
+    rows = label_rows([('Início da cobrança', '2/2/2027'), ('Cerveja de malte', '4,2%'), ('Bebida açucarada', '2,6%'), ('Carro, base', '6,3%')], 46, 170, 408, 64, 21, hl=(0, '#d6ecee'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'IMPOSTO SELETIVO: MP 1.399', '#1d4f57', rows))
+        + g(700, 90, 5, 1, calendar_month('FEVEREIRO 2027', 1, 28, marks=(2,), w=460, h=500, accent='#1d4f57', mark_color='#e8590c'))
+        + g(1280, 100, 6, 1, tag('R$ 41,9 bi', 270, '#2a7f62'))
+        + g(1290, 330, 5, 1, phone(250, 500, phone_screen('Cigarro', 'R$ 3,50', 'por maço, mais percentual', '#1d4f57')))
+        + g(1000, 700, 3, 1, coins_stack(3), 'sh')
+    )

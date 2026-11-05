@@ -1,3 +1,4 @@
+import { newsImpostoSeletivoMp1399Aliquotas } from './imposto-seletivo-mp-1-399-define-aliquotas-e-cobranca-comeca-em-2-de-fevereiro-de-2027';
 import { newsDecretoEscala6x19Novembro } from './decreto-escala-6x1-segunda-9-de-novembro-8-folgas-por-mes-o-que-muda';
 import { newsCopomMantemSelic4Novembro } from './copom-mantem-selic-em-13-75-por-unanimidade-o-que-muda-no-seu-bolso';
 import { newsFeiraoLimpaNome2026 } from './feirao-limpa-nome-2026-desconto-ate-99-e-prazo-ate-6-de-dezembro-em-7-mil-agencias';
@@ -148,6 +149,7 @@ export const newsFiles = [
   newsDolarIbovespa3Novembro2026,
   newsFeiraoLimpaNome2026,
   newsCopomMantemSelic4Novembro,
+  newsImpostoSeletivoMp1399Aliquotas,
   newsDecretoEscala6x19Novembro,
   newsCagedSetembro2026,
 ] as const;
