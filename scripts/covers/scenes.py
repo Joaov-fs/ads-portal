@@ -1237,3 +1237,15 @@ def _():
         + g(1280, 100, 6, 1, stamp('MANTIDA', 260, '#2a7f62', -8))
         + g(1000, 700, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('decreto-escala-6x1-9-novembro-2026', '#5b4a8f', (80, 100, 860))
+def _():
+    rows = label_rows([('Decreto previsto', '9/11'), ('Folgas no mês', 'mín. 8'), ('Jornada semanal', '44h a 40h'), ('Início previsto', '15/12')], 46, 170, 408, 64, 21, hl=(0, '#e4def2'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'ESCALA 6X1: DECRETO', '#46387a', rows))
+        + g(700, 90, 5, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(9,), w=460, h=500, accent='#46387a', mark_color='#e8590c'))
+        + g(1280, 100, 6, 1, tag('8 folgas', 260, '#2a7f62'))
+        + g(1290, 330, 5, 1, phone(250, 500, phone_screen('Escala de trabalho', '5x2', 'regra a partir de 15/12', '#46387a')))
+        + g(1000, 700, -3, 1, clock(110, 10, 0), 'sh')
+    )

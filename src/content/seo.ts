@@ -151,6 +151,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Copom decide a Selic em 4/11: o que esperar',
   'copom-mantem-selic-em-13-75-por-unanimidade-o-que-muda-no-seu-bolso':
     'Copom mantém Selic em 13,75%: o que muda',
+  'decreto-escala-6x1-segunda-9-de-novembro-8-folgas-por-mes-o-que-muda':
+    'Decreto da escala 6x1 sai em 9/11: 8 folgas por mês',
   'gasolina-na-bomba-quase-nao-cai-anp-mostra-r-6-53-na-1a-semana-sem-tributos-federais':
     'Gasolina a R$ 6,53: o corte de tributos chegou?',
   'aposentadoria-especial-de-agentes-de-saude-ec-140-idade-minima-de-57-e-60-anos':
