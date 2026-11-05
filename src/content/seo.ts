@@ -115,6 +115,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'brasil-gera-121-3-mil-empregos-em-setembro-caged':
+    'Caged: 121,3 mil vagas em setembro, 1,24 mi no ano',
   'black-friday-27-de-novembro-checklist-de-compra-segura-e-arrependimento-de-7-dias':
     'Black Friday 27/11: como conferir o desconto',
   'feriados-de-novembro-de-2026-sexta-20-e-feriadao-dia-15-cai-no-domingo-e-quem-trabalha-recebe-em-dobro':

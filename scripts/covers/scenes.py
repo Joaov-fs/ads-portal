@@ -1249,3 +1249,16 @@ def _():
         + g(1290, 330, 5, 1, phone(250, 500, phone_screen('Escala de trabalho', '5x2', 'regra a partir de 15/12', '#46387a')))
         + g(1000, 700, -3, 1, clock(110, 10, 0), 'sh')
     )
+
+
+@scene('caged-setembro-2026', '#8c5e12', (50, 100, 740))
+def _():
+    rows = label_rows([('Saldo em setembro', '121,3 mil'), ('Acumulado 2026', '1,24 mi'), ('Setembro de 2025', '214,6 mil'), ('Salário de admissão', 'R$ 2.429')], 46, 170, 408, 64, 21, hl=(0, '#f3e3c0'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'CAGED: SETEMBRO 2026', '#8c5e12', rows))
+        + g(660, 150, 5, 1, booklet(260, 360))
+        + g(1000, 120, 8, 1, tag('121,3 mil', 270, '#2a7f62'))
+        + g(1230, 330, 6, 1, phone(250, 500, phone_screen('Salário médio', 'R$ 2.429,41', 'de admissão em set/2026', '#8c5e12')))
+        + g(700, 640, -4, 1, banknote(330, 160, value='R$'))
+        + g(1100, 640, 0, 1, coins_stack(3), 'sh')
+    )
