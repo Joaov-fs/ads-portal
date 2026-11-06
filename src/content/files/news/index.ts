@@ -1,3 +1,4 @@
+import { newsInssAtestmedReanalise10Dias } from './inss-atestmed-negado-tem-segunda-analise-em-10-dias-portaria-54-vale-desde-6-de-novembro';
 import { newsImpostoSeletivoMp1399Aliquotas } from './imposto-seletivo-mp-1-399-define-aliquotas-e-cobranca-comeca-em-2-de-fevereiro-de-2027';
 import { newsDecretoEscala6x19Novembro } from './decreto-escala-6x1-segunda-9-de-novembro-8-folgas-por-mes-o-que-muda';
 import { newsCopomMantemSelic4Novembro } from './copom-mantem-selic-em-13-75-por-unanimidade-o-que-muda-no-seu-bolso';
@@ -152,4 +153,5 @@ export const newsFiles = [
   newsImpostoSeletivoMp1399Aliquotas,
   newsDecretoEscala6x19Novembro,
   newsCagedSetembro2026,
+  newsInssAtestmedReanalise10Dias,
 ] as const;

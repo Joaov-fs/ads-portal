@@ -1274,3 +1274,15 @@ def _():
         + g(1290, 330, 5, 1, phone(250, 500, phone_screen('Cigarro', 'R$ 3,50', 'por maço, mais percentual', '#1d4f57')))
         + g(1000, 700, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('atestmed-reanalise-10-dias-2026', '#7a4a8a', (80, 100, 860))
+def _():
+    rows = label_rows([('Portaria conjunta', 'nº 54'), ('Vale desde', '6/11'), ('Reanálise em até', '10 dias'), ('Recurso', '30 dias')], 46, 170, 408, 64, 21, hl=(2, '#eadcf0'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'ATESTMED: REANÁLISE', '#5f3a6e', rows))
+        + g(700, 90, 5, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(6,), w=460, h=500, accent='#5f3a6e', mark_color='#e8590c'))
+        + g(1280, 100, 6, 1, tag('10 dias', 260, '#2a7f62'))
+        + g(1290, 330, 5, 1, phone(250, 500, phone_screen('Meu INSS', '2ª análise', 'pedido em até 10 dias', '#5f3a6e')))
+        + g(1000, 690, -4, 1, stamp('NEGADO', 250, '#d63031', -8))
+    )

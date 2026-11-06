@@ -115,6 +115,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'inss-atestmed-negado-tem-segunda-analise-em-10-dias-portaria-54-vale-desde-6-de-novembro':
+    'Atestmed negado: 2ª análise em 10 dias, vale 6/11',
   'brasil-gera-121-3-mil-empregos-em-setembro-caged':
     'Caged: 121,3 mil vagas em setembro, 1,24 mi no ano',
   'black-friday-27-de-novembro-checklist-de-compra-segura-e-arrependimento-de-7-dias':
