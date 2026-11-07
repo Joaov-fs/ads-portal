@@ -1286,3 +1286,15 @@ def _():
         + g(1290, 330, 5, 1, phone(250, 500, phone_screen('Meu INSS', '2ª análise', 'pedido em até 10 dias', '#5f3a6e')))
         + g(1000, 690, -4, 1, stamp('NEGADO', 250, '#d63031', -8))
     )
+
+
+@scene('dolar-semana-6-novembro-2026', '#6a4b32', (80, 100, 860))
+def _():
+    rows = label_rows([('Dólar', 'R$ 5,511'), ('Alta no dia', '+0,44%'), ('Ibovespa', '168.498 pts'), ('Alta no dia', '+1,39%')], 46, 170, 408, 64, 21, hl=(0, '#efe0cf'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'MERCADO 6/11/2026', '#6a4b32', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.55, '#d9c0a3'), (0.75, '#b08a62'), (1.0, '#6a4b32'))) + '</g>'))
+        + g(700, 110, 5, 1, banknote(380, 190, '#5fb37a', '#3c8f5a', 'US$'))
+        + g(760, 380, -4, 1, calculator(260, 360) + '<rect x="22" y="24" width="216" height="70" rx="10" fill="#c8d6c0"/><text x="224" y="74" font-size="34" font-weight="700" text-anchor="end" fill="#2d3a2a" font-family="DejaVu Sans Mono,monospace">5,511</text>')
+        + g(1250, 120, 7, 1, phone(250, 500, phone_screen('Dólar comercial', 'R$ 5,511', 'fechamento de 6/11', '#6a4b32')))
+        + g(1060, 640, -4, 1, tag('+1,20% na semana', 330, '#e8590c'), 'shs')
+    )
