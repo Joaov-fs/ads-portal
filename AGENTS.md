@@ -20,9 +20,11 @@ que dependa da versão atual.
 
 ## Rotina editorial autorizada
 
-O usuário autorizou publicação sem aprovação editorial prévia, todos os dias às
-08h, 15h e 19h, no fuso `America/Sao_Paulo`. A rotina está agendada nesta conversa
-do Codex, sob o nome "PortalFina: notícias às 8h, 15h e 19h".
+O usuário autorizou publicação sem aprovação editorial prévia, todos os dias a
+cada 2 horas, das 06h às 22h, no fuso `America/Sao_Paulo`. A rotina está agendada
+no Claude, sob o nome "PortalFina - notícias a cada 2h (6h às 22h)", e faz rodízio
+entre as editorias da home (Política, Economia, Mercado, Brasil, Finanças e
+Benefícios e trabalho) para que todas recebam notícia todos os dias.
 
 Siga `docs/formato-de-noticias.md`, verifique fontes oficiais atuais e evite
 duplicações. Preserve o padrão de ilustrações próprias de
