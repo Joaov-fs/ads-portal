@@ -49,7 +49,8 @@ export const newsGasolinaVence9Novembro2026 = {
       image: {
         src: '/images/news/gasolina-sem-tributos-vence-9-11-r-0-89-por-litro-prorrogacao-nao-confirmada-detalhe.jpg',
         alt: 'Detalhe da ilustração: documento com o corte de R$ 0,89 por litro, sendo R$ 0,79 de PIS/Pasep e Cofins e R$ 0,10 de Cide.',
-        caption: 'Os valores do corte por litro de gasolina A, segundo a Fazenda.',
+        caption:
+          'Os valores do corte por litro de gasolina A, segundo a Fazenda.',
         credit: 'Ilustração: PortalFina',
       },
       paragraphs: [
@@ -59,7 +60,11 @@ export const newsGasolinaVence9Novembro2026 = {
       ],
       table: {
         caption: 'Teto da conta se a cobrança voltasse inteira ao litro',
-        columns: ['Consumo', 'Teto de R$ 0,89 por litro', 'Queda vista na ANP, R$ 0,05'],
+        columns: [
+          'Consumo',
+          'Teto de R$ 0,89 por litro',
+          'Queda vista na ANP, R$ 0,05',
+        ],
         rows: [
           ['Tanque de 50 litros', 'R$ 44,50', 'R$ 2,50'],
           ['200 litros por mês', 'R$ 178,00', 'R$ 10,00'],
