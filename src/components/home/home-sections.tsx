@@ -1,7 +1,9 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
 import { NewsCover } from '@/components/content/news-cover';
+import { contentCategoryLabels } from '@/content';
 import { Container } from '@/components/layout/container';
 import type { latestNews } from '@/features/public-content';
 
@@ -17,6 +19,48 @@ const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
 
 function formatDate(value: string) {
   return dateFormatter.format(new Date(`${value}T00:00:00Z`));
+}
+
+const shortDateFormatter = new Intl.DateTimeFormat('pt-BR', {
+  day: 'numeric',
+  month: 'short',
+  timeZone: 'UTC',
+});
+
+function formatShortDate(value: string) {
+  return shortDateFormatter
+    .format(new Date(`${value}T00:00:00Z`))
+    .replace(' de ', ' ')
+    .replace('.', '');
+}
+
+/** Miniatura quadrada da capa, usada nas listas do celular. */
+function StoryThumb({ news }: Readonly<{ news: NewsItem }>) {
+  if (!news.image) return null;
+
+  return (
+    <div className="relative size-24 shrink-0 overflow-hidden rounded-ads-medium bg-ads-secondary sm:hidden">
+      <Image
+        alt=""
+        className="object-cover"
+        fill
+        sizes="96px"
+        src={news.image}
+      />
+    </div>
+  );
+}
+
+/** Editoria e data numa linha só, na cor da editoria (só no celular). */
+function StoryMeta({ news }: Readonly<{ news: NewsItem }>) {
+  return (
+    <span className="flex items-center gap-1.5 text-[0.7rem] font-bold uppercase tracking-[0.1em] text-ads-primary-strong sm:hidden">
+      {contentCategoryLabels[news.category]}
+      <span className="font-semibold normal-case tracking-normal text-ads-subtle">
+        · {formatShortDate(news.date)}
+      </span>
+    </span>
+  );
 }
 
 /** Cabeçalho padrão das seções da home: marcador, título e link opcional. */
@@ -157,19 +201,21 @@ export function LeadStoryCard({
           value={news.highlight.value}
         />
       ) : null}
-      <div className="flex flex-1 flex-col justify-between gap-6 p-7 sm:p-9">
-        <div className="grid gap-4">
+      <div className="flex flex-1 flex-col justify-between gap-5 p-5 sm:gap-6 sm:p-9">
+        <div className="grid gap-3 sm:gap-4">
           <span className="w-fit rounded-ads-full bg-ads-primary px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-white">
             {categoryLabel}
           </span>
-          <h3 className="max-w-xl font-ads-display text-2xl font-bold leading-tight sm:text-3xl">
+          <h3 className="max-w-xl font-ads-display text-[1.375rem] font-bold leading-tight sm:text-3xl">
             <Link className="after:absolute after:inset-0" href={news.href}>
               {news.title}
             </Link>
           </h3>
-          <p className="max-w-xl leading-7 text-white/70">{news.description}</p>
+          <p className="hidden max-w-xl leading-7 text-white/70 sm:block">
+            {news.description}
+          </p>
         </div>
-        <div className="relative z-10 flex flex-wrap items-center gap-4 text-sm">
+        <div className="relative z-10 flex flex-wrap items-center gap-x-4 gap-y-3 text-sm">
           {news.calculator ? (
             <Link
               className="rounded-ads-full bg-white px-5 py-2.5 font-bold text-ads-primary-strong transition hover:bg-ads-primary-soft"
@@ -187,28 +233,33 @@ export function LeadStoryCard({
   );
 }
 
-/** Notícia secundária: capa, título e botão da calculadora. */
+/**
+ * Notícia secundária. No celular vira linha com miniatura (lista densa, como
+ * nos portais); a partir do tablet, card com capa e botão da calculadora.
+ */
 export function SecondaryStoryCard({ news }: Readonly<{ news: NewsItem }>) {
   return (
     <article
-      className={`editoria-${news.category} group relative flex h-full flex-col overflow-hidden rounded-ads-xlarge border border-ads-border bg-white transition duration-300 hover:-translate-y-1 hover:border-ads-primary hover:shadow-ads-soft`}
+      className={`editoria-${news.category} group relative flex h-full items-start gap-4 border-b border-ads-border pb-4 transition duration-300 sm:flex-col sm:items-stretch sm:gap-0 sm:overflow-hidden sm:rounded-ads-xlarge sm:border sm:bg-white sm:pb-0 sm:hover:-translate-y-1 sm:hover:border-ads-primary sm:hover:shadow-ads-soft`}
     >
+      <StoryThumb news={news} />
       {news.highlight ? (
         <NewsCover
           category={news.category}
-          className="aspect-[1200/630] w-full"
+          className="hidden aspect-[1200/630] w-full sm:block"
           image={news.image}
           label={news.highlight.label}
           value={news.highlight.value}
         />
       ) : null}
-      <div className="flex flex-1 flex-col justify-between gap-4 p-5 sm:p-6">
-        <h3 className="font-ads-display text-lg font-bold leading-snug text-ads-secondary">
+      <div className="flex min-w-0 flex-1 flex-col justify-between gap-1.5 sm:gap-4 sm:p-6">
+        <StoryMeta news={news} />
+        <h3 className="font-ads-display text-base font-bold leading-snug text-ads-secondary sm:text-lg">
           <Link className="after:absolute after:inset-0" href={news.href}>
             {news.title}
           </Link>
         </h3>
-        <div className="relative z-10 grid gap-3">
+        <div className="relative z-10 hidden gap-3 sm:grid">
           {news.calculator ? (
             <Link
               className="w-fit rounded-ads-full bg-ads-primary-soft px-3.5 py-1.5 text-xs font-bold text-ads-primary-strong transition hover:bg-ads-primary hover:text-white"
@@ -231,27 +282,29 @@ export function SecondaryStoryCard({ news }: Readonly<{ news: NewsItem }>) {
   );
 }
 
-/** Notícia compacta: capa e título, para varrer o que mais saiu. */
+/** Notícia compacta: linha com miniatura no celular, card com capa no desktop. */
 export function CompactStoryCard({ news }: Readonly<{ news: NewsItem }>) {
   return (
     <Link
-      className={`editoria-${news.category} group grid h-full content-start overflow-hidden rounded-ads-large border border-ads-border bg-white transition duration-300 hover:-translate-y-0.5 hover:border-ads-primary hover:shadow-ads-soft`}
+      className={`editoria-${news.category} group flex h-full items-start gap-4 border-b border-ads-border pb-4 transition duration-300 sm:grid sm:content-start sm:gap-0 sm:overflow-hidden sm:rounded-ads-large sm:border sm:bg-white sm:pb-0 sm:hover:-translate-y-0.5 sm:hover:border-ads-primary sm:hover:shadow-ads-soft`}
       href={news.href}
     >
+      <StoryThumb news={news} />
       {news.highlight ? (
         <NewsCover
           category={news.category}
-          className="aspect-[1200/630] w-full"
+          className="hidden aspect-[1200/630] w-full sm:block"
           image={news.image}
           label={news.highlight.label}
           value={news.highlight.value}
         />
       ) : null}
-      <span className="grid gap-1.5 p-4">
-        <span className="text-sm font-semibold leading-6 text-ads-secondary">
+      <span className="grid min-w-0 gap-1.5 sm:p-4">
+        <StoryMeta news={news} />
+        <span className="text-base font-bold leading-snug text-ads-secondary sm:text-sm sm:font-semibold sm:leading-6">
           {news.title}
         </span>
-        <span className="text-xs text-ads-muted">
+        <span className="hidden text-xs text-ads-muted sm:block">
           {formatDate(news.date)} · {news.readingTime}
         </span>
       </span>

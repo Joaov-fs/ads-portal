@@ -63,6 +63,26 @@ export function Header({ items = primaryNavigationItems }: HeaderProps) {
             Calcular agora
           </Link>
 
+          <Link
+            aria-label="Buscar no PortalFina"
+            className="flex size-11 items-center justify-center rounded-ads-medium border border-ads-border text-ads-secondary transition hover:border-ads-border-strong hover:bg-ads-background lg:hidden"
+            href="/pesquisa"
+          >
+            <svg
+              aria-hidden="true"
+              className="size-5"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m21 21-4.4-4.4m2.4-5.1a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeWidth="2"
+              />
+            </svg>
+          </Link>
+
           <details className="group relative xl:hidden">
             <summary className="flex size-11 list-none items-center justify-center rounded-ads-medium border border-ads-border text-ads-secondary transition hover:border-ads-border-strong hover:bg-ads-background [&::-webkit-details-marker]:hidden">
               <span className="sr-only">Abrir menu</span>
@@ -87,6 +107,30 @@ export function Header({ items = primaryNavigationItems }: HeaderProps) {
           </details>
         </div>
       </Container>
+
+      {/* Editorias sempre à vista no celular e no tablet: faixa rolável com a cor de cada uma. */}
+      <nav
+        aria-label="Editorias"
+        className="border-t border-ads-border/70 xl:hidden"
+      >
+        <Container className="flex items-center gap-1.5 overflow-x-auto py-2 [scrollbar-width:none]">
+          {items
+            .filter((item) => item.editoria)
+            .map((item) => (
+              <Link
+                className={`editoria-${item.editoria} flex shrink-0 items-center gap-2 rounded-ads-full px-3 py-1.5 text-sm font-semibold text-ads-secondary transition hover:bg-ads-primary-soft hover:text-ads-primary-strong`}
+                href={item.href}
+                key={item.href}
+              >
+                <span
+                  aria-hidden="true"
+                  className="size-2 rounded-full bg-ads-primary"
+                />
+                {item.label}
+              </Link>
+            ))}
+        </Container>
+      </nav>
     </header>
   );
 }

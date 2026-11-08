@@ -75,8 +75,10 @@ const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
 });
 
 const longDateFormatter = new Intl.DateTimeFormat('pt-BR', {
-  dateStyle: 'full',
+  day: 'numeric',
+  month: 'long',
   timeZone: 'UTC',
+  weekday: 'long',
 });
 
 function formatDate(value: string, formatter = dateFormatter) {
@@ -128,20 +130,20 @@ function EditoriaBlock({
   return (
     <section
       aria-labelledby={`${block.slug}-title`}
-      className={`editoria-${block.slug} py-10 sm:py-12`}
+      className={`editoria-${block.slug} py-8 sm:py-12`}
       id={block.slug}
     >
       <Container>
         <Reveal>
-          <div className="mb-7 flex flex-col gap-3 border-t-4 border-ads-primary pt-5 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mb-5 flex items-end justify-between gap-3 border-t-4 border-ads-primary pt-4 sm:mb-7 sm:pt-5">
             <div className="grid gap-1.5">
               <h2
-                className="font-ads-display text-3xl font-extrabold tracking-tight text-ads-primary-strong"
+                className="font-ads-display text-2xl font-extrabold tracking-tight text-ads-primary-strong sm:text-3xl"
                 id={`${block.slug}-title`}
               >
                 {block.title}
               </h2>
-              <p className="max-w-2xl text-sm leading-6 text-ads-muted">
+              <p className="hidden max-w-2xl text-sm leading-6 text-ads-muted sm:block">
                 {block.intro}
               </p>
             </div>
@@ -149,37 +151,38 @@ function EditoriaBlock({
               className="shrink-0 text-sm font-bold text-ads-primary-strong hover:underline"
               href={`/categorias/${block.slug}`}
             >
-              Tudo de {block.title} →
+              <span className="sm:hidden">Ver tudo →</span>
+              <span className="hidden sm:inline">Tudo de {block.title} →</span>
             </Link>
           </div>
         </Reveal>
-        <div className="grid gap-6 lg:grid-cols-[1.25fr_1fr]">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-[1.25fr_1fr]">
           <Reveal className="h-full">
             <SecondaryStoryCard news={featured} />
           </Reveal>
           <Reveal className="h-full" delay={80}>
-            <ul className="grid h-full content-start divide-y divide-ads-border rounded-ads-xlarge border border-ads-border bg-white px-6">
+            <ul className="grid h-full content-start divide-y divide-ads-border sm:rounded-ads-xlarge sm:border sm:border-ads-border sm:bg-white sm:px-6">
               {rest.map((news) => (
                 <li key={news.href}>
                   <Link
-                    className="group grid grid-cols-[6.5rem_1fr] items-center gap-5 py-5"
+                    className="group grid gap-1.5 py-4 sm:py-5"
                     href={news.href}
                   >
-                    <span className="grid gap-0.5">
-                      <strong className="font-ads-display text-2xl font-extrabold leading-none tracking-tight text-ads-primary tabular-nums">
-                        {news.highlight?.value ?? '→'}
-                      </strong>
-                      <span className="line-clamp-2 text-[0.7rem] font-semibold leading-4 text-ads-muted">
-                        {news.highlight?.label}
+                    {news.highlight ? (
+                      <span className="flex min-w-0 items-baseline gap-2">
+                        <strong className="shrink-0 rounded-ads-small bg-ads-primary-soft px-2 py-0.5 text-sm font-extrabold tabular-nums text-ads-primary-strong">
+                          {news.highlight.value}
+                        </strong>
+                        <span className="truncate text-xs font-semibold text-ads-muted">
+                          {news.highlight.label}
+                        </span>
                       </span>
+                    ) : null}
+                    <span className="font-semibold leading-snug text-ads-secondary transition group-hover:text-ads-primary-strong">
+                      {news.title}
                     </span>
-                    <span className="grid gap-1">
-                      <span className="font-semibold leading-snug text-ads-secondary transition group-hover:text-ads-primary-strong">
-                        {news.title}
-                      </span>
-                      <span className="text-xs text-ads-subtle">
-                        {formatDate(news.date)} · {news.readingTime}
-                      </span>
+                    <span className="text-xs text-ads-subtle">
+                      {formatDate(news.date)} · {news.readingTime}
                     </span>
                   </Link>
                 </li>
@@ -325,11 +328,15 @@ export function HomeView({
         id="noticias"
       >
         <Container>
-          <div className="mb-7 flex flex-col gap-2 border-b border-ads-border pb-5 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mb-5 flex flex-col gap-2 border-b border-ads-border pb-4 sm:mb-7 sm:flex-row sm:items-end sm:justify-between sm:pb-5">
             <div className="grid gap-1">
-              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-ads-subtle">
+              <span className="flex items-center gap-2 text-sm font-semibold text-ads-subtle">
+                <span
+                  aria-hidden="true"
+                  className="home-live-dot size-2 rounded-full bg-ads-primary"
+                />
                 {leadNews
-                  ? `Atualizado em ${formatDate(leadNews.date, longDateFormatter)}`
+                  ? `Atualizado ${formatDate(leadNews.date, longDateFormatter)}`
                   : 'Notícias'}
               </span>
               <h1
@@ -339,16 +346,24 @@ export function HomeView({
                 Notícias que mexem no seu bolso
               </h1>
             </div>
-            <Link
-              className="text-sm font-bold text-ads-primary-strong hover:underline"
-              href="/noticias"
-            >
-              Todas as notícias →
-            </Link>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
+              <Link
+                className="text-xs font-semibold text-ads-muted hover:text-ads-primary-strong"
+                href="/sobre"
+              >
+                ✓ Fontes oficiais e correções com data
+              </Link>
+              <Link
+                className="text-sm font-bold text-ads-primary-strong hover:underline"
+                href="/noticias"
+              >
+                Todas as notícias →
+              </Link>
+            </div>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_21rem]">
-            <div className="grid content-start gap-5">
+          <div className="grid gap-6 sm:gap-8 lg:grid-cols-[minmax(0,1fr)_21rem]">
+            <div className="grid content-start gap-4 sm:gap-5">
               {leadNews ? (
                 <Reveal variant="fade-left">
                   <LeadStoryCard
@@ -357,7 +372,7 @@ export function HomeView({
                   />
                 </Reveal>
               ) : null}
-              <div className="grid gap-5 sm:grid-cols-2">
+              <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
                 {secondaryNews.map((news, index) => (
                   <Reveal
                     className="h-full"
@@ -374,7 +389,7 @@ export function HomeView({
               aria-labelledby="ultimas-title"
               className="grid content-start gap-6"
             >
-              <div className="rounded-ads-xlarge border border-ads-border bg-white px-6 pb-2 pt-5">
+              <div className="rounded-ads-xlarge border border-ads-border bg-white px-5 pb-2 pt-5 sm:px-6">
                 <h2
                   className="flex items-center gap-2 font-ads-display text-lg font-extrabold text-ads-secondary"
                   id="ultimas-title"
@@ -399,7 +414,7 @@ export function HomeView({
           </div>
 
           {moreNews.length > 0 ? (
-            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
               {moreNews.map((news, index) => (
                 <Reveal className="h-full" delay={index * 60} key={news.href}>
                   <CompactStoryCard news={news} />
@@ -409,27 +424,6 @@ export function HomeView({
           ) : null}
         </Container>
       </section>
-
-      <nav
-        aria-label="Editorias"
-        className="sticky top-[4.5rem] z-30 border-y border-ads-border bg-white/95 backdrop-blur"
-      >
-        <Container className="flex items-center gap-2 overflow-x-auto py-3 [scrollbar-width:none]">
-          {editoriaBlocks.map((block) => (
-            <a
-              className={`editoria-${block.slug} flex shrink-0 items-center gap-2 rounded-ads-full border border-ads-border px-4 py-1.5 text-sm font-semibold text-ads-secondary transition hover:border-ads-primary hover:bg-ads-primary-soft hover:text-ads-primary-strong`}
-              href={`#${block.slug}`}
-              key={block.slug}
-            >
-              <span
-                aria-hidden="true"
-                className="size-2 rounded-full bg-ads-primary"
-              />
-              {block.title}
-            </a>
-          ))}
-        </Container>
-      </nav>
 
       <div className="bg-ads-background">
         {editoriaBlocks.slice(0, 3).map((block) => (
@@ -460,7 +454,7 @@ export function HomeView({
 
       <section
         aria-labelledby="calcule-agora-title"
-        className="bg-ads-secondary-strong py-14 text-white sm:py-16"
+        className="bg-ads-secondary-strong py-10 text-white sm:py-16"
         id="calculadoras"
       >
         <Container>
@@ -475,7 +469,7 @@ export function HomeView({
               >
                 Calcule agora
               </h2>
-              <p className="leading-7 text-white/70">
+              <p className="hidden leading-7 text-white/70 sm:block">
                 Toda notícia leva para a calculadora do assunto. Aqui estão as
                 mais usadas.
               </p>
@@ -487,17 +481,17 @@ export function HomeView({
               Ver as {popularTools.length} calculadoras →
             </Link>
           </div>
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="grid grid-cols-2 gap-2.5 sm:gap-3 lg:grid-cols-4">
             {calculatorShowcase.map((item) => {
               const tool = toolBySlug.get(item.slug);
 
               return tool ? (
                 <li key={item.slug}>
                   <Link
-                    className="group grid h-full gap-1 rounded-ads-large border border-white/10 bg-white/5 p-5 transition hover:-translate-y-0.5 hover:border-emerald-300/60 hover:bg-white/10"
+                    className="group grid h-full content-start gap-1 rounded-ads-large border border-white/10 bg-white/5 p-4 transition hover:-translate-y-0.5 hover:border-emerald-300/60 hover:bg-white/10 sm:p-5"
                     href={tool.href}
                   >
-                    <span className="flex items-center justify-between font-bold">
+                    <span className="flex items-center justify-between gap-2 text-[0.95rem] font-bold leading-snug sm:text-base">
                       {item.title}
                       <span
                         aria-hidden="true"
@@ -506,7 +500,7 @@ export function HomeView({
                         →
                       </span>
                     </span>
-                    <span className="text-sm leading-6 text-white/65">
+                    <span className="hidden text-sm leading-6 text-white/65 sm:block">
                       {item.promise}
                     </span>
                   </Link>
@@ -519,7 +513,7 @@ export function HomeView({
 
       <section
         aria-labelledby="guias-title"
-        className="bg-white py-14 sm:py-20"
+        className="bg-white py-10 sm:py-20"
         id="guias"
       >
         <Container>
@@ -545,7 +539,7 @@ export function HomeView({
           <div className="grid gap-5 lg:grid-cols-[1.1fr_1fr]">
             {leadGuide ? (
               <Reveal className="h-full" variant="fade-left">
-                <article className="group relative grid h-full content-between gap-8 overflow-hidden rounded-ads-xlarge bg-ads-primary-soft p-8 transition duration-300 hover:-translate-y-1 hover:shadow-ads-soft sm:p-10">
+                <article className="group relative grid h-full content-between gap-5 overflow-hidden rounded-ads-xlarge bg-ads-primary-soft p-6 transition duration-300 hover:-translate-y-1 hover:shadow-ads-soft sm:gap-8 sm:p-10">
                   <div className="grid gap-4">
                     <span className="w-fit rounded-ads-full bg-white px-3 py-1 text-xs font-bold text-ads-primary-strong">
                       Guia em destaque · {leadGuide.readingTime}
@@ -558,7 +552,7 @@ export function HomeView({
                         {leadGuide.title}
                       </Link>
                     </h3>
-                    <p className="leading-7 text-ads-muted">
+                    <p className="hidden leading-7 text-ads-muted sm:block">
                       {leadGuide.description}
                     </p>
                   </div>
@@ -608,10 +602,10 @@ export function HomeView({
 
       <section
         aria-labelledby="confianca-title"
-        className="relative overflow-hidden bg-ads-secondary-strong py-14 text-white sm:py-20"
+        className="relative overflow-hidden bg-ads-secondary-strong py-10 text-white sm:py-20"
       >
         <Container className="relative">
-          <div className="mb-10 grid max-w-2xl gap-3">
+          <div className="mb-6 grid max-w-2xl gap-3 sm:mb-10">
             <span className="text-ads-eyebrow font-bold uppercase tracking-[0.16em] text-emerald-200">
               Por que confiar
             </span>
@@ -622,7 +616,7 @@ export function HomeView({
               Números oficiais, método à vista e correção quando erramos
             </h2>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-5 lg:grid-cols-4">
             {[
               {
                 title: 'Fontes oficiais',
@@ -642,17 +636,19 @@ export function HomeView({
               },
             ].map((item) => (
               <div
-                className="grid h-full content-start gap-3 rounded-ads-xlarge border border-white/10 bg-white/5 p-6"
+                className="grid h-full content-start gap-2 rounded-ads-xlarge border border-white/10 bg-white/5 p-4 sm:gap-3 sm:p-6"
                 key={item.title}
               >
-                <strong className="font-ads-display text-2xl font-extrabold tracking-tight text-emerald-300">
+                <strong className="font-ads-display text-lg font-extrabold leading-tight tracking-tight text-emerald-300 sm:text-2xl">
                   {item.title}
                 </strong>
-                <p className="text-sm leading-6 text-white/70">{item.text}</p>
+                <p className="text-xs leading-5 text-white/70 sm:text-sm sm:leading-6">
+                  {item.text}
+                </p>
               </div>
             ))}
           </div>
-          <p className="mt-10 max-w-3xl text-sm leading-7 text-white/70">
+          <p className="mt-6 max-w-3xl text-sm leading-7 text-white/70 sm:mt-10">
             O conteúdo é produzido pela Redação PortalFina com apoio de
             inteligência artificial e baseado em fontes oficiais, que aparecem
             ao final de cada página. Achou um erro? Escreva em{' '}
@@ -676,7 +672,7 @@ export function HomeView({
 
       <section
         aria-labelledby="categorias-title"
-        className="border-t border-ads-border bg-ads-background py-14 sm:py-16"
+        className="hidden border-t border-ads-border bg-ads-background py-14 sm:block sm:py-16"
         id="categorias"
       >
         <Container>

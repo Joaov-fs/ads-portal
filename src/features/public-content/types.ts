@@ -54,8 +54,14 @@ export type Indicator = Readonly<{
 
 export type SearchResult = Readonly<{
   category: string;
+  /** Data (AAAA-MM-DD) da notícia ou do guia, para ordenar e exibir. */
+  date?: string;
   description: string;
+  /** Slug da editoria, que dá a cor do resultado. */
+  editoria?: string;
   href: string;
+  /** Capa da notícia, exibida como miniatura. */
+  image?: string;
   title: string;
   type: 'categoria' | 'ferramenta' | 'guia' | 'indicador' | 'noticia';
 }>;
