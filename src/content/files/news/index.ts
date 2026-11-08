@@ -78,6 +78,7 @@ import { newsAposentadoriaAgentesSaudeEc140 } from './aposentadoria-especial-de-
 import { newsGasolinaAnpSegundaSemanaSemTributos } from './gasolina-cai-a-r-6-49-na-2a-semana-sem-tributos-federais-etanol-a-r-4-11';
 
 import { newsMpBetsStfAudiencia } from './mp-das-bets-stf-audiencia-3-de-novembro-saldo-devolvido-ate-14-de-outubro';
+import { newsJuroRealRanking2026 } from './brasil-tem-o-maior-juro-real-do-mundo-9-05-contra-media-de-1-27-e-selic-esta-em-13-75';
 import { newsPecSegurancaSenado } from './pec-da-seguranca-publica-aprovada-no-senado-por-75-a-0-falta-a-promulgacao';
 
 export const newsFiles = [
@@ -159,4 +160,5 @@ export const newsFiles = [
   newsInssAtestmedReanalise10Dias,
   newsDolarSemana6Novembro2026,
   newsPecSegurancaSenado,
+  newsJuroRealRanking2026,
 ] as const;

@@ -1310,3 +1310,15 @@ def _():
         + g(900, 470, -4, 1, stamp('APROVADA', 300, '#2a7f62', -7))
         + g(1000, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('juro-real-ranking-2026', '#3f5b2e', (80, 100, 860))
+def _():
+    rows = label_rows([('Brasil', '9,05%'), ('Turquia', '7,77%'), ('Argentina', '6,80%'), ('Média dos 40 países', '1,27%')], 46, 170, 408, 64, 21, hl=(0, '#e1ecd6'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'JURO REAL EM NOV/2026', '#3f5b2e', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((1.0, '#3f5b2e'), (0.86, '#7c9a66'), (0.75, '#a9c093'), (0.14, '#d9e4cd'))) + '</g>'))
+        + g(700, 110, 5, 1, tag('9,05% ao ano', 330, '#e8590c'))
+        + g(1250, 100, 6, 1, phone(250, 500, phone_screen('Juro real', '9,05%', 'Selic 13,75%', '#3f5b2e')))
+        + g(850, 470, -4, 1, gauge(150, 0.85, ''), 'sh')
+        + g(1050, 700, 3, 1, coins_stack(4), 'sh')
+    )
