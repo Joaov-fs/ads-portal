@@ -78,6 +78,8 @@ import { newsAposentadoriaAgentesSaudeEc140 } from './aposentadoria-especial-de-
 import { newsGasolinaAnpSegundaSemanaSemTributos } from './gasolina-cai-a-r-6-49-na-2a-semana-sem-tributos-federais-etanol-a-r-4-11';
 
 import { newsMpBetsStfAudiencia } from './mp-das-bets-stf-audiencia-3-de-novembro-saldo-devolvido-ate-14-de-outubro';
+import { newsPecSegurancaSenado } from './pec-da-seguranca-publica-aprovada-no-senado-por-75-a-0-falta-a-promulgacao';
+
 export const newsFiles = [
   newsFiesRemanescentes2026,
   newsPnadDesemprego3Trimestre2026,
@@ -156,4 +158,5 @@ export const newsFiles = [
   newsCagedSetembro2026,
   newsInssAtestmedReanalise10Dias,
   newsDolarSemana6Novembro2026,
+  newsPecSegurancaSenado,
 ] as const;

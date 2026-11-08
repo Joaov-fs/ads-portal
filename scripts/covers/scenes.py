@@ -1298,3 +1298,15 @@ def _():
         + g(1250, 120, 7, 1, phone(250, 500, phone_screen('Dólar comercial', 'R$ 5,511', 'fechamento de 6/11', '#6a4b32')))
         + g(1060, 640, -4, 1, tag('+1,20% na semana', 330, '#e8590c'), 'shs')
     )
+
+
+@scene('pec-seguranca-senado-2026', '#8a2f3c', (80, 100, 860))
+def _():
+    rows = label_rows([('1º turno', '73 a 0'), ('2º turno', '75 a 0'), ('Fundos p/ estados', '50%'), ('Fundo Social', '10%')], 46, 170, 408, 64, 21, hl=(1, '#f3d9dc'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'PEC DA SEGURANÇA PÚBLICA', '#8a2f3c', rows))
+        + g(700, 110, 5, 1, tag('75 a 0', 300, '#2a7f62'))
+        + g(1250, 100, 6, 1, phone(250, 500, phone_screen('Senado', 'Aprovada', 'falta a promulgação', '#8a2f3c')))
+        + g(900, 470, -4, 1, stamp('APROVADA', 300, '#2a7f62', -7))
+        + g(1000, 690, 3, 1, coins_stack(3), 'sh')
+    )
