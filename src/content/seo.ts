@@ -172,6 +172,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Dólar a R$ 5,486 e Ibovespa em 6ª queda',
   'brasil-tem-o-maior-juro-real-do-mundo-9-05-contra-media-de-1-27-e-selic-esta-em-13-75':
     'Brasil tem o maior juro real: 9,05% ao ano',
+  'anatel-manda-bloquear-sms-de-codigos-nao-registrados-prazo-de-ate-90-dias':
+    'Anatel manda bloquear SMS de códigos sem registro',
   'dolar-fecha-a-r-5-511-sobe-1-20-na-semana-e-ibovespa-vai-a-168-mil-pontos':
     'Dólar a R$ 5,511 e +1,20% na semana: o que muda',
   'copom-4-de-novembro-selic-13-75-focus-preve-13-25-no-fim-de-2026':

@@ -1322,3 +1322,14 @@ def _():
         + g(850, 470, -4, 1, gauge(150, 0.85, ''), 'sh')
         + g(1050, 700, 3, 1, coins_stack(4), 'sh')
     )
+
+
+@scene('anatel-sms-codigos-curtos-2026', '#2f4858', (80, 100, 620))
+def _():
+    rows = label_rows([('Operadoras: segurança', '60 dias'), ('Diretório público', '90 dias'), ('Bloqueio de códigos', '90 dias'), ('Golpes por SMS', '71%')], 46, 170, 408, 64, 21, hl=(2, '#dbe6ec'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'REGRAS PARA SMS', '#2f4858', rows))
+        + g(700, 110, 5, 1, tag('90 dias', 300, '#e8590c'))
+        + g(1250, 100, 6, 1, phone(250, 500, phone_screen('SMS', 'Bloqueado', 'código não registrado', '#2f4858', check=False)))
+        + g(880, 470, -4, 1, stamp('BLOQUEADO', 320, '#d63031', -7))
+    )

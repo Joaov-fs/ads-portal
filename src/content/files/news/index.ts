@@ -1,3 +1,4 @@
+import { newsAnatelSmsCodigosCurtos2026 } from './anatel-manda-bloquear-sms-de-codigos-nao-registrados-prazo-de-ate-90-dias';
 import { newsInssAtestmedReanalise10Dias } from './inss-atestmed-negado-tem-segunda-analise-em-10-dias-portaria-54-vale-desde-6-de-novembro';
 import { newsImpostoSeletivoMp1399Aliquotas } from './imposto-seletivo-mp-1-399-define-aliquotas-e-cobranca-comeca-em-2-de-fevereiro-de-2027';
 import { newsDecretoEscala6x19Novembro } from './decreto-escala-6x1-segunda-9-de-novembro-8-folgas-por-mes-o-que-muda';
@@ -161,4 +162,5 @@ export const newsFiles = [
   newsDolarSemana6Novembro2026,
   newsPecSegurancaSenado,
   newsJuroRealRanking2026,
+  newsAnatelSmsCodigosCurtos2026,
 ] as const;
