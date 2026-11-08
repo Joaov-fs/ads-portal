@@ -123,11 +123,28 @@ function buildMainSchema(
     url: absoluteUrl(pathname),
     datePublished: document.publishedAt,
     dateModified: document.updatedAt,
+    inLanguage: siteConfig.language,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(pathname) },
+    ...(document.coverImage
+      ? { image: [absoluteUrl(document.coverImage.src)] }
+      : {}),
     author: {
       '@type': authorName === 'Redação PortalFina' ? 'Organization' : 'Person',
       name: authorName,
+      url: absoluteUrl('/autor'),
     },
-    publisher: { '@type': 'Organization', name: siteConfig.name },
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${siteConfig.url}/#organization`,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: {
+        '@type': 'ImageObject',
+        url: absoluteUrl('/icons/icon-512.png'),
+        width: 512,
+        height: 512,
+      },
+    },
   };
 
   if (document.kind === 'calculator') {
