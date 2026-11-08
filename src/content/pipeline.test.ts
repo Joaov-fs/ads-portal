@@ -12,7 +12,8 @@ import { metaTitleOf, metaTitles } from './seo';
 
 describe('content pipeline', () => {
   it('loads typed file content through the repository', () => {
-    expect(contentRepository.list('news')).toHaveLength(60);
+    // A rotina editorial publica notícias todos os dias, então o total só cresce.
+    expect(contentRepository.list('news').length).toBeGreaterThanOrEqual(60);
     expect(contentRepository.list('guide')).toHaveLength(59);
     expect(contentRepository.list('calculator')).toHaveLength(53);
     const guideSlugs = getContentStaticParams('guide').map((item) => item.slug);

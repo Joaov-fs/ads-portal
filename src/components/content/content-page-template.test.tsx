@@ -48,16 +48,9 @@ describe('content templates', () => {
     expect(screen.getByText('Montante projetado')).toBeInTheDocument();
     expect(screen.getByRole('status')).toHaveTextContent('R$');
     for (const heading of [
-      'Explicação passo a passo',
-      'Memória de cálculo',
-      'O que este resultado indica para você',
-      'Como interpretar',
       'Capital inicial x juros',
-      'Evolução projetada',
-      'Cuidados importantes',
-      'Checklist antes de decidir',
-      'Transforme a simulação em ação',
-      'Legislação e referências aplicáveis',
+      'Evolução mês a mês',
+      'Como calculamos',
       'Perguntas frequentes',
       'Fontes e referências',
     ]) {

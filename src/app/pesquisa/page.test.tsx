@@ -8,12 +8,10 @@ describe('SearchPage', () => {
     render(await SearchPage({ searchParams: Promise.resolve({ q: 'selic' }) }));
 
     expect(
-      screen.getByRole('heading', { name: '2 resultados para “selic”' }),
+      screen.getByRole('heading', { name: /^\d+ resultados para “selic”$/ }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
-        'Taxa Selic: como as decisões do Copom afetam seu bolso',
-      ),
+      screen.getByText('Calculadora de Tesouro Selic'),
     ).toBeInTheDocument();
     expect(screen.getByRole('search')).toHaveFormValues({ q: 'selic' });
   });

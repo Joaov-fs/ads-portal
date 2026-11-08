@@ -15,6 +15,23 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'IR 2026: R$ 41 bilhões restituídos; como consultar',
   'bolsa-familia-outubro-antecipado-21-de-outubro':
     'Bolsa Família: outubro antecipado para 21/10',
+  // Calculadoras (títulos alinhados às buscas do Search Console)
+  inss: 'Calculadora INSS 2026: desconto por faixa e teto',
+  'prazo-prorrogacao-auxilio-inss':
+    'Prorrogação do auxílio do INSS: calcule o prazo',
+  'bolsa-familia': 'Calculadora Bolsa Família 2026: quanto você recebe',
+  'tesouro-selic': 'Simulador Tesouro Selic: rendimento líquido',
+  'das-mei-atraso': 'DAS do MEI atrasado: calcule multa e juros',
+  periculosidade: 'Calculadora de periculosidade: 30% e reflexos',
+  insalubridade: 'Calculadora de insalubridade: 10%, 20% ou 40%',
+  pis: 'Calculadora PIS/Pasep 2026: valor do abono',
+  'decimo-proporcional': 'Calculadora de 13º proporcional 2026',
+  cdi: 'Simulador CDI: quanto rende 100% do CDI',
+  'plr-ppr-liquido': 'Calculadora PLR e PPR líquido com IR 2026',
+  'ferias-proporcionais': 'Calculadora de férias proporcionais com 1/3',
+  'retroativos-inss': 'Retroativos do INSS: calcule os atrasados',
+  'reajuste-aluguel': 'Reajuste de aluguel: calcule pelo IGP-M ou IPCA',
+  'salario-por-hora': 'Salário por hora: calcule o valor da sua hora',
   // Guias
   'prorrogacao-do-auxilio-por-incapacidade-temporaria-quando-e-como-pedir':
     'Prorrogação do auxílio-doença: quando e como pedir',
@@ -98,7 +115,7 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'como-funciona-o-desconto-do-inss':
     'Desconto do INSS: faixas, teto e exemplos',
   'cdb-lci-lca-ou-tesouro-selic-qual-escolher':
-    'CDB, LCI, LCA ou Tesouro Selic: como escolher',
+    'CDB, LCI, LCA ou Tesouro Selic: qual rende mais',
   'poupanca-ou-cdb-qual-rende-mais': 'Poupança ou CDB: qual rende mais?',
   'juros-compostos-na-pratica': 'Juros compostos na prática, com exemplos',
   'financiamento-sac-ou-price-qual-escolher':
@@ -110,7 +127,7 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'bpc-loas-quem-tem-direito-e-como-pedir':
     'BPC/LOAS: quem tem direito e como pedir',
   'abono-salarial-pis-pasep-quem-tem-direito':
-    'Abono salarial PIS/Pasep: quem tem direito',
+    'PIS/Pasep 2026: quem tem direito, valor e saque',
   'quanto-custa-um-funcionario-clt': 'Quanto custa um funcionário CLT',
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',

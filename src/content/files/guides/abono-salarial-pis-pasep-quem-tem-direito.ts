@@ -126,6 +126,16 @@ export const guideAbonoSalarialPisPasepQuemTemDireito = {
   ],
   faq: [
     {
+      question: 'Quem tem direito ao saque do PIS/Pasep em 2026?',
+      answer:
+        'Tem direito quem está inscrito no PIS/Pasep há pelo menos 5 anos, trabalhou com carteira assinada por 30 dias ou mais em 2024, recebeu em média até R$ 2.766 por mês e teve os dados informados corretamente pelo empregador no eSocial. O saque vai até 30 de dezembro de 2026.',
+    },
+    {
+      question: 'Como se recebe o PIS e qual é a quantia?',
+      answer:
+        'O valor é R$ 135,08 por mês trabalhado em 2024, até o máximo de R$ 1.621 para 12 meses. O PIS é pago pela Caixa, com crédito em conta ou saque em agência e lotérica, e o Pasep pelo Banco do Brasil. Consulte valor e data na Carteira de Trabalho Digital.',
+    },
+    {
       question: 'O abono é pago junto com o salário?',
       answer:
         'Não. É um benefício separado, pago por calendário, e quem não retirou até o prazo perde o valor daquele ciclo.',

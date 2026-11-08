@@ -9,10 +9,10 @@ import { buildInstitutionalMetadata } from '@/content';
 import { estimateFacts, formatBrl } from '@/features/impostometro/estimate';
 
 const description =
-  'Quanto a União já arrecadou em 2026? Estimativa em tempo real a partir dos dados oficiais da Receita Federal, com método e fontes explicados.';
+  'Impostômetro 2026 ao vivo: quanto a União já arrecadou em impostos, estimado em tempo real com dados oficiais da Receita Federal, método e fontes.';
 
 export const metadata = buildInstitutionalMetadata(
-  'Impostômetro: arrecadação federal em 2026',
+  'Impostômetro 2026 em tempo real: arrecadação federal',
   description,
   '/impostometro',
 );

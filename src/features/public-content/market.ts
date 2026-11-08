@@ -42,7 +42,7 @@ const trendOf = (value: number): Indicator['trend'] =>
 const shortDate = (date: string) => date.slice(0, 5);
 
 function currency(label: string, points: readonly Point[]): Indicator {
-  const latest = points[points.length - 1] as Point;
+  const latest = points[points.length - 1];
   const previous = points[points.length - 2] ?? latest;
   const change = ((latest.value - previous.value) / previous.value) * 100;
 
@@ -70,7 +70,7 @@ async function live(): Promise<Record<string, Indicator>> {
 
   if (selic.status === 'fulfilled') {
     const points = selic.value;
-    const latest = points[points.length - 1] as Point;
+    const latest = points[points.length - 1];
     const earlier = [...points]
       .reverse()
       .find((point) => point.value !== latest.value);
@@ -87,7 +87,7 @@ async function live(): Promise<Record<string, Indicator>> {
   }
 
   if (cdi.status === 'fulfilled') {
-    const latest = cdi.value[cdi.value.length - 1] as Point;
+    const latest = cdi.value[cdi.value.length - 1];
 
     found.CDI = {
       label: 'CDI',
@@ -100,7 +100,7 @@ async function live(): Promise<Record<string, Indicator>> {
   }
 
   if (ipca.status === 'fulfilled') {
-    const latest = ipca.value[ipca.value.length - 1] as Point;
+    const latest = ipca.value[ipca.value.length - 1];
     const previous = ipca.value[ipca.value.length - 2] ?? latest;
     const delta = latest.value - previous.value;
 
@@ -119,7 +119,7 @@ async function live(): Promise<Record<string, Indicator>> {
       (igpm.value.reduce((total, point) => total * (1 + point.value / 100), 1) -
         1) *
       100;
-    const latest = igpm.value[igpm.value.length - 1] as Point;
+    const latest = igpm.value[igpm.value.length - 1];
 
     found['IGP-M em 12 meses'] = {
       label: 'IGP-M em 12 meses',

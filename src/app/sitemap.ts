@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const allContent = listContentSummaries();
   const institutionalPages = [
     '/sobre',
-    '/impostometro',
     '/contato',
     '/politica-de-privacidade',
     '/politica-de-cookies',
@@ -49,6 +48,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: siteConfig.url,
       changeFrequency: 'daily',
       priority: 1,
+    },
+    {
+      // O contador é atualizado continuamente e recebe buscas "em tempo real".
+      url: new URL('/impostometro', siteConfig.url).toString(),
+      changeFrequency: 'daily',
+      priority: 0.8,
     },
     ...contentIndexes,
     ...contentPages,

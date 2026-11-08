@@ -15,7 +15,10 @@ describe('production infrastructure', () => {
     const sitemapUrls = sitemap().map((entry) => entry.url);
 
     expect(manifestData.icons).toHaveLength(3);
-    expect(robotsData.sitemap).toMatch(/\/sitemap\.xml$/);
+    expect(robotsData.sitemap).toEqual([
+      expect.stringMatching(/\/sitemap\.xml$/),
+      expect.stringMatching(/\/news-sitemap\.xml$/),
+    ]);
     expect(sitemapUrls).toEqual(
       expect.arrayContaining([
         expect.stringMatching(/\/sobre$/),

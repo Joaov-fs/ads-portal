@@ -10,6 +10,9 @@ export default function robots(): MetadataRoute.Robots {
       disallow: ['/design-system', '/admin', '/acesso-admin'],
     },
     host: siteConfig.url,
-    sitemap: `${siteConfig.url}/sitemap.xml`,
+    sitemap: [
+      `${siteConfig.url}/sitemap.xml`,
+      `${siteConfig.url}/news-sitemap.xml`,
+    ],
   };
 }

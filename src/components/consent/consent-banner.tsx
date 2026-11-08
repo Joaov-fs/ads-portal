@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 
 import { consentStorageKey } from './consent-defaults';
 
@@ -42,27 +42,39 @@ function applyChoice(choice: Choice) {
   window.clarity?.('consent', choice === 'granted');
 }
 
+function subscribeToStorage(onChange: () => void) {
+  window.addEventListener('storage', onChange);
+
+  return () => window.removeEventListener('storage', onChange);
+}
+
 export const reopenConsentEvent = 'portalfina:reabrir-cookies';
 
 /** Faixa de consentimento: aparece até a pessoa escolher e pode ser reaberta pela política de cookies. */
 export function ConsentBanner() {
-  const [open, setOpen] = useState(false);
+  // No servidor a faixa fica oculta; no navegador, aparece se não há escolha salva.
+  const hasChoice = useSyncExternalStore(
+    subscribeToStorage,
+    () => readChoice() !== null,
+    () => true,
+  );
+  const [dismissed, setDismissed] = useState(false);
+  const [reopened, setReopened] = useState(false);
 
   useEffect(() => {
-    if (readChoice() === null) setOpen(true);
-
-    const reopen = () => setOpen(true);
+    const reopen = () => setReopened(true);
 
     window.addEventListener(reopenConsentEvent, reopen);
 
     return () => window.removeEventListener(reopenConsentEvent, reopen);
   }, []);
 
-  if (!open) return null;
+  if (!reopened && (hasChoice || dismissed)) return null;
 
   const choose = (choice: Choice) => {
     applyChoice(choice);
-    setOpen(false);
+    setDismissed(true);
+    setReopened(false);
   };
 
   return (

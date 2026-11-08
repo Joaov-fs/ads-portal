@@ -321,7 +321,7 @@ const specs = [
     title: 'Calculadora de CDI',
     category: 'financas',
     description:
-      'Projete o rendimento bruto de um investimento remunerado como percentual do CDI.',
+      'Simule quanto rende 100% do CDI ou outro percentual: informe valor e prazo e veja o rendimento bruto do CDB, LCI, LCA ou conta remunerada.',
     howItWorks:
       'A projeção aplica a taxa anual do CDI que você informar ao percentual contratado e ao prazo. O CDI muda com a Selic, então consulte o valor atual no site do Banco Central. O resultado é bruto, antes do Imposto de Renda.',
     tags: ['financas', 'cdi', 'investimentos'],
@@ -1098,7 +1098,7 @@ const specs = [
     title: 'Calculadora de Tesouro Selic',
     category: 'financas',
     description:
-      'Projete o rendimento líquido de um investimento pós-fixado com imposto estimado.',
+      'Simule quanto rende o Tesouro Selic: informe valor e prazo e veja o rendimento líquido, já com o Imposto de Renda pela tabela regressiva.',
     howItWorks:
       'A taxa anual é capitalizada pelo prazo e o IR pela tabela regressiva incide sobre o rendimento. Não inclui a taxa de custódia da B3 nem a da corretora.',
     tags: ['financas', 'tesouro', 'selic'],
@@ -1221,10 +1221,8 @@ export const mvpCalculatorCatalog = specs.map(
       ...spec,
       kind: 'calculator',
       authorId: 'equipe-editorial',
-      publishedAt: publicationDates[
-        (index * 5) % publicationDates.length
-      ] as string,
-      updatedAt: reviewDates[index % reviewDates.length] as string,
+      publishedAt: publicationDates[(index * 5) % publicationDates.length],
+      updatedAt: reviewDates[index % reviewDates.length],
       resultLabel: 'Resultado estimado',
       resultPlaceholder: 'Preencha os campos para calcular.',
       sections: [

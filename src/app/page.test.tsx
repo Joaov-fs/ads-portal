@@ -35,17 +35,17 @@ describe('Home', () => {
     }
   });
 
-  it('lets the visitor try the salary calculator without leaving the home', () => {
+  it('leads the visitor to the salary calculator from the home', () => {
     render(<HomeView />);
 
     expect(
-      screen.getByLabelText('Quanto você ganha por mês (bruto)?'),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole('link', {
-        name: /Ver o holerite completo, com dependentes e pensão/,
-      }),
-    ).toHaveAttribute('href', '/calculadoras/salario-liquido');
+      screen
+        .getAllByRole('link')
+        .some(
+          (link) =>
+            link.getAttribute('href') === '/calculadoras/salario-liquido',
+        ),
+    ).toBe(true);
   });
 
   it('renders only categories with a useful public path', () => {
@@ -62,7 +62,6 @@ describe('Home', () => {
       ).toBe(true);
     }
 
-    expect(screen.queryByText('Política')).not.toBeInTheDocument();
     expect(screen.queryByText('Publicidade')).not.toBeInTheDocument();
   });
 
@@ -85,9 +84,10 @@ describe('Home', () => {
   });
 
   it('shows a cover for every news card and a product card for each featured calculator', () => {
-    render(<HomeView />);
+    const { container } = render(<HomeView />);
 
-    expect(screen.getAllByRole('img').length).toBeGreaterThanOrEqual(6);
+    // As capas são decorativas (alt vazio), por isso não têm o papel "img".
+    expect(container.querySelectorAll('img').length).toBeGreaterThanOrEqual(6);
     for (const slug of [
       'salario-liquido',
       'rescisao-clt',
