@@ -66,8 +66,14 @@ export const newsPecSegurancaSenado = {
         columns: ['Tema', 'O que prevê'],
         rows: [
           ['SUSP', 'Passa a constar da Constituição (art. 144)'],
-          ['Facções e milícias', 'Penas mais duras e regimes especiais de prisão'],
-          ['Polícias municipais', 'Podem ser criadas, com controle do Ministério Público'],
+          [
+            'Facções e milícias',
+            'Penas mais duras e regimes especiais de prisão',
+          ],
+          [
+            'Polícias municipais',
+            'Podem ser criadas, com controle do Ministério Público',
+          ],
           ['PRF', 'Atribuições ampliadas'],
           ['Sistema prisional', 'Cria o Sistema de Políticas Penais'],
         ],

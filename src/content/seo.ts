@@ -16,12 +16,12 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'bolsa-familia-outubro-antecipado-21-de-outubro':
     'Bolsa Família: outubro antecipado para 21/10',
   // Calculadoras (títulos alinhados às buscas do Search Console)
-  inss: 'Calculadora INSS 2026: desconto por faixa e teto',
+  inss: 'Calculadora INSS 2026: quanto sai do seu salário?',
   'prazo-prorrogacao-auxilio-inss':
-    'Prorrogação do auxílio do INSS: calcule o prazo',
-  'bolsa-familia': 'Calculadora Bolsa Família 2026: quanto você recebe',
-  'tesouro-selic': 'Simulador Tesouro Selic: rendimento líquido',
-  'das-mei-atraso': 'DAS do MEI atrasado: calcule multa e juros',
+    'Auxílio do INSS acabando? Saiba quando prorrogar',
+  'bolsa-familia': 'Bolsa Família 2026: simule quanto sua família recebe',
+  'tesouro-selic': 'Tesouro Selic: simule quanto rende, já com IR',
+  'das-mei-atraso': 'DAS do MEI atrasado? Calcule a multa e regularize',
   periculosidade: 'Calculadora de periculosidade: 30% e reflexos',
   insalubridade: 'Calculadora de insalubridade: 10%, 20% ou 40%',
   pis: 'Calculadora PIS/Pasep 2026: valor do abono',
@@ -115,7 +115,7 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'como-funciona-o-desconto-do-inss':
     'Desconto do INSS: faixas, teto e exemplos',
   'cdb-lci-lca-ou-tesouro-selic-qual-escolher':
-    'CDB, LCI, LCA ou Tesouro Selic: qual rende mais',
+    'CDB, LCI, LCA ou Tesouro: qual rende mais em 2026?',
   'poupanca-ou-cdb-qual-rende-mais': 'Poupança ou CDB: qual rende mais?',
   'juros-compostos-na-pratica': 'Juros compostos na prática, com exemplos',
   'financiamento-sac-ou-price-qual-escolher':
