@@ -1333,3 +1333,14 @@ def _():
         + g(1250, 100, 6, 1, phone(250, 500, phone_screen('SMS', 'Bloqueado', 'código não registrado', '#2f4858', check=False)))
         + g(880, 470, -4, 1, stamp('BLOQUEADO', 320, '#d63031', -7))
     )
+
+
+@scene('gasolina-prazo-9-novembro-2026', '#6b3f1d', (80, 100, 620))
+def _():
+    rows = label_rows([('Corte na gasolina A', 'R$ 0,89/L'), ('PIS/Pasep e Cofins', 'R$ 0,79/L'), ('Cide', 'R$ 0,10/L'), ('Fim da medida', '9/11')], 46, 170, 408, 64, 21, hl=(3, '#f1e0cc'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'GASOLINA SEM TRIBUTOS', '#6b3f1d', rows))
+        + g(700, 110, 5, 1, tag('R$ 0,89 por litro', 340, '#e8590c'))
+        + g(1130, 90, 5, 0.9, calendar_month('NOVEMBRO', 0, 30, marks=(9,), accent='#6b3f1d', mark_color='#d63031'))
+        + g(780, 470, -4, 1, stamp('VENCE 9/11', 310, '#d63031', -7))
+    )
