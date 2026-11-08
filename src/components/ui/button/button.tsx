@@ -3,12 +3,7 @@ import type { ButtonHTMLAttributes, ReactNode } from 'react';
 import { mergeClassNames } from '@/lib/merge-class-names';
 
 export type ButtonVariant =
-  | 'primary'
-  | 'secondary'
-  | 'outline'
-  | 'ghost'
-  | 'danger'
-  | 'success';
+  'primary' | 'secondary' | 'outline' | 'ghost' | 'danger' | 'success';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 

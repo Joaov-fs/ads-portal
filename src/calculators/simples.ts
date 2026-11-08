@@ -98,11 +98,7 @@ export function simplesNacional(
   annexNumber: number,
 ): SimplesResult {
   const key = Math.min(5, Math.max(1, Math.round(annexNumber))) as
-    | 1
-    | 2
-    | 3
-    | 4
-    | 5;
+    1 | 2 | 3 | 4 | 5;
   const annex = simplesAnnexes[key];
   const revenue = Math.max(0, rbt12);
   const index = simplesBracketLimits.findIndex((limit) => revenue <= limit);

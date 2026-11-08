@@ -18,13 +18,12 @@ import {
   calculateVacation,
   calculateNightShift,
   progressiveInss,
-  progressiveIrrf,
 } from '@/calculators/rules';
 import {
   unemploymentBenefit,
   unemploymentInstallments,
 } from '@/calculators/benefits';
-import { fixedIncome, incomeTaxRateForDays } from '@/calculators/finance';
+import { fixedIncome } from '@/calculators/finance';
 import { noticeDaysFor } from '@/calculators/termination';
 
 const R = new URL('../../src/content/files/calculators', import.meta.url)

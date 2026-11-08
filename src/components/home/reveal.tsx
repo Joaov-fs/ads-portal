@@ -3,12 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 
 type RevealVariant =
-  | 'fade-up'
-  | 'fade-down'
-  | 'fade-left'
-  | 'fade-right'
-  | 'scale'
-  | 'zoom-in';
+  'fade-up' | 'fade-down' | 'fade-left' | 'fade-right' | 'scale' | 'zoom-in';
 
 type RevealProps = Readonly<{
   children: ReactNode;

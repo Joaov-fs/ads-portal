@@ -36,7 +36,8 @@ export const siteConfig = {
   description:
     'Ferramentas e informação clara para decisões financeiras, trabalhistas e econômicas.',
   url: configuredSiteUrl,
-  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || 'kronpsltda@gmail.com',
+  contactEmail:
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || 'kronpsltda@gmail.com',
   locale: 'pt_BR',
   language: 'pt-BR',
   keywords: [

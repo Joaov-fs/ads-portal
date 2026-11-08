@@ -351,7 +351,7 @@ export function HomeView({
               ].map(([label, hint, href]) => (
                 <Link
                   className="group grid gap-0.5 rounded-ads-large border border-white/15 bg-white/[0.07] px-4 py-3 backdrop-blur transition hover:-translate-y-0.5 hover:border-emerald-300/60 hover:bg-white/15"
-                  href={href as string}
+                  href={href}
                   key={href}
                 >
                   <span className="flex items-center justify-between font-bold text-white">

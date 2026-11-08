@@ -68,21 +68,6 @@ const number = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 2 });
 const percent = (value: number) => `${number.format(value)}%`;
 const money = (value: number) => currency.format(value);
 const input = (values: CalculatorValues, name: string) => values[name] ?? 0;
-const nonCurrencyIds = new Set<CalculatorId>([
-  'banco-de-horas',
-  'prazo-auxilio-inss',
-  'contador-dias',
-  'conversao-taxa',
-  'das-limite-mei',
-  'fator-r',
-]);
-function displayValue(id: CalculatorId, value: number) {
-  return nonCurrencyIds.has(id)
-    ? id === 'conversao-taxa' || id === 'das-limite-mei' || id === 'fator-r'
-      ? percent(value)
-      : number.format(value)
-    : money(value);
-}
 
 type DecisionProfile = 'benefit' | 'finance' | 'tax' | 'work' | 'utility';
 

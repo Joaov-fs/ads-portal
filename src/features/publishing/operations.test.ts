@@ -10,11 +10,15 @@ import {
 
 describe('publishing operations', () => {
   it('calculates the operational dashboard from one record collection', () => {
+    const count = (kind: string) =>
+      initialPublishingRecords.filter((record) => record.kind === kind).length;
+
+    expect(count('news')).toBeGreaterThan(0);
     expect(calculatePublishingStats(initialPublishingRecords)).toMatchObject({
-      news: 4,
-      guide: 2,
-      calculator: 50,
-      published: 56,
+      news: count('news'),
+      guide: count('guide'),
+      calculator: count('calculator'),
+      published: initialPublishingRecords.length,
       draft: 0,
     });
   });

@@ -1221,10 +1221,8 @@ export const mvpCalculatorCatalog = specs.map(
       ...spec,
       kind: 'calculator',
       authorId: 'equipe-editorial',
-      publishedAt: publicationDates[
-        (index * 5) % publicationDates.length
-      ] as string,
-      updatedAt: reviewDates[index % reviewDates.length] as string,
+      publishedAt: publicationDates[(index * 5) % publicationDates.length],
+      updatedAt: reviewDates[index % reviewDates.length],
       resultLabel: 'Resultado estimado',
       resultPlaceholder: 'Preencha os campos para calcular.',
       sections: [
