@@ -1367,3 +1367,15 @@ def _():
         + g(1300, 480, 5, 1, coins_stack(4), 'sh')
         + g(1180, 700, -4, 1, pen(300))
     )
+
+
+@scene('gas-do-povo-mp-2031', '#0e6b60', (80, 100, 860))
+def _():
+    rows = label_rows([('Medida provisória', 'MP 1.400/2026'), ('Nova vigência', '19/11/2031'), ('Famílias atendidas', '15 milhões'), ('Revendas credenciadas', '27.160')], 46, 170, 408, 64, 21, hl=(1, '#d3ece8'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'GÁS DO POVO', '#0e6b60', rows))
+        + g(700, 90, 5, 1, calendar_month('NOVEMBRO 2031', 6, 30, marks=(19,), w=460, h=500, accent='#0e6b60', mark_color='#e8590c'))
+        + g(1280, 330, 6, 1, botijao())
+        + g(1300, 90, -4, 1, tag('até 2031', 270, '#e8590c'))
+        + g(780, 700, -3, 1, stamp('PRORROGADO', 330, '#d63031', -6))
+    )

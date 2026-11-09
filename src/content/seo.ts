@@ -202,6 +202,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     '13º salário 2026: 1ª parcela 30/11, 2ª 18/12',
   'ipca-15-de-outubro-sobe-0-32-e-inflacao-em-12-meses-vai-a-4-62-tomate-puxa-a-alta':
     'IPCA-15 de outubro: 0,32% e 4,62% em 12 meses',
+  'gas-do-povo-prorrogado-ate-19-11-2031-mp-1-400-e-3-1-milhoes-de-vales-em-10-11':
+    'Gás do Povo prorrogado até 2031 pela MP 1.400',
   'gas-do-povo-recarga-todo-dia-10-proxima-em-10-de-novembro-quem-recebe-e-quanto-vale':
     'Gás do Povo: recarga todo dia 10, próxima em 10/11',
   'arrecadacao-federal-recorde-de-r-239-4-bilhoes-em-setembro-o-que-a-alta-de-5-62-significa-para-voce':
