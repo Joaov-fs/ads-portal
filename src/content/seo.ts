@@ -132,6 +132,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'enem-2026-redacao-sobre-o-sus-nota-vai-ate-1-000-e-a-2a-prova-e-em-15-de-novembro':
+    'Redação do Enem 2026 é sobre o SUS: nota até 1.000',
   'pec-da-seguranca-publica-aprovada-no-senado-por-75-a-0-falta-a-promulgacao':
     'PEC da Segurança aprovada no Senado por 75 a 0',
   'inss-atestmed-negado-tem-segunda-analise-em-10-dias-portaria-54-vale-desde-6-de-novembro':

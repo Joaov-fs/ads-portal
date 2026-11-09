@@ -1344,3 +1344,14 @@ def _():
         + g(1130, 90, 5, 0.9, calendar_month('NOVEMBRO', 0, 30, marks=(9,), accent='#6b3f1d', mark_color='#d63031'))
         + g(780, 470, -4, 1, stamp('VENCE 9/11', 310, '#d63031', -7))
     )
+
+
+@scene('enem-redacao-sus-2026', '#c9822b', (80, 100, 540))
+def _():
+    rows = label_rows([('Tema', 'SUS'), ('Linhas', '8 a 30'), ('Competências', '5 x 200'), ('Nota máxima', '1.000')], 46, 170, 408, 64, 21, hl=(0, '#f6e3c6'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'REDAÇÃO ENEM 2026', '#8a4f0e', rows))
+        + g(700, 110, 5, 1, tag('Nota até 1.000', 330, '#1d5f7a'))
+        + g(1130, 90, 5, 0.9, calendar_month('NOVEMBRO', 0, 30, marks=(15,), accent='#8a4f0e', mark_color='#1d5f7a'))
+        + g(760, 480, -4, 1, pen(250))
+    )

@@ -1,3 +1,4 @@
+import { newsEnemRedacaoSus2026 } from './enem-2026-redacao-sobre-o-sus-nota-vai-ate-1-000-e-a-2a-prova-e-em-15-de-novembro';
 import { newsAnatelSmsCodigosCurtos2026 } from './anatel-manda-bloquear-sms-de-codigos-nao-registrados-prazo-de-ate-90-dias';
 import { newsInssAtestmedReanalise10Dias } from './inss-atestmed-negado-tem-segunda-analise-em-10-dias-portaria-54-vale-desde-6-de-novembro';
 import { newsImpostoSeletivoMp1399Aliquotas } from './imposto-seletivo-mp-1-399-define-aliquotas-e-cobranca-comeca-em-2-de-fevereiro-de-2027';
@@ -165,4 +166,5 @@ export const newsFiles = [
   newsJuroRealRanking2026,
   newsAnatelSmsCodigosCurtos2026,
   newsGasolinaVence9Novembro2026,
+  newsEnemRedacaoSus2026,
 ] as const;
