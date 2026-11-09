@@ -86,6 +86,8 @@ import { newsJuroRealRanking2026 } from './brasil-tem-o-maior-juro-real-do-mundo
 import { newsGasolinaVence9Novembro2026 } from './gasolina-sem-tributos-vence-9-11-r-0-89-por-litro-prorrogacao-nao-confirmada';
 import { newsPecSegurancaSenado } from './pec-da-seguranca-publica-aprovada-no-senado-por-75-a-0-falta-a-promulgacao';
 
+import { newsSuperavitComercialOutubro2026 } from './superavit-comercial-de-outubro-e-recorde-us-9-32-bi';
+
 export const newsFiles = [
   newsFiesRemanescentes2026,
   newsPnadDesemprego3Trimestre2026,
@@ -171,4 +173,5 @@ export const newsFiles = [
   newsEnemRedacaoSus2026,
   newsFocus9Novembro2026Selic1375,
   newsGasDoPovoMp1400Ate2031,
+  newsSuperavitComercialOutubro2026,
 ] as const;

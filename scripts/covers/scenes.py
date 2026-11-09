@@ -1379,3 +1379,15 @@ def _():
         + g(1300, 90, -4, 1, tag('até 2031', 270, '#e8590c'))
         + g(780, 700, -3, 1, stamp('PRORROGADO', 330, '#d63031', -6))
     )
+
+
+@scene('balanca-comercial-outubro-2026', '#6a3a7a', (60, 100, 760))
+def _():
+    rows = label_rows([('Exportações', 'US$ 37,81 bi'), ('Importações', 'US$ 28,49 bi'), ('Saldo (superávit)', 'US$ 9,32 bi'), ('Corrente de comércio', 'US$ 66,3 bi')], 40, 170, 420, 64, 21, hl=(2, '#eadcf0'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'BALANÇA COMERCIAL OUT/2026', '#6a3a7a', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, title='EXPORTAÇÃO X IMPORTAÇÃO', bars=[(0.9, '#6a3a7a'), (0.68, '#e8590c')]))
+        + g(1290, 110, 6, 1, tag('US$ 9,32 bi', 300, '#e8590c'))
+        + g(1230, 520, -4, 0.55, box(420, 320))
+        + g(900, 660, -3, 1, stamp('SUPERÁVIT', 300, '#2b8a3e', -5))
+    )
