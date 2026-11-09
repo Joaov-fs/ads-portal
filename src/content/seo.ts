@@ -5,6 +5,8 @@ import type { ContentDocument } from './types';
  * antes do sufixo da marca). O título completo continua sendo o H1 da página.
  */
 export const metaTitles: Readonly<Record<string, string>> = {
+  'focus-9-novembro-selic-13-75-fim-de-2026-mercado-nao-ve-mais-corte':
+    'Focus: Selic de 13,75% no fim de 2026, sem corte',
   'focus-3-novembro-selic-13-50-fim-de-2026-dolar-r-5-34-copom-decide-dia-4':
     'Focus: Selic de 13,50% e dólar a R$ 5,34 em 2026',
   'lula-garante-programas-sociais-no-4o-mandato-bolsa-familia-paga-r-691-e-novembro-comeca-dia-16':

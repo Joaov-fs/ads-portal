@@ -1355,3 +1355,15 @@ def _():
         + g(1130, 90, 5, 0.9, calendar_month('NOVEMBRO', 0, 30, marks=(15,), accent='#8a4f0e', mark_color='#1d5f7a'))
         + g(760, 480, -4, 1, pen(250))
     )
+
+
+@scene('focus-9-novembro-2026', '#3b3f8f', (50, 100, 740))
+def _():
+    rows = label_rows([('Selic fim de 2026', '13,75%'), ('Semana anterior', '13,50%'), ('IPCA 2027', '4,90%'), ('Dólar fim de 2026', 'R$ 5,35')], 46, 170, 408, 64, 21, hl=(0, '#dfe0f3'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'BOLETIM FOCUS 9/11', '#2c2f6e', rows))
+        + g(690, 120, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(9, 10), w=520, h=520, accent='#2c2f6e', mark_color='#e8590c'))
+        + g(1270, 110, 6, 1, tag('13,75%', 260, '#e8590c'))
+        + g(1300, 480, 5, 1, coins_stack(4), 'sh')
+        + g(1180, 700, -4, 1, pen(300))
+    )
