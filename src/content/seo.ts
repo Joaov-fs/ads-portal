@@ -134,6 +134,10 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'gasolina-sem-tributos-prorrogada-ate-9-12-decreto-13-159':
+    'Gasolina sem tributos federais vai até 9/12',
+  'ata-do-copom-juros-restritivos-por-mais-tempo-ipca-de-2028-sobe-a-3-5':
+    'Ata do Copom vê juros altos por mais tempo',
   'enem-reaplicacao-pedido-de-16-a-20-de-novembro-provas-em-15-e-16-de-dezembro':
     'Enem 2026: reaplicação, pedido de 16 a 20/11',
   'superavit-comercial-de-outubro-e-recorde-us-9-32-bi':

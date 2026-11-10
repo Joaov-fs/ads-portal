@@ -1415,3 +1415,26 @@ def _():
         + g(1230, 520, -4, 1, pen(320, '#2b2b2b'))
         + g(1260, 700, -5, 1, stamp('PEDIDO ATÉ 20/11', 380, '#f4e3c3', -4))
     )
+
+
+@scene('gasolina-prorrogada-9-dezembro-2026', '#3d7a3a', (80, 100, 620))
+def _():
+    rows = label_rows([('Decreto', '13.159'), ('Novo prazo', '9/12'), ('Gasolina', 'PIS/Cofins e Cide zerados'), ('Subvenção etanol', 'R$ 0,428/L')], 46, 170, 408, 64, 19, hl=(1, '#dcebd6'))
+    return (
+        g(90, 110, -4, 1, doc(500, 580, 'DESONERAÇÃO PRORROGADA', '#2c5a2a', rows))
+        + g(700, 130, 5, 1, fuel_pump())
+        + g(1120, 100, 5, 0.9, calendar_month('DEZEMBRO', 2, 31, marks=(9,), accent='#2c5a2a', mark_color='#d63031'))
+        + g(1190, 690, 6, 1, tag('até 9/12', 270, '#e8590c'))
+    )
+
+
+@scene('ata-copom-10-novembro-2026', '#b5533a', (60, 100, 760))
+def _():
+    rows = label_rows([('Selic mantida', '13,75%'), ('IPCA 2º tri 2028', '3,5%'), ('Projeção anterior', '3,1%'), ('Meta de inflação', '3%')], 46, 170, 408, 64, 21, hl=(1, '#f6dccf'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'ATA DO COPOM', '#7e2f1b', rows))
+        + g(1000, 420, 4, 1, gauge(170, 0.7, '3,5%'))
+        + g(1230, 110, 6, 1, tag('13,75%', 260, '#2b6cb0'))
+        + g(1300, 480, 5, 1, coins_stack(4), 'sh')
+        + g(720, 720, -4, 1, pen(300))
+    )

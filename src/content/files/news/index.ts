@@ -1,3 +1,5 @@
+import { newsGasolinaProrrogada9Dezembro2026 } from './gasolina-sem-tributos-prorrogada-ate-9-12-decreto-13-159';
+import { newsAtaCopom10Novembro2026 } from './ata-do-copom-juros-restritivos-por-mais-tempo-ipca-de-2028-sobe-a-3-5';
 import { newsEnemReaplicacao2026 } from './enem-reaplicacao-pedido-de-16-a-20-de-novembro-provas-em-15-e-16-de-dezembro';
 import { newsEnemRedacaoSus2026 } from './enem-2026-redacao-sobre-o-sus-nota-vai-ate-1-000-e-a-2a-prova-e-em-15-de-novembro';
 import { newsAnatelSmsCodigosCurtos2026 } from './anatel-manda-bloquear-sms-de-codigos-nao-registrados-prazo-de-ate-90-dias';
@@ -178,4 +180,6 @@ export const newsFiles = [
   newsSuperavitComercialOutubro2026,
   newsFuxSuspendeAcoesMpBets,
   newsEnemReaplicacao2026,
+  newsGasolinaProrrogada9Dezembro2026,
+  newsAtaCopom10Novembro2026,
 ] as const;
