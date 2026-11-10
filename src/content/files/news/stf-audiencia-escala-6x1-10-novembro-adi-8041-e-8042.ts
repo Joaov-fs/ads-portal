@@ -4,9 +4,9 @@ export const newsStfAudienciaEscala6x1Adi8041 = {
   kind: 'news',
   slug: 'stf-audiencia-escala-6x1-10-novembro-adi-8041-e-8042',
   title:
-    'STF faz audiência sobre o fim da escala 6x1 em 10/11: Dino diz que prazo de 60 dias não parece inviável',
+    'Escala 6x1: Dino diz no STF que não há cenário de 40 horas em 16/12 e vê consenso em flexibilizar as folgas',
   description:
-    'Dino marcou audiência de conciliação às 14h de 10/11 nas ADIs 8041 e 8042, de CNC e CNI. A jornada de 40 horas não está em discussão, só a implementação.',
+    'Na audiência de 10/11 nas ADIs 8041 e 8042, Dino disse que a primeira etapa é de 42 horas e que decidirá a flexibilização das folgas nos próximos dias.',
   category: 'politica',
   coverImage: {
     src: '/images/news/stf-audiencia-escala-6x1-10-novembro-adi-8041-e-8042.jpg',
@@ -22,7 +22,7 @@ export const newsStfAudienciaEscala6x1Adi8041 = {
     {
       value: '10/11',
       label: 'Audiência de conciliação no STF',
-      note: 'Às 14h, na Primeira Turma, marcada pelo ministro Flávio Dino.',
+      note: 'Realizada às 14h, na Primeira Turma, sob relatoria do ministro Flávio Dino.',
     },
     {
       value: 'ADI 8041',
@@ -30,18 +30,18 @@ export const newsStfAudienciaEscala6x1Adi8041 = {
       note: 'A ADI 8042, da CNI, também questiona a transição.',
     },
     {
-      value: '15/12',
-      label: 'Fim do prazo de 60 dias',
+      value: '16/12',
+      label: 'Início da 1ª etapa da redução',
       note: 'Primeira etapa: de 44 para 42 horas semanais.',
     },
   ],
   sections: [
     {
-      heading: 'O que o STF vai discutir na audiência de 10/11',
+      heading: 'O que foi dito na audiência do STF em 10/11',
       paragraphs: [
-        'O ministro Flávio Dino, do Supremo Tribunal Federal (STF), marcou para terça-feira, 10 de novembro, às 14h, uma audiência de conciliação sobre o fim da escala 6x1. A reunião ocorre na Sala de Sessões da Primeira Turma e trata das ações que contestam as regras de transição da Emenda Constitucional 141/2026.',
+        'O ministro Flávio Dino, do Supremo Tribunal Federal (STF), realizou em 10 de novembro, às 14h, a audiência de conciliação sobre o fim da escala 6x1, na Sala de Sessões da Primeira Turma. A reunião tratou das ações que contestam as regras de transição da Emenda Constitucional 141/2026.',
         'A ADI 8041 foi proposta pela Confederação Nacional do Comércio de Bens, Serviços e Turismo (CNC). A ADI 8042, da Confederação Nacional da Indústria (CNI), também questiona o calendário. Segundo a Agência Brasil, a CNC pede que o início da redução da jornada seja adiado para outubro de 2027, e a CNI pede a prorrogação do prazo por um ano.',
-        'Foram intimadas confederações sindicais empresariais de âmbito nacional, centrais sindicais, a Advocacia-Geral da União (AGU), as advocacias do Senado e da Câmara e a Procuradoria-Geral da República (PGR). Em 5 de novembro, Dino também deu cinco dias para AGU, PGR, Câmara e Senado se manifestarem.',
+        'Foram intimadas confederações sindicais empresariais de âmbito nacional, centrais sindicais, a Advocacia-Geral da União (AGU), as advocacias do Senado e da Câmara e a Procuradoria-Geral da República (PGR). Segundo a Agência Brasil, 21 entidades participaram: 10 centrais sindicais e 11 confederações empresariais.',
       ],
     },
     {
@@ -53,27 +53,32 @@ export const newsStfAudienciaEscala6x1Adi8041 = {
         credit: 'Ilustração: PortalFina',
       },
       paragraphs: [
-        'A Emenda Constitucional 141/2026 extinguiu a escala 6x1 e fixou jornada de até 40 horas semanais, com dois dias de repouso remunerado. O cronograma prevê uma primeira etapa em 60 dias, com redução de 44 para 42 horas semanais e duas folgas por semana, e o limite de 40 horas em um ano.',
-        'Pela decisão de Dino, a redução da jornada e a ampliação do repouso semanal não estão em discussão. A audiência trata só da implementação, que pode ser objeto de negociação coletiva. Em análise inicial, o ministro considerou que o prazo de dois meses "não parece, em análise inicial, inviável" e lembrou que declarar inconstitucional uma emenda constitucional é medida excepcional.',
-        'Isso não é uma sentença. A audiência é uma tentativa de acordo entre as partes, e o STF ainda não decidiu o mérito das ações. Até uma decisão em contrário, as datas previstas na emenda continuam valendo.',
+        'A Emenda Constitucional 141/2026 extinguiu a escala 6x1 e fixou jornada de até 40 horas semanais, com dois dias de repouso remunerado. O cronograma prevê uma primeira etapa a partir de 16 de dezembro, com redução de 44 para 42 horas semanais e duas folgas por semana, e o limite de 40 horas em dezembro de 2027.',
+        'Na abertura da audiência, Dino disse que a redução da jornada e a ampliação do repouso semanal não estão em discussão e que o objetivo é debater a implementação. Ele afirmou que o STF não irá repetir o debate de mérito, que cabe ao Congresso Nacional. Na decisão que convocou a audiência, o ministro já havia considerado que o prazo de dois meses não parecia inviável em análise inicial e lembrado que declarar inconstitucional uma emenda constitucional é medida excepcional.',
+        'Dino disse que, mesmo sem acordos, não existe cenário de redução de 44 para 40 horas em 16 de dezembro: a primeira etapa é de 42 horas. Ele apontou consenso em um ponto, a necessidade de flexibilizar o limite de duas folgas no mesmo mês, por exemplo para trabalhadores embarcados na exploração de petróleo, mediante negociação coletiva, e disse que deverá decidir sobre o tema nos próximos dias. O STF ainda não decidiu o mérito das ações.',
       ],
       table: {
-        caption: 'Escala 6x1 no STF: o que se sabe em 10 de novembro de 2026',
+        caption:
+          'Escala 6x1 no STF: o que se sabe após a audiência de 10/11/2026',
         columns: ['Ponto', 'Situação'],
         rows: [
           ['Relator', 'Ministro Flávio Dino'],
-          ['Audiência', '10/11, às 14h, Primeira Turma'],
+          ['Audiência', 'Realizada em 10/11, às 14h, na Primeira Turma'],
           ['Ações', 'ADI 8041 (CNC) e ADI 8042 (CNI)'],
           ['Pedido da CNC', 'Adiar o início para outubro de 2027'],
           ['Pedido da CNI', 'Prorrogar o prazo por um ano'],
-          ['Primeira etapa pela emenda', '42 horas semanais em 60 dias'],
+          [
+            'Primeira etapa pela emenda',
+            '42 horas semanais, a partir de 16/12',
+          ],
+          ['Flexibilização das folgas', 'Dino decidirá nos próximos dias'],
         ],
       },
     },
     {
-      heading: 'Decreto, 15 de dezembro e o que muda para quem trabalha',
+      heading: '16 de dezembro e o que muda para quem trabalha',
       paragraphs: [
-        'Em paralelo, o governo trabalha na regulamentação. O ministro do Trabalho e Emprego, Luiz Marinho, havia informado que o decreto orientaria as escalas e garantiria no mínimo oito folgas por mês. Para o trabalhador, o ponto prático é que a emenda continua em vigor enquanto o STF não decidir de outra forma.',
+        'Para o trabalhador, o ponto prático é que a emenda continua em vigor enquanto o STF não decidir de outra forma, e a primeira etapa, de 44 para 42 horas semanais, começa em 16 de dezembro.',
         'Veja um exemplo de conta. Com 44 horas semanais, o mês de referência da CLT tem 220 horas. Quem ganha R$ 3.000 tem hora de R$ 13,64 (R$ 3.000 dividido por 220). Com 40 horas semanais, a referência é de 200 horas e a hora vale R$ 15,00. O salário mensal segue em R$ 3.000, e a diferença aparece no cálculo de horas extras.',
         'A simulação é apenas ilustrativa: o cálculo real depende do contrato, da convenção coletiva e do texto final da regulamentação. Use as calculadoras de salário por hora e de horas extras do PortalFina para testar o seu caso.',
       ],
@@ -83,7 +88,7 @@ export const newsStfAudienciaEscala6x1Adi8041 = {
     {
       question: 'O STF vai derrubar o fim da escala 6x1?',
       answer:
-        'Não há decisão sobre isso. Dino afirmou que a redução da jornada e a ampliação do repouso não estão em discussão e que declarar inconstitucional uma emenda é medida excepcional. A audiência trata da implementação.',
+        'Não há decisão sobre isso. Dino afirmou que a redução da jornada e a ampliação do repouso não estão em discussão e que o STF não irá repetir o debate de mérito. A audiência trata da implementação.',
     },
     {
       question: 'O que a CNC e a CNI pedem?',
@@ -93,7 +98,7 @@ export const newsStfAudienciaEscala6x1Adi8041 = {
     {
       question: 'As regras da emenda continuam valendo?',
       answer:
-        'Sim, enquanto o STF não decidir de outra forma. O cronograma prevê 42 horas semanais em 60 dias e 40 horas em um ano.',
+        'Sim, enquanto o STF não decidir de outra forma. O cronograma prevê 42 horas semanais a partir de 16/12 e 40 horas em dezembro de 2027, segundo a Agência Brasil.',
     },
   ],
   sources: [
@@ -103,7 +108,13 @@ export const newsStfAudienciaEscala6x1Adi8041 = {
       url: 'https://noticias.stf.jus.br/postsnoticias/escala-6x1-stf-marca-audiencia-de-conciliacao-para-debater-implementacao-da-mudanca/',
     },
     {
-      label: 'Agência Brasil: Dino marca audiência de conciliação sobre fim da escala 6x1',
+      label:
+        'Agência Brasil: Dino diz que audiência é sobre aplicação de 5x2 e não para questionar medida',
+      url: 'https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/dino-audiencia-e-sobre-aplicacao-de-5x2-e-nao-para-questionar-medida',
+    },
+    {
+      label:
+        'Agência Brasil: Dino marca audiência de conciliação sobre fim da escala 6x1',
       url: 'https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/dino-marca-audiencia-de-conciliacao-sobre-fim-da-escala-6x1',
     },
     {

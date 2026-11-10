@@ -40,7 +40,7 @@ export const newsJusticaSuspendeRegraVrVaMaquininhas = {
       heading: 'O que a Justiça decidiu em 9/11',
       paragraphs: [
         'O juiz Frederico Botelho de Barros Viana, da 22ª Vara Federal Cível, suspendeu na segunda-feira, 9 de novembro, as novas regras do governo federal que ampliaram a aceitação do vale-refeição (VR) e do vale-alimentação (VA) em maquininhas. As mudanças tinham começado a valer no sábado, 7 de novembro.',
-        'A ação foi proposta pela Associação Brasileira das Empresas de Benefícios ao Trabalhador (ABBT). Com a liminar, voltam a valer as normas antigas, que restringem o número de máquinas de cartão que aceitam VR e VA. A União poderá recorrer.',
+        'A ação foi proposta pela Associação Brasileira das Empresas de Benefícios ao Trabalhador (ABBT). Com a decisão, voltam a valer as normas antigas, que restringem o número de máquinas de cartão que aceitam VR e VA. A União poderá recorrer.',
       ],
     },
     {
@@ -53,14 +53,17 @@ export const newsJusticaSuspendeRegraVrVaMaquininhas = {
       },
       paragraphs: [
         'Segundo a Agência Brasil, o magistrado entendeu que o governo extrapolou a competência legal ao exigir que o sistema de pagamento dos benefícios seja obrigatoriamente aberto, o que a lei do Programa de Alimentação do Trabalhador (PAT) não prevê.',
-        'Ele também classificou como comando contra a lei a fixação de uma linha de corte quantitativa para extinguir a modalidade fechada. Em outras palavras, o juiz considerou que o limite estabelecido pelo governo não tem base na lei.',
-        'A decisão é provisória. Ela não julga o mérito da ação e pode ser alterada em recurso.',
+        'Na decisão, o juiz escreveu que a fixação de linha de corte quantitativa para extinguir a modalidade fechada "não possui qualquer arrimo no diploma primário". Em outras palavras, o limite estabelecido pelo governo não teria base na lei.',
+        'A União poderá recorrer, e por isso a situação ainda pode mudar.',
       ],
       table: {
         caption: 'VR e VA nas maquininhas: situação em 10 de novembro de 2026',
         columns: ['Ponto', 'Situação'],
         rows: [
-          ['Regras de interoperabilidade', 'Em vigor desde 7/11, agora suspensas'],
+          [
+            'Regras de interoperabilidade',
+            'Em vigor desde 7/11, agora suspensas',
+          ],
           ['Decisão', '9/11, 22ª Vara Federal Cível'],
           ['Autora da ação', 'ABBT'],
           ['Regras que valem', 'As normas antigas'],
@@ -72,8 +75,8 @@ export const newsJusticaSuspendeRegraVrVaMaquininhas = {
       heading: 'O que muda para quem usa o cartão',
       paragraphs: [
         'Na prática, o trabalhador pode encontrar de novo restrições em estabelecimentos cujas maquininhas não aceitam a bandeira ou a empresa do seu cartão de benefício. Antes de pedir a refeição, vale conferir se o local aceita o seu cartão.',
-        'O benefício em si não muda. O saldo do VR e do VA segue depositado pela empresa,. A suspensão afeta onde o cartão é aceito, não quanto o trabalhador recebe.',
-        'O caso ainda deve ter novos capítulos, porque a decisão cabe recurso. O PortalFina atualiza o assunto se houver fato novo.',
+        'O benefício em si não muda. O saldo do VR e do VA segue depositado pela empresa. A suspensão afeta onde o cartão é aceito, não quanto o trabalhador recebe.',
+        'Como a União poderá recorrer, o cenário pode mudar nos próximos dias.',
       ],
     },
   ],
@@ -90,8 +93,7 @@ export const newsJusticaSuspendeRegraVrVaMaquininhas = {
     },
     {
       question: 'A decisão pode mudar?',
-      answer:
-        'Sim. A União poderá recorrer, e a decisão é provisória, sem julgamento do mérito.',
+      answer: 'Sim. A União poderá recorrer, e o cenário pode mudar.',
     },
   ],
   sources: [
@@ -99,10 +101,6 @@ export const newsJusticaSuspendeRegraVrVaMaquininhas = {
       label:
         'Agência Brasil: Justiça suspende regra que ampliou aceitação de VR e VA em maquininhas',
       url: 'https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/justica-suspende-regra-que-ampliou-aceitacao-de-vr-e-va-em-maquininhas',
-    },
-    {
-      label: 'Decreto 12.712, de 11 de novembro de 2025',
-      url: 'https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12712.htm',
     },
     {
       label:
