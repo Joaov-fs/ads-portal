@@ -134,6 +134,12 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'dolar-fecha-a-r-5-586-ibovespa-cai-0-52-dolar-no-maior-valor-desde-julho-de-2025':
+    'Dólar fecha a R$ 5,586, o maior desde jul/2025',
+  'caixa-libera-extrato-do-fgts-para-bancos-autorizacao-vale-90-dias-e-mostra-12-meses':
+    'Extrato do FGTS para bancos: vale 90 dias',
+  'dinheiro-esquecido-sobe-para-r-6-03-bilhoes-veja-como-consultar-no-banco-central':
+    'Dinheiro esquecido sobe a R$ 6,03 bi: consulte',
   'stf-audiencia-escala-6x1-10-novembro-adi-8041-e-8042':
     'Escala 6x1: Dino descarta 40h em 16/12 no STF',
   'justica-suspende-regra-que-ampliou-vr-e-va-em-qualquer-maquininha':

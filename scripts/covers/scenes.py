@@ -1460,3 +1460,47 @@ def _():
         + g(1100, 430, -4, 1, stamp('SUSPENSA', 300, '#d63031', -8))
         + g(1330, 560, 5, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('fechamento-dolar-5-586-2026', '#a11d33', (60, 100, 760))
+def _():
+    rows = label_rows([('Dólar (venda)', 'R$ 5,586'), ('Alta no dia', '1,5%'), ('Ibovespa', '171.337'), ('Queda no dia', '0,52%')], 46, 170, 408, 64, 21, hl=(0, '#f4d4da'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'FECHAMENTO 10/11', '#7d1426', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.15, 0.2, 0.18, 0.3, 0.45, 0.85), color='#a11d33', title='DÓLAR'))
+        + g(1290, 110, 6, 1, tag('R$ 5,586', 280, '#2b6cb0'))
+        + g(1300, 480, -4, 1, banknote(300, 150))
+        + g(1010, 700, -5, 1, stamp('MAIOR DESDE JUL/2025', 440, '#f4e3c3', -4))
+    )
+
+
+@scene('fgts-extrato-bancos-2026', '#2a6fb0', (80, 100, 620))
+def _():
+    scr = ('<rect width="300" height="520" fill="#eef4fb"/><rect width="300" height="90" fill="#1d5a96"/>'
+           '<text x="26" y="72" font-size="22" font-weight="800" fill="#fff">Autorização</text>'
+           '<text x="26" y="150" font-size="18" font-weight="700" fill="#46504c">Validade</text>'
+           '<text x="26" y="190" font-size="36" font-weight="900" fill="#1d5a96">90 dias</text>'
+           '<text x="26" y="250" font-size="18" font-weight="700" fill="#46504c">Histórico</text>'
+           '<text x="26" y="290" font-size="36" font-weight="900" fill="#1d5a96">12 meses</text>'
+           '<rect x="26" y="340" width="200" height="54" rx="27" fill="#2b8a3e"/>'
+           '<text x="126" y="376" font-size="20" font-weight="800" text-anchor="middle" fill="#fff">AUTORIZAR</text>')
+    rows = label_rows([('Consulta pelo banco', 'Autorizada'), ('Validade', '90 dias'), ('Depósitos', '12 meses'), ('Custo', 'Grátis')], 46, 170, 408, 64, 20, hl=(1, '#d6e6f5'))
+    return (
+        g(90, 110, -4, 1, doc(500, 580, 'EXTRATO DO FGTS', '#1d5a96', rows))
+        + g(760, 90, 5, 1, phone(300, 580, scr))
+        + g(1190, 150, 6, 1, tag('90 dias', 250, '#e8590c'))
+        + g(1260, 480, -4, 1, coins_stack(4), 'sh')
+        + g(1180, 720, -5, 1, stamp('GRÁTIS', 240, '#2b8a3e', -6))
+    )
+
+
+@scene('dinheiro-esquecido-6-bilhoes-2026', '#c9a227', (60, 100, 760))
+def _():
+    rows = label_rows([('Disponível', 'R$ 6,03 bi'), ('Já devolvido', 'R$ 16,75 bi'), ('Pessoas físicas', 'R$ 4,41 bi'), ('Consulta', 'Grátis')], 46, 170, 408, 64, 21, hl=(0, '#f6edc4'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'VALORES A RECEBER', '#7a6212', rows))
+        + g(1000, 400, 4, 1, piggy())
+        + g(1260, 100, 6, 1, tag('R$ 6,03 bi', 280, '#2b6cb0'))
+        + g(700, 130, -3, 1, coins_stack(5), 'sh')
+        + g(1230, 690, -5, 1, stamp('CONSULTE', 280, '#2b8a3e', -6))
+    )

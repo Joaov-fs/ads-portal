@@ -93,6 +93,9 @@ import { newsPecSegurancaSenado } from './pec-da-seguranca-publica-aprovada-no-s
 
 import { newsFuxSuspendeAcoesMpBets } from './fux-suspende-acoes-contra-a-mp-das-bets-ate-o-stf-julgar-adi-8027';
 import { newsSuperavitComercialOutubro2026 } from './superavit-comercial-de-outubro-e-recorde-us-9-32-bi';
+import { newsDolarIbovespa10Novembro2026 } from './dolar-fecha-a-r-5-586-ibovespa-cai-0-52-dolar-no-maior-valor-desde-julho-de-2025';
+import { newsFgtsExtratoBancos2026 } from './caixa-libera-extrato-do-fgts-para-bancos-autorizacao-vale-90-dias-e-mostra-12-meses';
+import { newsDinheiroEsquecido603Bilhoes2026 } from './dinheiro-esquecido-sobe-para-r-6-03-bilhoes-veja-como-consultar-no-banco-central';
 
 export const newsFiles = [
   newsFiesRemanescentes2026,
@@ -186,4 +189,7 @@ export const newsFiles = [
   newsAtaCopom10Novembro2026,
   newsStfAudienciaEscala6x1Adi8041,
   newsJusticaSuspendeRegraVrVaMaquininhas,
+  newsDolarIbovespa10Novembro2026,
+  newsFgtsExtratoBancos2026,
+  newsDinheiroEsquecido603Bilhoes2026,
 ] as const;
