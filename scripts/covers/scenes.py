@@ -1391,3 +1391,15 @@ def _():
         + g(1230, 520, -4, 0.55, box(420, 320))
         + g(900, 660, -3, 1, stamp('SUPERÁVIT', 300, '#2b8a3e', -5))
     )
+
+
+@scene('fux-suspende-acoes-bets-2026', '#1f6f8b', (60, 100, 760))
+def _():
+    rows = label_rows([('Medida provisória', '1.394/2026'), ('Decisão de Fux', '8/11'), ('ADIs contra a MP', '4'), ('Ação indicada', 'ADI 8027')], 40, 170, 420, 64, 21, hl=(1, '#d6eaf1'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'STF: MP DAS BETS', '#17566d', rows))
+        + g(690, 120, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(6, 8), w=520, h=520, accent='#17566d', mark_color='#c0392b'))
+        + g(1290, 110, 6, 1, tag('8/11', 250, '#c0392b'))
+        + g(1300, 470, -4, 1, banknote(300, 150))
+        + g(1190, 700, -6, 1, stamp('SUSPENSAS', 300, '#c0392b', -8))
+    )
