@@ -1403,3 +1403,15 @@ def _():
         + g(1300, 470, -4, 1, banknote(300, 150))
         + g(1190, 700, -6, 1, stamp('SUSPENSAS', 300, '#c0392b', -8))
     )
+
+
+@scene('enem-reaplicacao-2026', '#8a2f45', (60, 100, 760))
+def _():
+    rows = label_rows([('Pedido (gov.br)', '16 a 20/11'), ('Reaplicação', '15 e 16/12'), ('Ausência no dia 8', '32%'), ('Locais sem energia', '39')], 40, 170, 420, 64, 21, hl=(0, '#f3dde3'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'ENEM: REAPLICAÇÃO', '#6e2236', rows))
+        + g(690, 120, 4, 1, calendar_month('DEZEMBRO 2026', 2, 31, marks=(15, 16), w=520, h=520, accent='#6e2236', mark_color='#c0392b'))
+        + g(1290, 110, 6, 1, tag('15 e 16/12', 290, '#e8a317'))
+        + g(1230, 520, -4, 1, pen(320, '#2b2b2b'))
+        + g(1260, 700, -5, 1, stamp('PEDIDO ATÉ 20/11', 380, '#f4e3c3', -4))
+    )

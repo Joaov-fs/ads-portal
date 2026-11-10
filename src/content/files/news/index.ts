@@ -1,3 +1,4 @@
+import { newsEnemReaplicacao2026 } from './enem-reaplicacao-pedido-de-16-a-20-de-novembro-provas-em-15-e-16-de-dezembro';
 import { newsEnemRedacaoSus2026 } from './enem-2026-redacao-sobre-o-sus-nota-vai-ate-1-000-e-a-2a-prova-e-em-15-de-novembro';
 import { newsAnatelSmsCodigosCurtos2026 } from './anatel-manda-bloquear-sms-de-codigos-nao-registrados-prazo-de-ate-90-dias';
 import { newsInssAtestmedReanalise10Dias } from './inss-atestmed-negado-tem-segunda-analise-em-10-dias-portaria-54-vale-desde-6-de-novembro';
@@ -176,4 +177,5 @@ export const newsFiles = [
   newsGasDoPovoMp1400Ate2031,
   newsSuperavitComercialOutubro2026,
   newsFuxSuspendeAcoesMpBets,
+  newsEnemReaplicacao2026,
 ] as const;
