@@ -1,3 +1,5 @@
+import { newsStfAudienciaEscala6x1Adi8041 } from './stf-audiencia-escala-6x1-10-novembro-adi-8041-e-8042';
+import { newsJusticaSuspendeRegraVrVaMaquininhas } from './justica-suspende-regra-que-ampliou-vr-e-va-em-qualquer-maquininha';
 import { newsGasolinaProrrogada9Dezembro2026 } from './gasolina-sem-tributos-prorrogada-ate-9-12-decreto-13-159';
 import { newsAtaCopom10Novembro2026 } from './ata-do-copom-juros-restritivos-por-mais-tempo-ipca-de-2028-sobe-a-3-5';
 import { newsEnemReaplicacao2026 } from './enem-reaplicacao-pedido-de-16-a-20-de-novembro-provas-em-15-e-16-de-dezembro';
@@ -182,4 +184,6 @@ export const newsFiles = [
   newsEnemReaplicacao2026,
   newsGasolinaProrrogada9Dezembro2026,
   newsAtaCopom10Novembro2026,
+  newsStfAudienciaEscala6x1Adi8041,
+  newsJusticaSuspendeRegraVrVaMaquininhas,
 ] as const;

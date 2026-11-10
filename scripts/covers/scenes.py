@@ -1438,3 +1438,25 @@ def _():
         + g(1300, 480, 5, 1, coins_stack(4), 'sh')
         + g(720, 720, -4, 1, pen(300))
     )
+
+
+@scene('stf-audiencia-6x1-2026', '#5a4a1f', (60, 100, 760))
+def _():
+    rows = label_rows([('Audiência', '10/11'), ('Horário', '14h'), ('ADI da CNC', '8041'), ('ADI da CNI', '8042')], 46, 170, 408, 64, 21, hl=(0, '#efe6c4'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'AUDIÊNCIA NO STF', '#5a4a1f', rows))
+        + g(1010, 90, 4, 0.95, calendar_month('NOVEMBRO', 0, 30, marks=(10,), accent='#5a4a1f', mark_color='#d63031'))
+        + g(1260, 560, 5, 1, tag('14h', 220, '#2b6cb0'))
+        + g(760, 700, -4, 1, pen(300))
+    )
+
+
+@scene('vr-va-justica-suspende-2026', '#8a2f5f', (60, 100, 760))
+def _():
+    rows = label_rows([('Decisão', '9/11'), ('Regras valiam desde', '7/11'), ('Situação', 'Suspensa'), ('Recurso', 'União pode')], 46, 170, 408, 64, 20, hl=(2, '#f4d3e3'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'VR E VA NAS MAQUININHAS', '#8a2f5f', rows))
+        + g(1000, 120, 5, 1, card(340, 214, '#2a9d8f', '#1d6f65', 'VR'))
+        + g(1100, 430, -4, 1, stamp('SUSPENSA', 300, '#d63031', -8))
+        + g(1330, 560, 5, 1, coins_stack(3), 'sh')
+    )
