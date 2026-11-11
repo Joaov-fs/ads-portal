@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'saques-da-poupanca-superam-depositos-em-r-8-88-bilhoes-em-outubro-e-saida-no-ano-vai-a-r-75-3-bi':
+    'Saques da poupança: saída de R$ 8,88 bi em outubro',
   'cbs-regra-de-transicao-opcional-primeira-apuracao-em-fevereiro-de-2027':
     'CBS: regra de transição opcional em fev/2027',
   'dolar-fecha-a-r-5-586-ibovespa-cai-0-52-dolar-no-maior-valor-desde-julho-de-2025':

@@ -101,6 +101,7 @@ import { newsSenadoAnpNotasFiscais2026 } from './senado-aprova-por-72-a-0-acesso
 import { newsPeDeMeiaUniversitario2027 } from './pe-de-meia-universitario-r-700-por-mes-e-r-10-mil-ao-formar-previsto-para-2027';
 import { newsCnu2Edital300Lista2026 } from './cnu-2-novo-edital-300-2026-refaz-lista-de-espera-de-544-vagas-confira-no-diario-oficial';
 import { newsCbsTransicaoOpcional2027 } from './cbs-regra-de-transicao-opcional-primeira-apuracao-em-fevereiro-de-2027';
+import { newsPoupancaSaquesOutubro2026 } from './saques-da-poupanca-superam-depositos-em-r-8-88-bilhoes-em-outubro-e-saida-no-ano-vai-a-r-75-3-bi';
 
 export const newsFiles = [
   newsFiesRemanescentes2026,
@@ -202,4 +203,5 @@ export const newsFiles = [
   newsPeDeMeiaUniversitario2027,
   newsCnu2Edital300Lista2026,
   newsCbsTransicaoOpcional2027,
+  newsPoupancaSaquesOutubro2026,
 ] as const;
