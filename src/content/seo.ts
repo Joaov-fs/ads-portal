@@ -140,6 +140,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Saques da poupança: saída de R$ 8,88 bi em outubro',
   'cbs-regra-de-transicao-opcional-primeira-apuracao-em-fevereiro-de-2027':
     'CBS: regra de transição opcional em fev/2027',
+  'dolar-fecha-a-r-5-5628-ibovespa-sobe-0-42-a-172-mil-pontos-e-petrobras-lucra-r-39-75-bi':
+    'Dólar a R$ 5,56 e Ibovespa a 172 mil pontos',
   'dolar-fecha-a-r-5-586-ibovespa-cai-0-52-dolar-no-maior-valor-desde-julho-de-2025':
     'Dólar fecha a R$ 5,586, o maior desde jul/2025',
   'caixa-libera-extrato-do-fgts-para-bancos-autorizacao-vale-90-dias-e-mostra-12-meses':

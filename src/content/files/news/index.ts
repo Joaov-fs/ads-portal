@@ -97,6 +97,7 @@ import { newsDolarIbovespa10Novembro2026 } from './dolar-fecha-a-r-5-586-ibovesp
 import { newsFgtsExtratoBancos2026 } from './caixa-libera-extrato-do-fgts-para-bancos-autorizacao-vale-90-dias-e-mostra-12-meses';
 import { newsDinheiroEsquecido603Bilhoes2026 } from './dinheiro-esquecido-sobe-para-r-6-03-bilhoes-veja-como-consultar-no-banco-central';
 import { newsMpox25MilDoses2026 } from './mpox-25-mil-doses-garantidas-sus-vacina-so-para-grupos-de-risco';
+import { newsDolarIbovespa11Novembro2026 } from './dolar-fecha-a-r-5-5628-ibovespa-sobe-0-42-a-172-mil-pontos-e-petrobras-lucra-r-39-75-bi';
 import { newsSenadoAnpNotasFiscais2026 } from './senado-aprova-por-72-a-0-acesso-da-anp-a-notas-fiscais-de-combustiveis-vai-a-sancao';
 import { newsPeDeMeiaUniversitario2027 } from './pe-de-meia-universitario-r-700-por-mes-e-r-10-mil-ao-formar-previsto-para-2027';
 import { newsCnu2Edital300Lista2026 } from './cnu-2-novo-edital-300-2026-refaz-lista-de-espera-de-544-vagas-confira-no-diario-oficial';
@@ -197,6 +198,7 @@ export const newsFiles = [
   newsStfAudienciaEscala6x1Adi8041,
   newsJusticaSuspendeRegraVrVaMaquininhas,
   newsDolarIbovespa10Novembro2026,
+  newsDolarIbovespa11Novembro2026,
   newsFgtsExtratoBancos2026,
   newsDinheiroEsquecido603Bilhoes2026,
   newsMpox25MilDoses2026,

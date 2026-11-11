@@ -1588,3 +1588,15 @@ def _():
         + g(900, 80, -3, 1, coins_stack(5), 'sh')
         + g(1230, 690, -5, 1, stamp('PLV 16/2026', 330, '#d63031', -6))
     )
+
+
+@scene('fechamento-dolar-5-5628-2026', '#3d5a80', (60, 100, 760))
+def _():
+    rows = label_rows([('Dólar (fechamento)', 'R$ 5,5628'), ('Queda no dia', '0,42%'), ('Ibovespa', '172.060'), ('Alta no dia', '0,42%')], 46, 170, 408, 64, 21, hl=(0, '#d6dfee'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'FECHAMENTO 11/11', '#27405f', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.3, 0.25, 0.4, 0.35, 0.55, 0.7), color='#2b8a3e', title='IBOVESPA'))
+        + g(1290, 110, 6, 1, tag('172.060', 280, '#2b8a3e'))
+        + g(1330, 500, -4, 1, coin(70))
+        + g(1010, 700, -5, 1, stamp('PETROBRAS R$ 39,75 bi', 540, '#f4e3c3', -4))
+    )
