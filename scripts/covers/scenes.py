@@ -1504,3 +1504,27 @@ def _():
         + g(700, 130, -3, 1, coins_stack(5), 'sh')
         + g(1230, 690, -5, 1, stamp('CONSULTE', 280, '#2b8a3e', -6))
     )
+
+
+@scene('mpox-25-mil-doses-2026', '#1f7a6e', (60, 100, 760))
+def _():
+    rows = label_rows([('Doses garantidas', '25 mil'), ('Intervalo', '28 dias'), ('Casos em 2026', '832'), ('Entrega em', '3 semanas')], 46, 170, 408, 64, 21, hl=(0, '#d3ece8'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'VACINA CONTRA MPOX', '#14574e', rows))
+        + g(1000, 110, 5, 0.95, box(420, 300))
+        + g(1260, 480, 5, 1, tag('25 mil', 260, '#2b6cb0'))
+        + g(640, 740, -4, 1, pen(300))
+        + g(1180, 720, -5, 1, stamp('GRUPOS', 240, '#d63031', -6))
+    )
+
+
+@scene('plp-anp-notas-fiscais-senado-2026', '#4a3f8c', (60, 100, 760))
+def _():
+    rows = label_rows([('PLP', '109/2025'), ('Votos a favor', '72'), ('Votos contra', '0'), ('Prazo de regras', '180 dias')], 46, 170, 408, 64, 21, hl=(1, '#dcd8f0'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'SENADO APROVA', '#2f2763', rows))
+        + g(700, 130, 4, 1, fuel_pump())
+        + g(1230, 110, 6, 1, tag('72 a 0', 260, '#e8590c'))
+        + g(1010, 560, -4, 1, stamp('VAI À SANÇÃO', 380, '#2b8a3e', -5))
+        + g(1000, 730, -4, 1, pen(300))
+    )

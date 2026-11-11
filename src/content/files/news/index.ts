@@ -96,6 +96,8 @@ import { newsSuperavitComercialOutubro2026 } from './superavit-comercial-de-outu
 import { newsDolarIbovespa10Novembro2026 } from './dolar-fecha-a-r-5-586-ibovespa-cai-0-52-dolar-no-maior-valor-desde-julho-de-2025';
 import { newsFgtsExtratoBancos2026 } from './caixa-libera-extrato-do-fgts-para-bancos-autorizacao-vale-90-dias-e-mostra-12-meses';
 import { newsDinheiroEsquecido603Bilhoes2026 } from './dinheiro-esquecido-sobe-para-r-6-03-bilhoes-veja-como-consultar-no-banco-central';
+import { newsMpox25MilDoses2026 } from './mpox-25-mil-doses-garantidas-sus-vacina-so-para-grupos-de-risco';
+import { newsSenadoAnpNotasFiscais2026 } from './senado-aprova-por-72-a-0-acesso-da-anp-a-notas-fiscais-de-combustiveis-vai-a-sancao';
 
 export const newsFiles = [
   newsFiesRemanescentes2026,
@@ -192,4 +194,6 @@ export const newsFiles = [
   newsDolarIbovespa10Novembro2026,
   newsFgtsExtratoBancos2026,
   newsDinheiroEsquecido603Bilhoes2026,
+  newsMpox25MilDoses2026,
+  newsSenadoAnpNotasFiscais2026,
 ] as const;

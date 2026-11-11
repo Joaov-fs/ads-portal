@@ -146,6 +146,10 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Justiça suspende regra do VR e VA nas maquininhas',
   'gasolina-sem-tributos-prorrogada-ate-9-12-decreto-13-159':
     'Gasolina sem tributos federais vai até 9/12',
+  'mpox-25-mil-doses-garantidas-sus-vacina-so-para-grupos-de-risco':
+    'Mpox: 25 mil doses e vacina só para grupos',
+  'senado-aprova-por-72-a-0-acesso-da-anp-a-notas-fiscais-de-combustiveis-vai-a-sancao':
+    'Senado aprova acesso da ANP a notas fiscais',
   'ata-do-copom-juros-restritivos-por-mais-tempo-ipca-de-2028-sobe-a-3-5':
     'Ata do Copom vê juros altos por mais tempo',
   'enem-reaplicacao-pedido-de-16-a-20-de-novembro-provas-em-15-e-16-de-dezembro':
