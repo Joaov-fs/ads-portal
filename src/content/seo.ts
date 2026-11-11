@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'mp-1376-comissao-amplia-renegociacao-de-dividas-rurais-prazo-vai-a-31-10-plv-16-2026':
+    'MP das dívidas rurais: prazo vai a 31/10 (PLV 16)',
   'saques-da-poupanca-superam-depositos-em-r-8-88-bilhoes-em-outubro-e-saida-no-ano-vai-a-r-75-3-bi':
     'Saques da poupança: saída de R$ 8,88 bi em outubro',
   'cbs-regra-de-transicao-opcional-primeira-apuracao-em-fevereiro-de-2027':

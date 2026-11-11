@@ -1576,3 +1576,15 @@ def _():
         + g(700, 130, -3, 1, coins_stack(5), 'sh')
         + g(1230, 690, -5, 1, stamp('SAQUES', 240, '#d63031', -6))
     )
+
+
+@scene('mp-1376-dividas-rurais-2026', '#a23b5e', (60, 100, 760))
+def _():
+    rows = label_rows([('Juros', '5% a 12% ao ano'), ('Prazo antigo', '31/05'), ('Prazo novo', '31/10'), ('Já renegociado', 'R$ 24 bi')], 46, 170, 408, 64, 21, hl=(2, '#f3d3de'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'MP 1.376/2026', '#7a1f3d', rows))
+        + g(1000, 380, 4, 1, plant(130))
+        + g(1260, 100, 6, 1, tag('31/10', 260, '#2b8a3e'))
+        + g(900, 80, -3, 1, coins_stack(5), 'sh')
+        + g(1230, 690, -5, 1, stamp('PLV 16/2026', 330, '#d63031', -6))
+    )
