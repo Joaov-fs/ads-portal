@@ -1541,3 +1541,14 @@ def _():
         + g(1230, 690, -5, 1, stamp('2027', 240, '#d63031', -6))
     )
 
+
+@scene('cnu-edital-300-lista-de-espera-2026', '#4f6272', (60, 100, 760))
+def _():
+    rows = label_rows([('Edital Enap', '300/2026'), ('Vagas informadas', '544'), ('Vagas com erro', '3'), ('Edital anulado em', '6/10')], 46, 170, 408, 64, 21, hl=(0, '#dde5ec'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'CNU 2: LISTA DE ESPERA', '#2f4252', rows))
+        + g(700, 130, 4, 1, envelope())
+        + g(1260, 480, 5, 1, tag('544 vagas', 280, '#e8590c'))
+        + g(1010, 560, -4, 1, stamp('NOVO EDITAL', 340, '#2b8a3e', -5))
+        + g(1000, 730, -4, 1, pen(300))
+    )

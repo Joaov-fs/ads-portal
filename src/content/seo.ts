@@ -152,6 +152,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Senado aprova acesso da ANP a notas fiscais',
   'pe-de-meia-universitario-r-700-por-mes-e-r-10-mil-ao-formar-previsto-para-2027':
     'Pé-de-Meia Universitário: R$ 700 por mês em 2027',
+  'cnu-2-novo-edital-300-2026-refaz-lista-de-espera-de-544-vagas-confira-no-diario-oficial':
+    'CNU 2: novo edital refaz a lista de espera',
   'ata-do-copom-juros-restritivos-por-mais-tempo-ipca-de-2028-sobe-a-3-5':
     'Ata do Copom vê juros altos por mais tempo',
   'enem-reaplicacao-pedido-de-16-a-20-de-novembro-provas-em-15-e-16-de-dezembro':
