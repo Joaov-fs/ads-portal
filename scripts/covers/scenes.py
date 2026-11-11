@@ -1552,3 +1552,27 @@ def _():
         + g(1010, 560, -4, 1, stamp('NOVO EDITAL', 340, '#2b8a3e', -5))
         + g(1000, 730, -4, 1, pen(300))
     )
+
+
+@scene('reforma-cbs-transicao-opcional-2027', '#b5541c', (60, 100, 760))
+def _():
+    rows = label_rows([('Notas no novo padrão', 'jan/2027'), ('1ª apuração da CBS', 'fev/2027'), ('Sugestões ao regulamento', '~5 mil'), ('Ressarcimento', '30/60/90 dias')], 46, 170, 408, 64, 21, hl=(1, '#f6dcc8'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'CBS: REGRA DE TRANSIÇÃO', '#7a3510', rows))
+        + g(700, 130, 4, 1, envelope())
+        + g(1260, 480, 5, 1, tag('fev/2027', 260, '#2b6cb0'))
+        + g(1010, 560, -4, 1, stamp('OPCIONAL', 300, '#2b8a3e', -5))
+        + g(1000, 730, -4, 1, pen(300))
+    )
+
+
+@scene('poupanca-saques-outubro-2026', '#0f7a8a', (60, 100, 760))
+def _():
+    rows = label_rows([('Depósitos', 'R$ 341,49 bi'), ('Saques', 'R$ 350,37 bi'), ('Saída líquida', 'R$ 8,88 bi'), ('Saldo', 'R$ 1,01 tri')], 46, 170, 408, 64, 21, hl=(2, '#cfe9ee'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'POUPANÇA EM OUTUBRO', '#0b5360', rows))
+        + g(1000, 400, 4, 1, piggy())
+        + g(1260, 100, 6, 1, tag('-R$ 8,88 bi', 300, '#e8590c'))
+        + g(700, 130, -3, 1, coins_stack(5), 'sh')
+        + g(1230, 690, -5, 1, stamp('SAQUES', 240, '#d63031', -6))
+    )
