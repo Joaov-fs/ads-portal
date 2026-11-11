@@ -150,6 +150,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Mpox: 25 mil doses e vacina só para grupos',
   'senado-aprova-por-72-a-0-acesso-da-anp-a-notas-fiscais-de-combustiveis-vai-a-sancao':
     'Senado aprova acesso da ANP a notas fiscais',
+  'pe-de-meia-universitario-r-700-por-mes-e-r-10-mil-ao-formar-previsto-para-2027':
+    'Pé-de-Meia Universitário: R$ 700 por mês em 2027',
   'ata-do-copom-juros-restritivos-por-mais-tempo-ipca-de-2028-sobe-a-3-5':
     'Ata do Copom vê juros altos por mais tempo',
   'enem-reaplicacao-pedido-de-16-a-20-de-novembro-provas-em-15-e-16-de-dezembro':

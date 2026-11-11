@@ -1528,3 +1528,16 @@ def _():
         + g(1010, 560, -4, 1, stamp('VAI À SANÇÃO', 380, '#2b8a3e', -5))
         + g(1000, 730, -4, 1, pen(300))
     )
+
+
+@scene('pe-de-meia-universitario-2027', '#7a8f2a', (60, 100, 760))
+def _():
+    rows = label_rows([('Bolsa por mês', 'R$ 700'), ('Poupança por mês', 'R$ 250'), ('Meses por ano', '10'), ('Resgate final', 'R$ 10 mil')], 46, 170, 408, 64, 21, hl=(0, '#e6edc4'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'PÉ-DE-MEIA UNIVERSITÁRIO', '#4d5c14', rows))
+        + g(1000, 400, 4, 1, piggy())
+        + g(1260, 100, 6, 1, tag('R$ 700', 260, '#2b6cb0'))
+        + g(700, 130, -3, 1, coins_stack(5), 'sh')
+        + g(1230, 690, -5, 1, stamp('2027', 240, '#d63031', -6))
+    )
+

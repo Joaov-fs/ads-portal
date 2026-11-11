@@ -98,6 +98,7 @@ import { newsFgtsExtratoBancos2026 } from './caixa-libera-extrato-do-fgts-para-b
 import { newsDinheiroEsquecido603Bilhoes2026 } from './dinheiro-esquecido-sobe-para-r-6-03-bilhoes-veja-como-consultar-no-banco-central';
 import { newsMpox25MilDoses2026 } from './mpox-25-mil-doses-garantidas-sus-vacina-so-para-grupos-de-risco';
 import { newsSenadoAnpNotasFiscais2026 } from './senado-aprova-por-72-a-0-acesso-da-anp-a-notas-fiscais-de-combustiveis-vai-a-sancao';
+import { newsPeDeMeiaUniversitario2027 } from './pe-de-meia-universitario-r-700-por-mes-e-r-10-mil-ao-formar-previsto-para-2027';
 
 export const newsFiles = [
   newsFiesRemanescentes2026,
@@ -196,4 +197,5 @@ export const newsFiles = [
   newsDinheiroEsquecido603Bilhoes2026,
   newsMpox25MilDoses2026,
   newsSenadoAnpNotasFiscais2026,
+  newsPeDeMeiaUniversitario2027,
 ] as const;
