@@ -1648,3 +1648,16 @@ def _():
         + g(1050, 480, 8, 1, pen(360))
         + g(1000, 700, -5, 1, stamp('EM ESTUDO', 330, '#d63031', -6))
     )
+
+
+@scene('loterias-caixa-premio-pix-2026', '#c2255c', (60, 100, 760))
+def _():
+    rows = label_rows([('Prêmio pelo Pix', 'até R$ 2.428,80'), ('Onde vale', 'app e portal'), ('Passo final', 'Resgatar Prêmio'), ('Forma de saque', 'chave Pix')], 46, 170, 408, 64, 21, hl=(0, '#fbe3ec'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'PRÊMIO DE LOTERIA', '#8a1c42', rows))
+        + g(690, 130, 4, 1, phone(250, 500, '<rect width="250" height="500" fill="#fff"/><text x="125" y="150" font-size="34" font-weight="800" text-anchor="middle" fill="#8a1c42">PIX</text><text x="125" y="220" font-size="22" text-anchor="middle" fill="#46504c">Resgatar prêmio</text><text x="125" y="290" font-size="28" font-weight="800" text-anchor="middle" fill="#1e7d55">R$ 2.428,80</text>'))
+        + g(1060, 120, 6, 1, tag('ATÉ R$ 2.428,80', 380, '#e8590c'))
+        + g(1010, 420, -4, 1, banknote(330, 160))
+        + g(1350, 520, 8, 1, coin(70))
+        + g(1010, 700, -5, 1, stamp('PIX', 260, '#2b8a3e', -6))
+    )

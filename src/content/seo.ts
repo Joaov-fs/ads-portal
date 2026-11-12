@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'loterias-caixa-pagam-premios-de-ate-r-2-428-80-via-pix-em-apostas-digitais':
+    'Loterias Caixa: prêmio de até R$ 2.428,80 no Pix',
   'cnu-3-2027-governo-estuda-prova-como-o-enem-e-1-3-mil-vagas-remanescentes':
     'CNU 3 em 2027: modelo como o Enem em estudo',
   'ipca-de-outubro-sobe-0-14-e-inflacao-em-12-meses-vai-a-4-63-conta-de-luz-cai':
