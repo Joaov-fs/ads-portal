@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'cnu-3-2027-governo-estuda-prova-como-o-enem-e-1-3-mil-vagas-remanescentes':
+    'CNU 3 em 2027: modelo como o Enem em estudo',
   'ipca-de-outubro-sobe-0-14-e-inflacao-em-12-meses-vai-a-4-63-conta-de-luz-cai':
     'IPCA de outubro: 0,14% e 4,63% em 12 meses',
   'mp-1376-senado-aprova-plv-16-2026-dividas-rurais-vai-a-sancao':

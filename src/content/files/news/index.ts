@@ -100,6 +100,7 @@ import { newsMpox25MilDoses2026 } from './mpox-25-mil-doses-garantidas-sus-vacin
 import { newsDolarIbovespa11Novembro2026 } from './dolar-fecha-a-r-5-5628-ibovespa-sobe-0-42-a-172-mil-pontos-e-petrobras-lucra-r-39-75-bi';
 import { newsSenadoAnpNotasFiscais2026 } from './senado-aprova-por-72-a-0-acesso-da-anp-a-notas-fiscais-de-combustiveis-vai-a-sancao';
 import { newsPeDeMeiaUniversitario2027 } from './pe-de-meia-universitario-r-700-por-mes-e-r-10-mil-ao-formar-previsto-para-2027';
+import { newsCnu3Modelo2027 } from './cnu-3-2027-governo-estuda-prova-como-o-enem-e-1-3-mil-vagas-remanescentes';
 import { newsCnu2Edital300Lista2026 } from './cnu-2-novo-edital-300-2026-refaz-lista-de-espera-de-544-vagas-confira-no-diario-oficial';
 import { newsCbsTransicaoOpcional2027 } from './cbs-regra-de-transicao-opcional-primeira-apuracao-em-fevereiro-de-2027';
 import { newsMp1376SenadoSancao2026 } from './mp-1376-senado-aprova-plv-16-2026-dividas-rurais-vai-a-sancao';
@@ -214,4 +215,5 @@ export const newsFiles = [
   newsMp1376DividasRurais2026,
   newsPacoteFiscal60Bi2027,
   newsIpcaOutubro2026Sobe014Inflacao463,
+  newsCnu3Modelo2027,
 ] as const;

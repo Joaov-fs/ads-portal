@@ -1636,3 +1636,15 @@ def _():
         + g(1330, 500, -4, 1, coin(70))
         + g(1010, 700, -5, 1, stamp('LUZ CAIU 1,92%', 420, '#2b8a3e', -4))
     )
+
+
+@scene('cnu-3-2027-modelo-enem', '#8a3f5b', (60, 100, 760))
+def _():
+    rows = label_rows([('Próxima edição', 'CNU 3, em 2027'), ('Modelo em estudo', 'como o Enem'), ('Vagas remanescentes', 'mais de 1,3 mil'), ('Lista de espera', '544 vagas')], 46, 170, 408, 64, 21, hl=(0, '#f0d9e2'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'CONCURSO NACIONAL', '#5e2640', rows))
+        + g(690, 130, 4, 1, envelope(430, 270))
+        + g(1260, 100, 6, 1, tag('CNU 3 EM 2027', 330, '#e8590c'))
+        + g(1050, 480, 8, 1, pen(360))
+        + g(1000, 700, -5, 1, stamp('EM ESTUDO', 330, '#d63031', -6))
+    )
