@@ -1612,3 +1612,15 @@ def _():
         + g(760, 620, -4, 1, coins_stack(5), 'sh')
         + g(1230, 700, -5, 1, stamp('PLP NO SENADO', 380, '#d63031', -6))
     )
+
+
+@scene('mp-1376-senado-sancao-2026', '#a8741a', (60, 100, 760))
+def _():
+    rows = label_rows([('Aprovada no Senado', '11/11'), ('Juros ao ano', '5% a 12%'), ('Carência', '2 anos'), ('Próximo passo', 'sanção')], 46, 170, 408, 64, 21, hl=(0, '#f1e1bd'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'MP 1.376/2026', '#6b4a0f', rows))
+        + g(1000, 380, 4, 1, plant(130))
+        + g(1260, 100, 6, 1, tag('VAI À SANÇÃO', 330, '#2b8a3e'))
+        + g(900, 80, -3, 1, coins_stack(5), 'sh')
+        + g(1200, 690, -5, 1, stamp('PLV 16/2026', 330, '#d63031', -6))
+    )

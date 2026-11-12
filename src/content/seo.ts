@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'mp-1376-senado-aprova-plv-16-2026-dividas-rurais-vai-a-sancao':
+    'Senado aprova MP das dívidas rurais e vai à sanção',
   'pacote-fiscal-de-ate-r-60-bilhoes-limita-despesas-a-2-e-corta-incentivos-em-20':
     'Pacote fiscal de até R$ 60 bi: o que muda em 2027',
   'mp-1376-comissao-amplia-renegociacao-de-dividas-rurais-prazo-vai-a-31-10-plv-16-2026':
