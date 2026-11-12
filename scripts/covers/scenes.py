@@ -1661,3 +1661,15 @@ def _():
         + g(1350, 520, 8, 1, coin(70))
         + g(1010, 700, -5, 1, stamp('PIX', 260, '#2b8a3e', -6))
     )
+
+
+@scene('fechamento-dolar-5-65-2026', '#8c3b2b', (60, 100, 760))
+def _():
+    rows = label_rows([('Dólar (fechamento)', 'R$ 5,65'), ('Alta no dia', '1,6%'), ('Ibovespa', '171.324'), ('Queda no dia', '0,43%')], 46, 170, 408, 64, 21, hl=(0, '#f3dcd5'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'FECHAMENTO 12/11', '#5e2418', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.25, 0.3, 0.28, 0.5, 0.65, 0.9), color='#e03131', title='DÓLAR'))
+        + g(1290, 110, 6, 1, tag('R$ 5,65', 280, '#e8590c'))
+        + g(1330, 500, -4, 1, coin(70))
+        + g(1010, 700, -5, 1, stamp('MAIOR DESDE JUN/2025', 540, '#f4e3c3', -4))
+    )
