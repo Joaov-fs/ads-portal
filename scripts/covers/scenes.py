@@ -1600,3 +1600,15 @@ def _():
         + g(1330, 500, -4, 1, coin(70))
         + g(1010, 700, -5, 1, stamp('PETROBRAS R$ 39,75 bi', 540, '#f4e3c3', -4))
     )
+
+
+@scene('pacote-fiscal-60-bi-2027', '#2f5d50', (60, 100, 760))
+def _():
+    rows = label_rows([('Economia em 2027', 'R$ 50 a 60 bi'), ('Limite de despesas', '2% (era 2,5%)'), ('Benefícios fiscais', 'corte de 20%'), ('Supersalários', '120 dias')], 46, 170, 408, 64, 21, hl=(0, '#d3e8df'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'AJUSTE FISCAL 2027', '#1f4439', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.7, 0.6, 0.5, 0.42, 0.3, 0.22), color='#e03131', title='DESPESAS'))
+        + g(1260, 100, 6, 1, tag('R$ 60 bi', 280, '#e8590c'))
+        + g(760, 620, -4, 1, coins_stack(5), 'sh')
+        + g(1230, 700, -5, 1, stamp('PLP NO SENADO', 380, '#d63031', -6))
+    )
