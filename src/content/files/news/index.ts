@@ -106,6 +106,7 @@ import { newsMp1376SenadoSancao2026 } from './mp-1376-senado-aprova-plv-16-2026-
 import { newsMp1376DividasRurais2026 } from './mp-1376-comissao-amplia-renegociacao-de-dividas-rurais-prazo-vai-a-31-10-plv-16-2026';
 import { newsPoupancaSaquesOutubro2026 } from './saques-da-poupanca-superam-depositos-em-r-8-88-bilhoes-em-outubro-e-saida-no-ano-vai-a-r-75-3-bi';
 import { newsPacoteFiscal60Bi2027 } from './pacote-fiscal-de-ate-r-60-bilhoes-limita-despesas-a-2-e-corta-incentivos-em-20';
+import { newsIpcaOutubro2026Sobe014Inflacao463 } from './ipca-de-outubro-sobe-0-14-e-inflacao-em-12-meses-vai-a-4-63-conta-de-luz-cai';
 
 export const newsFiles = [
   newsFiesRemanescentes2026,
@@ -212,4 +213,5 @@ export const newsFiles = [
   newsMp1376SenadoSancao2026,
   newsMp1376DividasRurais2026,
   newsPacoteFiscal60Bi2027,
+  newsIpcaOutubro2026Sobe014Inflacao463,
 ] as const;

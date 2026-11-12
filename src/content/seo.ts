@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'ipca-de-outubro-sobe-0-14-e-inflacao-em-12-meses-vai-a-4-63-conta-de-luz-cai':
+    'IPCA de outubro: 0,14% e 4,63% em 12 meses',
   'mp-1376-senado-aprova-plv-16-2026-dividas-rurais-vai-a-sancao':
     'Senado aprova MP das dívidas rurais e vai à sanção',
   'pacote-fiscal-de-ate-r-60-bilhoes-limita-despesas-a-2-e-corta-incentivos-em-20':

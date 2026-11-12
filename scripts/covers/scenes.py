@@ -1624,3 +1624,15 @@ def _():
         + g(900, 80, -3, 1, coins_stack(5), 'sh')
         + g(1200, 690, -5, 1, stamp('PLV 16/2026', 330, '#d63031', -6))
     )
+
+
+@scene('ipca-outubro-2026', '#5b4b8a', (60, 100, 760))
+def _():
+    rows = label_rows([('IPCA de outubro', '0,14%'), ('IPCA de setembro', '0,82%'), ('Em 12 meses', '4,63%'), ('Energia elétrica', '-1,92%')], 46, 170, 408, 64, 21, hl=(0, '#e0daf0'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'IPCA DE OUTUBRO', '#3f326b', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.8, 0.2), color='#2b8a3e', title='MÊS A MÊS'))
+        + g(1260, 100, 6, 1, tag('4,63%', 260, '#e8590c'))
+        + g(1330, 500, -4, 1, coin(70))
+        + g(1010, 700, -5, 1, stamp('LUZ CAIU 1,92%', 420, '#2b8a3e', -4))
+    )
