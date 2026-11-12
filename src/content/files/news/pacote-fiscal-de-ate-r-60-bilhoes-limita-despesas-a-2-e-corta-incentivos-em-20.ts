@@ -57,7 +57,8 @@ export const newsPacoteFiscal60Bi2027 = {
       ],
     },
     {
-      heading: 'Limite de despesas cai de 2,5% para 2% e benefícios fiscais encolhem',
+      heading:
+        'Limite de despesas cai de 2,5% para 2% e benefícios fiscais encolhem',
       image: {
         src: '/images/news/pacote-fiscal-de-ate-r-60-bilhoes-limita-despesas-a-2-e-corta-incentivos-em-20-detalhe.jpg',
         alt: 'Detalhe da ilustração: economia de R$ 50 a 60 bi em 2027, limite de despesas de 2% (antes 2,5%), corte de 20% em benefícios fiscais e 120 dias para supersalários.',
@@ -70,14 +71,30 @@ export const newsPacoteFiscal60Bi2027 = {
         'Um exemplo ilustrativo: uma empresa vende R$ 100.000,00 em um produto com alíquota reduzida de 10%, enquanto a padrão é 20%. Hoje paga R$ 10.000,00. Pela composição de 80% da reduzida e 20% da padrão, a alíquota efetiva iria a 12% (0,8 x 10% + 0,2 x 20%), ou R$ 12.000,00. Os números são hipotéticos e servem só para mostrar a lógica da regra.',
       ],
       table: {
-        caption: 'Principais medidas do projeto, segundo Agência Brasil e Agência Câmara',
+        caption:
+          'Principais medidas do projeto, segundo Agência Brasil e Agência Câmara',
         columns: ['Medida', 'O que prevê'],
         rows: [
-          ['Limite de despesas', 'Alta real de até 2% ao ano a partir de 2027 (hoje, 2,5%)'],
-          ['Benefícios fiscais', 'Corte de 20% em isenções, alíquotas reduzidas e créditos'],
-          ['Supersalários', 'Congresso tem 120 dias para analisar a regulamentação'],
-          ['Fundos públicos', 'Uso de até 40% do superávit financeiro do ano anterior'],
-          ['Compensação previdenciária', 'Limite de R$ 3 bi por ano entre 2027 e 2030'],
+          [
+            'Limite de despesas',
+            'Alta real de até 2% ao ano a partir de 2027 (hoje, 2,5%)',
+          ],
+          [
+            'Benefícios fiscais',
+            'Corte de 20% em isenções, alíquotas reduzidas e créditos',
+          ],
+          [
+            'Supersalários',
+            'Congresso tem 120 dias para analisar a regulamentação',
+          ],
+          [
+            'Fundos públicos',
+            'Uso de até 40% do superávit financeiro do ano anterior',
+          ],
+          [
+            'Compensação previdenciária',
+            'Limite de R$ 3 bi por ano entre 2027 e 2030',
+          ],
           ['Diesel', 'Até R$ 10,5 bi em subsídios fora da meta fiscal de 2026'],
         ],
       },
@@ -118,15 +135,18 @@ export const newsPacoteFiscal60Bi2027 = {
   ],
   sources: [
     {
-      label: 'Agência Brasil: Governo anuncia medidas de ajuste para economia de até R$ 60 bilhões',
+      label:
+        'Agência Brasil: Governo anuncia medidas de ajuste para economia de até R$ 60 bilhões',
       url: 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/governo-anuncia-medidas-de-ajuste-para-economia-de-ate-r-60-bilhoes',
     },
     {
-      label: 'Agência Brasil: Pacote fiscal prevê 120 dias para Congresso discutir supersalários',
+      label:
+        'Agência Brasil: Pacote fiscal prevê 120 dias para Congresso discutir supersalários',
       url: 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/pacote-fiscal-preve-120-dias-para-congresso-discutir-supersalarios',
     },
     {
-      label: 'Agência Câmara: Ministro do Planejamento anuncia novas medidas de ajuste fiscal para 2027',
+      label:
+        'Agência Câmara: Ministro do Planejamento anuncia novas medidas de ajuste fiscal para 2027',
       url: 'https://www.camara.leg.br/noticias/1318603-ministro-do-planejamento-anuncia-novas-medidas-de-ajuste-fiscal-para-2027',
     },
   ],
