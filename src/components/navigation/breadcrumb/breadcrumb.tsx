@@ -18,7 +18,11 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
 
           return (
             <li
-              className="flex items-center gap-2"
+              className={
+                isCurrent && index > 0
+                  ? 'flex items-center gap-2 max-sm:hidden'
+                  : 'flex items-center gap-2'
+              }
               key={`${item.label}-${index}`}
             >
               {index > 0 ? (
