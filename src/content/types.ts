@@ -69,7 +69,23 @@ export type CalculatorField = Readonly<{
   type: 'date' | 'money' | 'number' | 'percentage';
 }>;
 
+/** Resposta direta exibida logo abaixo do título, antes de qualquer outro bloco. */
+export type ContentQuickAnswer = Readonly<{
+  /** Pergunta que a página responde, como a pessoa busca. */
+  question: string;
+  /** Resposta em uma ou duas frases. */
+  answer: string;
+  /** Condições, passos ou números que completam a resposta. */
+  items?: readonly string[];
+  /** Observação curta depois da lista, para desfazer confusões comuns. */
+  note?: string;
+  /** Ações que resolvem o assunto (calculadora, guia, serviço oficial). */
+  actions?: readonly Readonly<{ href: string; label: string }>[];
+}>;
+
 type BaseContentDocument = Readonly<{
+  /** Resposta direta para a intenção principal de busca; aparece logo após o título. */
+  quickAnswer?: ContentQuickAnswer;
   authorId: string;
   category: ContentCategory;
   coverImage?: ContentCoverImage;

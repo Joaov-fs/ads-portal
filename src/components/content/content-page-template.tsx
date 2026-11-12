@@ -67,6 +67,74 @@ function sectionId(heading: string) {
     .replace(/(^-|-$)/g, '');
 }
 
+function QuickAnswer({
+  quickAnswer,
+}: Readonly<{
+  quickAnswer: NonNullable<ContentPageModel['document']['quickAnswer']>;
+}>) {
+  return (
+    <section
+      aria-labelledby="quick-answer-title"
+      className="border-b border-ads-border bg-ads-primary-soft py-7 sm:py-9"
+      id="resposta-rapida"
+    >
+      <Container>
+        <div className="grid max-w-4xl gap-4">
+          <span className="text-xs font-bold uppercase tracking-[0.14em] text-ads-primary-strong">
+            Resposta rápida
+          </span>
+          <h2
+            className="font-ads-display text-2xl font-bold tracking-tight text-ads-secondary sm:text-3xl"
+            id="quick-answer-title"
+          >
+            {quickAnswer.question}
+          </h2>
+          <p className="text-lg leading-8 text-ads-text">
+            {quickAnswer.answer}
+          </p>
+          {quickAnswer.items && quickAnswer.items.length > 0 ? (
+            <ul className="grid gap-2">
+              {quickAnswer.items.map((item) => (
+                <li className="flex gap-3 leading-7 text-ads-text" key={item}>
+                  <span
+                    aria-hidden="true"
+                    className="font-bold text-ads-primary"
+                  >
+                    ✓
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+          {quickAnswer.note ? (
+            <p className="rounded-ads-large border border-ads-border bg-ads-background p-4 text-sm leading-6 text-ads-text">
+              {quickAnswer.note}
+            </p>
+          ) : null}
+          {quickAnswer.actions && quickAnswer.actions.length > 0 ? (
+            <div className="flex flex-wrap gap-3 pt-1">
+              {quickAnswer.actions.map((action, index) => (
+                <Link
+                  className={
+                    index === 0
+                      ? 'rounded-ads-full bg-ads-primary px-5 py-2.5 text-sm font-bold text-white transition hover:bg-ads-primary-strong'
+                      : 'rounded-ads-full border border-ads-primary px-5 py-2.5 text-sm font-bold text-ads-primary-strong transition hover:bg-ads-background'
+                  }
+                  href={action.href}
+                  key={action.href}
+                >
+                  {action.label} →
+                </Link>
+              ))}
+            </div>
+          ) : null}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
 type ContentPageTemplateProps = Readonly<{
   model: ContentPageModel;
 }>;
@@ -84,10 +152,10 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
       {model.faqSchema ? <JsonLdScript data={model.faqSchema} /> : null}
 
       <article>
-        <header className="border-b border-ads-border bg-ads-surface py-12 sm:py-18">
+        <header className="border-b border-ads-border bg-ads-surface py-6 sm:py-18">
           <Container>
             <Breadcrumb items={model.breadcrumbs} />
-            <div className="mt-9 grid max-w-4xl gap-5">
+            <div className="mt-4 grid max-w-4xl gap-3 sm:mt-9 sm:gap-5">
               <div className="flex flex-wrap items-center gap-3 text-sm">
                 <span className="rounded-ads-full bg-ads-primary-soft px-3 py-1 font-semibold text-ads-primary-strong">
                   {kindConfig.singularLabel}
@@ -96,13 +164,19 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
                   {contentCategoryLabels[document.category]}
                 </span>
               </div>
-              <h1 className="font-ads-display text-ads-display font-bold tracking-[-0.045em] text-ads-secondary">
+              <h1 className="font-ads-display text-[2rem] leading-[1.05] font-bold tracking-[-0.04em] text-ads-secondary sm:text-ads-display sm:leading-[0.98]">
                 {document.title}
               </h1>
-              <p className="max-w-3xl text-ads-lead leading-8 text-ads-muted">
+              <p
+                className={
+                  document.quickAnswer
+                    ? 'max-w-3xl text-base leading-7 text-ads-muted max-sm:hidden sm:text-ads-lead sm:leading-8'
+                    : 'max-w-3xl text-base leading-7 text-ads-muted sm:text-ads-lead sm:leading-8'
+                }
+              >
                 {document.description}
               </p>
-              <div className="flex flex-wrap gap-x-5 gap-y-2 border-t border-ads-border pt-5 text-sm text-ads-muted">
+              <div className="flex flex-wrap gap-x-5 gap-y-1 border-t border-ads-border pt-3 text-sm text-ads-muted sm:gap-y-2 sm:pt-5">
                 <span>Por {author.name}</span>
                 <span>{model.readingMinutes} min de leitura</span>
                 <span>
@@ -117,6 +191,20 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
             </div>
           </Container>
         </header>
+
+        {document.quickAnswer ? (
+          <QuickAnswer quickAnswer={document.quickAnswer} />
+        ) : null}
+
+        {document.kind === 'calculator' ? (
+          <section className="border-b border-ads-border bg-ads-background py-6 sm:py-8">
+            <Container>
+              <div className="grid max-w-ads-copy gap-6">
+                <CalculatorPanel document={document} />
+              </div>
+            </Container>
+          </section>
+        ) : null}
 
         {!document.coverImage &&
         document.kind === 'news' &&
@@ -245,21 +333,12 @@ export function ContentPageTemplate({ model }: ContentPageTemplateProps) {
           <Container className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_18rem]">
             <div className="grid max-w-ads-copy gap-10">
               {document.kind === 'calculator' ? (
-                <>
-                  <AdSlot
-                    format="horizontal"
-                    label="Publicidade antes da calculadora"
-                    placementId={`calculator-${document.slug}-before-tool`}
-                    size="banner"
-                  />
-                  <CalculatorPanel document={document} />
-                  <AdSlot
-                    format="horizontal"
-                    label="Publicidade após a explicação da calculadora"
-                    placementId={`calculator-${document.slug}-after-tool`}
-                    size="banner"
-                  />
-                </>
+                <AdSlot
+                  format="horizontal"
+                  label="Publicidade após a calculadora"
+                  placementId={`calculator-${document.slug}-after-tool`}
+                  size="banner"
+                />
               ) : null}
 
               {document.sections.map((section, index) => (

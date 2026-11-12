@@ -10,7 +10,7 @@ import {
 
 type TaxCounterProps = Readonly<{ className?: string }>;
 
-/** Contador que sobe em tempo real. O servidor entrega o valor oficial de agosto; o navegador passa a estimar o total de hoje. */
+/** Contador que sobe em tempo real. O servidor entrega o último valor oficial da Receita; o navegador passa a estimar o total de hoje. */
 export function TaxCounter({ className }: TaxCounterProps) {
   const [value, setValue] = useState(baseCollected);
 
