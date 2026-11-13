@@ -208,6 +208,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Desemprego cai a 5,2%, o menor desde 2012',
   'gasolina-sem-tributos-vence-9-11-r-0-89-por-litro-prorrogacao-nao-confirmada':
     'Gasolina sem tributos vale até 9/11: R$ 0,89/L',
+  'gasolina-sem-tributos-ate-9-12-decreto-13-159-corte-de-r-0-89-por-litro':
+    'Gasolina sem tributos vai até 9/12: corte R$ 0,89/L',
   'gasolina-cai-a-r-6-49-na-2a-semana-sem-tributos-federais-etanol-a-r-4-11':
     'Gasolina cai a R$ 6,49 e etanol fica em R$ 4,11',
   'tcu-aprova-cbs-de-11-3-para-2027-o-que-muda-para-o-consumidor':

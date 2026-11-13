@@ -1686,3 +1686,14 @@ def _():
         + g(1400, 560, -6, 1, coin(70))
         + g(1000, 700, -5, 1, stamp('VAI À SANÇÃO', 360, '#d63031', -6))
     )
+
+
+@scene('gasolina-ate-9-dezembro-2026', '#6b3f1d', (80, 100, 620))
+def _():
+    rows = label_rows([('Corte na gasolina A', 'R$ 0,89/L'), ('PIS/Pasep e Cofins', 'R$ 0,79/L'), ('Cide', 'R$ 0,10/L'), ('Vale até', '9/12')], 46, 170, 408, 64, 21, hl=(0, '#f1e0cc'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'GASOLINA SEM TRIBUTOS', '#6b3f1d', rows))
+        + g(700, 110, 5, 1, tag('R$ 0,89 por litro', 340, '#e8590c'))
+        + g(1130, 90, 5, 0.9, calendar_month('DEZEMBRO', 2, 31, marks=(9,), accent='#6b3f1d', mark_color='#d63031'))
+        + g(780, 470, -4, 1, stamp('PRORROGADO', 310, '#2f9e44', -7))
+    )

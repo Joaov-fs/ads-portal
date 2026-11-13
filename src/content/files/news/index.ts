@@ -103,6 +103,7 @@ import { newsPeDeMeiaUniversitario2027 } from './pe-de-meia-universitario-r-700-
 import { newsLoteriasCaixaPremioPix2026 } from './loterias-caixa-pagam-premios-de-ate-r-2-428-80-via-pix-em-apostas-digitais';
 import { newsDolarIbovespa12Novembro2026 } from './dolar-fecha-a-r-5-65-ibovespa-cai-0-43-a-171-mil-pontos-pacote-fiscal-12-11';
 import { newsCongressoCreditos1524Bi2026 } from './congresso-aprova-r-152-4-bi-em-creditos-pln-23-r-149-4-bi-beneficios';
+import { newsGasolinaAte9Dezembro2026 } from './gasolina-sem-tributos-ate-9-12-decreto-13-159-corte-de-r-0-89-por-litro';
 import { newsCnu3Modelo2027 } from './cnu-3-2027-governo-estuda-prova-como-o-enem-e-1-3-mil-vagas-remanescentes';
 import { newsCnu2Edital300Lista2026 } from './cnu-2-novo-edital-300-2026-refaz-lista-de-espera-de-544-vagas-confira-no-diario-oficial';
 import { newsCbsTransicaoOpcional2027 } from './cbs-regra-de-transicao-opcional-primeira-apuracao-em-fevereiro-de-2027';
@@ -222,4 +223,5 @@ export const newsFiles = [
   newsLoteriasCaixaPremioPix2026,
   newsDolarIbovespa12Novembro2026,
   newsCongressoCreditos1524Bi2026,
+  newsGasolinaAte9Dezembro2026,
 ] as const;
