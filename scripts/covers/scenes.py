@@ -1697,3 +1697,14 @@ def _():
         + g(1130, 90, 5, 0.9, calendar_month('DEZEMBRO', 2, 31, marks=(9,), accent='#6b3f1d', mark_color='#d63031'))
         + g(780, 470, -4, 1, stamp('PRORROGADO', 310, '#2f9e44', -7))
     )
+
+
+@scene('aviso-tempestade-13-14-novembro-2026', '#2b6777', (80, 100, 620))
+def _():
+    rows = label_rows([('Aviso Inmet', 'AMARELO'), ('Sexta e sábado', '13 e 14/11'), ('Chuva em 24 h', '+ de 50 mm'), ('Rajadas', '+ de 50 km/h')], 46, 170, 408, 64, 21, hl=(0, '#fff3bf'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'TEMPESTADES', '#2b6777', rows))
+        + g(700, 110, 5, 1, tag('Aviso amarelo', 330, '#f08c00'))
+        + g(1130, 90, 5, 0.9, calendar_month('NOVEMBRO', 0, 30, marks=(13, 14), accent='#2b6777', mark_color='#f08c00'))
+        + g(830, 330, 4, 0.9, phone(250, 500, phone_screen('DEFESA CIVIL', '199', 'telefone de emergência', '#2b6777', check=False)))
+    )
