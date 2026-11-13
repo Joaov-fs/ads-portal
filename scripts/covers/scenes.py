@@ -1708,3 +1708,15 @@ def _():
         + g(1130, 90, 5, 0.9, calendar_month('NOVEMBRO', 0, 30, marks=(13, 14), accent='#2b6777', mark_color='#f08c00'))
         + g(830, 330, 4, 0.9, phone(250, 500, phone_screen('DEFESA CIVIL', '199', 'telefone de emergência', '#2b6777', check=False)))
     )
+
+
+@scene('senado-ajuste-fiscal-plp-299-2026', '#5a3d8a', (60, 100, 760))
+def _():
+    rows = label_rows([('Projeto', 'PLP 299/2026'), ('Votos a favor', '45'), ('Votos contra', '31'), ('Destaques', '17/11')], 46, 170, 408, 64, 21, hl=(1, '#e6def5'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'AJUSTE FISCAL', '#3d2766', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.9, 0.8, 0.7, 0.55, 0.4, 0.3), color='#2f9e44', title='DESPESAS'))
+        + g(1290, 110, 6, 1, tag('ATÉ R$ 60 BI', 300, '#e8590c'))
+        + g(1330, 500, -4, 1, coin(70))
+        + g(1010, 700, -5, 1, stamp('SEGUE PARA A CÂMARA', 560, '#f4e3c3', -4))
+    )
