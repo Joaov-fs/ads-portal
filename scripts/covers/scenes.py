@@ -1673,3 +1673,16 @@ def _():
         + g(1330, 500, -4, 1, coin(70))
         + g(1010, 700, -5, 1, stamp('MAIOR DESDE JUN/2025', 540, '#f4e3c3', -4))
     )
+
+
+@scene('congresso-creditos-152-bi-2026', '#2a4d8f', (60, 100, 760))
+def _():
+    rows = label_rows([('Créditos aprovados', 'R$ 152,4 bi'), ('Maior projeto (PLN 23)', 'R$ 149,4 bi'), ('Pedido original', 'R$ 185,5 bi'), ('Angra 3 (PLN 25)', 'R$ 290 mi')], 46, 170, 408, 64, 21, hl=(0, '#dbe4f5'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'CRÉDITOS 2026', '#1b3566', rows))
+        + g(690, 130, 4, 1, envelope(430, 270))
+        + g(1260, 100, 6, 1, tag('R$ 152,4 BI', 330, '#e8590c'))
+        + g(1060, 440, 8, 1, banknote(330, 160))
+        + g(1400, 560, -6, 1, coin(70))
+        + g(1000, 700, -5, 1, stamp('VAI À SANÇÃO', 360, '#d63031', -6))
+    )
