@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'inss-mutirao-14-e-15-de-novembro-7-959-vagas-pericia-e-avaliacao-social':
+    'Mutirão do INSS 14 e 15/11: 7.959 vagas',
   'loterias-caixa-pagam-premios-de-ate-r-2-428-80-via-pix-em-apostas-digitais':
     'Loterias Caixa: prêmio de até R$ 2.428,80 no Pix',
   'cnu-3-2027-governo-estuda-prova-como-o-enem-e-1-3-mil-vagas-remanescentes':

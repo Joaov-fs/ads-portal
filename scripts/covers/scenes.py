@@ -1743,3 +1743,15 @@ def _():
         + g(780, 470, -4, 1, coin(80))
         + g(1000, 560, 4, 1, stamp('STF', 200, '#f4e3c3', -6))
     )
+
+
+@scene('inss-mutirao-14-15-novembro-2026', '#2f6b4f', (60, 100, 760))
+def _():
+    rows = label_rows([('Perícia médica', '6.578'), ('Avaliação social', '1.381'), ('Total de vagas', '7.959'), ('Agendar', 'Meu INSS'), ], 46, 170, 408, 64, 21, hl=(2, '#d6efe0'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'MUTIRÃO DO INSS', '#1f5139', rows))
+        + g(690, 130, 4, 1, tag('7.959 vagas', 330, '#e8590c'))
+        + g(1130, 90, 5, 0.9, calendar_month('NOVEMBRO', 0, 30, marks=(14, 15), accent='#2f6b4f', mark_color='#d63031'))
+        + g(780, 470, -4, 0.9, phone(250, 500, phone_screen('MEU INSS', 'Central 135', 'agende o horário', '#2f6b4f')))
+    )
+
