@@ -115,6 +115,7 @@ import { newsSenadoAjusteFiscalPlp299 } from './senado-aprova-ajuste-fiscal-plp-
 import { newsPacoteFiscal60Bi2027 } from './pacote-fiscal-de-ate-r-60-bilhoes-limita-despesas-a-2-e-corta-incentivos-em-20';
 import { newsIpcaOutubro2026Sobe014Inflacao463 } from './ipca-de-outubro-sobe-0-14-e-inflacao-em-12-meses-vai-a-4-63-conta-de-luz-cai';
 import { newsTesouroVazamento30MilCadastros2026 } from './tesouro-nacional-vazamento-30-mil-cadastros-4-mil-chaves-pix-o-que-fazer';
+import { newsStfPlanosEconomicosAdesao2027 } from './stf-encerra-processo-dos-planos-economicos-e-mantem-adesao-ao-acordo-ate-junho-de-2027';
 
 export const newsFiles = [
   newsFiesRemanescentes2026,
@@ -230,4 +231,5 @@ export const newsFiles = [
   newsAvisoTempestades1314Novembro2026,
   newsSenadoAjusteFiscalPlp299,
   newsTesouroVazamento30MilCadastros2026,
+  newsStfPlanosEconomicosAdesao2027,
 ] as const;

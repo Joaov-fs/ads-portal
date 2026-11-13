@@ -144,6 +144,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Senado aprova MP das dívidas rurais e vai à sanção',
   'tesouro-nacional-vazamento-30-mil-cadastros-4-mil-chaves-pix-o-que-fazer':
     'Vazamento no Tesouro: 30 mil cadastros e Pix',
+  'stf-encerra-processo-dos-planos-economicos-e-mantem-adesao-ao-acordo-ate-junho-de-2027':
+    'STF encerra planos econômicos; adesão até jun/2027',
   'senado-aprova-ajuste-fiscal-plp-299-por-45-a-31-e-texto-segue-para-a-camara':
     'Senado aprova ajuste fiscal por 45 a 31',
   'pacote-fiscal-de-ate-r-60-bilhoes-limita-despesas-a-2-e-corta-incentivos-em-20':
