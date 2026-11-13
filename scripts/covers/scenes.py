@@ -1720,3 +1720,26 @@ def _():
         + g(1330, 500, -4, 1, coin(70))
         + g(1010, 700, -5, 1, stamp('SEGUE PARA A CÂMARA', 560, '#f4e3c3', -4))
     )
+
+
+@scene('tesouro-vazamento-30-mil-cadastros-2026', '#1f5f5b', (60, 100, 760))
+def _():
+    rows = label_rows([('Cadastros expostos', '30 mil'), ('Chaves Pix', '4 mil'), ('Detectado em', '4/11'), ('Impacto financeiro', 'Nenhum')], 46, 170, 408, 64, 21, hl=(0, '#d3efeb'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'INCIDENTE DE DADOS', '#174a47', rows))
+        + g(690, 130, 4, 1, tag('30 mil cadastros', 330, '#e8590c'))
+        + g(1130, 90, 5, 0.9, phone(250, 500, phone_screen('ALERTA', '4 mil Pix', 'chaves expostas', '#1f5f5b', check=False)))
+        + g(760, 470, -4, 1, stamp('DESCONFIE', 300, '#d63031', -7))
+    )
+
+
+@scene('stf-planos-economicos-adesao-2027', '#7a4a1e', (60, 100, 760))
+def _():
+    rows = label_rows([('Plano Bresser', '1987'), ('Plano Verão', '1989'), ('Plano Collor 2', '1991'), ('Adesão até', 'jun/2027')], 46, 170, 408, 64, 21, hl=(3, '#f1dfc6'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'POUPADORES', '#5a3513', rows))
+        + g(690, 130, 4, 1, tag('Caso encerrado', 330, '#2f7d4f'))
+        + g(1130, 90, 5, 0.9, calendar_month('JUNHO 2027', 2, 30, marks=(3,), accent='#7a4a1e', mark_color='#d63031'))
+        + g(780, 470, -4, 1, coin(80))
+        + g(1000, 560, 4, 1, stamp('STF', 200, '#f4e3c3', -6))
+    )

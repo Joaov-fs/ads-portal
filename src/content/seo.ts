@@ -142,6 +142,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'IPCA de outubro: 0,14% e 4,63% em 12 meses',
   'mp-1376-senado-aprova-plv-16-2026-dividas-rurais-vai-a-sancao':
     'Senado aprova MP das dívidas rurais e vai à sanção',
+  'tesouro-nacional-vazamento-30-mil-cadastros-4-mil-chaves-pix-o-que-fazer':
+    'Vazamento no Tesouro: 30 mil cadastros e Pix',
   'senado-aprova-ajuste-fiscal-plp-299-por-45-a-31-e-texto-segue-para-a-camara':
     'Senado aprova ajuste fiscal por 45 a 31',
   'pacote-fiscal-de-ate-r-60-bilhoes-limita-despesas-a-2-e-corta-incentivos-em-20':
