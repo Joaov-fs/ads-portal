@@ -17,6 +17,7 @@ import { newsFocus9Novembro2026Selic1375 } from './focus-9-novembro-selic-13-75-
 import { newsFocus3Novembro2026Selic1350 } from './focus-3-novembro-selic-13-50-fim-de-2026-dolar-r-5-34-copom-decide-dia-4';
 import { newsLulaProgramasSociais4oMandato } from './lula-garante-programas-sociais-no-4o-mandato-bolsa-familia-paga-r-691-e-novembro-comeca-dia-16';
 import { newsEnem2026ProvasPortoes } from './enem-2026-provas-8-e-15-de-novembro-portoes-fecham-as-13h-e-pe-de-meia-paga-r-200';
+import { newsBlackFriday27Novembro2026 } from './black-friday-27-de-novembro-checklist-de-compra-segura-e-arrependimento-de-7-dias';
 import { newsFeriadosNovembro2026 } from './feriados-de-novembro-de-2026-sexta-20-e-feriadao-dia-15-cai-no-domingo-e-quem-trabalha-recebe-em-dobro';
 import { newsIgpMOutubro2026Aluguel } from './igp-m-outubro-1-47-acumulado-5-24-aluguel-de-r-2-000-vai-a-r-2-104-80';
 import { newsSacDecreto13135Novembro2026 } from './sac-novas-regras-valem-desde-2-de-novembro-atendente-humano-das-8h-as-20h-e-espera-de-20-segundos';
@@ -115,6 +116,7 @@ import { newsPacoteFiscal60Bi2027 } from './pacote-fiscal-de-ate-r-60-bilhoes-li
 import { newsIpcaOutubro2026Sobe014Inflacao463 } from './ipca-de-outubro-sobe-0-14-e-inflacao-em-12-meses-vai-a-4-63-conta-de-luz-cai';
 import { newsTesouroVazamento30MilCadastros2026 } from './tesouro-nacional-vazamento-30-mil-cadastros-4-mil-chaves-pix-o-que-fazer';
 import { newsInssMutirao1415Novembro2026 } from './inss-mutirao-14-e-15-de-novembro-7-959-vagas-pericia-e-avaliacao-social';
+import { newsBlackFridayInmetroEletrodomesticos2026 } from './black-friday-inmetro-5-erros-compra-de-eletrodomesticos-etiqueta-ence';
 import { newsStfPlanosEconomicosAdesao2027 } from './stf-encerra-processo-dos-planos-economicos-e-mantem-adesao-ao-acordo-ate-junho-de-2027';
 
 export const newsFiles = [
@@ -233,4 +235,5 @@ export const newsFiles = [
   newsTesouroVazamento30MilCadastros2026,
   newsStfPlanosEconomicosAdesao2027,
   newsInssMutirao1415Novembro2026,
+  newsBlackFridayInmetroEletrodomesticos2026,
 ] as const;

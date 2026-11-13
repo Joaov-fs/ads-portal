@@ -1755,3 +1755,13 @@ def _():
         + g(780, 470, -4, 0.9, phone(250, 500, phone_screen('MEU INSS', 'Central 135', 'agende o horário', '#2f6b4f')))
     )
 
+
+@scene('black-friday-eletrodomesticos-inmetro-2026', '#3a3f8f', (60, 100, 760))
+def _():
+    rows = label_rows([('Geladeira', 'Freezer'), ('Ar-condicionado', 'BTUs'), ('Ventilador', 'Vazão'), ('Tensão', '127 / 220 V')], 46, 170, 408, 64, 21, hl=(3, '#dcdcf5'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, '5 ERROS NA COMPRA', '#2a2e6e', rows))
+        + g(690, 130, 4, 1, tag('Black Friday', 380, '#1c1c1c'))
+        + g(1260, 420, 3, 0.75, gauge(200, 0.8, 'ENCE A'))
+        + g(780, 470, -4, 1, stamp('COMPARE', 300, '#f4e3c3', -7))
+    )
