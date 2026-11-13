@@ -162,6 +162,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'CBS: regra de transição opcional em fev/2027',
   'congresso-aprova-r-152-4-bi-em-creditos-pln-23-r-149-4-bi-beneficios':
     'Congresso aprova R$ 152,4 bi em créditos de 2026',
+  'dolar-fecha-a-r-5-657-sobe-2-63-na-semana-e-ibovespa-vai-a-172-mil-pontos-13-11':
+    'Dólar a R$ 5,657 sobe 2,63% na semana',
   'dolar-fecha-a-r-5-65-ibovespa-cai-0-43-a-171-mil-pontos-pacote-fiscal-12-11':
     'Dólar a R$ 5,65 e Ibovespa a 171 mil pontos',
   'dolar-fecha-a-r-5-5628-ibovespa-sobe-0-42-a-172-mil-pontos-e-petrobras-lucra-r-39-75-bi':

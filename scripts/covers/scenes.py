@@ -1765,3 +1765,15 @@ def _():
         + g(1260, 420, 3, 0.75, gauge(200, 0.8, 'ENCE A'))
         + g(780, 470, -4, 1, stamp('COMPARE', 300, '#f4e3c3', -7))
     )
+
+
+@scene('fechamento-semana-dolar-5-657-2026', '#8a6d1a', (60, 100, 760))
+def _():
+    rows = label_rows([('Dólar (fechamento)', 'R$ 5,657'), ('Alta na semana', '2,63%'), ('Ibovespa', '172.458'), ('Alta na semana', '2,35%')], 46, 170, 408, 64, 21, hl=(1, '#f3e8c4'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'FECHAMENTO 13/11', '#5f4a0e', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.3, 0.35, 0.5, 0.55, 0.7, 0.85), color='#2f9e44', title='IBOVESPA'))
+        + g(1290, 110, 6, 1, tag('R$ 5,657', 280, '#e8590c'))
+        + g(1330, 500, -4, 1, coin(70))
+        + g(1010, 700, -5, 1, stamp('DÓLAR +2,63% NA SEMANA', 560, '#f4e3c3', -4))
+    )
