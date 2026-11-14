@@ -1844,3 +1844,15 @@ def _():
         + g(1230, 150, 6, 0.8, clock(150, 8, 24))
         + g(1010, 700, -4, 1, stamp('4 VOTOS NO STF', 440, '#f4e3c3', -4))
     )
+
+
+@scene('dieese-13o-399-bilhoes-2026', '#0f6b5c', (60, 100, 760))
+def _():
+    rows = label_rows([('Injeção na economia', 'R$ 399 bi'), ('Pessoas', '99,7 mi'), ('Valor médio', 'R$ 3.720'), ('Peso no PIB', '~3%')], 46, 170, 408, 64, 21, hl=(0, '#d3eee8'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, '13º SALÁRIO: DIEESE', '#0a4a40', rows))
+        + g(690, 130, 4, 1, tag('R$ 3.720 em média', 440, '#1c1c1c'))
+        + g(720, 400, -5, 0.9, banknote(330, 160))
+        + g(1200, 300, -6, 0.95, jar(200, 260, 0.7, '13º'))
+        + g(900, 720, -4, 1, stamp('QUASE R$ 400 BI', 460, '#f4e3c3', -4))
+    )
