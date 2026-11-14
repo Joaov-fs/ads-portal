@@ -134,6 +134,10 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'free-flow-pedagio-quite-ate-16-11-sem-multa-autuacao-comeca-em-17-11':
+    'Free flow: pague até 16/11 e evite multa',
+  'stf-tem-4-votos-para-manter-escala-5x2-em-16-12-votacao-termina-em-16-11':
+    'STF tem 4 votos pela escala 5x2 em 16/12',
   'dino-escala-5x2-transicao-8h24-liminar-adi-8041-e-8042':
     'Dino: 42h em 16/12 e jornada de 8h24 na transição',
   'inss-mutirao-14-e-15-de-novembro-7-959-vagas-pericia-e-avaliacao-social':

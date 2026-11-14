@@ -119,6 +119,8 @@ import { newsPgdasDFolha12MesesSimples2026 } from './pgdas-d-folha-de-12-meses-o
 import { newsCongressoPln12026Receita851Nomeacoes } from './congresso-aprova-pln-1-2026-851-nomeacoes-e-1-821-cargos-na-receita-federal';
 import { newsTesouroVazamento30MilCadastros2026 } from './tesouro-nacional-vazamento-30-mil-cadastros-4-mil-chaves-pix-o-que-fazer';
 import { newsInssMutirao1415Novembro2026 } from './inss-mutirao-14-e-15-de-novembro-7-959-vagas-pericia-e-avaliacao-social';
+import { newsFreeFlowPedagioQuiteAte16Novembro } from './free-flow-pedagio-quite-ate-16-11-sem-multa-autuacao-comeca-em-17-11';
+import { newsStfQuatroVotosEscala5x2 } from './stf-tem-4-votos-para-manter-escala-5x2-em-16-12-votacao-termina-em-16-11';
 import { newsDinoEscala5x2Transicao8h24 } from './dino-escala-5x2-transicao-8h24-liminar-adi-8041-e-8042';
 import { newsBlackFridayInmetroEletrodomesticos2026 } from './black-friday-inmetro-5-erros-compra-de-eletrodomesticos-etiqueta-ence';
 import { newsStfPlanosEconomicosAdesao2027 } from './stf-encerra-processo-dos-planos-economicos-e-mantem-adesao-ao-acordo-ate-junho-de-2027';
@@ -247,4 +249,6 @@ export const newsFiles = [
   newsDieselImportadoSubvencao140Encerrada2026,
   newsPgdasDFolha12MesesSimples2026,
   newsCongressoPln12026Receita851Nomeacoes,
+  newsFreeFlowPedagioQuiteAte16Novembro,
+  newsStfQuatroVotosEscala5x2,
 ] as const;

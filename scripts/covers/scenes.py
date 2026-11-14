@@ -1822,3 +1822,25 @@ def _():
         + g(1230, 150, 5, 0.9, pen(360))
         + g(1010, 700, -4, 1, stamp('VAI À SANÇÃO', 420, '#f4e3c3', -4))
     )
+
+
+@scene('free-flow-pedagio-prazo-16-11-2026', '#5a7a1e', (60, 100, 760))
+def _():
+    rows = label_rows([('Passagem', 'Free flow'), ('Quitar sem multa', 'Até 16/11'), ('Autuação', 'Desde 17/11'), ('Consulta', 'CNH do Brasil')], 46, 170, 408, 64, 21, hl=(1, '#e4efcf'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'PEDÁGIO PENDENTE', '#3f5a12', rows))
+        + g(690, 130, 4, 0.9, calendar_month('NOVEMBRO', 0, 30, marks=(16, 17), accent='#4a6a14', mark_color='#e8590c'))
+        + g(1230, 150, 6, 0.8, tag('16/11', 300, '#1c1c1c'))
+        + g(1010, 700, -4, 1, stamp('PRAZO SEM MULTA', 460, '#f4e3c3', -4))
+    )
+
+
+@scene('stf-5x2-quatro-votos-referendo-2026', '#2a4d6e', (60, 100, 760))
+def _():
+    rows = label_rows([('Votos a favor', '4'), ('Relator', 'Dino'), ('Término', '16/11'), ('Início 5x2', '16/12')], 46, 170, 408, 64, 21, hl=(0, '#dbe7f3'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'REFERENDO DA LIMINAR', '#1d3a56', rows))
+        + g(690, 130, 4, 0.9, calendar_month('DEZEMBRO', 2, 31, marks=(16,), accent='#2a5a86', mark_color='#e8590c'))
+        + g(1230, 150, 6, 0.8, clock(150, 8, 24))
+        + g(1010, 700, -4, 1, stamp('4 VOTOS NO STF', 440, '#f4e3c3', -4))
+    )
