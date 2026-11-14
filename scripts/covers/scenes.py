@@ -1789,3 +1789,14 @@ def _():
         + g(780, 470, -4, 1, stamp('R$ 2,12 SEGUE', 300, '#f4e3c3', -7))
         + g(1010, 700, 5, 1, coin(70))
     )
+
+
+@scene('dino-5x2-transicao-8h24-2026', '#4a3f7a', (60, 100, 760))
+def _():
+    rows = label_rows([('Jornada semanal', '42 horas'), ('Limite por dia', '8h24'), ('Folgas por semana', '2'), ('Início', '16/12')], 46, 170, 408, 64, 21, hl=(1, '#e2dcf5'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'TRANSIÇÃO 5X2', '#332a5e', rows))
+        + g(690, 130, 4, 0.9, calendar_month('DEZEMBRO', 2, 31, marks=(16,), accent='#5b4aa0', mark_color='#e8590c'))
+        + g(1230, 150, 6, 0.8, clock(150, 8, 24))
+        + g(1010, 700, -4, 1, stamp('8H24 SEM HORA EXTRA', 520, '#f4e3c3', -4))
+    )

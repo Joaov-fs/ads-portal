@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'dino-escala-5x2-transicao-8h24-liminar-adi-8041-e-8042':
+    'Dino: 42h em 16/12 e jornada de 8h24 na transição',
   'inss-mutirao-14-e-15-de-novembro-7-959-vagas-pericia-e-avaliacao-social':
     'Mutirão do INSS 14 e 15/11: 7.959 vagas',
   'black-friday-inmetro-5-erros-compra-de-eletrodomesticos-etiqueta-ence':
