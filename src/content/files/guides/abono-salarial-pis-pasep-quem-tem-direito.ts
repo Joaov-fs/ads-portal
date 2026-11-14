@@ -10,8 +10,27 @@ export const guideAbonoSalarialPisPasepQuemTemDireito = {
   category: 'beneficios',
   authorId: 'equipe-editorial',
   publishedAt: '2026-09-16',
-  updatedAt: '2026-10-02',
+  updatedAt: '2026-11-12',
   tags: ['pis', 'pasep', 'abono', 'beneficios', 'trabalho'],
+  quickAnswer: {
+    question: 'Quem tem direito ao saque do PIS/Pasep em 2026?',
+    answer:
+      'Tem direito ao abono salarial de 2026 quem cumpre as quatro condições abaixo ao mesmo tempo. O valor vai de R$ 135,08 a R$ 1.621, e o saque fica disponível até 30 de dezembro de 2026.',
+    items: [
+      'Inscrito no PIS/Pasep há pelo menos 5 anos.',
+      'Trabalhou com carteira assinada por 30 dias ou mais em 2024 (seguidos ou não).',
+      'Recebeu em média até R$ 2.766 por mês em 2024.',
+      'Teve os dados de 2024 informados corretamente pelo empregador no eSocial.',
+    ],
+    note: 'Trabalhou entre 1971 e 1988? Isso é outro dinheiro: as cotas do antigo fundo PIS/Pasep, que você ou seus herdeiros pedem no aplicativo FGTS. Pedido feito até 30/11 é pago em 28/12.',
+    actions: [
+      { href: '/calculadoras/pis', label: 'Calcular o valor do meu abono' },
+      {
+        href: '/noticias/pis-pasep-antigo-fundo-caixa-paga-26-de-outubro-e-pedido-ate-31-de-outubro-sai-em-25-de-novembro',
+        label: 'Cotas do antigo fundo (1971 a 1988)',
+      },
+    ],
+  },
   featuredCalculators: ['pis', 'salario-liquido', 'ferias'],
   highlights: [
     {

@@ -48,7 +48,8 @@ export const newsMp1376DividasRurais2026 = {
       image: {
         src: '/images/news/mp-1376-comissao-amplia-renegociacao-de-dividas-rurais-prazo-vai-a-31-10-plv-16-2026-detalhe.jpg',
         alt: 'Detalhe do documento da MP 1.376/2026 com juros de 5% a 12% ao ano, prazo antigo de 31/05, prazo novo de 31/10 e R$ 24 bi.',
-        caption: 'O prazo para enquadrar dívidas em atraso passou de 31/05 para 31/10.',
+        caption:
+          'O prazo para enquadrar dívidas em atraso passou de 31/05 para 31/10.',
         credit: 'Ilustração: PortalFina',
       },
       paragraphs: [

@@ -7,15 +7,15 @@ import {
 } from './estimate';
 
 describe('impostômetro', () => {
-  it('bate com a base oficial no fim de agosto e cresce depois', () => {
-    const endOfAugust = Date.parse('2026-09-01T00:00:00-03:00');
+  it('bate com a base oficial no fim de setembro e cresce depois', () => {
+    const endOfSeptember = Date.parse('2026-10-01T00:00:00-03:00');
 
-    expect(Math.round(estimateCollected(endOfAugust))).toBe(baseCollected);
-    expect(estimateCollected(endOfAugust + 1000)).toBeGreaterThan(
+    expect(Math.round(estimateCollected(endOfSeptember))).toBe(baseCollected);
+    expect(estimateCollected(endOfSeptember + 1000)).toBeGreaterThan(
       baseCollected,
     );
-    expect(collectedPerSecond).toBeGreaterThan(100_000);
-    expect(collectedPerSecond).toBeLessThan(101_000);
+    expect(collectedPerSecond).toBeGreaterThan(99_000);
+    expect(collectedPerSecond).toBeLessThan(100_500);
   });
 
   it('não é negativo antes do início do ano', () => {

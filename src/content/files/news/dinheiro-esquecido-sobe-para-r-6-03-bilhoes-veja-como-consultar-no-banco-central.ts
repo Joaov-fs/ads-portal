@@ -53,7 +53,8 @@ export const newsDinheiroEsquecido603Bilhoes2026 = {
       image: {
         src: '/images/news/dinheiro-esquecido-sobe-para-r-6-03-bilhoes-veja-como-consultar-no-banco-central-detalhe.jpg',
         alt: 'Detalhe da ilustração: documento do Valores a Receber com R$ 6,03 bilhões disponíveis, R$ 16,75 bilhões devolvidos e R$ 4,41 bilhões de pessoas físicas.',
-        caption: 'Os totais do Sistema Valores a Receber informados pelo Banco Central.',
+        caption:
+          'Os totais do Sistema Valores a Receber informados pelo Banco Central.',
         credit: 'Ilustração: PortalFina',
       },
       paragraphs: [
@@ -88,7 +89,8 @@ export const newsDinheiroEsquecido603Bilhoes2026 = {
   ],
   faq: [
     {
-      question: 'Quanto dinheiro esquecido está disponível, segundo o Banco Central?',
+      question:
+        'Quanto dinheiro esquecido está disponível, segundo o Banco Central?',
       answer:
         'R$ 6,03 bilhões, informou o Banco Central em 10 de novembro de 2026: R$ 4,41 bilhões de pessoas físicas e R$ 1,62 bilhão de empresas.',
     },

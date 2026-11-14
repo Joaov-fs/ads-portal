@@ -16,7 +16,14 @@ export const newsDolarIbovespa11Novembro2026 = {
   authorId: 'sara-souza',
   publishedAt: '2026-11-11',
   updatedAt: '2026-11-11',
-  tags: ['dolar', 'ibovespa', 'petrobras', 'cambio', 'ajuste-fiscal', 'petroleo'],
+  tags: [
+    'dolar',
+    'ibovespa',
+    'petrobras',
+    'cambio',
+    'ajuste-fiscal',
+    'petroleo',
+  ],
   featuredCalculators: ['porcentagem', 'cdb-liquido'],
   highlights: [
     {

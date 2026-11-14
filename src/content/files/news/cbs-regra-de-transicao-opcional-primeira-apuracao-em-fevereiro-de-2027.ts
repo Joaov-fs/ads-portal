@@ -16,14 +16,7 @@ export const newsCbsTransicaoOpcional2027 = {
   authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-11-11',
   updatedAt: '2026-11-11',
-  tags: [
-    'reforma-tributaria',
-    'cbs',
-    'ibs',
-    'fazenda',
-    'impostos',
-    'empresas',
-  ],
+  tags: ['reforma-tributaria', 'cbs', 'ibs', 'fazenda', 'impostos', 'empresas'],
   featuredCalculators: ['simples-nacional', 'porcentagem'],
   highlights: [
     {

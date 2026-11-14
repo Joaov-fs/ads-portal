@@ -34,28 +34,40 @@ const tools = [
 export default function ImpostometroPage() {
   return (
     <main>
-      <header className="bg-ads-secondary-strong py-14 text-white sm:py-20">
+      <header className="bg-ads-secondary-strong py-8 text-white sm:py-14">
         <Container>
           <Breadcrumb
             items={[{ href: '/', label: 'Início' }, { label: 'Impostômetro' }]}
           />
-          <div className="mt-8 grid gap-5">
-            <span className="text-ads-eyebrow font-bold uppercase tracking-[0.16em] text-emerald-200">
-              Estimativa federal · 2026
-            </span>
+          <div className="mt-5 grid gap-4 sm:mt-8 sm:gap-5">
             <h1 className="max-w-3xl text-ads-title font-extrabold tracking-tight">
-              Quanto a União já arrecadou em 2026
+              Impostômetro 2026 em tempo real
             </h1>
+            <p className="text-ads-eyebrow font-bold uppercase tracking-[0.16em] text-emerald-200">
+              Quanto a União já arrecadou em 2026, agora
+            </p>
             <p
               aria-live="off"
-              className="text-4xl font-extrabold tabular-nums sm:text-6xl"
+              className="text-[clamp(1.5rem,8vw,3.75rem)] font-extrabold leading-tight tabular-nums"
             >
               <TaxCounter />
             </p>
-            <p className="max-w-2xl leading-7 text-white/80">
-              Valor estimado em tempo real, só de tributos federais. Parte de R$
-              2,11 trilhões confirmados pela Receita Federal de janeiro a
-              agosto.
+            <p className="max-w-2xl leading-7 text-white/85">
+              Estimativa ao vivo dos tributos federais, a partir do último dado
+              oficial: <strong>R$ 2,351 trilhões</strong> arrecadados de janeiro
+              a setembro, alta real de 6,97% sobre o mesmo período de 2025,
+              segundo a Receita Federal.
+            </p>
+            <p className="max-w-2xl text-sm leading-6 text-white/70">
+              O contador soma só a União. O Impostômetro da Associação Comercial
+              de São Paulo inclui também ICMS, ISS e IPTU, por isso mostra um
+              valor maior.{' '}
+              <Link
+                className="font-semibold text-emerald-200 underline"
+                href="#como-funciona"
+              >
+                Como calculamos
+              </Link>
             </p>
           </div>
         </Container>
@@ -82,12 +94,15 @@ export default function ImpostometroPage() {
               ))}
             </div>
 
-            <Card className="grid gap-4 p-6 sm:p-8">
+            <Card
+              className="grid scroll-mt-8 gap-4 p-6 sm:p-8"
+              id="como-funciona"
+            >
               <h2 className="text-2xl font-bold text-ads-secondary">
                 Como a estimativa é feita
               </h2>
               <p className="leading-7 text-ads-muted">
-                Pegamos o total arrecadado de janeiro a agosto de 2026 e
+                Pegamos o total arrecadado de janeiro a setembro de 2026 e
                 dividimos pelos segundos do período. O resultado é uma média de
                 cerca de {formatBrl(estimateFacts.perSecond)} por segundo, que o
                 contador soma desde 1º de janeiro. É uma aproximação: a
@@ -151,8 +166,8 @@ export default function ImpostometroPage() {
 
             <p className="text-sm text-ads-muted">
               Fontes: Receita Federal do Brasil (Análise da Arrecadação das
-              Receitas Federais, boletim de agosto de 2026 e balanço de 2025) e
-              IBGE (população estimada).
+              Receitas Federais, boletim de setembro de 2026 e balanço de 2025)
+              e IBGE (população estimada).
             </p>
           </div>
         </Container>

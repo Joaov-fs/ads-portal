@@ -1,15 +1,15 @@
 /**
  * Estimativa de arrecadação federal em 2026.
  *
- * Base oficial: Receita Federal, "Análise da Arrecadação das Receitas Federais" de agosto/2026,
- * com R$ 2,11 trilhões arrecadados de janeiro a agosto. A taxa por segundo é a média desse período
+ * Base oficial: Receita Federal, "Análise da Arrecadação das Receitas Federais" de setembro/2026,
+ * com R$ 2,351 trilhões arrecadados de janeiro a setembro. A taxa por segundo é a média desse período
  * e a conta ignora a sazonalidade do ano. Atualize `baseCollected` e `baseUntil` a cada boletim mensal.
  */
-export const baseCollected = 2_110_000_000_000;
+export const baseCollected = 2_351_000_000_000;
 
-/** Início de 2026 e fim de agosto, no horário de Brasília (UTC−3). */
+/** Início de 2026 e fim de setembro, no horário de Brasília (UTC−3). */
 const yearStart = Date.parse('2026-01-01T00:00:00-03:00');
-const baseUntil = Date.parse('2026-09-01T00:00:00-03:00');
+const baseUntil = Date.parse('2026-10-01T00:00:00-03:00');
 
 export const collectedPerSecond =
   baseCollected / ((baseUntil - yearStart) / 1000);
