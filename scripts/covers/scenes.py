@@ -1800,3 +1800,25 @@ def _():
         + g(1230, 150, 6, 0.8, clock(150, 8, 24))
         + g(1010, 700, -4, 1, stamp('8H24 SEM HORA EXTRA', 520, '#f4e3c3', -4))
     )
+
+
+@scene('pgdas-d-folha-12-meses-2026', '#1d6b6b', (60, 100, 760))
+def _():
+    rows = label_rows([('Competência', 'Em 2027'), ('Folha de salários', '12 meses'), ('Período 1', '11/2026'), ('Período 2', '12/2026')], 46, 170, 408, 64, 21, hl=(1, '#d6efec'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'PGDAS-D ATUALIZADO', '#124a4a', rows))
+        + g(690, 130, 4, 1, sheet(300, 380, 'FOLHA FS12', '#1d6b6b', seed=5, extra=lines(30, 120, 240, 6, seed=4)))
+        + g(1060, 120, 5, 0.9, tag('Folha 12 meses', 400, '#1c1c1c'))
+        + g(1010, 700, -4, 1, stamp('SIMPLES NACIONAL', 460, '#f4e3c3', -4))
+    )
+
+
+@scene('congresso-pln-1-receita-851-2026', '#8a3b4f', (60, 100, 760))
+def _():
+    rows = label_rows([('Nomeações', '851'), ('Cargos e funções', '1.821'), ('Votação', '12/11'), ('Próximo passo', 'Sanção')], 46, 170, 408, 64, 21, hl=(0, '#f3dbe1'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'PLN 1/2026', '#6a2638', rows))
+        + g(690, 130, 4, 1, tag('851 nomeações', 400, '#1c1c1c'))
+        + g(1230, 150, 5, 0.9, pen(360))
+        + g(1010, 700, -4, 1, stamp('VAI À SANÇÃO', 420, '#f4e3c3', -4))
+    )

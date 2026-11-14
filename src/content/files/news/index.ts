@@ -115,6 +115,8 @@ import { newsPoupancaSaquesOutubro2026 } from './saques-da-poupanca-superam-depo
 import { newsSenadoAjusteFiscalPlp299 } from './senado-aprova-ajuste-fiscal-plp-299-por-45-a-31-e-texto-segue-para-a-camara';
 import { newsPacoteFiscal60Bi2027 } from './pacote-fiscal-de-ate-r-60-bilhoes-limita-despesas-a-2-e-corta-incentivos-em-20';
 import { newsIpcaOutubro2026Sobe014Inflacao463 } from './ipca-de-outubro-sobe-0-14-e-inflacao-em-12-meses-vai-a-4-63-conta-de-luz-cai';
+import { newsPgdasDFolha12MesesSimples2026 } from './pgdas-d-folha-de-12-meses-obrigatoria-simples-nacional-fim-do-regime-de-caixa';
+import { newsCongressoPln12026Receita851Nomeacoes } from './congresso-aprova-pln-1-2026-851-nomeacoes-e-1-821-cargos-na-receita-federal';
 import { newsTesouroVazamento30MilCadastros2026 } from './tesouro-nacional-vazamento-30-mil-cadastros-4-mil-chaves-pix-o-que-fazer';
 import { newsInssMutirao1415Novembro2026 } from './inss-mutirao-14-e-15-de-novembro-7-959-vagas-pericia-e-avaliacao-social';
 import { newsDinoEscala5x2Transicao8h24 } from './dino-escala-5x2-transicao-8h24-liminar-adi-8041-e-8042';
@@ -243,4 +245,6 @@ export const newsFiles = [
   newsDinoEscala5x2Transicao8h24,
   newsDolarIbovespaSemana13Novembro2026,
   newsDieselImportadoSubvencao140Encerrada2026,
+  newsPgdasDFolha12MesesSimples2026,
+  newsCongressoPln12026Receita851Nomeacoes,
 ] as const;
