@@ -2,18 +2,15 @@ import type { NewsDocument } from '../../types';
 
 export const newsCongressoPln12026Receita851Nomeacoes = {
   kind: 'news',
-  slug:
-    'congresso-aprova-pln-1-2026-851-nomeacoes-e-1-821-cargos-na-receita-federal',
+  slug: 'congresso-aprova-pln-1-2026-851-nomeacoes-e-1-821-cargos-na-receita-federal',
   title:
     'Congresso aprova PLN 1/2026: 851 nomeações e 1.821 cargos na Receita Federal em 2026',
   description:
     'O Congresso aprovou em 12/11 o PLN 1/2026, que autoriza 851 nomeações e 1.821 cargos e funções de confiança na Receita. O texto segue para sanção presidencial.',
   category: 'politica',
   coverImage: {
-    src:
-      '/images/news/congresso-aprova-pln-1-2026-851-nomeacoes-e-1-821-cargos-na-receita-federal.jpg',
-    alt:
-      'Documento do PLN 1/2026 com 851 nomeações, 1.821 cargos e funções, votação em 12/11 e próximo passo na sanção, etiqueta de 851 nomeações e carimbo vai à sanção.',
+    src: '/images/news/congresso-aprova-pln-1-2026-851-nomeacoes-e-1-821-cargos-na-receita-federal.jpg',
+    alt: 'Documento do PLN 1/2026 com 851 nomeações, 1.821 cargos e funções, votação em 12/11 e próximo passo na sanção, etiqueta de 851 nomeações e carimbo vai à sanção.',
     credit: 'Ilustração: PortalFina',
   },
   authorId: 'pedro-bueno-salvador',
@@ -50,10 +47,8 @@ export const newsCongressoPln12026Receita851Nomeacoes = {
     {
       heading: 'Quanto custa e o que o governo diz sobre a despesa',
       image: {
-        src:
-          '/images/news/congresso-aprova-pln-1-2026-851-nomeacoes-e-1-821-cargos-na-receita-federal-detalhe.jpg',
-        alt:
-          'Detalhe do documento do PLN 1/2026: 851 nomeações, 1.821 cargos e funções, votação em 12/11 e sanção.',
+        src: '/images/news/congresso-aprova-pln-1-2026-851-nomeacoes-e-1-821-cargos-na-receita-federal-detalhe.jpg',
+        alt: 'Detalhe do documento do PLN 1/2026: 851 nomeações, 1.821 cargos e funções, votação em 12/11 e sanção.',
         caption: 'Os números do PLN 1/2026 divulgados pela Agência Senado.',
         credit: 'Ilustração: PortalFina',
       },
@@ -104,14 +99,12 @@ export const newsCongressoPln12026Receita851Nomeacoes = {
     {
       label:
         'Agência Senado: Congresso aprova possibilidade de novas nomeações de servidores em 2026',
-      url:
-        'https://www12.senado.leg.br/noticias/materias/2026/11/12/congresso-aprova-possibilidade-de-novas-nomeacoes-de-servidores-em-2026',
+      url: 'https://www12.senado.leg.br/noticias/materias/2026/11/12/congresso-aprova-possibilidade-de-novas-nomeacoes-de-servidores-em-2026',
     },
     {
       label:
         'Agência Brasil: Congresso aprova reestruturação de carreiras na Receita, Ibama e INSS',
-      url:
-        'https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/congresso-aprova-reestruturacao-de-carreiras-na-receita-ibama-e-inss',
+      url: 'https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/congresso-aprova-reestruturacao-de-carreiras-na-receita-ibama-e-inss',
     },
   ],
 } as const satisfies NewsDocument;

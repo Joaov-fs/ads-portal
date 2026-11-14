@@ -16,7 +16,13 @@ export const newsTesouroVazamento30MilCadastros2026 = {
   authorId: 'sara-souza',
   publishedAt: '2026-11-13',
   updatedAt: '2026-11-13',
-  tags: ['golpes', 'pix', 'tesouro-nacional', 'vazamento-de-dados', 'seguranca'],
+  tags: [
+    'golpes',
+    'pix',
+    'tesouro-nacional',
+    'vazamento-de-dados',
+    'seguranca',
+  ],
   featuredCalculators: ['tesouro-selic'],
   highlights: [
     {
@@ -71,7 +77,10 @@ export const newsTesouroVazamento30MilCadastros2026 = {
         columns: ['Item', 'O que foi informado'],
         rows: [
           ['Cadastros do e-Serviços', 'Cerca de 30 mil (nome, CPF e e-mail)'],
-          ['Chaves Pix', 'Cerca de 4 mil, de beneficiários de pagamentos federais'],
+          [
+            'Chaves Pix',
+            'Cerca de 4 mil, de beneficiários de pagamentos federais',
+          ],
           ['Detecção', '4/11/2026'],
           ['Comunicação pública', '12/11/2026'],
           ['Impacto financeiro', 'Nenhum, segundo o Tesouro'],
@@ -107,7 +116,8 @@ export const newsTesouroVazamento30MilCadastros2026 = {
   ],
   sources: [
     {
-      label: 'Agência Brasil: Tesouro Nacional identifica vazamento de dados de 30 mil cadastros',
+      label:
+        'Agência Brasil: Tesouro Nacional identifica vazamento de dados de 30 mil cadastros',
       url: 'https://agenciabrasil.ebc.com.br/geral/noticia/2026-11/tesouro-nacional-identifica-vazamento-de-dados-de-30-mil-cadastros',
     },
     {

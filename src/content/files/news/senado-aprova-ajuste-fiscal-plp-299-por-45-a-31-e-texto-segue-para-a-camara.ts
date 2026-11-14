@@ -68,9 +68,18 @@ export const newsSenadoAjusteFiscalPlp299 = {
         caption: 'Medidas citadas pelo Senado no texto principal',
         columns: ['Medida', 'O que prevê'],
         rows: [
-          ['Limite de despesas', 'Alta real de 2% (hoje, 2,5%) nos anos de contenção, a partir de 2027'],
-          ['Benefícios fiscais', 'Corte em isenções, créditos e regimes especiais, exceto TI e semicondutores'],
-          ['Lei Kandir', 'Repasses de R$ 4 bi para R$ 1 bi por ano entre 2027 e 2030'],
+          [
+            'Limite de despesas',
+            'Alta real de 2% (hoje, 2,5%) nos anos de contenção, a partir de 2027',
+          ],
+          [
+            'Benefícios fiscais',
+            'Corte em isenções, créditos e regimes especiais, exceto TI e semicondutores',
+          ],
+          [
+            'Lei Kandir',
+            'Repasses de R$ 4 bi para R$ 1 bi por ano entre 2027 e 2030',
+          ],
           ['Diesel', 'Até R$ 10,5 bi em 2026, fora da meta fiscal do ano'],
           ['Supersalários', '120 dias para o Congresso regulamentar'],
           ['Exportação', 'Teto de R$ 1 bi por ano até 2030 na equalização'],
@@ -111,15 +120,18 @@ export const newsSenadoAjusteFiscalPlp299 = {
   ],
   sources: [
     {
-      label: 'Senado Notícias: Texto principal do ajuste fiscal é aprovado pelo Senado',
+      label:
+        'Senado Notícias: Texto principal do ajuste fiscal é aprovado pelo Senado',
       url: 'https://www12.senado.leg.br/noticias/materias/2026/11/12/texto-principal-do-ajuste-fiscal-e-aprovado-pelo-senado',
     },
     {
-      label: 'TV Senado: Ajuste fiscal, entenda o projeto do governo aprovado nesta quinta (12)',
+      label:
+        'TV Senado: Ajuste fiscal, entenda o projeto do governo aprovado nesta quinta (12)',
       url: 'https://www12.senado.leg.br/tv/programas/noticias-1/2026/11/ajuste-fiscal-entenda-o-projeto-do-governo-aprovado-nesta-quinta-12-1',
     },
     {
-      label: 'Agência Brasil: Senado aprova texto-base de pacote que prevê economia de até R$ 60 bi',
+      label:
+        'Agência Brasil: Senado aprova texto-base de pacote que prevê economia de até R$ 60 bi',
       url: 'https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/senado-aprova-texto-base-de-pacote-que-preve-economia-de-ate-r-60-bi',
     },
   ],

@@ -61,12 +61,24 @@ export const newsInssMutirao1415Novembro2026 = {
         caption: 'Vagas de perícia médica por estado, em 14 e 15/11',
         columns: ['Estado', 'Vagas', 'Maiores agências'],
         rows: [
-          ['Rio de Janeiro', '1.735', 'Duque de Caxias (640) e Nova Iguaçu (484)'],
+          [
+            'Rio de Janeiro',
+            '1.735',
+            'Duque de Caxias (640) e Nova Iguaçu (484)',
+          ],
           ['Pernambuco', '1.370', 'Caruaru (700) e Recife-Pina (215)'],
-          ['Paraná', '1.320', 'Paranaguá (528), Colombo e São José dos Pinhais (396 cada)'],
+          [
+            'Paraná',
+            '1.320',
+            'Paranaguá (528), Colombo e São José dos Pinhais (396 cada)',
+          ],
           ['Pará', '960', 'Santarém (960)'],
           ['Maranhão', '653', 'São Luís-Deodoro (230) e Pinheiro (160)'],
-          ['Alagoas', '480', 'Maceió-Tabuleiro do Martins (300) e Arapiraca (180)'],
+          [
+            'Alagoas',
+            '480',
+            'Maceió-Tabuleiro do Martins (300) e Arapiraca (180)',
+          ],
           ['Bahia', '60', 'Irecê (35) e Brumado (25)'],
         ],
       },

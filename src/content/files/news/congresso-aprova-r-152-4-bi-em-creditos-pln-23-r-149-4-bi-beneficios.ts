@@ -16,7 +16,13 @@ export const newsCongressoCreditos1524Bi2026 = {
   authorId: 'sara-souza',
   publishedAt: '2026-11-13',
   updatedAt: '2026-11-13',
-  tags: ['congresso', 'orcamento-2026', 'pln-23', 'regra-de-ouro', 'beneficios'],
+  tags: [
+    'congresso',
+    'orcamento-2026',
+    'pln-23',
+    'regra-de-ouro',
+    'beneficios',
+  ],
   featuredCalculators: ['porcentagem', 'bolsa-familia'],
   highlights: [
     {
@@ -49,8 +55,7 @@ export const newsCongressoCreditos1524Bi2026 = {
       image: {
         src: '/images/news/congresso-aprova-r-152-4-bi-em-creditos-pln-23-r-149-4-bi-beneficios-detalhe.jpg',
         alt: 'Detalhe do documento com créditos aprovados de R$ 152,4 bi, PLN 23 de R$ 149,4 bi, pedido original de R$ 185,5 bi e Angra 3 com R$ 290 mi.',
-        caption:
-          'O PLN 23 concentra R$ 149,4 bi dos R$ 152,4 bi aprovados.',
+        caption: 'O PLN 23 concentra R$ 149,4 bi dos R$ 152,4 bi aprovados.',
         credit: 'Ilustração: PortalFina',
       },
       paragraphs: [
@@ -63,7 +68,11 @@ export const newsCongressoCreditos1524Bi2026 = {
         columns: ['Item', 'Valor', 'O que cobre'],
         rows: [
           ['Total aprovado', 'R$ 152,4 bi', 'Créditos ao Orçamento de 2026'],
-          ['PLN 23/2026', 'R$ 149,4 bi', 'Benefícios previdenciários e sociais'],
+          [
+            'PLN 23/2026',
+            'R$ 149,4 bi',
+            'Benefícios previdenciários e sociais',
+          ],
           ['Encargos financeiros', 'R$ 488,1 mi', 'Encargos da União'],
           ['PLN 25/2026', 'R$ 290 mi', 'Obras da usina Angra 3'],
           ['Serpro', 'R$ 34,9 mi', 'Empresa pública de tecnologia'],
