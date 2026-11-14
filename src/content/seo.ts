@@ -236,6 +236,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Tesouro recompra NTN-B e cancela leilão de LFT',
   'imposto-seletivo-mp-sai-esta-semana-e-diesel-mantem-subvencao-de-r-2-12':
     'Imposto Seletivo: MP sai e diesel mantém R$ 2,12',
+  'diesel-importado-perde-subvencao-de-r-1-40-e-rodoviario-mantem-r-2-12':
+    'Diesel importado perde subvenção de R$ 1,40',
   'dolar-sobe-8-21-a-r-5-403-e-bolsa-cai-13-88-o-que-muda-para-o-seu-bolso':
     'Dólar a R$ 5,403 e bolsa -13,88%: o que muda',
   'dolar-fecha-a-r-5-486-e-ibovespa-tem-6a-queda-seguida-o-que-muda-no-seu-bolso':

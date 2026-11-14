@@ -1777,3 +1777,15 @@ def _():
         + g(1330, 500, -4, 1, coin(70))
         + g(1010, 700, -5, 1, stamp('DÓLAR +2,63% NA SEMANA', 560, '#f4e3c3', -4))
     )
+
+
+@scene('diesel-importado-subvencao-1-40-encerrada-2026', '#7b2d1e', (60, 100, 760))
+def _():
+    rows = label_rows([('Diesel importado', 'R$ 1,40'), ('Situação', 'Encerrada'), ('Diesel rodoviário', 'R$ 2,12'), ('Situação', 'Mantida')], 46, 170, 408, 64, 21, hl=(0, '#f3d9d2'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'SUBVENÇÃO POR LITRO', '#5c1f14', rows))
+        + g(690, 130, 4, 1, tag('R$ 1,40 encerrado', 400, '#1c1c1c'))
+        + g(1250, 470, 3, 0.8, gauge(200, 0.35, 'DIESEL'))
+        + g(780, 470, -4, 1, stamp('R$ 2,12 SEGUE', 300, '#f4e3c3', -7))
+        + g(1010, 700, 5, 1, coin(70))
+    )

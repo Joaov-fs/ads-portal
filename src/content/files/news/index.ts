@@ -10,6 +10,7 @@ import { newsImpostoSeletivoMp1399Aliquotas } from './imposto-seletivo-mp-1-399-
 import { newsDecretoEscala6x19Novembro } from './decreto-escala-6x1-segunda-9-de-novembro-8-folgas-por-mes-o-que-muda';
 import { newsCopomMantemSelic4Novembro } from './copom-mantem-selic-em-13-75-por-unanimidade-o-que-muda-no-seu-bolso';
 import { newsFeiraoLimpaNome2026 } from './feirao-limpa-nome-2026-desconto-ate-99-e-prazo-ate-6-de-dezembro-em-7-mil-agencias';
+import { newsDieselImportadoSubvencao140Encerrada2026 } from './diesel-importado-perde-subvencao-de-r-1-40-e-rodoviario-mantem-r-2-12';
 import { newsDolarSemana6Novembro2026 } from './dolar-fecha-a-r-5-511-sobe-1-20-na-semana-e-ibovespa-vai-a-168-mil-pontos';
 import { newsDolarIbovespa3Novembro2026 } from './dolar-fecha-a-r-5-486-e-ibovespa-tem-6a-queda-seguida-o-que-muda-no-seu-bolso';
 import { newsGasDoPovoMp1400Ate2031 } from './gas-do-povo-prorrogado-ate-19-11-2031-mp-1-400-e-3-1-milhoes-de-vales-em-10-11';
@@ -239,4 +240,5 @@ export const newsFiles = [
   newsInssMutirao1415Novembro2026,
   newsBlackFridayInmetroEletrodomesticos2026,
   newsDolarIbovespaSemana13Novembro2026,
+  newsDieselImportadoSubvencao140Encerrada2026,
 ] as const;
