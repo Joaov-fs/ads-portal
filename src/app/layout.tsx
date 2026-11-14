@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 
+import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
+
 import { Analytics } from '@/components/analytics';
 import { AdSenseScript } from '@/components/advertising';
 import { ConsentBanner, ConsentDefaults } from '@/components/consent';
@@ -91,6 +93,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </ThemeProvider>
         <ConsentBanner />
         <Analytics />
+        <VercelAnalytics />
         <AdSenseScript />
       </body>
     </html>

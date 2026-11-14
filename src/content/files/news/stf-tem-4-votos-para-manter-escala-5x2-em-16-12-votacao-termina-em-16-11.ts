@@ -61,7 +61,10 @@ export const newsStfQuatroVotosEscala5x2 = {
         caption: 'Referendo da liminar no STF',
         columns: ['Ponto', 'Situação'],
         rows: [
-          ['Votos a favor da liminar', '4 (Dino, Moraes, Cármen Lúcia e Gilmar)'],
+          [
+            'Votos a favor da liminar',
+            '4 (Dino, Moraes, Cármen Lúcia e Gilmar)',
+          ],
           ['Formato', 'Plenário virtual'],
           ['Previsão de conclusão', '16/11/2026'],
           ['Início da escala 5x2 na liminar', '16/12/2026'],
@@ -95,11 +98,13 @@ export const newsStfQuatroVotosEscala5x2 = {
   ],
   sources: [
     {
-      label: 'Agência Brasil: STF tem 4 votos para manter início da escala 5x2 em dezembro',
+      label:
+        'Agência Brasil: STF tem 4 votos para manter início da escala 5x2 em dezembro',
       url: 'https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/stf-tem-4-votos-para-manter-inicio-da-escala-5x2-em-dezembro',
     },
     {
-      label: 'STF: STF mantém regra de transição para implementação da jornada 5x2',
+      label:
+        'STF: STF mantém regra de transição para implementação da jornada 5x2',
       url: 'https://noticias.stf.jus.br/postsnoticias/stf-mantem-regra-de-transicao-para-implementacao-da-jornada-5x2/',
     },
   ],

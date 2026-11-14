@@ -97,11 +97,13 @@ export const newsStfPlanosEconomicosAdesao2027 = {
   ],
   sources: [
     {
-      label: 'Agência Brasil: STF encerra processo sobre perdas inflacionárias em planos econômicos',
+      label:
+        'Agência Brasil: STF encerra processo sobre perdas inflacionárias em planos econômicos',
       url: 'https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/stf-encerra-processo-sobre-perdas-inflacionarias-em-planos-economicos',
     },
     {
-      label: 'Jornal da Advocacia OAB SP: Justiça Federal destaca prazo para adesão ao acordo',
+      label:
+        'Jornal da Advocacia OAB SP: Justiça Federal destaca prazo para adesão ao acordo',
       url: 'https://www.oabsp.org.br/jornaldaadvocacia/26-10-30-1345-justica-federal-destaca-prazo-para-adesao-ao-acordo-sobre-expurgos-inflacionarios',
     },
     {

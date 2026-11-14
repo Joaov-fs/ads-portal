@@ -41,6 +41,11 @@ export default function CookiePolicyPage() {
                 e desempenho, de forma agregada.
               </li>
               <li>
+                Contagem de visitas: o Vercel Web Analytics conta páginas vistas
+                de forma anônima e agregada, sem cookies e sem identificar quem
+                visita.
+              </li>
+              <li>
                 Publicidade: o Google AdSense e seus parceiros usam cookies e
                 identificadores para exibir e medir anúncios, inclusive com base
                 em visitas anteriores a este e a outros sites.

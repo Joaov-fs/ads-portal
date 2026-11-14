@@ -49,7 +49,11 @@ export const newsDieselImportadoSubvencao140Encerrada2026 = {
           ['Valor por litro', 'R$ 1,40', 'R$ 2,12'],
           ['Situação em 13/11', 'Não renovada', 'Em vigor'],
           ['Norma', 'Portaria MF 3.082 (13/10)', 'Portaria MF 3.181 (27/10)'],
-          ['Reavaliação', 'Possível, conforme o petróleo', 'Renovável a cada 30 dias'],
+          [
+            'Reavaliação',
+            'Possível, conforme o petróleo',
+            'Renovável a cada 30 dias',
+          ],
         ],
       },
     },

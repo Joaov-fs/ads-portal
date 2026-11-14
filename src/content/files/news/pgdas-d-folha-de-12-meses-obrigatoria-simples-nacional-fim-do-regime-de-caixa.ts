@@ -2,18 +2,15 @@ import type { NewsDocument } from '../../types';
 
 export const newsPgdasDFolha12MesesSimples2026 = {
   kind: 'news',
-  slug:
-    'pgdas-d-folha-de-12-meses-obrigatoria-simples-nacional-fim-do-regime-de-caixa',
+  slug: 'pgdas-d-folha-de-12-meses-obrigatoria-simples-nacional-fim-do-regime-de-caixa',
   title:
     'PGDAS-D passa a exigir folha de 12 meses e acaba a escolha entre caixa e competência',
   description:
     'A Receita atualizou o PGDAS-D para a Reforma Tributária: valem para 11/2026 e 12/2026 a folha dos últimos 12 meses e o fim da escolha do regime. Veja o que muda.',
   category: 'financas',
   coverImage: {
-    src:
-      '/images/news/pgdas-d-folha-de-12-meses-obrigatoria-simples-nacional-fim-do-regime-de-caixa.jpg',
-    alt:
-      'Documento do PGDAS-D atualizado com folha de salários de 12 meses, competência em 2027 e períodos 11/2026 e 12/2026, etiqueta de folha 12 meses e carimbo Simples Nacional.',
+    src: '/images/news/pgdas-d-folha-de-12-meses-obrigatoria-simples-nacional-fim-do-regime-de-caixa.jpg',
+    alt: 'Documento do PGDAS-D atualizado com folha de salários de 12 meses, competência em 2027 e períodos 11/2026 e 12/2026, etiqueta de folha 12 meses e carimbo Simples Nacional.',
     credit: 'Ilustração: PortalFina',
   },
   authorId: 'thales-xavier',
@@ -25,8 +22,7 @@ export const newsPgdasDFolha12MesesSimples2026 = {
     {
       value: '12 meses',
       label: 'Folha de salários (FS12)',
-      note:
-        'Passa a ser informada para todas as atividades do Simples Nacional.',
+      note: 'Passa a ser informada para todas as atividades do Simples Nacional.',
     },
     {
       value: '11/2026',
@@ -36,8 +32,7 @@ export const newsPgdasDFolha12MesesSimples2026 = {
     {
       value: '2027',
       label: 'Só competência',
-      note:
-        'A partir de 2027, todas as apurações usam o regime de competência.',
+      note: 'A partir de 2027, todas as apurações usam o regime de competência.',
     },
   ],
   sections: [
@@ -52,10 +47,8 @@ export const newsPgdasDFolha12MesesSimples2026 = {
     {
       heading: 'Caixa ou competência: o que muda na apuração',
       image: {
-        src:
-          '/images/news/pgdas-d-folha-de-12-meses-obrigatoria-simples-nacional-fim-do-regime-de-caixa-detalhe.jpg',
-        alt:
-          'Detalhe do documento: competência em 2027, folha de salários de 12 meses e períodos 11/2026 e 12/2026.',
+        src: '/images/news/pgdas-d-folha-de-12-meses-obrigatoria-simples-nacional-fim-do-regime-de-caixa-detalhe.jpg',
+        alt: 'Detalhe do documento: competência em 2027, folha de salários de 12 meses e períodos 11/2026 e 12/2026.',
         caption: 'Os prazos e a folha de 12 meses citados pela Receita.',
         credit: 'Ilustração: PortalFina',
       },
@@ -68,9 +61,18 @@ export const newsPgdasDFolha12MesesSimples2026 = {
         caption: 'Resumo das mudanças informadas pela Receita',
         columns: ['Item', 'O que a Receita informa'],
         rows: [
-          ['Folha de salários', 'Informar os últimos 12 meses (FS12) em todas as atividades'],
-          ['Escolha caixa ou competência', 'Deixa de existir a partir dos períodos 11/2026 e 12/2026'],
-          ['Regime de apuração', 'Competência em todas as apurações a partir de 2027'],
+          [
+            'Folha de salários',
+            'Informar os últimos 12 meses (FS12) em todas as atividades',
+          ],
+          [
+            'Escolha caixa ou competência',
+            'Deixa de existir a partir dos períodos 11/2026 e 12/2026',
+          ],
+          [
+            'Regime de apuração',
+            'Competência em todas as apurações a partir de 2027',
+          ],
           ['IBS e CBS', 'Alíquotas efetivas definidas com dados do PGDAS-D'],
         ],
       },
@@ -106,14 +108,12 @@ export const newsPgdasDFolha12MesesSimples2026 = {
     {
       label:
         'Receita Federal: PGDAS-D é atualizado para atender à Reforma Tributária a partir de novembro de 2026',
-      url:
-        'https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/pgdas-d-e-atualizado-para-atender-a-reforma-tributaria-a-partir-de-novembro-de-2026',
+      url: 'https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/pgdas-d-e-atualizado-para-atender-a-reforma-tributaria-a-partir-de-novembro-de-2026',
     },
     {
       label:
         'Receita Federal: Regime de caixa deixa de ser utilizado na apuração do Simples Nacional',
-      url:
-        'https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/agosto/regime-de-caixa-deixa-de-ser-utilizado-na-apuracao-do-simples-nacional',
+      url: 'https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/agosto/regime-de-caixa-deixa-de-ser-utilizado-na-apuracao-do-simples-nacional',
     },
   ],
 } as const satisfies NewsDocument;
