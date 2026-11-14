@@ -9,9 +9,14 @@ export const newsStfQuatroVotosEscala5x2 = {
     'Dino, Moraes, Cármen Lúcia e Gilmar votaram para referendar a liminar da transição 5x2. O plenário virtual deve concluir o julgamento em 16/11.',
   category: 'politica',
   coverImage: {
-    src: '/images/news/stf-tem-4-votos-para-manter-escala-5x2-em-16-12-votacao-termina-em-16-11.jpg',
-    alt: 'Documento do referendo com 4 votos a favor, calendário de dezembro com o dia 16 marcado, relógio e carimbo de 4 votos no STF.',
-    credit: 'Ilustração: PortalFina',
+    src: '/images/news/stf-tem-4-votos-para-manter-escala-5x2-em-16-12-votacao-termina-em-16-11-foto.jpg',
+    alt: 'Ministros do STF em pé no plenário da Corte, em Brasília, durante sessão solene em 29 de setembro de 2025.',
+    caption:
+      'Plenário do Supremo Tribunal Federal, em Brasília, em sessão solene de setembro de 2025.',
+    credit: 'Foto: Ricardo Stuckert/PR',
+    license: 'CC BY-SA 4.0',
+    sourceUrl:
+      'https://commons.wikimedia.org/wiki/File:29.09.2025_%E2%80%93_Sess%C3%A3o_Solene_de_Posse_do_Ministro_Edson_Fachin_no_cargo_de_Presidente_e_do_Ministro_Alexandre_de_Moraes_no_cargo_de_Vice-Presidente_do_Supremo_Tribunal_Federal_e_do_Conselho_Nacional_de_Justi%C3%A7a_22.jpg',
   },
   authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-11-14',

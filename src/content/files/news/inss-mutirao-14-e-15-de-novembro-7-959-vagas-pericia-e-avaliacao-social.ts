@@ -9,9 +9,14 @@ export const newsInssMutirao1415Novembro2026 = {
     'Mutirão do INSS em 14 e 15/11 oferece 7.959 vagas em agências de vários estados. Veja como agendar pelo Meu INSS ou pela Central 135 e quais unidades têm horário.',
   category: 'beneficios',
   coverImage: {
-    src: '/images/news/inss-mutirao-14-e-15-de-novembro-7-959-vagas-pericia-e-avaliacao-social.jpg',
-    alt: 'Documento com o total de 7.959 vagas do mutirão do INSS, calendário com os dias 14 e 15 de novembro marcados e celular com a Central 135.',
-    credit: 'Ilustração: PortalFina',
+    src: '/images/news/inss-mutirao-14-e-15-de-novembro-7-959-vagas-pericia-e-avaliacao-social-foto.jpg',
+    alt: 'Pessoas entram em uma agência da Previdência Social, com fachada azul e branca.',
+    caption:
+      'Agência da Previdência Social, onde o INSS faz perícias e atendimentos.',
+    credit: 'Foto: Jefferson Rudy/Agência Senado',
+    license: 'CC BY 2.0',
+    sourceUrl:
+      'https://commons.wikimedia.org/wiki/File:Fachada_do_Instituto_Nacional_do_Seguro_Social_(INSS)_(47043470802).jpg',
   },
   authorId: 'thales-xavier',
   publishedAt: '2026-11-13',
