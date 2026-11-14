@@ -7,6 +7,7 @@ import {
   getContentStaticParams,
   listContentSummaries,
 } from './pipeline';
+import { photoLicenseProblems } from './image-license';
 import { contentRepository } from './repository';
 import { metaTitleOf, metaTitles } from './seo';
 
@@ -74,6 +75,22 @@ describe('content pipeline', () => {
     expect(listContentSummaries('guide')[0]?.href).toMatch(
       /^\/guias\/[a-z0-9-]+$/,
     );
+  });
+
+  it('only uses third-party photos with a free license, source and credit', () => {
+    for (const item of contentRepository.listAll()) {
+      const images = [
+        item.coverImage,
+        ...item.sections.map((section) => section.image),
+      ].filter((image) => image !== undefined);
+
+      for (const image of images) {
+        expect(
+          photoLicenseProblems(image),
+          `${item.slug}: ${image.src}`,
+        ).toEqual([]);
+      }
+    }
   });
 
   it('links every news item to existing calculators and keeps slugs unique', () => {

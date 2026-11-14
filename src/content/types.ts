@@ -54,8 +54,15 @@ export type ContentImage = Readonly<{
   alt: string;
   /** Legenda opcional exibida abaixo da imagem. */
   caption?: string;
-  /** Crédito: "Ilustração: PortalFina" ou "Foto: Nome/Agência Brasil". */
+  /** Crédito: "Ilustração: PortalFina" ou "Foto: Nome/Agência Senado". */
   credit?: string;
+  /**
+   * Foto de terceiros: licença da página de origem (ex.: "CC BY 3.0 BR").
+   * Obrigatória quando o crédito começa com "Foto"; veja `image-license.ts`.
+   */
+  license?: string;
+  /** Foto de terceiros: página da foto (Wikimedia Commons ou Flickr oficial). */
+  sourceUrl?: string;
   src: string;
 }>;
 

@@ -37,6 +37,7 @@ function ContentSummaryCard({ item }: Readonly<{ item: ContentSummary }>) {
           item.highlight
             ? {
                 category: item.category,
+                credit: item.coverImage?.credit,
                 image: item.coverImage?.src,
                 label: item.highlight.label,
                 value: item.highlight.value,

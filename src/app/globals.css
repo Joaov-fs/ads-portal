@@ -39,6 +39,14 @@ p {
 
 html {
   scroll-behavior: smooth;
+  /* Cabeçalho fixo + faixa de editorias: âncoras (#noticias) não ficam escondidas atrás deles. */
+  scroll-padding-top: 8.5rem;
+}
+
+@media (min-width: 80rem) {
+  html {
+    scroll-padding-top: 5.5rem;
+  }
 }
 
 :focus-visible {

@@ -324,11 +324,11 @@ export function HomeView({
 
       <section
         aria-labelledby="manchetes-title"
-        className="bg-ads-background pb-10 pt-8 sm:pb-14 sm:pt-10"
+        className="bg-ads-background pb-10 pt-6 sm:pb-14 sm:pt-10"
         id="noticias"
       >
         <Container>
-          <div className="mb-5 flex flex-col gap-2 border-b border-ads-border pb-4 sm:mb-7 sm:flex-row sm:items-end sm:justify-between sm:pb-5">
+          <div className="mb-4 flex flex-col gap-2 border-b border-ads-border pb-3 sm:mb-7 sm:flex-row sm:items-end sm:justify-between sm:pb-5">
             <div className="grid gap-1">
               <span className="flex items-center gap-2 text-sm font-semibold text-ads-subtle">
                 <span
@@ -340,18 +340,19 @@ export function HomeView({
                   : 'Notícias'}
               </span>
               <h1
-                className="font-ads-display text-[clamp(1.9rem,3.6vw,2.75rem)] font-extrabold leading-tight tracking-[-0.03em] text-ads-secondary"
+                className="font-ads-display text-[clamp(1.6rem,3.6vw,2.75rem)] font-extrabold leading-tight tracking-[-0.03em] text-ads-secondary"
                 id="manchetes-title"
               >
                 Notícias que mexem no seu bolso
               </h1>
             </div>
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
+            <div className="flex flex-wrap items-center justify-between gap-x-5 gap-y-1 sm:justify-start">
               <Link
                 className="text-xs font-semibold text-ads-muted hover:text-ads-primary-strong"
                 href="/sobre"
               >
-                ✓ Fontes oficiais e correções com data
+                ✓ Fontes oficiais
+                <span className="hidden sm:inline"> e correções com data</span>
               </Link>
               <Link
                 className="text-sm font-bold text-ads-primary-strong hover:underline"

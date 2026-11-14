@@ -1,12 +1,15 @@
 import Image from 'next/image';
 
 import { contentCategoryLabels, type ContentCategory } from '@/content';
+import { isPhotoCredit } from '@/content/image-license';
 
 import { coverThemes } from './cover-theme';
 
 type NewsCoverProps = Readonly<{
   category: ContentCategory;
   className?: string;
+  /** Crédito da imagem; o de foto ("Foto: ...") aparece no canto da capa. */
+  credit?: string;
   /** Ilustração ou foto da notícia; sem ela, a capa é só tipográfica. */
   image?: string;
   /** Carrega a imagem com prioridade (capa acima da dobra). */
@@ -20,12 +23,14 @@ type NewsCoverProps = Readonly<{
 }>;
 
 /**
- * Capa visual de uma notícia, desenhada pelo próprio portal: o número que
- * importa em destaque, o ícone do assunto e as cores da categoria.
+ * Capa de uma notícia. Com imagem (foto real ou ilustração), mostra só a
+ * imagem e, se for foto, o crédito. Sem imagem, desenha a capa tipográfica:
+ * o número que importa em destaque, o ícone do assunto e as cores da categoria.
  */
 export function NewsCover({
   category,
   className = '',
+  credit,
   image,
   label,
   priority = false,
@@ -35,10 +40,11 @@ export function NewsCover({
   const theme = coverThemes[category];
 
   if (image) {
+    // Com imagem, a capa mostra só a imagem: o título e a editoria já estão no
+    // card, e números por cima da foto competem com a manchete.
     return (
       <div
         className={`editoria-${category} relative isolate overflow-hidden bg-ads-secondary ${className}`}
-        style={{ containerType: 'inline-size' }}
       >
         <Image
           alt=""
@@ -48,32 +54,11 @@ export function NewsCover({
           sizes={sizes}
           src={image}
         />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
-        />
-        <div className="absolute inset-0 flex flex-col justify-between p-[4.5cqw]">
-          <span
-            className="w-fit rounded-full bg-ads-primary px-[2.4cqw] py-[0.9cqw] font-bold uppercase tracking-[0.14em] text-white"
-            style={{ fontSize: 'clamp(0.6rem, 2.2cqw, 0.8rem)' }}
-          >
-            {contentCategoryLabels[category]}
+        {isPhotoCredit(credit) ? (
+          <span className="absolute bottom-0 right-0 max-w-[85%] truncate rounded-tl-ads-medium bg-black/55 px-2 py-0.5 text-[0.625rem] font-medium leading-4 text-white/90">
+            {credit}
           </span>
-          <div className="grid gap-[0.6cqw]">
-            <strong
-              className="font-ads-display font-extrabold leading-none tracking-tight text-white drop-shadow-[0_2px_10px_rgb(0_0_0/45%)]"
-              style={{ fontSize: 'clamp(1.4rem, 8cqw, 3.4rem)' }}
-            >
-              {value}
-            </strong>
-            <span
-              className="font-semibold text-white/90 drop-shadow-[0_1px_6px_rgb(0_0_0/50%)]"
-              style={{ fontSize: 'clamp(0.7rem, 3cqw, 1.05rem)' }}
-            >
-              {label}
-            </span>
-          </div>
-        </div>
+        ) : null}
       </div>
     );
   }
