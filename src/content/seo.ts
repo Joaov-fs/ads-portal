@@ -248,6 +248,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Imposto Seletivo: MP sai e diesel mantém R$ 2,12',
   'dieese-13o-r-399-bilhoes-99-7-milhoes-de-pessoas-media-r-3-720':
     '13º pode injetar R$ 399 bi, diz Dieese',
+  'bb-lucro-cai-66-5-3t26-inadimplencia-agro-projecao-2026-r-9-a-11-bi':
+    'Lucro do BB cai 66,5% no 3º trimestre de 2026',
   'diesel-importado-perde-subvencao-de-r-1-40-e-rodoviario-mantem-r-2-12':
     'Diesel importado perde subvenção de R$ 1,40',
   'dolar-sobe-8-21-a-r-5-403-e-bolsa-cai-13-88-o-que-muda-para-o-seu-bolso':

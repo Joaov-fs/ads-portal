@@ -127,6 +127,7 @@ import { newsStfPlanosEconomicosAdesao2027 } from './stf-encerra-processo-dos-pl
 
 import { newsDolarIbovespaSemana13Novembro2026 } from './dolar-fecha-a-r-5-657-sobe-2-63-na-semana-e-ibovespa-vai-a-172-mil-pontos-13-11';
 import { newsDieese13o399Bilhoes2026 } from './dieese-13o-r-399-bilhoes-99-7-milhoes-de-pessoas-media-r-3-720';
+import { newsBbLucro3T2026 } from './bb-lucro-cai-66-5-3t26-inadimplencia-agro-projecao-2026-r-9-a-11-bi';
 
 export const newsFiles = [
   newsFiesRemanescentes2026,
@@ -253,4 +254,5 @@ export const newsFiles = [
   newsFreeFlowPedagioQuiteAte16Novembro,
   newsStfQuatroVotosEscala5x2,
   newsDieese13o399Bilhoes2026,
+  newsBbLucro3T2026,
 ] as const;

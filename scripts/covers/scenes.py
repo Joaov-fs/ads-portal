@@ -1856,3 +1856,15 @@ def _():
         + g(1200, 300, -6, 0.95, jar(200, 260, 0.7, '13º'))
         + g(900, 720, -4, 1, stamp('QUASE R$ 400 BI', 460, '#f4e3c3', -4))
     )
+
+
+@scene('bb-lucro-3t-2026', '#1f4e79', (80, 100, 860))
+def _():
+    rows = label_rows([('Lucro ajustado', 'R$ 1,27 bi'), ('Queda anual', '66,5%'), ('Inadimplência agro', '6,92%'), ('Projeção 2026', 'R$ 9 a 11 bi')], 46, 170, 408, 64, 20, hl=(0, '#dbe8f5'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'RESULTADO 3T26', '#1f4e79', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((1.0, '#9db6e3'), (0.34, '#1f4e79'))) + '</g>'))
+        + g(880, 320, 0, 1, gauge(170, 0.34, ''))
+        + g(760, 560, -4, 1, tag('-66,5%', 300, '#d9480f'))
+        + g(1230, 230, 6, 1, phone(250, 500, phone_screen('Resultado', 'R$ 1,27 bi', 'lucro do 3º trimestre', '#1f4e79', check=False)))
+        + g(1000, 690, 3, 1, coins_stack(3), 'sh')
+    )
