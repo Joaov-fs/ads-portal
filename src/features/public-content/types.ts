@@ -30,6 +30,8 @@ export type NewsItem = Readonly<{
   description: string;
   highlight?: Readonly<{ label: string; value: string }>;
   image?: string;
+  /** Crédito da capa ("Foto: Nome/Agência Brasil" ou "Ilustração: PortalFina"). */
+  imageCredit?: string;
   href: string;
   readingTime: string;
   title: string;

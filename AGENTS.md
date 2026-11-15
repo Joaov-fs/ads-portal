@@ -27,8 +27,9 @@ entre as editorias da home (Política, Economia, Mercado, Brasil, Finanças e
 Benefícios e trabalho) para que todas recebam notícia todos os dias.
 
 Siga `docs/formato-de-noticias.md`, verifique fontes oficiais atuais e evite
-duplicações. Preserve o padrão de ilustrações próprias de
-`scripts/covers/scenes.py`, com capa e detalhe inspecionados visualmente. Execute
+duplicações. Use foto real com licença livre e crédito quando houver (regras no
+item 10 do formato); sem foto adequada, use as ilustrações próprias de
+`scripts/covers/scenes.py`. Inspecione capa e detalhe visualmente. Execute
 as validações exigidas antes de publicar pelo fluxo GitHub/Vercel e confirme a
 matéria e as imagens na URL pública antes de anunciar sucesso.
 

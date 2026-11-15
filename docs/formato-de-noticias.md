@@ -17,21 +17,35 @@ Cada notícia é **um arquivo TypeScript** em `src/content/files/news/` e **uma 
 6. **Sem repetição.** Cada seção diz algo novo. Não reescreva a descrição no primeiro parágrafo.
 7. **Sem promessas.** Benefícios e prazos: "tem direito quem cumpre os requisitos", nunca "você vai receber".
 8. **Sem travessão (— ou –).** Nem em título, subtítulo, seção, tabela ou fonte. Use dois-pontos, vírgula ou ponto. O travessão sozinho só vale como célula vazia de tabela.
-9. **Número da capa.** O **primeiro item de `highlights`** aparece por cima da imagem da capa: número curto
-   (até 14 caracteres, ex.: `R$ 1.741`, `26/10`, `13,75%`) e legenda (até 40 caracteres). O teste
-   `pipeline.test.ts` reprova a notícia sem esse primeiro destaque.
+9. **Número de destaque.** O **primeiro item de `highlights`** abre o bloco "Em números" da matéria:
+   número curto (até 14 caracteres, ex.: `R$ 1.741`, `26/10`, `13,75%`) e legenda (até 40 caracteres).
+   Ele **não** aparece mais por cima da imagem (desde 14/11/2026): a capa mostra só a foto ou a
+   ilustração, e o título faz o resto. O teste `pipeline.test.ts` reprova a notícia sem esse destaque.
 10. **Imagem obrigatória: capa + uma no meio do texto.** Toda notícia tem `coverImage` (aparece na home, nas
-    listas, na página e no compartilhamento do WhatsApp/Google) e uma `image` na 2ª seção, para o leitor
-    continuar rolando. O padrão é ilustração própria, desenhada pelo gerador do projeto:
-    - crie uma cena nova em `scripts/covers/scenes.py` (veja as regras no topo do arquivo: objetos do
-      assunto, números iguais aos da notícia, sem logotipo de órgão ou marca) e rode
-      `python3 scripts/covers/make.py <cena> <slug>`. Saem `public/images/news/<slug>.jpg` e
-      `<slug>-detalhe.jpg`;
-    - confira as duas imagens antes de publicar (abra o arquivo e olhe);
-    - crédito: `'Ilustração: PortalFina'`.
-      Foto de terceiros só com licença livre explícita (ex.: Agência Brasil, CC BY), com o crédito exigido
-      (`'Foto: Nome/Agência Brasil'`). Dar crédito não basta: foto de jornal, banco pago ou Google Imagens não
-      pode ser usada.
+    listas, na página e no compartilhamento do WhatsApp/Google) e uma `image` na 2ª seção.
+
+    **Primeira opção: foto real com licença livre.** Senado aprovou algo: foto do plenário ou do presidente
+    do Senado. STF decidiu: foto do plenário ou do ministro relator. Procure em:
+    - Wikimedia Commons (`commons.wikimedia.org`), que reúne fotos da Agência Senado, Câmara, Planalto e
+      Agência Brasil com a licença escrita na página;
+    - álbuns oficiais no Flickr (`flickr.com/photos/agenciasenado`, `.../camaradeputados`,
+      `.../palaciodoplanalto`), conferindo a licença mostrada na foto.
+
+    Regras da foto (o teste `image-license.ts` confere):
+    - licença CC0, domínio público, CC BY ou CC BY-SA. **Nunca** CC BY-NC, CC BY-ND ou "todos os direitos
+      reservados" (o site da Agência Brasil passou a exibir "© Todos os direitos reservados pela EBC" e
+      publica fotos da Reuters "proibida reprodução": não copie do site, use a página da foto no Commons);
+    - baixe o arquivo para `public/images/news/<slug>.jpg` (1200x630, recorte centrado no assunto) e
+      `<slug>-detalhe.jpg`; nada de link direto para o site de origem;
+    - preencha `credit` exatamente como a origem pede (`'Foto: Jefferson Rudy/Agência Senado'`),
+      `license` (`'CC BY 2.0'`) e `sourceUrl` (a página da foto). O crédito aparece no canto da capa e,
+      com a licença e o link, abaixo da imagem na matéria;
+    - foto de jornal, banco pago ou Google Imagens não pode, mesmo com crédito.
+
+    **Sem foto adequada: ilustração própria.** Crie uma cena em `scripts/covers/scenes.py` (regras no topo
+    do arquivo, sem logotipo de órgão ou marca) e rode `python3 scripts/covers/make.py <cena> <slug>`.
+    Evite carimbos e números escritos na ilustração: o número já está no título. Confira as duas imagens
+    antes de publicar e use o crédito `'Ilustração: PortalFina'`.
 
 ## Modelo do arquivo
 
@@ -48,7 +62,9 @@ export const newsSlugDaNoticia = {
   coverImage: {
     src: '/images/news/slug-curto-com-palavras-chave.jpg',
     alt: 'O que a imagem mostra, em uma frase.',
-    credit: 'Ilustração: PortalFina',
+    credit: 'Foto: Nome do fotógrafo/Agência Senado', // ou 'Ilustração: PortalFina'
+    license: 'CC BY 2.0', // só para foto
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:...', // só para foto: página da foto
   },
   authorId: 'sara-souza', // notícias: alterne ao acaso entre 'pedro-bueno-salvador', 'sara-souza' e 'thales-xavier'
   publishedAt: '2026-10-01', // AAAA-MM-DD

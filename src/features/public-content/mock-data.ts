@@ -88,6 +88,7 @@ export const latestNews = listContentSummaries('news').map((item) => {
       ? { label: item.highlight.label, value: item.highlight.value }
       : undefined,
     image: item.coverImage?.src,
+    imageCredit: item.coverImage?.credit,
     readingTime: item.readingTime,
     href: item.href,
   };

@@ -52,6 +52,23 @@ function ArticleFigure({
           {image.credit ? (
             <span className="font-semibold">{image.credit}</span>
           ) : null}
+          {image.license ? (
+            <>
+              {' '}
+              {image.sourceUrl ? (
+                <a
+                  className="underline decoration-ads-border-strong underline-offset-2 hover:text-ads-primary-strong"
+                  href={image.sourceUrl}
+                  rel="noopener noreferrer license"
+                  target="_blank"
+                >
+                  ({image.license})
+                </a>
+              ) : (
+                <span>({image.license})</span>
+              )}
+            </>
+          ) : null}
         </figcaption>
       ) : null}
     </figure>

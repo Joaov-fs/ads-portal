@@ -192,20 +192,24 @@ export function LeadStoryCard({
     <article
       className={`editoria-${news.category} group relative isolate flex h-full flex-col overflow-hidden rounded-ads-xlarge bg-ads-secondary text-white shadow-ads-soft transition duration-300 hover:-translate-y-1 hover:shadow-ads-raised`}
     >
-      {news.highlight ? (
+      {news.image || news.highlight ? (
         <NewsCover
           category={news.category}
-          className="aspect-[1200/630] w-full"
+          className="aspect-[2/1] w-full sm:aspect-[1200/630]"
+          credit={news.imageCredit}
           image={news.image}
-          label={news.highlight.label}
-          value={news.highlight.value}
+          label={news.highlight?.label ?? ''}
+          priority
+          sizes="(min-width: 1024px) 50rem, 100vw"
+          value={news.highlight?.value ?? ''}
         />
       ) : null}
-      <div className="flex flex-1 flex-col justify-between gap-5 p-5 sm:gap-6 sm:p-9">
-        <div className="grid gap-3 sm:gap-4">
-          <span className="w-fit rounded-ads-full bg-ads-primary px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-white">
+      <div className="flex flex-1 flex-col justify-between gap-4 p-5 sm:gap-6 sm:p-9">
+        <div className="grid gap-2 sm:gap-4">
+          <span className="w-fit rounded-ads-full bg-ads-primary px-2.5 py-0.5 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-white sm:px-3 sm:py-1 sm:text-xs">
             {categoryLabel}
           </span>
+          {/* O título é o link do card inteiro: tocar em qualquer parte abre a notícia. */}
           <h3 className="max-w-xl font-ads-display text-[1.375rem] font-bold leading-tight sm:text-3xl">
             <Link className="after:absolute after:inset-0" href={news.href}>
               {news.title}
@@ -215,18 +219,32 @@ export function LeadStoryCard({
             {news.description}
           </p>
         </div>
-        <div className="relative z-10 flex flex-wrap items-center gap-x-4 gap-y-3 text-sm">
+        <div className="grid gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 text-sm">
+            <span
+              aria-hidden="true"
+              className="inline-flex items-center gap-1.5 font-bold text-white"
+            >
+              Ler notícia
+              <span className="transition-transform group-hover:translate-x-0.5">
+                →
+              </span>
+            </span>
+            <span className="text-white/60">
+              {formatDate(news.date)} · {news.readingTime}
+            </span>
+          </div>
           {news.calculator ? (
             <Link
-              className="rounded-ads-full bg-white px-5 py-2.5 font-bold text-ads-primary-strong transition hover:bg-ads-primary-soft"
+              className="relative z-10 w-fit border-t border-white/10 pt-3 text-sm text-white/70 transition hover:text-white"
               href={news.calculator.href}
             >
-              {news.calculator.title} →
+              Faça a conta:{' '}
+              <span className="font-semibold text-white underline decoration-white/30 underline-offset-4">
+                {news.calculator.title}
+              </span>
             </Link>
           ) : null}
-          <span className="text-white/60">
-            {formatDate(news.date)} · {news.readingTime}
-          </span>
         </div>
       </div>
     </article>
@@ -243,13 +261,14 @@ export function SecondaryStoryCard({ news }: Readonly<{ news: NewsItem }>) {
       className={`editoria-${news.category} group relative flex h-full items-start gap-4 border-b border-ads-border pb-4 transition duration-300 sm:flex-col sm:items-stretch sm:gap-0 sm:overflow-hidden sm:rounded-ads-xlarge sm:border sm:bg-white sm:pb-0 sm:hover:-translate-y-1 sm:hover:border-ads-primary sm:hover:shadow-ads-soft`}
     >
       <StoryThumb news={news} />
-      {news.highlight ? (
+      {news.image || news.highlight ? (
         <NewsCover
           category={news.category}
           className="hidden aspect-[1200/630] w-full sm:block"
+          credit={news.imageCredit}
           image={news.image}
-          label={news.highlight.label}
-          value={news.highlight.value}
+          label={news.highlight?.label ?? ''}
+          value={news.highlight?.value ?? ''}
         />
       ) : null}
       <div className="flex min-w-0 flex-1 flex-col justify-between gap-1.5 sm:gap-4 sm:p-6">
@@ -290,13 +309,14 @@ export function CompactStoryCard({ news }: Readonly<{ news: NewsItem }>) {
       href={news.href}
     >
       <StoryThumb news={news} />
-      {news.highlight ? (
+      {news.image || news.highlight ? (
         <NewsCover
           category={news.category}
           className="hidden aspect-[1200/630] w-full sm:block"
+          credit={news.imageCredit}
           image={news.image}
-          label={news.highlight.label}
-          value={news.highlight.value}
+          label={news.highlight?.label ?? ''}
+          value={news.highlight?.value ?? ''}
         />
       ) : null}
       <span className="grid min-w-0 gap-1.5 sm:p-4">
