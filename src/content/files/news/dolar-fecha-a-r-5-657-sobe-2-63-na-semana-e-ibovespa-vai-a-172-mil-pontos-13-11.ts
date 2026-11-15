@@ -9,9 +9,13 @@ export const newsDolarIbovespaSemana13Novembro2026 = {
     'Na sexta (13), o dólar fechou a R$ 5,657 e o Ibovespa subiu 0,66%, a 172.458 pontos. Na semana, moeda +2,63% e Bolsa +2,35%. Veja a conta em reais.',
   category: 'mercado',
   coverImage: {
-    src: '/images/news/dolar-fecha-a-r-5-657-sobe-2-63-na-semana-e-ibovespa-vai-a-172-mil-pontos-13-11.jpg',
-    alt: 'Documento com dólar a R$ 5,657, alta de 2,63% na semana, Ibovespa em 172.458 pontos e alta de 2,35%, ao lado de gráfico em alta, etiqueta e moeda.',
-    credit: 'Ilustração: PortalFina',
+    src: '/images/news/dolar-fecha-a-r-5-657-sobe-2-63-na-semana-e-ibovespa-vai-a-172-mil-pontos-13-11-foto.jpg',
+    alt: 'Fachada do antigo prédio da Bovespa, no centro de São Paulo, com três portões em arco e o nome Bovespa em letras douradas.',
+    caption: 'Antiga sede da Bovespa, hoje B3, no centro de São Paulo.',
+    credit: 'Foto: Wilfredor/Wikimedia Commons',
+    license: 'CC BY-SA 4.0',
+    sourceUrl:
+      'https://commons.wikimedia.org/wiki/File:Bovespa,_S%C3%A3o_Paulo_city_downtown.jpg',
   },
   authorId: 'sara-souza',
   publishedAt: '2026-11-13',

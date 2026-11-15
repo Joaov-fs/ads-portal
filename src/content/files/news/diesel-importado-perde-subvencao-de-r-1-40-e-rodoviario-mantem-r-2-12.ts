@@ -9,9 +9,13 @@ export const newsDieselImportadoSubvencao140Encerrada2026 = {
     'A Fazenda não renovou a subvenção de R$ 1,40 por litro ao diesel importado. O apoio de R$ 2,12 ao diesel rodoviário continua em vigor, e o governo pode reavaliar.',
   category: 'economia',
   coverImage: {
-    src: '/images/news/diesel-importado-perde-subvencao-de-r-1-40-e-rodoviario-mantem-r-2-12.jpg',
-    alt: 'Documento com a subvenção por litro do diesel: R$ 1,40 do importado encerrada e R$ 2,12 do rodoviário mantida, com etiqueta, medidor, carimbo e moeda.',
-    credit: 'Ilustração: PortalFina',
+    src: '/images/news/diesel-importado-perde-subvencao-de-r-1-40-e-rodoviario-mantem-r-2-12-foto.jpg',
+    alt: 'Fila de caminhões de carga parados no acostamento da BR-116, com pasto e cerca em primeiro plano.',
+    caption: 'Caminhões na BR-116, em 2022.',
+    credit: 'Foto: Themium/Wikimedia Commons',
+    license: 'CC0',
+    sourceUrl:
+      'https://commons.wikimedia.org/wiki/File:Caminh%C3%B5es_paralisados_na_BR-116,_2022-11-01_03_(cropped).jpg',
   },
   authorId: 'sara-souza',
   publishedAt: '2026-11-13',

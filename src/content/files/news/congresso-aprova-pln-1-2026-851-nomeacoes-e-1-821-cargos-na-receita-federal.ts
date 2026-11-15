@@ -9,9 +9,14 @@ export const newsCongressoPln12026Receita851Nomeacoes = {
     'O Congresso aprovou em 12/11 o PLN 1/2026, que autoriza 851 nomeações e 1.821 cargos e funções de confiança na Receita. O texto segue para sanção presidencial.',
   category: 'politica',
   coverImage: {
-    src: '/images/news/congresso-aprova-pln-1-2026-851-nomeacoes-e-1-821-cargos-na-receita-federal.jpg',
-    alt: 'Documento do PLN 1/2026 com 851 nomeações, 1.821 cargos e funções, votação em 12/11 e próximo passo na sanção, etiqueta de 851 nomeações e carimbo vai à sanção.',
-    credit: 'Ilustração: PortalFina',
+    src: '/images/news/congresso-aprova-pln-1-2026-851-nomeacoes-e-1-821-cargos-na-receita-federal-foto.jpg',
+    alt: 'Painel eletrônico de votação no plenário do Senado durante sessão conjunta do Congresso Nacional.',
+    caption:
+      'Painel de votação em sessão conjunta do Congresso Nacional, em março de 2025.',
+    credit: 'Foto: Agência Senado',
+    license: 'CC BY 2.0',
+    sourceUrl:
+      'https://commons.wikimedia.org/wiki/File:2025-03-13_Sess%C3%A3o_Conjunta_do_Congresso_Nacional_(54384850233).jpg',
   },
   authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-11-14',

@@ -9,9 +9,14 @@ export const newsSenadoAjusteFiscalPlp299 = {
     'O Senado aprovou em 12/11 o texto principal do PLP 299/2026 por 45 votos a 31. Faltam quatro destaques, marcados para 17/11, e depois o projeto vai à Câmara.',
   category: 'politica',
   coverImage: {
-    src: '/images/news/senado-aprova-ajuste-fiscal-plp-299-por-45-a-31-e-texto-segue-para-a-camara.jpg',
-    alt: 'Documento com o placar de 45 a 31 do PLP 299/2026, gráfico de despesas em queda, etiqueta até R$ 60 bi e carimbo de que o texto segue para a Câmara.',
-    credit: 'Ilustração: PortalFina',
+    src: '/images/news/senado-aprova-ajuste-fiscal-plp-299-por-45-a-31-e-texto-segue-para-a-camara-foto.jpg',
+    alt: 'Plenário do Senado Federal, em Brasília, com a Mesa ao fundo e as bancadas azuis em primeiro plano.',
+    caption:
+      'Plenário do Senado Federal durante sessão deliberativa, em outubro de 2025.',
+    credit: 'Foto: Jefferson Rudy/Agência Senado',
+    license: 'CC BY-SA 4.0',
+    sourceUrl:
+      'https://commons.wikimedia.org/wiki/File:2025-10-29,_Plen%C3%A1rio_do_Senado_(54889070300).jpg',
   },
   authorId: 'thales-xavier',
   publishedAt: '2026-11-13',

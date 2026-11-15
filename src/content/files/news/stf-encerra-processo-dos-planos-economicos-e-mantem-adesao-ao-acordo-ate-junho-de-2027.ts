@@ -9,9 +9,14 @@ export const newsStfPlanosEconomicosAdesao2027 = {
     'Em 12/11, o plenário do STF rejeitou três recursos e encerrou o caso das perdas na poupança dos planos Bresser, Verão e Collor 2. Veja o prazo e o que fazer.',
   category: 'politica',
   coverImage: {
-    src: '/images/news/stf-encerra-processo-dos-planos-economicos-e-mantem-adesao-ao-acordo-ate-junho-de-2027.jpg',
-    alt: 'Documento com os planos Bresser 1987, Verão 1989 e Collor 2 1991, adesão até jun/2027, calendário de junho de 2027, moeda e carimbo do STF.',
-    credit: 'Ilustração: PortalFina',
+    src: '/images/news/stf-encerra-processo-dos-planos-economicos-e-mantem-adesao-ao-acordo-ate-junho-de-2027-foto.jpg',
+    alt: 'Ministros do STF aplaudem no plenário da Corte, em Brasília, durante sessão solene em 29 de setembro de 2025.',
+    caption:
+      'Plenário do Supremo Tribunal Federal, em Brasília, em sessão solene de setembro de 2025.',
+    credit: 'Foto: Ricardo Stuckert/PR',
+    license: 'CC BY-SA 4.0',
+    sourceUrl:
+      'https://commons.wikimedia.org/wiki/File:29.09.2025_%E2%80%93_Sess%C3%A3o_Solene_de_Posse_do_Ministro_Edson_Fachin_no_cargo_de_Presidente_e_do_Ministro_Alexandre_de_Moraes_no_cargo_de_Vice-Presidente_do_Supremo_Tribunal_Federal_e_do_Conselho_Nacional_de_Justi%C3%A7a_16.jpg',
   },
   authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-11-13',

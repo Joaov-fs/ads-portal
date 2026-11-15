@@ -9,9 +9,13 @@ export const newsGasolinaAte9Dezembro2026 = {
     'O Decreto 13.159 prorrogou até 9/12 o PIS/Cofins zerado na gasolina e no etanol e a Cide zerada na gasolina. A renúncia estimada é de R$ 2,76 bi.',
   category: 'economia',
   coverImage: {
-    src: '/images/news/gasolina-sem-tributos-ate-9-12-decreto-13-159-corte-de-r-0-89-por-litro.jpg',
-    alt: 'Documento com o corte de R$ 0,89 por litro na gasolina A, etiqueta de R$ 0,89 por litro, calendário de dezembro com o dia 9 marcado e carimbo PRORROGADO.',
-    credit: 'Ilustração: PortalFina',
+    src: '/images/news/gasolina-sem-tributos-ate-9-12-decreto-13-159-corte-de-r-0-89-por-litro-foto.jpg',
+    alt: 'Posto de combustível de bandeira Petrobras em Vila Rica, Mato Grosso, com picapes estacionadas em frente.',
+    caption: 'Posto de combustível em Vila Rica (MT).',
+    credit: 'Foto: Túllio F/Wikimedia Commons',
+    license: 'CC BY-SA 4.0',
+    sourceUrl:
+      'https://commons.wikimedia.org/wiki/File:Posto_de_Combust%C3%ADvel_-_Vila_Rica_-_MT.jpg',
   },
   authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-11-13',
