@@ -1904,3 +1904,15 @@ def _():
         + g(1230, 150, 6, 0.8, clock(150, 8, 24))
         + g(1010, 700, -4, 1, stamp('SEM DATA NO STF', 440, '#f4e3c3', -4))
     )
+
+
+@scene('ibc-br-3t-2026', '#36506b', (60, 100, 760))
+def _():
+    rows = label_rows([('3º trimestre', '-0,9%'), ('Setembro', '-0,2%'), ('Em 12 meses', '+1,4%'), ('Selic', '13,75%')], 46, 170, 408, 64, 21, hl=(0, '#dce6f0'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'IBC-BR: ATIVIDADE', '#243a52', rows))
+        + g(690, 120, 4, 1, chart_paper(520, 360, pts=(0.8, 0.85, 0.9, 0.82, 0.6, 0.35), color='#d9480f', title='3º TRIMESTRE'))
+        + g(1290, 110, 6, 1, tag('-0,9%', 260, '#d9480f'))
+        + g(1200, 480, 4, 1, coins_stack(3), 'sh')
+        + g(1000, 720, -4, 1, stamp('ATIVIDADE RECUA', 440, '#f4e3c3', -4))
+    )
