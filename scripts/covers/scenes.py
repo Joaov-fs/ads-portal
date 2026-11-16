@@ -282,6 +282,19 @@ def _():
     )
 
 
+@scene('focus-16-novembro', '#2b4c7e', (90, 90, 820))
+def _():
+    rep = doc(520, 600, 'BOLETIM FOCUS', '#2b4c7e',
+              label_rows([('IPCA 2026', '5,11%'), ('IPCA 2027', '5,00%'), ('Selic 2027', '12,75%'), ('Dólar 2026', 'R$ 5,40')], 46, 140, 428, 52, 20, hl=(1, '#ffe3e3'))
+              + '<g transform="translate(30 370)">' + chart_paper(460, 200, (0.2, 0.3, 0.35, 0.5, 0.65, 0.8), '#2b4c7e') + '</g>')
+    return (
+        g(160, 110, -5, 1, rep)
+        + g(1010, 470, 0, 1, coins_stack(6, 58))
+        + g(1150, 110, 12, 1, tag('5,00%', 220, '#e03131'), 'shs')
+        + g(830, 200, -14, 1, pen(300, '#2d3436'), 'shs')
+    )
+
+
 @scene('fgts-pgfn-empregadores', '#24527a', (200, 100, 800))
 def _():
     return (

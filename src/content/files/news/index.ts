@@ -129,6 +129,7 @@ import { newsDolarIbovespaSemana13Novembro2026 } from './dolar-fecha-a-r-5-657-s
 import { newsDieese13o399Bilhoes2026 } from './dieese-13o-r-399-bilhoes-99-7-milhoes-de-pessoas-media-r-3-720';
 import { newsEnemAbstencao36 } from './enem-2026-abstencao-de-36-no-2o-dia-gabarito-sai-em-18-de-novembro';
 import { newsBbLucro3T2026 } from './bb-lucro-cai-66-5-3t26-inadimplencia-agro-projecao-2026-r-9-a-11-bi';
+import { newsFocus16Novembro2026 } from './focus-16-novembro-ipca-2026-cai-a-5-11-ipca-2027-sobe-a-5-00-e-dolar-vai-a-r-5-40';
 
 export const newsFiles = [
   newsFiesRemanescentes2026,
@@ -256,5 +257,6 @@ export const newsFiles = [
   newsStfQuatroVotosEscala5x2,
   newsDieese13o399Bilhoes2026,
   newsBbLucro3T2026,
+  newsFocus16Novembro2026,
   newsEnemAbstencao36,
 ] as const;
