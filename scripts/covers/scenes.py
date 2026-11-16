@@ -1916,3 +1916,15 @@ def _():
         + g(1200, 480, 4, 1, coins_stack(3), 'sh')
         + g(1000, 720, -4, 1, stamp('ATIVIDADE RECUA', 440, '#f4e3c3', -4))
     )
+
+
+@scene('fechamento-dolar-5-77-2026', '#5a2d4f', (60, 100, 760))
+def _():
+    rows = label_rows([('Dólar (fechamento)', 'R$ 5,77'), ('Alta no dia', '2,1%'), ('Ibovespa', '169.295'), ('Queda no dia', '1,83%')], 46, 170, 408, 64, 21, hl=(0, '#f0dcea'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'FECHAMENTO 16/11', '#431f3a', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.85, 0.8, 0.82, 0.7, 0.45, 0.3), color='#d9480f', title='IBOVESPA'))
+        + g(1290, 110, 6, 1, tag('R$ 5,77', 280, '#e8590c'))
+        + g(1330, 500, -4, 1, coin(70))
+        + g(1010, 700, -5, 1, stamp('MAIOR DÓLAR DESDE ABR/2025', 680, '#f4e3c3', -4))
+    )
