@@ -1893,3 +1893,14 @@ def _():
         + g(1280, 470, 4, 1, gauge(150, 0.36, '36%'))
         + g(1180, 730, -4, 1, pen(300))
     )
+
+
+@scene('stf-5x2-fux-plenario-fisico-2026', '#6b4a2a', (60, 100, 760))
+def _():
+    rows = label_rows([('Votos a favor', '4'), ('Julgamento', 'Plenário físico'), ('Sessão', 'Sem data'), ('Início 5x2', '16/12')], 46, 170, 408, 64, 21, hl=(1, '#f1e3d0'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'JULGAMENTO INTERROMPIDO', '#4a3017', rows))
+        + g(690, 130, 4, 0.9, calendar_month('DEZEMBRO', 2, 31, marks=(16,), accent='#8a5a2e', mark_color='#e8590c'))
+        + g(1230, 150, 6, 0.8, clock(150, 8, 24))
+        + g(1010, 700, -4, 1, stamp('SEM DATA NO STF', 440, '#f4e3c3', -4))
+    )

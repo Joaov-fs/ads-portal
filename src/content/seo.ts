@@ -138,6 +138,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Free flow: pague até 16/11 e evite multa',
   'stf-tem-4-votos-para-manter-escala-5x2-em-16-12-votacao-termina-em-16-11':
     'STF tem 4 votos pela escala 5x2 em 16/12',
+  'stf-fux-interrompe-julgamento-da-escala-5x2-liminar-vale-e-sessao-sem-data':
+    'Fux interrompe julgamento da escala 5x2 no STF',
   'dino-escala-5x2-transicao-8h24-liminar-adi-8041-e-8042':
     'Dino: 42h em 16/12 e jornada de 8h24 na transição',
   'inss-mutirao-14-e-15-de-novembro-7-959-vagas-pericia-e-avaliacao-social':
