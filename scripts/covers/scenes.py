@@ -1868,3 +1868,15 @@ def _():
         + g(1230, 230, 6, 1, phone(250, 500, phone_screen('Resultado', 'R$ 1,27 bi', 'lucro do 3º trimestre', '#1f4e79', check=False)))
         + g(1000, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('enem-2026-abstencao-36', '#3a4f8a', (60, 100, 760))
+def _():
+    rows = label_rows([('Ausência no 2º dia', '36%'), ('Ausência no 1º dia', '32%'), ('Inscritos', '5,05 mi'), ('Gabarito', '18/11')], 46, 170, 408, 64, 21, hl=(0, '#dde3f5'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'ENEM 2026: BALANÇO', '#27386b', rows))
+        + g(690, 120, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(8, 15, 18), w=520, h=520, accent='#27386b', mark_color='#e8590c'))
+        + g(1290, 110, 6, 1, tag('gabarito 18/11', 300, '#2a7f62'))
+        + g(1280, 470, 4, 1, gauge(150, 0.36, '36%'))
+        + g(1180, 730, -4, 1, pen(300))
+    )

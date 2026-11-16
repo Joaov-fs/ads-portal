@@ -200,6 +200,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'CNU 2: novo edital refaz a lista de espera',
   'ata-do-copom-juros-restritivos-por-mais-tempo-ipca-de-2028-sobe-a-3-5':
     'Ata do Copom vê juros altos por mais tempo',
+  'enem-2026-abstencao-de-36-no-2o-dia-gabarito-sai-em-18-de-novembro':
+    'Enem 2026: 36% faltaram ao 2º dia',
   'enem-reaplicacao-pedido-de-16-a-20-de-novembro-provas-em-15-e-16-de-dezembro':
     'Enem 2026: reaplicação, pedido de 16 a 20/11',
   'superavit-comercial-de-outubro-e-recorde-us-9-32-bi':
