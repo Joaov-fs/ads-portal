@@ -136,6 +136,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   // Notícias
   'receita-descarta-punir-erro-de-boa-fe-na-reforma-tributaria-apuracao-assistida-em-teste':
     'Receita descarta punir erro de boa-fé na CBS e IBS',
+  'anvisa-suspende-suplementos-norvy-nutrymed-morbach-e-manda-recolher-os-produtos':
+    'Anvisa suspende suplementos de 3 empresas',
   'abono-salarial-276-mil-ainda-nao-sacaram-r-304-8-milhoes-prazo-termina-em-28-de-dezembro':
     'Abono salarial: 276 mil não sacaram, prazo 28/12',
   'mei-perdao-automatico-lc-238-divida-ate-13-10-vale-em-1-1-2027':
