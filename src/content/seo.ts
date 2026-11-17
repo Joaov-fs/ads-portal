@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'abono-salarial-276-mil-ainda-nao-sacaram-r-304-8-milhoes-prazo-termina-em-28-de-dezembro':
+    'Abono salarial: 276 mil não sacaram, prazo 28/12',
   'mei-perdao-automatico-lc-238-divida-ate-13-10-vale-em-1-1-2027':
     'Perdão do MEI é automático e vale em 1/1/2027',
   'free-flow-pedagio-quite-ate-16-11-sem-multa-autuacao-comeca-em-17-11':

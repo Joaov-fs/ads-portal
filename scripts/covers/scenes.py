@@ -1951,3 +1951,14 @@ def _():
         + g(1290, 110, 6, 1, tag('17/11', 260, '#e8590c'))
         + g(1010, 760, -4, 1, stamp('CHUVA INTENSA', 440, '#f4e3c3', -4))
     )
+
+
+@scene('abono-sem-sacar-28-12', '#0b7285', (80, 100, 860))
+def _():
+    rows = label_rows([('Sem sacar', '276.831'), ('Disponível', 'R$ 304,8 mi'), ('Teto de renda', 'R$ 2.766'), ('Saque até', '28/12')], 46, 170, 408, 64, 20, hl=(3, '#c5f6fa'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'ABONO SALARIAL 2026', '#0b7285', rows))
+        + g(700, 90, 5, 1, calendar_month('DEZEMBRO 2026', 2, 31, marks=(28,), w=460, h=500, accent='#0b7285', mark_color='#e8590c'))
+        + g(1330, 250, 6, 1, phone(250, 500, phone_screen('Carteira de Trabalho', 'CONSULTAR', 'abono disponível', '#0b7285')))
+        + g(1000, 690, 3, 1, coins_stack(3), 'sh')
+    )

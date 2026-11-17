@@ -133,6 +133,7 @@ import { newsBbLucro3T2026 } from './bb-lucro-cai-66-5-3t26-inadimplencia-agro-p
 import { newsIbcBr3T2026 } from './ibc-br-atividade-economica-cai-0-9-no-3o-trimestre-e-setembro-recua-0-2';
 import { newsFocus16Novembro2026 } from './focus-16-novembro-ipca-2026-cai-a-5-11-ipca-2027-sobe-a-5-00-e-dolar-vai-a-r-5-40';
 import { newsDolarIbovespa16Novembro2026 } from './dolar-fecha-a-r-5-77-maior-valor-desde-abril-de-2025-ibovespa-cai-1-83-16-11';
+import { newsAbonoSalarial276MilSemSacar } from './abono-salarial-276-mil-ainda-nao-sacaram-r-304-8-milhoes-prazo-termina-em-28-de-dezembro';
 import { newsMeiPerdaoAutomaticoLc238 } from './mei-perdao-automatico-lc-238-divida-ate-13-10-vale-em-1-1-2027';
 import { newsChuvaInmet17Novembro2026 } from './chuva-intensa-inmet-17-de-novembro-avisos-laranja-ba-to-go-e-amarelo-em-mg-es-e-sul';
 
@@ -269,4 +270,5 @@ export const newsFiles = [
   newsDolarIbovespa16Novembro2026,
   newsMeiPerdaoAutomaticoLc238,
   newsChuvaInmet17Novembro2026,
+  newsAbonoSalarial276MilSemSacar,
 ] as const;
