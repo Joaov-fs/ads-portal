@@ -2014,3 +2014,27 @@ def _():
         + g(1230, 170, 6, 1, sheet(300, 400, 'PAUTA DO PLENÁRIO', '#2b4a48', seed=4, extra=lines(30, 130, 240, 6, seed=5)))
         + g(960, 640, -4, 1, stamp('SUSPENSA', 320, '#ffe8a3', -6))
     )
+
+
+@scene('mp-1379-credito-exportadores-sancao-2026', '#1f5f7a', (60, 100, 760))
+def _():
+    rows = label_rows([('Plano', 'Brasil Soberano'), ('Acréscimo', 'R$ 13,5 bi'), ('Valor original', 'R$ 15 bi'), ('Aprovada em', '17/11'), ('Próximo passo', 'sanção')], 46, 170, 408, 62, 20, hl=(1, '#d5e8f0'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'MP 1.379/2026', '#164a5f', rows))
+        + g(660, 150, 4, 1, box(420, 320))
+        + g(1230, 130, 6, 1, tag('VAI À SANÇÃO', 320, '#2b8a3e'))
+        + g(1000, 560, -4, 1, coins_stack(5), 'sh')
+        + g(1180, 690, -5, 1, stamp('PLV 15/2026', 320, '#d63031', -6))
+    )
+
+
+@scene('fechamento-dolar-5-78-2026', '#2d4a6b', (60, 100, 760))
+def _():
+    rows = label_rows([('Dólar (fechamento)', 'R$ 5,78'), ('Alta no dia', '0,09%'), ('Ibovespa', '169.817'), ('Alta no dia', '0,31%')], 46, 170, 408, 64, 21, hl=(2, '#d9e4f2'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'FECHAMENTO 17/11', '#1f3650', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.4, 0.3, 0.35, 0.5, 0.45, 0.55), color='#2b8a3e', title='IBOVESPA'))
+        + g(1290, 110, 6, 1, tag('R$ 5,78', 280, '#e8590c'))
+        + g(1330, 500, -4, 1, coin(70))
+        + g(1010, 700, -5, 1, stamp('AJUSTE FISCAL: 18/11', 600, '#f4e3c3', -4))
+    )
