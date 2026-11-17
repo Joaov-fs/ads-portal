@@ -1992,3 +1992,14 @@ def _():
         + g(1290, 110, 6, 1, box(260, 200))
         + g(1230, 600, -6, 1, stamp('SUSPENSO', 330, '#fff3bf', -8))
     )
+
+
+@scene('fies-pre-selecionados-validacao', '#5b4b8a', (60, 100, 740))
+def _():
+    rows = label_rows([('Resultado', '16/11'), ('Validar dados até', '18/11'), ('Lista de espera', '25 a 30/11'), ('Vagas', '50 mil')], 46, 170, 408, 64, 21, hl=(1, '#e6def5'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'FIES: PRÉ-SELECIONADOS', '#4a3b78', rows))
+        + g(640, 130, 5, 1, calendar_month('NOVEMBRO', 0, 30, (18,), w=470, h=500, accent='#4a3b78', mark_color='#e8590c'))
+        + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Acesso Único', 'Fies', 'pré-selecionado', '#4a3b78')))
+        + g(1000, 660, -4, 1, stamp('VALIDAR', 300, '#ffe8a3', -6))
+    )
