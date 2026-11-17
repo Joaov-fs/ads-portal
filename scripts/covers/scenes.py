@@ -1928,3 +1928,15 @@ def _():
         + g(1330, 500, -4, 1, coin(70))
         + g(1010, 700, -5, 1, stamp('MAIOR DÓLAR DESDE ABR/2025', 680, '#f4e3c3', -4))
     )
+
+
+@scene('perdao-mei-automatico-2026', '#2f6f6a', (60, 100, 760))
+def _():
+    rows = label_rows([('Dívida vencida até', '13/10/2026'), ('Perdão a partir de', '01/01/2027'), ('DAS em dia', 'jan a jun/2027'), ('Pedido', 'não precisa')], 46, 170, 408, 64, 21, hl=(3, '#d6efe9'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'PERDÃO DO MEI', '#1f4f4b', rows))
+        + g(690, 130, 4, 1, boleto(520, 230, 'DAS-MEI', '#1f4f4b', 'JAN A JUN/2027'))
+        + g(1290, 110, 6, 1, tag('01/01/2027', 300, '#e8a317'))
+        + g(1330, 500, -4, 1, coin(70))
+        + g(1010, 700, -4, 1, stamp('SEM PEDIDO', 380, '#f4e3c3', -4))
+    )

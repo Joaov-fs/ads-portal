@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'mei-perdao-automatico-lc-238-divida-ate-13-10-vale-em-1-1-2027':
+    'Perdão do MEI é automático e vale em 1/1/2027',
   'free-flow-pedagio-quite-ate-16-11-sem-multa-autuacao-comeca-em-17-11':
     'Free flow: pague até 16/11 e evite multa',
   'stf-tem-4-votos-para-manter-escala-5x2-em-16-12-votacao-termina-em-16-11':
