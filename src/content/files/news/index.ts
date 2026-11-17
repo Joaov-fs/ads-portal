@@ -124,6 +124,7 @@ import { newsInssMutirao1415Novembro2026 } from './inss-mutirao-14-e-15-de-novem
 import { newsFreeFlowPedagioQuiteAte16Novembro } from './free-flow-pedagio-quite-ate-16-11-sem-multa-autuacao-comeca-em-17-11';
 import { newsStfQuatroVotosEscala5x2 } from './stf-tem-4-votos-para-manter-escala-5x2-em-16-12-votacao-termina-em-16-11';
 import { newsStfFuxInterrompeEscala5x2 } from './stf-fux-interrompe-julgamento-da-escala-5x2-liminar-vale-e-sessao-sem-data';
+import { newsStfMottaAlcolumbreDosimetria } from './stf-motta-e-alcolumbre-pedem-pauta-da-lei-da-dosimetria-moraes-promete-resposta';
 import { newsDinoEscala5x2Transicao8h24 } from './dino-escala-5x2-transicao-8h24-liminar-adi-8041-e-8042';
 import { newsBlackFridayInmetroEletrodomesticos2026 } from './black-friday-inmetro-5-erros-compra-de-eletrodomesticos-etiqueta-ence';
 import { newsStfPlanosEconomicosAdesao2027 } from './stf-encerra-processo-dos-planos-economicos-e-mantem-adesao-ao-acordo-ate-junho-de-2027';
@@ -265,6 +266,7 @@ export const newsFiles = [
   newsFreeFlowPedagioQuiteAte16Novembro,
   newsStfQuatroVotosEscala5x2,
   newsStfFuxInterrompeEscala5x2,
+  newsStfMottaAlcolumbreDosimetria,
   newsDieese13o399Bilhoes2026,
   newsBbLucro3T2026,
   newsFocus16Novembro2026,

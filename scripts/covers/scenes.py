@@ -2003,3 +2003,14 @@ def _():
         + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Acesso Único', 'Fies', 'pré-selecionado', '#4a3b78')))
         + g(1000, 660, -4, 1, stamp('VALIDAR', 300, '#ffe8a3', -6))
     )
+
+
+@scene('dosimetria-pedido-pauta-stf-2026', '#355c5a', (60, 100, 740))
+def _():
+    rows = label_rows([('Lei', '15.402/2026'), ('Ações', 'ADI 7966 e 7967'), ('Relator', 'Moraes'), ('Situação', 'suspensa'), ('Pedido', '17/11/2026')], 46, 170, 408, 62, 20, hl=(3, '#ffe3d6'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'LEI DA DOSIMETRIA', '#2b4a48', rows))
+        + g(660, 130, 5, 1, calendar_month('NOVEMBRO', 0, 30, (17,), w=470, h=500, accent='#2b4a48', mark_color='#e8590c'))
+        + g(1230, 170, 6, 1, sheet(300, 400, 'PAUTA DO PLENÁRIO', '#2b4a48', seed=4, extra=lines(30, 130, 240, 6, seed=5)))
+        + g(960, 640, -4, 1, stamp('SUSPENSA', 320, '#ffe8a3', -6))
+    )
