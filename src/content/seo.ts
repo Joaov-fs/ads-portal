@@ -246,6 +246,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Gasolina sem tributos vai até 9/12: corte R$ 0,89/L',
   'gasolina-cai-a-r-6-49-na-2a-semana-sem-tributos-federais-etanol-a-r-4-11':
     'Gasolina cai a R$ 6,49 e etanol fica em R$ 4,11',
+  'chuva-intensa-inmet-17-de-novembro-avisos-laranja-ba-to-go-e-amarelo-em-mg-es-e-sul':
+    'Inmet: aviso laranja de chuva em BA, TO e GO',
   'tcu-aprova-cbs-de-11-3-para-2027-o-que-muda-para-o-consumidor':
     'TCU aprova CBS de 11,3% para 2027: o que muda',
   'pix-med-prazo-de-80-dias-e-nova-etapa-entre-bancos-vale-desde-26-de-outubro':

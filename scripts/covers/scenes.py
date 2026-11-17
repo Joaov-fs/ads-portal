@@ -1940,3 +1940,14 @@ def _():
         + g(1330, 500, -4, 1, coin(70))
         + g(1010, 700, -4, 1, stamp('SEM PEDIDO', 380, '#f4e3c3', -4))
     )
+
+
+@scene('chuva-inmet-17-novembro-2026', '#2b4a66', (60, 100, 760))
+def _():
+    rows = label_rows([('Data', '17/11/2026'), ('Aviso laranja', 'BA, TO e GO'), ('Aviso amarelo', 'MG, ES e Sul'), ('Granizo', 'PR, SC e RS')], 46, 170, 408, 64, 21, hl=(1, '#ffe3c2'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'AVISOS DO INMET', '#1d3347', rows))
+        + g(690, 130, 4, 1, calendar_month('NOVEMBRO', 0, 30, marks=(17,), w=520, h=520, accent='#2f6f9f', mark_color='#e8590c'))
+        + g(1290, 110, 6, 1, tag('17/11', 260, '#e8590c'))
+        + g(1010, 760, -4, 1, stamp('CHUVA INTENSA', 440, '#f4e3c3', -4))
+    )
