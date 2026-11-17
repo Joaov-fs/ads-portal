@@ -1,3 +1,4 @@
+import { newsReceitaBoaFeReformaTributaria } from './receita-descarta-punir-erro-de-boa-fe-na-reforma-tributaria-apuracao-assistida-em-teste';
 import { newsStfAudienciaEscala6x1Adi8041 } from './stf-audiencia-escala-6x1-10-novembro-adi-8041-e-8042';
 import { newsJusticaSuspendeRegraVrVaMaquininhas } from './justica-suspende-regra-que-ampliou-vr-e-va-em-qualquer-maquininha';
 import { newsGasolinaProrrogada9Dezembro2026 } from './gasolina-sem-tributos-prorrogada-ate-9-12-decreto-13-159';
@@ -271,4 +272,5 @@ export const newsFiles = [
   newsMeiPerdaoAutomaticoLc238,
   newsChuvaInmet17Novembro2026,
   newsAbonoSalarial276MilSemSacar,
+  newsReceitaBoaFeReformaTributaria,
 ] as const;

@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'receita-descarta-punir-erro-de-boa-fe-na-reforma-tributaria-apuracao-assistida-em-teste':
+    'Receita descarta punir erro de boa-fé na CBS e IBS',
   'abono-salarial-276-mil-ainda-nao-sacaram-r-304-8-milhoes-prazo-termina-em-28-de-dezembro':
     'Abono salarial: 276 mil não sacaram, prazo 28/12',
   'mei-perdao-automatico-lc-238-divida-ate-13-10-vale-em-1-1-2027':

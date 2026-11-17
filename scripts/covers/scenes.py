@@ -1962,3 +1962,33 @@ def _():
         + g(1330, 250, 6, 1, phone(250, 500, phone_screen('Carteira de Trabalho', 'CONSULTAR', 'abono disponível', '#0b7285')))
         + g(1000, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('receita-boa-fe-cbs', '#2f4858', (80, 90, 860))
+def _():
+    rows = label_rows([('Documentos testados', '35 bi'), ('Com CBS/IBS', '+70%'), ('Empresas no piloto', '500'), ('Pequenas mapeadas', '1,1 mi')], 46, 170, 408, 64, 20, hl=(0, '#d8f3dc'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'NOTA FISCAL', '#2f4858', rows))
+        + g(700, 110, 5, 1, sheet(380, 470, 'APURAÇÃO ASSISTIDA', '#2d6a4f', seed=5, extra=lines(40, 140, 300, 6, seed=4)))
+        + g(1160, 330, 8, 1, stamp('BOA-FÉ', 360, '#95d5b2', -8))
+        + g(1100, 560, -4, 1, pen(330, '#c0392b'), 'shs')
+    )
+
+
+def supplement_bottle(color='#1d7a8c', label='SUPLEMENTO'):
+    return (f'<rect x="40" y="0" width="120" height="50" rx="10" fill="#2b2f36"/>'
+            f'<rect x="10" y="40" width="180" height="270" rx="34" fill="{color}"/>'
+            f'<rect x="10" y="110" width="180" height="130" fill="#fff"/>'
+            f'<text x="100" y="182" font-size="21" font-weight="800" text-anchor="middle" fill="{color}">{label}</text>')
+
+
+@scene('anvisa-suplementos-suspensos', '#8c2f39', (420, 90, 860))
+def _():
+    rows = label_rows([('Empresas', '3'), ('Produtos', 'recolhimento'), ('Resolução', 'RE 4.500'), ('Data', '16/11/2026')], 46, 170, 408, 64, 20, hl=(2, '#ffe3e3'))
+    return (
+        g(100, 150, -6, 1, supplement_bottle('#1d7a8c', 'CÁPSULAS'))
+        + g(380, 230, 5, 1, supplement_bottle('#7a4fa3', 'SPRAY'))
+        + g(760, 100, 3, 1, doc(500, 580, 'ANVISA RESOLUÇÃO', '#8c2f39', rows))
+        + g(1290, 110, 6, 1, box(260, 200))
+        + g(1230, 600, -6, 1, stamp('SUSPENSO', 330, '#fff3bf', -8))
+    )
