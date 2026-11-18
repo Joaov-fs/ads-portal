@@ -2118,3 +2118,37 @@ def _():
         + g(1200, 520, 4, 1, pen(300))
         + g(1000, 720, -4, 1, stamp('GABARITO LIBERADO', 460, '#d9efe6', -4))
     )
+
+
+@scene('bancos-fecham-20-novembro-2026', '#2f4f7f', (50, 100, 740))
+def _():
+    rows = label_rows([('Agências', 'fechadas 20/11'), ('Boleto de 20/11', 'paga em 23/11'), ('Pix', '24 horas'), ('Tributos', 'pagar antes')], 46, 170, 408, 64, 21, hl=(0, '#d9e3f2'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'FERIADO BANCÁRIO', '#2f4f7f', rows))
+        + g(640, 130, 5, 1, calendar_month('NOVEMBRO', 0, 30, (20,), w=470, h=500, accent='#2f4f7f', mark_color='#d9643a'))
+        + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Pix', '24 horas', 'inclusive no feriado', '#2f4f7f')))
+        + g(1000, 640, -4, 1, boleto(400, 190, 'BOLETO', '#2f4f7f', 'vence 20/11'))
+    )
+
+
+@scene('dolar-fecha-5-87-18-novembro-2026', '#7a2e1d', (60, 100, 760))
+def _():
+    rows = label_rows([('Dólar (venda)', 'R$ 5,8667'), ('Alta no dia', '1,46%'), ('Fechamento de 17/11', 'R$ 5,782'), ('Maior desde', '15/04/2025')], 46, 170, 408, 64, 21, hl=(0, '#f2d9d0'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'FECHAMENTO 18/11', '#7a2e1d', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.2, 0.25, 0.3, 0.4, 0.55, 0.9), color='#c0392b', title='DÓLAR'))
+        + g(1290, 110, 6, 1, tag('R$ 5,87', 280, '#2b6cb0'))
+        + g(1300, 480, -4, 1, banknote(300, 150))
+    )
+
+
+@scene('pe-de-meia-parcela-extra-enem-2026', '#3d6b4f', (50, 100, 740))
+def _():
+    rows = label_rows([('Parcela extra', 'R$ 200'), ('Beneficiários', '1,2 milhão'), ('Provas do Enem', '8 e 15/11'), ('Repasse previsto', '22/02 a 1/03')], 46, 170, 408, 64, 21, hl=(0, '#dcebe1'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'PÉ-DE-MEIA', '#3d6b4f', rows))
+        + g(640, 130, 5, 1, calendar_month('NOVEMBRO', 0, 30, (8, 15), w=470, h=500, accent='#3d6b4f', mark_color='#d9643a'))
+        + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Parcela extra', 'R$ 200', 'previsão para 2027', '#3d6b4f')))
+        + g(1000, 640, -4, 1, banknote(330, 160, value='R$ 200'))
+        + g(1480, 640, 0, 1, coins_stack(3), 'sh')
+    )

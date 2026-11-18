@@ -250,6 +250,12 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Caged: 121,3 mil vagas em setembro, 1,24 mi no ano',
   'black-friday-27-de-novembro-checklist-de-compra-segura-e-arrependimento-de-7-dias':
     'Black Friday 27/11: como conferir o desconto',
+  'bancos-fecham-na-sexta-20-de-novembro-boletos-que-vencem-no-feriado-podem-ser-pagos-em-23-11':
+    'Bancos fecham em 20/11: boleto paga em 23/11',
+  'dolar-fecha-a-r-5-87-com-alta-de-1-46-maior-valor-desde-abril-de-2025':
+    'Dólar fecha a R$ 5,87, maior valor desde abr/2025',
+  'pe-de-meia-parcela-extra-de-r-200-para-quem-fez-o-enem-repasse-previsto-de-22-2-a-1-3':
+    'Pé-de-Meia: R$ 200 extra para quem fez o Enem',
   'feriados-de-novembro-de-2026-sexta-20-e-feriadao-dia-15-cai-no-domingo-e-quem-trabalha-recebe-em-dobro':
     'Feriados de novembro 2026: 20/11 é feriadão (sexta)',
   'igp-m-outubro-1-47-acumulado-5-24-aluguel-de-r-2-000-vai-a-r-2-104-80':
