@@ -146,6 +146,7 @@ import { newsFiesPreSelecionados18Novembro } from './fies-pre-selecionados-tem-a
 import { newsPrismaFiscalNovembro2026 } from './prisma-fiscal-novembro-deficit-r-53-4-bi-2026-divida-87-3-pib-2027';
 import { newsImplantesCirurgicosPl6683 } from './senado-aprova-marco-legal-implantes-cirurgicos-pl-6683-vai-a-sancao';
 import { newsMpoxCasos90Abaixo2022 } from './mpox-casos-caem-90-em-relacao-a-2022-saude-envia-3850-doses-em-novembro';
+import { newsAjusteFiscalDestaquesRemarcados18Novembro } from './ajuste-fiscal-senado-remarca-destaques-para-18-11-e-camara-so-vota-depois';
 import { newsStfDinoEscala5x2Merito } from './stf-dino-escala-5x2-sera-julgada-no-merito-liminar-vale-e-inicio-segue-em-16-12';
 
 export const newsFiles = [
@@ -293,4 +294,5 @@ export const newsFiles = [
   newsImplantesCirurgicosPl6683,
   newsMpoxCasos90Abaixo2022,
   newsStfDinoEscala5x2Merito,
+  newsAjusteFiscalDestaquesRemarcados18Novembro,
 ] as const;

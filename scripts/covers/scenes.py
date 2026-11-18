@@ -2095,3 +2095,14 @@ def _():
         + g(1230, 120, 6, 1, clock(130, 10, 40))
         + g(1020, 640, -4, 1, tag('NO MÉRITO', 300, '#e8590c'))
     )
+
+
+@scene('ajuste-fiscal-destaques-remarcados-2026', '#6b4f2f', (60, 100, 760))
+def _():
+    rows = label_rows([('Projeto', 'PLP 299/2026'), ('Texto principal', '12/11'), ('Placar', '45 a 31'), ('Pontos pendentes', '4'), ('Nova data', '18/11')], 46, 170, 408, 62, 19, hl=(4, '#efe3d0'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'AJUSTE FISCAL', '#4a3519', rows))
+        + g(660, 130, 4, 1, calendar_month('NOVEMBRO', 0, 30, (18,), w=470, h=500, accent='#4a3519', mark_color='#e8590c'))
+        + g(1230, 120, 6, 1, clock(130, 10, 40))
+        + g(1020, 640, -4, 1, tag('DESTAQUES 18/11', 360, '#e8590c'))
+    )

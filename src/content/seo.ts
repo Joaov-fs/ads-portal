@@ -196,6 +196,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'CBS: regra de transição opcional em fev/2027',
   'congresso-aprova-r-152-4-bi-em-creditos-pln-23-r-149-4-bi-beneficios':
     'Congresso aprova R$ 152,4 bi em créditos de 2026',
+  'ajuste-fiscal-senado-remarca-destaques-para-18-11-e-camara-so-vota-depois':
+    'Ajuste fiscal: destaques no Senado ficam p/ 18/11',
   'dolar-fecha-a-r-5-78-ibovespa-sobe-0-31-e-ajuste-fiscal-fica-para-18-11':
     'Dólar a R$ 5,78 e Ibovespa sobe 0,31% em 17/11',
   'senado-aprova-mp-1379-mais-r-13-5-bi-credito-exportadores-brasil-soberano-vai-a-sancao':
