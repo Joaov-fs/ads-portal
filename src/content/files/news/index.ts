@@ -29,6 +29,7 @@ import { newsFiesRemanescentes2026 } from './fies-vagas-remanescentes-2026-inscr
 import { newsAneelBandeiraVerdeNovembro2026 } from './aneel-mantem-bandeira-verde-em-novembro-de-2026-conta-de-luz-sem-taxa-extra';
 import { newsCagedSetembro2026 } from './brasil-gera-121-3-mil-empregos-em-setembro-caged';
 import { newsPnadDesemprego3Trimestre2026 } from './pnad-desemprego-3o-trimestre-5-2-menor-desde-2012-103-6-milhoes-ocupados';
+import { newsFazendaCbsEfetiva85Cae } from './fazenda-cbs-efetiva-8-5-cae-senado-ate-15-de-dezembro';
 import { newsTcuCbs113Para2027 } from './tcu-aprova-cbs-de-11-3-para-2027-o-que-muda-para-o-consumidor';
 import { newsPixMed80DiasEtapa26Outubro } from './pix-med-prazo-de-80-dias-e-nova-etapa-entre-bancos-vale-desde-26-de-outubro';
 import { newsBolsaFamiliaNovembroDezembro2026 } from './bolsa-familia-novembro-16-17-e-18-dezembro-10-11-e-14-calendario-do-nis';
@@ -197,6 +198,7 @@ export const newsFiles = [
   newsTesouroRecompraNtnB27Outubro2026,
   newsBolsaFamiliaNovembroDezembro2026,
   newsPixMed80DiasEtapa26Outubro,
+  newsFazendaCbsEfetiva85Cae,
   newsTcuCbs113Para2027,
   newsGasolinaAnpSegundaSemanaSemTributos,
   newsBancosFinados2Novembro2026,

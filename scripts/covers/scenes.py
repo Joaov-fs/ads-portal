@@ -2038,3 +2038,14 @@ def _():
         + g(1330, 500, -4, 1, coin(70))
         + g(1010, 700, -5, 1, stamp('AJUSTE FISCAL: 18/11', 600, '#f4e3c3', -4))
     )
+
+
+@scene('cbs-8-5-cae-senado-2026', '#4a3f6b', (60, 100, 760))
+def _():
+    rows = label_rows([('Alíquota efetiva (Fazenda)', '8,5%'), ('Referência do TCU', '11,3%'), ('Prazo do Senado', '15/12'), ('Cashback em 2027', 'R$ 10 bi'), ('Início da CBS', 'jan/2027')], 46, 170, 408, 62, 19, hl=(0, '#e4defa'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'CBS NO SENADO', '#33295a', rows))
+        + g(660, 130, 4, 1, calendar_month('DEZEMBRO', 2, 31, (15,), w=470, h=500, accent='#33295a', mark_color='#e8590c'))
+        + g(1230, 120, 6, 1, calculator(260, 360))
+        + g(1020, 640, -4, 1, tag('EFETIVA 8,5%', 380, '#e8590c'))
+    )
