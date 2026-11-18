@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'prisma-fiscal-novembro-deficit-r-53-4-bi-2026-divida-87-3-pib-2027':
+    'Prisma Fiscal: déficit de R$ 53,4 bi em 2026',
   'fies-pre-selecionados-tem-ate-18-11-para-validar-dados-e-lista-de-espera-sai-de-25-a-30-11':
     'Fies: validar dados até 18/11 e lista de espera',
   'receita-descarta-punir-erro-de-boa-fe-na-reforma-tributaria-apuracao-assistida-em-teste':

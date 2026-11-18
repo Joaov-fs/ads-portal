@@ -2049,3 +2049,26 @@ def _():
         + g(1230, 120, 6, 1, calculator(260, 360))
         + g(1020, 640, -4, 1, tag('EFETIVA 8,5%', 380, '#e8590c'))
     )
+
+
+@scene('prisma-fiscal-novembro-2026', '#3d5a80', (60, 100, 760))
+def _():
+    rows = label_rows([('Déficit 2026 (mediana)', 'R$ 53,369 bi'), ('Déficit 2027 (mediana)', 'R$ 45,288 bi'), ('Dívida bruta 2026', '83,41% do PIB'), ('Dívida bruta 2027', '87,31% do PIB'), ('Divulgado em', '16/11')], 46, 170, 408, 62, 19, hl=(0, '#dbe6f4'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'PRISMA FISCAL', '#2c4468', rows))
+        + g(660, 130, 4, 1, chart_paper(480, 360, pts=(0.3, 0.4, 0.5, 0.55, 0.7, 0.8), color='#e03131', title='DÍVIDA / PIB'))
+        + g(1230, 120, 6, 1, calculator(260, 360))
+        + g(1000, 640, -4, 1, tag('DÉFICIT R$ 53,4 BI', 420, '#e8590c'))
+    )
+
+
+@scene('implantes-cirurgicos-lei-sancao-2026', '#2f7a72', (60, 100, 760))
+def _():
+    rows = label_rows([('Projeto', 'PL 6.683/2025'), ('Aprovado no Senado', '12/11'), ('Relatora', 'Mara Gabrilli'), ('Fiscalização', 'Anvisa'), ('Próximo passo', 'sanção')], 46, 170, 408, 62, 19, hl=(4, '#d6efe9'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'IMPLANTES CIRÚRGICOS', '#1f5c55', rows))
+        + g(660, 150, 4, 1, box(420, 320))
+        + g(1230, 130, 6, 1, tag('VAI À SANÇÃO', 320, '#2b8a3e'))
+        + g(1040, 600, -4, 1, pen(360, '#1f5c55'))
+        + g(1200, 690, -5, 1, stamp('AUTORIZAÇÃO PRÉVIA', 460, '#d63031', -6))
+    )

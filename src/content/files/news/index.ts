@@ -143,6 +143,7 @@ import { newsAbonoSalarial276MilSemSacar } from './abono-salarial-276-mil-ainda-
 import { newsMeiPerdaoAutomaticoLc238 } from './mei-perdao-automatico-lc-238-divida-ate-13-10-vale-em-1-1-2027';
 import { newsChuvaInmet17Novembro2026 } from './chuva-intensa-inmet-17-de-novembro-avisos-laranja-ba-to-go-e-amarelo-em-mg-es-e-sul';
 import { newsFiesPreSelecionados18Novembro } from './fies-pre-selecionados-tem-ate-18-11-para-validar-dados-e-lista-de-espera-sai-de-25-a-30-11';
+import { newsPrismaFiscalNovembro2026 } from './prisma-fiscal-novembro-deficit-r-53-4-bi-2026-divida-87-3-pib-2027';
 
 export const newsFiles = [
   newsFiesRemanescentes2026,
@@ -285,4 +286,5 @@ export const newsFiles = [
   newsFiesPreSelecionados18Novembro,
   newsMp1379BrasilSoberanoSancao,
   newsDolarIbovespa17Novembro2026,
+  newsPrismaFiscalNovembro2026,
 ] as const;
