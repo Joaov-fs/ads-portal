@@ -2084,3 +2084,14 @@ def _():
         + g(1040, 600, -4, 1, pen(360, '#1f5c55'))
         + g(1200, 690, -5, 1, stamp('AUTORIZAÇÃO PRÉVIA', 460, '#d63031', -6))
     )
+
+
+@scene('dino-5x2-julgamento-merito-2026', '#2f6b5b', (60, 100, 760))
+def _():
+    rows = label_rows([('Relator', 'Dino'), ('Julgamento', 'Direto no mérito'), ('Liminar', 'Em vigor'), ('Plenário físico', 'Sem data'), ('Início 5x2', '16/12')], 46, 170, 408, 62, 19, hl=(1, '#d8eee6'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'ESCALA 5X2 NO STF', '#1f4f43', rows))
+        + g(660, 130, 4, 1, calendar_month('DEZEMBRO', 2, 31, (16,), w=470, h=500, accent='#1f4f43', mark_color='#e8590c'))
+        + g(1230, 120, 6, 1, clock(130, 10, 40))
+        + g(1020, 640, -4, 1, tag('NO MÉRITO', 300, '#e8590c'))
+    )

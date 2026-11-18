@@ -156,6 +156,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'STF tem 4 votos pela escala 5x2 em 16/12',
   'stf-fux-interrompe-julgamento-da-escala-5x2-liminar-vale-e-sessao-sem-data':
     'Fux interrompe julgamento da escala 5x2 no STF',
+  'stf-dino-escala-5x2-sera-julgada-no-merito-liminar-vale-e-inicio-segue-em-16-12':
+    'Escala 5x2 será julgada no mérito pelo STF',
   'stf-motta-e-alcolumbre-pedem-pauta-da-lei-da-dosimetria-moraes-promete-resposta':
     'Lei da Dosimetria: Congresso pede pauta no STF',
   'ibc-br-atividade-economica-cai-0-9-no-3o-trimestre-e-setembro-recua-0-2':
