@@ -145,6 +145,7 @@ import { newsChuvaInmet17Novembro2026 } from './chuva-intensa-inmet-17-de-novemb
 import { newsFiesPreSelecionados18Novembro } from './fies-pre-selecionados-tem-ate-18-11-para-validar-dados-e-lista-de-espera-sai-de-25-a-30-11';
 import { newsPrismaFiscalNovembro2026 } from './prisma-fiscal-novembro-deficit-r-53-4-bi-2026-divida-87-3-pib-2027';
 import { newsImplantesCirurgicosPl6683 } from './senado-aprova-marco-legal-implantes-cirurgicos-pl-6683-vai-a-sancao';
+import { newsMpoxCasos90Abaixo2022 } from './mpox-casos-caem-90-em-relacao-a-2022-saude-envia-3850-doses-em-novembro';
 
 export const newsFiles = [
   newsFiesRemanescentes2026,
@@ -289,4 +290,5 @@ export const newsFiles = [
   newsDolarIbovespa17Novembro2026,
   newsPrismaFiscalNovembro2026,
   newsImplantesCirurgicosPl6683,
+  newsMpoxCasos90Abaixo2022,
 ] as const;

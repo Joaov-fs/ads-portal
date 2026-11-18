@@ -1531,6 +1531,18 @@ def _():
     )
 
 
+@scene('mpox-casos-90-abaixo-2022-2026', '#8a4a2f', (60, 100, 760))
+def _():
+    rows = label_rows([('Casos em 2022', '10.591'), ('Casos em 2026', '1.055'), ('Óbitos em 2026', '1'), ('Doses em novembro', '3.850')], 46, 170, 408, 64, 21, hl=(1, '#f3dccf'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'MPOX NO BRASIL', '#6b3520', rows))
+        + g(700, 110, 4, 1, chart_paper(460, 340, bars=((0.95, '#c0392b'), (0.1, '#2b6cb0')), title='2022 X 2026'))
+        + g(1010, 540, 5, 0.95, box(420, 300))
+        + g(1280, 130, 6, 1, tag('-90%', 240, '#2b6cb0'))
+        + g(700, 740, -4, 1, pen(300))
+    )
+
+
 @scene('plp-anp-notas-fiscais-senado-2026', '#4a3f8c', (60, 100, 760))
 def _():
     rows = label_rows([('PLP', '109/2025'), ('Votos a favor', '72'), ('Votos contra', '0'), ('Prazo de regras', '180 dias')], 46, 170, 408, 64, 21, hl=(1, '#dcd8f0'))

@@ -138,6 +138,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Prisma Fiscal: déficit de R$ 53,4 bi em 2026',
   'senado-aprova-marco-legal-implantes-cirurgicos-pl-6683-vai-a-sancao':
     'Senado aprova regras para implantes cirúrgicos',
+  'mpox-casos-caem-90-em-relacao-a-2022-saude-envia-3850-doses-em-novembro':
+    'Mpox: casos caem 90% e Saúde envia 3.850 doses',
   'fies-pre-selecionados-tem-ate-18-11-para-validar-dados-e-lista-de-espera-sai-de-25-a-30-11':
     'Fies: validar dados até 18/11 e lista de espera',
   'receita-descarta-punir-erro-de-boa-fe-na-reforma-tributaria-apuracao-assistida-em-teste':
