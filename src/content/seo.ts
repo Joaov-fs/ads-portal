@@ -236,6 +236,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Enem 2026: 36% faltaram ao 2º dia',
   'enem-reaplicacao-pedido-de-16-a-20-de-novembro-provas-em-15-e-16-de-dezembro':
     'Enem 2026: reaplicação, pedido de 16 a 20/11',
+  'enem-2026-gabarito-oficial-liberado-pelo-inep-notas-saem-em-18-de-janeiro-e-pedido-de-reaplicacao-vai-ate-20-de-novembro':
+    'Enem 2026: gabarito sai e notas vêm em 18/01',
   'superavit-comercial-de-outubro-e-recorde-us-9-32-bi':
     'Superávit comercial de outubro: US$ 9,32 bi',
   'enem-2026-redacao-sobre-o-sus-nota-vai-ate-1-000-e-a-2a-prova-e-em-15-de-novembro':

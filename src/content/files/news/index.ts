@@ -148,6 +148,7 @@ import { newsImplantesCirurgicosPl6683 } from './senado-aprova-marco-legal-impla
 import { newsMpoxCasos90Abaixo2022 } from './mpox-casos-caem-90-em-relacao-a-2022-saude-envia-3850-doses-em-novembro';
 import { newsAjusteFiscalDestaquesRemarcados18Novembro } from './ajuste-fiscal-senado-remarca-destaques-para-18-11-e-camara-so-vota-depois';
 import { newsStfDinoEscala5x2Merito } from './stf-dino-escala-5x2-sera-julgada-no-merito-liminar-vale-e-inicio-segue-em-16-12';
+import { newsEnemGabaritoOficial2026 } from './enem-2026-gabarito-oficial-liberado-pelo-inep-notas-saem-em-18-de-janeiro-e-pedido-de-reaplicacao-vai-ate-20-de-novembro';
 
 export const newsFiles = [
   newsFiesRemanescentes2026,
@@ -295,4 +296,5 @@ export const newsFiles = [
   newsMpoxCasos90Abaixo2022,
   newsStfDinoEscala5x2Merito,
   newsAjusteFiscalDestaquesRemarcados18Novembro,
+  newsEnemGabaritoOficial2026,
 ] as const;

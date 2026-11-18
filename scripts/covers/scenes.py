@@ -2106,3 +2106,15 @@ def _():
         + g(1230, 120, 6, 1, clock(130, 10, 40))
         + g(1020, 640, -4, 1, tag('DESTAQUES 18/11', 360, '#e8590c'))
     )
+
+
+@scene('enem-2026-gabarito-oficial', '#2f6f5e', (60, 100, 760))
+def _():
+    rows = label_rows([('Questões no 1º dia', '90'), ('Questões no 2º dia', '90'), ('Pedido de reaplicação', 'até 20/11'), ('Notas', '18/01/2027')], 46, 170, 408, 64, 21, hl=(3, '#d9efe6'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'ENEM 2026: GABARITO', '#1f4f42', rows))
+        + g(690, 120, 4, 1, calendar_month('JANEIRO 2027', 5, 31, marks=(18,), w=520, h=520, accent='#1f4f42', mark_color='#e8590c'))
+        + g(1290, 110, 6, 1, tag('notas 18/01', 300, '#e8590c'))
+        + g(1200, 520, 4, 1, pen(300))
+        + g(1000, 720, -4, 1, stamp('GABARITO LIBERADO', 460, '#d9efe6', -4))
+    )
