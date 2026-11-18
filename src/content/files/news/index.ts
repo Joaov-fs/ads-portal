@@ -149,6 +149,7 @@ import { newsFiesPreSelecionados18Novembro } from './fies-pre-selecionados-tem-a
 import { newsPrismaFiscalNovembro2026 } from './prisma-fiscal-novembro-deficit-r-53-4-bi-2026-divida-87-3-pib-2027';
 import { newsImplantesCirurgicosPl6683 } from './senado-aprova-marco-legal-implantes-cirurgicos-pl-6683-vai-a-sancao';
 import { newsMpoxCasos90Abaixo2022 } from './mpox-casos-caem-90-em-relacao-a-2022-saude-envia-3850-doses-em-novembro';
+import { newsSenadoConcluiAjusteFiscal18Novembro } from './senado-conclui-ajuste-fiscal-plp-299-rejeita-3-destaques-e-texto-vai-a-camara';
 import { newsAjusteFiscalDestaquesRemarcados18Novembro } from './ajuste-fiscal-senado-remarca-destaques-para-18-11-e-camara-so-vota-depois';
 import { newsStfDinoEscala5x2Merito } from './stf-dino-escala-5x2-sera-julgada-no-merito-liminar-vale-e-inicio-segue-em-16-12';
 import { newsEnemGabaritoOficial2026 } from './enem-2026-gabarito-oficial-liberado-pelo-inep-notas-saem-em-18-de-janeiro-e-pedido-de-reaplicacao-vai-ate-20-de-novembro';
@@ -303,4 +304,5 @@ export const newsFiles = [
   newsBancosFecham20Novembro2026,
   newsDolarFecha587Novembro2026,
   newsPeDeMeiaParcelaExtraEnem2026,
+  newsSenadoConcluiAjusteFiscal18Novembro,
 ] as const;

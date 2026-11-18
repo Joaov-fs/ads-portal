@@ -2152,3 +2152,15 @@ def _():
         + g(1000, 640, -4, 1, banknote(330, 160, value='R$ 200'))
         + g(1480, 640, 0, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('senado-conclui-ajuste-fiscal-18-11-2026', '#2d5a6b', (60, 100, 760))
+def _():
+    rows = label_rows([('Projeto', 'PLP 299/2026'), ('Destaques rejeitados', '3'), ('Lei Kandir 2028 a 2030', 'R$ 2 bi/ano'), ('Teto de gastos', '2% acima da inflação'), ('Próxima etapa', 'Câmara')], 46, 170, 408, 62, 19, hl=(2, '#d6eaf0'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'AJUSTE FISCAL', '#1d3f4c', rows))
+        + g(660, 130, 4, 1, chart_paper(480, 360, pts=(0.9, 0.8, 0.7, 0.55, 0.45, 0.35), color='#2f9e44', title='DESPESAS'))
+        + g(1260, 120, 6, 1, tag('VAI À CÂMARA', 320, '#e8590c'))
+        + g(1300, 500, -4, 1, coin(70))
+        + g(1000, 700, -5, 1, stamp('SENADO CONCLUI', 460, '#d6eaf0', -4))
+    )
