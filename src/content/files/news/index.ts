@@ -132,6 +132,7 @@ import { newsFreeFlowPedagioQuiteAte16Novembro } from './free-flow-pedagio-quite
 import { newsStfQuatroVotosEscala5x2 } from './stf-tem-4-votos-para-manter-escala-5x2-em-16-12-votacao-termina-em-16-11';
 import { newsStfFuxInterrompeEscala5x2 } from './stf-fux-interrompe-julgamento-da-escala-5x2-liminar-vale-e-sessao-sem-data';
 import { newsStfMottaAlcolumbreDosimetria } from './stf-motta-e-alcolumbre-pedem-pauta-da-lei-da-dosimetria-moraes-promete-resposta';
+import { newsDecreto5x2DivisorHoraExtra19Novembro2026 } from './decreto-5x2-assinado-divisor-da-hora-extra-cai-de-220-para-210-em-16-12';
 import { newsDinoEscala5x2Transicao8h24 } from './dino-escala-5x2-transicao-8h24-liminar-adi-8041-e-8042';
 import { newsBlackFridayInmetroEletrodomesticos2026 } from './black-friday-inmetro-5-erros-compra-de-eletrodomesticos-etiqueta-ence';
 import { newsStfPlanosEconomicosAdesao2027 } from './stf-encerra-processo-dos-planos-economicos-e-mantem-adesao-ao-acordo-ate-junho-de-2027';
@@ -319,4 +320,5 @@ export const newsFiles = [
   newsCamaraSessaoAjusteFiscal19Novembro,
   newsBcLeilaoUs1BilhaoDolar19Novembro2026,
   newsInssAgenciasFechadas20Novembro2026,
+  newsDecreto5x2DivisorHoraExtra19Novembro2026,
 ] as const;

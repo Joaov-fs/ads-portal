@@ -2250,3 +2250,14 @@ def _():
         + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Meu INSS', '24 horas', 'inclusive no feriado', '#256a6a')))
         + g(1000, 640, -4, 1, stamp('FECHADO', 260, '#d63031'))
     )
+
+
+@scene('decreto-5x2-divisor-hora-extra-19-novembro-2026', '#7a4a1f', (60, 100, 760))
+def _():
+    rows = label_rows([('Divisor hoje (44h)', '220'), ('Divisor 16/12 (42h)', '210'), ('Divisor dez/2027 (40h)', '200'), ('Hora de R$ 3.000', 'R$ 14,29')], 46, 170, 408, 64, 21, hl=(1, '#f3e0cc'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'HORA EXTRA 5x2', '#7a4a1f', rows))
+        + g(690, 130, 5, 1, calendar_month('DEZEMBRO', 2, 31, (16,), w=470, h=500, accent='#7a4a1f', mark_color='#d9643a'))
+        + g(1290, 150, 6, 1, tag('42h', 280, '#2b6cb0'))
+        + g(1300, 480, -4, 1, banknote(300, 150, value='R$'))
+    )

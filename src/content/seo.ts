@@ -166,6 +166,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Lei da Dosimetria: Congresso pede pauta no STF',
   'ibc-br-atividade-economica-cai-0-9-no-3o-trimestre-e-setembro-recua-0-2':
     'IBC-Br cai 0,9% no 3º trimestre e setembro, 0,2%',
+  'decreto-5x2-assinado-divisor-da-hora-extra-cai-de-220-para-210-em-16-12':
+    'Decreto 5x2: hora extra fica mais cara em 16/12',
   'dino-escala-5x2-transicao-8h24-liminar-adi-8041-e-8042':
     'Dino: 42h em 16/12 e jornada de 8h24 na transição',
   'inss-mutirao-14-e-15-de-novembro-7-959-vagas-pericia-e-avaliacao-social':
