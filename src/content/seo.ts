@@ -200,6 +200,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Senado conclui ajuste fiscal e texto vai à Câmara',
   'postes-pl-3220-2019-senado-aprova-regras-de-uso-compartilhado-e-vai-a-sancao':
     'Postes: Senado aprova regras e texto vai à sanção',
+  'previdencia-contribuintes-chegam-a-68-7-milhoes-em-setembro-maior-numero-desde-2012':
+    'Contribuintes da Previdência: 68,7 mi, recorde',
   'ajuste-fiscal-senado-remarca-destaques-para-18-11-e-camara-so-vota-depois':
     'Ajuste fiscal: destaques no Senado ficam p/ 18/11',
   'dolar-fecha-a-r-5-78-ibovespa-sobe-0-31-e-ajuste-fiscal-fica-para-18-11':
