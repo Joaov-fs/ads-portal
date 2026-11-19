@@ -155,6 +155,7 @@ import { newsSenadoConcluiAjusteFiscal18Novembro } from './senado-conclui-ajuste
 import { newsAjusteFiscalDestaquesRemarcados18Novembro } from './ajuste-fiscal-senado-remarca-destaques-para-18-11-e-camara-so-vota-depois';
 import { newsStfDinoEscala5x2Merito } from './stf-dino-escala-5x2-sera-julgada-no-merito-liminar-vale-e-inicio-segue-em-16-12';
 import { newsEnemGabaritoOficial2026 } from './enem-2026-gabarito-oficial-liberado-pelo-inep-notas-saem-em-18-de-janeiro-e-pedido-de-reaplicacao-vai-ate-20-de-novembro';
+import { newsSarampoBrasilLivre2026 } from './sarampo-brasil-mantem-status-livre-70-casos-em-2026-vacina-gratis-ate-59-anos';
 
 export const newsFiles = [
   newsFiesRemanescentes2026,
@@ -309,4 +310,5 @@ export const newsFiles = [
   newsSenadoConcluiAjusteFiscal18Novembro,
   newsPostesPl32202019Senado,
   newsPrevidenciaContribuintes68Milhoes2026,
+  newsSarampoBrasilLivre2026,
 ] as const;

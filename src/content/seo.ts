@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'sarampo-brasil-mantem-status-livre-70-casos-em-2026-vacina-gratis-ate-59-anos':
+    'Sarampo: Brasil segue livre, com 70 casos em 2026',
   'prisma-fiscal-novembro-deficit-r-53-4-bi-2026-divida-87-3-pib-2027':
     'Prisma Fiscal: déficit de R$ 53,4 bi em 2026',
   'senado-aprova-marco-legal-implantes-cirurgicos-pl-6683-vai-a-sancao':

@@ -2195,3 +2195,14 @@ def _():
         + g(1230, 200, 7, 1, phone(250, 500, phone_screen('Meu INSS', '68,7 mi', 'contribuintes', '#7a5c1e')))
         + g(1000, 700, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('sarampo-brasil-livre-2026', '#7a3b4a', (80, 100, 860))
+def _():
+    rows = label_rows([('Casos confirmados em 2026', '70'), ('Casos no pico de 2019', '21,7 mil'), ('Vacina tríplice viral', '12 meses a 59 anos'), ('Reconhecimento da OPAS', '17/11')], 46, 170, 408, 64, 19, hl=(0, '#f0d9de'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'SARAMPO: BRASIL', '#7a3b4a', rows))
+        + g(720, 130, 5, 1, calendar_month('NOVEMBRO', 0, 30, (4, 7, 17), w=470, h=500, accent='#7a3b4a', mark_color='#e8590c'))
+        + g(1280, 180, 6, 1, phone(250, 500, phone_screen('Vacina grátis', 'SUS', 'tríplice viral', '#7a3b4a')))
+        + g(1000, 700, -4, 1, tag('70 casos', 280, '#e8590c'), 'shs')
+    )
