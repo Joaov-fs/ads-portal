@@ -2206,3 +2206,14 @@ def _():
         + g(1280, 180, 6, 1, phone(250, 500, phone_screen('Vacina grátis', 'SUS', 'tríplice viral', '#7a3b4a')))
         + g(1000, 700, -4, 1, tag('70 casos', 280, '#e8590c'), 'shs')
     )
+
+
+@scene('pnad-desemprego-ufs-3-trimestre-2026', '#2d6a6a', (80, 100, 860))
+def _():
+    rows = label_rows([('Pernambuco', '8,6%'), ('Bahia', '7,1%'), ('Brasil', '5,2%'), ('Santa Catarina', '2,2%')], 46, 170, 408, 64, 21, hl=(0, '#d3e8e8'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'DESEMPREGO POR UF', '#2d6a6a', rows))
+        + g(720, 130, 5, 1, doc(470, 500, '3º TRIMESTRE DE 2026', '#2d6a6a', '<g transform="translate(30 150)">' + chart_paper(410, 280, bars=((0.25, '#a9cfcf'), (0.45, '#6fa8a8'), (0.8, '#2d6a6a'), (1.0, '#e8590c'))) + '</g>'))
+        + g(1280, 180, 6, 1, phone(250, 500, phone_screen('IBGE', '8 UFs', 'com queda', '#2d6a6a')))
+        + g(1000, 700, -4, 1, tag('5,2%', 280, '#e8590c'), 'shs')
+    )

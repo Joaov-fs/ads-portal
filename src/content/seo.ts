@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'desemprego-cai-em-8-ufs-pernambuco-tem-8-6-e-santa-catarina-2-2':
+    'Desemprego por UF: PE 8,6% e SC 2,2%',
   'sarampo-brasil-mantem-status-livre-70-casos-em-2026-vacina-gratis-ate-59-anos':
     'Sarampo: Brasil segue livre, com 70 casos em 2026',
   'prisma-fiscal-novembro-deficit-r-53-4-bi-2026-divida-87-3-pib-2027':

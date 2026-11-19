@@ -1,3 +1,4 @@
+import { newsPnadUfs3Trimestre2026 } from './desemprego-cai-em-8-ufs-pernambuco-tem-8-6-e-santa-catarina-2-2';
 import { newsPeDeMeiaParcelaExtraEnem2026 } from './pe-de-meia-parcela-extra-de-r-200-para-quem-fez-o-enem-repasse-previsto-de-22-2-a-1-3';
 import { newsDolarFecha587Novembro2026 } from './dolar-fecha-a-r-5-87-com-alta-de-1-46-maior-valor-desde-abril-de-2025';
 import { newsBancosFecham20Novembro2026 } from './bancos-fecham-na-sexta-20-de-novembro-boletos-que-vencem-no-feriado-podem-ser-pagos-em-23-11';
@@ -311,4 +312,5 @@ export const newsFiles = [
   newsPostesPl32202019Senado,
   newsPrevidenciaContribuintes68Milhoes2026,
   newsSarampoBrasilLivre2026,
+  newsPnadUfs3Trimestre2026,
 ] as const;
