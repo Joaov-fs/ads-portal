@@ -1,5 +1,6 @@
 import { newsPnadUfs3Trimestre2026 } from './desemprego-cai-em-8-ufs-pernambuco-tem-8-6-e-santa-catarina-2-2';
 import { newsPeDeMeiaParcelaExtraEnem2026 } from './pe-de-meia-parcela-extra-de-r-200-para-quem-fez-o-enem-repasse-previsto-de-22-2-a-1-3';
+import { newsDolarFecha593Novembro2026 } from './dolar-fecha-a-r-5-93-na-vespera-do-feriado-ibovespa-cai-0-78-e-b3-fecha-em-20-11';
 import { newsBcLeilaoUs1BilhaoDolar19Novembro2026 } from './bc-vende-us-1-bilhao-em-leilao-e-dolar-chega-a-r-5-93-antes-de-voltar-a-r-5-90';
 import { newsInssAgenciasFechadas20Novembro2026 } from './agencias-do-inss-nao-abrem-em-20-11-meu-inss-e-central-135-eletronica-funcionam';
 import { newsDolarFecha587Novembro2026 } from './dolar-fecha-a-r-5-87-com-alta-de-1-46-maior-valor-desde-abril-de-2025';
@@ -319,6 +320,7 @@ export const newsFiles = [
   newsPnadUfs3Trimestre2026,
   newsCamaraSessaoAjusteFiscal19Novembro,
   newsBcLeilaoUs1BilhaoDolar19Novembro2026,
+  newsDolarFecha593Novembro2026,
   newsInssAgenciasFechadas20Novembro2026,
   newsDecreto5x2DivisorHoraExtra19Novembro2026,
 ] as const;

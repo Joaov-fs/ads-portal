@@ -2261,3 +2261,14 @@ def _():
         + g(1290, 150, 6, 1, tag('42h', 280, '#2b6cb0'))
         + g(1300, 480, -4, 1, banknote(300, 150, value='R$'))
     )
+
+
+@scene('dolar-fecha-5-93-19-novembro-2026', '#1f4d5c', (60, 100, 760))
+def _():
+    rows = label_rows([('Dólar (venda)', 'R$ 5,93'), ('Alta no dia', '1,1%'), ('Fechamento de 18/11', 'R$ 5,8677'), ('Ibovespa', '166.231 pts')], 46, 170, 408, 64, 21, hl=(0, '#d3e6ec'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'FECHAMENTO 19/11', '#1f4d5c', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.25, 0.35, 0.45, 0.6, 0.75, 0.95), color='#c0392b', title='DÓLAR'))
+        + g(1290, 110, 6, 1, tag('R$ 5,93', 280, '#2b6cb0'))
+        + g(1300, 480, -4, 1, banknote(300, 150, value='US$'))
+    )

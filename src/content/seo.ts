@@ -268,6 +268,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Bancos fecham em 20/11: boleto paga em 23/11',
   'bc-vende-us-1-bilhao-em-leilao-e-dolar-chega-a-r-5-93-antes-de-voltar-a-r-5-90':
     'BC vende US$ 1 bi e dólar volta a R$ 5,90',
+  'dolar-fecha-a-r-5-93-na-vespera-do-feriado-ibovespa-cai-0-78-e-b3-fecha-em-20-11':
+    'Dólar fecha a R$ 5,93 e B3 não abre em 20/11',
   'agencias-do-inss-nao-abrem-em-20-11-meu-inss-e-central-135-eletronica-funcionam':
     'INSS: agências fechadas em 20/11, Meu INSS 24h',
   'dolar-fecha-a-r-5-87-com-alta-de-1-46-maior-valor-desde-abril-de-2025':
