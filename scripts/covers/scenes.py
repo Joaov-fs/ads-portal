@@ -2228,3 +2228,25 @@ def _():
         + g(1280, 180, 6, 1, phone(250, 500, phone_screen('IBGE', '8 UFs', 'com queda', '#2d6a6a')))
         + g(1000, 700, -4, 1, tag('5,2%', 280, '#e8590c'), 'shs')
     )
+
+
+@scene('bc-leilao-us-1-bi-19-novembro-2026', '#4a2d6b', (60, 100, 760))
+def _():
+    rows = label_rows([('Leilão à vista', 'US$ 1 bilhão'), ('Taxa de corte', 'R$ 5,86'), ('Máxima do dia', 'R$ 5,9287'), ('Dólar às 13h02', 'R$ 5,908')], 46, 170, 408, 64, 21, hl=(0, '#e6dcf0'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'BC NO CÂMBIO 19/11', '#4a2d6b', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.3, 0.45, 0.9, 0.6, 0.4, 0.55), color='#6c3fa0', title='DÓLAR'))
+        + g(1290, 110, 6, 1, tag('US$ 1 bi', 280, '#2b6cb0'))
+        + g(1300, 480, -4, 1, banknote(300, 150, value='US$'))
+    )
+
+
+@scene('inss-agencias-fechadas-20-novembro-2026', '#256a6a', (50, 100, 740))
+def _():
+    rows = label_rows([('Agências do INSS', 'fechadas 20/11'), ('Meu INSS', '24 horas'), ('Central 135', 'só eletrônico'), ('Volta do atendimento', '23/11')], 46, 170, 408, 64, 21, hl=(0, '#d6ecec'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'FERIADO 20/11', '#256a6a', rows))
+        + g(640, 130, 5, 1, calendar_month('NOVEMBRO', 0, 30, (20,), w=470, h=500, accent='#256a6a', mark_color='#d9643a'))
+        + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Meu INSS', '24 horas', 'inclusive no feriado', '#256a6a')))
+        + g(1000, 640, -4, 1, stamp('FECHADO', 260, '#d63031'))
+    )

@@ -264,6 +264,10 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Black Friday 27/11: como conferir o desconto',
   'bancos-fecham-na-sexta-20-de-novembro-boletos-que-vencem-no-feriado-podem-ser-pagos-em-23-11':
     'Bancos fecham em 20/11: boleto paga em 23/11',
+  'bc-vende-us-1-bilhao-em-leilao-e-dolar-chega-a-r-5-93-antes-de-voltar-a-r-5-90':
+    'BC vende US$ 1 bi e dólar volta a R$ 5,90',
+  'agencias-do-inss-nao-abrem-em-20-11-meu-inss-e-central-135-eletronica-funcionam':
+    'INSS: agências fechadas em 20/11, Meu INSS 24h',
   'dolar-fecha-a-r-5-87-com-alta-de-1-46-maior-valor-desde-abril-de-2025':
     'Dólar fecha a R$ 5,87, maior valor desde abr/2025',
   'pe-de-meia-parcela-extra-de-r-200-para-quem-fez-o-enem-repasse-previsto-de-22-2-a-1-3':
