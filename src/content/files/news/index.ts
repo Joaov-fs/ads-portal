@@ -152,6 +152,7 @@ import { newsImplantesCirurgicosPl6683 } from './senado-aprova-marco-legal-impla
 import { newsMpoxCasos90Abaixo2022 } from './mpox-casos-caem-90-em-relacao-a-2022-saude-envia-3850-doses-em-novembro';
 import { newsPostesPl32202019Senado } from './postes-pl-3220-2019-senado-aprova-regras-de-uso-compartilhado-e-vai-a-sancao';
 import { newsPrevidenciaContribuintes68Milhoes2026 } from './previdencia-contribuintes-chegam-a-68-7-milhoes-em-setembro-maior-numero-desde-2012';
+import { newsCamaraSessaoAjusteFiscal19Novembro } from './camara-marca-sessao-extraordinaria-para-votar-o-ajuste-fiscal-plp-299-relator-pede-texto-sem-mudancas';
 import { newsSenadoConcluiAjusteFiscal18Novembro } from './senado-conclui-ajuste-fiscal-plp-299-rejeita-3-destaques-e-texto-vai-a-camara';
 import { newsAjusteFiscalDestaquesRemarcados18Novembro } from './ajuste-fiscal-senado-remarca-destaques-para-18-11-e-camara-so-vota-depois';
 import { newsStfDinoEscala5x2Merito } from './stf-dino-escala-5x2-sera-julgada-no-merito-liminar-vale-e-inicio-segue-em-16-12';
@@ -313,4 +314,5 @@ export const newsFiles = [
   newsPrevidenciaContribuintes68Milhoes2026,
   newsSarampoBrasilLivre2026,
   newsPnadUfs3Trimestre2026,
+  newsCamaraSessaoAjusteFiscal19Novembro,
 ] as const;

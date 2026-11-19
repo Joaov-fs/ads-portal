@@ -2166,6 +2166,17 @@ def _():
     )
 
 
+@scene('camara-sessao-ajuste-fiscal-23-11-2026', '#4b5a3a', (60, 100, 760))
+def _():
+    rows = label_rows([('Projeto', 'PLP 299/2026'), ('Relator', 'Mauro Benevides Filho'), ('Sessão extraordinária', 'segunda-feira'), ('Origem', 'aprovado no Senado'), ('Depois da Câmara', 'sanção')], 46, 170, 408, 62, 19, hl=(2, '#e3ead8'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'AJUSTE FISCAL NA CÂMARA', '#2f3b23', rows))
+        + g(660, 110, 4, 1, calendar_month('NOVEMBRO', 0, 30, (23,), w=470, h=500, accent='#4b5a3a', mark_color='#e8590c'))
+        + g(1260, 120, 6, 1, tag('VOTAÇÃO', 320, '#e8590c'))
+        + g(1000, 700, -5, 1, stamp('VAI A PLENÁRIO', 460, '#e3ead8', -4))
+    )
+
+
 def utility_pole(h=620):
     out = f'<rect x="-14" y="0" width="28" height="{h}" rx="6" fill="#8a6a45"/>'
     out += '<rect x="-150" y="70" width="300" height="20" rx="6" fill="#7a5c3a"/><rect x="-110" y="190" width="220" height="16" rx="6" fill="#7a5c3a"/>'
