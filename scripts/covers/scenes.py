@@ -2164,3 +2164,34 @@ def _():
         + g(1300, 500, -4, 1, coin(70))
         + g(1000, 700, -5, 1, stamp('SENADO CONCLUI', 460, '#d6eaf0', -4))
     )
+
+
+def utility_pole(h=620):
+    out = f'<rect x="-14" y="0" width="28" height="{h}" rx="6" fill="#8a6a45"/>'
+    out += '<rect x="-150" y="70" width="300" height="20" rx="6" fill="#7a5c3a"/><rect x="-110" y="190" width="220" height="16" rx="6" fill="#7a5c3a"/>'
+    for x in (-130, -60, 60, 130):
+        out += f'<rect x="{x - 7}" y="52" width="14" height="22" rx="4" fill="#cfd6d3"/>'
+    out += '<path d="M-130 52 Q-300 120 -430 70 M-60 52 Q-200 150 -330 110 M60 52 Q200 150 330 110 M130 52 Q300 120 430 70" stroke="#1f2a30" stroke-width="5" fill="none"/>'
+    out += '<path d="M-100 198 Q-260 270 -400 230 M100 198 Q260 270 400 230" stroke="#2c7a8c" stroke-width="8" fill="none"/>'
+    return out
+
+
+@scene('postes-pl-3220-2026', '#2f6f8f', (80, 100, 860))
+def _():
+    rows = label_rows([('Cabos sem contrato', '180 dias'), ('Regularização', 'até 5 anos'), ('Contratos acima do teto', '18 meses'), ('Próxima etapa', 'sanção')], 46, 170, 408, 64, 21, hl=(0, '#d6e8f0'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'PL 3.220/2019: POSTES', '#2f6f8f', rows))
+        + g(1000, 60, 2, 1, utility_pole())
+        + g(760, 640, -3, 1, tag('180 dias', 280, '#e8590c'), 'shs')
+    )
+
+
+@scene('previdencia-contribuintes-68-7-milhoes-2026', '#7a5c1e', (80, 100, 860))
+def _():
+    rows = label_rows([('Contribuintes em set/2026', '68,7 milhões'), ('Melhor resultado desde', '2012'), ('Pesquisa', 'PNAD Contínua'), ('Divulgação', '18/11')], 46, 170, 408, 64, 20, hl=(0, '#f2e6c4'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'PREVIDÊNCIA: CONTRIBUINTES', '#7a5c1e', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.6, '#e0cc96'), (0.8, '#c4a24d'), (1.0, '#7a5c1e'))) + '</g>'))
+        + g(720, 120, 5, 1, booklet(300, 420))
+        + g(1230, 200, 7, 1, phone(250, 500, phone_screen('Meu INSS', '68,7 mi', 'contribuintes', '#7a5c1e')))
+        + g(1000, 700, 3, 1, coins_stack(3), 'sh')
+    )
