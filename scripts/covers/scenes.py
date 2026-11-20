@@ -2272,3 +2272,15 @@ def _():
         + g(1290, 110, 6, 1, tag('R$ 5,93', 280, '#2b6cb0'))
         + g(1300, 480, -4, 1, banknote(300, 150, value='US$'))
     )
+
+
+@scene('senacon-black-friday-notificacao', '#8a3b2e', (60, 100, 760))
+def _():
+    rows = label_rows([('Notificados', '5 + IDV'), ('Prazo para responder', '72 horas'), ('Notificação', '16/11'), ('Black Friday', '27/11')], 46, 170, 408, 64, 21, hl=(1, '#f6dcd5'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'NOTIFICAÇÃO', '#8a3b2e', rows))
+        + g(690, 130, 5, 1, calendar_month('NOVEMBRO', 0, 30, (27,), w=470, h=500, accent='#8a3b2e', mark_color='#f2b134'))
+        + g(1290, 150, 6, 1, tag('72 h', 280, '#2b6cb0'))
+        + g(1280, 470, -4, 1, box(380, 300))
+        + g(1000, 650, -4, 1, stamp('RESPONDER', 280, '#d63031'))
+    )

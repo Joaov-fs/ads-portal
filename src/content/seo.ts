@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'senacon-notifica-plataformas-black-friday-72-horas':
+    'Senacon notifica 5 plataformas na Black Friday',
   'desemprego-cai-em-8-ufs-pernambuco-tem-8-6-e-santa-catarina-2-2':
     'Desemprego por UF: PE 8,6% e SC 2,2%',
   'sarampo-brasil-mantem-status-livre-70-casos-em-2026-vacina-gratis-ate-59-anos':

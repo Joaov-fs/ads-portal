@@ -27,6 +27,7 @@ import { newsFocus9Novembro2026Selic1375 } from './focus-9-novembro-selic-13-75-
 import { newsFocus3Novembro2026Selic1350 } from './focus-3-novembro-selic-13-50-fim-de-2026-dolar-r-5-34-copom-decide-dia-4';
 import { newsLulaProgramasSociais4oMandato } from './lula-garante-programas-sociais-no-4o-mandato-bolsa-familia-paga-r-691-e-novembro-comeca-dia-16';
 import { newsEnem2026ProvasPortoes } from './enem-2026-provas-8-e-15-de-novembro-portoes-fecham-as-13h-e-pe-de-meia-paga-r-200';
+import { newsSenaconNotificaPlataformasBlackFriday2026 } from './senacon-notifica-plataformas-black-friday-72-horas';
 import { newsBlackFriday27Novembro2026 } from './black-friday-27-de-novembro-checklist-de-compra-segura-e-arrependimento-de-7-dias';
 import { newsFeriadosNovembro2026 } from './feriados-de-novembro-de-2026-sexta-20-e-feriadao-dia-15-cai-no-domingo-e-quem-trabalha-recebe-em-dobro';
 import { newsIgpMOutubro2026Aluguel } from './igp-m-outubro-1-47-acumulado-5-24-aluguel-de-r-2-000-vai-a-r-2-104-80';
@@ -323,4 +324,5 @@ export const newsFiles = [
   newsDolarFecha593Novembro2026,
   newsInssAgenciasFechadas20Novembro2026,
   newsDecreto5x2DivisorHoraExtra19Novembro2026,
+  newsSenaconNotificaPlataformasBlackFriday2026,
 ] as const;
