@@ -2327,3 +2327,14 @@ def _():
         + g(1290, 110, 6, 1, tag('20 a 23/11', 300, '#e8590c'))
         + g(1010, 760, -4, 1, stamp('TEMPESTADES', 440, '#f4e3c3', -4))
     )
+
+
+@scene('cannabis-medicinal-1-milhao-2026', '#2f5d50', (60, 100, 760))
+def _():
+    rows = label_rows([('Pacientes em 2026', '1,1 milhão'), ('Em 2025', '873 mil'), ('Frasco na farmácia', 'R$ 650'), ('Frasco importado', 'R$ 556'), ('Frasco de associação', 'R$ 352')], 46, 170, 408, 62, 19, hl=(0, '#d8f3dc'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'ACESSO À CANNABIS', '#24473d', rows))
+        + g(700, 150, 5, 1, supplement_bottle('#2b8a3e', 'ÓLEO'))
+        + g(1100, 180, 0, 1, coin(90))
+        + g(1020, 520, -5, 1, tag('1,1 MILHÃO', 380, '#e8590c'))
+    )

@@ -308,6 +308,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Inmet: aviso laranja de chuva em BA, TO e GO',
   'inmet-aviso-laranja-feriado-20-a-23-de-novembro-tempestades-sul-sp-ms-e-bahia':
     'Inmet: aviso laranja de tempestades de 20 a 23/11',
+  'pacientes-de-cannabis-medicinal-passam-de-1-milhao-no-brasil-frasco-custa-de-r-352-a-r-650':
+    'Pacientes de cannabis medicinal passam de 1 milhão',
   'fazenda-cbs-efetiva-8-5-cae-senado-ate-15-de-dezembro':
     'CBS efetiva de 8,5%: Fazenda e Senado até 15/12',
   'tcu-aprova-cbs-de-11-3-para-2027-o-que-muda-para-o-consumidor':
