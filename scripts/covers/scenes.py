@@ -2295,3 +2295,13 @@ def _():
         + g(1290, 150, 6, 1, tag('30 dias', 280, '#2b6cb0'))
         + g(1280, 470, -4, 1, envelope(380, 240))
     )
+
+
+@scene('orcamento-2027', '#274c77', (120, 120, 820))
+def _():
+    return (
+        g(160, 130, -4, 1, doc(470, 580, 'ORÇAMENTO 2027', '#274c77', label_rows([('Emendas de comissão', 'R$ 85,9 bi'), ('Prazo de emendas', '23/11'), ('Congresso', '17/12')], 46, 150, 378, 54, 19, hl=(0, '#fff3bf')) + lines(46, 330, 378, 7, seed=41)))
+        + g(760, 140, 8, 1, calendar_month('DEZEMBRO', 2, 31, marks=(17,), w=440, h=500, accent='#274c77', mark_color='#e63946'))
+        + g(1300, 260, 0, 1, coins_stack(5), 'sh')
+        + g(1330, 600, -8, 1, folder(300, 220, '#e9b949', 'PLOA'), 'sh')
+    )

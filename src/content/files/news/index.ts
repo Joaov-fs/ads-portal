@@ -164,6 +164,7 @@ import { newsAjusteFiscalDestaquesRemarcados18Novembro } from './ajuste-fiscal-s
 import { newsStfDinoEscala5x2Merito } from './stf-dino-escala-5x2-sera-julgada-no-merito-liminar-vale-e-inicio-segue-em-16-12';
 import { newsEnemGabaritoOficial2026 } from './enem-2026-gabarito-oficial-liberado-pelo-inep-notas-saem-em-18-de-janeiro-e-pedido-de-reaplicacao-vai-ate-20-de-novembro';
 import { newsSarampoBrasilLivre2026 } from './sarampo-brasil-mantem-status-livre-70-casos-em-2026-vacina-gratis-ate-59-anos';
+import { newsOrcamento2027EmendasComissoes } from './orcamento-2027-comissoes-propoem-r-85-9-bi-em-emendas-calendario-ate-17-12';
 
 export const newsFiles = [
   newsFiesRemanescentes2026,
@@ -327,4 +328,5 @@ export const newsFiles = [
   newsDecreto5x2DivisorHoraExtra19Novembro2026,
   newsSenaconNotificaPlataformasBlackFriday2026,
   newsComissaoAprovaPl7195ResultadoProcessoSeletivo,
+  newsOrcamento2027EmendasComissoes,
 ] as const;

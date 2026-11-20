@@ -444,6 +444,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Fux suspende ações contra a MP das bets no STF',
   'feirao-limpa-nome-2026-desconto-ate-99-e-prazo-ate-6-de-dezembro-em-7-mil-agencias':
     'Feirão Limpa Nome: até 99% de desconto até 6/12',
+  'orcamento-2027-comissoes-propoem-r-85-9-bi-em-emendas-calendario-ate-17-12':
+    'Orçamento 2027: R$ 85,9 bi em emendas e voto 17/12',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */
