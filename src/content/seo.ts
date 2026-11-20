@@ -180,6 +180,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Black Friday: 5 erros ao comprar eletrodomésticos',
   'loterias-caixa-pagam-premios-de-ate-r-2-428-80-via-pix-em-apostas-digitais':
     'Loterias Caixa: prêmio de até R$ 2.428,80 no Pix',
+  'mega-da-virada-2026-apostas-ate-31-12-sorteio-1-1-premio-acima-de-r-1-bilhao':
+    'Mega da Virada: apostas até 31/12, prêmio de R$ 1 bi',
   'cnu-3-2027-governo-estuda-prova-como-o-enem-e-1-3-mil-vagas-remanescentes':
     'CNU 3 em 2027: modelo como o Enem em estudo',
   'ipca-de-outubro-sobe-0-14-e-inflacao-em-12-meses-vai-a-4-63-conta-de-luz-cai':

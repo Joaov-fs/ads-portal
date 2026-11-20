@@ -2305,3 +2305,14 @@ def _():
         + g(1300, 260, 0, 1, coins_stack(5), 'sh')
         + g(1330, 600, -8, 1, folder(300, 220, '#e9b949', 'PLOA'), 'sh')
     )
+
+
+@scene('mega-da-virada', '#5a3d8a', (90, 110, 760))
+def _():
+    rows = label_rows([('Aposta simples', 'R$ 6'), ('Apostas até', '31/12'), ('Sorteio', '01/01/2027')], 46, 150, 378, 56, 20, hl=(0, '#ffe9a8'))
+    return (
+        g(110, 120, -4, 1, doc(480, 580, 'MEGA DA VIRADA', '#5a3d8a', rows + lines(46, 360, 378, 6, seed=52)))
+        + g(760, 150, 7, 1, calendar_month('DEZEMBRO', 2, 31, marks=(31,), w=440, h=500, accent='#5a3d8a', mark_color='#e9b949'))
+        + g(1320, 230, 0, 1, coins_stack(5), 'sh')
+        + g(1360, 560, -10, 1, tag('R$ 6', 230, '#2a9d8f'), 'sh')
+    )
