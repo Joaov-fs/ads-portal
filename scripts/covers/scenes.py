@@ -2338,3 +2338,14 @@ def _():
         + g(1100, 180, 0, 1, coin(90))
         + g(1020, 520, -5, 1, tag('1,1 MILHÃO', 380, '#e8590c'))
     )
+
+
+@scene('escolas-ferias-2027-copa-feminina', '#3a6ea5', (60, 100, 760))
+def _():
+    rows = label_rows([('Projeto', 'PL 3.481/2026'), ('Senado aprovou', '18/11'), ('Lei de junho', '24/6 a 25/7'), ('Próximo passo', 'sanção')], 46, 170, 408, 64, 20, hl=(0, '#dbe9ff'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'CALENDÁRIO ESCOLAR 2027', '#244a75', rows))
+        + g(690, 130, 4, 1, calendar_month('JUNHO', 2, 30, marks=(24, 25, 26, 27, 28, 29, 30), w=520, h=520, accent='#3a6ea5', mark_color='#e9b949'))
+        + g(1290, 110, 6, 1, tag('24/6 a 25/7', 300, '#2a9d8f'))
+        + g(1010, 760, -4, 1, stamp('VAI À SANÇÃO', 440, '#f4e3c3', -4))
+    )

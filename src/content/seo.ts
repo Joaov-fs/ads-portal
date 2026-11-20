@@ -212,6 +212,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Câmara marca sessão para votar o ajuste fiscal',
   'senado-conclui-ajuste-fiscal-plp-299-rejeita-3-destaques-e-texto-vai-a-camara':
     'Senado conclui ajuste fiscal e texto vai à Câmara',
+  'escolas-ferias-2027-copa-feminina-pl-3481-senado-aprova-e-vai-a-sancao':
+    'Senado libera escolas a definir férias de 2027',
   'postes-pl-3220-2019-senado-aprova-regras-de-uso-compartilhado-e-vai-a-sancao':
     'Postes: Senado aprova regras e texto vai à sanção',
   'previdencia-contribuintes-chegam-a-68-7-milhoes-em-setembro-maior-numero-desde-2012':
