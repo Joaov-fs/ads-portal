@@ -2284,3 +2284,14 @@ def _():
         + g(1280, 470, -4, 1, box(380, 300))
         + g(1000, 650, -4, 1, stamp('RESPONDER', 280, '#d63031'))
     )
+
+
+@scene('processo-seletivo-resultado-30-dias-pl-7195', '#2f5d50', (60, 100, 760))
+def _():
+    rows = label_rows([('Aviso ao candidato', 'até 30 dias'), ('Meio', 'eletrônico'), ('1ª infração', 'advertência'), ('Reincidência', 'multa')], 46, 170, 408, 64, 21, hl=(0, '#d8e8e2'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'PROCESSO SELETIVO', '#2f5d50', rows))
+        + g(690, 130, 5, 1, calendar_month('DEZEMBRO', 2, 31, (10,), w=470, h=500, accent='#2f5d50', mark_color='#d9643a'))
+        + g(1290, 150, 6, 1, tag('30 dias', 280, '#2b6cb0'))
+        + g(1280, 470, -4, 1, envelope(380, 240))
+    )

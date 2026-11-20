@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'comissao-aprova-pl-7195-empresas-avisar-candidatos-resultado-em-30-dias':
+    'PL obriga empresa a avisar candidato em até 30 dias',
   'senacon-notifica-plataformas-black-friday-72-horas':
     'Senacon notifica 5 plataformas na Black Friday',
   'desemprego-cai-em-8-ufs-pernambuco-tem-8-6-e-santa-catarina-2-2':
