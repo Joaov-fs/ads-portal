@@ -1,4 +1,5 @@
 import { newsMegaDaVirada2026 } from './mega-da-virada-2026-apostas-ate-31-12-sorteio-1-1-premio-acima-de-r-1-bilhao';
+import { newsInmetFeriado20a23Novembro2026 } from './inmet-aviso-laranja-feriado-20-a-23-de-novembro-tempestades-sul-sp-ms-e-bahia';
 import { newsPnadUfs3Trimestre2026 } from './desemprego-cai-em-8-ufs-pernambuco-tem-8-6-e-santa-catarina-2-2';
 import { newsPeDeMeiaParcelaExtraEnem2026 } from './pe-de-meia-parcela-extra-de-r-200-para-quem-fez-o-enem-repasse-previsto-de-22-2-a-1-3';
 import { newsDolarFecha593Novembro2026 } from './dolar-fecha-a-r-5-93-na-vespera-do-feriado-ibovespa-cai-0-78-e-b3-fecha-em-20-11';
@@ -331,4 +332,5 @@ export const newsFiles = [
   newsComissaoAprovaPl7195ResultadoProcessoSeletivo,
   newsOrcamento2027EmendasComissoes,
   newsMegaDaVirada2026,
+  newsInmetFeriado20a23Novembro2026,
 ] as const;

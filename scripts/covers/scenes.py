@@ -2316,3 +2316,14 @@ def _():
         + g(1320, 230, 0, 1, coins_stack(5), 'sh')
         + g(1360, 560, -10, 1, tag('R$ 6', 230, '#2a9d8f'), 'sh')
     )
+
+
+@scene('inmet-feriado-20-23-novembro-2026', '#35506b', (60, 100, 760))
+def _():
+    rows = label_rows([('Período', '20 a 23/11'), ('Aviso laranja (20/11)', 'Sul, SP, MS e BA'), ('Chuva em 24 h', 'acima de 70 mm'), ('Calor', 'todas as regiões')], 46, 170, 408, 64, 20, hl=(1, '#ffe3c2'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'PREVISÃO DO INMET', '#1d3347', rows))
+        + g(690, 130, 4, 1, calendar_month('NOVEMBRO', 0, 30, marks=(20, 21, 22, 23), w=520, h=520, accent='#2f6f9f', mark_color='#e8590c'))
+        + g(1290, 110, 6, 1, tag('20 a 23/11', 300, '#e8590c'))
+        + g(1010, 760, -4, 1, stamp('TEMPESTADES', 440, '#f4e3c3', -4))
+    )
