@@ -2393,3 +2393,14 @@ def _():
         + g(1290, 110, 6, 1, tag('1º/1/2028', 300, '#2a9d8f'))
         + g(1010, 760, -4, 1, stamp('ENVIO MENSAL', 440, '#f4e3c3', -4))
     )
+
+
+@scene('dosimetria-julgamento-4-dezembro-2026', '#3f4f6b', (60, 100, 760))
+def _():
+    rows = label_rows([('Lei', '15.402/2026'), ('Ações', '4 no STF'), ('Formato', 'plenário virtual'), ('Data', '4/12/2026'), ('Situação', 'suspensa')], 46, 170, 408, 62, 19, hl=(3, '#dde4f2'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'LEI DA DOSIMETRIA', '#2d3a52', rows))
+        + g(690, 130, 4, 1, calendar_month('DEZEMBRO 2026', 2, 31, marks=(4,), w=520, h=520, accent='#3f4f6b', mark_color='#e9b949'))
+        + g(1290, 110, 6, 1, tag('4/12', 260, '#2a9d8f'))
+        + g(1010, 760, -4, 1, stamp('PLENÁRIO VIRTUAL', 440, '#f4e3c3', -4))
+    )

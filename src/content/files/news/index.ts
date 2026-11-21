@@ -1,3 +1,4 @@
+import { newsStfMarca4DezembroDosimetria } from './stf-marca-para-4-12-julgamento-da-lei-da-dosimetria-4-acoes-plenario-virtual';
 import { newsReceitaOpcoesSimplesIbsCbsCancelamento } from './receita-657-mil-pedidos-simples-nacional-1-milhao-ibs-cbs-cancelamento-ate-20-de-dezembro';
 import { newsCmnResolucao5345Bancos2028 } from './cmn-resolucao-5345-bancos-enviam-dados-de-tributos-ao-bc-desde-2028';
 import { newsAnatelAutenticacaoChamadas2027 } from './anatel-consulta-publica-autenticacao-de-chamadas-outubro-de-2027';
@@ -346,4 +347,5 @@ export const newsFiles = [
   newsCmnResolucao5345Bancos2028,
   newsAnatelAutenticacaoChamadas2027,
   newsReceitaOpcoesSimplesIbsCbsCancelamento,
+  newsStfMarca4DezembroDosimetria,
 ] as const;
