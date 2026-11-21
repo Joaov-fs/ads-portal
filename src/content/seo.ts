@@ -148,6 +148,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Desemprego por UF: PE 8,6% e SC 2,2%',
   'sarampo-brasil-mantem-status-livre-70-casos-em-2026-vacina-gratis-ate-59-anos':
     'Sarampo: Brasil segue livre, com 70 casos em 2026',
+  'covid-19-saude-envia-doses-extras-sp-500-mil-rj-350-mil-e-mg-290-mil':
+    'Covid-19: doses extras da vacina para 10 estados',
   'prisma-fiscal-novembro-deficit-r-53-4-bi-2026-divida-87-3-pib-2027':
     'Prisma Fiscal: déficit de R$ 53,4 bi em 2026',
   'senado-aprova-marco-legal-implantes-cirurgicos-pl-6683-vai-a-sancao':

@@ -2404,3 +2404,14 @@ def _():
         + g(1290, 110, 6, 1, tag('4/12', 260, '#2a9d8f'))
         + g(1010, 760, -4, 1, stamp('PLENÁRIO VIRTUAL', 440, '#f4e3c3', -4))
     )
+
+
+@scene('covid-doses-adicionais-estados-2026', '#3f5d7a', (60, 100, 760))
+def _():
+    rows = label_rows([('São Paulo', '+ de 500 mil'), ('Rio de Janeiro', '350 mil'), ('Minas Gerais', '290 mil'), ('Rio Grande do Sul', '140 mil'), ('Paraná', 'cerca de 50 mil')], 46, 170, 408, 62, 19, hl=(0, '#dce6f1'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'DOSES ADICIONAIS', '#2c4660', rows))
+        + g(690, 130, 4, 1, phone(250, 500, phone_screen('Vacina grátis', 'SUS', 'Covid-19', '#3f5d7a')))
+        + g(1130, 110, 6, 1, tag('7,6 mi aplicadas', 340, '#2a9d8f'))
+        + g(1010, 760, -4, 1, stamp('ENTREGA GRADUAL', 440, '#f4e3c3', -4))
+    )
