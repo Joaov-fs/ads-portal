@@ -2382,3 +2382,14 @@ def _():
         + g(1290, 110, 6, 1, tag('até 20/12', 300, '#e8590c'))
         + g(1010, 760, -4, 1, stamp('CANCELAMENTO', 440, '#f4e3c3', -4))
     )
+
+
+@scene('cmn-estatistica-fiscal-bancos-2028', '#3d5a80', (60, 100, 760))
+def _():
+    rows = label_rows([('Norma', 'Res. CMN 5.345'), ('Aprovada em', '19/11/2026'), ('Envio mensal', 'desde 1/1/2028'), ('Quem envia', 'bancos e afins'), ('Recebe', 'Banco Central')], 46, 170, 408, 62, 19, hl=(2, '#dde7f4'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'DADOS DE TRIBUTOS', '#2b4260', rows))
+        + g(690, 130, 4, 1, calendar_month('JANEIRO 2028', 6, 31, marks=(1,), w=520, h=520, accent='#3d5a80', mark_color='#e9b949'))
+        + g(1290, 110, 6, 1, tag('1º/1/2028', 300, '#2a9d8f'))
+        + g(1010, 760, -4, 1, stamp('ENVIO MENSAL', 440, '#f4e3c3', -4))
+    )

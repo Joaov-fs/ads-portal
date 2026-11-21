@@ -1,4 +1,5 @@
 import { newsReceitaOpcoesSimplesIbsCbsCancelamento } from './receita-657-mil-pedidos-simples-nacional-1-milhao-ibs-cbs-cancelamento-ate-20-de-dezembro';
+import { newsCmnResolucao5345Bancos2028 } from './cmn-resolucao-5345-bancos-enviam-dados-de-tributos-ao-bc-desde-2028';
 import { newsAnatelAutenticacaoChamadas2027 } from './anatel-consulta-publica-autenticacao-de-chamadas-outubro-de-2027';
 import { newsMegaDaVirada2026 } from './mega-da-virada-2026-apostas-ate-31-12-sorteio-1-1-premio-acima-de-r-1-bilhao';
 import { newsCannabisMedicinal1Milhao2026 } from './pacientes-de-cannabis-medicinal-passam-de-1-milhao-no-brasil-frasco-custa-de-r-352-a-r-650';
@@ -342,6 +343,7 @@ export const newsFiles = [
   newsCannabisMedicinal1Milhao2026,
   newsEscolasFerias2027CopaFeminina,
   newsInssDezembro2026Calendario,
+  newsCmnResolucao5345Bancos2028,
   newsAnatelAutenticacaoChamadas2027,
   newsReceitaOpcoesSimplesIbsCbsCancelamento,
 ] as const;

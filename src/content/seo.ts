@@ -342,6 +342,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Dólar a R$ 5,486 e Ibovespa em 6ª queda',
   'brasil-tem-o-maior-juro-real-do-mundo-9-05-contra-media-de-1-27-e-selic-esta-em-13-75':
     'Brasil tem o maior juro real: 9,05% ao ano',
+  'cmn-resolucao-5345-bancos-enviam-dados-de-tributos-ao-bc-desde-2028':
+    'CMN: bancos enviam dados de tributos ao BC em 2028',
   'anatel-consulta-publica-autenticacao-de-chamadas-outubro-de-2027':
     'Anatel quer autenticar chamadas até out/2027',
   'anatel-manda-bloquear-sms-de-codigos-nao-registrados-prazo-de-ate-90-dias':
