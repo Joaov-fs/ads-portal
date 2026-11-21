@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'inss-dezembro-2026-calendario-22-de-dezembro-a-8-de-janeiro':
+    'INSS dezembro 2026: pagamentos de 22/12 a 8/1',
   'comissao-aprova-pl-7195-empresas-avisar-candidatos-resultado-em-30-dias':
     'PL obriga empresa a avisar candidato em até 30 dias',
   'senacon-notifica-plataformas-black-friday-72-horas':

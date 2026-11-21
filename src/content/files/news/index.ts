@@ -169,6 +169,7 @@ import { newsEnemGabaritoOficial2026 } from './enem-2026-gabarito-oficial-libera
 import { newsSarampoBrasilLivre2026 } from './sarampo-brasil-mantem-status-livre-70-casos-em-2026-vacina-gratis-ate-59-anos';
 import { newsOrcamento2027EmendasComissoes } from './orcamento-2027-comissoes-propoem-r-85-9-bi-em-emendas-calendario-ate-17-12';
 
+import { newsInssDezembro2026Calendario } from './inss-dezembro-2026-calendario-22-de-dezembro-a-8-de-janeiro';
 import { newsEscolasFerias2027CopaFeminina } from './escolas-ferias-2027-copa-feminina-pl-3481-senado-aprova-e-vai-a-sancao';
 
 export const newsFiles = [
@@ -338,4 +339,5 @@ export const newsFiles = [
   newsInmetFeriado20a23Novembro2026,
   newsCannabisMedicinal1Milhao2026,
   newsEscolasFerias2027CopaFeminina,
+  newsInssDezembro2026Calendario,
 ] as const;

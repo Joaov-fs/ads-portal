@@ -2349,3 +2349,14 @@ def _():
         + g(1290, 110, 6, 1, tag('24/6 a 25/7', 300, '#2a9d8f'))
         + g(1010, 760, -4, 1, stamp('VAI À SANÇÃO', 440, '#f4e3c3', -4))
     )
+
+
+@scene('inss-folha-dezembro-2026', '#7a4b8f', (60, 100, 760))
+def _():
+    rows = label_rows([('Folha de dezembro', 'INSS 2026'), ('Primeira data', '22/12'), ('Última data', '8/1'), ('Até 1 mínimo', 'finais 1 a 0'), ('Acima do mínimo', 'a partir de 4/1')], 46, 170, 408, 62, 19, hl=(1, '#efe1f5'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'PAGAMENTO INSS', '#5b3470', rows))
+        + g(690, 130, 4, 1, calendar_month('DEZEMBRO 2026', 2, 31, marks=(22, 23, 28, 29, 30), w=520, h=520, accent='#7a4b8f', mark_color='#e9b949'))
+        + g(1290, 110, 6, 1, tag('22/12 a 8/1', 300, '#2a9d8f'))
+        + g(1010, 760, -4, 1, stamp('CALENDÁRIO', 440, '#f4e3c3', -4))
+    )
