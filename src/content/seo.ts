@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'receita-657-mil-pedidos-simples-nacional-1-milhao-ibs-cbs-cancelamento-ate-20-de-dezembro':
+    'Simples 2027: 657 mil pedidos, cancelar até 20/12',
   'inss-dezembro-2026-calendario-22-de-dezembro-a-8-de-janeiro':
     'INSS dezembro 2026: pagamentos de 22/12 a 8/1',
   'comissao-aprova-pl-7195-empresas-avisar-candidatos-resultado-em-30-dias':

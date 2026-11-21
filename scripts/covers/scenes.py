@@ -2371,3 +2371,14 @@ def _():
         + g(1290, 110, 6, 1, tag('22/12 a 8/1', 300, '#2a9d8f'))
         + g(1010, 760, -4, 1, stamp('CALENDÁRIO', 440, '#f4e3c3', -4))
     )
+
+
+@scene('receita-opcoes-simples-ibs-cbs-2027', '#1f6f78', (60, 100, 760))
+def _():
+    rows = label_rows([('Pedidos Simples', '657.355'), ('Deferidos', '376.551'), ('Indeferidos', '280.804'), ('Regime regular', '1.090.080'), ('Cancelar até', '20/12')], 46, 170, 408, 62, 19, hl=(4, '#d3f0f2'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'OPÇÕES PARA 2027', '#14525a', rows))
+        + g(690, 130, 4, 1, calendar_month('DEZEMBRO 2026', 2, 31, marks=(20,), w=520, h=520, accent='#1f6f78', mark_color='#e9b949'))
+        + g(1290, 110, 6, 1, tag('até 20/12', 300, '#e8590c'))
+        + g(1010, 760, -4, 1, stamp('CANCELAMENTO', 440, '#f4e3c3', -4))
+    )
