@@ -1348,6 +1348,17 @@ def _():
     )
 
 
+@scene('anatel-autenticacao-chamadas-2026', '#264653', (80, 100, 620))
+def _():
+    rows = label_rows([('Autenticação das chamadas', 'out/2027'), ('Meta anterior', 'nov/2028'), ('Contribuições', '10 dias'), ('Chamadas curtas', '85%')], 46, 170, 408, 64, 21, hl=(0, '#d9e8ec'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'CONSULTA PÚBLICA', '#264653', rows))
+        + g(700, 110, 5, 1, tag('Outubro de 2027', 330, '#e8590c'))
+        + g(1250, 100, 6, 1, phone(250, 500, phone_screen('LIGAÇÃO', 'Não autenticada', 'chamada bloqueada', '#264653', check=False)))
+        + g(880, 470, -4, 1, stamp('BLOQUEADA', 320, '#d63031', -7))
+    )
+
+
 @scene('gasolina-prazo-9-novembro-2026', '#6b3f1d', (80, 100, 620))
 def _():
     rows = label_rows([('Corte na gasolina A', 'R$ 0,89/L'), ('PIS/Pasep e Cofins', 'R$ 0,79/L'), ('Cide', 'R$ 0,10/L'), ('Fim da medida', '9/11')], 46, 170, 408, 64, 21, hl=(3, '#f1e0cc'))

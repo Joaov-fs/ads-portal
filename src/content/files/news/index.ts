@@ -1,3 +1,4 @@
+import { newsAnatelAutenticacaoChamadas2027 } from './anatel-consulta-publica-autenticacao-de-chamadas-outubro-de-2027';
 import { newsMegaDaVirada2026 } from './mega-da-virada-2026-apostas-ate-31-12-sorteio-1-1-premio-acima-de-r-1-bilhao';
 import { newsCannabisMedicinal1Milhao2026 } from './pacientes-de-cannabis-medicinal-passam-de-1-milhao-no-brasil-frasco-custa-de-r-352-a-r-650';
 import { newsInmetFeriado20a23Novembro2026 } from './inmet-aviso-laranja-feriado-20-a-23-de-novembro-tempestades-sul-sp-ms-e-bahia';
@@ -340,4 +341,5 @@ export const newsFiles = [
   newsCannabisMedicinal1Milhao2026,
   newsEscolasFerias2027CopaFeminina,
   newsInssDezembro2026Calendario,
+  newsAnatelAutenticacaoChamadas2027,
 ] as const;
