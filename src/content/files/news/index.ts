@@ -1,3 +1,4 @@
+import { newsTupanciretaCalamidadePublicaTemporal2026 } from './tupancireta-calamidade-publica-temporal-25-mil-afetados-19-8-mil-desalojados-rs';
 import { newsStfMarca4DezembroDosimetria } from './stf-marca-para-4-12-julgamento-da-lei-da-dosimetria-4-acoes-plenario-virtual';
 import { newsReceitaOpcoesSimplesIbsCbsCancelamento } from './receita-657-mil-pedidos-simples-nacional-1-milhao-ibs-cbs-cancelamento-ate-20-de-dezembro';
 import { newsCmnResolucao5345Bancos2028 } from './cmn-resolucao-5345-bancos-enviam-dados-de-tributos-ao-bc-desde-2028';
@@ -350,4 +351,5 @@ export const newsFiles = [
   newsAnatelAutenticacaoChamadas2027,
   newsReceitaOpcoesSimplesIbsCbsCancelamento,
   newsStfMarca4DezembroDosimetria,
+  newsTupanciretaCalamidadePublicaTemporal2026,
 ] as const;

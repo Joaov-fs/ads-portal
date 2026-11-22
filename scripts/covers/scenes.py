@@ -2415,3 +2415,14 @@ def _():
         + g(1130, 110, 6, 1, tag('7,6 mi aplicadas', 340, '#2a9d8f'))
         + g(1010, 760, -4, 1, stamp('ENTREGA GRADUAL', 440, '#f4e3c3', -4))
     )
+
+
+@scene('tupancireta-temporal-calamidade-2026', '#4a5d6e', (60, 100, 760))
+def _():
+    rows = label_rows([('Pessoas afetadas', '25.123'), ('Desalojadas', '19.854'), ('Feridos', '265'), ('Mortes confirmadas', '5')], 46, 170, 408, 64, 20, hl=(0, '#ffe3c2'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'BALANÇO DA DEFESA CIVIL', '#2f3f4e', rows))
+        + g(1000, 470, 3, 1, house(1.3, '#f1dcc0', '#b5543a'))
+        + g(1180, 110, 6, 1, tag('Calamidade', 300, '#e8590c'))
+        + g(700, 760, -4, 1, stamp('TUPANCIRETÃ (RS)', 460, '#f4e3c3', -4))
+    )

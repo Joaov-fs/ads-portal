@@ -316,6 +316,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Gasolina cai a R$ 6,49 e etanol fica em R$ 4,11',
   'chuva-intensa-inmet-17-de-novembro-avisos-laranja-ba-to-go-e-amarelo-em-mg-es-e-sul':
     'Inmet: aviso laranja de chuva em BA, TO e GO',
+  'tupancireta-calamidade-publica-temporal-25-mil-afetados-19-8-mil-desalojados-rs':
+    'Calamidade em Tupanciretã (RS): 25 mil afetados',
   'inmet-aviso-laranja-feriado-20-a-23-de-novembro-tempestades-sul-sp-ms-e-bahia':
     'Inmet: aviso laranja de tempestades de 20 a 23/11',
   'pacientes-de-cannabis-medicinal-passam-de-1-milhao-no-brasil-frasco-custa-de-r-352-a-r-650':
