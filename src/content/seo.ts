@@ -374,6 +374,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Restituição IR: lote residual paga em 30/10',
   '13o-salario-2026-primeira-parcela-ate-30-de-novembro-e-segunda-ate-18-de-dezembro':
     '13º salário 2026: 1ª parcela 30/11, 2ª 18/12',
+  'ipca-15-de-novembro-sai-em-26-11-coleta-de-15-10-a-16-11-e-inflacao-em-12-meses-esta-em-4-63':
+    'IPCA-15 de novembro sai em 26/11: o que esperar',
   'ipca-15-de-outubro-sobe-0-32-e-inflacao-em-12-meses-vai-a-4-62-tomate-puxa-a-alta':
     'IPCA-15 de outubro: 0,32% e 4,62% em 12 meses',
   'gas-do-povo-prorrogado-ate-19-11-2031-mp-1-400-e-3-1-milhoes-de-vales-em-10-11':

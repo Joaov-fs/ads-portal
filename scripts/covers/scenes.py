@@ -2426,3 +2426,14 @@ def _():
         + g(1180, 110, 6, 1, tag('Calamidade', 300, '#e8590c'))
         + g(700, 760, -4, 1, stamp('TUPANCIRETÃ (RS)', 460, '#f4e3c3', -4))
     )
+
+
+@scene('ipca15-novembro-divulgacao-2026', '#2f6b5e', (60, 100, 760))
+def _():
+    rows = label_rows([('Divulgação', '26/11/2026'), ('Coleta', '15/10 a 16/11'), ('Mês anterior', '0,32%'), ('12 meses (out.)', '4,62%'), ('Teto da meta', '4,5%')], 46, 170, 408, 62, 19, hl=(0, '#d9efe8'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'IPCA-15 NOVEMBRO', '#1f4d43', rows))
+        + g(690, 130, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(26,), w=520, h=520, accent='#2f6b5e', mark_color='#e9b949'))
+        + g(1290, 110, 6, 1, tag('26/11', 260, '#e8590c'))
+        + g(1010, 760, -4, 1, stamp('PRÉVIA DA INFLAÇÃO', 440, '#f4e3c3', -4))
+    )
