@@ -2437,3 +2437,14 @@ def _():
         + g(1290, 110, 6, 1, tag('26/11', 260, '#e8590c'))
         + g(1010, 760, -4, 1, stamp('PRÉVIA DA INFLAÇÃO', 440, '#f4e3c3', -4))
     )
+
+
+@scene('reparacao-crime-sexual-20-anos', '#5b4a8a', (80, 100, 860))
+def _():
+    rows = label_rows([('Prazo atual', '3 anos'), ('Prazo aprovado', '20 anos'), ('Contagem', 'a partir dos 18'), ('Projeto', 'PL 4.186/2021')], 46, 170, 408, 64, 21, hl=(1, '#e6e0f5'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'REPARAÇÃO CIVIL', '#5b4a8a', rows))
+        + g(700, 90, 5, 1, calendar_month('PRAZO', 0, 30, marks=(18,), w=460, h=500, accent='#5b4a8a', mark_color='#e8590c'))
+        + g(1320, 210, 6, 1, clock(110, 10, 0))
+        + g(1190, 560, -4, 1, tag('20 ANOS', 300, '#e8590c'))
+    )

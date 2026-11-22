@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'senado-aprova-pl-4186-prazo-de-20-anos-reparacao-crime-sexual-infancia':
+    'PL 4.186: 20 anos para reparação por crime sexual',
   'stf-marca-para-4-12-julgamento-da-lei-da-dosimetria-4-acoes-plenario-virtual':
     'STF julga Lei da Dosimetria em 4/12 no virtual',
   'receita-657-mil-pedidos-simples-nacional-1-milhao-ibs-cbs-cancelamento-ate-20-de-dezembro':
