@@ -2448,3 +2448,15 @@ def _():
         + g(1320, 210, 6, 1, clock(110, 10, 0))
         + g(1190, 560, -4, 1, tag('20 ANOS', 300, '#e8590c'))
     )
+
+
+@scene('focus-23-novembro-2026', '#1f5f5b', (50, 100, 740))
+def _():
+    rows = label_rows([('IPCA 2026', '5,15%'), ('IPCA 2027', '5,12%'), ('Selic fim de 2027', '13,00%'), ('Dólar fim de 2026', 'R$ 5,55')], 46, 170, 408, 64, 21, hl=(3, '#d7ecea'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'BOLETIM FOCUS 23/11', '#174744', rows))
+        + g(690, 120, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(23,), w=520, h=520, accent='#174744', mark_color='#e8590c'))
+        + g(1270, 110, 6, 1, tag('R$ 5,55', 260, '#e8590c'))
+        + g(1300, 480, 5, 1, coins_stack(5), 'sh')
+        + g(1180, 700, -4, 1, pen(300))
+    )

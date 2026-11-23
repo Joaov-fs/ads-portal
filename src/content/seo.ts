@@ -338,6 +338,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Imposto Seletivo: MP sai e diesel mantém R$ 2,12',
   'dieese-13o-r-399-bilhoes-99-7-milhoes-de-pessoas-media-r-3-720':
     '13º pode injetar R$ 399 bi, diz Dieese',
+  'focus-23-novembro-ipca-2027-sobe-a-5-12-selic-de-2027-vai-a-13-e-dolar-a-r-5-55':
+    'Focus: dólar a R$ 5,55 e Selic de 2027 a 13%',
   'focus-16-novembro-ipca-2026-cai-a-5-11-ipca-2027-sobe-a-5-00-e-dolar-vai-a-r-5-40':
     'Focus: IPCA de 2027 sobe a 5,00%, dólar a R$ 5,40',
   'bb-lucro-cai-66-5-3t26-inadimplencia-agro-projecao-2026-r-9-a-11-bi':
