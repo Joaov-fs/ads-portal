@@ -480,6 +480,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Orçamento 2027: R$ 85,9 bi em emendas e voto 17/12',
   'pe-de-meia-parcela-de-r-200-comeca-em-23-11-frequencia-de-setembro-vai-ate-30-11':
     'Pé-de-Meia: parcela de R$ 200 começa em 23/11',
+  'receita-lote-residual-irpf-2026-223-mil-restituicoes-r-666-milhoes-credito-em-30-11':
+    'Lote residual do IR: crédito em 30/11',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */

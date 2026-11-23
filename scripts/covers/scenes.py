@@ -2495,3 +2495,15 @@ def _():
         + g(1300, 480, 5, 1, coins_stack(4), 'sh')
         + g(1180, 700, -4, 1, pen(300))
     )
+
+
+@scene('restituicao-ir-lote-residual-30-11', '#2f6f6a', (50, 100, 740))
+def _():
+    rows = label_rows([('Restituições', '223.793'), ('Valor total', 'R$ 666,3 mi'), ('Consulta', 'desde 23/11'), ('Crédito', '30/11')], 46, 170, 408, 64, 21, hl=(3, '#d4ebe8'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'LOTE RESIDUAL IRPF 2026', '#1f4f4b', rows))
+        + g(690, 120, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(30,), w=520, h=520, accent='#1f4f4b', mark_color='#e8590c'))
+        + g(1270, 110, 6, 1, tag('30/11', 260, '#e8590c'))
+        + g(1300, 480, 5, 1, coins_stack(5), 'sh')
+        + g(1180, 700, -4, 1, pen(300))
+    )
