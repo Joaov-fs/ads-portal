@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'senado-vota-estatuto-do-aprendiz-24-11-pl-6461-2019':
+    'Estatuto do Aprendiz vai a voto no Senado em 24/11',
   'senado-aprova-pl-4186-prazo-de-20-anos-reparacao-crime-sexual-infancia':
     'PL 4.186: 20 anos para reparação por crime sexual',
   'stf-marca-para-4-12-julgamento-da-lei-da-dosimetria-4-acoes-plenario-virtual':

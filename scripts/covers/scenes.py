@@ -2460,3 +2460,14 @@ def _():
         + g(1300, 480, 5, 1, coins_stack(5), 'sh')
         + g(1180, 700, -4, 1, pen(300))
     )
+
+
+@scene('estatuto-do-aprendiz-senado-24-11', '#2b5d8a', (60, 100, 760))
+def _():
+    rows = label_rows([('Projeto', 'PL 6.461/2019'), ('Idade', '14 a 24 anos'), ('Cota das empresas', '5% a 15%'), ('Votação no Senado', '24/11, 14h')], 46, 170, 408, 64, 20, hl=(3, '#d6e6f5'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'ESTATUTO DO APRENDIZ', '#1d4468', rows))
+        + g(690, 120, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(24,), w=520, h=520, accent='#1d4468', mark_color='#e8590c'))
+        + g(1290, 110, 6, 1, tag('24/11', 260, '#e8590c'))
+        + g(1230, 640, -4, 1, pen(300))
+    )
