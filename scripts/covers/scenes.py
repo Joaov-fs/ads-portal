@@ -2471,3 +2471,15 @@ def _():
         + g(1290, 110, 6, 1, tag('24/11', 260, '#e8590c'))
         + g(1230, 640, -4, 1, pen(300))
     )
+
+
+@scene('boletim-macrofiscal-novembro-2026', '#7a4b2a', (50, 100, 740))
+def _():
+    rows = label_rows([('PIB 2027', '1,8%'), ('IPCA 2026', '5,3%'), ('IPCA 2027', '4,5%'), ('Brent 2027', 'US$ 95,20')], 46, 170, 408, 64, 21, hl=(0, '#f3e1d0'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'BOLETIM MACROFISCAL', '#5a3519', rows))
+        + g(690, 120, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(23,), w=520, h=520, accent='#5a3519', mark_color='#e8590c'))
+        + g(1270, 110, 6, 1, tag('PIB 1,8%', 280, '#e8590c'))
+        + g(1300, 480, 5, 1, coins_stack(5), 'sh')
+        + g(1180, 700, -4, 1, pen(300))
+    )

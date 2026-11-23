@@ -154,6 +154,7 @@ import { newsDieese13o399Bilhoes2026 } from './dieese-13o-r-399-bilhoes-99-7-mil
 import { newsEnemAbstencao36 } from './enem-2026-abstencao-de-36-no-2o-dia-gabarito-sai-em-18-de-novembro';
 import { newsBbLucro3T2026 } from './bb-lucro-cai-66-5-3t26-inadimplencia-agro-projecao-2026-r-9-a-11-bi';
 import { newsIbcBr3T2026 } from './ibc-br-atividade-economica-cai-0-9-no-3o-trimestre-e-setembro-recua-0-2';
+import { newsBoletimMacrofiscalNovembro2026 } from './boletim-macrofiscal-fazenda-corta-pib-de-2027-a-1-8-e-eleva-ipca-a-4-5';
 import { newsFocus23Novembro2026 } from './focus-23-novembro-ipca-2027-sobe-a-5-12-selic-de-2027-vai-a-13-e-dolar-a-r-5-55';
 import { newsFocus16Novembro2026 } from './focus-16-novembro-ipca-2026-cai-a-5-11-ipca-2027-sobe-a-5-00-e-dolar-vai-a-r-5-40';
 import { newsMp1379BrasilSoberanoSancao } from './senado-aprova-mp-1379-mais-r-13-5-bi-credito-exportadores-brasil-soberano-vai-a-sancao';
@@ -360,4 +361,5 @@ export const newsFiles = [
   newsSenadoPl4186Prazo20AnosReparacao,
   newsFocus23Novembro2026,
   newsSenadoEstatutoAprendiz24Novembro2026,
+  newsBoletimMacrofiscalNovembro2026,
 ] as const;
