@@ -478,6 +478,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Feirão Limpa Nome: até 99% de desconto até 6/12',
   'orcamento-2027-comissoes-propoem-r-85-9-bi-em-emendas-calendario-ate-17-12':
     'Orçamento 2027: R$ 85,9 bi em emendas e voto 17/12',
+  'pe-de-meia-parcela-de-r-200-comeca-em-23-11-frequencia-de-setembro-vai-ate-30-11':
+    'Pé-de-Meia: parcela de R$ 200 começa em 23/11',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */

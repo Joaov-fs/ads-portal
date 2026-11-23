@@ -182,6 +182,7 @@ import { newsInssDezembro2026Calendario } from './inss-dezembro-2026-calendario-
 import { newsEscolasFerias2027CopaFeminina } from './escolas-ferias-2027-copa-feminina-pl-3481-senado-aprova-e-vai-a-sancao';
 import { newsSenadoEstatutoAprendiz24Novembro2026 } from './senado-vota-estatuto-do-aprendiz-24-11-pl-6461-2019';
 import { newsSenadoPl4186Prazo20AnosReparacao } from './senado-aprova-pl-4186-prazo-de-20-anos-reparacao-crime-sexual-infancia';
+import { newsPeDeMeiaParcelaFrequenciaSetembro23Novembro2026 } from './pe-de-meia-parcela-de-r-200-comeca-em-23-11-frequencia-de-setembro-vai-ate-30-11';
 
 export const newsFiles = [
   newsFiesRemanescentes2026,
@@ -362,4 +363,5 @@ export const newsFiles = [
   newsFocus23Novembro2026,
   newsSenadoEstatutoAprendiz24Novembro2026,
   newsBoletimMacrofiscalNovembro2026,
+  newsPeDeMeiaParcelaFrequenciaSetembro23Novembro2026,
 ] as const;

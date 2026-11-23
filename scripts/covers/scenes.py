@@ -2483,3 +2483,15 @@ def _():
         + g(1300, 480, 5, 1, coins_stack(5), 'sh')
         + g(1180, 700, -4, 1, pen(300))
     )
+
+
+@scene('pe-de-meia-parcela-23-11', '#5a4fa0', (50, 100, 740))
+def _():
+    rows = label_rows([('Parcela', 'R$ 200'), ('Frequência de', 'setembro'), ('Mínimo de presença', '80%'), ('Depósitos', '23 a 30/11')], 46, 170, 408, 64, 21, hl=(0, '#e4e0f5'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'PÉ-DE-MEIA', '#3e3580', rows))
+        + g(690, 120, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(23, 30), w=520, h=520, accent='#3e3580', mark_color='#e8590c'))
+        + g(1270, 110, 6, 1, tag('R$ 200', 260, '#e8590c'))
+        + g(1300, 480, 5, 1, coins_stack(4), 'sh')
+        + g(1180, 700, -4, 1, pen(300))
+    )
