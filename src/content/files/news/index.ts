@@ -1,3 +1,4 @@
+import { newsArrecadacaoFederalOutubro2026 } from './arrecadacao-federal-recorde-de-r-294-bilhoes-em-outubro-alta-real-de-7-28';
 import { newsGasDoPovoUmAno24Novembro } from './gas-do-povo-completa-1-ano-15-milhoes-de-familias-e-r-5-5-bilhoes-em-24-11';
 import { newsTupanciretaCalamidadePublicaTemporal2026 } from './tupancireta-calamidade-publica-temporal-25-mil-afetados-19-8-mil-desalojados-rs';
 import { newsStfMarca4DezembroDosimetria } from './stf-marca-para-4-12-julgamento-da-lei-da-dosimetria-4-acoes-plenario-virtual';
@@ -380,4 +381,5 @@ export const newsFiles = [
   newsCgsn196SimplesIbsCbs,
   newsSarampoSpTransmissaoEncerrada,
   newsGasDoPovoUmAno24Novembro,
+  newsArrecadacaoFederalOutubro2026,
 ] as const;

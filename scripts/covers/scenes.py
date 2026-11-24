@@ -2586,3 +2586,15 @@ def _():
         + g(1300, 90, -4, 1, tag('1 ano', 230, '#e8590c'))
         + g(1060, 730, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('arrecadacao-outubro-2026', '#3b5d3f', (50, 100, 740))
+def _():
+    rows = label_rows([('Outubro', 'R$ 293,975 bi'), ('Alta real', '7,28%'), ('Jan a out', 'R$ 2,645 tri'), ('Série desde', '1995')], 46, 170, 408, 64, 21, hl=(0, '#dcebdc'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'ARRECADAÇÃO FEDERAL', '#2b4a2e', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.5, '#a9c8ab'), (0.7, '#6f9d73'), (1.0, '#2b4a2e'))) + '</g>'))
+        + g(690, 120, 4, 1, calendar_month('OUTUBRO 2026', 4, 31, marks=(), w=520, h=520, accent='#2b4a2e', mark_color='#e8590c'))
+        + g(1270, 110, 6, 1, tag('+7,28%', 280, '#e8590c'))
+        + g(1300, 480, 5, 1, coins_stack(5), 'sh')
+        + g(1180, 700, -4, 1, pen(300))
+    )
