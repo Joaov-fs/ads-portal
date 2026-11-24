@@ -2552,3 +2552,25 @@ def _():
         + g(1270, 110, 6, 1, tag('2 FOLGAS', 280, '#e8590c'))
         + g(1230, 640, -4, 1, pen(300))
     )
+
+
+@scene('cgsn-196-simples-ibs-cbs-24-11', '#5a4a8a', (50, 100, 740))
+def _():
+    rows = label_rows([('Resolução', 'CGSN 196'), ('Novos tributos', 'IBS e CBS'), ('Vigência', '1/1/2027'), ('Defis 2026', '31/3/2027')], 46, 170, 408, 64, 21, hl=(2, '#e6e0f5'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'SIMPLES NACIONAL', '#3f326b', rows))
+        + g(690, 120, 4, 1, calendar_month('JANEIRO 2027', 4, 31, marks=(1,), w=520, h=520, accent='#3f326b', mark_color='#e8590c'))
+        + g(1270, 110, 6, 1, tag('IBS + CBS', 280, '#e8590c'))
+        + g(1230, 640, -4, 1, pen(300))
+    )
+
+
+@scene('sarampo-sp-transmissao-encerrada-24-11', '#2b6f77', (50, 100, 740))
+def _():
+    rows = label_rows([('Casos em 2026', '70'), ('Em 2019', '21.741'), ('Dose zero', '6 a 11 meses'), ('Vacina', 'gratuita no SUS')], 46, 170, 408, 64, 21, hl=(0, '#d8eef0'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'SARAMPO', '#1d4f56', rows))
+        + g(690, 120, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(23,), w=520, h=520, accent='#1d4f56', mark_color='#e8590c'))
+        + g(1270, 110, 6, 1, tag('SEM NOVOS CASOS', 330, '#e8590c'))
+        + g(1230, 640, -4, 1, pen(300))
+    )
