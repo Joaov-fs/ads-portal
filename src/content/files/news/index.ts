@@ -1,3 +1,4 @@
+import { newsGasDoPovoUmAno24Novembro } from './gas-do-povo-completa-1-ano-15-milhoes-de-familias-e-r-5-5-bilhoes-em-24-11';
 import { newsTupanciretaCalamidadePublicaTemporal2026 } from './tupancireta-calamidade-publica-temporal-25-mil-afetados-19-8-mil-desalojados-rs';
 import { newsStfMarca4DezembroDosimetria } from './stf-marca-para-4-12-julgamento-da-lei-da-dosimetria-4-acoes-plenario-virtual';
 import { newsReceitaOpcoesSimplesIbsCbsCancelamento } from './receita-657-mil-pedidos-simples-nacional-1-milhao-ibs-cbs-cancelamento-ate-20-de-dezembro';
@@ -378,4 +379,5 @@ export const newsFiles = [
   newsPortariaMte2041Escala5x2,
   newsCgsn196SimplesIbsCbs,
   newsSarampoSpTransmissaoEncerrada,
+  newsGasDoPovoUmAno24Novembro,
 ] as const;

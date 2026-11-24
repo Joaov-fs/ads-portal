@@ -2574,3 +2574,15 @@ def _():
         + g(1270, 110, 6, 1, tag('SEM NOVOS CASOS', 330, '#e8590c'))
         + g(1230, 640, -4, 1, pen(300))
     )
+
+
+@scene('gas-do-povo-um-ano-24-11', '#b5532a', (80, 100, 600))
+def _():
+    rows = label_rows([('Famílias atendidas', '15 milhões'), ('Pessoas', '45 milhões'), ('Investimento', 'R$ 5,5 bi'), ('Revendas', '27.104')], 46, 170, 408, 64, 21, hl=(0, '#f8e1d3'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'GÁS DO POVO: 1 ANO', '#8a3b12', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.34, '#e8b08c'), (0.67, '#d9803f'), (1.0, '#8a3b12'))) + '</g>'))
+        + g(1280, 330, 6, 1, botijao())
+        + g(740, 140, 5, 1, tag('desde nov/2025', 360, '#2a7f62'))
+        + g(1300, 90, -4, 1, tag('1 ano', 230, '#e8590c'))
+        + g(1060, 730, 3, 1, coins_stack(3), 'sh')
+    )
