@@ -2519,3 +2519,25 @@ def _():
         + g(1330, 500, -4, 1, coin(70))
         + g(1010, 700, -5, 1, stamp('DÓLAR TOCOU R$ 6', 560, '#f4e3c3', -4))
     )
+
+
+@scene('camara-aprova-ajuste-fiscal-23-11', '#3d4f7a', (50, 100, 740))
+def _():
+    rows = label_rows([('Projeto', 'PLP 299/2026'), ('Votos a favor', '353'), ('Votos contra', '128'), ('Próximo passo', 'sanção')], 46, 170, 408, 64, 21, hl=(1, '#dce3f2'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'AJUSTE FISCAL', '#2a3a5f', rows))
+        + g(690, 120, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(23,), w=520, h=520, accent='#2a3a5f', mark_color='#e8590c'))
+        + g(1270, 110, 6, 1, tag('353 a 128', 290, '#e8590c'))
+        + g(1230, 640, -4, 1, pen(300))
+    )
+
+
+@scene('anvisa-xampu-barra-infantil-re-4511', '#8a3d5c', (50, 100, 740))
+def _():
+    rows = label_rows([('Produto', 'xampu em barra'), ('Tipo', 'anticaspa'), ('Resolução', 'RE 4.511'), ('Lotes', 'todos')], 46, 170, 408, 64, 21, hl=(3, '#f5dde6'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'ANVISA: PROIBIDO', '#6a2a45', rows))
+        + g(690, 120, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(23,), w=520, h=520, accent='#6a2a45', mark_color='#e8590c'))
+        + g(1270, 110, 6, 1, tag('SUSPENSO', 280, '#e8590c'))
+        + g(1230, 640, -4, 1, pen(300))
+    )

@@ -184,6 +184,8 @@ import { newsSenadoEstatutoAprendiz24Novembro2026 } from './senado-vota-estatuto
 import { newsSenadoPl4186Prazo20AnosReparacao } from './senado-aprova-pl-4186-prazo-de-20-anos-reparacao-crime-sexual-infancia';
 import { newsPeDeMeiaParcelaFrequenciaSetembro23Novembro2026 } from './pe-de-meia-parcela-de-r-200-comeca-em-23-11-frequencia-de-setembro-vai-ate-30-11';
 import { newsFechamento23Novembro2026 } from './dolar-fecha-a-r-5-92-apos-tocar-r-6-ibovespa-cai-0-95-e-petrobras-recua-mais-de-3';
+import { newsCamaraAprovaAjusteFiscal23Novembro } from './camara-aprova-ajuste-fiscal-plp-299-por-353-a-128-e-texto-vai-a-sancao';
+import { newsAnvisaXampuBarraInfantil23Novembro } from './anvisa-proibe-xampu-em-barra-anticaspa-infantil-resolucao-re-4511';
 import { newsReceitaLoteResidualIrpf30Novembro2026 } from './receita-lote-residual-irpf-2026-223-mil-restituicoes-r-666-milhoes-credito-em-30-11';
 
 export const newsFiles = [
@@ -368,4 +370,6 @@ export const newsFiles = [
   newsPeDeMeiaParcelaFrequenciaSetembro23Novembro2026,
   newsReceitaLoteResidualIrpf30Novembro2026,
   newsFechamento23Novembro2026,
+  newsCamaraAprovaAjusteFiscal23Novembro,
+  newsAnvisaXampuBarraInfantil23Novembro,
 ] as const;
