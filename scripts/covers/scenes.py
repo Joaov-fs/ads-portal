@@ -2521,6 +2521,18 @@ def _():
     )
 
 
+@scene('fechamento-dolar-5-91-2026', '#2f5d62', (60, 100, 760))
+def _():
+    rows = label_rows([('Dólar (fechamento)', 'R$ 5,91'), ('Queda no dia', '0,26%'), ('Ibovespa', '164.090'), ('Queda no dia', '0,43%')], 46, 170, 408, 64, 21, hl=(0, '#dcecee'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'FECHAMENTO 24/11', '#1f4044', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.5, 0.35, 0.4, 0.3, 0.32, 0.25), color='#c92a2a', title='IBOVESPA'))
+        + g(1290, 110, 6, 1, tag('R$ 5,91', 280, '#e8590c'))
+        + g(1330, 500, -4, 1, coin(70))
+        + g(1010, 700, -5, 1, stamp('VALE CAIU 5,5%', 560, '#f4e3c3', -4))
+    )
+
+
 @scene('camara-aprova-ajuste-fiscal-23-11', '#3d4f7a', (50, 100, 740))
 def _():
     rows = label_rows([('Projeto', 'PLP 299/2026'), ('Votos a favor', '353'), ('Votos contra', '128'), ('Próximo passo', 'sanção')], 46, 170, 408, 64, 21, hl=(1, '#dce3f2'))
