@@ -186,6 +186,8 @@ import { newsPeDeMeiaParcelaFrequenciaSetembro23Novembro2026 } from './pe-de-mei
 import { newsFechamento23Novembro2026 } from './dolar-fecha-a-r-5-92-apos-tocar-r-6-ibovespa-cai-0-95-e-petrobras-recua-mais-de-3';
 import { newsCamaraAprovaAjusteFiscal23Novembro } from './camara-aprova-ajuste-fiscal-plp-299-por-353-a-128-e-texto-vai-a-sancao';
 import { newsPortariaMte2041Escala5x2 } from './portaria-mte-2041-escala-5x2-dois-repousos-divisor-210-e-200';
+import { newsCgsn196SimplesIbsCbs } from './cgsn-196-simples-nacional-cbs-ibs-entram-em-2027-e-vendas-nao-recebidas-vao-para-dezembro';
+import { newsSarampoSpTransmissaoEncerrada } from './sarampo-sp-encerra-transmissao-apos-3-meses-sem-casos-dose-zero-de-6-a-11-meses';
 import { newsAnvisaXampuBarraInfantil23Novembro } from './anvisa-proibe-xampu-em-barra-anticaspa-infantil-resolucao-re-4511';
 import { newsReceitaLoteResidualIrpf30Novembro2026 } from './receita-lote-residual-irpf-2026-223-mil-restituicoes-r-666-milhoes-credito-em-30-11';
 
@@ -374,4 +376,6 @@ export const newsFiles = [
   newsCamaraAprovaAjusteFiscal23Novembro,
   newsAnvisaXampuBarraInfantil23Novembro,
   newsPortariaMte2041Escala5x2,
+  newsCgsn196SimplesIbsCbs,
+  newsSarampoSpTransmissaoEncerrada,
 ] as const;

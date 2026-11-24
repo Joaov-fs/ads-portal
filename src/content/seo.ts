@@ -140,6 +140,10 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Câmara aprova ajuste fiscal e texto vai à sanção',
   'portaria-mte-2041-escala-5x2-dois-repousos-divisor-210-e-200':
     'Portaria 2.041: 2 repousos e divisor 210 na 5x2',
+  'cgsn-196-simples-nacional-cbs-ibs-entram-em-2027-e-vendas-nao-recebidas-vao-para-dezembro':
+    'CGSN 196: CBS e IBS no Simples em 2027',
+  'sarampo-sp-encerra-transmissao-apos-3-meses-sem-casos-dose-zero-de-6-a-11-meses':
+    'Sarampo: SP encerra transmissão dos casos importados',
   'anvisa-proibe-xampu-em-barra-anticaspa-infantil-resolucao-re-4511':
     'Anvisa proíbe xampu anticaspa com rótulo infantil',
   'senado-vota-estatuto-do-aprendiz-24-11-pl-6461-2019':
