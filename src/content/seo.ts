@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'dolar-fecha-a-r-5-92-apos-tocar-r-6-ibovespa-cai-0-95-e-petrobras-recua-mais-de-3':
+    'Dólar fecha a R$ 5,92 e Ibovespa cai 0,95%',
   'senado-vota-estatuto-do-aprendiz-24-11-pl-6461-2019':
     'Estatuto do Aprendiz vai a voto no Senado em 24/11',
   'senado-aprova-pl-4186-prazo-de-20-anos-reparacao-crime-sexual-infancia':

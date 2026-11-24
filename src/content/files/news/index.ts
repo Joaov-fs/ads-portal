@@ -183,6 +183,7 @@ import { newsEscolasFerias2027CopaFeminina } from './escolas-ferias-2027-copa-fe
 import { newsSenadoEstatutoAprendiz24Novembro2026 } from './senado-vota-estatuto-do-aprendiz-24-11-pl-6461-2019';
 import { newsSenadoPl4186Prazo20AnosReparacao } from './senado-aprova-pl-4186-prazo-de-20-anos-reparacao-crime-sexual-infancia';
 import { newsPeDeMeiaParcelaFrequenciaSetembro23Novembro2026 } from './pe-de-meia-parcela-de-r-200-comeca-em-23-11-frequencia-de-setembro-vai-ate-30-11';
+import { newsFechamento23Novembro2026 } from './dolar-fecha-a-r-5-92-apos-tocar-r-6-ibovespa-cai-0-95-e-petrobras-recua-mais-de-3';
 import { newsReceitaLoteResidualIrpf30Novembro2026 } from './receita-lote-residual-irpf-2026-223-mil-restituicoes-r-666-milhoes-credito-em-30-11';
 
 export const newsFiles = [
@@ -366,4 +367,5 @@ export const newsFiles = [
   newsBoletimMacrofiscalNovembro2026,
   newsPeDeMeiaParcelaFrequenciaSetembro23Novembro2026,
   newsReceitaLoteResidualIrpf30Novembro2026,
+  newsFechamento23Novembro2026,
 ] as const;

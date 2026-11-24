@@ -2507,3 +2507,15 @@ def _():
         + g(1300, 480, 5, 1, coins_stack(5), 'sh')
         + g(1180, 700, -4, 1, pen(300))
     )
+
+
+@scene('fechamento-dolar-5-92-2026', '#35506b', (60, 100, 760))
+def _():
+    rows = label_rows([('Dólar (fechamento)', 'R$ 5,92'), ('Queda no dia', '0,14%'), ('Ibovespa', '164.796'), ('Queda no dia', '0,95%')], 46, 170, 408, 64, 21, hl=(0, '#dde8f2'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'FECHAMENTO 23/11', '#223a52', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.5, 0.45, 0.4, 0.3, 0.25, 0.2), color='#c92a2a', title='IBOVESPA'))
+        + g(1290, 110, 6, 1, tag('R$ 5,92', 280, '#e8590c'))
+        + g(1330, 500, -4, 1, coin(70))
+        + g(1010, 700, -5, 1, stamp('DÓLAR TOCOU R$ 6', 560, '#f4e3c3', -4))
+    )
