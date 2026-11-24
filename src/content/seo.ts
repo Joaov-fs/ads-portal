@@ -138,6 +138,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Dólar fecha a R$ 5,92 e Ibovespa cai 0,95%',
   'camara-aprova-ajuste-fiscal-plp-299-por-353-a-128-e-texto-vai-a-sancao':
     'Câmara aprova ajuste fiscal e texto vai à sanção',
+  'portaria-mte-2041-escala-5x2-dois-repousos-divisor-210-e-200':
+    'Portaria 2.041: 2 repousos e divisor 210 na 5x2',
   'anvisa-proibe-xampu-em-barra-anticaspa-infantil-resolucao-re-4511':
     'Anvisa proíbe xampu anticaspa com rótulo infantil',
   'senado-vota-estatuto-do-aprendiz-24-11-pl-6461-2019':

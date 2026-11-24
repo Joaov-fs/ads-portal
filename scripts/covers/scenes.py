@@ -2541,3 +2541,14 @@ def _():
         + g(1270, 110, 6, 1, tag('SUSPENSO', 280, '#e8590c'))
         + g(1230, 640, -4, 1, pen(300))
     )
+
+
+@scene('portaria-mte-2041-5x2-repouso-24-11', '#2d5a4a', (50, 100, 740))
+def _():
+    rows = label_rows([('Portaria MTE', '2.041'), ('Repouso semanal', '2 dias'), ('Jornada', '42h'), ('Início', '16/12')], 46, 170, 408, 64, 21, hl=(1, '#d9eee5'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'ESCALA 5X2', '#1f4538', rows))
+        + g(690, 120, 4, 1, calendar_month('DEZEMBRO 2026', 1, 31, marks=(16,), w=520, h=520, accent='#1f4538', mark_color='#e8590c'))
+        + g(1270, 110, 6, 1, tag('2 FOLGAS', 280, '#e8590c'))
+        + g(1230, 640, -4, 1, pen(300))
+    )
