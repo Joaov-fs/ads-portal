@@ -2598,3 +2598,15 @@ def _():
         + g(1300, 480, 5, 1, coins_stack(5), 'sh')
         + g(1180, 700, -4, 1, pen(300))
     )
+
+
+@scene('petrobras-plano-2027-2031', '#1f4e5f', (50, 100, 740))
+def _():
+    rows = label_rows([('Investimentos', 'US$ 122 bi'), ('Período', '2027 a 2031'), ('Extra por ação', 'R$ 1,21'), ('Pagamento', '23/12/2026')], 46, 170, 408, 64, 21, hl=(0, '#d9ecf2'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'PLANO 2027-2031', '#123846', rows))
+        + g(690, 120, 4, 1, calendar_month('DEZEMBRO 2026', 2, 31, marks=(7, 23), w=520, h=520, accent='#123846', mark_color='#e8590c'))
+        + g(1270, 110, 6, 1, tag('DIVIDENDO', 290, '#e8590c'))
+        + g(1300, 480, 5, 1, coins_stack(5), 'sh')
+        + g(1180, 700, -4, 1, pen(300))
+    )

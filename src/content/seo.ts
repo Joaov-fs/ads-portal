@@ -404,6 +404,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Gás do Povo prorrogado até 2031 pela MP 1.400',
   'gas-do-povo-recarga-todo-dia-10-proxima-em-10-de-novembro-quem-recebe-e-quanto-vale':
     'Gás do Povo: recarga todo dia 10, próxima em 10/11',
+  'petrobras-plano-us-122-bi-2027-2031-dividendo-extra-r-15-6-bi-data-com-7-12':
+    'Petrobras: plano de US$ 122 bi e extra de R$ 1,21',
   'arrecadacao-federal-recorde-de-r-294-bilhoes-em-outubro-alta-real-de-7-28':
     'Arrecadação bate recorde: R$ 294 bi em outubro',
   'arrecadacao-federal-recorde-de-r-239-4-bilhoes-em-setembro-o-que-a-alta-de-5-62-significa-para-voce':

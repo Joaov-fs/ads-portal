@@ -185,6 +185,7 @@ import { newsEscolasFerias2027CopaFeminina } from './escolas-ferias-2027-copa-fe
 import { newsSenadoEstatutoAprendiz24Novembro2026 } from './senado-vota-estatuto-do-aprendiz-24-11-pl-6461-2019';
 import { newsSenadoPl4186Prazo20AnosReparacao } from './senado-aprova-pl-4186-prazo-de-20-anos-reparacao-crime-sexual-infancia';
 import { newsPeDeMeiaParcelaFrequenciaSetembro23Novembro2026 } from './pe-de-meia-parcela-de-r-200-comeca-em-23-11-frequencia-de-setembro-vai-ate-30-11';
+import { newsPetrobrasPlano2027a2031 } from './petrobras-plano-us-122-bi-2027-2031-dividendo-extra-r-15-6-bi-data-com-7-12';
 import { newsFechamento23Novembro2026 } from './dolar-fecha-a-r-5-92-apos-tocar-r-6-ibovespa-cai-0-95-e-petrobras-recua-mais-de-3';
 import { newsCamaraAprovaAjusteFiscal23Novembro } from './camara-aprova-ajuste-fiscal-plp-299-por-353-a-128-e-texto-vai-a-sancao';
 import { newsPortariaMte2041Escala5x2 } from './portaria-mte-2041-escala-5x2-dois-repousos-divisor-210-e-200';
@@ -194,6 +195,7 @@ import { newsAnvisaXampuBarraInfantil23Novembro } from './anvisa-proibe-xampu-em
 import { newsReceitaLoteResidualIrpf30Novembro2026 } from './receita-lote-residual-irpf-2026-223-mil-restituicoes-r-666-milhoes-credito-em-30-11';
 
 export const newsFiles = [
+  newsPetrobrasPlano2027a2031,
   newsFiesRemanescentes2026,
   newsPnadDesemprego3Trimestre2026,
   newsArrecadacaoFederalSetembro2026,
