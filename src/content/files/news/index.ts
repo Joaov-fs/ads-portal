@@ -188,6 +188,7 @@ import { newsPeDeMeiaParcelaFrequenciaSetembro23Novembro2026 } from './pe-de-mei
 import { newsPetrobrasPlano2027a2031 } from './petrobras-plano-us-122-bi-2027-2031-dividendo-extra-r-15-6-bi-data-com-7-12';
 import { newsFechamento24Novembro2026 } from './dolar-fecha-a-r-5-91-ibovespa-cai-0-43-a-164-mil-pontos-e-vale-despenca-5-5-em-24-11';
 import { newsFechamento23Novembro2026 } from './dolar-fecha-a-r-5-92-apos-tocar-r-6-ibovespa-cai-0-95-e-petrobras-recua-mais-de-3';
+import { newsPlanoNacionalCulturaSenado } from './plano-nacional-de-cultura-senado-aprova-pl-5894-2025-e-texto-vai-a-sancao';
 import { newsLc239AjusteFiscalSancionado } from './lc-239-ajuste-fiscal-sancionado-sem-vetos-meta-2027-r-18-7-bi';
 import { newsCamaraAprovaAjusteFiscal23Novembro } from './camara-aprova-ajuste-fiscal-plp-299-por-353-a-128-e-texto-vai-a-sancao';
 import { newsPortariaMte2041Escala5x2 } from './portaria-mte-2041-escala-5x2-dois-repousos-divisor-210-e-200';
@@ -387,5 +388,6 @@ export const newsFiles = [
   newsGasDoPovoUmAno24Novembro,
   newsArrecadacaoFederalOutubro2026,
   newsFechamento24Novembro2026,
+  newsPlanoNacionalCulturaSenado,
   newsLc239AjusteFiscalSancionado,
 ] as const;

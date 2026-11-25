@@ -2633,3 +2633,14 @@ def _():
         + g(1270, 110, 6, 1, tag('SEM VETOS', 290, '#e8590c'))
         + g(1230, 640, -4, 1, pen(300))
     )
+
+
+@scene('plano-nacional-cultura-senado-24-11', '#5b3f7a', (50, 100, 740))
+def _():
+    rows = label_rows([('Projeto', 'PL 5.894/2025'), ('Vigência', '10 anos'), ('Eixos', '8'), ('Próximo passo', 'Sanção')], 46, 170, 408, 64, 21, hl=(0, '#eadff5'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'PLANO NACIONAL DE CULTURA', '#3d2656', rows))
+        + g(690, 120, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(24,), w=520, h=520, accent='#3d2656', mark_color='#e8590c'))
+        + g(1270, 110, 6, 1, tag('VAI À SANÇÃO', 330, '#e8590c'))
+        + g(1230, 640, -4, 1, pen(300))
+    )

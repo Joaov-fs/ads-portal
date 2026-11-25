@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'plano-nacional-de-cultura-senado-aprova-pl-5894-2025-e-texto-vai-a-sancao':
+    'Senado aprova o novo Plano Nacional de Cultura',
   'lc-239-ajuste-fiscal-sancionado-sem-vetos-meta-2027-r-18-7-bi':
     'Ajuste fiscal sancionado sem vetos: LC 239/2026',
   'dolar-fecha-a-r-5-91-ibovespa-cai-0-43-a-164-mil-pontos-e-vale-despenca-5-5-em-24-11':
