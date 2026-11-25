@@ -2644,3 +2644,26 @@ def _():
         + g(1270, 110, 6, 1, tag('VAI À SANÇÃO', 330, '#e8590c'))
         + g(1230, 640, -4, 1, pen(300))
     )
+
+
+@scene('orcamento-liberacao-2026', '#2f5d7c', (80, 100, 860))
+def _():
+    rows = label_rows([('Liberação', 'R$ 3,43 bi'), ('Contenção antes', 'R$ 16,1 bi'), ('Contenção agora', 'R$ 12,63 bi'), ('Déficit previsto', 'R$ 76,98 bi')], 46, 170, 408, 64, 21, hl=(0, '#dbe9f4'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'ORÇAMENTO 2026', '#2f5d7c', rows))
+        + g(700, 90, 5, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(24,), w=460, h=500, accent='#2f5d7c', mark_color='#e8590c'))
+        + g(1230, 200, 6, 1, chart_paper(300, 260, bars=((0.9, '#9db9cf'), (0.6, '#5b87a8'), (0.35, '#2f5d7c'))))
+        + g(1200, 560, -4, 1, tag('LIBERADO', 300, '#e8590c'))
+        + g(1000, 690, 3, 1, coins_stack(3), 'sh')
+    )
+
+
+@scene('atendimento-pediatrico-cas', '#3f8f86', (80, 100, 860))
+def _():
+    rows = label_rows([('Projeto', 'PL 2.107/2026'), ('Comissão', 'CAS, terminativa'), ('Próxima etapa', 'Câmara'), ('Vigência', '365 dias')], 46, 170, 408, 64, 21, hl=(0, '#d7efec'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'SEGURANÇA PEDIÁTRICA', '#3f8f86', rows))
+        + g(700, 90, 5, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(25,), w=460, h=500, accent='#3f8f86', mark_color='#e8590c'))
+        + g(1290, 230, 6, 1, clock(110, 3, 0))
+        + g(1190, 560, -4, 1, tag('PROTOCOLOS', 300, '#e8590c'))
+    )

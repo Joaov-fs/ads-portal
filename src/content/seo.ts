@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'orcamento-2026-governo-libera-r-3-43-bi-contencao-cai-para-r-12-63-bi':
+    'Governo libera R$ 3,43 bi do Orçamento de 2026',
   'plano-nacional-de-cultura-senado-aprova-pl-5894-2025-e-texto-vai-a-sancao':
     'Senado aprova o novo Plano Nacional de Cultura',
   'lc-239-ajuste-fiscal-sancionado-sem-vetos-meta-2027-r-18-7-bi':
