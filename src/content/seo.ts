@@ -514,6 +514,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Pé-de-Meia: parcela de R$ 200 começa em 23/11',
   'receita-lote-residual-irpf-2026-223-mil-restituicoes-r-666-milhoes-credito-em-30-11':
     'Lote residual do IR: crédito em 30/11',
+  'mpox-rio-suspende-vacinacao-por-falta-de-doses-8-mil-vacinados-e-315-casos-na-cidade':
+    'Mpox: Rio suspende vacina por falta de doses',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */

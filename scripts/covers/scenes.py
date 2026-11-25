@@ -2689,3 +2689,16 @@ def _():
         + g(1290, 230, 6, 1, clock(110, 3, 0))
         + g(1190, 560, -4, 1, tag('PORTARIAS', 300, '#e8590c'))
     )
+
+
+@scene('mpox-rio-suspende-vacinacao', '#3d5a80', (60, 100, 760))
+def _():
+    rows = label_rows([('Vacinados até 23/11', '8.000'), ('Casos no Rio em 2026', '315'), ('Intervalo entre doses', '28 dias'), ('Estoque', 'Esgotado')], 46, 170, 408, 64, 21, hl=(3, '#dde6f2'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'MPOX NO RIO', '#2c4264', rows))
+        + g(1000, 110, 5, 0.95, box(420, 300))
+        + g(1260, 480, 5, 1, tag('8.000', 260, '#2b6cb0'))
+        + g(640, 740, -4, 1, pen(300))
+        + g(1160, 720, -5, 1, stamp('SUSPENSA', 270, '#d63031', -6))
+    )
+
