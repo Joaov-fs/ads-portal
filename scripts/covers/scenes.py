@@ -2713,3 +2713,15 @@ def _():
         + g(1330, 700, 3, 1, coins_stack(4), 'sh')
         + g(1190, 110, 6, 1, tag('OPEN FINANCE', 330, '#2b6cb0'))
     )
+
+
+@scene('fechamento-dolar-5-82-25-novembro-2026', '#1f6f5c', (60, 100, 760))
+def _():
+    rows = label_rows([('Dólar (fechamento)', 'R$ 5,82'), ('Queda no dia', 'cerca de 1,5%'), ('Ibovespa', '166.684'), ('Alta no dia', '1,58%')], 46, 170, 408, 64, 21, hl=(0, '#d3ede5'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'FECHAMENTO 25/11', '#13483b', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.9, 0.8, 0.82, 0.55, 0.4, 0.25), color='#2f9e44', title='DÓLAR'))
+        + g(1290, 110, 6, 1, tag('R$ 5,82', 280, '#2b8a3e'))
+        + g(1330, 500, -4, 1, coin(70))
+        + g(1010, 700, -5, 1, stamp('IBOVESPA +1,58%', 480, '#f4e3c3', -4))
+    )

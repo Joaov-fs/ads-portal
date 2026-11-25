@@ -187,6 +187,7 @@ import { newsSenadoPl4186Prazo20AnosReparacao } from './senado-aprova-pl-4186-pr
 import { newsPeDeMeiaParcelaFrequenciaSetembro23Novembro2026 } from './pe-de-meia-parcela-de-r-200-comeca-em-23-11-frequencia-de-setembro-vai-ate-30-11';
 import { newsPetrobrasPlano2027a2031 } from './petrobras-plano-us-122-bi-2027-2031-dividendo-extra-r-15-6-bi-data-com-7-12';
 import { newsFechamento24Novembro2026 } from './dolar-fecha-a-r-5-91-ibovespa-cai-0-43-a-164-mil-pontos-e-vale-despenca-5-5-em-24-11';
+import { newsFechamento25Novembro2026 } from './dolar-cai-a-r-5-82-ibovespa-sobe-1-58-a-166-7-mil-pontos-e-embraer-perde-4-em-25-11';
 import { newsFechamento23Novembro2026 } from './dolar-fecha-a-r-5-92-apos-tocar-r-6-ibovespa-cai-0-95-e-petrobras-recua-mais-de-3';
 import { newsPlanoNacionalCulturaSenado } from './plano-nacional-de-cultura-senado-aprova-pl-5894-2025-e-texto-vai-a-sancao';
 import { newsOrcamento2026LiberaR343Bi } from './orcamento-2026-governo-libera-r-3-43-bi-contencao-cai-para-r-12-63-bi';
@@ -394,6 +395,7 @@ export const newsFiles = [
   newsGasDoPovoUmAno24Novembro,
   newsArrecadacaoFederalOutubro2026,
   newsFechamento24Novembro2026,
+  newsFechamento25Novembro2026,
   newsPlanoNacionalCulturaSenado,
   newsOrcamento2026LiberaR343Bi,
   newsLeiBenicioCasPl21072026,
