@@ -199,6 +199,7 @@ import { newsSarampoSpTransmissaoEncerrada } from './sarampo-sp-encerra-transmis
 import { newsAnvisaXampuBarraInfantil23Novembro } from './anvisa-proibe-xampu-em-barra-anticaspa-infantil-resolucao-re-4511';
 import { newsReceitaLoteResidualIrpf30Novembro2026 } from './receita-lote-residual-irpf-2026-223-mil-restituicoes-r-666-milhoes-credito-em-30-11';
 import { newsSenadoAdiaEstatutoAprendiz24Novembro2026 } from './senado-adia-estatuto-do-aprendiz-pl-6461-votacao-na-proxima-terca';
+import { newsMarinhoPortariasJornadasEspeciais24Novembro2026 } from './marinho-portarias-jornadas-especiais-ate-30-11-acordos-5x2-ate-16-12';
 
 export const newsFiles = [
   newsPetrobrasPlano2027a2031,
@@ -396,4 +397,5 @@ export const newsFiles = [
   newsLeiBenicioCasPl21072026,
   newsLc239AjusteFiscalSancionado,
   newsSenadoAdiaEstatutoAprendiz24Novembro2026,
+  newsMarinhoPortariasJornadasEspeciais24Novembro2026,
 ] as const;
