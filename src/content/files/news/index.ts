@@ -198,6 +198,7 @@ import { newsCgsn196SimplesIbsCbs } from './cgsn-196-simples-nacional-cbs-ibs-en
 import { newsSarampoSpTransmissaoEncerrada } from './sarampo-sp-encerra-transmissao-apos-3-meses-sem-casos-dose-zero-de-6-a-11-meses';
 import { newsAnvisaXampuBarraInfantil23Novembro } from './anvisa-proibe-xampu-em-barra-anticaspa-infantil-resolucao-re-4511';
 import { newsReceitaLoteResidualIrpf30Novembro2026 } from './receita-lote-residual-irpf-2026-223-mil-restituicoes-r-666-milhoes-credito-em-30-11';
+import { newsSenadoAdiaEstatutoAprendiz24Novembro2026 } from './senado-adia-estatuto-do-aprendiz-pl-6461-votacao-na-proxima-terca';
 
 export const newsFiles = [
   newsPetrobrasPlano2027a2031,
@@ -394,4 +395,5 @@ export const newsFiles = [
   newsOrcamento2026LiberaR343Bi,
   newsLeiBenicioCasPl21072026,
   newsLc239AjusteFiscalSancionado,
+  newsSenadoAdiaEstatutoAprendiz24Novembro2026,
 ] as const;

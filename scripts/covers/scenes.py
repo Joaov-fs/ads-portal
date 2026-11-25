@@ -2667,3 +2667,25 @@ def _():
         + g(1290, 230, 6, 1, clock(110, 3, 0))
         + g(1190, 560, -4, 1, tag('PROTOCOLOS', 300, '#e8590c'))
     )
+
+
+@scene('estatuto-aprendiz-adiado', '#8a5a2b', (80, 100, 860))
+def _():
+    rows = label_rows([('Projeto', 'PL 6.461/2019'), ('Cota', '5% a 15%'), ('Idade', 'Até 24 anos'), ('Votação', 'Adiada')], 46, 170, 408, 64, 21, hl=(3, '#f3e3d0'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'ESTATUTO DO APRENDIZ', '#6a4220', rows))
+        + g(700, 90, 5, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(24,), w=460, h=500, accent='#6a4220', mark_color='#e8590c'))
+        + g(1290, 230, 6, 1, clock(110, 3, 0))
+        + g(1190, 560, -4, 1, tag('ADIADO', 300, '#e8590c'))
+    )
+
+
+@scene('jornadas-especiais-portarias', '#2e6b5f', (80, 100, 860))
+def _():
+    rows = label_rows([('Escala', '5x2'), ('Portarias', 'Até 30/11'), ('Acordos', 'Até 16/12'), ('Folgas', '8 ou 9 por mês')], 46, 170, 408, 64, 21, hl=(2, '#d6ece6'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'JORNADAS ESPECIAIS', '#1f4d43', rows))
+        + g(700, 90, 5, 1, calendar_month('DEZEMBRO 2026', 2, 31, marks=(16,), w=460, h=500, accent='#1f4d43', mark_color='#e8590c'))
+        + g(1290, 230, 6, 1, clock(110, 3, 0))
+        + g(1190, 560, -4, 1, tag('PORTARIAS', 300, '#e8590c'))
+    )

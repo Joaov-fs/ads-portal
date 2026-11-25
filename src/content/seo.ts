@@ -158,6 +158,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Anvisa proíbe xampu anticaspa com rótulo infantil',
   'senado-vota-estatuto-do-aprendiz-24-11-pl-6461-2019':
     'Estatuto do Aprendiz vai a voto no Senado em 24/11',
+  'senado-adia-estatuto-do-aprendiz-pl-6461-votacao-na-proxima-terca':
+    'Senado adia o Estatuto do Aprendiz para terça',
   'senado-aprova-pl-4186-prazo-de-20-anos-reparacao-crime-sexual-infancia':
     'PL 4.186: 20 anos para reparação por crime sexual',
   'stf-marca-para-4-12-julgamento-da-lei-da-dosimetria-4-acoes-plenario-virtual':
