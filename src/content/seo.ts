@@ -136,6 +136,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   // Notícias
   'orcamento-2026-governo-libera-r-3-43-bi-contencao-cai-para-r-12-63-bi':
     'Governo libera R$ 3,43 bi do Orçamento de 2026',
+  'lei-benicio-cas-aprova-pl-2107-2026-seguranca-no-atendimento-pediatrico':
+    'Lei Benício: CAS aprova segurança pediátrica',
   'plano-nacional-de-cultura-senado-aprova-pl-5894-2025-e-texto-vai-a-sancao':
     'Senado aprova o novo Plano Nacional de Cultura',
   'lc-239-ajuste-fiscal-sancionado-sem-vetos-meta-2027-r-18-7-bi':
