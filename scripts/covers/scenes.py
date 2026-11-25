@@ -2622,3 +2622,14 @@ def _():
         + g(1300, 480, 5, 1, coins_stack(5), 'sh')
         + g(1180, 700, -4, 1, pen(300))
     )
+
+
+@scene('lc-239-ajuste-fiscal-sancionado-24-11', '#7a3d3d', (50, 100, 740))
+def _():
+    rows = label_rows([('Lei', 'LC 239/2026'), ('Vetos', 'Nenhum'), ('Meta de 2027', 'R$ 18,7 bi'), ('Limite de gastos', '2%')], 46, 170, 408, 64, 21, hl=(0, '#f3dcdc'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'AJUSTE FISCAL SANCIONADO', '#5a2424', rows))
+        + g(690, 120, 4, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(24,), w=520, h=520, accent='#5a2424', mark_color='#e8590c'))
+        + g(1270, 110, 6, 1, tag('SEM VETOS', 290, '#e8590c'))
+        + g(1230, 640, -4, 1, pen(300))
+    )

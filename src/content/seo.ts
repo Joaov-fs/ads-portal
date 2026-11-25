@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'lc-239-ajuste-fiscal-sancionado-sem-vetos-meta-2027-r-18-7-bi':
+    'Ajuste fiscal sancionado sem vetos: LC 239/2026',
   'dolar-fecha-a-r-5-91-ibovespa-cai-0-43-a-164-mil-pontos-e-vale-despenca-5-5-em-24-11':
     'Dólar a R$ 5,91 e Ibovespa em queda de 0,43%',
   'dolar-fecha-a-r-5-92-apos-tocar-r-6-ibovespa-cai-0-95-e-petrobras-recua-mais-de-3':
