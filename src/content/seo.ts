@@ -516,6 +516,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Lote residual do IR: crédito em 30/11',
   'mpox-rio-suspende-vacinacao-por-falta-de-doses-8-mil-vacinados-e-315-casos-na-cidade':
     'Mpox: Rio suspende vacina por falta de doses',
+  'open-finance-iniciador-actions-automatiza-transferencias-entre-contas-proprias-via-pix':
+    'Open Finance: automação de transferências via Pix',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */

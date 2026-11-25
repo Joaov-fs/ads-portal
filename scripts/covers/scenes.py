@@ -2702,3 +2702,14 @@ def _():
         + g(1160, 720, -5, 1, stamp('SUSPENSA', 270, '#d63031', -6))
     )
 
+
+@scene('open-finance-automacao-contas', '#2a6f77', (60, 100, 760))
+def _():
+    rows = label_rows([('Saldo mínimo', 'R$ 500'), ('Saldo na conta', 'R$ 320'), ('Reposição', 'R$ 180'), ('Contas', 'Mesma titularidade')], 46, 170, 408, 64, 21, hl=(2, '#d8eeee'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'REGRA AUTOMÁTICA', '#1b4f56', rows))
+        + g(700, 110, 5, 1, phone(250, 500, phone_screen('Autorizar', 'R$ 180', 'cancele quando quiser', '#1b4f56')))
+        + g(1150, 430, 4, 0.85, piggy())
+        + g(1330, 700, 3, 1, coins_stack(4), 'sh')
+        + g(1190, 110, 6, 1, tag('OPEN FINANCE', 330, '#2b6cb0'))
+    )
