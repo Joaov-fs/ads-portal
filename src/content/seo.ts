@@ -532,6 +532,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Mpox: Rio suspende vacina por falta de doses',
   'open-finance-iniciador-actions-automatiza-transferencias-entre-contas-proprias-via-pix':
     'Open Finance: automação de transferências via Pix',
+  'cmn-bc-cartao-reduz-limite-rotativo-3-faturas-em-6-meses-regras-valem-de-julho-de-2027':
+    'Cartão: limite cai para quem usa o rotativo',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */

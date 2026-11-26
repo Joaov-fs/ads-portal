@@ -203,6 +203,7 @@ import { newsReceitaLoteResidualIrpf30Novembro2026 } from './receita-lote-residu
 import { newsSenadoAdiaEstatutoAprendiz24Novembro2026 } from './senado-adia-estatuto-do-aprendiz-pl-6461-votacao-na-proxima-terca';
 import { newsMarinhoPortariasJornadasEspeciais24Novembro2026 } from './marinho-portarias-jornadas-especiais-ate-30-11-acordos-5x2-ate-16-12';
 import { newsMpoxRioSuspendeVacinacao24Novembro2026 } from './mpox-rio-suspende-vacinacao-por-falta-de-doses-8-mil-vacinados-e-315-casos-na-cidade';
+import { newsCmnCartaoLimiteRotativo26Novembro2026 } from './cmn-bc-cartao-reduz-limite-rotativo-3-faturas-em-6-meses-regras-valem-de-julho-de-2027';
 import { newsOpenFinanceIniciadorActions24Novembro2026 } from './open-finance-iniciador-actions-automatiza-transferencias-entre-contas-proprias-via-pix';
 import { newsStfValidaValorAcoesTrabalhistas25Novembro2026 } from './stf-valida-valor-no-pedido-de-acoes-trabalhistas-adi-6002';
 import { newsGovernoRenovaSubvencaoDiesel25Novembro2026 } from './governo-deve-renovar-subvencao-de-r-2-12-ao-diesel-por-30-dias';
@@ -416,4 +417,5 @@ export const newsFiles = [
   newsInssProvaDeVidaEleicoes26Novembro2026,
   newsTrf1DerrubaSuspensaoVrVa26Novembro2026,
   newsIpca15Novembro2026,
+  newsCmnCartaoLimiteRotativo26Novembro2026,
 ] as const;

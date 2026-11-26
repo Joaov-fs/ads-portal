@@ -2797,3 +2797,14 @@ def _():
         + g(1150, 360, 5, 1, tag('Transportes -0,71%', 380, '#2b8a3e'), 'shs')
         + g(780, 640, 0, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('cmn-cartao-limite-rotativo-2026', '#7a3b3b', (60, 100, 760))
+def _():
+    rows = label_rows([('Faturas sem pagar', '3 em 6 meses'), ('Efeito', 'limite cai'), ('Fim da regra', '6 faturas pagas'), ('Vigência', '1º/07/2027')], 46, 170, 408, 64, 20, hl=(0, '#f5dede'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'CARTÃO E ROTATIVO', '#7a3b3b', rows))
+        + g(1000, 120, 5, 1, card(340, 214, '#495057', '#212529', 'CRÉDITO'))
+        + g(1100, 430, -4, 1, stamp('LIMITE MENOR', 330, '#c92a2a', -8))
+        + g(1330, 560, 5, 1, coins_stack(3), 'sh')
+    )
