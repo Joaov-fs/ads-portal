@@ -67,8 +67,7 @@ export const newsIpca15NovembroDivulgacao2026 = {
         'Com a Selic em 13,75% ao ano, o Banco Central mantém o juro alto enquanto a inflação segue acima do teto. O IPCA-15 de novembro dirá se a inflação de 12 meses continua nesse patamar ou se começa a recuar.',
       ],
       table: {
-        caption:
-          'Calendário de divulgação do IBGE para os próximos índices',
+        caption: 'Calendário de divulgação do IBGE para os próximos índices',
         columns: ['Índice', 'Coleta', 'Divulgação'],
         rows: [
           ['IPCA-15 de novembro', '15/10 a 16/11', '26/11/2026'],
@@ -117,8 +116,7 @@ export const newsIpca15NovembroDivulgacao2026 = {
       url: 'https://ftp.ibge.gov.br/Precos_Indices_de_Precos_ao_Consumidor/Sistema_de_Indices_de_Precos_ao_Consumidor/Calendario/ipca_inpc_ipca15_coleta_divulgacao.csv?v=2026',
     },
     {
-      label:
-        'IBGE: IPCA-15, Índice Nacional de Preços ao Consumidor Amplo 15',
+      label: 'IBGE: IPCA-15, Índice Nacional de Preços ao Consumidor Amplo 15',
       url: 'https://www.ibge.gov.br/estatisticas/economicas/precos-e-custos/9260-indice-nacional-de-precos-ao-consumidor-amplo-15.html',
     },
     {

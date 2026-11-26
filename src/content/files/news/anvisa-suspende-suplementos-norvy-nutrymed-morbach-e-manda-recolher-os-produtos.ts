@@ -16,7 +16,14 @@ export const newsAnvisaSuplementosSuspensos17Novembro = {
   authorId: 'pedro-bueno-salvador',
   publishedAt: '2026-11-17',
   updatedAt: '2026-11-17',
-  tags: ['anvisa', 'suplementos', 'recolhimento', 'saude', 'consumidor', 'melatonina'],
+  tags: [
+    'anvisa',
+    'suplementos',
+    'recolhimento',
+    'saude',
+    'consumidor',
+    'melatonina',
+  ],
   featuredCalculators: ['porcentagem'],
   highlights: [
     {
@@ -117,7 +124,8 @@ export const newsAnvisaSuplementosSuspensos17Novembro = {
       url: 'https://agenciabrasil.ebc.com.br/saude/noticia/2026-11/suplementos-alimentares-tem-fabricacao-e-venda-suspensas-no-brasil',
     },
     {
-      label: 'Diário Oficial da União: Resolução RE nº 4.500, de 16 de novembro de 2026',
+      label:
+        'Diário Oficial da União: Resolução RE nº 4.500, de 16 de novembro de 2026',
       url: 'https://www.in.gov.br/web/dou/-/resolucao-re-n-4.500-de-16-de-novembro-de-2026-744730467',
     },
     { label: 'Anvisa', url: 'https://www.gov.br/anvisa/pt-br' },

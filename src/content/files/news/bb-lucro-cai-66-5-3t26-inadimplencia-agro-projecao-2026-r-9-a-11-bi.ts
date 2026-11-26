@@ -16,7 +16,13 @@ export const newsBbLucro3T2026 = {
   authorId: 'sara-souza',
   publishedAt: '2026-11-15',
   updatedAt: '2026-11-15',
-  tags: ['banco-do-brasil', 'bancos', 'agronegocio', 'inadimplencia', 'dividendos'],
+  tags: [
+    'banco-do-brasil',
+    'bancos',
+    'agronegocio',
+    'inadimplencia',
+    'dividendos',
+  ],
   featuredCalculators: ['porcentagem', 'juros-compostos'],
   highlights: [
     {
@@ -79,9 +85,17 @@ export const newsBbLucro3T2026 = {
         caption: 'Projeções de 2026: antes e depois',
         columns: ['Item', 'Antes', 'Agora'],
         rows: [
-          ['Lucro líquido ajustado', 'R$ 18 bi a R$ 22 bi', 'R$ 9 bi a R$ 11 bi'],
+          [
+            'Lucro líquido ajustado',
+            'R$ 18 bi a R$ 22 bi',
+            'R$ 9 bi a R$ 11 bi',
+          ],
           ['Custo do crédito', 'R$ 65 bi a R$ 70 bi', 'R$ 80 bi a R$ 83 bi'],
-          ['Carteira de crédito', 'Alta de 0,5% a 4,5%', 'Estável a queda de até 2%'],
+          [
+            'Carteira de crédito',
+            'Alta de 0,5% a 4,5%',
+            'Estável a queda de até 2%',
+          ],
         ],
       },
     },
@@ -113,7 +127,8 @@ export const newsBbLucro3T2026 = {
   ],
   sources: [
     {
-      label: 'Agência Brasil: lucro do BB cai 66,5% no 3º trimestre com inadimplência do agro',
+      label:
+        'Agência Brasil: lucro do BB cai 66,5% no 3º trimestre com inadimplência do agro',
       url: 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/lucro-do-bb-cai-665-no-3o-trimestre-com-inadimplencia-do-agro',
     },
     {

@@ -48,7 +48,8 @@ export const newsSenadoPl4186Prazo20AnosReparacao = {
       image: {
         src: '/images/news/senado-aprova-pl-4186-prazo-de-20-anos-reparacao-crime-sexual-infancia-detalhe.jpg',
         alt: 'Detalhe da ilustração: documento com os prazos de 3 anos e 20 anos, o projeto PL 4.186/2021 e a contagem a partir dos 18.',
-        caption: 'O prazo cai de 3 para 20 anos e passa a contar da maioridade.',
+        caption:
+          'O prazo cai de 3 para 20 anos e passa a contar da maioridade.',
         credit: 'Ilustração: PortalFina',
       },
       paragraphs: [

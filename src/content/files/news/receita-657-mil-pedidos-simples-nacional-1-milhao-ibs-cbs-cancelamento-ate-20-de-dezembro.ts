@@ -88,7 +88,8 @@ export const newsReceitaOpcoesSimplesIbsCbsCancelamento = {
   ],
   faq: [
     {
-      question: 'Até quando posso cancelar a opção pelo Simples ou pelo regime regular?',
+      question:
+        'Até quando posso cancelar a opção pelo Simples ou pelo regime regular?',
       answer:
         'A janela abriu em 3/11/2026 e fica aberta até 20/12/2026, segundo a Receita Federal.',
     },

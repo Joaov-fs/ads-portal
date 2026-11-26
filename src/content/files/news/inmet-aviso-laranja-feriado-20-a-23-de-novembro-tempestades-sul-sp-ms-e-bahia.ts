@@ -16,7 +16,13 @@ export const newsInmetFeriado20a23Novembro2026 = {
   authorId: 'sara-souza',
   publishedAt: '2026-11-20',
   updatedAt: '2026-11-20',
-  tags: ['inmet', 'tempestades', 'defesa-civil', 'previsao-do-tempo', 'feriado'],
+  tags: [
+    'inmet',
+    'tempestades',
+    'defesa-civil',
+    'previsao-do-tempo',
+    'feriado',
+  ],
   featuredCalculators: [],
   highlights: [
     {

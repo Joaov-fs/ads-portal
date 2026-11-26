@@ -65,7 +65,8 @@ export const newsBoletimMacrofiscalNovembro2026 = {
       image: {
         src: '/images/news/boletim-macrofiscal-fazenda-corta-pib-de-2027-a-1-8-e-eleva-ipca-a-4-5-detalhe.jpg',
         alt: 'Detalhe da ficha do Boletim Macrofiscal com PIB de 2027 em 1,8%, IPCA de 2026 em 5,3% e IPCA de 2027 em 4,5%.',
-        caption: 'Os números centrais do Boletim Macrofiscal divulgado em 23 de novembro de 2026.',
+        caption:
+          'Os números centrais do Boletim Macrofiscal divulgado em 23 de novembro de 2026.',
         credit: 'Ilustração: PortalFina',
       },
       paragraphs: [
@@ -114,7 +115,8 @@ export const newsBoletimMacrofiscalNovembro2026 = {
   ],
   sources: [
     {
-      label: 'Agência Brasil: Fazenda reduz previsão do PIB e eleva inflação para 2027',
+      label:
+        'Agência Brasil: Fazenda reduz previsão do PIB e eleva inflação para 2027',
       url: 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/fazenda-reduz-previsao-do-pib-e-eleva-inflacao-para-2027',
     },
     {

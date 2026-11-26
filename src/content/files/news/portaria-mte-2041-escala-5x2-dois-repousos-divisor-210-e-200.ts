@@ -127,7 +127,8 @@ export const newsPortariaMte2041Escala5x2 = {
       url: 'https://agenciagov.ebc.com.br/noticias/202611/governo-federal-publica-portaria-com-regras-complementares-para-aplicacao-da-escala-5x2-1',
     },
     {
-      label: 'Diário Oficial da União: Portaria MTE 2.041 (edição de 23/11/2026)',
+      label:
+        'Diário Oficial da União: Portaria MTE 2.041 (edição de 23/11/2026)',
       url: 'https://www.in.gov.br/',
     },
   ],

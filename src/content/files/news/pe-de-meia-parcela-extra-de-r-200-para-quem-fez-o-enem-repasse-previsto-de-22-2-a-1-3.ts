@@ -64,7 +64,10 @@ export const newsPeDeMeiaParcelaExtraEnem2026 = {
           ['Valor', 'R$ 200'],
           ['Beneficiários na expectativa', 'Cerca de 1,2 milhão'],
           ['Provas do Enem 2026', '8 e 15 de novembro'],
-          ['Quem tem direito', 'Beneficiário concluinte, presente nos dois dias'],
+          [
+            'Quem tem direito',
+            'Beneficiário concluinte, presente nos dois dias',
+          ],
           ['Repasse previsto', 'Entre 22/2 e 1º/3/2027 (expectativa)'],
         ],
       },
@@ -97,7 +100,8 @@ export const newsPeDeMeiaParcelaExtraEnem2026 = {
   ],
   sources: [
     {
-      label: 'Agência Gov: Quem faz o Enem pode ter parcela extra do Pé-de-Meia',
+      label:
+        'Agência Gov: Quem faz o Enem pode ter parcela extra do Pé-de-Meia',
       url: 'https://agenciagov.ebc.com.br/noticias/202611/quem-faz-o-enem-pode-ter-parcela-extra-do-pe-de-meia',
     },
     {

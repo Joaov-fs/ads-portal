@@ -67,7 +67,8 @@ export const newsMp1379BrasilSoberanoSancao = {
       ],
     },
     {
-      heading: 'O que o Plano Brasil Soberano já fez e o que muda para o leitor',
+      heading:
+        'O que o Plano Brasil Soberano já fez e o que muda para o leitor',
       paragraphs: [
         'De acordo com a relatora, as duas primeiras edições do plano aprovaram mais de R$ 27 bilhões em mais de 1,7 mil operações. Dividindo os dois números, cada operação teria somado cerca de R$ 15,9 milhões em média. É uma conta aproximada, porque os dois dados são "mais de": o valor mostra que o crédito é dirigido a empresas, não a pessoas físicas.',
         'Para o cidadão, o efeito é indireto. A lógica do programa é manter produção, vendas externas e empregos em empresas atingidas por tarifas e conflitos. Quem tem uma empresa exportadora ou fornece a uma deve esperar a sanção, a regulamentação e as condições dos bancos antes de planejar qualquer pedido.',

@@ -17,7 +17,11 @@ export const newsMeiPerdaoAutomaticoLc238 = {
   publishedAt: '2026-11-17',
   updatedAt: '2026-11-17',
   tags: ['mei', 'das-mei', 'divida', 'receita-federal', 'inss', 'remissao'],
-  featuredCalculators: ['das-mei-atraso', 'das-limite-mei', 'excesso-limite-mei'],
+  featuredCalculators: [
+    'das-mei-atraso',
+    'das-limite-mei',
+    'excesso-limite-mei',
+  ],
   highlights: [
     {
       value: '13/10/2026',
@@ -49,7 +53,8 @@ export const newsMeiPerdaoAutomaticoLc238 = {
       image: {
         src: '/images/news/mei-perdao-automatico-lc-238-divida-ate-13-10-vale-em-1-1-2027-detalhe.jpg',
         alt: 'Detalhe do documento com as datas do perdão do MEI e a indicação de que não é preciso fazer pedido.',
-        caption: 'As datas do perdão: dívida até 13/10/2026 e efeito em 1º/1/2027.',
+        caption:
+          'As datas do perdão: dívida até 13/10/2026 e efeito em 1º/1/2027.',
         credit: 'Ilustração: PortalFina',
       },
       paragraphs: [

@@ -16,7 +16,13 @@ export const newsReceitaLoteResidualIrpf30Novembro2026 = {
   authorId: 'sara-souza',
   publishedAt: '2026-11-23',
   updatedAt: '2026-11-23',
-  tags: ['imposto-de-renda', 'restituicao', 'receita-federal', 'irpf', 'financas'],
+  tags: [
+    'imposto-de-renda',
+    'restituicao',
+    'receita-federal',
+    'irpf',
+    'financas',
+  ],
   featuredCalculators: ['irrf', 'porcentagem'],
   highlights: [
     {
@@ -100,7 +106,8 @@ export const newsReceitaLoteResidualIrpf30Novembro2026 = {
       url: 'https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/receita-federal-abre-consulta-ao-lote-residual-de-restituicao-do-irpf-2026-nesta-segunda-feira-23',
     },
     {
-      label: 'Agência Brasil: Receita libera consulta ao lote residual do Imposto de Renda',
+      label:
+        'Agência Brasil: Receita libera consulta ao lote residual do Imposto de Renda',
       url: 'https://agenciabrasil.ebc.com.br/radioagencia-nacional/economia/audio/2026-11/receita-libera-consulta-ao-lote-residual-do-imposto-de-renda',
     },
   ],

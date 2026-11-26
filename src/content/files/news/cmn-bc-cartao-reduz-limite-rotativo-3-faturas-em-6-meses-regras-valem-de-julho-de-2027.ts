@@ -81,10 +81,7 @@ export const newsCmnCartaoLimiteRotativo26Novembro2026 = {
             'Fim da restrição',
             'Seis faturas consecutivas pagas por inteiro ou quitação do rotativo',
           ],
-          [
-            'Base de análise',
-            'Cartões e dívidas em todo o sistema financeiro',
-          ],
+          ['Base de análise', 'Cartões e dívidas em todo o sistema financeiro'],
           ['Vigência', '1º/07/2027 para a maior parte das regras'],
         ],
       },

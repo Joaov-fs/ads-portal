@@ -69,17 +69,13 @@ export const newsDecreto5x2DivisorHoraExtra19Novembro2026 = {
         'Aplicando o adicional mínimo de 50% da hora extra (a convenção coletiva ou o contrato podem prever mais), a conta fica assim. Com divisor 220, a hora extra vale R$ 20,45. Com divisor 210, vale R$ 21,43. Com divisor 200, vale R$ 22,50. Em 10 horas extras no mês, o total vai de R$ 204,55 para R$ 214,29 e depois para R$ 225,00. Os valores são arredondados e não incluem o reflexo no descanso semanal remunerado.',
       ],
       table: {
-        caption: 'Hora e hora extra (adicional de 50%) para salário de R$ 3.000',
+        caption:
+          'Hora e hora extra (adicional de 50%) para salário de R$ 3.000',
         columns: ['Período', 'Divisor', 'Valor da hora', 'Hora extra a 50%'],
         rows: [
           ['Até 15/12/2026 (44h)', '220', 'R$ 13,64', 'R$ 20,45'],
           ['A partir de 16/12/2026 (42h)', '210', 'R$ 14,29', 'R$ 21,43'],
-          [
-            'A partir de dezembro de 2027 (40h)',
-            '200',
-            'R$ 15,00',
-            'R$ 22,50',
-          ],
+          ['A partir de dezembro de 2027 (40h)', '200', 'R$ 15,00', 'R$ 22,50'],
         ],
       },
     },

@@ -88,8 +88,7 @@ export const newsGovernoRenovaSubvencaoDiesel25Novembro2026 = {
     },
     {
       question: 'Quanto pode custar a prorrogação?',
-      answer:
-        'Entre R$ 8 bilhões e R$ 10,5 bilhões, segundo a Agência Brasil.',
+      answer: 'Entre R$ 8 bilhões e R$ 10,5 bilhões, segundo a Agência Brasil.',
     },
   ],
   sources: [

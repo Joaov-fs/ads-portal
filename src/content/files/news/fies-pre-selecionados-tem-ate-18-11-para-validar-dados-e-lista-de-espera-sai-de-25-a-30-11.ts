@@ -37,7 +37,8 @@ export const newsFiesPreSelecionados18Novembro = {
   ],
   sections: [
     {
-      heading: 'O resultado saiu em 16/11 e o prazo mais curto é o de quarta-feira',
+      heading:
+        'O resultado saiu em 16/11 e o prazo mais curto é o de quarta-feira',
       paragraphs: [
         'O Ministério da Educação divulgou em 16 de novembro a lista de pré-selecionados da edição de vagas remanescentes do Fundo de Financiamento Estudantil (Fies) do segundo semestre de 2026. São 50 mil vagas em cursos de graduação de instituições privadas, e o resultado pode ser consultado no Portal Acesso Único, com login da conta Gov.br.',
         'Quem aparece como pré-selecionado ainda não tem o financiamento garantido. O candidato precisa validar os dados da inscrição até quarta-feira, 18 de novembro, na Comissão Permanente de Supervisão e Acompanhamento do Fies (CPSA) da instituição para a qual foi pré-selecionado. Perder essa data é o risco mais concreto agora, porque o prazo é de apenas dois dias, 17 e 18/11.',
@@ -84,7 +85,8 @@ export const newsFiesPreSelecionados18Novembro = {
   ],
   faq: [
     {
-      question: 'Até quando o pré-selecionado do Fies precisa validar os dados?',
+      question:
+        'Até quando o pré-selecionado do Fies precisa validar os dados?',
       answer:
         'Até 18 de novembro de 2026, na Comissão Permanente de Supervisão e Acompanhamento do Fies (CPSA) da instituição de ensino para a qual foi pré-selecionado.',
     },
@@ -111,7 +113,8 @@ export const newsFiesPreSelecionados18Novembro = {
       url: 'https://agenciabrasil.ebc.com.br/radioagencia-nacional/educacao/audio/2026-11/mec-divulga-resultado-das-50-mil-vagas-remanescentes-do-fies-2026',
     },
     {
-      label: 'MEC: MEC divulga resultado da edição do Fies para vagas remanescentes',
+      label:
+        'MEC: MEC divulga resultado da edição do Fies para vagas remanescentes',
       url: 'https://www.gov.br/mec/pt-br/assuntos/noticias/2026/novembro/mec-divulga-resultado-da-edicao-do-fies-para-vagas-remanescentes',
     },
     {

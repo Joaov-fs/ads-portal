@@ -94,7 +94,8 @@ export const newsSenadoEstatutoAprendiz24Novembro2026 = {
   ],
   sources: [
     {
-      label: 'Agência Senado: Estatuto do Aprendiz está na pauta do Plenário nesta terça',
+      label:
+        'Agência Senado: Estatuto do Aprendiz está na pauta do Plenário nesta terça',
       url: 'https://www12.senado.leg.br/noticias/materias/2026/11/23/estatuto-do-aprendiz-esta-na-pauta-do-plenario-nesta-terca',
     },
     {

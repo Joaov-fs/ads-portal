@@ -10,8 +10,7 @@ export const newsAnatelAutenticacaoChamadas2027 = {
   category: 'financas',
   coverImage: {
     src: '/images/news/anatel-consulta-publica-autenticacao-de-chamadas-outubro-de-2027.jpg',
-    alt:
-      'Documento de consulta pública com o prazo de outubro de 2027, etiqueta laranja e celular mostrando ligação não autenticada bloqueada.',
+    alt: 'Documento de consulta pública com o prazo de outubro de 2027, etiqueta laranja e celular mostrando ligação não autenticada bloqueada.',
     credit: 'Ilustração: PortalFina',
   },
   authorId: 'thales-xavier',
@@ -23,8 +22,7 @@ export const newsAnatelAutenticacaoChamadas2027 = {
     {
       value: 'out/2027',
       label: 'Prazo proposto pela Anatel',
-      note:
-        'Autenticar as chamadas no país. A meta anterior era novembro de 2028.',
+      note: 'Autenticar as chamadas no país. A meta anterior era novembro de 2028.',
     },
     {
       value: '10 dias',
@@ -34,14 +32,12 @@ export const newsAnatelAutenticacaoChamadas2027 = {
     {
       value: '85%',
       label: 'Chamadas curtas ou não completadas',
-      note:
-        'Percentual que, com o volume de ligações, pode barrar a origem por 15 dias.',
+      note: 'Percentual que, com o volume de ligações, pode barrar a origem por 15 dias.',
     },
     {
       value: '100 mil',
       label: 'Chamadas por mês',
-      note:
-        'Abaixo disso, a empresa seria dispensada de mostrar nome e logotipo na tela.',
+      note: 'Abaixo disso, a empresa seria dispensada de mostrar nome e logotipo na tela.',
     },
   ],
   sections: [
@@ -49,8 +45,7 @@ export const newsAnatelAutenticacaoChamadas2027 = {
       heading: 'O que a Anatel colocou em consulta pública',
       image: {
         src: '/images/news/anatel-consulta-publica-autenticacao-de-chamadas-outubro-de-2027-detalhe.jpg',
-        alt:
-          'Close do documento com o prazo de outubro de 2027, a meta anterior de novembro de 2028 e o prazo de 10 dias para contribuições.',
+        alt: 'Close do documento com o prazo de outubro de 2027, a meta anterior de novembro de 2028 e o prazo de 10 dias para contribuições.',
         caption:
           'Prazos da proposta: out/2027 para autenticar as chamadas e 10 dias para contribuições.',
         credit: 'Ilustração: PortalFina',
@@ -85,10 +80,7 @@ export const newsAnatelAutenticacaoChamadas2027 = {
             'Autenticação das chamadas',
             'Proposta de out/2027; meta anterior de nov/2028',
           ],
-          [
-            'Prazo da Anatel para regulamentar a MP',
-            '60 dias, até 12/12/2026',
-          ],
+          ['Prazo da Anatel para regulamentar a MP', '60 dias, até 12/12/2026'],
           [
             'Chamadas em massa',
             'Mais de mil por acesso ou dez mil por dia, com 85% curtas ou não completadas',
@@ -130,8 +122,7 @@ export const newsAnatelAutenticacaoChamadas2027 = {
       url: 'https://teletime.com.br/19/11/2026/anatel-mp-autenticacao/',
     },
     {
-      label:
-        'Teletime: MCom, MP antecipa autenticação de chamadas, 13/10/2026',
+      label: 'Teletime: MCom, MP antecipa autenticação de chamadas, 13/10/2026',
       url: 'https://teletime.com.br/13/10/2026/mcom-mp-antecipa-autenticacao/',
     },
     {

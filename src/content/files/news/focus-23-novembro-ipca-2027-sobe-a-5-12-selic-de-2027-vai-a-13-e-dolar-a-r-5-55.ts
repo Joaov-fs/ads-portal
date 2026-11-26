@@ -119,7 +119,8 @@ export const newsFocus23Novembro2026 = {
       url: 'https://www.bcb.gov.br/publicacoes/focus',
     },
     {
-      label: 'Agência Brasil: Mercado eleva projeção do dólar para R$ 5,55 em 2026',
+      label:
+        'Agência Brasil: Mercado eleva projeção do dólar para R$ 5,55 em 2026',
       url: 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/mercado-eleva-projecao-do-dolar-para-r-555-em-2026',
     },
     {

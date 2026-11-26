@@ -16,7 +16,14 @@ export const newsBancosFecham20Novembro2026 = {
   authorId: 'sara-souza',
   publishedAt: '2026-11-18',
   updatedAt: '2026-11-18',
-  tags: ['feriado-bancario', 'consciencia-negra', 'boleto', 'pix', 'ted', 'bancos'],
+  tags: [
+    'feriado-bancario',
+    'consciencia-negra',
+    'boleto',
+    'pix',
+    'ted',
+    'bancos',
+  ],
   featuredCalculators: ['contador-de-dias', 'juros-simples'],
   highlights: [
     {
@@ -65,8 +72,14 @@ export const newsBancosFecham20Novembro2026 = {
           ['Agências', 'Sem atendimento presencial em 20/11'],
           ['Pix', 'Funciona 24 horas, inclusive no feriado'],
           ['Aplicativo e internet banking', 'Disponíveis, segundo a Febraban'],
-          ['Contas de consumo e boletos bancários', 'Podem ser pagos em 23/11, sem acréscimos'],
-          ['Tributos e impostos', 'Pagar antes do feriado, para evitar juros e multa'],
+          [
+            'Contas de consumo e boletos bancários',
+            'Podem ser pagos em 23/11, sem acréscimos',
+          ],
+          [
+            'Tributos e impostos',
+            'Pagar antes do feriado, para evitar juros e multa',
+          ],
           ['TED e cheques', 'Não são processados no feriado'],
         ],
       },
@@ -87,7 +100,8 @@ export const newsBancosFecham20Novembro2026 = {
         'Não. As agências não terão atendimento presencial no Dia da Consciência Negra. Aplicativos, internet banking e Pix seguem funcionando.',
     },
     {
-      question: 'Boleto com vencimento em 20/11 tem multa se eu pagar em 23/11?',
+      question:
+        'Boleto com vencimento em 20/11 tem multa se eu pagar em 23/11?',
       answer:
         'Segundo a Febraban, contas de consumo e boletos bancários que vencem no feriado podem ser pagos em 23/11, sem acréscimos. Tributos e impostos devem ser pagos antes.',
     },

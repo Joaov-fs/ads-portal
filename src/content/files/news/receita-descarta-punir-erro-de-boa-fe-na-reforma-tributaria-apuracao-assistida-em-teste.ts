@@ -94,7 +94,8 @@ export const newsReceitaBoaFeReformaTributaria = {
   ],
   faq: [
     {
-      question: 'A Receita vai multar empresa que errar na transição da CBS e do IBS?',
+      question:
+        'A Receita vai multar empresa que errar na transição da CBS e do IBS?',
       answer:
         'Em 17/11, o secretário da Receita disse que contribuinte de boa-fé não deve ser punido por falhas no período de adaptação, desde que não oculte informações nem tente fraudar o sistema. A orientação é corrigir os procedimentos.',
     },
