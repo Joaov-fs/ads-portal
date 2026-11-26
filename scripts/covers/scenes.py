@@ -2841,3 +2841,28 @@ def _():
         + g(1100, 430, -4, 1, stamp('VAI AO PLENÁRIO', 380, '#c92a2a', -8))
         + g(1360, 580, 5, 1, keys(), 'sh')
     )
+
+
+@scene('cmo-orcamento-2027-corte-2026', '#4a3b6b', (60, 100, 760))
+def _():
+    rows = label_rows([('Corte previsto', 'R$ 2,09 bi'), ('Das discricionárias', '0,78%'), ('Fundo de Saúde', 'R$ 658,3 mi'), ('Emendas', 'até R$ 57,5 bi')], 46, 170, 408, 64, 20, hl=(0, '#e4dff0'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'ORÇAMENTO 2027', '#4a3b6b', rows))
+        + g(1000, 120, 5, 1, tag('Relatório preliminar', 420, '#2a7f62'))
+        + g(1100, 430, -4, 1, stamp('APROVADO NA CMO', 450, '#1e7d55', -8))
+        + g(1330, 560, 5, 1, coins_stack(3), 'sh')
+    )
+
+
+@scene('bb-google-falsa-central-2026', '#1f5a6b', (60, 100, 760))
+def _():
+    scr = ('<rect x="20" y="60" width="190" height="64" rx="10" fill="#fff"/>'
+           '<text x="115" y="102" font-size="26" font-weight="800" text-anchor="middle" fill="#c92a2a">4004-0001</text>'
+           '<rect x="20" y="150" width="190" height="50" rx="10" fill="#e03131"/>'
+           '<text x="115" y="184" font-size="22" font-weight="800" text-anchor="middle" fill="#fff">BLOQUEADA</text>')
+    rows = label_rows([('Chamadas bloqueadas', '77 mil+'), ('Prazo', '1ª semana'), ('Golpe', 'falsa central'), ('Sistema', 'Android')], 46, 170, 408, 64, 20, hl=(0, '#d8eaf0'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'GOLPE DA FALSA CENTRAL', '#1f5a6b', rows))
+        + g(1000, 90, 5, 1, phone(230, 420, scr))
+        + g(1130, 520, -4, 1, stamp('NÃO ATENDA', 330, '#c92a2a', -8))
+    )

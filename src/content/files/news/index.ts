@@ -214,6 +214,8 @@ import { newsForcaNacionalSusPl351Senado26Novembro2026 } from './forca-nacional-
 import { newsInssProvaDeVidaEleicoes26Novembro2026 } from './inss-22-4-milhoes-de-beneficios-comprovaram-vida-ao-votar-nas-eleicoes-de-2026';
 import { newsTrf1DerrubaSuspensaoVrVa26Novembro2026 } from './trf1-derruba-suspensao-regras-do-vr-e-va-em-qualquer-maquininha-voltam-a-valer';
 
+import { newsCmoOrcamento2027Corte209Bilhoes } from './cmo-aprova-relatorio-do-orcamento-de-2027-com-corte-de-r-2-09-bilhoes';
+import { newsBbGoogleBloqueiamFalsaCentral4004 } from './bb-e-google-bloqueiam-77-mil-chamadas-do-golpe-da-falsa-central-4004-0001';
 export const newsFiles = [
   newsPetrobrasPlano2027a2031,
   newsFiesRemanescentes2026,
@@ -424,4 +426,6 @@ export const newsFiles = [
   newsContasExternasOutubro2026,
   newsCcjPl1229TesteEmbriaguez,
   newsCcjPl3595FiadorImovelInquilino,
+  newsCmoOrcamento2027Corte209Bilhoes,
+  newsBbGoogleBloqueiamFalsaCentral4004,
 ] as const;

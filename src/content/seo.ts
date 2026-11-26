@@ -134,6 +134,10 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'cmo-aprova-relatorio-do-orcamento-de-2027-com-corte-de-r-2-09-bilhoes':
+    'CMO aprova Orçamento 2027 com corte de R$ 2,09 bi',
+  'bb-e-google-bloqueiam-77-mil-chamadas-do-golpe-da-falsa-central-4004-0001':
+    'BB e Google bloqueiam 77 mil chamadas de golpe',
   'forca-nacional-do-sus-senado-aprova-pl-351-2019-e-texto-vai-a-sancao':
     'Senado aprova a Força Nacional do SUS (PL 351)',
   'inss-22-4-milhoes-de-beneficios-comprovaram-vida-ao-votar-nas-eleicoes-de-2026':
