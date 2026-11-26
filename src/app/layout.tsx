@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 
 import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { Analytics } from '@/components/analytics';
 import { AdSenseScript } from '@/components/advertising';
@@ -94,6 +95,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ConsentBanner />
         <Analytics />
         <VercelAnalytics />
+        <SpeedInsights />
         <AdSenseScript />
       </body>
     </html>
