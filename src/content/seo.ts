@@ -138,6 +138,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Senado aprova a Força Nacional do SUS (PL 351)',
   'inss-22-4-milhoes-de-beneficios-comprovaram-vida-ao-votar-nas-eleicoes-de-2026':
     'INSS: 22,4 mi renovaram prova de vida no voto',
+  'trf1-derruba-suspensao-regras-do-vr-e-va-em-qualquer-maquininha-voltam-a-valer':
+    'TRF1 derruba suspensão e regra do VR e VA volta',
   'orcamento-2026-governo-libera-r-3-43-bi-contencao-cai-para-r-12-63-bi':
     'Governo libera R$ 3,43 bi do Orçamento de 2026',
   'lei-benicio-cas-aprova-pl-2107-2026-seguranca-no-atendimento-pediatrico':

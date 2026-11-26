@@ -207,6 +207,7 @@ import { newsStfValidaValorAcoesTrabalhistas25Novembro2026 } from './stf-valida-
 import { newsGovernoRenovaSubvencaoDiesel25Novembro2026 } from './governo-deve-renovar-subvencao-de-r-2-12-ao-diesel-por-30-dias';
 import { newsForcaNacionalSusPl351Senado26Novembro2026 } from './forca-nacional-do-sus-senado-aprova-pl-351-2019-e-texto-vai-a-sancao';
 import { newsInssProvaDeVidaEleicoes26Novembro2026 } from './inss-22-4-milhoes-de-beneficios-comprovaram-vida-ao-votar-nas-eleicoes-de-2026';
+import { newsTrf1DerrubaSuspensaoVrVa26Novembro2026 } from './trf1-derruba-suspensao-regras-do-vr-e-va-em-qualquer-maquininha-voltam-a-valer';
 
 export const newsFiles = [
   newsPetrobrasPlano2027a2031,
@@ -412,4 +413,5 @@ export const newsFiles = [
   newsGovernoRenovaSubvencaoDiesel25Novembro2026,
   newsForcaNacionalSusPl351Senado26Novembro2026,
   newsInssProvaDeVidaEleicoes26Novembro2026,
+  newsTrf1DerrubaSuspensaoVrVa26Novembro2026,
 ] as const;

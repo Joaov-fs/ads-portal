@@ -2772,3 +2772,14 @@ def _():
         + g(1130, 330, -6, 1, card(340, 214, '#7a5fb0', '#4b3a7a', 'BENEFÍCIO'))
         + g(1230, 600, 6, 1, phone(230, 420))
     )
+
+
+@scene('vr-va-trf1-regras-voltam-2026', '#2f6f8f', (60, 100, 760))
+def _():
+    rows = label_rows([('Regra', 'formato aberto'), ('Operadoras', '500 mil+ benef.'), ('Situação', 'Em vigor'), ('Ação', 'segue na Justiça')], 46, 170, 408, 64, 20, hl=(2, '#d6ecf5'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'VR E VA NAS MAQUININHAS', '#2f6f8f', rows))
+        + g(1000, 120, 5, 1, card(340, 214, '#2a9d8f', '#1d6f65', 'VR'))
+        + g(1100, 430, -4, 1, stamp('VOLTA A VALER', 330, '#1e7d55', -8))
+        + g(1330, 560, 5, 1, coins_stack(3), 'sh')
+    )
