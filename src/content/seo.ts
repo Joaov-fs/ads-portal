@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'forca-nacional-do-sus-senado-aprova-pl-351-2019-e-texto-vai-a-sancao':
+    'Senado aprova a Força Nacional do SUS (PL 351)',
   'orcamento-2026-governo-libera-r-3-43-bi-contencao-cai-para-r-12-63-bi':
     'Governo libera R$ 3,43 bi do Orçamento de 2026',
   'lei-benicio-cas-aprova-pl-2107-2026-seguranca-no-atendimento-pediatrico':

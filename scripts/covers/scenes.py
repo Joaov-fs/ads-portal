@@ -2749,3 +2749,16 @@ def _():
         + g(1130, 400, -6, 1, jerrycan())
         + g(1480, 640, 0, 1, coins_stack(4), 'sh')
     )
+
+
+@scene('forca-nacional-sus-sancao', '#2f5d62', (100, 110, 700))
+def _():
+    rows = label_rows([('Projeto', 'PL 351/2019'), ('Votação', 'Plenário do Senado'), ('Missões', '170 desde 2011'), ('Próximo passo', 'sanção')], 46, 170, 408, 64, 21, hl=(3, '#d8efe6'))
+    return (
+        g(130, 120, -4, 1, doc(500, 580, 'FORÇA NACIONAL DO SUS', '#2f5d62', rows))
+        + g(760, 150, 5, 1, tag('PL 351/2019', 300, '#2a7f62'))
+        + g(1150, 360, -5, 1, stamp('VAI À SANÇÃO', 330, '#c92a2a', -6))
+        + g(1130, 560, 4, 1, pen(360, '#1d2a4d'))
+        + g(1480, 650, 0, 1, coins_stack(2), 'sh')
+    )
+
