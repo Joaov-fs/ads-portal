@@ -384,6 +384,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Lucro do BB cai 66,5% no 3º trimestre de 2026',
   'stf-valida-valor-no-pedido-de-acoes-trabalhistas-adi-6002':
     'STF exige valor em ação trabalhista, com estimativa',
+  'contas-externas-deficit-de-us-4-bi-em-outubro-e-us-60-6-bi-em-12-meses':
+    'Contas externas: déficit de US$ 4 bi em outubro',
   'governo-deve-renovar-subvencao-de-r-2-12-ao-diesel-por-30-dias':
     'Diesel: subvenção de R$ 2,12 deve ir a mais 30 dias',
   'diesel-importado-perde-subvencao-de-r-1-40-e-rodoviario-mantem-r-2-12':

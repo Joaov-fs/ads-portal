@@ -1,3 +1,4 @@
+import { newsContasExternasOutubro2026 } from './contas-externas-deficit-de-us-4-bi-em-outubro-e-us-60-6-bi-em-12-meses';
 import { newsArrecadacaoFederalOutubro2026 } from './arrecadacao-federal-recorde-de-r-294-bilhoes-em-outubro-alta-real-de-7-28';
 import { newsGasDoPovoUmAno24Novembro } from './gas-do-povo-completa-1-ano-15-milhoes-de-familias-e-r-5-5-bilhoes-em-24-11';
 import { newsTupanciretaCalamidadePublicaTemporal2026 } from './tupancireta-calamidade-publica-temporal-25-mil-afetados-19-8-mil-desalojados-rs';
@@ -418,4 +419,5 @@ export const newsFiles = [
   newsTrf1DerrubaSuspensaoVrVa26Novembro2026,
   newsIpca15Novembro2026,
   newsCmnCartaoLimiteRotativo26Novembro2026,
+  newsContasExternasOutubro2026,
 ] as const;

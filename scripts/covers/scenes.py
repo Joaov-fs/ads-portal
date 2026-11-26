@@ -2808,3 +2808,14 @@ def _():
         + g(1100, 430, -4, 1, stamp('LIMITE MENOR', 330, '#c92a2a', -8))
         + g(1330, 560, 5, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('contas-externas-outubro-2026', '#2b4a6b', (60, 100, 760))
+def _():
+    rows = label_rows([('Déficit no mês', 'US$ 4 bi'), ('12 meses', 'US$ 60,6 bi'), ('Do PIB', '2,34%'), ('Reservas', 'US$ 365 bi')], 46, 170, 408, 64, 20, hl=(0, '#dbe7f3'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'CONTAS EXTERNAS', '#2b4a6b', rows))
+        + g(1000, 120, 5, 1, tag('Outubro 2026', 360, '#2a7f62'))
+        + g(1100, 430, -4, 1, stamp('DÉFICIT', 330, '#c92a2a', -8))
+        + g(1330, 560, 5, 1, coins_stack(4), 'sh')
+    )
