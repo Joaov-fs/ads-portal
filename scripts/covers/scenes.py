@@ -2783,3 +2783,17 @@ def _():
         + g(1100, 430, -4, 1, stamp('VOLTA A VALER', 330, '#1e7d55', -8))
         + g(1330, 560, 5, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('ipca15-novembro-2026', '#3f5f2a', (80, 100, 860))
+def _():
+    rep = doc(500, 660, 'IPCA-15 NOVEMBRO 2026', '#3f5f2a',
+              label_rows([('No mês', '0,22%'), ('Outubro', '0,32%'), ('12 meses', '4,64%'), ('Alimentos', '1,51%')], 46, 150, 408, 54, 20, hl=(2, '#fff3bf'))
+              + '<g transform="translate(30 350)">' + chart_paper(440, 270, (0.45, 0.3, 0.2, 0.6), '#3f5f2a') + '</g>')
+    return (
+        g(110, 90, -4, 1, rep)
+        + g(720, 130, 7, 1, calculator(260, 360) + '<rect x="22" y="24" width="216" height="70" rx="10" fill="#c8d6c0"/><text x="224" y="74" font-size="34" font-weight="700" text-anchor="end" fill="#2d3a2a" font-family="DejaVu Sans Mono,monospace">4,64</text>')
+        + g(1020, 120, -6, 1, tag('Tomate +38,92%', 420, '#e03131'), 'shs')
+        + g(1150, 360, 5, 1, tag('Transportes -0,71%', 380, '#2b8a3e'), 'shs')
+        + g(780, 640, 0, 1, coins_stack(3), 'sh')
+    )

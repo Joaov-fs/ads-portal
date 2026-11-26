@@ -422,6 +422,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     '13º salário 2026: 1ª parcela 30/11, 2ª 18/12',
   'ipca-15-de-novembro-sai-em-26-11-coleta-de-15-10-a-16-11-e-inflacao-em-12-meses-esta-em-4-63':
     'IPCA-15 de novembro sai em 26/11: o que esperar',
+  'ipca-15-de-novembro-sobe-0-22-inflacao-em-12-meses-vai-a-4-64-tomate-dispara-38-92':
+    'IPCA-15 sobe 0,22% e vai a 4,64% em 12 meses',
   'ipca-15-de-outubro-sobe-0-32-e-inflacao-em-12-meses-vai-a-4-62-tomate-puxa-a-alta':
     'IPCA-15 de outubro: 0,32% e 4,62% em 12 meses',
   'gas-do-povo-completa-1-ano-15-milhoes-de-familias-e-r-5-5-bilhoes-em-24-11':

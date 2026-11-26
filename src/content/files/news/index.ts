@@ -63,6 +63,7 @@ import { newsBancosFinados2Novembro2026 } from './bancos-fecham-no-feriado-de-fi
 import { newsGasolinaAnpPrimeiraSemanaSemTributos } from './gasolina-na-bomba-quase-nao-cai-anp-mostra-r-6-53-na-1a-semana-sem-tributos-federais';
 import { newsDolarFechaAbaixoDeR5 } from './dolar-fecha-a-r-4-993-e-cai-1-58-na-semana-o-que-muda-para-quem-compra-e-viaja';
 import { news13oSalario2026Datas } from './13o-salario-2026-primeira-parcela-ate-30-de-novembro-e-segunda-ate-18-de-dezembro';
+import { newsIpca15Novembro2026 } from './ipca-15-de-novembro-sobe-0-22-inflacao-em-12-meses-vai-a-4-64-tomate-dispara-38-92';
 import { newsIpca15NovembroDivulgacao2026 } from './ipca-15-de-novembro-sai-em-26-11-coleta-de-15-10-a-16-11-e-inflacao-em-12-meses-esta-em-4-63';
 import { newsIpca15Outubro2026 } from './ipca-15-de-outubro-sobe-0-32-e-inflacao-em-12-meses-vai-a-4-62-tomate-puxa-a-alta';
 import { newsArrecadacaoFederalSetembro2026 } from './arrecadacao-federal-recorde-de-r-239-4-bilhoes-em-setembro-o-que-a-alta-de-5-62-significa-para-voce';
@@ -414,4 +415,5 @@ export const newsFiles = [
   newsForcaNacionalSusPl351Senado26Novembro2026,
   newsInssProvaDeVidaEleicoes26Novembro2026,
   newsTrf1DerrubaSuspensaoVrVa26Novembro2026,
+  newsIpca15Novembro2026,
 ] as const;
