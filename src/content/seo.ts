@@ -376,6 +376,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Focus: IPCA de 2027 sobe a 5,00%, dólar a R$ 5,40',
   'bb-lucro-cai-66-5-3t26-inadimplencia-agro-projecao-2026-r-9-a-11-bi':
     'Lucro do BB cai 66,5% no 3º trimestre de 2026',
+  'stf-valida-valor-no-pedido-de-acoes-trabalhistas-adi-6002':
+    'STF exige valor em ação trabalhista, com estimativa',
   'diesel-importado-perde-subvencao-de-r-1-40-e-rodoviario-mantem-r-2-12':
     'Diesel importado perde subvenção de R$ 1,40',
   'dolar-sobe-8-21-a-r-5-403-e-bolsa-cai-13-88-o-que-muda-para-o-seu-bolso':
