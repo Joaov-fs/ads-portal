@@ -1,3 +1,5 @@
+import { newsCcjPl1229TesteEmbriaguez } from './ccj-aprova-pl-1229-2024-teste-de-embriaguez-para-motorista-que-causar-acidente';
+import { newsCcjPl3595FiadorImovelInquilino } from './ccj-aprova-pl-3595-2021-fiador-pode-ser-ressarcido-com-imovel-do-inquilino-inadimplente';
 import { newsContasExternasOutubro2026 } from './contas-externas-deficit-de-us-4-bi-em-outubro-e-us-60-6-bi-em-12-meses';
 import { newsArrecadacaoFederalOutubro2026 } from './arrecadacao-federal-recorde-de-r-294-bilhoes-em-outubro-alta-real-de-7-28';
 import { newsGasDoPovoUmAno24Novembro } from './gas-do-povo-completa-1-ano-15-milhoes-de-familias-e-r-5-5-bilhoes-em-24-11';
@@ -420,4 +422,6 @@ export const newsFiles = [
   newsIpca15Novembro2026,
   newsCmnCartaoLimiteRotativo26Novembro2026,
   newsContasExternasOutubro2026,
+  newsCcjPl1229TesteEmbriaguez,
+  newsCcjPl3595FiadorImovelInquilino,
 ] as const;

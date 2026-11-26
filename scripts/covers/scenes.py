@@ -2819,3 +2819,25 @@ def _():
         + g(1100, 430, -4, 1, stamp('DÉFICIT', 330, '#c92a2a', -8))
         + g(1330, 560, 5, 1, coins_stack(4), 'sh')
     )
+
+
+@scene('ccj-teste-embriaguez-pl-1229-2026', '#3b4a6b', (60, 100, 760))
+def _():
+    rows = label_rows([('Projeto', 'PL 1.229/2024'), ('Votação', 'CCJ, 25/11'), ('Teste', 'ar e exame'), ('Próximo passo', 'Câmara')], 46, 170, 408, 64, 20, hl=(1, '#dde3f0'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'TRÂNSITO E EMBRIAGUEZ', '#3b4a6b', rows))
+        + g(1000, 120, 5, 1, tag('Código de Trânsito', 400, '#2a7f62'))
+        + g(1100, 430, -4, 1, stamp('APROVADO NA CCJ', 380, '#1e7d55', -8))
+        + g(1360, 580, 5, 1, keys(), 'sh')
+    )
+
+
+@scene('ccj-fiador-inquilino-pl-3595-2026', '#6b4a2f', (60, 100, 760))
+def _():
+    rows = label_rows([('Projeto', 'PL 3.595/2021'), ('Votação', 'CCJ, 25/11'), ('Lei alterada', '8.009/1990'), ('Próximo passo', 'Plenário')], 46, 170, 408, 64, 20, hl=(1, '#f3e6d6'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'FIADOR E ALUGUEL', '#6b4a2f', rows))
+        + g(1000, 120, 5, 1, house(1))
+        + g(1100, 430, -4, 1, stamp('VAI AO PLENÁRIO', 380, '#c92a2a', -8))
+        + g(1360, 580, 5, 1, keys(), 'sh')
+    )

@@ -386,6 +386,10 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'STF exige valor em ação trabalhista, com estimativa',
   'contas-externas-deficit-de-us-4-bi-em-outubro-e-us-60-6-bi-em-12-meses':
     'Contas externas: déficit de US$ 4 bi em outubro',
+  'ccj-aprova-pl-1229-2024-teste-de-embriaguez-para-motorista-que-causar-acidente':
+    'CCJ aprova teste de embriaguez após acidente',
+  'ccj-aprova-pl-3595-2021-fiador-pode-ser-ressarcido-com-imovel-do-inquilino-inadimplente':
+    'CCJ: fiador de aluguel poderá cobrar o inquilino',
   'governo-deve-renovar-subvencao-de-r-2-12-ao-diesel-por-30-dias':
     'Diesel: subvenção de R$ 2,12 deve ir a mais 30 dias',
   'diesel-importado-perde-subvencao-de-r-1-40-e-rodoviario-mantem-r-2-12':
