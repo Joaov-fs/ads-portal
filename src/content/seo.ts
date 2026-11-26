@@ -152,6 +152,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Senado aprova o novo Plano Nacional de Cultura',
   'lc-239-ajuste-fiscal-sancionado-sem-vetos-meta-2027-r-18-7-bi':
     'Ajuste fiscal sancionado sem vetos: LC 239/2026',
+  'dolar-fecha-a-r-5-74-ibovespa-dispara-6-07-a-176-8-mil-pontos-em-26-11':
+    'Ibovespa sobe 6,07% e dólar cai a R$ 5,74 em 26/11',
   'dolar-cai-a-r-5-82-ibovespa-sobe-1-58-a-166-7-mil-pontos-e-embraer-perde-4-em-25-11':
     'Dólar cai a R$ 5,82 e Ibovespa sobe 1,58% em 25/11',
   'dolar-fecha-a-r-5-91-ibovespa-cai-0-43-a-164-mil-pontos-e-vale-despenca-5-5-em-24-11':

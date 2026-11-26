@@ -2866,3 +2866,15 @@ def _():
         + g(1000, 90, 5, 1, phone(230, 420, scr))
         + g(1130, 520, -4, 1, stamp('NÃO ATENDA', 330, '#c92a2a', -8))
     )
+
+
+@scene('fechamento-ibovespa-176-mil-26-novembro-2026', '#7a3b2e', (60, 100, 760))
+def _():
+    rows = label_rows([('Ibovespa (fechamento)', '176.800'), ('Alta no dia', '6,07%'), ('Dólar', 'R$ 5,74'), ('Queda no dia', '1,25%')], 46, 170, 408, 64, 21, hl=(1, '#f3dcd5'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'FECHAMENTO 26/11', '#5a2418', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.08, 0.3, 0.55, 0.7, 0.75, 0.9), color='#2f9e44', title='IBOVESPA'))
+        + g(1290, 110, 6, 1, tag('R$ 5,74', 280, '#2b8a3e'))
+        + g(1330, 500, -4, 1, coin(70))
+        + g(1010, 700, -5, 1, stamp('BOLSA +6,07%', 480, '#f4e3c3', -4))
+    )
