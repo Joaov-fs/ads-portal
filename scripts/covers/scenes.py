@@ -2725,3 +2725,27 @@ def _():
         + g(1330, 500, -4, 1, coin(70))
         + g(1010, 700, -5, 1, stamp('IBOVESPA +1,58%', 480, '#f4e3c3', -4))
     )
+
+
+@scene('stf-acao-trabalhista-valor', '#3d4f7a', (100, 110, 700))
+def _():
+    rows = label_rows([('Processo', 'ADI 6.002'), ('Pedido', 'com valor'), ('Estimativa', 'se justificada'), ('Valor errado', 'dá para corrigir')], 46, 170, 408, 64, 21, hl=(1, '#dde4f7'))
+    return (
+        g(130, 120, -4, 1, doc(500, 580, 'AÇÃO TRABALHISTA', '#3d4f7a', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.5, '#a9b7de'), (0.75, '#6d82bd'), (1.0, '#3d4f7a'))) + '</g>'))
+        + g(760, 130, 5, 1, doc(420, 500, 'PETIÇÃO INICIAL', '#3d4f7a', label_rows([('Pedido', 'certo'), ('Valor', 'indicado')], 35, 160, 350, 70, 21)))
+        + g(1280, 150, 7, 1, tag('ADI 6.002', 300, '#e8590c'))
+        + g(1230, 480, -6, 1, pen(360, '#1d2a4d'))
+        + g(1450, 650, 0, 1, coins_stack(3), 'sh')
+    )
+
+
+@scene('diesel-subvencao-30-dias', '#6b4a2b', (100, 110, 700))
+def _():
+    rows = label_rows([('Subvenção', 'R$ 2,12/litro'), ('Prorrogação', 'mais 30 dias'), ('Custo previsto', 'até R$ 10,5 bi'), ('Portaria', 'ainda a validar')], 46, 170, 408, 64, 21, hl=(1, '#f6e3c8'))
+    return (
+        g(130, 120, -4, 1, doc(500, 580, 'SUBVENÇÃO DO DIESEL', '#6b4a2b', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.8, '#d9b98a'), (0.6, '#b08a5a'), (1.0, '#6b4a2b'))) + '</g>'))
+        + g(760, 150, 5, 1, fuel_pump())
+        + g(1170, 120, 8, 1, tag('R$ 2,12', 250, '#2a7f62'))
+        + g(1130, 400, -6, 1, jerrycan())
+        + g(1480, 640, 0, 1, coins_stack(4), 'sh')
+    )
