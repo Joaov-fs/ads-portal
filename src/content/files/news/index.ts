@@ -204,6 +204,7 @@ import { newsMarinhoPortariasJornadasEspeciais24Novembro2026 } from './marinho-p
 import { newsMpoxRioSuspendeVacinacao24Novembro2026 } from './mpox-rio-suspende-vacinacao-por-falta-de-doses-8-mil-vacinados-e-315-casos-na-cidade';
 import { newsOpenFinanceIniciadorActions24Novembro2026 } from './open-finance-iniciador-actions-automatiza-transferencias-entre-contas-proprias-via-pix';
 import { newsStfValidaValorAcoesTrabalhistas25Novembro2026 } from './stf-valida-valor-no-pedido-de-acoes-trabalhistas-adi-6002';
+import { newsGovernoRenovaSubvencaoDiesel25Novembro2026 } from './governo-deve-renovar-subvencao-de-r-2-12-ao-diesel-por-30-dias';
 
 export const newsFiles = [
   newsPetrobrasPlano2027a2031,
@@ -406,4 +407,5 @@ export const newsFiles = [
   newsMpoxRioSuspendeVacinacao24Novembro2026,
   newsOpenFinanceIniciadorActions24Novembro2026,
   newsStfValidaValorAcoesTrabalhistas25Novembro2026,
+  newsGovernoRenovaSubvencaoDiesel25Novembro2026,
 ] as const;
