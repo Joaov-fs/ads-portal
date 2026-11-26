@@ -2762,3 +2762,13 @@ def _():
         + g(1480, 650, 0, 1, coins_stack(2), 'sh')
     )
 
+
+@scene('inss-prova-de-vida-eleicoes', '#5a4a7a', (100, 110, 700))
+def _():
+    rows = label_rows([('Benefícios', '22,4 milhões'), ('Em dia', '31,2 milhões'), ('Pelo voto', '72%'), ('Maior faixa', '60 a 69 anos')], 46, 170, 408, 64, 21, hl=(0, '#e6dcf5'))
+    return (
+        g(130, 120, -4, 1, doc(500, 580, 'PROVA DE VIDA', '#5a4a7a', rows))
+        + g(760, 150, 5, 1, tag('22,4 mi', 250, '#2a7f62'))
+        + g(1130, 330, -6, 1, card(340, 214, '#7a5fb0', '#4b3a7a', 'BENEFÍCIO'))
+        + g(1230, 600, 6, 1, phone(230, 420))
+    )
