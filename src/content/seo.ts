@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'igp-m-novembro-1-24-acumulado-6-26-aluguel-de-r-2-000-vai-a-r-2-125-20':
+    'IGP-M de novembro: 1,24% e 6,26% em 12 meses',
   'trabuco-aceita-convite-de-lula-e-sera-ministro-da-fazenda-a-partir-de-2027':
     'Trabuco aceita comandar a Fazenda no governo Lula',
   'aposentadoria-2027-mulheres-60-anos-ou-94-pontos-e-homens-65-ou-104-pontos':

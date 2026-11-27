@@ -224,6 +224,7 @@ import { newsFechamento26Novembro2026 } from './dolar-fecha-a-r-5-74-ibovespa-di
 import { newsAnvisaTirzepatidaRetatrutidaSemRegistro } from './anvisa-tirzepatida-retatrutida-sem-registro-4-produtos-apreendidos';
 import { newsPix2027AgendaFraudeMensagens } from './pix-2027-indicador-de-fraude-mensagens-ofensivas-e-devolucao-simples-anunciados-pelo-bc';
 import { newsTrabucoMinistroFazenda2027 } from './trabuco-aceita-convite-de-lula-e-sera-ministro-da-fazenda-a-partir-de-2027';
+import { newsIgpmNovembro2026 } from './igp-m-novembro-1-24-acumulado-6-26-aluguel-de-r-2-000-vai-a-r-2-125-20';
 
 export const newsFiles = [
   newsPetrobrasPlano2027a2031,
@@ -445,4 +446,5 @@ export const newsFiles = [
   newsAposentadoria2027IdadePontos,
   newsReceitaBagagemCotaLimites,
   newsTrabucoMinistroFazenda2027,
+  newsIgpmNovembro2026,
 ] as const;
