@@ -1,4 +1,5 @@
 import { newsAposentadoria2027IdadePontos } from './aposentadoria-2027-mulheres-60-anos-ou-94-pontos-e-homens-65-ou-104-pontos';
+import { newsReceitaBagagemCotaLimites } from './receita-bagagem-cota-de-us-1-000-no-aviao-e-us-500-por-terra-limites-de-20-unidades';
 import { newsStfPisoProfessoresEstadosMunicipios26Novembro2026 } from './stf-piso-professores-estados-e-municipios-ate-fim-do-ano';
 import { newsCcjPl1229TesteEmbriaguez } from './ccj-aprova-pl-1229-2024-teste-de-embriaguez-para-motorista-que-causar-acidente';
 import { newsCcjPl3595FiadorImovelInquilino } from './ccj-aprova-pl-3595-2021-fiador-pode-ser-ressarcido-com-imovel-do-inquilino-inadimplente';
@@ -441,4 +442,5 @@ export const newsFiles = [
   newsStfPisoProfessoresEstadosMunicipios26Novembro2026,
   newsCagedOutubroColetiva30Novembro2026,
   newsAposentadoria2027IdadePontos,
+  newsReceitaBagagemCotaLimites,
 ] as const;

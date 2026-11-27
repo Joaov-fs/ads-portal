@@ -136,6 +136,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   // Notícias
   'aposentadoria-2027-mulheres-60-anos-ou-94-pontos-e-homens-65-ou-104-pontos':
     'Aposentadoria 2027: 60/65 anos ou 94/104 pontos',
+  'receita-bagagem-cota-de-us-1-000-no-aviao-e-us-500-por-terra-limites-de-20-unidades':
+    'Bagagem: cota de US$ 1.000 e limite de 20 unidades',
   'anvisa-tirzepatida-retatrutida-sem-registro-4-produtos-apreendidos':
     'Anvisa proíbe tirzepatida e retatrutida sem registro',
   'pix-2027-indicador-de-fraude-mensagens-ofensivas-e-devolucao-simples-anunciados-pelo-bc':
