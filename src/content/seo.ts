@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'aposentadoria-2027-mulheres-60-anos-ou-94-pontos-e-homens-65-ou-104-pontos':
+    'Aposentadoria 2027: 60/65 anos ou 94/104 pontos',
   'anvisa-tirzepatida-retatrutida-sem-registro-4-produtos-apreendidos':
     'Anvisa proíbe tirzepatida e retatrutida sem registro',
   'pix-2027-indicador-de-fraude-mensagens-ofensivas-e-devolucao-simples-anunciados-pelo-bc':

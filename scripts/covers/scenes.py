@@ -2932,3 +2932,26 @@ def _():
         + g(1230, 480, -6, 1, pen(360, '#4d1d2a'))
         + g(1450, 650, 0, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('aposentadoria-2027-regras', '#2f5d8a', (80, 100, 860))
+def _():
+    rows = label_rows([('Mulheres, idade', '60 anos'), ('Homens, idade', '65 anos'), ('Mulheres, pontos', '94'), ('Homens, pontos', '104')], 46, 170, 408, 64, 21, hl=(2, '#dce9f7'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'APOSENTADORIA 2027', '#2f5d8a', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.6, '#9db9d8'), (0.8, '#5d89b8'), (1.0, '#2f5d8a'))) + '</g>'))
+        + g(700, 90, 5, 1, calendar_month('JANEIRO 2027', 5, 31, marks=(1,), w=460, h=500, accent='#2f5d8a', mark_color='#e8590c'))
+        + g(1330, 250, 6, 1, phone(250, 500, phone_screen('Meu INSS', 'SIMULAR', 'aposentadoria', '#2f5d8a')))
+        + g(1000, 690, 3, 1, coins_stack(3), 'sh')
+    )
+
+
+@scene('bagagem-limites-receita', '#2a7f86', (80, 100, 860))
+def _():
+    rows = label_rows([('Via aérea e marítima', 'US$ 1.000'), ('Via terrestre', 'US$ 500'), ('Limite de unidades', '20 / 10'), ('Sem declarar', 'multa de 50%')], 46, 170, 408, 64, 20, hl=(0, '#d7eef0'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'BAGAGEM NA CHEGADA', '#2a7f86', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((1.0, '#2a7f86'), (0.5, '#8cc7cb'))) + '</g>'))
+        + g(700, 90, 5, 1, doc(420, 470, 'CHEGADA AO BRASIL', '#2a7f86', label_rows([('1', 'Declarar a bagagem'), ('2', 'Conferir a cota'), ('3', 'Pagar o excedente')], 35, 160, 350, 70, 21)))
+        + g(1280, 230, 6, 1, tag('US$ 1.000', 320, '#e8590c'))
+        + g(1230, 470, -4, 1, tag('US$ 500', 280, '#d9480f'))
+        + g(1000, 690, 3, 1, coins_stack(3), 'sh')
+    )
