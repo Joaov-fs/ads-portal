@@ -2908,3 +2908,15 @@ def _():
         + g(1260, 130, 8, 1, phone(250, 500, phone_screen('Pix', 'mais seguro', 'devolução simples', '#264f8c')))
         + g(250, 600, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('stf-piso-professores', '#7a3d4f', (100, 110, 700))
+def _():
+    rows = label_rows([('Piso inicial', 'R$ 5.130,63'), ('Quem paga', 'estados e municípios'), ('Prazo', 'fim do exercício'), ('Carreira', 'sem efeito automático')], 46, 170, 408, 64, 21, hl=(0, '#f7dde4'))
+    return (
+        g(130, 120, -4, 1, doc(500, 580, 'PISO DO MAGISTÉRIO', '#7a3d4f', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.5, '#deaab9'), (0.75, '#bd6d85'), (1.0, '#7a3d4f'))) + '</g>'))
+        + g(760, 130, 5, 1, doc(420, 500, 'RECURSO EXTRAORDINÁRIO', '#7a3d4f', label_rows([('Tema', '1.324'), ('Decisão', 'por maioria')], 35, 160, 350, 70, 21)))
+        + g(1280, 150, 7, 1, tag('R$ 5.130,63', 320, '#e8590c'))
+        + g(1230, 480, -6, 1, pen(360, '#4d1d2a'))
+        + g(1450, 650, 0, 1, coins_stack(3), 'sh')
+    )

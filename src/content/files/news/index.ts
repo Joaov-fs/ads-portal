@@ -1,3 +1,4 @@
+import { newsStfPisoProfessoresEstadosMunicipios26Novembro2026 } from './stf-piso-professores-estados-e-municipios-ate-fim-do-ano';
 import { newsCcjPl1229TesteEmbriaguez } from './ccj-aprova-pl-1229-2024-teste-de-embriaguez-para-motorista-que-causar-acidente';
 import { newsCcjPl3595FiadorImovelInquilino } from './ccj-aprova-pl-3595-2021-fiador-pode-ser-ressarcido-com-imovel-do-inquilino-inadimplente';
 import { newsContasExternasOutubro2026 } from './contas-externas-deficit-de-us-4-bi-em-outubro-e-us-60-6-bi-em-12-meses';
@@ -435,4 +436,5 @@ export const newsFiles = [
   newsFechamento26Novembro2026,
   newsAnvisaTirzepatidaRetatrutidaSemRegistro,
   newsPix2027AgendaFraudeMensagens,
+  newsStfPisoProfessoresEstadosMunicipios26Novembro2026,
 ] as const;
