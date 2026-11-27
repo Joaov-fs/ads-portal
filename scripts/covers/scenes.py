@@ -2878,3 +2878,33 @@ def _():
         + g(1330, 500, -4, 1, coin(70))
         + g(1010, 700, -5, 1, stamp('BOLSA +6,07%', 480, '#f4e3c3', -4))
     )
+
+
+def injector_pen():
+    return ('<rect width="380" height="64" rx="30" fill="#f4f1ea" stroke="#c9c2b2" stroke-width="4"/>'
+            '<rect x="250" width="130" height="64" rx="30" fill="#e0a82e"/>'
+            '<rect x="30" y="16" width="190" height="32" rx="8" fill="#fff" opacity=".85"/>'
+            '<path d="M380 22 H430 V42 H380 Z" fill="#9aa3a0"/><path d="M430 30 H470 V34 H430 Z" fill="#6b7570"/>')
+
+
+@scene('anvisa-canetas-sem-registro-2026', '#2f5d62', (90, 100, 760))
+def _():
+    rows = label_rows([('Produtos com apreensão', '4'), ('Registro na Anvisa', 'nenhum'), ('Venda e divulgação', 'proibidas')], 46, 170, 408, 64, 21, hl=(1, '#ffd9d4'))
+    return (
+        g(120, 120, -4, 1, doc(500, 540, 'SEM REGISTRO', '#a8322a', rows))
+        + g(760, 170, 6, 1, injector_pen())
+        + g(800, 380, -5, 1, injector_pen())
+        + g(1150, 130, 8, 1, stamp('PROIBIDO', 300, '#d63031', -8))
+        + g(1230, 440, 4, 1, phone(250, 500, phone_screen('Alerta Anvisa', 'sem registro', 'não use', '#a8322a', check=False)))
+    )
+
+
+@scene('pix-2027-agenda-fraude', '#264f8c', (90, 110, 540))
+def _():
+    conta = payslip([('Fórum Pix', '29ª plenária'), ('Indicador de fraude', 'tempo real'), ('Mensagens ofensivas', 'mascaradas')], hl=(1, '#dbe8ff'), header='PIX EM 2027', accent='#264f8c', w=460, h=360)
+    return (
+        g(120, 130, -5, 1, conta)
+        + g(700, 110, 5, 1, calendar_month('2027', 4, 31, marks=(), w=460, h=500, accent='#264f8c', mark_color='#e67e22'))
+        + g(1260, 130, 8, 1, phone(250, 500, phone_screen('Pix', 'mais seguro', 'devolução simples', '#264f8c')))
+        + g(250, 600, 3, 1, coins_stack(3), 'sh')
+    )

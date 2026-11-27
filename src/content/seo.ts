@@ -134,6 +134,10 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'anvisa-tirzepatida-retatrutida-sem-registro-4-produtos-apreendidos':
+    'Anvisa proíbe tirzepatida e retatrutida sem registro',
+  'pix-2027-indicador-de-fraude-mensagens-ofensivas-e-devolucao-simples-anunciados-pelo-bc':
+    'Pix em 2027: fraude, mensagens e devolução',
   'cmo-aprova-relatorio-do-orcamento-de-2027-com-corte-de-r-2-09-bilhoes':
     'CMO aprova Orçamento 2027 com corte de R$ 2,09 bi',
   'bb-e-google-bloqueiam-77-mil-chamadas-do-golpe-da-falsa-central-4004-0001':

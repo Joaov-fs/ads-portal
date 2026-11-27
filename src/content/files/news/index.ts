@@ -217,6 +217,9 @@ import { newsTrf1DerrubaSuspensaoVrVa26Novembro2026 } from './trf1-derruba-suspe
 import { newsCmoOrcamento2027Corte209Bilhoes } from './cmo-aprova-relatorio-do-orcamento-de-2027-com-corte-de-r-2-09-bilhoes';
 import { newsBbGoogleBloqueiamFalsaCentral4004 } from './bb-e-google-bloqueiam-77-mil-chamadas-do-golpe-da-falsa-central-4004-0001';
 import { newsFechamento26Novembro2026 } from './dolar-fecha-a-r-5-74-ibovespa-dispara-6-07-a-176-8-mil-pontos-em-26-11';
+import { newsAnvisaTirzepatidaRetatrutidaSemRegistro } from './anvisa-tirzepatida-retatrutida-sem-registro-4-produtos-apreendidos';
+import { newsPix2027AgendaFraudeMensagens } from './pix-2027-indicador-de-fraude-mensagens-ofensivas-e-devolucao-simples-anunciados-pelo-bc';
+
 export const newsFiles = [
   newsPetrobrasPlano2027a2031,
   newsFiesRemanescentes2026,
@@ -430,4 +433,6 @@ export const newsFiles = [
   newsCmoOrcamento2027Corte209Bilhoes,
   newsBbGoogleBloqueiamFalsaCentral4004,
   newsFechamento26Novembro2026,
+  newsAnvisaTirzepatidaRetatrutidaSemRegistro,
+  newsPix2027AgendaFraudeMensagens,
 ] as const;
