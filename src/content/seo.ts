@@ -136,6 +136,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   // Notícias
   'pl-2896-2022-senado-analisa-em-1-12-quarentena-de-estatais-de-3-anos-para-1-mes':
     'Senado analisa PL 2.896: quarentena de estatais',
+  'cmn-amplia-em-r-1-bilhao-limite-de-credito-a-estados-e-municipios-para-r-31-6-bi':
+    'CMN eleva limite de crédito a estados em R$ 1 bi',
   'nfs-e-de-aluguel-vale-em-1-12-pessoa-fisica-so-com-mais-de-3-imoveis-e-r-240-mil':
     'Nota fiscal de aluguel vale em 1º/12: quem emite',
   'igp-m-novembro-1-24-acumulado-6-26-aluguel-de-r-2-000-vai-a-r-2-125-20':
