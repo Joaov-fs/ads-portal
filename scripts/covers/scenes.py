@@ -3026,3 +3026,27 @@ def _():
         + g(1330, 500, -4, 1, coin(70))
         + g(1010, 700, -5, 1, stamp('DIs EM QUEDA', 440, '#f4e3c3', -4))
     )
+
+
+@scene('superavit-outubro-52-3-2026', '#2d5a3d', (80, 100, 860))
+def _():
+    rows = label_rows([('Superávit em outubro', 'R$ 52,3 bi'), ('Projeção do mercado', 'R$ 43,4 bi'), ('Outubro de 2025', 'R$ 36,6 bi'), ('Déficit jan. a out.', 'R$ 37,9 bi')], 46, 170, 408, 64, 21, hl=(0, '#d8efdf'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'RESULTADO FISCAL', '#2d5a3d', rows))
+        + g(700, 90, 5, 1, chart_paper(480, 380, bars=((0.55, '#a9d3b6'), (0.75, '#6fb286'), (1.0, '#2d5a3d')), title='OUTUBRO'))
+        + g(1330, 250, 6, 1, calculator(250, 350) + '<rect x="20" y="22" width="210" height="66" rx="10" fill="#c8d6c0"/><text x="214" y="70" font-size="32" font-weight="700" text-anchor="end" fill="#2d3a2a" font-family="DejaVu Sans Mono,monospace">52,3</text>')
+        + g(1160, 600, -4, 1, tag('SUPERÁVIT', 300, '#e8590c'))
+        + g(1000, 690, 3, 1, coins_stack(3), 'sh')
+    )
+
+
+@scene('tarifa-eua-avioes-acucar-2026', '#3a4a6b', (80, 100, 860))
+def _():
+    rows = label_rows([('Tarifa proposta', '10%'), ('Produtos', 'aviões e açúcar'), ('Projeto na Câmara', 'PL 4.675/2025'), ('Status', 'proposta, não vigora')], 46, 170, 408, 64, 21, hl=(0, '#dde4f5'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'TARIFA DOS EUA', '#3a4a6b', rows))
+        + g(700, 90, 5, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(27,), w=460, h=500, accent='#3a4a6b', mark_color='#e8590c'))
+        + g(1280, 160, 5, 1, box(380, 300))
+        + g(1160, 600, -4, 1, tag('TARIFA 10%', 300, '#e8590c'))
+        + g(1000, 700, 3, 1, coins_stack(3), 'sh')
+    )

@@ -134,6 +134,10 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'contas-do-governo-superavit-de-r-52-3-bi-em-outubro-acima-da-projecao-de-r-43-4-bi':
+    'Contas do governo: superávit de R$ 52,3 bi',
+  'governo-ve-tarifa-de-10-dos-eua-sobre-avioes-e-acucar-como-pressao-sobre-big-techs':
+    'Tarifa de 10% dos EUA sobre aviões e açúcar',
   'pl-2896-2022-senado-analisa-em-1-12-quarentena-de-estatais-de-3-anos-para-1-mes':
     'Senado analisa PL 2.896: quarentena de estatais',
   'cmn-amplia-em-r-1-bilhao-limite-de-credito-a-estados-e-municipios-para-r-31-6-bi':
