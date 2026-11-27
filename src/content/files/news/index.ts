@@ -225,6 +225,7 @@ import { newsAnvisaTirzepatidaRetatrutidaSemRegistro } from './anvisa-tirzepatid
 import { newsPix2027AgendaFraudeMensagens } from './pix-2027-indicador-de-fraude-mensagens-ofensivas-e-devolucao-simples-anunciados-pelo-bc';
 import { newsTrabucoMinistroFazenda2027 } from './trabuco-aceita-convite-de-lula-e-sera-ministro-da-fazenda-a-partir-de-2027';
 import { newsIgpmNovembro2026 } from './igp-m-novembro-1-24-acumulado-6-26-aluguel-de-r-2-000-vai-a-r-2-125-20';
+import { newsSenadoPl2896QuarentenaEstatais } from './pl-2896-2022-senado-analisa-em-1-12-quarentena-de-estatais-de-3-anos-para-1-mes';
 import { newsNfseAluguel1Dezembro } from './nfs-e-de-aluguel-vale-em-1-12-pessoa-fisica-so-com-mais-de-3-imoveis-e-r-240-mil';
 
 export const newsFiles = [
@@ -449,4 +450,5 @@ export const newsFiles = [
   newsTrabucoMinistroFazenda2027,
   newsIgpmNovembro2026,
   newsNfseAluguel1Dezembro,
+  newsSenadoPl2896QuarentenaEstatais,
 ] as const;

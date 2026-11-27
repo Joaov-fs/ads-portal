@@ -2991,3 +2991,26 @@ def _():
         + g(1280, 560, -5, 1, pen(360, '#3d2a10'))
         + g(1000, 700, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('senado-quarentena-estatais-pl-2896', '#3d4f7c', (80, 100, 860))
+def _():
+    rows = label_rows([('Projeto', 'PL 2.896/2022'), ('Sessão prevista', '1º/12'), ('Quarentena', '3 anos para 1 mês'), ('Publicidade', 'até 2% da receita')], 46, 170, 408, 64, 21, hl=(2, '#dfe6f7'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'ESTATAIS E AGÊNCIAS', '#3d4f7c', rows))
+        + g(700, 90, 5, 1, calendar_month('DEZEMBRO 2026', 2, 31, marks=(1,), w=460, h=500, accent='#3d4f7c', mark_color='#e8590c'))
+        + g(1320, 210, 6, 1, clock(110, 10, 0))
+        + g(1160, 560, -4, 1, tag('3 ANOS > 1 MÊS', 330, '#e8590c'))
+    )
+
+
+@scene('cmn-limite-credito-estados-2026', '#2f6b5f', (80, 100, 860))
+def _():
+    rows = label_rows([('Limite antes', 'R$ 30,625 bi'), ('Limite agora', 'R$ 31,625 bi'), ('Com garantia da União', 'R$ 11 bi'), ('Reunião do CMN', '26/11')], 46, 170, 408, 64, 20, hl=(1, '#d5efe8'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'CRÉDITO A ESTADOS E MUNICÍPIOS', '#2f6b5f', rows))
+        + g(700, 90, 5, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(26,), w=460, h=500, accent='#2f6b5f', mark_color='#e8590c'))
+        + g(1330, 250, 6, 1, calculator(250, 350) + '<rect x="20" y="22" width="210" height="66" rx="10" fill="#c8d6c0"/><text x="214" y="70" font-size="32" font-weight="700" text-anchor="end" fill="#2d3a2a" font-family="DejaVu Sans Mono,monospace">31,625</text>')
+        + g(1160, 600, -4, 1, tag('+R$ 1 bi', 280, '#e8590c'))
+        + g(1000, 690, 3, 1, coins_stack(3), 'sh')
+    )
