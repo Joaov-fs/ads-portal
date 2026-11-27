@@ -2979,3 +2979,15 @@ def _():
         + g(1230, 480, -5, 1, pen(360, '#4a2310'))
         + g(1000, 700, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('nfse-aluguel-dezembro', '#7a5a2e', (80, 100, 860))
+def _():
+    rows = label_rows([('Começa em', '01/12/2026'), ('Documento', 'NFS-e de aluguel'), ('Pessoa física', 'mais de 3 imóveis'), ('Receita anual', 'acima de R$ 240 mil')], 46, 170, 408, 64, 20, hl=(0, '#f2e6d2'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'NOTA FISCAL DE ALUGUEL', '#7a5a2e', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.5, '#d8c2a0'), (0.75, '#b58f58'), (1.0, '#7a5a2e'))) + '</g>'))
+        + g(700, 90, 5, 1, calendar_month('DEZEMBRO 2026', 2, 31, marks=(1,), w=460, h=500, accent='#7a5a2e', mark_color='#e8590c'))
+        + g(1300, 150, 4, 1, g(250, 250, 0, 1, house(1.0)))
+        + g(1280, 560, -5, 1, pen(360, '#3d2a10'))
+        + g(1000, 700, 3, 1, coins_stack(3), 'sh')
+    )

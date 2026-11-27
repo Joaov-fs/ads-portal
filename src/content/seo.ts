@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'nfs-e-de-aluguel-vale-em-1-12-pessoa-fisica-so-com-mais-de-3-imoveis-e-r-240-mil':
+    'Nota fiscal de aluguel vale em 1º/12: quem emite',
   'igp-m-novembro-1-24-acumulado-6-26-aluguel-de-r-2-000-vai-a-r-2-125-20':
     'IGP-M de novembro: 1,24% e 6,26% em 12 meses',
   'trabuco-aceita-convite-de-lula-e-sera-ministro-da-fazenda-a-partir-de-2027':
