@@ -50,6 +50,7 @@ import { newsSacDecreto13135Novembro2026 } from './sac-novas-regras-valem-desde-
 import { newsNfseNacionalSimples2026 } from './nfs-e-nacional-obrigatoria-para-empresas-do-simples-a-partir-de-1-de-novembro';
 import { newsFiesRemanescentes2026 } from './fies-vagas-remanescentes-2026-inscricao-ate-3-de-novembro-50-mil-vagas-e-renda-de-ate-3-salarios';
 import { newsAneelBandeiraVerdeNovembro2026 } from './aneel-mantem-bandeira-verde-em-novembro-de-2026-conta-de-luz-sem-taxa-extra';
+import { newsCagedOutubroColetiva30Novembro2026 } from './caged-de-outubro-marinho-apresenta-em-30-11-as-14h30';
 import { newsCagedSetembro2026 } from './brasil-gera-121-3-mil-empregos-em-setembro-caged';
 import { newsPnadDesemprego3Trimestre2026 } from './pnad-desemprego-3o-trimestre-5-2-menor-desde-2012-103-6-milhoes-ocupados';
 import { newsFazendaCbsEfetiva85Cae } from './fazenda-cbs-efetiva-8-5-cae-senado-ate-15-de-dezembro';
@@ -437,4 +438,5 @@ export const newsFiles = [
   newsAnvisaTirzepatidaRetatrutidaSemRegistro,
   newsPix2027AgendaFraudeMensagens,
   newsStfPisoProfessoresEstadosMunicipios26Novembro2026,
+  newsCagedOutubroColetiva30Novembro2026,
 ] as const;

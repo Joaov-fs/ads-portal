@@ -1277,6 +1277,18 @@ def _():
     )
 
 
+@scene('caged-outubro-coletiva-30-11-2026', '#2f5d8c', (80, 100, 860))
+def _():
+    rows = label_rows([('Coletiva', '30/11'), ('Horário', '14h30'), ('Referência', 'Out/2026'), ('Saldo de setembro', '121,3 mil')], 46, 170, 408, 64, 21, hl=(0, '#d9e6f3'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'NOVO CAGED: OUTUBRO', '#244a70', rows))
+        + g(700, 90, 5, 1, calendar_month('NOVEMBRO 2026', 0, 30, marks=(30,), w=460, h=500, accent='#244a70', mark_color='#e8590c'))
+        + g(1280, 100, 6, 1, tag('14h30', 260, '#2a7f62'))
+        + g(1290, 330, 5, 1, phone(250, 500, phone_screen('Novo Caged', '30/11', 'dados de outubro, 14h30', '#244a70')))
+        + g(1000, 700, -3, 1, clock(110, 2, 30), 'sh')
+    )
+
+
 @scene('imposto-seletivo-mp-1399-2026', '#2a6a74', (80, 100, 860))
 def _():
     rows = label_rows([('Início da cobrança', '2/2/2027'), ('Cerveja de malte', '4,2%'), ('Bebida açucarada', '2,6%'), ('Carro, base', '6,3%')], 46, 170, 408, 64, 21, hl=(0, '#d6ecee'))
