@@ -2955,3 +2955,27 @@ def _():
         + g(1230, 470, -4, 1, tag('US$ 500', 280, '#d9480f'))
         + g(1000, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('fazenda-novo-ministro', '#5b4b8a', (80, 100, 860))
+def _():
+    rows = label_rows([('Convite', 'aceito em 26/11'), ('Cargo', 'ministro da Fazenda'), ('Início', 'próximo mandato'), ('Ibovespa em 26/11', '+6,07%')], 46, 170, 408, 64, 20, hl=(1, '#e6e1f3'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'FAZENDA EM 2027', '#5b4b8a', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.5, '#b9aedb'), (0.75, '#8b7cc0'), (1.0, '#5b4b8a'))) + '</g>'))
+        + g(700, 90, 5, 1, calendar_month('JANEIRO 2027', 5, 31, marks=(), w=460, h=500, accent='#5b4b8a', mark_color='#e8590c'))
+        + g(1280, 250, 6, 1, tag('R$ 5,744', 320, '#e8590c'))
+        + g(1230, 480, -6, 1, pen(360, '#2d2552'))
+        + g(1450, 690, 3, 1, coins_stack(3), 'sh')
+    )
+
+
+@scene('igpm-novembro-aluguel', '#a3562b', (80, 100, 860))
+def _():
+    rows = label_rows([('IGP-M de novembro', '1,24%'), ('Em 12 meses', '6,26%'), ('Aluguel de R$ 2.000', 'R$ 2.125,20'), ('IGP-M de outubro', '1,47%')], 46, 170, 408, 64, 20, hl=(1, '#f6e1d3'))
+    return (
+        g(110, 120, -4, 1, doc(500, 580, 'IGP-M DE NOVEMBRO', '#a3562b', rows + '<g transform="translate(30 450)">' + chart_paper(440, 100, bars=((0.55, '#e1b79d'), (0.8, '#c9835a'), (1.0, '#a3562b'))) + '</g>'))
+        + g(760, 150, 4, 1, g(250, 250, 0, 1, house(1.1)))
+        + g(1280, 200, 7, 1, tag('6,26%', 280, '#2f5d8a'))
+        + g(1230, 480, -5, 1, pen(360, '#4a2310'))
+        + g(1000, 700, 3, 1, coins_stack(3), 'sh')
+    )

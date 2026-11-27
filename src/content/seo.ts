@@ -134,6 +134,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   'simples-nacional-e-fator-r-como-pagar-menos-imposto':
     'Simples Nacional e Fator R: como pagar menos',
   // Notícias
+  'trabuco-aceita-convite-de-lula-e-sera-ministro-da-fazenda-a-partir-de-2027':
+    'Trabuco aceita comandar a Fazenda no governo Lula',
   'aposentadoria-2027-mulheres-60-anos-ou-94-pontos-e-homens-65-ou-104-pontos':
     'Aposentadoria 2027: 60/65 anos ou 94/104 pontos',
   'receita-bagagem-cota-de-us-1-000-no-aviao-e-us-500-por-terra-limites-de-20-unidades':
