@@ -3014,3 +3014,15 @@ def _():
         + g(1160, 600, -4, 1, tag('+R$ 1 bi', 280, '#e8590c'))
         + g(1000, 690, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('fechamento-dolar-5-51-trabuco-2026', '#1f5f6b', (60, 100, 760))
+def _():
+    rows = label_rows([('Dólar (fechamento)', 'R$ 5,5156'), ('Queda no dia', '3,97%'), ('Queda na semana', '7,07%'), ('Sessões de baixa', '5 seguidas')], 46, 170, 408, 64, 21, hl=(0, '#d3eaee'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'FECHAMENTO 27/11', '#174852', rows))
+        + g(690, 130, 4, 1, chart_paper(480, 360, pts=(0.9, 0.78, 0.62, 0.45, 0.3, 0.12), color='#2b8a3e', title='DÓLAR NA SEMANA'))
+        + g(1290, 110, 6, 1, tag('R$ 5,51', 280, '#2b8a3e'))
+        + g(1330, 500, -4, 1, coin(70))
+        + g(1010, 700, -5, 1, stamp('DIs EM QUEDA', 440, '#f4e3c3', -4))
+    )
