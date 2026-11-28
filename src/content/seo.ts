@@ -142,6 +142,10 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Tarifa de 10% dos EUA sobre aviões e açúcar',
   'camara-pode-votar-pl-4675-2025-mercados-digitais-regras-do-cade-para-big-techs':
     'Câmara vota PL 4.675: Cade e big techs',
+  'ibge-expectativa-de-vida-2025-mulheres-80-1-anos-e-homens-73-5':
+    'Expectativa de vida sobe a 76,9 anos, diz IBGE',
+  'dino-suspende-14-emendas-de-flavio-bolsonaro-ao-orcamento-de-2027-r-79-3-milhoes':
+    'Dino suspende 14 emendas de R$ 79,3 mi ao PLOA',
   'pl-2896-2022-senado-analisa-em-1-12-quarentena-de-estatais-de-3-anos-para-1-mes':
     'Senado analisa PL 2.896: quarentena de estatais',
   'cmn-amplia-em-r-1-bilhao-limite-de-credito-a-estados-e-municipios-para-r-31-6-bi':

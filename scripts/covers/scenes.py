@@ -3119,3 +3119,26 @@ def _():
         + g(780, 470, -4, 0.9, banknote(330, 160, value='R$'))
         + g(1300, 560, 0, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('ibge-expectativa-de-vida-2025', '#2f7d6d', (60, 100, 760))
+def _():
+    rows = label_rows([('Mulheres', '80,1 anos'), ('Homens', '73,5 anos'), ('Total', '76,9 anos'), ('Diferença', '6,6 anos')], 46, 170, 408, 64, 21, hl=(0, '#d8efe9'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'EXPECTATIVA DE VIDA', '#1f5c50', rows))
+        + g(690, 130, 4, 1, tag('Brasil, 2025', 380, '#e8590c'))
+        + g(1130, 90, 5, 0.9, calendar_month('2025', 2, 31, marks=(), accent='#1f5c50', mark_color='#1f5c50'))
+        + g(780, 470, -4, 0.9, phone(250, 500, phone_screen('SAÚDE', 'Idade média', 'ao nascer', '#2f7d6d')))
+    )
+
+
+@scene('stf-dino-emendas-flavio-bolsonaro', '#5a4a7a', (60, 100, 760))
+def _():
+    rows = label_rows([('Decisão', 'Liminar'), ('Emendas', '14'), ('Total', 'R$ 79,3 mi'), ('Orçamento', 'PLOA 2027')], 46, 170, 408, 64, 21, hl=(2, '#e6e0f0'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'EMENDAS SUSPENSAS', '#3f3359', rows))
+        + g(690, 130, 4, 1, tag('Decisão do STF', 380, '#e8590c'))
+        + g(1130, 90, 5, 0.9, phone(250, 500, phone_screen('STF', 'Liminar', 'emendas individuais', '#5a4a7a')))
+        + g(780, 470, -4, 0.9, banknote(330, 160, value='R$'))
+        + g(1300, 560, 0, 1, coins_stack(3), 'sh')
+    )

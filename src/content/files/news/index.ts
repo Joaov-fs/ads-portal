@@ -237,6 +237,8 @@ import { newsDolarFecha27Novembro2026 } from './dolar-fecha-a-r-5-51-cai-7-na-se
 import { newsCmnAmplia1BilhaoCreditoEstadosMunicipios } from './cmn-amplia-em-r-1-bilhao-limite-de-credito-a-estados-e-municipios-para-r-31-6-bi';
 import { newsNfseAluguel1Dezembro } from './nfs-e-de-aluguel-vale-em-1-12-pessoa-fisica-so-com-mais-de-3-imoveis-e-r-240-mil';
 import { newsCamaraPl4675MercadosDigitais } from './camara-pode-votar-pl-4675-2025-mercados-digitais-regras-do-cade-para-big-techs';
+import { newsIbgeExpectativaDeVida2025 } from './ibge-expectativa-de-vida-2025-mulheres-80-1-anos-e-homens-73-5';
+import { newsDinoSuspendeEmendasFlavioBolsonaro } from './dino-suspende-14-emendas-de-flavio-bolsonaro-ao-orcamento-de-2027-r-79-3-milhoes';
 
 export const newsFiles = [
   newsPetrobrasPlano2027a2031,
@@ -471,4 +473,6 @@ export const newsFiles = [
   newsInssMutirao2829Novembro2026,
   newsSalarioQuintoDiaUtilDezembro2026,
   newsCamaraPl4675MercadosDigitais,
+  newsIbgeExpectativaDeVida2025,
+  newsDinoSuspendeEmendasFlavioBolsonaro,
 ] as const;
