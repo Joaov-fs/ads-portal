@@ -51,6 +51,8 @@ import { newsIgpMOutubro2026Aluguel } from './igp-m-outubro-1-47-acumulado-5-24-
 import { newsSacDecreto13135Novembro2026 } from './sac-novas-regras-valem-desde-2-de-novembro-atendente-humano-das-8h-as-20h-e-espera-de-20-segundos';
 import { newsNfseNacionalSimples2026 } from './nfs-e-nacional-obrigatoria-para-empresas-do-simples-a-partir-de-1-de-novembro';
 import { newsFiesRemanescentes2026 } from './fies-vagas-remanescentes-2026-inscricao-ate-3-de-novembro-50-mil-vagas-e-renda-de-ate-3-salarios';
+import { newsInssMutirao2829Novembro2026 } from './inss-mutirao-28-e-29-de-novembro-18-082-vagas-pericia-e-avaliacao-social';
+import { newsSalarioQuintoDiaUtilDezembro2026 } from './salario-de-novembro-quinto-dia-util-cai-em-sabado-5-12-prazo-e-pagamento';
 import { newsTesouroDiretoOutubro2026 } from './tesouro-direto-outubro-2026-vendas-de-r-10-56-bilhoes-estoque-de-r-285-2-bilhoes-e-3-99-milhoes-de-investidores-ativos';
 import { newsAneelBandeiraVerdeDezembro2026 } from './aneel-mantem-bandeira-verde-em-dezembro-de-2026-terceiro-mes-seguido-sem-taxa-extra';
 import { newsAneelBandeiraVerdeNovembro2026 } from './aneel-mantem-bandeira-verde-em-novembro-de-2026-conta-de-luz-sem-taxa-extra';
@@ -465,4 +467,6 @@ export const newsFiles = [
   newsCovidMensagensWhatsappGovBr2026,
   newsAneelBandeiraVerdeDezembro2026,
   newsTesouroDiretoOutubro2026,
+  newsInssMutirao2829Novembro2026,
+  newsSalarioQuintoDiaUtilDezembro2026,
 ] as const;

@@ -252,6 +252,10 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Decreto 5x2: hora extra fica mais cara em 16/12',
   'dino-escala-5x2-transicao-8h24-liminar-adi-8041-e-8042':
     'Dino: 42h em 16/12 e jornada de 8h24 na transição',
+  'inss-mutirao-28-e-29-de-novembro-18-082-vagas-pericia-e-avaliacao-social':
+    'Mutirão do INSS 28 e 29/11: 18.082 vagas',
+  'salario-de-novembro-quinto-dia-util-cai-em-sabado-5-12-prazo-e-pagamento':
+    'Salário de novembro: prazo vai até sábado, 5/12',
   'inss-mutirao-14-e-15-de-novembro-7-959-vagas-pericia-e-avaliacao-social':
     'Mutirão do INSS 14 e 15/11: 7.959 vagas',
   'black-friday-inmetro-5-erros-compra-de-eletrodomesticos-etiqueta-ence':

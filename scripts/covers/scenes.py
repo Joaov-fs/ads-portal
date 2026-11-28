@@ -3085,3 +3085,25 @@ def _():
         + g(1000, 400, 8, 1, tag('R$ 285,2 bi', 280, '#2a7f62'))
         + g(1300, 520, 0, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('inss-mutirao-28-29-novembro-2026', '#7a3f5c', (60, 100, 760))
+def _():
+    rows = label_rows([('Perícia médica', '13.184'), ('Avaliação social', '4.898'), ('Total de vagas', '18.082'), ('Agendar', 'Meu INSS')], 46, 170, 408, 64, 21, hl=(2, '#f1dce6'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'MUTIRÃO DO INSS', '#5e2c45', rows))
+        + g(690, 130, 4, 1, tag('18.082 vagas', 330, '#e8590c'))
+        + g(1130, 90, 5, 0.9, calendar_month('NOVEMBRO', 0, 30, marks=(28, 29), accent='#7a3f5c', mark_color='#d63031'))
+        + g(780, 470, -4, 0.9, phone(250, 500, phone_screen('MEU INSS', 'Central 135', 'agende o horário', '#7a3f5c')))
+    )
+
+
+@scene('salario-quinto-dia-util-dezembro-2026', '#2a6a8a', (60, 100, 760))
+def _():
+    rows = label_rows([('Salário de novembro', 'a pagar'), ('Prazo legal', '5/12'), ('Dia da semana', 'sábado'), ('Pagar antes', 'sexta, 4/12')], 46, 170, 408, 64, 21, hl=(1, '#d8eaf3'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'HOLERITE: NOVEMBRO', '#1d4e6b', rows))
+        + g(690, 130, 4, 1, tag('Prazo: 5/12', 330, '#e8590c'))
+        + g(1130, 90, 5, 0.9, calendar_month('DEZEMBRO', 2, 31, marks=(5,), accent='#2a6a8a', mark_color='#d63031'))
+        + g(780, 470, -4, 0.9, phone(250, 500, phone_screen('SALÁRIO', 'Conta', 'crédito até 5/12', '#2a6a8a')))
+    )
