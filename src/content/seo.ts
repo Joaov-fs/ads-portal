@@ -578,6 +578,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Caged de outubro: coletiva em 30/11, às 14h30',
   'aneel-mantem-bandeira-verde-em-dezembro-de-2026-terceiro-mes-seguido-sem-taxa-extra':
     'Bandeira verde em dezembro: luz sem taxa extra',
+  'tesouro-direto-outubro-2026-vendas-de-r-10-56-bilhoes-estoque-de-r-285-2-bilhoes-e-3-99-milhoes-de-investidores-ativos':
+    'Tesouro Direto: R$ 10,56 bi vendidos em outubro',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */

@@ -3073,3 +3073,15 @@ def _():
         + g(1000, 640, -4, 1, tag('VERDE', 250, '#3aa564'))
         + g(1480, 640, 0, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('tesouro-direto-outubro-2026', '#4b4a8f', (50, 100, 740))
+def _():
+    rows = label_rows([('Selic', 'R$ 5,11 bi'), ('Inflação', 'R$ 3,08 bi'), ('Prefixados', 'R$ 2,37 bi'), ('Total vendido', 'R$ 10,56 bi')], 46, 170, 408, 64, 21, hl=(3, '#dddcf2'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'TESOURO DIRETO: OUTUBRO', '#4b4a8f', rows))
+        + g(660, 150, 5, 1, phone(250, 500, phone_screen('Investidores ativos', '3,99 mi', 'em outubro', '#4b4a8f')))
+        + g(1000, 120, -4, 1, banknote(330, 160, value='R$'))
+        + g(1000, 400, 8, 1, tag('R$ 285,2 bi', 280, '#2a7f62'))
+        + g(1300, 520, 0, 1, coins_stack(3), 'sh')
+    )
