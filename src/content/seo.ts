@@ -140,6 +140,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Covid-19: Saúde reforça vacina com 2,1 mi de doses',
   'governo-ve-tarifa-de-10-dos-eua-sobre-avioes-e-acucar-como-pressao-sobre-big-techs':
     'Tarifa de 10% dos EUA sobre aviões e açúcar',
+  'camara-pode-votar-pl-4675-2025-mercados-digitais-regras-do-cade-para-big-techs':
+    'Câmara vota PL 4.675: Cade e big techs',
   'pl-2896-2022-senado-analisa-em-1-12-quarentena-de-estatais-de-3-anos-para-1-mes':
     'Senado analisa PL 2.896: quarentena de estatais',
   'cmn-amplia-em-r-1-bilhao-limite-de-credito-a-estados-e-municipios-para-r-31-6-bi':

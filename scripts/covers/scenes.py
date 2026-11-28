@@ -3107,3 +3107,15 @@ def _():
         + g(1130, 90, 5, 0.9, calendar_month('DEZEMBRO', 2, 31, marks=(5,), accent='#2a6a8a', mark_color='#d63031'))
         + g(780, 470, -4, 0.9, phone(250, 500, phone_screen('SALÁRIO', 'Conta', 'crédito até 5/12', '#2a6a8a')))
     )
+
+
+@scene('camara-pl-4675-mercados-digitais', '#355c7d', (60, 100, 760))
+def _():
+    rows = label_rows([('Projeto', 'PL 4675/2025'), ('Órgão', 'Cade'), ('Corte mundial', 'R$ 50 bi'), ('Corte no Brasil', 'R$ 5 bi')], 46, 170, 408, 64, 21, hl=(1, '#dbe6f0'))
+    return (
+        g(70, 100, -3, 1, doc(500, 580, 'MERCADOS DIGITAIS', '#274866', rows))
+        + g(690, 130, 4, 1, tag('Votação na Câmara', 380, '#e8590c'))
+        + g(1130, 90, 5, 0.9, phone(250, 500, phone_screen('APLICATIVOS', 'Cade', 'regras de concorrência', '#355c7d')))
+        + g(780, 470, -4, 0.9, banknote(330, 160, value='R$'))
+        + g(1300, 560, 0, 1, coins_stack(3), 'sh')
+    )

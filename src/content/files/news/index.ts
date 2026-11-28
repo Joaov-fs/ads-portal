@@ -236,6 +236,7 @@ import { newsTarifaEuaAvioesAcucar } from './governo-ve-tarifa-de-10-dos-eua-sob
 import { newsDolarFecha27Novembro2026 } from './dolar-fecha-a-r-5-51-cai-7-na-semana-e-juros-futuros-despencam-com-trabuco-na-fazenda-em-27-11';
 import { newsCmnAmplia1BilhaoCreditoEstadosMunicipios } from './cmn-amplia-em-r-1-bilhao-limite-de-credito-a-estados-e-municipios-para-r-31-6-bi';
 import { newsNfseAluguel1Dezembro } from './nfs-e-de-aluguel-vale-em-1-12-pessoa-fisica-so-com-mais-de-3-imoveis-e-r-240-mil';
+import { newsCamaraPl4675MercadosDigitais } from './camara-pode-votar-pl-4675-2025-mercados-digitais-regras-do-cade-para-big-techs';
 
 export const newsFiles = [
   newsPetrobrasPlano2027a2031,
@@ -469,4 +470,5 @@ export const newsFiles = [
   newsTesouroDiretoOutubro2026,
   newsInssMutirao2829Novembro2026,
   newsSalarioQuintoDiaUtilDezembro2026,
+  newsCamaraPl4675MercadosDigitais,
 ] as const;
