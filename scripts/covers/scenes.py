@@ -3061,3 +3061,15 @@ def _():
         + g(1130, 110, 6, 1, tag('Grátis na UBS', 320, '#e8590c'))
         + g(1010, 760, -4, 1, stamp('REFORÇO DA VACINA', 440, '#f4e3c3', -4))
     )
+
+
+@scene('bandeira-verde-dezembro-2026', '#2f6f73', (50, 100, 740))
+def _():
+    rows = label_rows([('Verde', 'sem adicional'), ('Amarela', 'R$ 1,885'), ('Vermelha 1', 'R$ 4,463'), ('Vermelha 2', 'R$ 7,877')], 46, 170, 408, 64, 21, hl=(0, '#d6ecea'))
+    return (
+        g(60, 100, -3, 1, doc(500, 580, 'BANDEIRA: DEZEMBRO', '#2f6f73', rows))
+        + g(660, 130, 5, 1, calendar_month('DEZEMBRO', 2, 31, (23,), w=470, h=500, accent='#2f6f73', mark_color='#2f6f73'))
+        + g(1230, 150, 7, 1, phone(250, 500, phone_screen('Bandeira tarifária', 'Verde', 'por 100 kWh', '#2f6f73')))
+        + g(1000, 640, -4, 1, tag('VERDE', 250, '#3aa564'))
+        + g(1480, 640, 0, 1, coins_stack(3), 'sh')
+    )

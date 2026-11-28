@@ -576,6 +576,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
     'Cartão: limite cai para quem usa o rotativo',
   'caged-de-outubro-marinho-apresenta-em-30-11-as-14h30':
     'Caged de outubro: coletiva em 30/11, às 14h30',
+  'aneel-mantem-bandeira-verde-em-dezembro-de-2026-terceiro-mes-seguido-sem-taxa-extra':
+    'Bandeira verde em dezembro: luz sem taxa extra',
 };
 
 /** Título usado em <title>, Open Graph e Twitter; cai para o título completo. */
