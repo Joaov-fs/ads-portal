@@ -227,6 +227,7 @@ import { newsTrabucoMinistroFazenda2027 } from './trabuco-aceita-convite-de-lula
 import { newsIgpmNovembro2026 } from './igp-m-novembro-1-24-acumulado-6-26-aluguel-de-r-2-000-vai-a-r-2-125-20';
 import { newsSenadoPl2896QuarentenaEstatais } from './pl-2896-2022-senado-analisa-em-1-12-quarentena-de-estatais-de-3-anos-para-1-mes';
 import { newsSuperavitOutubro2026 } from './contas-do-governo-superavit-de-r-52-3-bi-em-outubro-acima-da-projecao-de-r-43-4-bi';
+import { newsCovidMensagensWhatsappGovBr2026 } from './covid-19-saude-envia-mensagens-por-whatsapp-e-gov-br-e-soma-2-1-milhoes-de-doses-extras';
 import { newsTarifaEuaAvioesAcucar } from './governo-ve-tarifa-de-10-dos-eua-sobre-avioes-e-acucar-como-pressao-sobre-big-techs';
 import { newsDolarFecha27Novembro2026 } from './dolar-fecha-a-r-5-51-cai-7-na-semana-e-juros-futuros-despencam-com-trabuco-na-fazenda-em-27-11';
 import { newsCmnAmplia1BilhaoCreditoEstadosMunicipios } from './cmn-amplia-em-r-1-bilhao-limite-de-credito-a-estados-e-municipios-para-r-31-6-bi';
@@ -459,4 +460,5 @@ export const newsFiles = [
   newsDolarFecha27Novembro2026,
   newsSuperavitOutubro2026,
   newsTarifaEuaAvioesAcucar,
+  newsCovidMensagensWhatsappGovBr2026,
 ] as const;

@@ -3050,3 +3050,14 @@ def _():
         + g(1160, 600, -4, 1, tag('TARIFA 10%', 300, '#e8590c'))
         + g(1000, 700, 3, 1, coins_stack(3), 'sh')
     )
+
+
+@scene('covid-mensagens-whatsapp-2-1-milhoes-2026', '#2f6b5e', (60, 100, 760))
+def _():
+    rows = label_rows([('Doses adicionais', '+ de 2,1 mi'), ('Distribuídas em 2026', '25,7 mi'), ('Aplicadas em 2026', '8,5 mi'), ('SRAG por Covid', '-59,3%')], 46, 170, 408, 64, 21, hl=(0, '#d6ece6'))
+    return (
+        g(60, 100, -3, 1, doc(500, 600, 'VACINA DA COVID', '#24574c', rows))
+        + g(690, 130, 4, 1, phone(250, 500, phone_screen('Mensagem', 'Vacine-se', 'Posto de saúde', '#2f6b5e')))
+        + g(1130, 110, 6, 1, tag('Grátis na UBS', 320, '#e8590c'))
+        + g(1010, 760, -4, 1, stamp('REFORÇO DA VACINA', 440, '#f4e3c3', -4))
+    )

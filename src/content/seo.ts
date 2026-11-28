@@ -136,6 +136,8 @@ export const metaTitles: Readonly<Record<string, string>> = {
   // Notícias
   'contas-do-governo-superavit-de-r-52-3-bi-em-outubro-acima-da-projecao-de-r-43-4-bi':
     'Contas do governo: superávit de R$ 52,3 bi',
+  'covid-19-saude-envia-mensagens-por-whatsapp-e-gov-br-e-soma-2-1-milhoes-de-doses-extras':
+    'Covid-19: Saúde reforça vacina com 2,1 mi de doses',
   'governo-ve-tarifa-de-10-dos-eua-sobre-avioes-e-acucar-como-pressao-sobre-big-techs':
     'Tarifa de 10% dos EUA sobre aviões e açúcar',
   'pl-2896-2022-senado-analisa-em-1-12-quarentena-de-estatais-de-3-anos-para-1-mes':
